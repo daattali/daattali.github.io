@@ -10,3 +10,4 @@ title: gg
 a
 {{ site.url }}
 {{ site.time }}
+*{{ site.time | date_to_string }}*
