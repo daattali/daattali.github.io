@@ -9,3 +9,4 @@ title: gg
 
 a
 {{ site.url }}
+{{ site.time }}
