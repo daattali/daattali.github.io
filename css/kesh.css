@@ -76,7 +76,7 @@ body {
   position: absolute;
   left: 100%;
   text-align: left;
-  top: 50%;
+  top: 60%;
   width: 350px;
   font-style: italic;
   font-family: cursive;
@@ -95,4 +95,15 @@ body {
 
 #kisssound {
   display: none;
+}
+
+.typed-cursor{
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+}
+
+@-webkit-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
 }

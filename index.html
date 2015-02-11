@@ -45,12 +45,12 @@
         <div class="row">
           <div class="col-xs-3 col-md-3 col-lg-3"></div>
           <div id="verifyqs" class="col-xs-6 col-md-6 col-lg-6">
-            <label class="checkbox"><input type="checkbox" value="window">Knew how to operate window blinds</label>
-            <label class="checkbox"><input type="checkbox" value="heating">Knew how turn heating on/off</label>      	  
-            <label class="checkbox"><input type="checkbox" value="bottle">Knew how to close a water bottle with a lid</label>
-            <label class="checkbox"><input type="checkbox" value="feelings">Had feelings</label>
-            <label class="checkbox"><input type="checkbox" value="awesome">Was (and still am) the 3rd awesomest person ever</label>
-            <label class="checkbox"><input type="checkbox" value="breakingbad">Didn't know Breaking Bad and Jesse Pinkman are why I lived 24 years</label>
+            <label class="checkbox"><input type="checkbox" class="no" value="window">Knew how to operate window blinds</label>
+            <label class="checkbox"><input type="checkbox" class="no" value="heating">Knew how to turn heating on/off</label>      	  
+            <label class="checkbox"><input type="checkbox" class="no" value="bottle">Knew how to close a water bottle with a lid</label>
+            <label class="checkbox"><input type="checkbox" class="no" value="feelings">Had feelings</label>
+            <label class="checkbox"><input type="checkbox" class="no" value="breakingbad">Didn't know Breaking Bad and Jesse Pinkman are the reason I lived 24 years</label>
+            <label class="checkbox"><input type="checkbox" class="yes" value="awesome">Was (and still am) the 3rd awesomest person ever</label>
       	  </div>
       	</div>
       	<br/>
@@ -66,7 +66,7 @@
       	  <div class="col-xs-6 col-md-6 col-lg-6">
 		    <div class="alert alert-danger hideme" role="alert" id="lies">
 		      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-		      Imposter! The real Kesh knows that none of these were true :p
+		      Imposter! The real Kesh knows that only one of these is true :p
 		    </div>   
 		  </div>  	
 		</div>
@@ -88,10 +88,8 @@
 		    </div>
 		  </div>
           <div id="vdaymsg">
-            Sorry about those questions, I just had to make sure :p<br/>
-            I'm probably on a plane right now, so I hope this can help you feel my love from thousands of miles away.<br/>
-            You must be running on a dangerously low level of kisses right now, so I tried to make sure you get your dosage.
-            <button class="btn btn-primary btn-lg" id="kissbtn">Kiss me!</button>
+            <span id="vdaymsg-txt"></span>
+            <button class="btn btn-primary btn-lg hideme" id="kissbtn">Kiss me!</button>
           </div>
 		</div>
       	<button class="btn btn-default btn-lg" onclick="window.location.reload()">
@@ -100,7 +98,7 @@
       	</button>
       </div>
     </div>
-
+    
 	<audio controls id="kisssound" clas="hideme">
 	  <source src="files/kiss.wav" type="audio/wav">
 	  Your browser doesn't support my kissing sound :(
@@ -116,7 +114,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/novacancy.js"></script>
+    <script src="js/typed.js"></script>
     <script src="js/kesh.js"></script>
   </body>
 </html>

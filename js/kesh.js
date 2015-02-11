@@ -17,9 +17,12 @@ var init = function() {
   	$("#lies").hide();
 
   	var clickesyes = false;
-  	$("#verifyqs [type=checkbox]").each(function(idx){
+  	$("#verifyqs .no").each(function(idx){
   	  if ($(this)[0].checked) clickesyes = true;
   	})
+  	if (!$("#verifyqs .yes")[0].checked) {
+  		clickesyes = true;
+  	}
 
   	if (clickesyes) {
   	  $("#lies").fadeIn(500);
@@ -29,7 +32,15 @@ var init = function() {
   	  $("#page-vday").show();
 	  $('.carousel').carousel({
 	    interval: 4000
-	  })  	  
+	  });
+	  $("#vdaymsg-txt").typed({
+	  	strings: ["Sorry about those questions, I just had to make sure :p",
+	  			  "I'm probably on a plane right now, so I hope this can help you feel my love from thousands of miles away.<br/>" +
+	  			  "You must be running on a dangerously low level of kisses right now, so I tried to make sure you get your dosage."],
+	    backDelay: 2500,
+	    typeSpeed: 0,
+	    callback : function() { $("#kissbtn").show(); }
+	  });
   	}
   });
 
