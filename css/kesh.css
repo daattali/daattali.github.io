@@ -1,0 +1,98 @@
+body {
+  padding-top: 50px;
+  position: relative;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  line-height: 2em;
+  background-color: #f5f5f5;
+  border-top: 1px solid #eeeeee;
+  text-align: center;
+}
+
+.hideme {
+  display: none;
+}
+
+.lgtxt {
+  font-size: 1.5em;
+}
+
+.glyphicon {
+  vertical-align: text-top;
+}
+
+.container {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.leftbtn {
+  margin-right: 20px;
+}
+
+#verifyqs {
+  text-align: left;
+}
+
+#verifyqs label {
+  font-size: 1.3em;
+  font-weight: normal;
+}
+
+#lies {
+  margin-top: 20px;
+}
+
+#dearkesh {
+  font-family: cursive;
+  font-size: 2.5em;
+}
+
+#vdaytitle {
+  font-size: 5em;
+  font-family: 'Monoton', cursive;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-shadow: 0 0 80px Orange,0 0 30px Red,0 0 6px Yellow;
+  background: rgba(300,0,0,0.7);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+#carousel {
+  width: 450px;
+  margin: 30px auto;
+}
+
+.carousel-inner img {
+  margin: 0 auto;
+}
+
+#vdaymsg {
+  position: absolute;
+  left: 100%;
+  text-align: left;
+  top: 50%;
+  width: 350px;
+  font-style: italic;
+  font-family: cursive;
+  font-size: 1.3em;
+}
+
+#kissbtn {
+  font-style: normal;
+  margin: 20px 0 0 100px;
+}
+
+.kissimg {
+  position: fixed;
+  border-radius: 10px;
+}
+
+#kisssound {
+  display: none;
+}
