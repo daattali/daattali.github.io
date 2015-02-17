@@ -7,3 +7,10 @@ author :
   email : daattali@gmail.com
   github : daattali
   twitter : daattali
+
+defaults:
+  -
+    scope:
+      path: "" # all files
+    values:
+      layout: "default"

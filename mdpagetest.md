@@ -1,6 +1,5 @@
 ---
 title: gg
-layout: default
 ---
 
 
