@@ -1,131 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><3</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/kesh.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Daattali.GitHub.io : Dean Attali&#39;s website http://daattali.com">
 
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-	  ga('create', 'UA-59820529-1', 'auto');
-	  ga('send', 'pageview');
-
-	</script>    
+    <title>Daattali.GitHub.io</title>
   </head>
 
   <body>
-  	<div class="container">
 
-      <div class="jumbotron" id="page-initial">
-        <h1>This area is exclusive invite-only!</h1>
-        <p>To enter, you must be at least 18 years of age and be a Kesh.</p>
-      	<p>Are you Kesh?</p>
-      	<button type="button" class="btn btn-default btn-lg leftbtn" id="nokesh">
-      	  <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> I wish :(
-      	</button>
-      	<button type="button" class="btn btn-lg btn-success" id="yeskesh">
-      	  <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span> Yup!
-      	</button>
-      </div>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/daattali">View on GitHub</a>
 
-      <div class="hideme lgtxt" id="page-nokesh">
-      	<p>
-      	  Hmmm.... well, if you're a chick, then go ahead and send me your #.
-      	  <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
-      	  <br/>
-      	  If you're a guy.. eh, what the hell, YOLO, send it as well!
-      	</p>
-      	<br/>
-      	<button class="btn btn-default btn-lg" onclick="window.location.reload()">
-      	  <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-      	  Back
-      	</button>
-      </div>
+          <h1 id="project_title">Daattali.GitHub.io</h1>
+          <h2 id="project_tagline">Dean Attali&#39;s website http://daattali.com</h2>
 
-      <div class="jumbotron hideme" id="page-yeskesh">
-        <h1>Just to make sure...</h1>
-        <p>Prove it :)<br/>When I first arrived to Vancouver, I ... (check all that apply)</p>
-        <div class="row">
-          <div class="col-xs-3 col-md-3 col-lg-3"></div>
-          <div id="verifyqs" class="col-xs-6 col-md-6 col-lg-6">
-            <label class="checkbox"><input type="checkbox" class="no" value="window">Knew how to operate window blinds</label>
-            <label class="checkbox"><input type="checkbox" class="no" value="heating">Knew how to turn heating on/off</label>      	  
-            <label class="checkbox"><input type="checkbox" class="no" value="bottle">Knew how to close a water bottle with a lid</label>
-            <label class="checkbox"><input type="checkbox" class="no" value="feelings">Had feelings</label>
-            <label class="checkbox"><input type="checkbox" class="no" value="breakingbad">Didn't know Breaking Bad and Jesse Pinkman are the reason I lived 24 years</label>
-            <label class="checkbox"><input type="checkbox" class="yes" value="awesome">Was (and still am) the 3rd awesomest person ever</label>
-      	  </div>
-      	</div>
-      	<br/>
-      	<button class="btn btn-default btn-lg leftbtn" onclick="window.location.reload()">
-      	  <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-      	  Back
-      	</button>
-      	<button type="button" class="btn btn-default btn-lg btn-success" id="submitqs">
-      	  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Submit
-      	</button>
-      	<div class="row">
-      	  <div class="col-xs-3 col-md-3 col-lg-3"></div>
-      	  <div class="col-xs-6 col-md-6 col-lg-6">
-		    <div class="alert alert-danger hideme" role="alert" id="lies">
-		      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-		      Imposter! The real Kesh knows that only one of these is true :p
-		    </div>   
-		  </div>  	
-		</div>
-      </div>
-
-      <div class="hideme" id="page-vday">   
-        <p id="dearkesh">Dear Kesh,</p>
-        <p id="vdaytitle">Happy &nbsp; &nbsp; Valentine's</p>
-		<div id="carousel" class="carousel slide" data-ride="carousel">
-		  <div class="carousel-inner" role="listbox">
-		    <div class="item active">
-		      <img src="images/kesh1.jpg">
-		    </div>
-		    <div class="item">
-		      <img src="images/kesh2.jpg">
-		    </div>
-		    <div class="item">
-		      <img src="images/kesh3.jpg">
-		    </div>
-		  </div>
-          <div id="vdaymsg">
-            <span id="vdaymsg-txt"></span>
-            <button class="btn btn-primary btn-lg hideme" id="kissbtn">Kiss me!</button>
-          </div>
-		</div>
-      	<button class="btn btn-default btn-lg" onclick="window.location.reload()">
-      	  <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-      	  Back
-      	</button>
-      </div>
+        </header>
     </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+
+<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:
+__</p>
+
+<pre><code>$ cd your_repo_root/repo_name
+$ git fetch origin
+$ git checkout gh-pages
+</code></pre>
+
+<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+
+<h3>
+<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+
+<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+
+<h3>
+<a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+
+<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+
+<h3>
+<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+
+<h3>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Pages? Check out the documentation at <a href="https://help.github.com/pages">https://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
     
-	<audio controls id="kisssound" clas="hideme">
-	  <source src="files/kiss.wav" type="audio/wav">
-	  Your browser doesn't support my kissing sound :(
-	</audio>    
 
-    <footer class="footer">
-      <div class="text-muted">
-        Dean Attali&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;
-        Feb 10, 2015&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;
-        <a href="http://deanattali.com" target="_blank">deanattali.com</a>
-      </div>
-    </footer>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/typed.js"></script>
-    <script src="js/kesh.js"></script>
   </body>
 </html>

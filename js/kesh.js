@@ -52,7 +52,7 @@ var init = function() {
   	kisssound.play();
 
   	var img = $(document.createElement("img"));
-  	img.attr('src', 'images/kiss.jpg');
+  	img.attr('src', 'images/kesh/kiss.jpg');
   	var size = Math.round(Math.random() * 300 + 100);  // kiss image size 100-400 px
   	var rotate = Math.round(Math.random() * 360);
   	var left = Math.round(Math.random() * (window.innerWidth - size));
