@@ -8,6 +8,7 @@
     <title>{% if page.title %}{{ page.title }}{% endif %}</title>
 
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css" />
 	<link rel="stylesheet" href="css/minimal.css" />
 	{% if page.css %}
 	  {% for css in page.css %}
@@ -24,13 +25,13 @@
 
 	<footer class="footer">
 	  <div class="text-muted">
-		Dean Attali&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;
+		Dean Attali&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;
 		{% if page.date %}
 		  {{ page.date }}
 		{% else %}
 		  2015
 		{% endif %}
-		&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;
 		<a href="http://deanattali.com" target="_blank">deanattali.com</a>
 	  </div>
 	</footer>	
