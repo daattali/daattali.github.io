@@ -1,10 +1,13 @@
+---
+layout: default
+---
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset='utf-8'>
     <meta name="description" content="Daattali.GitHub.io : Dean Attali&#39;s website http://deanattali.com">
-	<link rel="stylesheet" type="text/css" media="screen" href="css/stylesheet.css">
-
+	
     <title>Daattali.GitHub.io</title>
   </head>
 
@@ -18,14 +21,25 @@
     </div>
 	
     <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
-		<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+		<div class="posts">
+		  {% for post in site.posts %}
+			<article class="post">
+
+			  <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+
+			  <div class="entry">
+				{{ post.content | truncatewords:40}}
+			  </div>
+
+			  <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+			</article>
+		  {% endfor %}
+		</div>
 	</div>
 	
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+        Dean footer
       </footer>
     </div>
 

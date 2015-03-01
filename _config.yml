@@ -2,6 +2,10 @@
 url: "http://deanattali.com"  # full site URL
 baseurl: ""  # does not include hostname
 
+# Header meta
+name: Dean Attali
+description: Dean Attali's virtual presence
+
 # Outputting
 timezone: "America/Vancouver"
 markdown: kramdown
@@ -17,9 +21,9 @@ defaults:
 
 title : Dean Attali
 
-author :
-  name : Dean Attali
-  email : daattali@gmail.com
+author:
+  name: Dean Attali
+  email: daattali@gmail.com
  
 avatar: https://avatars0.githubusercontent.com/u/952340?v=3&s=140
 
