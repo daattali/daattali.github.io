@@ -36,13 +36,13 @@
 	  </div>
 	</footer>	
 	
-	<script src="js/bootstrap.min.js"></script>
     {% if page.js %}
 	  {% for js in page.js %}
 	    <script src="{{ js }}"></script>
 	  {% endfor %}
 	{% endif %}
-
+	<script src="js/bootstrap.min.js"></script>
+	
     {% include google_analytics.html %}
   </body>
 </html>
