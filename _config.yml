@@ -1,10 +1,11 @@
 # Serving
 url: "http://deanattali.com"  # full site URL
+url-short: "deanattali.com" # how to display the url
 baseurl: ""  # does not include hostname
 
 # Header meta
 name: Dean Attali
-description: Dean Attali's virtual presence
+description: Dean Attali's website
 
 # Outputting
 timezone: "America/Vancouver"
