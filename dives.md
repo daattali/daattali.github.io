@@ -1,7 +1,7 @@
 ---
 title: "Bahama dives Feb 20, 2015"
 date: "Feb 22, 2015"
-main-class: middle
+main-class: [middle, ff]
 ---
 
 # Bahamas dives Feb 20, 2015
