@@ -3,7 +3,8 @@ title: "Bahama dives Feb 20, 2015"
 date: "Feb 22, 2015"
 ---
 
-
+<div class="middle">
+<div class="container">
 
 # Bahamas dives Feb 20, 2015
 
@@ -46,3 +47,6 @@ date: "Feb 22, 2015"
 ### Boys 2
 <img src="img/dives/allshark2-0.png" />
 <img src="img/dives/allshark2-1.png" />   
+
+</div>
+</div>
