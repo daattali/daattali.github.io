@@ -271,11 +271,6 @@ footer {
   text-align: center;
 }
 
-
-body {
-  color: #999;
-}
-
 .hideme {
   display: none;
 }
@@ -284,7 +279,7 @@ body {
   padding-bottom: 50px;
 }
 
-#footer.footer-min {
+footer.footer-min {
   position: fixed;
   bottom: 0;
   width: 100%;
