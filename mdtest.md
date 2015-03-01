@@ -1,5 +1,8 @@
 ---
 bbb: NO way
+js:
+  - jajajaj
+  - hahahah
 ---
 
 haa
