@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +7,22 @@
 
     <title>{% if page.title %}{{ page.title }}{% endif %}</title>
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/style.css" />
+	{% if page.css %}
+	  {% for css in page.css %}
+	    <link rel="stylesheet" href="{{ css }}" />
+	  {% endfor %}
+	{% endif %}
+    
   </head>
 
   <body>
-    <div id="main" role="main">
+    <div id="main" role="main" class="container">
       {{ content }}
     </div>
-	{% if page.aaa %}{{ page.aaa }}{% endif %}
-	{% if page.bbb %}{{ page.bbb }}{% endif %}
 	
 	{% if page.js %}
 	  {% for js in page.js %}
-	    <p>{{ js }}</p>
+	    <script src="{{ js }}"></script>
 	  {% endfor %}
 	{% endif %}
 
