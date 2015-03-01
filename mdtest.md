@@ -1,30 +1,8 @@
 ---
+bbb: NO way
 ---
 
-# one
-<a href="#hh">asdf</a>
-## two
-### three
-#### four
-
-lala
-- bullet 1
-- bullet 2
-
-#### hh
-
-> quote
-
-this is `inline code` ha
-
-~~strike~~
-
-and here
-
-```
-big
-code
-```
+haa
 
 ```java
 //java code
