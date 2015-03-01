@@ -8,7 +8,7 @@ description: Dean Attali's virtual presence
 
 # Outputting
 timezone: "America/Vancouver"
-markdown: kramdown
+markdown: redcarpet
 highlighter: pygments
 permalink: /:year/:month/:day/:title
 
