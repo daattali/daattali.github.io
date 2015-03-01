@@ -1,12 +1,12 @@
-url: "http://deanattali.com"
-timezone: "America/Vancouver"
+# Serving
+url: "http://deanattali.com"  # full site URL
+baseurl: ""  # does not include hostname
 
-title : Dean Attali
-author :
-  name : Dean Attali
-  email : daattali@gmail.com
-  github : daattali
-  twitter : daattali
+# Outputting
+timezone: "America/Vancouver"
+markdown: redcarpet
+highlighter: pygments
+permalink: /:year/:month/:day/:title
 
 defaults:
   -
@@ -14,3 +14,31 @@ defaults:
       path: "" # all files
     values:
       layout: "default"
+
+title : Dean Attali
+
+author :
+  name : Dean Attali
+  email : daattali@gmail.com
+ 
+avatar: https://avatars0.githubusercontent.com/u/952340?v=3&s=140
+
+footer-links:
+  email: daattali@gmail.com
+  facebook: daattali
+  github: daattali
+  linkedin: dean-attali
+  twitter: daattali
+  stackoverflow: users/3943160/daattali
+  
+disqus: deanattali-site  # comments
+google_analytics: UA-59820529-1
+
+# The release of Jekyll Now
+version: v1.0.0
+
+# Exclude these files from production site
+exclude:
+  - CNAME
+  - LICENSE
+  - README.md
