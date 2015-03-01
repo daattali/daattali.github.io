@@ -1,20 +1,11 @@
 ---
-title: "<33"
-css:
-  - "css/bootstrap.min.css"
-  - "css/kesh.css"
-  - "http://fonts.googleapis.com/css?family=Monoton"
-js:
-  - "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
-  - "js/bootstrap.min.js"
-  - "js/typed.js"
-  - "js/kesh.js"
 ---
 
-haa
-
 # one
-## two
+
+### three
+
+haa
 
 ```java
 //java code
@@ -44,104 +35,3 @@ def a():
 | ------------- | ------------- |
 | Content Cell  | _Content_ Cell  |
 | Content Cell  | Content Cell  |
-    
-    
-
-	
- <div class="jumbotron" id="page-initial">
-	<h1>This area is exclusive invite-only!</h1>
-	<p>To enter, you must be at least 18 years of age and be a Kesh.</p>
-	<p>Are you Kesh?</p>
-	<button type="button" class="btn btn-default btn-lg leftbtn" id="nokesh">
-	  <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> I wish :(
-	</button>
-	<button type="button" class="btn btn-lg btn-success" id="yeskesh">
-	  <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span> Yup!
-	</button>
-  </div>
-
-  <div class="hideme lgtxt" id="page-nokesh">
-	<p>
-	  Hmmm.... well, if you're a chick, then go ahead and send me your #.
-	  <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
-	  <br/>
-	  If you're a guy.. eh, what the hell, YOLO, send it as well!
-	</p>
-	<br/>
-	<button class="btn btn-default btn-lg" onclick="window.location.reload()">
-	  <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-	  Back
-	</button>
-  </div>
-
-  <div class="jumbotron hideme" id="page-yeskesh">
-	<h1>Just to make sure...</h1>
-	<p>Prove it :)<br/>When I first arrived to Vancouver, I ... (check all that apply)</p>
-	<div class="row">
-	  <div class="col-xs-3 col-md-3 col-lg-3"></div>
-	  <div id="verifyqs" class="col-xs-6 col-md-6 col-lg-6">
-		<label class="checkbox"><input type="checkbox" class="no" value="window">Knew how to operate window blinds</label>
-		<label class="checkbox"><input type="checkbox" class="no" value="heating">Knew how to turn heating on/off</label>      	  
-		<label class="checkbox"><input type="checkbox" class="no" value="bottle">Knew how to close a water bottle with a lid</label>
-		<label class="checkbox"><input type="checkbox" class="no" value="feelings">Had feelings</label>
-		<label class="checkbox"><input type="checkbox" class="no" value="breakingbad">Didn't know Breaking Bad and Jesse Pinkman are the reason I lived 24 years</label>
-		<label class="checkbox"><input type="checkbox" class="yes" value="awesome">Was (and still am) the 3rd awesomest person ever</label>
-	  </div>
-	</div>
-	<br/>
-	<button class="btn btn-default btn-lg leftbtn" onclick="window.location.reload()">
-	  <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-	  Back
-	</button>
-	<button type="button" class="btn btn-default btn-lg btn-success" id="submitqs">
-	  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Submit
-	</button>
-	<div class="row">
-	  <div class="col-xs-3 col-md-3 col-lg-3"></div>
-	  <div class="col-xs-6 col-md-6 col-lg-6">
-		<div class="alert alert-danger hideme" role="alert" id="lies">
-		  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-		  Imposter! The real Kesh knows that only one of these is true :p
-		</div>   
-	  </div>  	
-	</div>
-  </div>
-
-  <div class="hideme" id="page-vday">   
-	<p id="dearkesh">Dear Kesh,</p>
-	<p id="vdaytitle">Happy &nbsp; &nbsp; Valentine's</p>
-	<div id="carousel" class="carousel slide" data-ride="carousel">
-	  <div class="carousel-inner" role="listbox">
-		<div class="item active">
-		  <img src="images/kesh/kesh1.jpg">
-		</div>
-		<div class="item">
-		  <img src="images/kesh/kesh2.jpg">
-		</div>
-		<div class="item">
-		  <img src="images/kesh/kesh3.jpg">
-		</div>
-	  </div>
-	  <div id="vdaymsg">
-		<span id="vdaymsg-txt"></span>
-		<button class="btn btn-primary btn-lg hideme" id="kissbtn">Kiss me!</button>
-	  </div>
-	</div>
-	<button class="btn btn-default btn-lg" onclick="window.location.reload()">
-	  <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-	  Back
-	</button>
-  </div>
-
-<audio controls id="kisssound" clas="hideme">
-  <source src="files/kesh-kiss-sound.wav" type="audio/wav">
-  Your browser doesn't support my kissing sound :(
-</audio>    
-
-<footer class="footer">
-  <div class="text-muted">
-	Dean Attali&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;
-	Feb 10, 2015&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;
-	<a href="http://deanattali.com" target="_blank">deanattali.com</a>
-  </div>
-</footer>

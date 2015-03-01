@@ -1,0 +1,13 @@
+.hideme {
+  display: none;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  line-height: 2em;
+  background-color: #f5f5f5;
+  border-top: 1px solid #eeeeee;
+  text-align: center;
+}
