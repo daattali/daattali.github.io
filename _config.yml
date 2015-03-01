@@ -17,7 +17,7 @@ defaults:
     scope:
       path: "" # all files
     values:
-      layout: "default"
+      layout: "minimal"
 
 title : Dean Attali
 
