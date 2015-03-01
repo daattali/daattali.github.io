@@ -9,6 +9,9 @@ date: "Feb 22, 2015"
 ![](img/dives/aba1-0.png)
 ![](img/dives/aba1-1.png)
 
+<div>aa</div>
+<div class="hideme">bb</div>
+
 ### Oriane
 ![](img/dives/oriane1-0.png)
 ![](img/dives/oriane1-3.png)      
