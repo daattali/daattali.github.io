@@ -7,9 +7,7 @@ html {
 }
 
 body {
-  ackground: #FFF;
-  font: 18px/1.4 $helvetica;
-  color: #A9A9A9;
+  background: #FFF;
   position: relative;
 }
 
@@ -286,11 +284,11 @@ body {
   padding-bottom: 50px;
 }
 
-.footer-min {
+#footer.footer-min {
   position: fixed;
   bottom: 0;
   width: 100%;
-  line-height: 2em;
+  padding: 3px;
   background-color: #f5f5f5;
   border-top: 1px solid #eeeeee;
   text-align: center;
