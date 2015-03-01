@@ -10,7 +10,7 @@ description: Dean Attali's virtual presence
 timezone: "America/Vancouver"
 markdown: redcarpet
 highlighter: pygments
-permalink: /:year/:month/:day/:title
+permalink: /:year-:month-:day-:title
 
 defaults:
   -
