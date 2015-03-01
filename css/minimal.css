@@ -1,5 +1,17 @@
+body {
+  position: relative;
+}
+
 .hideme {
   display: none;
+}
+
+.container {
+  padding-bottom: 50px;
+}
+
+.middle {
+  text-align: center;
 }
 
 .footer {

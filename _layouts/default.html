@@ -14,10 +14,16 @@
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" />
+	<link rel="stylesheet" href="css/minimal.css" />
+	<link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+	
+	{% if page.css %}
+	  {% for css in page.css %}
+	    <link rel="stylesheet" href="{{ css }}" />
+	  {% endfor %}
+	{% endif %}
   </head>
 
   <body>
@@ -51,6 +57,14 @@
       </div>
     </div>
 
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    {% if page.js %}
+	  {% for js in page.js %}
+	    <script src="{{ js }}"></script>
+	  {% endfor %}
+	{% endif %}	
+	
     {% include google_analytics.html %}
   </body>
 </html>
