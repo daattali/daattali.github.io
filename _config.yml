@@ -4,7 +4,7 @@ baseurl: ""  # does not include hostname
 
 # Outputting
 timezone: "America/Vancouver"
-markdown: redcarpet
+markdown: kramdown
 highlighter: pygments
 permalink: /:year/:month/:day/:title
 
