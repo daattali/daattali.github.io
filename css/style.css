@@ -7,9 +7,10 @@ html {
 }
 
 body {
-	background: $white;
+  ackground: #FFF;
   font: 18px/1.4 $helvetica;
-  color: $darkGray;
+  color: #A9A9A9;
+  position: relative;
 }
 
 .container {
@@ -275,4 +276,8 @@ footer {
 
 body {
   color: #999;
+}
+
+.hideme {
+  display: none;
 }
