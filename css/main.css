@@ -267,6 +267,11 @@ header.header-page .page-heading {
   text-align: center;
 }
 
+header.header-post .post-heading {
+  border-bottom: 1px solid #e7e7e7;
+  padding-bottom: 30px;
+}
+
 header.header-post .post-heading h1 {
   font-size: 35px;
   margin-top: 0;
@@ -288,7 +293,7 @@ header.header-page .page-heading .page-subheading {
 }
 
 header.header-post .post-heading .post-subheading {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -312,6 +317,10 @@ header.header-post .post-heading .post-subheading {
   display: block;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
+}
+
+.blog-comments {
+  margin-top: 30px;
 }
 
 /* --- Pager (blog paginator) --- */

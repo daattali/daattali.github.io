@@ -16,13 +16,11 @@ layout: default
   </div>
 </header>
 
-<hr class="small">
-
 <article>
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-	  {{ content }}<
-	  <hr>
+	  {{ content }}
+
 	  <ul class="pager">
         {% if page.previous.url %}
         <li class="previous">
@@ -39,7 +37,7 @@ layout: default
   </div>
 </article>
 
-<div class="row">
+<div class="row blog-comments">
   <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     {% include disqus.html %}
   </div>
