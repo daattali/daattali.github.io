@@ -243,8 +243,8 @@ header .page-heading .page-subheading {
   color: #404040;
 }
 
-.post-preview a :focus,
-.post-preview a :hover {
+.post-preview a:focus,
+.post-preview a:hover {
   text-decoration: none;
   color: #0085a1;
 }
@@ -262,7 +262,7 @@ header .page-heading .page-subheading {
   color: #808080;
   font-size: 18px;
   font-style: italic;
-  margin-top: 0 0 10px;
+  margin: 0 0 10px;
 }
 .post-preview .post-entry {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
