@@ -23,31 +23,29 @@ defaults:
 
 title : Dean Attali
 
-avatar: https://avatars0.githubusercontent.com/u/952340?v=3&s=140
+avatar: "https://avatars0.githubusercontent.com/u/952340?v=3&s=140"
 
 author:
   name: Dean Attali
-  email: daattali@gmail.com
+  email: "daattali@gmail.com"
   facebook: daattali
   github: daattali
   twitter: daattali
-  linkedin: dean-attali
-  stackoverflow: users/3943160/daattali
+  linkedin: "pub/dean-attali/8/946/143"
+  stackoverflow: "users/3943160/daattali"
 
 footer-links-active:
-  rss: false
+  rss: true
   facebook: true
   email: true
-  twitter: true
   github: true
-  linkedin: true
   stackoverflow: true
     
-disqus: deanattali-site
-google_analytics: UA-59820529-1
+disqus: "deanattali-site"
+google_analytics: "UA-59820529-1"
 
 # The release of Jekyll Now
-version: v1.0.0
+version: "v1.0.0"
 
 # Exclude these files from production site
 exclude:
