@@ -35,10 +35,12 @@ author:
   stackoverflow: "users/3943160/daattali"
 
 footer-links-active:
-  rss: true
+  rss: false
   facebook: true
   email: true
+  twitter: true
   github: true
+  linkedin: true
   stackoverflow: true
     
 disqus: "deanattali-site"
