@@ -1,21 +1,3 @@
-.hideme {
-  display: none;
-}
-
-#main.minimal-page {
-  padding-bottom: 50px;
-}
-
-footer.footer-min {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 3px;
-  background-color: #f5f5f5;
-  border-top: 1px solid #eeeeee;
-  text-align: center;
-}
-
 body {
   padding-top: 50px;
 }
