@@ -22,7 +22,7 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: 800;
 }
 a {
-  color: #3A85C5;
+  color: #105086;
 }
 a:hover,
 a:focus {
@@ -177,6 +177,10 @@ footer {
   font-size: 14px;
 }
 
+footer a {
+  color: #105086;
+}
+
 footer .list-inline {
   margin: 0;
   padding: 0;
@@ -237,6 +241,12 @@ header .page-heading .page-subheading {
 .post-preview a {
   text-decoration: none;
   color: #404040;
+}
+
+.post-preview a :focus,
+.post-preview a :hover {
+  text-decoration: none;
+  color: #0085a1;
 }
 
 .post-preview .post-title {
