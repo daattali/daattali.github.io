@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  {% include head.html site-css="/css/style-minimal.css" %}
+  {% include head.html full = false %}
 
   <body>
 
@@ -9,9 +9,9 @@
       {{ content }}
     </div>
 
-    {% include footer-min.html %}
+    {% include footer-minimal.html %}
   
-    {% include footer-scripts.html %}
+    {% include footer-scripts.html full = false %}
   
   </body>
 </html>

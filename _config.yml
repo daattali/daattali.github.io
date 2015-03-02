@@ -12,6 +12,7 @@ timezone: "America/Vancouver"
 markdown: redcarpet
 highlighter: pygments
 permalink: /:year-:month-:day-:title
+paginate: 5
 
 defaults:
   -

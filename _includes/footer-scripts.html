@@ -1,5 +1,9 @@
-<script src="js/jquery-1.11.2.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="/js/jquery-1.11.2.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+{% if include.full %}
+  <script src="/js/main.js"></script>
+{% endif %}
 
 {% if page.js %}
   {% for js in page.js %}

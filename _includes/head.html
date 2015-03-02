@@ -10,8 +10,14 @@
 
   <link rel="stylesheet" href="/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
-  <link rel="stylesheet" href="{{ include.site-css }}" />
-  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="/feed.xml" />
+  
+  {% if include.full %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="/feed.xml" />
+  {% else %}
+    <link rel="stylesheet" href="/css/main-minimal.css" />
+  {% endif %}
 
   {% if page.css %}
     {% for css in page.css %}
