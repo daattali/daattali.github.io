@@ -205,37 +205,7 @@ footer .copyright a {
     font-size: 16px;
   }
 }
-
-/* --- Page layout --- */
-
-header.header-page {
-  margin-bottom: 20px;
-}
-
-header.header-page .page-heading {
-  text-align: center;
-}
-
-header.header-page .page-heading h1 {
-  font-size: 50px;
-  margin-top: 0;
-}
-
-header.header-page .page-heading .page-subheading {
-  font-size: 24px;
-  line-height: 1.1,
-  display: block;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  margin: 10px 0 0;
-}
-
-@media only screen and (min-width: 768px) {
-  header.header-page .page-heading h1 {
-    font-size: 80px;
-  }
-}
-  
+ 
 /* --- Post preview --- */
 
 .post-preview {
@@ -267,7 +237,8 @@ header.header-page .page-heading .page-subheading {
   font-weight: 300;
   margin-bottom: 10px;
 }
-.post-preview .post-meta {
+.post-preview .post-meta,
+.post-heading .post-meta {
   color: #808080;
   font-size: 18px;
   font-style: italic;
@@ -284,6 +255,63 @@ header.header-page .page-heading .page-subheading {
   .post-preview .post-title {
     font-size: 36px;
   }
+}
+
+/* --- Post and page layout --- */
+
+header.header-page {
+  margin-bottom: 20px;
+}
+
+header.header-page .page-heading {
+  text-align: center;
+}
+
+header.header-post .post-heading h1 {
+  font-size: 35px;
+  margin-top: 0;
+}
+
+header.header-page .page-heading h1 {
+  font-size: 50px;
+  margin-top: 0;
+}
+
+header.header-post .post-heading .post-subheading,
+header.header-page .page-heading .page-subheading {
+  font-size: 24px;
+  line-height: 1.1;
+  display: block;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin: 10px 0 0;
+}
+
+header.header-post .post-heading .post-subheading {
+  margin-bottom: 30px;
+}
+
+@media only screen and (min-width: 768px) {
+  header.header-post .post-heading h1 {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  header.header-page .page-heading h1 {
+    font-size: 80px;
+  }
+}
+
+.caption {
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  font-style: italic;
+  margin: 0;
+  display: block;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 /* --- Pager (blog paginator) --- */
@@ -313,43 +341,6 @@ header.header-page .page-heading .page-subheading {
   color: #FFF;
   background: #0085a1;
   border: 1px solid #0085a1;
-}
-
-/* --- Post layout--- */
-
-header.header-post {
-  margin-bottom: 20px;
-}
-
-header.header-post .post-heading h1 {
-  font-size: 50px;
-  margin-top: 0;
-}
-
-header.header-post .post-heading .post-subheading {
-  font-size: 24px;
-  line-height: 1.1,
-  display: block;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  margin: 10px 0 0;
-}
-
-@media only screen and (min-width: 768px) {
-  header.header-post .post-heading h1 {
-    font-size: 80px;
-  }
-}
-
-.caption {
-  text-align: center;
-  font-size: 14px;
-  padding: 10px;
-  font-style: italic;
-  margin: 0;
-  display: block;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
 }
 
 /* --- Buttons --- */

@@ -16,6 +16,8 @@ layout: default
   </div>
 </header>
 
+<hr class="small">
+
 <article>
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -32,9 +34,13 @@ layout: default
           <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post &rarr;</a>
         </li>
         {% endif %}
-      </ul
+      </ul>
 	</div>
   </div>
 </article>
 
-{% include disqus.html %}
+<div class="row">
+  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    {% include disqus.html %}
+  </div>
+</div>
