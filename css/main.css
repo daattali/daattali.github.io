@@ -38,6 +38,10 @@ blockquote {
   font-style: italic;
 }
 
+#main {
+  padding-top: 150px;
+}
+
 .hideme {
   display: none;
 }
@@ -93,7 +97,7 @@ img::-moz-selection {
   color: #0085a1;
 }  
 
-.navbar-custom #ii {
+.navbar-custom .avatar-container {
   display: none;
 }
 
@@ -109,7 +113,7 @@ img::-moz-selection {
     padding: 0;
   }
   
-  .navbar-custom #ii {
+  .navbar-custom .avatar-container {
     display: block;
 	opacity: 1;
 	-webkit-transition: opacity 0.5s ease-in-out;
@@ -117,7 +121,7 @@ img::-moz-selection {
 	transition: opacity 0.5s ease-in-out;
   }
 
-  .navbar-custom.top-nav-collapse #ii {
+  .navbar-custom.top-nav-collapse .avatar-container {
     opacity: 0;
   }
 }
@@ -129,6 +133,7 @@ img::-moz-selection {
   margin-top: -25px;
 }
 .navbar-custom .avatar-container  .avatar-img-border {
+  width: 100%;
   border-radius: 50%;            
   margin-left: -50%;
   display: inline-block;
@@ -137,6 +142,7 @@ img::-moz-selection {
   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 .navbar-custom .avatar-container  .avatar-img {
+  width: 100%;
   border-radius: 50%;
   display: block;
 }
