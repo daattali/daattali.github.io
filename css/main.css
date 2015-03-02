@@ -48,10 +48,6 @@ hr.small {
   display: none;
 }
 
-.middle {
-  text-align: center;
-}
-
 ::-moz-selection {
   color: white;
   text-shadow: none;
