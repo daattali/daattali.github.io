@@ -44,7 +44,7 @@ footer-links-active:
   linkedin: false
   stackoverflow: false
  
-avatar: "img/deanimg.jpeg"  # image to show in navbar
+avatar: "/img/deanimg.jpeg"  # image to show in navbar
  
 # List of links in the navbar
 navbar-links:
