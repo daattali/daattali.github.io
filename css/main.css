@@ -147,8 +147,8 @@ img::-moz-selection {
 
 @media only screen and (min-width: 768px) {
   .navbar-custom .avatar-container {
-    width: 80px;
-    margin-top: -43px; /* Because of the 20px padding of the navbar, we need +20 to be at the bottom, minus whatever proportion of the image height we want */
+    width: 100px;
+    margin-top: -50px; /* Because of the 20px padding of the navbar, we need +20 to be at the bottom, minus whatever proportion of the image height we want */
 	bottom: auto;
 	height: auto;
   }
