@@ -220,15 +220,20 @@ footer {
   padding: 50px 0;
   background: #F5F5F5;
   border-top: 1px #EAEAEA solid;
+  margin-top: 50px;
 }
 footer .list-inline {
   margin: 0;
   padding: 0;
 }
 footer .copyright {
-  font-size: 14px;
+  font-family: Open Sans;
+  font-size: 16px;
   text-align: center;
   margin-bottom: 0;
+}
+footer .copyright a {
+  color: #777;
 }
 
 
