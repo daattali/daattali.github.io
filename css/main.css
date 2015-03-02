@@ -206,6 +206,10 @@ img::-moz-selection {
 }
 
 /* --- Page layout --- */
+header {
+  margin-bottom: 20px;
+}
+
 header .page-heading {
   text-align: center;
 }
