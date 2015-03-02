@@ -1,17 +1,37 @@
-<div class="wrapper-masthead">
-  <div class="container">
-	<header class="masthead clearfix">
-	  <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Dean Attali</a>
+    </div>
 
-	  <div class="site-info">
-		<h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-		<p class="site-description">{{ site.description }}</p>
-	  </div>
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link 1</a></li>
+		<li><a href="#">Link 2</a></li>
+		<li><a href="#">Link 3</a></li>
+      </ul>
+    </div>
 
-	  <nav>
-		<a href="{{ site.baseurl }}/">Blog</a>
-		<a href="{{ site.baseurl }}/about">About</a>
-	  </nav>
-	</header>
+<div id="ii" style="
+    position: absolute;
+    left: 50%;            
+    width: 100px;
+    margin-top: -25px;
+"><div style="
+    border-radius: 50%;            
+    margin-left: -50%;
+    display: inline-block;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);         -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .8);   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+"><img src="https://pbs.twimg.com/profile_images/507322253776650240/TyAxiMi6.jpeg" style="
+    width: 94px;
+    border-radius: 50%;      display: block;
+    /* margin-left: -50%; */
+"></div></div>	
   </div>
-</div>
+</nav>  
