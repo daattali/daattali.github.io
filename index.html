@@ -18,11 +18,9 @@ Here is a list of all my blog posts!
 	{% endif %}  
   </a>
 
-  <a href="{{ post.url | prepend: site.baseurl }}">
-    <p class="post-meta">
-      Posted on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
-  </a>
+  <p class="post-meta">
+    Posted on {{ post.date | date: "%B %-d, %Y" }}
+  </p>
   
   <div class="post-entry">
     {{ post.content | truncatewords: 50 | strip_html}}
@@ -30,20 +28,19 @@ Here is a list of all my blog posts!
   </div>
   
  </article>
-<hr>
 {% endfor %}
 
 {% if paginator.total_pages > 1 %}
 <ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
+  {% if paginator.previous_page %}
+  <li class="previous">
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+  </li>
+  {% endif %}
+  {% if paginator.next_page %}
+  <li class="next">
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+  </li>
+  {% endif %}
 </ul>
 {% endif %}
