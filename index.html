@@ -23,7 +23,7 @@ Here is a list of all my blog posts!
   </a>
   
   <div class="post-entry">
-    {{ post.content | truncatewords:40}}
+    {{ post.content | truncatewords:40 | strip_html}}
   </div>
 
   <a href="{{ post.url | prepend: site.baseurl }}" class="post-read-more">Read More</a>
