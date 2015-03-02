@@ -264,6 +264,12 @@ header .page-heading .page-subheading {
   font-style: italic;
   margin-top: 0 0 10px;
 }
+.post-preview .post-entry {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.post-preview .post-read-more {
+  font-weight: 800;
+}
 
 @media only screen and (min-width: 768px) {
   .post-preview .post-title {
