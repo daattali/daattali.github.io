@@ -22,7 +22,7 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: 800;
 }
 a {
-  color: #404040;
+  color: #3A85C5;
 }
 a:hover,
 a:focus {
@@ -234,6 +234,11 @@ header .page-heading .page-subheading {
   
 /* --- Post preview --- */
 
+.post-preview a {
+  text-decoration: none;
+  color: #404040;
+}
+
 .post-preview .post-title {
   font-size: 30px;
   margin-top: 30px;
@@ -243,23 +248,15 @@ header .page-heading .page-subheading {
   font-weight: 300;
   margin-bottom: 10px;
 }
-.post-preview > .post-meta {
+.post-preview .post-meta {
   color: #808080;
   font-size: 18px;
   font-style: italic;
   margin-top: 0;
 }
-.post-preview > .post-meta > a {
-  text-decoration: none;
-  color: #404040;
-}
-.post-preview > .post-meta > a:hover,
-.post-preview > .post-meta > a:focus {
-  color: #0085a1;
-  text-decoration: underline;
-}
+
 @media only screen and (min-width: 768px) {
-  .post-preview > a > .post-title {
+  .post-preview .post-title {
     font-size: 36px;
   }
 }

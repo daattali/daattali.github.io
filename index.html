@@ -7,21 +7,34 @@ description: some descriptoin lalala
 Here is a list of all my blog posts!
 
 {% for post in paginator.posts %}
-<div class="post-preview">
+<article class="post-preview">
   <a href="{{ post.url | prepend: site.baseurl }}">
 	<h2 class="post-title">{{ post.title }}</h2>
+  </a>
+  
+  <a href="{{ post.url | prepend: site.baseurl }}">
 	{% if post.subtitle %}
 	<h3 class="post-subtitle">
 	  {{ post.subtitle }}
 	</h3>
-	{% endif %}
+	{% endif %}  
   </a>
-  <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
-</div>
+  
+  <a href="{{ post.url | prepend: site.baseurl }}">
+    <p class="post-meta">
+      Posted on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
+  </a>
+  
+  <div class="post-entry">
+    {{ post.content | truncatewords:40}}
+  </div>
+
+  <a href="{{ post.url | prepend: site.baseurl }}" class="post-read-more">Read More</a>
+</article>
 <hr>
 {% endfor %}
 
-<!-- Pager -->
 {% if paginator.total_pages > 1 %}
 <ul class="pager">
     {% if paginator.previous_page %}
@@ -36,23 +49,3 @@ Here is a list of all my blog posts!
     {% endif %}
 </ul>
 {% endif %}
-
-
-
-and again:
-<div id="main_content_wrap" class="outer">
-	<div class="posts">
-	  {% for post in site.posts %}
-		<article class="post">
-
-		  <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-		  <div class="entry">
-			{{ post.content | truncatewords:40}}
-		  </div>
-
-		  <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-		</article>
-	  {% endfor %}
-	</div>
-</div>
