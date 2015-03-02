@@ -22,5 +22,6 @@ one:
 two:
 
 {% for link_info in page.aaa %}
-{{ link_info }}
+{{ link_info[0] }}aa{{ link_info[1] }}
 {% endfor %}
+ 
