@@ -260,7 +260,7 @@ header .page-heading .page-subheading {
 
 .post-preview .post-title {
   font-size: 30px;
-  margin-top: 30px;
+  margin-top: 0;
 }
 .post-preview .post-subtitle {
   margin: 0;
@@ -289,7 +289,7 @@ header .page-heading .page-subheading {
 /* --- Pager (blog paginator) --- */
 
 .pager {
-  margin: 0;
+  margin: 10px 0 0;
 }
 
 .pager li a {
