@@ -326,7 +326,7 @@ header.header-post .post-heading .post-subheading {
 
 @media only screen and (min-width: 768px) {
   .blog-comments {
-    margin-top: 30px;
+    margin-top: 40px;
   }
 }
 
@@ -360,12 +360,12 @@ header.header-post .post-heading .post-subheading {
 }
 
 .pager.blog-pager {
-  margin-top: 30px;
+  margin-top: 0;
 }
 
 @media only screen and (min-width: 768px) {
   .pager.blog-pager  {
-    margin-top: 40px;
+    margin-top: 10px;
   }
 }
 
