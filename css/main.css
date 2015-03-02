@@ -118,7 +118,8 @@ img::-moz-selection {
   position: absolute;
   -webkit-transition: opacity 0.5s ease-in-out;
   -moz-transition: opacity 0.5s ease-in-out;
-  transition: opacity 0.5s ease-in-out;  
+  transition: opacity 0.5s ease-in-out;
+  left: 50%;
   height: 100%;
   bottom: -50%;
 }
@@ -129,6 +130,7 @@ img::-moz-selection {
   box-shadow: 0 0 8px rgba(0, 0, 0, .8);
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .8);
   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  height: 100%;
 }
 .navbar-custom .avatar-container  .avatar-img {
   height: 100%;
