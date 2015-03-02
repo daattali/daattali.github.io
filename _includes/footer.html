@@ -75,8 +75,10 @@
           {% endif %}		  
         </ul>
         <p class="copyright text-muted">
-		  {{ site.title }} {{ site.time | date: '%Y' }}
-		  &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+		  {{ site.title }}
+		  &nbsp;&bull;&nbsp;
+		  {{ site.time | date: '%Y' }}
+		  &nbsp;&bull;&nbsp;
 		  <a href="{{ site.url }}">{{ site.url-short }}</a>
 	    </p>
       </div>
