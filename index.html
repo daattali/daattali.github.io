@@ -33,7 +33,7 @@ Here is a list of all my blog posts!
 </div>
 
 {% if paginator.total_pages > 1 %}
-<ul class="pager">
+<ul class="pager main-pager">
   {% if paginator.previous_page %}
   <li class="previous">
     <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
