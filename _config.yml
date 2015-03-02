@@ -23,10 +23,10 @@ paginate: 5
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
-#avatar: "/img/deanimg.jpeg"
+avatar: "/img/deanimg.jpeg"
 
 # Name of website to show in the navbar
-title: Dean Attalitest
+title: Dean Attali
 
 # List of links in the navigation bar
 navbar-links:
@@ -60,7 +60,7 @@ footer-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-#url-pretty: "deanattali.com" 
+url-pretty: "deanattali.com" 
 
 # --- Misc --- #
 
