@@ -12,7 +12,7 @@
 
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav navbar-right">
-	    {% for link_info in site.links %}
+	    {% for link_info in site.navbar-links %}
 		{% for link in link_info %}
         <li>
 		  <a href="{{ site.baseurl }}/{{ link[1] }}">{{ link[0] }}</a>
