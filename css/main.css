@@ -208,20 +208,20 @@ footer .copyright a {
 
 /* --- Page layout --- */
 
-header {
+header.header-page {
   margin-bottom: 20px;
 }
 
-header .page-heading {
+header.header-page .page-heading {
   text-align: center;
 }
 
-header .page-heading h1 {
+header.header-page .page-heading h1 {
   font-size: 50px;
   margin-top: 0;
 }
 
-header .page-heading .page-subheading {
+header.header-page .page-heading .page-subheading {
   font-size: 24px;
   line-height: 1.1,
   display: block;
@@ -231,7 +231,7 @@ header .page-heading .page-subheading {
 }
 
 @media only screen and (min-width: 768px) {
-  header .page-heading h1 {
+  header.header-page .page-heading h1 {
     font-size: 80px;
   }
 }
@@ -317,11 +317,30 @@ header .page-heading .page-subheading {
 
 /* --- Post layout--- */
 
-.section-heading {
-  font-size: 36px;
-  margin-top: 60px;
-  font-weight: 700;
+header.header-post {
+  margin-bottom: 20px;
 }
+
+header.header-post .post-heading h1 {
+  font-size: 50px;
+  margin-top: 0;
+}
+
+header.header-post .post-heading .post-subheading {
+  font-size: 24px;
+  line-height: 1.1,
+  display: block;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin: 10px 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  header.header-post .post-heading h1 {
+    font-size: 80px;
+  }
+}
+
 .caption {
   text-align: center;
   font-size: 14px;
