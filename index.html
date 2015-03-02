@@ -24,10 +24,10 @@ Here is a list of all my blog posts!
   
   <div class="post-entry">
     {{ post.content | truncatewords:40 | strip_html}}
+	<a href="{{ post.url | prepend: site.baseurl }}" class="post-read-more">Read More</a>
   </div>
-
-  <a href="{{ post.url | prepend: site.baseurl }}" class="post-read-more">Read More</a>
-</article>
+  
+ </article>
 <hr>
 {% endfor %}
 

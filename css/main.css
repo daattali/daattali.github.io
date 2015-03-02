@@ -262,7 +262,7 @@ header .page-heading .page-subheading {
   color: #808080;
   font-size: 18px;
   font-style: italic;
-  margin-top: 0;
+  margin-top: 0 0 10px;
 }
 
 @media only screen and (min-width: 768px) {
