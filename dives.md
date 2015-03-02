@@ -1,7 +1,8 @@
 ---
+layout: minimal
 title: "Bahama dives Feb 20, 2015"
 date: "Feb 22, 2015"
-main-class: [middle, ff]
+main-class: middle
 ---
 
 # Bahamas dives Feb 20, 2015
