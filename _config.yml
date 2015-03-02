@@ -40,8 +40,8 @@ footer-links-active:
   email: true
   twitter: true
   github: true
-  linkedin: true
-  stackoverflow: true
+  linkedin: false
+  stackoverflow: false
     
 disqus: "deanattali-site"
 google_analytics: "UA-59820529-1"
