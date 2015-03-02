@@ -166,94 +166,6 @@ img::-moz-selection {
 	height: auto;
   }
 }
-  
-/* --- Post preview --- */
-
-.post-preview > a {
-  color: #404040;
-}
-.post-preview > a:hover,
-.post-preview > a:focus {
-  text-decoration: none;
-  color: #0085a1;
-}
-.post-preview > a > .post-title {
-  font-size: 30px;
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
-.post-preview > a > .post-subtitle {
-  margin: 0;
-  font-weight: 300;
-  margin-bottom: 10px;
-}
-.post-preview > .post-meta {
-  color: #808080;
-  font-size: 18px;
-  font-style: italic;
-  margin-top: 0;
-}
-.post-preview > .post-meta > a {
-  text-decoration: none;
-  color: #404040;
-}
-.post-preview > .post-meta > a:hover,
-.post-preview > .post-meta > a:focus {
-  color: #0085a1;
-  text-decoration: underline;
-}
-@media only screen and (min-width: 768px) {
-  .post-preview > a > .post-title {
-    font-size: 36px;
-  }
-}
-
-/* --- Page layout --- */
-header {
-  margin-bottom: 20px;
-}
-
-header .page-heading {
-  text-align: center;
-}
-
-header .page-heading h1 {
-  font-size: 50px;
-  margin-top: 0;
-}
-
-header .page-heading .page-subheading {
-  font-size: 24px;
-  line-height: 1.1,
-  display: block;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  margin: 10px 0 0;
-}
-
-@media only screen and (min-width: 768px) {
-  header .page-heading h1 {
-    font-size: 80px;
-  }
-}
-
-/* --- Post layout--- */
-
-.section-heading {
-  font-size: 36px;
-  margin-top: 60px;
-  font-weight: 700;
-}
-.caption {
-  text-align: center;
-  font-size: 14px;
-  padding: 10px;
-  font-style: italic;
-  margin: 0;
-  display: block;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
 
 /* --- Footer --- */
 
@@ -288,6 +200,86 @@ footer .copyright a {
   footer .copyright {
     font-size: 16px;
   }
+}
+
+/* --- Page layout --- */
+
+header {
+  margin-bottom: 20px;
+}
+
+header .page-heading {
+  text-align: center;
+}
+
+header .page-heading h1 {
+  font-size: 50px;
+  margin-top: 0;
+}
+
+header .page-heading .page-subheading {
+  font-size: 24px;
+  line-height: 1.1,
+  display: block;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin: 10px 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  header .page-heading h1 {
+    font-size: 80px;
+  }
+}
+  
+/* --- Post preview --- */
+
+.post-preview .post-title {
+  font-size: 30px;
+  margin-top: 30px;
+}
+.post-preview .post-subtitle {
+  margin: 0;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.post-preview > .post-meta {
+  color: #808080;
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 0;
+}
+.post-preview > .post-meta > a {
+  text-decoration: none;
+  color: #404040;
+}
+.post-preview > .post-meta > a:hover,
+.post-preview > .post-meta > a:focus {
+  color: #0085a1;
+  text-decoration: underline;
+}
+@media only screen and (min-width: 768px) {
+  .post-preview > a > .post-title {
+    font-size: 36px;
+  }
+}
+
+/* --- Post layout--- */
+
+.section-heading {
+  font-size: 36px;
+  margin-top: 60px;
+  font-weight: 700;
+}
+.caption {
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  font-style: italic;
+  margin: 0;
+  display: block;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 /* --- Buttons --- */
