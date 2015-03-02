@@ -1,4 +1,3 @@
-@import url("normalize.css");
 @import url("pygment_highlights.css");
 
 /* --- General --- */
@@ -184,7 +183,32 @@ img::-moz-selection {
   }
 }
 
-/* --- Post elements --- */
+/* --- Page layout --- */
+header .page-heading {
+  text-align: center;
+}
+
+header .page-heading h1 {
+  font-size: 50px;
+  margin-top: 0;
+}
+
+header .page-heading .page-subheading {
+  font-size: 24px;
+  line-height: 1.1,
+  display: block;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin: 10px 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  header .page-heading h1 {
+    font-size: 80px;
+  }
+}
+
+/* --- Post layout--- */
 
 .section-heading {
   font-size: 36px;
