@@ -122,6 +122,25 @@ img::-moz-selection {
   }
 }
 
+.navbar-custom .avatar-container {
+  position: absolute;
+  left: 50%;            
+  width: 100px;
+  margin-top: -25px;
+}
+.navbar-custom .avatar-container  .avatar-img-border {
+  border-radius: 50%;            
+  margin-left: -50%;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+.navbar-custom .avatar-container  .avatar-img {
+  border-radius: 50%;
+  display: block;
+}
+
 /* --- Post preview --- */
 
 .post-preview > a {
