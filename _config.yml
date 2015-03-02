@@ -35,7 +35,7 @@ author:
   stackoverflow: "users/3943160/daattali"
  
  # You can quickly enable/disable links from showing in the footer
- footer-links-active:
+footer-links-active:
   rss: false
   facebook: true
   email: true
@@ -52,8 +52,6 @@ navbar-links:
   About Me: "aboutme"
   Projects: "projects"
   Blog: "blog"
-  
-
     
 disqus: "deanattali-site"  # Your disqus shortname
 google_analytics: "UA-59820529-1"  # Your Google Analytics ID
