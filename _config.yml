@@ -76,6 +76,10 @@ defaults:
     values:
       layout: "default"
 
+# Generate a sitemap
+gems:
+  - jekyll-sitemap
+
 # Exclude these files from production site
 exclude:
   - CNAME
