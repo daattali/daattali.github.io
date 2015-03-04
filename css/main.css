@@ -259,7 +259,7 @@ footer .theme-by {
 /* --- Post and page layout --- */
 
 .intro-header {
-  padding: 80px 0 20px;
+  margin: 80px 0 20px;
 }
 .intro-header.big-img {
   background: no-repeat center center;
@@ -267,7 +267,6 @@ footer .theme-by {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  margin-bottom: 20px;
   margin-top: 51px; /* The small navbar is 50px tall + 1px border */
 }
 .intro-header .page-heading {
@@ -297,7 +296,7 @@ footer .theme-by {
 }
 @media only screen and (min-width: 768px) {
   .intro-header {
-    padding-top: 130px;
+    margin-top: 130px;
   }
   .intro-header.big-img {
     margin-top: 91px;  /* Full navbar is small navbar + 20px padding on each side when expanded */
