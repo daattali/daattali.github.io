@@ -24,4 +24,4 @@ $("#header-big-imgs").load(function() {
     var src = bigImgEl.getAttribute("data-big-img-" + randNum);
     $(".intro-header.big-img").css("background-image", 'url(' + src + ')');
   }
-}
+});
