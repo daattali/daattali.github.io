@@ -7,11 +7,7 @@ layout: base
 {% if page.bigimg and page.bigimg.first and page.bigimg.size > 1 %}
   {% assign multiple-imgs = true %}
   <div id="header-big-imgs" data-num-img={{ page.bigimg.size }}
-    {% for bigimg in page.bigimg %}
-	  {% for img-info in bigimg %}
-	    data-tryf={{ img-info }}
-	  {% endfor %}
-    {% endfor %}
+
   ></div>
 {% endif %}
 
