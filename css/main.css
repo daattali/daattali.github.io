@@ -288,12 +288,15 @@ footer .theme-by {
 }
 .intro-header .page-heading .page-subheading,
 .intro-header .post-heading .post-subheading {
-  font-size: 24px;
+  font-size: 26px;
   line-height: 1.1;
   display: block;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   margin: 10px 0 0;
+}
+.intro-header .post-heading .post-subheading {
+  margin-bottom: 5px;
 }
 .intro-header.big-img .page-heading hr {
   box-shadow: 1px 1px 1px #000;
