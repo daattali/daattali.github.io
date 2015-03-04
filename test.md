@@ -16,4 +16,6 @@ one:
 two:
 {% for a in page.aa %}
 {{ a[0] }}
+:
+{{ a[1] }}
 {% endfor %}
