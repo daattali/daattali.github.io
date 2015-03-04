@@ -16,8 +16,7 @@ $('#main-navbar').on('hidden.bs.collapse', function () {
 })
 
 // If the page was given multiple large images to randomly select from
-$("#header-big-imgs").load(function() {
-console.log("F");
+$(document).ready(function() {
   if ($("#header-big-imgs").length > 0) {
     var bigImgEl = $("#header-big-imgs")[0];
     var numImgs = bigImgEl.getAttribute("data-num-img");
@@ -26,5 +25,3 @@ console.log("F");
     $(".intro-header.big-img").css("background-image", 'url(' + src + ')');
   }
 });
-
-$(document).ready(function() {console.log("H");});
