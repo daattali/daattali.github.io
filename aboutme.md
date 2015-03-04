@@ -1,6 +1,8 @@
 ---
 layout: page
-
+bigimg:
+  - "/img/big-imgs/israel-camel.jpeg" : "Dead Sea, Israel (2010)"
+  - "/img/big-imgs/israel-dive1.jpg" : "Eilat, Israel (2013)" 
 ---
 
 My name is Inigo Montoya. I have the following qualities:
