@@ -8,7 +8,8 @@ layout: base
   {% assign multiple-imgs = true %}
   <div id="header-big-imgs" data-num-img={{ page.bigimg.size }}
     {% for bigimg in page.bigimg %}
-	  data-big-img-{{ forloop.index }}="{{ bigimg | prepend: site.baseurl | replace: '//', '/' }}"
+	  data-big-img-{{ forloop.index }}="{{ bigimg[0] | prepend: site.baseurl | replace: '//', '/' }}"
+	  data-img-desc-{{ forloop.index }}="{{ bigimg[1] }}"
     {% endfor %}
   ></div>
 {% endif %}
