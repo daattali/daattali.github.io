@@ -13,7 +13,7 @@ bigimgs:
     {% for bigimg in page.bigimgs %}
 	  data-big-img-{{ forloop.index }}="bigimg"
     {% endfor %}
-  </div>
+  ></div>
 {% endif %}
 
 <header class="intro-header {% if page.bigimg %}big-img{% endif %}"
