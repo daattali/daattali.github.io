@@ -1,6 +1,6 @@
 ---
 layout: page
-title: lala
+subtitle: lala
 ---
 
 content here
