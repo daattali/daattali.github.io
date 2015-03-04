@@ -1,23 +1,20 @@
 ---
 layout: base
-bigimgs: 
-  - abcd
-  - efgh
 ---
 
 {% if page.bigimg or page.title %}
 
-{% if page.bigimgs and page.bigimgs.first and page.bigimgs.size > 1 %}
+{% if page.bigimg and page.bigimg.first and page.bigimg.size > 1 %}
   {% assign multiple-imgs = true %}
   <div id="header-big-imgs"
-    {% for bigimg in page.bigimgs %}
+    {% for bigimg in page.bigimg %}
 	  data-big-img-{{ forloop.index }}="{{ bigimg }}"
     {% endfor %}
   ></div>
 {% endif %}
 
 <header class="intro-header {% if page.bigimg %}big-img{% endif %}"
-style="{% if page.bigimg %}background-image: url('{{ page.bigimg }}');{% endif %}">
+style="{% unless multiple-imgs %}background-image: url('{{ page.bigimg }}');{% endunless %}">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -35,11 +32,6 @@ style="{% if page.bigimg %}background-image: url('{{ page.bigimg }}');{% endif %
 {% else %}
 <div class="intro-header"></div>
 {% endif %}
-
-{{ page.bigimgs }}
-one{{ page.bigimgs.first }}
-two{{ first(page.bigimgs) }}
-three{{ page.bigimgs | first }}
 
 <div class="container" role="main">
   <div class="row">
