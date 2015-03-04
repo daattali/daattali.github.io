@@ -1,6 +1,8 @@
 ---
 layout: base
-bigimgs: dsfd
+bigimgs: 
+  - abcd
+  - efgh
 ---
 
 {% if page.bigimg or page.title %}
@@ -25,6 +27,7 @@ style="{% if page.bigimg %}background-image: url('{{ page.bigimg }}');{% endif %
 <div class="intro-header"></div>
 {% endif %}
 
+{{ page.bigimgs }}
 {{ page.bigimgs.first }}
 {{ first(page.bigimgs) }}
 {{ page.bigimgs | first }}
