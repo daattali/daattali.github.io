@@ -328,7 +328,8 @@ footer .theme-by {
   .intro-header.big-img {
     margin-top: 91px;  /* Full navbar is small navbar + 20px padding on each side when expanded */
   }	
-  .intro-header.big-img .page-heading {
+  .intro-header.big-img .page-heading,
+  .intro-header.big-img .post-heading  {
     padding: 150px 0;
   }  
   .intro-header .page-heading h1 {
