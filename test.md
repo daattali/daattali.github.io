@@ -1,13 +1,6 @@
 ---
 layout: default
-aa:
-  - "bb"
-  - "cc"
-  - "asdfds": "vvvvvv"
-  - "ddd"
-  - "assdffsd" : "/img/sdfdsfsdffgfd-f"
-  - "vvv"
-  - "/img/sdfdsfsdffgfd-f" : "pic"
+aa: sssss
 ---
 
 {% for a in page.aa %}
