@@ -2,8 +2,7 @@
 layout: page
 title: About me
 subtitle: Why you'd want to go on a date with me
-bigimg:
-  - "/img/big-imgs/costa-rica-house.JPG" : "Montezuma, Costa Rica (2011)"
+bigimg: "/img/big-imgs/grouse-grind.jpg"
 ---
 
 My name is Inigo Montoya. I have the following qualities:
