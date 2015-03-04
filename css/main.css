@@ -40,15 +40,6 @@ hr.small {
   border-radius: 3px;
 }
 
-.main-content {
-  padding-top: 80px;
-}
-@media only screen and (min-width: 768px) {
-  .main-content {
-    padding-top: 130px;
-  }
-}
-
 .main-explain-area {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 15px inherit;
@@ -268,25 +259,24 @@ footer .theme-by {
 /* --- Post and page layout --- */
 
 .intro-header {
+  padding: 80px 0 20px;
+}
+.intro-header.big-img {
   background: no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
   margin-bottom: 20px;
-}
-.intro-header .page-heading {
-  padding: 100px 0;
-  color: #FFF;
-  text-shadow: 0 0 3px #000;
-}
-@media only screen and (min-width: 768px) {
-  .intro-header .page-heading {
-    padding: 150px 0;
-  }
+  margin-top: 51px; /* The small navbar is 50px tall + 1px border */
 }
 .intro-header .page-heading {
   text-align: center;
+}
+.intro-header .page-heading.big-img {
+  padding: 100px 0;
+  color: #FFF;
+  text-shadow: 0 0 3px #000;
 }
 .intro-header .page-heading h1 {
   margin-top: 0;
@@ -300,33 +290,31 @@ footer .theme-by {
   font-weight: 300;
   margin: 10px 0 0;
 }
+.intro-header .page-heading hr {
+  box-shadow: 0 0 3px #000;
+  -webkit-box-shadow: 0 0 3px #000;
+  -moz-box-shadow: 0 0 3px #000;
+}
 @media only screen and (min-width: 768px) {
+  .intro-header {
+    padding-top: 130px;
+  }
+  .intro-header.big-img {
+    margin-top: 91px;  /* Full navbar is small navbar + 20px padding on each side when expanded */
+  }	
+  .intro-header .page-heading.big-img {
+    padding: 150px 0;
+  }  
   .intro-header .page-heading h1 {
     font-size: 80px;
   }
 }
-
-
-header.header-page {
-  margin-bottom: 20px;
-}
-
-header.header-page .page-heading {
-  text-align: center;
-}
-
 header.header-post .post-heading h1 {
   font-size: 35px;
   margin-top: 0;
 }
 
-header.header-page .page-heading h1 {
-  font-size: 50px;
-  margin-top: 0;
-}
-
-header.header-post .post-heading .post-subheading,
-header.header-page .page-heading .page-subheading {
+header.header-post .post-heading .post-subheading {
   font-size: 24px;
   line-height: 1.1;
   display: block;
@@ -342,12 +330,6 @@ header.header-post .post-heading .post-subheading {
 @media only screen and (min-width: 768px) {
   header.header-post .post-heading h1 {
     font-size: 50px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  header.header-page .page-heading h1 {
-    font-size: 80px;
   }
 }
 
