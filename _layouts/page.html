@@ -6,14 +6,14 @@ layout: base
 
 {% if page.bigimg and page.bigimg.first and page.bigimg.size > 1 %}
   {% assign multiple-imgs = true %}
-  <div id="header-big-imgs" data-num-img={{ page.bigimg.size }} data-test="f"
+  <div id="header-big-imgs" data-num-img={{ page.bigimg.size }}
     {% for bigimg in page.bigimg %}
 	  {% for img-info in bigimg %}
 	    {% if img-info[0] %}
-		  data-big-img-{{ forloop.index }}="{{ img-info[0] | prepend: site.baseurl | replace: '//', '/' }}"
-		  data-img-desc-{{ forloop.index }}="{{ img-info[1] }}"
+		  data-big-img-5="{{ img-info[0] | prepend: site.baseurl | replace: '//', '/' }}"
+		  data-img-desc-5="{{ img-info[1] }}"
 		{% else %}
-		  data-big-img-{{ forloop.index }}="{{ img-info | prepend: site.baseurl | replace: '//', '/' }}"
+		  data-big-img-5="{{ img-info | prepend: site.baseurl | replace: '//', '/' }}"
 		{% endif %}
 	  {% endfor %}
     {% endfor %}
