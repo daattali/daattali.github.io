@@ -5,7 +5,7 @@ layout: base
 {% if page.bigimg or page.title %}
 
 {% if page.bigimg %}
-  <div id="header-big-imgs" data-num-img={{ page.bigimg.size }}
+  <div id="header-big-imgs" data-num-img={% if page.bigimg.first %}{{ page.bigimg.size }}{% else %}1{% endif %}
     {% for bigimg in page.bigimg %}
 	  {% assign imgnum = forloop.index %}
 	  {% for imginfo in bigimg %}

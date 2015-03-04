@@ -260,6 +260,7 @@ footer .theme-by {
 
 .intro-header {
   margin: 80px 0 20px;
+  position: relative;
 }
 .intro-header.big-img {
   background: no-repeat center center;
@@ -309,6 +310,16 @@ footer .theme-by {
 }
 .intro-header.big-img .post-heading .post-meta {
   color: #EEE;
+}
+.intro-header.big-img .img-desc {
+  background: rgba(230,230,230,0.5);
+  position: absolute;
+  padding: 5px 10px;
+  font-size: 16px;
+  color: #FFF;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  right: 0;
+  top: 0;
 }
 @media only screen and (min-width: 768px) {
   .intro-header {
