@@ -1,6 +1,6 @@
 ---
 layout: default
-aa:
+bigimgs:
   - "/img/big-imgs/costa-rica-house.JPG" : "Montezuma, Costa Rica (2011)"
   - "/img/big-imgs/grouse-grind.jpg" : "Vancouver, Canada (2014)"
   - "/img/big-imgs/hawaii1.jpg" : "Kauai, HI, USA (2014)"
@@ -35,14 +35,12 @@ aa:
   - "/img/big-imgs/costa-rica-climb.JPG" : "Manuel Antonio, Costa Rica (2011)"
 ---
 
-{% for a in page.aa %}
-{% for o in a %}
-{% if o[0] %}
-{{ o[0] }}
-:
-{{ o[1] }}
-{% else %}
-{{ o }}
-{% endif %}
+{% for bigimg in page.bigimgs %}
+{% for img-info in bigimg %}
+  {% if img-info[0] %}
+  {{ img-info[0] }} : {{ img-info[1] }} 
+  {% else %}
+   {{ img-info }}
+  {% endif %}
 {% endfor %}
 {% endfor %}
