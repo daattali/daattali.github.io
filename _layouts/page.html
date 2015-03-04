@@ -1,9 +1,20 @@
 ---
 layout: base
-bigimgs: asdflkj
+bigimgs: 
+  - abcd
+  - efgh
 ---
 
 {% if page.bigimg or page.title %}
+
+{% if page.bigimgs and page.bigimgs.first and page.bigimgs.size > 1 %}
+  {% assign multiple-imgs = true %}
+  <div id="header-big-imgs"
+    {% for bigimg in page.bigimgs %}
+	  data-big-img-{{ forloop.index }}="bigimg"
+    {% endfor %}
+  </div>
+{% endif %}
 
 <header class="intro-header {% if page.bigimg %}big-img{% endif %}"
 style="{% if page.bigimg %}background-image: url('{{ page.bigimg }}');{% endif %}">
