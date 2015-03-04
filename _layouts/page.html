@@ -11,7 +11,7 @@ bigimgs:
   {% assign multiple-imgs = true %}
   <div id="header-big-imgs"
     {% for bigimg in page.bigimgs %}
-	  data-big-img-{{ forloop.index }}="bigimg"
+	  data-big-img-{{ forloop.index }}="{{ bigimg }}"
     {% endfor %}
   ></div>
 {% endif %}
