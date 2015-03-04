@@ -18,10 +18,14 @@ $('#main-navbar').on('hidden.bs.collapse', function () {
 // If the page was given multiple large images to randomly select from
 $(document).ready(function() {
   if ($("#header-big-imgs").length > 0) {
-    var bigImgEl = $("#header-big-imgs")[0];
-    var numImgs = bigImgEl.getAttribute("data-num-img");
+    var bigImgEl = $("#header-big-imgs");
+    var numImgs = bigImgEl.attr("data-num-img");
 	var randNum = Math.floor((Math.random() * numImgs) + 1);
-    var src = bigImgEl.getAttribute("data-big-img-" + randNum);
+    var src = bigImgEl.attr("data-img-src-" + randNum);
     $(".intro-header.big-img").css("background-image", 'url(' + src + ')');
+	var desc = bigImgEl.attr("data-img-desc-" + randNum);
+	if (typeof desc !== typeof undefined && desc !== false) {
+	  $(".intro-header.big-img").append("<span class='img-desc'>" + desc + "</span>")
+    }
   }
 });
