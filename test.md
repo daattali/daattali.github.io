@@ -1,7 +1,7 @@
 ---
 layout: default
 bigimg:
-  - "/img/big-imgs/costa-rica-house.JPG" : "Montezuma, Costa Rica (2011)"
+  - "/img/big-imgs/costa-rica-house.JPG" : "kjhkj"
 ---
 
 {% for a in page.bigimg %}
