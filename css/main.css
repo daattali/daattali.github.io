@@ -272,7 +272,8 @@ footer .theme-by {
 .intro-header .page-heading {
   text-align: center;
 }
-.intro-header.big-img .page-heading {
+.intro-header.big-img .page-heading,
+.intro-header.big-img .post-heading {
   padding: 100px 0;
   color: #FFF;
   text-shadow: 0 0 3px #000;
@@ -281,7 +282,12 @@ footer .theme-by {
   margin-top: 0;
   font-size: 50px;
 }
-.intro-header .page-heading .page-subheading {
+.intro-header .post-heading h1 {
+  margin-top: 0;
+  font-size: 35px;
+}
+.intro-header .page-heading .page-subheading,
+.intro-header .post-heading .post-subheading {
   font-size: 24px;
   line-height: 1.1;
   display: block;
@@ -307,27 +313,7 @@ footer .theme-by {
   .intro-header .page-heading h1 {
     font-size: 80px;
   }
-}
-header.header-post .post-heading h1 {
-  font-size: 35px;
-  margin-top: 0;
-}
-
-header.header-post .post-heading .post-subheading {
-  font-size: 24px;
-  line-height: 1.1;
-  display: block;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  margin: 10px 0 0;
-}
-
-header.header-post .post-heading .post-subheading {
-  margin-bottom: 20px;
-}
-
-@media only screen and (min-width: 768px) {
-  header.header-post .post-heading h1 {
+  .intro-header .post-heading h1 {
     font-size: 50px;
   }
 }
