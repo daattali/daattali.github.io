@@ -15,7 +15,10 @@ one:
 <br/>
 two:
 {% for a in page.aa %}
-{{ a[0] }}
+{% for o in a %}
+{{ o }}
+{{ o[0] }}
 :
-{{ a[1] }}
+{{ o[1] }}
+{% endfor %}
 {% endfor %}
