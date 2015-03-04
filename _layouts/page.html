@@ -9,12 +9,7 @@ layout: base
   <div id="header-big-imgs" data-num-img={{ page.bigimg.size }}
     {% for bigimg in page.bigimg %}
 	  {% for img-info in bigimg %}
-	    {% if img-info[0] %}
-		  data-big-img-5="{{ img-info[0] | prepend: site.baseurl | replace: '//', '/' }}"
-		  data-img-desc-5="{{ img-info[1] }}"
-		{% else %}
-		  data-big-img-5="{{ img-info | prepend: site.baseurl | replace: '//', '/' }}"
-		{% endif %}
+	    data-tryf={{ img-info }}
 	  {% endfor %}
     {% endfor %}
   ></div>
