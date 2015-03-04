@@ -28,9 +28,9 @@ style="{% if page.bigimg %}background-image: url('{{ page.bigimg }}');{% endif %
 {% endif %}
 
 {{ page.bigimgs }}
-{{ page.bigimgs.first }}
-{{ first(page.bigimgs) }}
-{{ page.bigimgs | first }}
+one{{ page.bigimgs.first }}
+two{{ first(page.bigimgs) }}
+three{{ page.bigimgs | first }}
 
 <div class="container" role="main">
   <div class="row">
