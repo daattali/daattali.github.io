@@ -8,9 +8,9 @@ layout: base
   {% assign multiple-imgs = true %}
   <div id="header-big-imgs" data-num-img={{ page.bigimg.size }}
     {% for bigimg in page.bigimg %}
-	  
-	    data-tryf={{ bigimg }}
-	  
+	  {% for img-info in bigimg %}
+	    
+	  {% endfor %}
     {% endfor %}
   ></div>
 {% endif %}
