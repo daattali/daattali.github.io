@@ -1,7 +1,7 @@
 ---
 layout: default
 aa:
-  - "/img/big-imgs/costa-rica-house.JPG" : "kjhkj"
+  - "fd" : "kjhkj"
 ---
 
 {% for a in page.aa %}
