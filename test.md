@@ -36,11 +36,11 @@ bigimgs:
 ---
 
 {% for bigimg in page.bigimgs %}
-{% for img-info in bigimg %}
-  {% if img-info[0] %}
-  {{ img-info[0] }} : {{ img-info[1] }} 
+{% for imginfo in bigimg %}
+  {% if imginfo[0] %}
+  {{ imginfo[0] }} : {{ imginfo[1] }} 
   {% else %}
-   {{ img-info }}
+   {{ imginfo }}
   {% endif %}
 {% endfor %}
 {% endfor %}
