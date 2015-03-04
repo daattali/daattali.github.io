@@ -5,20 +5,19 @@ aa:
   - "cc"
   - "asdfds": "vvvvvv"
   - "ddd"
+  - "assdffsd" : "/img/sdfdsfsdffgfd-f"
+  - "vvv"
+  - "/img/sdfdsfsdffgfd-f" : "pic"
 ---
 
-one:
-{% for a in page.aa %}
-{{ a }}
-{% endfor %}
-
-<br/>
-two:
 {% for a in page.aa %}
 {% for o in a %}
-{{ o }}
+{% if o[0] %}
 {{ o[0] }}
 :
 {{ o[1] }}
+{% else %}
+{{ o }}
+{% endif %}
 {% endfor %}
 {% endfor %}
