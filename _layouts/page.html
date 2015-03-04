@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: base
 ---
 
 {% if page.bigimg or page.title %}
@@ -20,7 +20,7 @@ style="{% if page.bigimg %}background-image: url('{{ page.bigimg }}');{% endif %
   </div>
 </header>
 {% else %}
-<header class="intro-header"></header>
+<div class="intro-header"></div>
 {% endif %}
 
 <div class="container" role="main">
