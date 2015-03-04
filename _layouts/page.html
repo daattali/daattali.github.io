@@ -4,7 +4,22 @@ layout: base
 
 {% if page.bigimg or page.title %}
 
-
+{% if page.bigimg and page.bigimg.first and page.bigimg.size > 1 %}
+  {% assign multiple-imgs = true %}
+  <div id="header-big-imgs" data-num-img={{ page.bigimg.size }} data-test="f"
+    {% for bigimg in page.bigimg %}
+	  {% assign img-num = forloop.index %}
+	  {% for img-info in bigimg %}
+	    {% if img-info[0] %}
+		  data-big-img-{{ img-num }}="{{ img-info[0] | prepend: site.baseurl | replace: '//', '/' }}"
+		  data-img-desc-{{ img-num }}="{{ img-info[1] }}"
+		{% else %}
+		  data-big-img-{{ img-num }}="{{ img-info | prepend: site.baseurl | replace: '//', '/' }}"
+		{% endif %}
+	  {% endfor %}
+    {% endfor %}
+  ></div>
+{% endif %}
 
 <header class="intro-header {% if page.bigimg %}big-img{% endif %}"
 style="{% unless multiple-imgs %}background-image: url('{{ page.bigimg | prepend: site.baseurl | replace: '//', '/' }}');{% endunless %}">
