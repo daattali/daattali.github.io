@@ -1,5 +1,6 @@
 ---
 layout: base
+bigimgs: ffffff
 ---
 
 {% if page.bigimg or page.title %}
@@ -23,7 +24,7 @@ style="{% if page.bigimg %}background-image: url('{{ page.bigimg }}');{% endif %
 <div class="intro-header"></div>
 {% endif %}
 
-<div>{{ page.bigimgs | size }}</div>
+{{ page.bigimgs.first }}
 
 <div class="container" role="main">
   <div class="row">
