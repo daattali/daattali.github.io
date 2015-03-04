@@ -3,9 +3,7 @@ layout: page
 title: About me
 subtitle: Why you'd want to go on a date with me
 bigimg:
-  - "/img/big-imgs/grouse-grind.jpg" 
-  - "/img/big-imgs/israel-camel.jpeg" : "camel"
-  - "/img/big-imgs/israel-dive1.jpg" 
+  - "/img/big-imgs/grouse-grind.jpg" : grind
 ---
 
 My name is Inigo Montoya. I have the following qualities:
