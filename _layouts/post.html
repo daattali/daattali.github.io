@@ -19,39 +19,29 @@ style="{% if page.bigimg %}background-image: url('{{ page.bigimg }}');{% endif %
   </div>
 </header>
 
-<article role="main">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main">
 	    {{ content }}
-	  </div>
+	  </article>
+	  
+      <ul class="pager blog-pager">
+        {% if page.previous.url %}
+        <li class="previous">
+          <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Previous Post</a>
+        </li>
+        {% endif %}
+        {% if page.next.url %}
+        <li class="next">
+          <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post &rarr;</a>
+        </li>
+        {% endif %}
+      </ul>
+
+      <div class="blog-comments">
+	    {% include disqus.html %}
+      </div>
     </div>
   </div>
-</article>
-
-<div class="container">
-<div class="row">
-  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    <ul class="pager blog-pager">
-      {% if page.previous.url %}
-      <li class="previous">
-        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Previous Post</a>
-      </li>
-      {% endif %}
-      {% if page.next.url %}
-      <li class="next">
-        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post &rarr;</a>
-      </li>
-      {% endif %}
-    </ul>
-  </div>
-</div>
-</div>
-
-<div class="container">
-<div class="row blog-comments">
-  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    {% include disqus.html %}
-  </div>
-</div>
 </div>
