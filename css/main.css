@@ -267,6 +267,46 @@ footer .theme-by {
 
 /* --- Post and page layout --- */
 
+.intro-header {
+  background: no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  margin-bottom: 20px;
+}
+.intro-header .page-heading {
+  padding: 100px 0;
+  color: #FFF;
+  text-shadow: 0 0 3px #000;
+}
+@media only screen and (min-width: 768px) {
+  .intro-header .page-heading {
+    padding: 150px 0;
+  }
+}
+.intro-header .page-heading {
+  text-align: center;
+}
+.intro-header .page-heading h1 {
+  margin-top: 0;
+  font-size: 50px;
+}
+.intro-header .page-heading .page-subheading {
+  font-size: 24px;
+  line-height: 1.1;
+  display: block;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin: 10px 0 0;
+}
+@media only screen and (min-width: 768px) {
+  .intro-header .page-heading h1 {
+    font-size: 80px;
+  }
+}
+
+
 header.header-page {
   margin-bottom: 20px;
 }
