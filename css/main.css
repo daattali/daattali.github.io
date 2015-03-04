@@ -289,7 +289,7 @@ footer .theme-by {
   font-weight: 300;
   margin: 10px 0 0;
 }
-.intro-header .page-heading hr {
+.intro-header.big-img .page-heading hr {
   box-shadow: 0 0 3px #000;
   -webkit-box-shadow: 0 0 3px #000;
   -moz-box-shadow: 0 0 3px #000;
