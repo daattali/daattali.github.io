@@ -37,6 +37,7 @@ bigimgs:
 
 {% for bigimg in page.bigimgs %}
 {% for imginfo in bigimg %}
+{{ forloop.index }}
   {% if imginfo[0] %}
   {{ imginfo[0] }} : {{ imginfo[1] }} 
   {% else %}
