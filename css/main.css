@@ -312,14 +312,14 @@ footer .theme-by {
   color: #EEE;
 }
 .intro-header.big-img .img-desc {
-  background: rgba(230,230,230,0.5);
+  background: rgba(30, 30, 30, 0.6);
   position: absolute;
   padding: 5px 10px;
-  font-size: 16px;
-  color: #FFF;
+  font-size: 14px;
+  color: #EEE;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   right: 0;
-  top: 0;
+  bottom: 0;
 }
 @media only screen and (min-width: 768px) {
   .intro-header {
@@ -336,6 +336,9 @@ footer .theme-by {
   }
   .intro-header .post-heading h1 {
     font-size: 50px;
+  }
+  .intro-header.big-img .img-desc {
+    font-size: 11px;
   }
 }
 
