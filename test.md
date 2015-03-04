@@ -1,6 +1,6 @@
 ---
 layout: default
-aa: sssss
+aa: sssss : sd
 ---
 
 {% for a in page.aa %}
