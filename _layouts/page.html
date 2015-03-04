@@ -8,13 +8,13 @@ layout: base
   {% assign multiple-imgs = true %}
   <div id="header-big-imgs" data-num-img={{ page.bigimg.size }}
     {% for bigimg in page.bigimg %}
-	  data-big-img-{{ forloop.index }}="{{ site.baseurl }}/{{ bigimg }}"
+	  data-big-img-{{ forloop.index }}="{{ bigimg | prepend: site.baseurl | replace: '//', '/' }}"
     {% endfor %}
   ></div>
 {% endif %}
 
 <header class="intro-header {% if page.bigimg %}big-img{% endif %}"
-style="{% unless multiple-imgs %}background-image: url('{{ site.baseurl }}/{{ page.bigimg }}');{% endunless %}">
+style="{% unless multiple-imgs %}background-image: url('{{ page.bigimg | prepend: site.baseurl | replace: '//', '/' }}');{% endunless %}">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
