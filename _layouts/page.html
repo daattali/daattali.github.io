@@ -8,13 +8,12 @@ layout: base
   {% assign multiple-imgs = true %}
   <div id="header-big-imgs" data-num-img={{ page.bigimg.size }} data-test="f"
     {% for bigimg in page.bigimg %}
-	  {% assign img-num = forloop.index %}
 	  {% for img-info in bigimg %}
 	    {% if img-info[0] %}
-		  data-big-img-{{ img-num }}="{{ img-info[0] | prepend: site.baseurl | replace: '//', '/' }}"
-		  data-img-desc-{{ img-num }}="{{ img-info[1] }}"
+		  data-big-img-{{ forloop.index }}="{{ img-info[0] | prepend: site.baseurl | replace: '//', '/' }}"
+		  data-img-desc-{{ forloop.index }}="{{ img-info[1] }}"
 		{% else %}
-		  data-big-img-{{ img-num }}="{{ img-info | prepend: site.baseurl | replace: '//', '/' }}"
+		  data-big-img-{{ forloop.index }}="{{ img-info | prepend: site.baseurl | replace: '//', '/' }}"
 		{% endif %}
 	  {% endfor %}
     {% endfor %}
