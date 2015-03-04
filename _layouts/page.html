@@ -7,7 +7,17 @@ layout: base
 {% if page.bigimg and page.bigimg.first and page.bigimg.size > 1 %}
   {% assign multiple-imgs = true %}
   <div id="header-big-imgs" data-num-img={{ page.bigimg.size }}
-
+    {% for bigimg in page.bigimg %}
+	  {% assign imgnum =  %}
+	  {% for imginfo in bigimg %}
+	    {% if imginfo[0] %}
+		  data-big-img-{{ imgnum }}="{{ imginfo[0] | prepend: site.baseurl | replace: '//', '/' }}"
+		  data-img-desc-{{ imgnum }}="{{ imginfo[1] }}"
+		{% else %}
+		  data-big-img-{{ imgnum }}="{{ imginfo | prepend: site.baseurl | replace: '//', '/' }}"
+		{% endif %}
+	  {% endfor %}
+    {% endfor %}
   ></div>
 {% endif %}
 
