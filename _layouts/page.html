@@ -2,42 +2,7 @@
 layout: base
 ---
 
-{% if page.bigimg or page.title %}
-
-{% if page.bigimg %}
-  <div id="header-big-imgs" data-num-img={% if page.bigimg.first %}{{ page.bigimg.size }}{% else %}1{% endif %}
-    {% for bigimg in page.bigimg %}
-	  {% assign imgnum = forloop.index %}
-	  {% for imginfo in bigimg %}
-	    {% if imginfo[0] %}
-		  data-img-src-{{ imgnum }}="{{ imginfo[0] | prepend: site.baseurl | replace: '//', '/' }}"
-		  data-img-desc-{{ imgnum }}="{{ imginfo[1] }}"
-		{% else %}
-		  data-img-src-{{ imgnum }}="{{ imginfo | prepend: site.baseurl | replace: '//', '/' }}"
-		{% endif %}
-	  {% endfor %}
-    {% endfor %}
-  ></div>
-{% endif %}
-
-<header class="intro-header {% if page.bigimg %}big-img{% endif %}">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-heading">
-          <h1>{% if page.title %}{{ page.title }}{% else %}<br/>{% endif %}</h1>
-		  {% if page.subtitle %}
-          <hr class="small">
-          <span class="page-subheading">{{ page.subtitle }}</span>
-		  {% endif %}
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-{% else %}
-<div class="intro-header"></div>
-{% endif %}
+{% include header.html type="page" %}
 
 <div class="container" role="main">
   <div class="row">

@@ -2,22 +2,7 @@
 layout: base
 ---
 
-<header class="intro-header {% if page.bigimg %}big-img{% endif %}"
-style="{% if page.bigimg %}background-image: url('{{ page.bigimg }}');{% endif %}">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-heading">
-          <h1>{{ page.title }}</h1>
-		  {% if page.subtitle %}
-          <h2 class="post-subheading">{{ page.subtitle }}</h2>
-		  {% endif %}
-		  <span class="post-meta">Posted on {{ page.date | date: "%B %-d, %Y" }}</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
+{% include header.html type="post" %}
 
 <div class="container">
   <div class="row">
