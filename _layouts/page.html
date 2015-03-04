@@ -4,6 +4,7 @@ bigimgs: dsfd
 ---
 
 {% if page.bigimg or page.title %}
+
 <header class="intro-header {% if page.bigimg %}big-img{% endif %}"
 style="{% if page.bigimg %}background-image: url('{{ page.bigimg }}');{% endif %}">
   <div class="container">
@@ -24,8 +25,9 @@ style="{% if page.bigimg %}background-image: url('{{ page.bigimg }}');{% endif %
 <div class="intro-header"></div>
 {% endif %}
 
-{{ page.bigimgs |first }}
-{{ page.bigimgs.size }}
+{{ page.bigimgs.first }}
+{{ first(page.bigimgs) }}
+{{ page.bigimgs | first }}
 
 <div class="container" role="main">
   <div class="row">
