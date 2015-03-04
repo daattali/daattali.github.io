@@ -273,7 +273,7 @@ footer .theme-by {
 .intro-header .page-heading {
   text-align: center;
 }
-.intro-header .page-heading.big-img {
+.intro-header.big-img .page-heading {
   padding: 100px 0;
   color: #FFF;
   text-shadow: 0 0 3px #000;
@@ -302,7 +302,7 @@ footer .theme-by {
   .intro-header.big-img {
     margin-top: 91px;  /* Full navbar is small navbar + 20px padding on each side when expanded */
   }	
-  .intro-header .page-heading.big-img {
+  .intro-header.big-img .page-heading {
     padding: 150px 0;
   }  
   .intro-header .page-heading h1 {
