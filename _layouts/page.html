@@ -1,25 +1,31 @@
 ---
 layout: default
+bigimg: "http://ironsummitmedia.github.io/startbootstrap-clean-blog/img/home-bg.jpg"
 ---
 
-{% if page.title %}
-<header class="header-page">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-	  <div class="page-heading">
-	    <h1>{{ page.title }}</h1>
-	    {% if page.subtitle %}
-	    <hr class="small">
-	    <span class="page-subheading">{{ page.subtitle }}</span>
-	    {% endif %}
-	  </div>
+<header class="intro-header {% if page.bigimg %}big-img{% endif %}"
+style="{% if page.bigimg %}background-image: url('{{ page.bigimg }}');{% endif %}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-heading">
+          <h1>{% if page.title %}{{ page.title }}{% else %}<br/>{% endif %}</h1>
+		  {% if page.subtitle %}
+          <hr class="small">
+          <span class="page-subheading">{{ page.subtitle }}</span>
+		  {% endif %}
+        </div>
+      </div>
     </div>
   </div>
 </header>
-{% endif %}
 
-<div class="row">
-  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    {{ content }}
+<div class="container main-content" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      {{ content }}
+    </div>
   </div>
 </div>
+
+<!-- header-page -->

@@ -14,7 +14,7 @@ date: "Feb 22, 2015"
 ![](img/dives/oriane1-0.png)
 ![](img/dives/oriane1-3.png)      
 
-### Idan
+### Aidan
 ![](img/dives/idan1-0.png)
 ![](img/dives/idan1-1.png)   
 
