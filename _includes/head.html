@@ -6,7 +6,9 @@
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 
   <meta name="author" content="{{ site.author.name }}" />
-  <meta name="description" content="{{ site.description }}">
+  {%if page.subtitle %}
+  <meta name="description" content="{{ page.subtitle }}">
+  {% endif %}
   
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
