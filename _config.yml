@@ -15,7 +15,7 @@ description: Dean Attali's website
 timezone: "America/Vancouver"
 markdown: redcarpet
 highlighter: pygments
-permalink: /:year-:month-:day-:title
+permalink: /:year/:month/:day/:title
 paginate: 5
 
 # --- Navigation bar options --- #
