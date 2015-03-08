@@ -9,7 +9,7 @@
   opacity: 1;
 }
 
-.page-heading .subheading-section {
+.page-heading{
   position: relative;
   top: 40px;
   -webkit-transition: all 0.7s ease-in-out;
@@ -17,7 +17,7 @@
   transition: all 0.7s ease-in-out;
 }
 
-.page-heading.move-up .subheading-section {
+.page-heading.move-up {
   top: 0;
 }
 
