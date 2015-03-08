@@ -1,0 +1,22 @@
+.subheading-section {
+  opacity: 0;
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+.page-heading.move-up .subheading-section {
+  opacity: 1;
+}
+
+.page-heading .subheading-section {
+  position: relative;
+  top: 40px;
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+.page-heading.move-up .subheading-section {
+  top: 0;
+}

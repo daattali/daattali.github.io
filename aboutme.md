@@ -9,7 +9,6 @@ bigimg:
   - "/img/big-imgs/hawaii2.jpg" : "Kauai, HI, USA (2014)"
   - "/img/big-imgs/hongkong-cliff-dive.jpeg" : "Hong Kong (2014)"
   - "/img/big-imgs/hongkong-infinity-pool.jpg" : "Hong Kong (2014)"
-  - "/img/big-imgs/israel-camel.jpeg" : "Dead Sea, Israel (2010)"
   - "/img/big-imgs/israel-dive1.jpg" : "Eilat, Israel (2013)"
   - "/img/big-imgs/israel-dive2.jpg" : "Eilat, Israel (2013)"
   - "/img/big-imgs/israel-dive3.jpg" : "Eilat, Israel (2013)"
@@ -34,7 +33,6 @@ bigimg:
   - "/img/big-imgs/california-surf2.JPG" : "Los Angeles, CA, USA (2008)" 
   - "/img/big-imgs/california-surf3.JPG" : "Santa Cruz, CA, USA (2009)"
   - "/img/big-imgs/costa-rica.JPG" : "Arenal, Costa Rica (2011)"
-  - "/img/big-imgs/costa-rica-climb.JPG" : "Manuel Antonio, Costa Rica (2011)"
 ---
 
 My name is Inigo Montoya. I have the following qualities:
