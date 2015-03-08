@@ -1,13 +1,14 @@
 ---
 layout: default
 title: "Search deanattali.com"
+css: "/css/search.css"
 ---
 
 # Search deanattali.com
 
-## Using the Amazing Google
+### Using the Amazing Google
 
-<div>
+<div id="google-custom-search">
 <script>
   (function() {
     var cx = '008668879081464374344:7obftvjulha';
