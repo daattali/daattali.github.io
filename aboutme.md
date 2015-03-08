@@ -36,18 +36,26 @@ bigimg:
   - "/img/big-imgs/costa-rica.JPG" : "Arenal, Costa Rica (2011)"
 ---
 
-<span class="fa fa-briefcase"></span>
+<span class="fa fa-briefcase about-icon"></span>
 
+<p class="about-text">
 Previously worked as a software engineer (Google, IBM, Tagged.com) and web developer in tiny startups (Wish.com, MakeupBee.com, glittr.com, jauntr.com).
+</p>
 
-<span class="fa fa-graduation-cap"></span>
+<span class="fa fa-graduation-cap about-icon"></span>
 
+<p class="about-text">
 Currently a graduate student in Bioinformatics at the University of British Columbia (supervised by Jenny Bryan), with a Bachelor of Computer Science from the University of Waterloo, Canada.
+</p>
 
-<span class="fa fa-code"></span>
+<span class="fa fa-code about-icon"></span>
 
+<p class="about-text">
 I enjoy writing useful & reusable software tools to help others - check out [my projects](./projects). I have also recently become an avid and active R useR.
+</p>
 
-<span class="fa fa-heart"></span>
+<span class="fa fa-heart about-icon"></span>
 
+<p class="about-text">
 Personally, I'm addicted to soccer, travelling at any given (and non-given) moment, and philosophical debates :)
+</p>
