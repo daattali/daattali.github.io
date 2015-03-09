@@ -27,5 +27,35 @@ $(document).ready(function() {
 	if (typeof desc !== typeof undefined && desc !== false) {
 	  $(".intro-header.big-img").append("<span class='img-desc'>" + desc + "</span>")
     }
+	
+	var getNextImg = function() {
+		var bigImgEl = $("#header-big-imgs");
+		var numImgs = bigImgEl.attr("data-num-img");
+		var randNum = Math.floor((Math.random() * numImgs) + 1);
+		var src = bigImgEl.attr("data-img-src-" + randNum);
+		var prefetchImg = new Image();
+		prefetchImg.src = src;
+		//prefetchImg.onload = function() {
+		setTimeout(function(){
+		var desc = bigImgEl.attr("data-img-desc-" + randNum);
+		if (typeof desc !== typeof undefined && desc !== false) {
+		  $(".img-desc").text(desc);
+		} else {
+		  $(".img-desc").remove();
+		}
+		var img = $("<div></div>").addClass("big-img-transition").css("background-image", 'url(' + src + ')');
+		$(".intro-header.big-img").prepend(img);
+		setTimeout(function(){
+			img.css("opacity", "1");}, 50);
+			img.one("transitioned webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+			  $(".intro-header.big-img").css("background-image", 'url(' + src + ')');
+			  img.remove();
+			  getNextImg();
+			});		
+		}, 6500);
+
+	}
+	getNextImg();
+	//}	
   }
 });
