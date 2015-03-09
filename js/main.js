@@ -52,11 +52,13 @@ var main = {
   		  setTimeout(function(){ img.css("opacity", "1"); }, 50);
 		  
 		  // after the animation of fading in the new image is done, prefetch the next one
-  		  img.one("transitioned webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+  		  //img.one("transitioned webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+		  setTimeout(function() {
 		    main.setImg(src, desc);
 			img.remove();
   			getNextImg();
-  		  });		
+		  }, 1000); 
+  		  //});		
   		}, 5500);
   	  };
 	  
