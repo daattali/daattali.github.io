@@ -40,7 +40,7 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 ## Website themes
 
-- [Beautiful Jekyll](http://deanattali.com/beautiful-jekyll/) - a Jekyll theme I created when making this website.  You can [view a demo](http://deanattali.com/beautiful-jekyll/) or use it yourself to make a pretty website by visiting the the [GitHub project](https://github.com/daattali/beautiful-jekyll). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it is designed to look great on both mobile and large-screen devices. 
+- [Beautiful Jekyll](http://deanattali.com/beautiful-jekyll/) - a Jekyll theme I created when making this website.  You can [view a demo](http://deanattali.com/beautiful-jekyll/) or use it yourself to make a pretty website by visiting the [GitHub project](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it is designed to look great on both mobile and large-screen devices. 
 
 ## R packages
 
@@ -53,9 +53,9 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 ## Chrome extensions
 
-- [GitHub Diff Navigator](https://github.com/daattali/github-diff-navigator-extension) - allows you to easily navigate through the changes in a file that has been edited on GitHub.  Especially useful when editing a markdown file within the browser, as GitHub will only show you the full changed file but not show you *where* the edits were made.
+- [GitHub Diff Navigator](https://github.com/daattali/github-diff-navigator-extension) - allows you to easily navigate through the changes in a file that has been edited on GitHub.  Especially useful when editing a markdown file within the browser, as GitHub will only show you the full changed file but not show you *where* the edits were made.  [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/github-diff-navigator/aoojogkiedabnddmokieplfnmjehlneo)
 
-- [Smileyfy My Facebook](https://github.com/daattali/smileyfy-my-facebook-extension) -  Chrome extension that adds infinite happiness to your Facebook browsing, plus a little bonus rickrolling :)  This is not the most useful (if at all..), but it was a way for me to learn about some more advanced features of Chrome extension development.
+- [Smileyfy My Facebook](https://github.com/daattali/smileyfy-my-facebook-extension) -  Chrome extension that adds infinite happiness to your Facebook browsing, plus a little bonus rickrolling :)  This is not the most useful (if at all..), but it was a way for me to learn about some more advanced features of Chrome extension development. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/smileyfy-my-facebook/ideagdnlnmgjdhhbelgadnakbhphljol)
 
 - GSlides Better Notes [in development] - the slides thumbnails in the Speaker Notes window of Google Slides are tiny. This extension dynamically resizes the slides to be more readable based on the window size. 
 
@@ -64,7 +64,7 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 - [Wish.com](http://wish.com) - a very popular shopping platform. I was one of the few original developers of the site (before it was even called Wish!) and contributed mostly to the frontend. I was part of Wish's inception and initial growth, but since then it has grown to be a #1 Android Shopping app, and I can't claim any credit to that. :)
 
-- [MakeupBee.com](https://www.makeupbee.com) - website for women to discover and talk about interesting makeup applications.  The site was mostly developed by Brent Francia (CEO) and I, and I was responsible for all aspects of the development, seeing as we were usually a 2-3 person team.
+- [MakeupBee.com](https://www.makeupbee.com) - website for women to discover and talk about interesting makeup applications. Clearly my area of expertise! The site was mostly developed by Brent Francia (CEO) and I, and I was responsible for all aspects of the development, seeing as we were usually a 2-3 person team.
 
 - [Glittr.com](https://www.glittr.com) - spinoff of MakeupBee that was designed to be focused on more mainstream looks. I've written most of the code for this site.
 
