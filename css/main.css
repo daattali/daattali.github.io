@@ -176,7 +176,8 @@ img::-moz-selection {
 
 @media only screen and (max-width: 992px) {
   .navbar-custom .nav li a {
-    padding: 10px;
+    padding-left: 10px;
+	padding-right: 10px;
 	font-size: 12px;
   }
 }
