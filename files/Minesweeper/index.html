@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Dean Attali's Minesweeper</title>
+  <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+  <script type="text/javascript" src="static/js/ext/jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+  <div id="content">
+	<div class="title">Minesweeper</div>
+	<div class="author">Dean Attali, April 10 2012</div>
+	<div id="controls">
+	  <div id="buttons-section">
+	    <input type="button" id="newgame-btn" value="New Game" />
+	    <input type="button" value="Cheat" id="cheat-btn" />
+	  </div>
+	  <div id="grid-size-section">
+	    <label>Grid Size:</label>
+	    <select id="grid-size">
+		  <option value="5">5</option>
+		  <option value="6">6</option>
+		  <option value="7">7</option>
+		  <option value="8" SELECTED>8</option>
+		  <option value="9">9</option>
+		  <option value="10">10</option>
+		  <option value="11">11</option>
+		  <option value="12">12</option>
+		  <option value="13">13</option>
+		  <option value="14">14</option>
+		  <option value="15">15</option>
+		  <option value="16">16</option>
+		  <option value="17">17</option>
+		  <option value="18">18</option>
+		  <option value="19">19</option>
+		  <option value="20">20</option>
+	    </select>	  
+	  </div>
+	  <div>
+	    <label>Mines:</label>
+	    <input type="text" value="10" size="3" id="num-mines" />
+	  </div>
+	</div>
+	<div id="board"></div>
+  </div>
+
+  <script type="text/javascript" src="static/js/main.js"></script>
+</body>
+</html>
