@@ -40,7 +40,7 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 ## Website themes
 
-- [Beautiful Jekyll](http://deanattali.com/beautiful-jekyll/) - a Jekyll theme I created when making this website.  You can [view a demo](http://deanattali.com/beautiful-jekyll/) or use it yourself to make a pretty website by visiting the [GitHub project](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it is designed to look great on both mobile and large-screen devices. 
+- [Beautiful Jekyll](http://deanattali.com/beautiful-jekyll/) - a Jekyll theme I created when making this website.  You can [view a demo](http://deanattali.com/beautiful-jekyll/) or use it yourself to make a pretty website by visiting the [GitHub project](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it is designed to look great on both mobile and large-screen devices. (The [code that generates this site](https://github.com/daattali/daattali.github.io) is very similar to Beautiful Jekyll, but I added a few more advanced features that I don't think should be included in an all-purpose template)
 
 ## R packages
 
