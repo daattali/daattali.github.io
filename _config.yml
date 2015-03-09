@@ -17,6 +17,7 @@ markdown: redcarpet
 highlighter: pygments
 permalink: /:year/:month/:day/:title
 paginate: 5
+paginate_path: "/index2/page:num/"
 
 # --- Navigation bar options --- #
 
