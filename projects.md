@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Projects
-subtitle: ""
+subtitle: What's been eating away my free time
 bigimg:
   - "/img/big-imgs/costa-rica-house.jpeg" : "Montezuma, Costa Rica (2011)"
   - "/img/big-imgs/grouse-grind.jpeg" : "Vancouver, Canada (2014)"
