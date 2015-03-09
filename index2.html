@@ -37,3 +37,82 @@ bigimg:
   - "/img/big-imgs/california-surf3.JPG" : "Santa Cruz, CA, USA (2009)"
   - "/img/big-imgs/costa-rica.JPG" : "Arenal, Costa Rica (2011)"
 ---
+
+<div id="aboutme-section">
+
+<h1>Who am I?</h1>
+
+<p class="about-text">
+<span class="fa fa-briefcase about-icon"></span>
+Previously worked as a <strong>software engineer</strong> (Google, IBM, <a href="http://tagged.com" target="_blank">Tagged.com</a>) and <strong>web
+developer</strong> in tiny startups (<a href="http://wish.com" target="_blank">Wish.com</a>,
+<a href="http://makeupbee.com" target="_blank">MakeupBee.com</a>,
+<a href="http://glittr.com" target="_blank">glittr.com</a>,
+<a href="http://jauntr.com" target="_blank">jauntr.com</a>).
+</p>
+
+<p class="about-text">
+<span class="fa fa-graduation-cap about-icon"></span>
+Currently a graduate student in <strong>Bioinformatics</strong> at the University of British Columbia (supervised by
+<a href="http://www.stat.ubc.ca/~jenny/" target="_blank">Jenny Bryan</a>), with a Bachelor of <strong>Computer Science</strong> from the
+University of Waterloo, Canada.
+</p>
+
+<p class="about-text">
+<span class="fa fa-code about-icon"></span>
+I enjoy writing <strong>useful & reusable software tools</strong> to help others &mdash; check out <a href="./projects">my projects</a>. I have also
+recently become an avid and active R useR.
+</p>
+
+<p class="about-text">
+<span class="fa fa-heart about-icon"></span>
+I'm addicted to soccer, <strong>travelling</strong> at any given (and non-given) moment, getting into philosophical debates,
+and meeting new people :) 
+</p>
+
+</div>
+
+<hr>
+
+<h1>Recent blog posts:</h1>
+
+<div class="posts-list">
+  {% for post in paginator.posts %}
+  <article class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+	  <h2 class="post-title">{{ post.title }}</h2>
+	
+	  {% if post.subtitle %}
+	  <h3 class="post-subtitle">
+	    {{ post.subtitle }}
+	  </h3>
+	  {% endif %}  
+    </a>
+
+    <p class="post-meta">
+      Posted on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
+  
+    <div class="post-entry">
+      {{ post.content | truncatewords: 50 | strip_html}}
+	  <a href="{{ post.url | prepend: site.baseurl }}" class="post-read-more">Read More</a>
+    </div>
+  
+   </article>
+  {% endfor %}
+</div>
+
+{% if paginator.total_pages > 1 %}
+<ul class="pager main-pager">
+  {% if paginator.previous_page %}
+  <li class="previous">
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+  </li>
+  {% endif %}
+  {% if paginator.next_page %}
+  <li class="next">
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+  </li>
+  {% endif %}
+</ul>
+{% endif %}
