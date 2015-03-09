@@ -159,6 +159,28 @@ img::-moz-selection {
   }
 }
 
+.nav-search-link .nav-search-icon {
+  display: none;
+}
+.nav-search-link .nav-search-text {
+  display: block;
+}
+@media only screen and (min-width: 768px) {
+  .nav-search-link .nav-search-icon {
+    display: block;
+  }
+  .nav-search-link .nav-search-text {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar-custom .nav li a {
+    padding: 10px;
+	font-size: 12px;
+  }
+}
+
 /* --- Footer --- */
 
 footer {

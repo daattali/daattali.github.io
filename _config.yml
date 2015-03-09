@@ -30,7 +30,7 @@ navbar-links:
   About Me: "aboutme"
   Projects: "projects"
   Blog: "blog"
-  Search: "search"
+nav-search: "search"
 
 # --- Footer options --- #
 
