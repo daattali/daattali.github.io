@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Projects
+subtitle: ""
 bigimg:
   - "/img/big-imgs/costa-rica-house.jpeg" : "Montezuma, Costa Rica (2011)"
   - "/img/big-imgs/grouse-grind.jpeg" : "Vancouver, Canada (2014)"
