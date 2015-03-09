@@ -293,6 +293,20 @@ footer .theme-by {
   -o-background-size: cover;
   margin-top: 51px; /* The small navbar is 50px tall + 1px border */
 }
+.intro-header.big-img  .big-img-transition {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  -webkit-transition: opacity 1s linear;
+  -moz-transition: opacity 1s linear;
+  transition: opacity 1s linear;
+}
 .intro-header .page-heading {
   text-align: center;
 }
@@ -343,6 +357,7 @@ footer .theme-by {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   right: 0;
   bottom: 0;
+  display: none;
 }
 @media only screen and (min-width: 768px) {
   .intro-header {
@@ -424,28 +439,4 @@ footer .theme-by {
   .pager.blog-pager  {
     margin-top: 10px;
   }
-}
-
-
-
-
-
-
-
-
-
-
-.big-img-transition {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  background: no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  -webkit-transition: opacity 1s linear;
-  -moz-transition: opacity 1s linear;
-  transition: opacity 1s linear;
 }
