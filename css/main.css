@@ -163,11 +163,11 @@ img::-moz-selection {
   display: none;
 }
 .nav-search-link .nav-search-text {
-  display: block;
+  display: inline;
 }
 @media only screen and (min-width: 768px) {
   .nav-search-link .nav-search-icon {
-    display: block;
+    display: inline;
   }
   .nav-search-link .nav-search-text {
     display: none;
