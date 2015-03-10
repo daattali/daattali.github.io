@@ -11,11 +11,7 @@ layout: null
     {% for post in site.posts limit:20 %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
-		  {% if post.excerpt %}
-			<description>{{ post.excerpt | xml_escape | strip_html }}</description>
-		  {% else %}
-			<description>{{ post.content | xml_escape | strip_html | truncatewords: 50 }}</description>
-		  {% endif %}
+		<description>{{ post.content | xml_escape | strip_html | truncatewords: 50 }}</description>
         <pubDate>{{ post.date | date: "%a, %d %b %Y" }}</pubDate>
         <link>{{ site.url }}{{ post.url }}</link>
         <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
