@@ -28,9 +28,9 @@ avatar: "/img/deanimg.jpeg"
 # List of links in the navigation bar
 navbar-links:
   Home: ""
-  About Me: "aboutme"
-  Projects: "projects"
   Blog: "blog"
+  Projects: "projects"
+  About Me: "aboutme"
 nav-search: "search"
 
 # --- Footer options --- #
