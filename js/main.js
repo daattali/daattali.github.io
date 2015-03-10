@@ -59,7 +59,7 @@ var main = {
   			getNextImg();
 		  }, 1000); 
   		  //});		
-  		}, 5500);
+  		}, 6000);
   	  };
 	  
 	  // If there are multiple images, cycle through them

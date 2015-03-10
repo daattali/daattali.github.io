@@ -282,7 +282,7 @@ footer .theme-by {
   }
 }
 
-/* --- Post and page layout --- */
+/* --- Post and page headers --- */
 
 .intro-header {
   margin: 80px 0 20px;
@@ -384,7 +384,9 @@ footer .theme-by {
   }
 }
 
-.caption {
+/* --- Blog post --- */
+
+.blog-post .caption {
   text-align: center;
   font-size: 14px;
   padding: 10px;
@@ -395,6 +397,23 @@ footer .theme-by {
   border-bottom-left-radius: 5px;
 }
 
+.blog-post img {
+  max-width: 100%;
+}
+
+.blog-post hr {
+  max-width: 25%;
+  border-width: 4px;
+  border-radius: 3px;
+  border-color: #808080;
+}
+
+.blog-tags {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #999;
+  font-size: 15px;
+}
+
 .blog-comments {
   margin-top: 30px;
 }
@@ -403,10 +422,6 @@ footer .theme-by {
   .blog-comments {
     margin-top: 40px;
   }
-}
-
-article img {
-  max-width: 100%;
 }
 
 /* --- Pager --- */
