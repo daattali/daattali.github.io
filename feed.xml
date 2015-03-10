@@ -11,7 +11,7 @@ layout: null
     {% for post in site.posts limit:20 %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
-		<description>{{ post.content | xml_escape | strip_html | truncatewords: 50 }}</description>
+		<description>{{ post.content | strip_html | xml_escape | truncatewords: 50 }}</description>
         <pubDate>{{ post.date | date: "%a, %d %b %Y" }}</pubDate>
         <link>{{ site.url }}{{ post.url }}</link>
         <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
