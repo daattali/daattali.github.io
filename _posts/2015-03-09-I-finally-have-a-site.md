@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "I finally have a site!"
-subtitle: Excerpt from Soulshaping by Jeff Brown
 ---
 
 #### Welcome to Dean Attali on the web!
