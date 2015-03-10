@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "I finally have a site!"
+tags: personal, meta, blog
 ---
 
 #### Welcome to Dean Attali on the web!
