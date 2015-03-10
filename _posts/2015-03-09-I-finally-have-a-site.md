@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "I finally have a site!"
-subtitle: test title's sub
-tags: [personal, meta, blog, family]
+tags: [personal, meta, blog, rstats, family]
 ---
 
 #### Welcome to Dean Attali on the web!
