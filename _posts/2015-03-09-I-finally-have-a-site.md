@@ -15,3 +15,6 @@ Just as a reference, I do have [an existing weblog on Wordpress](http://deanat78
 Lastly, **[subscribe to my feed](http://deanattali.com/feed.xml)!**  To be completely honest, I actually never ever used RSS in my life and wasn't exactly sure how they work (somehow I missed out on the huge RSS era a few years ago when everybody was getting on it), but I learned today that it's pretty simple and awesome.  You install any RSS reader in about 4 seconds, add my RSS feed to it, and now every time I publish a new post you'll immediately know! 
 
 This website is currently in its infancy, so do let me know if you find any bugs/typos/have any comments at all. All comments are welcome. Unless they're not nice, in which case a PayPal donation is required for me to read your comment.
+
+
+![Family pic]({{ site.url }}/img/2014-family-livingroom.jpeg)
