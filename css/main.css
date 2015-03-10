@@ -402,6 +402,10 @@ footer .theme-by {
   }
 }
 
+article img {
+  max-width: 100%;
+}
+
 /* --- Pager --- */
 
 .pager li a {

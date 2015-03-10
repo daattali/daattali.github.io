@@ -17,4 +17,7 @@ Lastly, **[subscribe to my feed](http://deanattali.com/feed.xml)!**  To be compl
 This website is currently in its infancy, so do let me know if you find any bugs/typos/have any comments at all. All comments are welcome. Unless they're not nice, in which case a PayPal donation is required for me to read your comment.
 
 
+---
+
+For absolutely no reason, this post will be signed off with a photo of my family from 2014. Less than half of us are looking and I'm just a floating head - perfectly describes the mess that is my family.
 ![Family pic]({{ site.url }}/img/2014-family-livingroom.jpeg)
