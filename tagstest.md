@@ -1,6 +1,6 @@
 ---
 layout: default
-tags: pesonal, professional, double word, another
+tags: [pesonal, professional, double word, another]
 ---
 
 ## subtitle
