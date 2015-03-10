@@ -2,47 +2,15 @@
 layout: page
 title: Projects
 subtitle: What's been eating away my free time
-bigimg:
-  - "/img/big-imgs/costa-rica-house.jpeg" : "Montezuma, Costa Rica (2011)"
-  - "/img/big-imgs/grouse-grind.jpeg" : "Vancouver, Canada (2014)"
-  - "/img/big-imgs/hawaii1.jpeg" : "Kauai, HI, USA (2014)"
-  - "/img/big-imgs/hawaii2.jpeg" : "Kauai, HI, USA (2014)"
-  - "/img/big-imgs/hongkong-cliff-dive.jpeg" : "Hong Kong (2014)"
-  - "/img/big-imgs/hongkong-infinity-pool.jpeg" : "Hong Kong (2014)"
-  - "/img/big-imgs/israel-dive1.jpeg" : "Eilat, Israel (2013)"
-  - "/img/big-imgs/israel-dive2.jpeg" : "Eilat, Israel (2013)"
-  - "/img/big-imgs/israel-dive3.jpeg" : "Eilat, Israel (2013)"
-  - "/img/big-imgs/laos-pond2.jpeg" : "Luang Prabang, Laos (2014)"
-  - "/img/big-imgs/laos-pond1.jpeg" : "Luang Prabang, Laos (2014)"
-  - "/img/big-imgs/laos-pond3.jpeg" : "Luang Prabang, Laos (2014)"
-  - "/img/big-imgs/st-martin.jpeg" : "St Maarten (2014)"
-  - "/img/big-imgs/tanzania.jpeg" : "Mt Kilimanjaro, Tanzania (2012)"
-  - "/img/big-imgs/vietnam-beach.jpg" : "Mui Ne, Vietnam (2013)"
-  - "/img/big-imgs/vietnam-climb.jpeg" : "Cat Ba, Vietnam (2013)"
-  - "/img/big-imgs/vietnam-climb2.jpeg" : "Cat Ba, Vietnam (2013)" 
-  - "/img/big-imgs/vietnam-dunes.jpeg" : "Mui Ne, Vietnam (2013)"
-  - "/img/big-imgs/vietnam-dunes2.jpeg" : "Mui Ne, Vietnam (2013)"
-  - "/img/big-imgs/vietnam-fruits.jpeg" : "Nha Trang, Vietnam (2013)"
-  - "/img/big-imgs/vietnam-hat.jpeg" : "Hoi An, Vietnam (2013)"
-  - "/img/big-imgs/vietnam-jump.jpeg" : "Mui Ne, Vietnam (2013)"
-  - "/img/big-imgs/vietnam-ricefield.jpeg" : "Sapa, Vietnam (2013)"
-  - "/img/big-imgs/vietnam-scooter.jpeg" : "Da Nang, Vietnam (2013)"
-  - "/img/big-imgs/vietnam-walk.jpeg" : "Sapa, Vietnam (2013)"
-  - "/img/big-imgs/california-skydive.jpeg" : "Davis, CA, USA (2008)"
-  - "/img/big-imgs/california-surf.jpeg" : "Los Angeles, CA, USA (2008)"
-  - "/img/big-imgs/california-surf2.jpeg" : "Los Angeles, CA, USA (2008)" 
-  - "/img/big-imgs/california-surf3.jpeg" : "Santa Cruz, CA, USA (2009)"
-  - "/img/big-imgs/costa-rica.jpeg" : "Arenal, Costa Rica (2011)"
 ---
 
 This is a collection of some things I've worked on that are easily viewable online. Anything that is not browser-friendly will not make the cut :(
 
 --- 
 
-## Website themes
- 
- 
--  [Beautiful Jekyll](http://deanattali.com/beautiful-jekyll/) - a Jekyll theme I created when making this website.  You can [view a demo](http://deanattali.com/beautiful-jekyll/) or use it yourself to make a pretty website by visiting the [GitHub project](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it is designed to look great on both mobile and large-screen devices. (The [code that generates this site](https://github.com/daattali/daattali.github.io) is very similar to Beautiful Jekyll, but I added a few more advanced features that I don't think should be included in an all-purpose template)
+## Website themes 
+
+	-  [Beautiful Jekyll](http://deanattali.com/beautiful-jekyll/) - a Jekyll theme I created when making this website.  You can [view a demo](http://deanattali.com/beautiful-jekyll/) or use it yourself to make a pretty website by visiting the [GitHub project](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it is designed to look great on both mobile and large-screen devices. (The [code that generates this site](https://github.com/daattali/daattali.github.io) is very similar to Beautiful Jekyll, but I added a few more advanced features that I don't think should be included in an all-purpose template)
 
 ## R packages
 
