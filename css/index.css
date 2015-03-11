@@ -15,7 +15,7 @@ margin-top: 0;
 }
 @media only screen and (min-width: 768px) {
   .index-posts-title {
-    margin-top: 25px;
+    margin-top: 45px;
     font-size: 45px;
   }
 }
