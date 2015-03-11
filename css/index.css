@@ -1,12 +1,14 @@
 .header-section.has-img .no-img {
-margin-top: 0;
+  margin-top: 0;
   background: #FCFCFC;
   margin: 0 0 40px;
   padding: 20px 0;
   box-shadow: 0 0 5px #AAA;
 }
-.header-section.has-img .big-img {
-  margin-bottom: 0;
+@media only screen and (max-width: 365px) {
+  .header-section.has-img .big-img {
+    margin-bottom: 0;
+  }
 }
 .index-posts-title {
   font-weight: 800;
@@ -15,7 +17,7 @@ margin-top: 0;
 }
 @media only screen and (min-width: 768px) {
   .index-posts-title {
-    margin-top: 45px;
+    margin-top: 25px;
     font-size: 45px;
   }
 }
