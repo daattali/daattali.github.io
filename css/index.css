@@ -1,7 +1,17 @@
-.intro-header {
-  margin-bottom: 0;
+@media only screen and (min-width: 366px) {
+  .index-blog-separator {
+    display: none;
+  }
 }
-
-footer {
-  margin-top: 0;
+.index-posts-title {
+  font-weight: 800;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-top: 20px;
+  font-size: 38px;
+}
+@media only screen and (min-width: 768px) {
+  .index-posts-title {
+    margin-top: 25px;
+    font-size: 45px;
+  }
 }
