@@ -384,6 +384,31 @@ footer .theme-by {
   }
 }
 
+.header-section.has-img .no-img {
+  margin: 20px 0 50px;
+}
+/* Many phones are 320 or 360px, so make sure images are a proper aspect ratio in those cases */
+.header-section.has-img .intro-header.no-img {
+  display: none;
+}
+@media only screen and (max-width: 365px) {
+  .header-section.has-img .intro-header.no-img {
+    display: block;
+  }
+  .intro-header.big-img {
+    width: 100%;
+	height: 220px;
+  }
+  .intro-header.big-img .page-heading {
+    display: none;
+  }
+} 
+@media only screen and (max-width: 325px) { 
+  .intro-header.big-img {
+    height: 200px;
+  }
+}
+
 /* --- Blog post --- */
 
 .blog-post .caption {
