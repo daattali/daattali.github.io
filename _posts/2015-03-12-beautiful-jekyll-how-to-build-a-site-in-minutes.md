@@ -50,7 +50,7 @@ That's it.  After a few minutes, `daattali.github.io` redirected to `deanattali.
 
 Fun fact: I also bought `daattali.com` because I'm extremely undecisive and couldn't decide which domain name I would want to use. :)
 
-### Misc
+## Misc
 
 While this site is built with Jekyll, I chose to (at least for now) keep it simple and let GitHub Pages compile Jekyll for me instead of installing and running it locally. I was on the fence about this because GitHub Pages does not support any custom plugins and there is one plugin I really want to write (and also you just have much more power and flexibility if you run Jekyll yourself), but I decided to let simplicity win this battle, with the benefit or being able to quickly update my site easily from any computer.  The plugin I wanted to add is a way to recognize whether or not a given file path is internal to the site or an absolute URL.  It would just make some of the templates less verbose and simpler if I could do that, but for now basic Jekyll'l do. Jekyll will = Jekyll'l, right? I think I just found today's weirdest word...
 
