@@ -22,7 +22,7 @@ Beautiful Jekyll is meant to be very easy and quick to use - you can make a nice
 
 This site is hosted by **[GitHub Pages](https://pages.github.com/)**, which provides free hosting. It also means that the code for
 the site is public and can be viewed as a git repo ([link](https://github.com/daattali/daattali.github.io)). I've wanted
-a website for a long time but never wanted to pay ridiculous monthly hosting fees, so this was perfect to me. 
+a website for a long time but never wanted to pay ridiculous monthly hosting fees, so this was perfect for me. 
 
 GitHub Pages uses **[Jekyll](http://jekyllrb.com/)**, which is a simple static-page website generator that focuses on blogging.
 Being a static site generator means that the pages are built just once and just being served when their URL is hit, rather
