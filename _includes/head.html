@@ -19,6 +19,11 @@
   <meta name="description" content="{{ page.subtitle }}">
   {% endif %}
   
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta property="og:description" content="{{ page.subtitle }}" />
+  
+  
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
   {% if page.common-ext-css %}
