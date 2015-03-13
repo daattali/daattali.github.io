@@ -20,4 +20,4 @@ This website is currently in its infancy, so do let me know if you find any bugs
 ---
 
 For absolutely no reason, this post will be signed off with a photo of my family from 2014. Less than half of us are looking and I'm just a floating head - perfectly describes the mess that is my family.
-![Family pic]({{ site.url }}/img/2014-family-livingroom.jpeg)
+![Family pic]({{ site.url }}/img/blog/2014-family-livingroom.jpeg)
