@@ -42,7 +42,7 @@ render my GitHub page.
   - Set the "@" IP Address/URL to `192.30.252.153` and the Record Type to `A (Address)`
   - Set the "www" IP Address/URL to `daattali.github.io.` and the Record Type to `CNAME (Alias)`
   - Add a subdomain entry: `@` as the Host Name, `192.30.252.154` as the IP Address/URL, and `A (Address)` as the Record Type
-  - Make sure all TTL is is 1800 for all three rows
+  - Make sure all TTL is 1800 for all three rows
 
 That's it.  After a few minutes, `daattali.github.io` redirected to `deanattali.com`, which showed my site :)
 
