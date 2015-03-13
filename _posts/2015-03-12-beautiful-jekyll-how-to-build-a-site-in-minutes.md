@@ -14,7 +14,7 @@ and in my completely unbiased opinion this theme is beautiful, I chose the name 
 You can view a [demo of the template](http://deanattali.com/beautiful-jekyll/) and use it right away if you want. **Please do, it'll
 make me feel important :)**  
 
-Beautiful Jekyll is meant to be very easy and quick to use - you can make a nice simple site that supports blogging and looks great on any device (phones/laptops) within minutes. [Look at the demo](http://deanattali.com/beautiful-jekyll/) - it might just be the best link you clicked on today, or at least in the last 20 seconds.
+Beautiful Jekyll is meant to be very easy and quick to use - you can make a nice simple site that supports blogging and looks great on any device (phones/laptops) within minutes. [Look at the demo](http://deanattali.com/beautiful-jekyll/) - it might just be the best link you clicked on today. Or at least in the last 20 seconds.
 
 ---
 
