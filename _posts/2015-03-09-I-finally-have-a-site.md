@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "I finally have a site! *test* t - est"
+title: I finally have a site!
 tags: [personal, meta, blog, family]
 ---
 
