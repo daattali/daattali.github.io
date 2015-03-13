@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Beautiful Jekyll - how to build *this* site in minutes"
-subtitle: A plug-n-play template to easily get anyone a nice looking site quickly and free
+title: "Beautiful Jekyll - how to build a site in minutes"
+subtitle: A plug-n-play template to easily get anyone a free nice looking site (same theme as this one) quickly
 tags: [personal, professional, jekyll, github, blog]
 ---
 
