@@ -73,10 +73,10 @@ google_analytics: "UA-59820529-1"  # Your Google Analytics ID
 defaults:
   -
     scope:
-	  path: ""
-	  type: "posts"
-	values:
-	  comments: true  # add comments to all blog posts 
+      path: ""
+      type: "posts"
+    values:
+      comments: true  # add comments to all blog posts 
   -
     scope:
       path: "" # all files
