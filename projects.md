@@ -51,3 +51,6 @@ This is a collection of some things I've worked on that are easily viewable onli
 ## Java games
 
 I have several cool Java games I wrote, but I curently don't have a way to host the applet online without paying way too much money to buy a certificate.  I might find a way around that in the future.
+
+
+---
