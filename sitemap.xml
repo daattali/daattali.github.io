@@ -1,7 +1,7 @@
 ---
 layout: null
 sitemap:
-  exclude: 'yes'
+  exclude: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -30,7 +30,7 @@ sitemap:
     {% endunless %}
   {% endfor %}
   {% for page in site.pages %}
-    {% unless page.sitemap.exclude == "yes" %}
+    {% unless page.sitemap.exclude %}
     <url>
       <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>
       {% if page.sitemap.lastmod %}
