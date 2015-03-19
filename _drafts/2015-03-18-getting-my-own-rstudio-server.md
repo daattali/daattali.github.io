@@ -8,5 +8,4 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-a-host-name-with-
 
 use my referral link
 
-
-![]({{ site.baseurl }}/img/blog/DigitalOceanDNS.png)
+![DigitalOcean DNS settings]({{ site.url }}/img/blog/DigitalOceanDNS.png)
