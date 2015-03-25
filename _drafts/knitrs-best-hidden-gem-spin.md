@@ -2,9 +2,11 @@
 
 ## Stop knitting & start spinning - spin can help you write reports much faster and avoid repeating yourself
 
+Anyone who loves the idea of dynamic report generation with R is probably a big fan of [`knitr`](http://yihui.name/knitr/) and its flagship function - `knit`.  But not many people seem to know about `knit`'s awesome cousin - `spin`. 
+
 ### What is spin?
 
-In short - `knitr::spin` is similar to `knitr::knit` in that it takes as input a file with R code + formatting + text and produces a nice readable report, such as an HTML or markdown document. The difference lies in the input: `spin` operates on R scripts (`.R`), while `knit` requires a literate programming file (`.Rmd`, `.Rnw`, etc.). This might not sound like a big deal, but it has some important advantages that I'll describe soon.
+In short: `knitr::spin` is similar to `knitr::knit` in that it takes as input a file with R code + formatting + text and produces a nice readable report, such as an HTML or markdown document. The difference lies in the input: `spin` operates on R scripts (`.R`), while `knit` requires a literate programming file (`.Rmd`, `.Rnw`, etc.). This might not sound like a big deal, but it has some important advantages that I'll describe soon.
 
 *Disclaimer: I may have a simplistic and non-comprehensive view of spin and knit; knit certainly has many features that I've yet to explore. I'm also going to talk only about the Rmd/md formats and not about any Sweave/LaTeX/HTML for simplicity.*
 
@@ -14,13 +16,8 @@ Using `spin` to turn your R script into markdown output is very simple:
 - Any line beginning with `#+` is parsed as code chunk options
 - Run `knitr::spin` on the file
  
-### People don't know about spin
 
-Anyone who loves the idea of dynamic report generation with R is probably a big fan of [`knitr`](http://yihui.name/knitr/) and its flagship function - `knit`.  But not many people seem to know about `knit`'s awesome cousin - `spin`. Ever since my supervisor [Jenny Bryan](http://www.stat.ubc.ca/~jenny/) told me about `spin`, I've been using it extensively and it has replaced my use of `knit` in many circumstances.
-
-I was recently at an R workshop taught by [Hadley Wickham](http://had.co.nz/) and chatted with some fellow R enthusiasts about knitr.  Out of the 10 useRs I asked, none of them were aware of `knitr::spin`. I also conducted a similar survey at the labs where I work, and while evreyone I asked was an avid user of `knitr`, nobody knew about `spin`. I know that my sample size is rather small and I haven't done any proper statistical significance testing, but I'd say the lack of awareness of `spin` is quite significant.
-
-### The problem I solve with spin
+### The problem that spin solves
 
 I've noticed a problem with the common approach that I adapted (and I know my colleagues use a similar approach) when creating R markdown (`.Rmd`) documents.  There are many usecases to R markdown - whether it be an homework assignment, a report to show a peer about your data, or just a report for yourself to more easily see and store results - and a common workflow is this:
 
@@ -41,6 +38,12 @@ Once your have some R code that runs, if you want to create a markdown report fr
 
 **Bonus #2:** I find it much easier and faster to convert a regular R script to a spin-formatted R script than to a Rmd file. To convert a block of code into a code chunk for `spin`, you just have to add `#+` before the chunk.  To convert a block of code into a code chunk in Rmd, you need to add text in two different places - `{r}` before the chunk and ```` ``` ```` after.
 
+### People don't know about spin
+
+The reason I'm writing this is because I believe that `spin` is very useful but is not very well known.
+
+I was recently at an R workshop taught by [Hadley Wickham](http://had.co.nz/) and chatted with some fellow R enthusiasts about knitr.  Out of the 10 useRs I asked, none of them were aware of `knitr::spin`. I also conducted a similar survey at the labs where I work, and while everyone I asked was an avid user of `knitr`, nobody knew about `spin`. I know that my sample size is rather small and I haven't done any proper statistical significance testing, but I'd say the lack of awareness of `spin` is quite significant.
+
 
 ### `knit` is still amazing
 
@@ -48,4 +51,4 @@ I'm not trying to say that `knit` has no place - it's very popular for a good re
 
 ### Example
 
-I've started using `spin` for most of my R --> markdown needs.  Every time I have some code that I need to show in a nice format to someone else, I just add some text with `#'` and add code chunk options where needed. For example, [here](https://github.com/daattali/UBC-STAT545/blob/master/hw/hw12_web-scraping-api/hw12_web-scraping-api.md) is the markdown output from using `spin` on [this](https://github.com/daattali/UBC-STAT545/blob/master/hw/hw12_web-scraping-api/hw12_web-scraping-api.R) R file. I might be repeating myself now with what I'm saying (and violating DRY!), but it would have been a lot of work to make a Rmd file after writing all the R code, and it would have been annoying to change both files any time in the future.
+Ever since my supervisor [Jenny Bryan](http://www.stat.ubc.ca/~jenny/) told me about `spin`, I've been using it extensively and it has replaced my use of `knit` in many circumstances. Every time I have some code that I need to show in a nice format to someone else, I just add some text with `#'` and add code chunk options where needed. For example, [here](https://github.com/daattali/UBC-STAT545/blob/master/hw/hw12_web-scraping-api/hw12_web-scraping-api.md) is the markdown output from using `spin` on [this](https://github.com/daattali/UBC-STAT545/blob/master/hw/hw12_web-scraping-api/hw12_web-scraping-api.R) R file. I might be repeating myself now with what I'm saying (and violating DRY!), but it would have been a lot of work to make a Rmd file after writing all the R code, and it would have been annoying to change both files any time in the future.
