@@ -5,6 +5,8 @@ subtitle: Stop knitting & start spinning - spin can help you write reports much 
 tags: [professional, rstats, r, r-bloggers, knitr, spin]
 ---
 
+<img src="http://yihui.name/knitr/images/knit-logo.png" style="display:none"/>
+
 Anyone who loves the idea of dynamic report generation with R is probably a big fan of [`knitr`](http://yihui.name/knitr/) and its flagship function - `knit`.  But not many people seem to know about `knit`'s awesome cousin - `spin`. 
 
 ### What is spin?
