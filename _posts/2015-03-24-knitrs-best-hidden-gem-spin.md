@@ -60,7 +60,7 @@ For example, [here](https://github.com/daattali/UBC-STAT545/blob/master/hw/hw12_
 
 ---
 
-#### Edit
+### Edit
 As has been pointed out [on my tweet about this post](https://twitter.com/daattali/status/580596838044160000), you don't *have* to call `spin` in order to get an output from an R file. The "compile notebook" button in RStudio, which calls the `rmarkdown::render` function, will achieve a similar result if given an R input. This is because `render` actually calls `spin` under the hood.  It doesn't really matter if you choose to call `spin` or to call `render` - both functions require the same R sript as input rather than an Rmd (or any other literate programming file). **The main point here is to show that starting with an R script to produce these outputs is merely possible by using roxygen comments, because I felt that too many people assume their R script has to be manually converted to a different format.**  So spin/render/notebook away :)
 
 There is one nice benefit for `render` as Jenny Bryan mentioned - it will automatically detect what format your input is, and either call `spin` or `knit` or whatever is most appropriate. 
