@@ -57,3 +57,10 @@ I'm not trying to say that `knit` has no place - it's very popular for a good re
 Ever since my supervisor [Jenny Bryan](http://www.stat.ubc.ca/~jenny/) told me about `spin`, I've been using it extensively and it has replaced my use of `knit` in many circumstances. Every time I have some code that I need to show in a nice format to someone else, I just add some text with `#'` and add code chunk options where needed.
 
 For example, [here](https://github.com/daattali/UBC-STAT545/blob/master/hw/hw12_web-scraping-api/hw12_web-scraping-api.md) is the markdown output from using `spin` on [this](https://github.com/daattali/UBC-STAT545/blob/master/hw/hw12_web-scraping-api/hw12_web-scraping-api.R) R file. It would have been a lot of work to make a Rmd file after writing all the R code, and it would have been annoying to change both files any time in the future.
+
+---
+
+#### Edit
+As has been pointed out [on my tweet about this post](https://twitter.com/daattali/status/580596838044160000), you don't *have* to call `spin` in order to get an output from an R file. The "compile notebook" button in RStudio, which calls the `rmarkdown::render` function, will achieve a similar result if given an R input. This is because `render` actually calls `spin` under the hood.  It doesn't really matter if you choose to call `spin` or to call `render` - both functions require the same R sript as input rather than an Rmd (or any other literate programming file). **The main point here is to show that starting with an R script to produce these outputs is merely possible by using roxygen comments, because I felt that too many people assume their R script has to be manually converted to a different format.**  So spin/render/notebook away :)
+
+There is one nice benefit for `render` as Jenny Bryan mentioned - it will automatically detect what format your input is, and either call `spin` or `knit` or whatever is most appropriate. 
