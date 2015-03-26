@@ -17,6 +17,8 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 - [rsalad](https://github.com/daattali/rsalad) - a mix of R tools that are good for you. Terrible joke... Started as a school assignment, but turned into a collection of extremely useful R tools, some of which have been used by several other people worldwide (there are a bunch of people I don't know who starred it!). The most useful function is `spinMyR`, which has a full [vignette dedicated to it](https://github.com/daattali/rsalad/blob/master/inst/doc/spinMyR.md). If you're into R and reproducible research/generating reports with knitr, then do check it out.  The package also provides a few general productivity tools and some improvements to ggplot.
 
+- [ggExtra](https://github.com/daattali/ggExtra) - a collection of functions and layers to enhance ggplot2. Mostly just convenience/shorthand functions, and also a function that adds marginal density plots or histograms to scatterplots.
+
 - shinyjs [in development] - Easily and intuitively perform common JavaScript functions with Shiny in plain R.  Almost ready, will be awesome.
 
 - Rlist [in development] - Simple way to navigate and explore list structures in R.
