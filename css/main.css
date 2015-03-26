@@ -399,7 +399,11 @@ footer .theme-by {
 }
 
 .header-section.has-img .no-img {
-  margin: 20px 0 50px;
+  margin-top: 0;
+  background: #FCFCFC;
+  margin: 0 0 40px;
+  padding: 20px 0;
+  box-shadow: 0 0 5px #AAA;
 }
 /* Many phones are 320 or 360px, so make sure images are a proper aspect ratio in those cases */
 .header-section.has-img .intro-header.no-img {
@@ -416,6 +420,9 @@ footer .theme-by {
   .intro-header.big-img .page-heading {
     display: none;
   }
+  .header-section.has-img .big-img {
+    margin-bottom: 0;
+  }  
 } 
 @media only screen and (max-width: 325px) { 
   .intro-header.big-img {
