@@ -1,4 +1,4 @@
 # daattali.github.io
-Dean Attali's website http://deanattali.com
+Dean Attali's website [http://deanattali.com](http://deanattali.com)
 
-resources: [Jekyll Now](https://github.com/barryclark/jekyll-now), [Jekyll Clean Blog theme](https://github.com/IronSummitMedia/startbootstrap-clean-blog-jekyll)
+The theme for this website has been open-sourced as [Beautiful Jekyll](http://deanattali.com/beautiful-jekyll/)
