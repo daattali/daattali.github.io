@@ -2,10 +2,6 @@
   font-size: 19px;
 }
 
-#aboutme-section :first-child {
-  margin-top: 0;
-}
-
 .about-text {
   position: relative;
   margin-left: 30px;
