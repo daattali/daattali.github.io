@@ -330,6 +330,9 @@ footer .theme-by {
   color: #FFF;
   text-shadow: 1px 1px 3px #000;
 }
+.intro-header.big-img .post-heading {
+  margin-bottom: -20px;
+}
 .intro-header .page-heading h1 {
   margin-top: 0;
   font-size: 50px;
@@ -348,7 +351,7 @@ footer .theme-by {
   margin: 10px 0 0;
 }
 .intro-header .post-heading .post-subheading {
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 .intro-header.big-img .page-heading .page-subheading,
 .intro-header.big-img .post-heading .post-subheading {
