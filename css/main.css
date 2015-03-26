@@ -330,9 +330,6 @@ footer .theme-by {
   color: #FFF;
   text-shadow: 1px 1px 3px #000;
 }
-.intro-header .post-heading {
-  margin-bottom: -20px;
-}
 .intro-header .page-heading h1 {
   margin-top: 0;
   font-size: 50px;
@@ -431,6 +428,10 @@ footer .theme-by {
 }
 
 /* --- Blog post --- */
+
+.blog-post :first-child {
+  margin-top: 0;
+}
 
 .blog-post .caption {
   text-align: center;
