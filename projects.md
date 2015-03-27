@@ -30,7 +30,7 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 - [Smileyfy My Facebook](https://github.com/daattali/smileyfy-my-facebook-extension) -  Chrome extension that adds infinite happiness to your Facebook browsing, plus a little bonus rickrolling :)  This is not the most useful (if at all..), but it was a way for me to learn about some more advanced features of Chrome extension development. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/smileyfy-my-facebook/ideagdnlnmgjdhhbelgadnakbhphljol)
 
-- GSlides Better Notes [in development] - the slides thumbnails in the Speaker Notes window of Google Slides are tiny. This extension dynamically resizes the slides to be more readable based on the window size. 
+- [Google Slides Auto Resize Speaker Notes](https://github.com/daattali/gslides-betternotes-extension) - the slide previews in the Speaker Notes window of Google Slides are tiny and unreadable. This extension dynamically resizes the slides based on the window size to make them useful. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/google-slides-auto-resize/piciggpbidhfbpefjjbomcgomanjfbeb)
 
 
 ## Websites
