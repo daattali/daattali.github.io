@@ -1,3 +1,99 @@
-ggExtra: R package with extra ggplot2 functions, including scatterplots with marginal histograms
+ggExtra: R package for adding marginal histograms/density plots to ggplot2 scatterplots
 
-`ggExtra` is a collection of functions and layers to enhance ggplot2. Most functions/layers are quite simple but are useful because they are fairly common ggplot2 operations that are a bit verbose
+[`ggExtra`](https://github.com/daattali/ggExtra) contains several functions to enhance ggplot2, most notably the `ggMarginal` function which add marginal density plots or histograms to scatterplots.
+
+## Marginal plots in ggplot2 - The problem
+
+Adding marginal histograms or density plots to `ggplot2` seems to be a common issue. Any Google search will likely find several StackOverflow and R-Bloggers posts about the topic, with some of them providing solution using `base` graphics or `lattice`. While there are some great answers about how to solve this for `ggplot2`, they are usually very specific to the dataset in question and do not provide code that is not easily reusable. A simple drop-in function for adding marginal plots to ggplot2 did not exist, so I created one.
+
+## Marginal plots in ggplot2 - Basic idea
+
+The main idea is to create the marginal plots (histogram or density) and then use the `gridExtra` package to arrange the scatterplot and the marginal plots in a "2x2 grid" to achieve the desired visual output. An empty plot needs to be created as well to fill in one of the four grid corners. This basic approach can be implemented like this:
+
+```
+library(ggplot2)
+library(gridExtra)
+pMain <- ggplot(mtcars, aes(x = wt, y = mpg)) +
+         geom_point()
+pTop <- ggplot(mtcars, aes(x = wt)) +
+        geom_histogram()
+pRight <- ggplot(mtcars, aes(x = mpg)) +
+        geom_histogram() + coord_flip()
+pEmpty <- ggplot(mtcars, aes(x = wt, y = mpg)) +
+          geom_blank() +
+          theme(axis.text = element_blank(),
+                axis.title = element_blank(),
+                line = element_blank(),
+                panel.background = element_blank())
+
+grid.arrange(pTop, pEmpty, pMain, pRight,
+             ncol = 2, nrow = 2, widths = c(3, 1), heights = c(1, 3))
+```
+![ggplot2 marginal plots basic idea]({{ site.url }}/img/blog/ggExtra/ggmarginal-idea.png)
+
+This works, but it's a bit tedious to write, so at first I just wanted a simple function to abstract all this ugly code away. This was the birth of `ggMarginal`, which was later developed into the `ggExtra` package together with a few other functions.
+
+The abstraction was done in a way that allows the user to either provide a ggplot2 scatterplot, or the dataset and variables.  For example, `ggExtra::ggMarginal(data = mtcars, x = "wt", y = "mpg")` is equivalent to `ggExtra::ggMarginal(ggplot(mtcars, aes(wt, mpg)) + geom_point())`.
+
+## Marginal plots in ggplot2 - Next steps
+
+As you can see, that basic plot works, but it is not very nice looking and can have some work done on it.  A few things come to mind quickly:
+
+- Remove the whitespace between the scatterplot and the marginal plots
+- Remove the marginal plots background
+- Remove the axis labels from the marginal plots
+
+These are all very easy to add with various `ggplot2::theme()` parameters, and adding these to a `ggMarginal` function will already provide a nice useful function for adding marginal plots to ggplot2.
+
+There are some more issues that could be addressed in order to make the function even more robust.
+
+- The marginal plot doesn't necessary have the same axes as the scatterplot - notice how the `mpg` axis range in the previous plot don't match up between the scatterplot and the marginal histogram.
+- If the main plot has a title, then the right marginal plot will go "too high".
+- If the axis labels text is enlarged, then a similar issue happens - the marginal plots position will be out of sync with the main scatterplot.
+- If the axis label is multiline, then a similar issue happens again.
+
+The following plot illustrates all these problems. It was achieved with exactly the same code as before, but adding these 3 lines to `pMain` definition:
+```
+theme_gray(35) +
+ggtitle("Cars weight vs miles/gallon") + 
+xlab("car\nweight")
+```
+![ggplot2 marginal plots basic idea problems]({{ site.url }}/img/blog/ggExtra/ggmarginal-idea-problems.png)
+
+Accounting for these issues is a little trickier and requires a bit of "dirty" code. To address these problems, I used `ggplot_build()`, which is a handy function that can be used to retrieve information from a plot. Using `ggplot_builld` it's possible to look at the internals of a plot object and identify the axis range, the text size, etc. It's importante to note that since these parameters are not provided via a direct function call, it's not considered 100% safe to use them because there is no guarantee that the plot internals will always look the same way. I won't post the code here because it's long but you can view the source code of my solution [on GitHub](https://github.com/daattali/ggExtra/blob/master/R/ggMarginal.R).
+
+Lastly, a function that adds marginal plots to a ggplot2 scatterplot could benefit from a more more features to make it more complete:
+
+- Support drawing a marginal plot only along the x or y axis, not necessarily both.
+- Support making the marginal plot either a density plot or a histogram.
+- Allow the user to set the marginal plot's colour and relative size.
+
+All of these features are implemented in `ggExtra::ggMarginal`. Here is an example of how easy it is to add marginal density plots in ggplot2.
+
+```
+# create dataset with 500 normally distributed points
+df <- data.frame(x = rnorm(500, 50, 3), y = rnorm(500, 50, 3))
+# create a ggplot2 scatterplot
+p <- ggplot(df, aes(x, y)) + geom_point() +
+     theme_bw(30) + ggtitle("500 random points")
+# add marginal density along the y axis
+ggMarginal(p, type = "density", margins = "y", size = 4, marginCol = "red")
+```
+![ggplot2 marginal plots example]({{ site.url }}/img/blog/ggExtra/ggmarginal-example.png)
+
+## Other functions in the `ggExtra` package
+
+`ggExtra` provides with a few extra convenience functions:
+
+- `removeGrid` - Remove grid lines from ggplot2. Minor grid lines are always removed, and the major x or y grid lines can be removed as well.
+
+- `rotateTextX` - Rotate x axis labels. Often times it is useful to rotate the x axis labels to be vertical if there are too many labels and they overlap.
+
+- `plotCount` - Plot count data with ggplot2. Quickly plot a bar plot of count (frequency) data that is stored in a table or data.frame.
+
+
+## Availability
+
+You can read the full README describing the functionality in detail or browse the source code [on GitHub](https://github.com/daattali/ggExtra).  
+
+The package is available through both CRAN (`install.packages("ggExtra")`) and GitHub (`devtools::install_github("daattali/ggExtra")`).
