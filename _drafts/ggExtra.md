@@ -1,6 +1,12 @@
 ggExtra: R package for adding marginal histograms to ggplot2
 
-[`ggExtra`](https://github.com/daattali/ggExtra) contains several functions to enhance ggplot2, most notably the `ggMarginal` function which add marginal density plots or histograms to scatterplots.
+[`ggExtra`](https://github.com/daattali/ggExtra) is a CRAN package that contains several functions to enhance ggplot2, most notably `ggExtra::ggMarginal()`, which adds marginal density plots or histograms to scatterplots.
+
+## Availability
+
+You can read the full README describing the functionality in detail or browse the source code [on GitHub](https://github.com/daattali/ggExtra).  
+
+The package is available through both CRAN (`install.packages("ggExtra")`) and GitHub (`devtools::install_github("daattali/ggExtra")`).
 
 ## Spoiler alert - final result
 
@@ -20,7 +26,9 @@ ggExtra::ggMarginal(p, type = "density", margins = "y", size = 4, marginCol = "r
 
 ## Marginal plots in ggplot2 - The problem
 
-Adding marginal histograms or density plots to `ggplot2` seems to be a common issue. Any Google search will likely find several StackOverflow and R-Bloggers posts about the topic, with some of them providing solution using `base` graphics or `lattice`. While there are some great answers about how to solve this for `ggplot2`, they are usually very specific to the dataset in question and do not provide code that is not easily reusable. A simple drop-in function for adding marginal plots to ggplot2 did not exist, so I created one.
+Adding marginal histograms or density plots to `ggplot2` seems to be a common issue. Any Google search will likely find several StackOverflow and R-Bloggers posts about the topic, with some of them providing solutions using `base` graphics or `lattice`. While there are some great answers about how to solve this for `ggplot2`, they are usually very specific to the dataset in question and do not provide code that is easily reusable.
+
+A simple drop-in function for adding marginal plots to ggplot2 did not exist, so I created one.
 
 ## Marginal plots in ggplot2 - Basic idea
 
@@ -47,9 +55,13 @@ grid.arrange(pTop, pEmpty, pMain, pRight,
 ```
 ![ggplot2 marginal plots basic idea]({{ site.url }}/img/blog/ggExtra/ggmarginal-idea.png)
 
-This works, but it's a bit tedious to write, so at first I just wanted a simple function to abstract all this ugly code away. This was the birth of `ggMarginal`, which was later developed into the `ggExtra` package together with a few other functions.
+This works, but it's a bit tedious to write, so at first I just wanted a simple function to abstract all this ugly code away. This was the birth of `ggMarginal`, which was later developed into the `ggExtra` package, together with a few other functions.
 
-The abstraction was done in a way that allows the user to either provide a ggplot2 scatterplot, or the dataset and variables.  For example, `ggExtra::ggMarginal(data = mtcars, x = "wt", y = "mpg")` is equivalent to `ggExtra::ggMarginal(ggplot(mtcars, aes(wt, mpg)) + geom_point())`.
+The abstraction was done in a way that allows the user to either provide a ggplot2 scatterplot, or the dataset and variables.  For example, the following two calls are equivalent:
+```
+ggExtra::ggMarginal(data = mtcars, x = "wt", y = "mpg")
+ggExtra::ggMarginal(ggplot(mtcars, aes(wt, mpg)) + geom_point())
+```
 
 ## Marginal plots in ggplot2 - Next steps
 
@@ -76,9 +88,9 @@ xlab("car\nweight")
 ```
 ![ggplot2 marginal plots basic idea problems]({{ site.url }}/img/blog/ggExtra/ggmarginal-idea-problems.png)
 
-Accounting for these issues is a little trickier and requires a bit of "dirty" code. To address these problems, I used `ggplot_build()`, which is a handy function that can be used to retrieve information from a plot. Using `ggplot_builld` it's possible to look at the internals of a plot object and identify the axis range, the text size, etc. It's importante to note that since these parameters are not provided via a direct function call, it's not considered 100% safe to use them because there is no guarantee that the plot internals will always look the same way. I won't post the code here because it's long but you can view the source code of my solution [on GitHub](https://github.com/daattali/ggExtra/blob/master/R/ggMarginal.R).
+Accounting for these issues is a little trickier and requires a bit of "dirty" code. To address these problems, I used `ggplot_build()`, which is a handy function that can be used to retrieve information from a plot. Using `ggplot_build`, it's possible to look at the internals of a plot object and identify the axis range, the text size, etc. *It's importante to note that since these parameters are not provided via a direct function call, it's not considered 100% safe to use them because there is no guarantee that the plot internals will always look the same way.* I won't post the code here because it's long but you can view the source code of my solution [on GitHub](https://github.com/daattali/ggExtra/blob/master/R/ggMarginal.R).
 
-Lastly, a function that adds marginal plots to a ggplot2 scatterplot could benefit from a more more features to make it more complete:
+Lastly, a function that adds marginal plots to a ggplot2 scatterplot could benefit from a few more features to make it more complete:
 
 - Support drawing a marginal plot only along the x or y axis, not necessarily both.
 - Support making the marginal plot either a density plot or a histogram.
@@ -91,10 +103,10 @@ All of these features and more are implemented in `ggExtra::ggMarginal`.
 `ggExtra` provides with a few extra convenience functions:
 
 - `removeGrid` - Remove grid lines from ggplot2. Minor grid lines are always removed, and the major x or y grid lines can be removed as well.
-
 - `rotateTextX` - Rotate x axis labels. Often times it is useful to rotate the x axis labels to be vertical if there are too many labels and they overlap.
-
 - `plotCount` - Plot count data with ggplot2. Quickly plot a bar plot of count (frequency) data that is stored in a table or data.frame.
+
+
 
 ## Technical notes about using `gridExtra`
 
@@ -125,7 +137,7 @@ f <- function() {
 f()
 ```
 
-I know it's hacky so I would appreciate bettr solutions.
+I know it's hacky so I would appreciate better solutions.
 
 **Problem 2: No layers in plot**
 
@@ -162,10 +174,4 @@ print.mygrob <- function(x, ...) {
 f()
 ```
 
-These were my solutions to the `gridExtra` problems that I implemented in `ggExtra`.
-
-## Availability
-
-You can read the full README describing the functionality in detail or browse the source code [on GitHub](https://github.com/daattali/ggExtra).  
-
-The package is available through both CRAN (`install.packages("ggExtra")`) and GitHub (`devtools::install_github("daattali/ggExtra")`).
+These were my solutions to the `gridExtra` problems that I implemented in `ggExtra`, but I would appreciate feedback on other approaches.
