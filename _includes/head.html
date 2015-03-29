@@ -56,4 +56,8 @@
 	  <link rel="stylesheet" href="//fonts.googleapis.com/css?family={{ font }}" />
     {% endfor %}
   {% endif %}
+  
+  {% if page.fb-img %}
+    <meta property="og:image" content="{{ page.fb-img }}" />
+  {% endif %}
 </head>
