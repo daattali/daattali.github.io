@@ -69,9 +69,10 @@
   <meta property="og:type" content="website" />
   
   {% if 5>4 %}
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}{{ page.layout }}/" />
-  {% else %}
   <meta property="og:url" content="{{ site.url }}{{ page.url | remove: '/index.html' | remove: '.html' }}" />
+  {% else %}
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}{{ page.layout }}/" />
+  
   {% endif %}
   
   {% if page.fb-img %}
