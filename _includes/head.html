@@ -68,8 +68,8 @@
   
   <meta property="og:type" content="website" />
   
-  {% if page.layout and page.layout == "post" %}
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}/" />
+  {% if 5>4 %}
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}{{ page.layout }}/" />
   {% else %}
   <meta property="og:url" content="{{ site.url }}{{ page.url | remove: '/index.html' | remove: '.html' }}" />
   {% endif %}
