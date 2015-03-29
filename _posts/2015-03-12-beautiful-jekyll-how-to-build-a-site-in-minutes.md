@@ -3,6 +3,7 @@ layout: post
 title: "Beautiful Jekyll - how to build a site in minutes"
 subtitle: A plug-n-play template to easily get anyone a free nice looking site (same theme as this one) quickly
 tags: [personal, professional, jekyll, github, blog]
+fb-img: "http://deanattali.com/img/blog/beautiful-jekyll.png"
 ---
 
 Since this site went live a few days ago, I had many people ask me how I made it.  Like a great politician, I will avoid that question almost entirely with a completely different answer: **The core template that runs this website is available for anyone to use. I called it [Beautiful Jekyll](https://github.com/daattali/beautiful-jekyll#readme)**.
