@@ -71,7 +71,7 @@
   {% if page.layout and pay.layout == "post" %}
   <meta property="og:url" content="{{ site.url }}{{ page.url }}/" />
   {% else %}
-  <meta property="og:url" content="{{ site.url }}{{ page.url | remove: 'index.html' | remove: '.html' }}" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url | remove: '/index.html' | remove: '.html' }}" />
   {% endif %}
   
   {% if page.fb-img %}
