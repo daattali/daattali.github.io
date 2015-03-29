@@ -2,7 +2,7 @@
 layout: post
 title: I finally have a site!
 tags: [personal, meta, blog, family]
-fb-img: "http://deanattali.com/img/blog/beautiful-jekyll.png"
+fb-img: "http://deanattali.com/img/blog/2014-family-livingroom.jpeg"
 ---
 
 #### Welcome to Dean Attali on the web!
