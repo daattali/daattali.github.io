@@ -6,7 +6,7 @@ ggExtra: R package for adding marginal histograms to ggplot2
 
 You can read the full README describing the functionality in detail or browse the source code [on GitHub](https://github.com/daattali/ggExtra).  
 
-The package is available through both CRAN (`install.packages("ggExtra")`) and GitHub (`devtools::install_github("daattali/ggExtra")`).
+The package is available through both [CRAN](http://cran.r-project.org/web/packages/ggExtra/) (`install.packages("ggExtra")`) and [GitHub](https://github.com/daattali/ggExtra) (`devtools::install_github("daattali/ggExtra")`).
 
 ## Spoiler alert - final result
 
