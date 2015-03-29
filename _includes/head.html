@@ -68,7 +68,7 @@
   
   <meta property="og:type" content="website" />
   
-  {% if page.layout and pay.layout == "post" %}
+  {% if page.layout and page.layout == "post" %}
   <meta property="og:url" content="{{ site.url }}{{ page.url }}/" />
   {% else %}
   <meta property="og:url" content="{{ site.url }}{{ page.url | remove: '/index.html' | remove: '.html' }}" />
