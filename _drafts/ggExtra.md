@@ -2,6 +2,22 @@ ggExtra: R package for adding marginal histograms/density plots to ggplot2 scatt
 
 [`ggExtra`](https://github.com/daattali/ggExtra) contains several functions to enhance ggplot2, most notably the `ggMarginal` function which add marginal density plots or histograms to scatterplots.
 
+## Spoiler alert - final result
+
+Here is an example of how easy it is to add marginal density plots in ggplot2 using `ggExtra::ggMarginal()`.
+
+```
+library(ggplot2)
+# create dataset with 500 normally distributed points
+df <- data.frame(x = rnorm(500, 50, 3), y = rnorm(500, 50, 3))
+# create a ggplot2 scatterplot
+p <- ggplot(df, aes(x, y)) + geom_point() +
+     theme_bw(30) + ggtitle("500 random points")
+# add marginal density along the y axis
+ggExtra::ggMarginal(p, type = "density", margins = "y", size = 4, marginCol = "red")
+```
+![ggplot2 marginal plots example]({{ site.url }}/img/blog/ggExtra/ggmarginal-example.png)
+
 ## Marginal plots in ggplot2 - The problem
 
 Adding marginal histograms or density plots to `ggplot2` seems to be a common issue. Any Google search will likely find several StackOverflow and R-Bloggers posts about the topic, with some of them providing solution using `base` graphics or `lattice`. While there are some great answers about how to solve this for `ggplot2`, they are usually very specific to the dataset in question and do not provide code that is not easily reusable. A simple drop-in function for adding marginal plots to ggplot2 did not exist, so I created one.
@@ -68,18 +84,7 @@ Lastly, a function that adds marginal plots to a ggplot2 scatterplot could benef
 - Support making the marginal plot either a density plot or a histogram.
 - Allow the user to set the marginal plot's colour and relative size.
 
-All of these features are implemented in `ggExtra::ggMarginal`. Here is an example of how easy it is to add marginal density plots in ggplot2.
-
-```
-# create dataset with 500 normally distributed points
-df <- data.frame(x = rnorm(500, 50, 3), y = rnorm(500, 50, 3))
-# create a ggplot2 scatterplot
-p <- ggplot(df, aes(x, y)) + geom_point() +
-     theme_bw(30) + ggtitle("500 random points")
-# add marginal density along the y axis
-ggMarginal(p, type = "density", margins = "y", size = 4, marginCol = "red")
-```
-![ggplot2 marginal plots example]({{ site.url }}/img/blog/ggExtra/ggmarginal-example.png)
+All of these features and more are implemented in `ggExtra::ggMarginal`. 
 
 ## Other functions in the `ggExtra` package
 
@@ -91,6 +96,73 @@ ggMarginal(p, type = "density", margins = "y", size = 4, marginCol = "red")
 
 - `plotCount` - Plot count data with ggplot2. Quickly plot a bar plot of count (frequency) data that is stored in a table or data.frame.
 
+## Technical notes about using `gridExtra`
+
+`gridExtra` is a very useful package with two functions for showing multiple ggplot2 plots: `arrangeGrob` and `grid.arrange`.  However, using these functions inside a package has proven to be difficult because of the way `gridExtra` handles namespaces.  A short discussion can be found [on this StackOverflow post](http://stackoverflow.com/questions/29062766/store-output-from-gridextragrid-arrange-into-an-object).  While I do not completely undersand the underlying problem (I don't fully understand package mports/depends/attaching/etc), I did find workarounds to the problems and would love feedback if anyone has any comments.
+
+**Problem 1: could not find function "ggplotGrob"**
+
+When trying to call `gridExtra::grid.arrange()` without loading `ggplot2` you get this error:
+```
+f <- function() {
+  p1 <- ggplot2::ggplot(mtcars, ggplot2::aes(wt, mpg)) + ggplot2::geom_blank()
+  gridExtra::grid.arrange(p1)
+}
+f()
+> Error: could not find function "ggplotGrob"
+```
+
+My workaround is to ensure `ggplot2` is loaded:
+```
+f <- function() {
+  if (!"package:ggplot2" %in% search()) {
+    suppressPackageStartupMessages(attachNamespace("ggplot2"))
+    on.exit(detach("package:ggplot2"))
+  }
+  p1 <- ggplot2::ggplot(mtcars, ggplot2::aes(wt, mpg)) + ggplot2::geom_blank()
+  gridExtra::grid.arrange(p1)
+}
+f()
+```
+
+I know it's hacky so I would appreciate bettr solutions.
+
+**Problem 2: No layers in plot**
+
+The problem with `grid.arrange` is that it returns `NULL` and does not allow the plot to be saved to an object. `arrangeGrob` is a similar function that returns the object.  But substituting `arrangeGrob` for `grid.arrange` gives an error
+```
+f <- function() {
+  if (!"package:ggplot2" %in% search()) {
+    suppressPackageStartupMessages(attachNamespace("ggplot2"))
+    on.exit(detach("package:ggplot2"))
+  }
+  p1 <- ggplot2::ggplot(mtcars, ggplot2::aes(wt, mpg)) + ggplot2::geom_blank()
+  (gridExtra::arrangeGrob(p1))
+}
+f()
+> Error: No layers in plot
+```
+
+This error happens only if `gridExtra` is not loaded, and it's because printing the object is done after the function returns and uses a custom print method.  So the solution is to add a class to the return object and add a print generic that ensures the object will print correctly.
+
+```
+f <- function() {
+  if (!"package:ggplot2" %in% search()) {
+    suppressPackageStartupMessages(attachNamespace("ggplot2"))
+    on.exit(detach("package:ggplot2"))
+  }
+  p1 <- ggplot2::ggplot(mtcars, ggplot2::aes(wt, mpg)) + ggplot2::geom_blank()
+  grob <- gridExtra::arrangeGrob(p1)
+  class(grob) <- c("mygrob", class(grob))
+  grob
+}
+print.mygrob <- function(x, ...) {
+  grid::grid.draw(x)
+}
+f()
+```
+
+These were my solutions to the `gridExtra` problems that I implemented in `ggExtra`.
 
 ## Availability
 
