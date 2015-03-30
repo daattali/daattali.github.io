@@ -23,7 +23,7 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 - Rlist [in development] - Simple way to navigate and explore list structures in R.
 
-Many of my R packages/tutorials/thoughts are graciously shared on [R-bloggers](http://www.r-bloggers.com/), which is a great resource for any useR with a vast collection of R-related blog posts.
+*Many of my R packages/tutorials/thoughts are graciously shared on [R-bloggers](http://www.r-bloggers.com/), which is a great resource for any useR that contains a vast collection of R-related blog posts.*
 
 ## Chrome extensions
 
