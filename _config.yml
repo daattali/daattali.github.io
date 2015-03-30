@@ -29,7 +29,7 @@ avatar: "/img/deanimg.jpeg"
 navbar-links:
   Home: ""
   Projects: "projects"
-  About Me: "aboutme"
+  About Me / Contact: "aboutme"
 nav-search: "search"
 
 # --- Footer options --- #
