@@ -1,4 +1,9 @@
-ggExtra: R package for adding marginal histograms to ggplot2
+---
+layout: post
+title: "ggExtra: R package for adding marginal histograms to ggplot2
+tags: [professional, rstats, r, r-bloggers, ggplot2, packages]
+fb-img: "http://deanattali.com/img/blog/ggExtra/ggmarginal-example.png"
+---
 
 [`ggExtra`](https://github.com/daattali/ggExtra) is a CRAN package that contains several functions to enhance ggplot2, most notably `ggExtra::ggMarginal()`, which adds marginal density plots or histograms to scatterplots.
 
