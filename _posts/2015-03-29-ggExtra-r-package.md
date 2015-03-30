@@ -2,7 +2,7 @@
 layout: post
 title: "ggExtra: R package for adding marginal histograms to ggplot2"
 tags: [professional, rstats, r, r-bloggers, ggplot2, packages]
-fb-img: "http://deanattali.com/img/blog/ggExtra/ggmarginal-example.png"
+fb-img: "http://deanattali.com/img/blog/ggExtra/ggmarginal-basic-example.png"
 ---
 
 My first CRAN package, [`ggExtra`](https://github.com/daattali/ggExtra), contains several functions to enhance ggplot2, with the most important one being `ggExtra::ggMarginal()` - a function that finally allows easily adding marginal density plots or histograms to scatterplots.
@@ -15,19 +15,18 @@ The package is available through both [CRAN](http://cran.r-project.org/web/packa
 
 ## Spoiler alert - final result
 
-Here is an example of how easy it is to add marginal density plots in ggplot2 using `ggExtra::ggMarginal()`.
+Here is an example of how easy it is to add marginal histograms in ggplot2 using `ggExtra::ggMarginal()`.
 
 ```
 library(ggplot2)
-# create dataset with 500 normally distributed points
-df <- data.frame(x = rnorm(500, 50, 3), y = rnorm(500, 50, 3))
+# create dataset with 1000 normally distributed points
+df <- data.frame(x = rnorm(1000, 50, 10), y = rnorm(1000, 50, 10))
 # create a ggplot2 scatterplot
-p <- ggplot(df, aes(x, y)) + geom_point() +
-     theme_bw(30) + ggtitle("500 random points")
-# add marginal density along the y axis
-ggExtra::ggMarginal(p, type = "density", margins = "y", size = 4, marginCol = "red")
+p <- ggplot(df, aes(x, y)) + geom_point() + theme_classic()
+# add marginal histograms
+ggExtra::ggMarginal(p, type = "histogram")
 ```
-![ggplot2 marginal plots example]({{ site.url }}/img/blog/ggExtra/ggmarginal-example.png)
+![ggplot2 marginal plots basic example]({{ site.url }}/img/blog/ggExtra/ggmarginal-basic-example.png)
 
 ## Marginal plots in ggplot2 - The problem
 
@@ -104,6 +103,20 @@ Lastly, a function that adds marginal plots to a ggplot2 scatterplot could benef
 - Allow the user to set the marginal plot's colour and relative size.
 
 All of these features and more are implemented in `ggExtra::ggMarginal`. 
+
+Here is an example of using a few more parameters:
+
+```
+library(ggplot2)
+# create dataset with 500 normally distributed points
+df <- data.frame(x = rnorm(500, 50, 3), y = rnorm(500, 50, 3))
+# create a ggplot2 scatterplot
+p <- ggplot(df, aes(x, y)) + geom_point() +
+     theme_bw(30) + ggtitle("500 random points")
+# add marginal density along the y axis
+ggExtra::ggMarginal(p, type = "density", margins = "y", size = 4, marginCol = "red")
+```
+![ggplot2 marginal plots complex example]({{ site.url }}/img/blog/ggExtra/ggmarginal-complex-example.png)
 
 ## Other functions in the `ggExtra` package
 
