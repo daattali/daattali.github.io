@@ -27,12 +27,13 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 ## Chrome extensions
 
-- [GitHub Diff Navigator](https://github.com/daattali/github-diff-navigator-extension) - allows you to easily navigate through the changes in a file that has been edited on GitHub.  Especially useful when editing a markdown file within the browser, as GitHub will only show you the full changed file but not show you *where* the edits were made.  [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/github-diff-navigator/aoojogkiedabnddmokieplfnmjehlneo)
-
-- [Smileyfy My Facebook](https://github.com/daattali/smileyfy-my-facebook-extension) -  Chrome extension that adds infinite happiness to your Facebook browsing, plus a little bonus rickrolling :)  This is not the most useful (if at all..), but it was a way for me to learn about some more advanced features of Chrome extension development. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/smileyfy-my-facebook/ideagdnlnmgjdhhbelgadnakbhphljol)
+- [GitHub Diff Navigator](https://github.com/daattali/github-diff-navigator-extension) - allows you to easily navigate through the changes in a file that has been edited on GitHub.  Especially useful when editing a markdown file within the browser, as GitHub will only show you the full changed file but not show you *where* the edits were made. I find this very helpful every time I make small edits in someone else's large markdown documents.  [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/github-diff-navigator/aoojogkiedabnddmokieplfnmjehlneo)
 
 - [Google Slides Auto Resize Speaker Notes](https://github.com/daattali/gslides-betternotes-extension) - the slide previews in the Speaker Notes window of Google Slides are tiny and unreadable. This extension dynamically resizes the slides based on the window size to make them useful. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/google-slides-auto-resize/piciggpbidhfbpefjjbomcgomanjfbeb)
 
+- [Project Free TV Ad Bypass](https://github.com/daattali/pftv-ad-bypass-extension) - Project Free TV serves a 10-second ad page before allowing users to continue to the video - this extension bypasses the ad page.
+
+- [Smileyfy My Facebook](https://github.com/daattali/smileyfy-my-facebook-extension) -  Chrome extension that adds infinite happiness to your Facebook browsing, plus a little bonus rickrolling :)  This is not the most useful (if at all..), but it was a way for me to learn about some more advanced features of Chrome extension development. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/smileyfy-my-facebook/ideagdnlnmgjdhhbelgadnakbhphljol)
 
 ## Websites
 
