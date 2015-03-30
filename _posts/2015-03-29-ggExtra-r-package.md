@@ -63,8 +63,9 @@ grid.arrange(pTop, pEmpty, pMain, pRight,
 This works, but it's a bit tedious to write, so at first I just wanted a simple function to abstract all this ugly code away. This was the birth of `ggMarginal`, which was later developed into the `ggExtra` package, together with a few other functions.
 
 The abstraction was done in a way that allows the user to either provide a ggplot2 scatterplot, or the dataset and variables.  For example, the following two calls are equivalent:
+
 ```
-ggExtra::ggMarginal(data = mtcars, x = "wt", y = "mpg")
+ggExtra::ggMarginal(data = mtcars, x = "wt", y = "mpg")  
 ggExtra::ggMarginal(ggplot(mtcars, aes(wt, mpg)) + geom_point())
 ```
 
@@ -86,9 +87,10 @@ There are some more issues that could be addressed in order to make the function
 - If the axis label is multiline, then a similar issue happens again.
 
 The following plot illustrates all these problems. It was achieved with exactly the same code as before, but adding these 3 lines to `pMain` definition:
+
 ```
-theme_gray(35) +
-ggtitle("Cars weight vs miles/gallon") + 
+theme_gray(35) +   
+ggtitle("Cars weight vs miles/gallon") +   
 xlab("car\nweight")
 ```
 ![ggplot2 marginal plots basic idea problems]({{ site.url }}/img/blog/ggExtra/ggmarginal-idea-problems.png)
