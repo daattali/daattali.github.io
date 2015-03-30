@@ -122,6 +122,7 @@ All of these features and more are implemented in `ggExtra::ggMarginal`.
 **Problem 1: could not find function "ggplotGrob"**
 
 When trying to call `gridExtra::grid.arrange()` without loading `ggplot2` you get this error:
+
 ```
 f <- function() {
   p1 <- ggplot2::ggplot(mtcars, ggplot2::aes(wt, mpg)) + ggplot2::geom_blank()
@@ -132,6 +133,7 @@ f()
 ```
 
 My workaround is to ensure `ggplot2` is loaded:
+
 ```
 f <- function() {
   if (!"package:ggplot2" %in% search()) {
@@ -149,6 +151,7 @@ I know it's hacky so I would appreciate better solutions.
 **Problem 2: No layers in plot**
 
 The problem with `grid.arrange` is that it returns `NULL` and does not allow the plot to be saved to an object. `arrangeGrob` is a similar function that returns the object.  But substituting `arrangeGrob` for `grid.arrange` gives an error
+
 ```
 f <- function() {
   if (!"package:ggplot2" %in% search()) {
