@@ -17,3 +17,12 @@
 #aboutme-section p:last-child {
   margin-bottom: 0;
 }
+
+#contactme-section {
+  font-size: 21px;
+  margin-top: 60px;
+}
+
+#contactme-section h1 {
+  font-size: 56px;
+}
