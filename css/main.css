@@ -306,6 +306,7 @@ footer .theme-by {
   background-size: cover;
   -o-background-size: cover;
   margin-top: 51px; /* The small navbar is 50px tall + 1px border */
+  margin-bottom: 35px;
 }
 .intro-header.big-img  .big-img-transition {
   position: absolute;
@@ -412,9 +413,10 @@ footer .theme-by {
   }
   .intro-header.big-img {
     width: 100%;
-	height: 220px;
+    height: 220px;
   }
-  .intro-header.big-img .page-heading {
+  .intro-header.big-img .page-heading,
+  .intro-header.big-img .post-heading {
     display: none;
   }
   .header-section.has-img .big-img {
