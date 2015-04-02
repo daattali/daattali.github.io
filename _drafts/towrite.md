@@ -1,5 +1,4 @@
 http://rpubs.com/daattali/heatmapsGgplotVsLattice
 
-gslides betternotes/github diff navigatror/project frree tv ad bypass
+all my extensions
 
-flake it till you make it
