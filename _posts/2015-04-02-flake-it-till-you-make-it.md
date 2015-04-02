@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "Flake it till you make it"
-subtitle: "It's not always cowardly to walk away; it can be very difficult and beneficial to not be afraid to step off a path, regardless of how much you've already walked it"
+subtitle: "It's not always cowardly to walk away; it can be very difficult and enlightening to not be afraid to step off a path, regardless of how much you've already walked it"
 tags: [personal]
 fb-img: "http://fc04.deviantart.net/fs71/i/2010/093/6/7/One_Path_Wallpaper_by_emats.jpg"
+big-img: /img/blog/flake-it/path.jpg
 ---
 
 My mom recently showed me a very interesting bit from a book she was reading called 'Soulshaping' by Jeff Brown. I'll discuss it later, but first, here is the excerpt:
