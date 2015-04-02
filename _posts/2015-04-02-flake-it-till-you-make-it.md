@@ -33,6 +33,7 @@ I will end with two relevant quotes from the great philosopher Ilana Stein-Attal
 
 > I believe that life is a gift and that we are all here to give our gifts and we all have them. The thing is, do we have to rot to give them or detach when the time is right and give them gracefully?  I am looking outside at the apple tree we have in our yard.  The apples that are still clinging to the trees have all rotted.  Yes they will give their seeds back to the earth, but had they been picked or fallen off the tree earlier they could have given their seeds to someone who would then transform them into something even greater.  
 
+
 > You are so loved that when you are in the wrong direction and can't give away your gifts.... you will know.
 
 
