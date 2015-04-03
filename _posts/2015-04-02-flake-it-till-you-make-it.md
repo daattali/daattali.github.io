@@ -41,3 +41,9 @@ I will end with two relevant quotes from the great philosopher Ilana Stein-Attal
 ---
 
 One last fun fact-thought: the author mentioned peanut allergies, which are very common. When I first moved to Canada I noticed that many kids here are allergic to peanuts, while I never knew of any peanut-allergic kid back in Israel.  This baffled me and I always jokinlgy said that it's because kids in Israel eat a peanut-containing snack (Bamba) 24/7 from the moment they're born.  It turns out that this theory actually might have some scientific backing, as shown [in this article from the Journal of Allergy and Clinical Immunology](http://www.ncbi.nlm.nih.gov/pubmed/19000582) :)
+
+---
+
+Edit: this post is getting some attention [on Reddit](http://www.reddit.com/r/ZenHabits/comments/318ode/flake_it_till_you_make_it_its_not_always_cowardly/), and I wanted to just add a quote that I liked from a comment that someone made there:
+
+> while other people may see it as being disloyal to all the things I try, I see it as a commitment to finding what's right for me, a commitment to my growth and learning. It's constantly trying new things, admitting it's wrong for me before working up the courage again to start at the bottom of something foreign and new.
