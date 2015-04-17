@@ -9,3 +9,5 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-a-host-name-with-
 use my referral link
 
 ![DigitalOcean DNS settings]({{ site.url }}/img/blog/DigitalOceanDNS.png)
+
+shiny server: http://withr.me/set-up-shiny-server-on-www-dot-digitalocean-dot-com/
