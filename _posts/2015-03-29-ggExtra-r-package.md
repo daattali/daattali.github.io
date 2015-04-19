@@ -68,6 +68,9 @@ ggExtra::ggMarginal(data = mtcars, x = "wt", y = "mpg")
 ggExtra::ggMarginal(ggplot(mtcars, aes(wt, mpg)) + geom_point())
 ```
 
+<iframe src="daattali.com:3838/shinyjs-demo" >
+</ifram>
+
 ## Marginal plots in ggplot2 - Next steps
 
 As you can see, that basic plot works, but it is not very nice looking and can have some work done on it.  A few things come to mind quickly:
