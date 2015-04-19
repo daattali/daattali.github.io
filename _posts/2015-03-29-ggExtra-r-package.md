@@ -7,9 +7,6 @@ fb-img: "http://deanattali.com/img/blog/ggExtra/ggmarginal-basic-example.png"
 
 My first CRAN package, [`ggExtra`](https://github.com/daattali/ggExtra), contains several functions to enhance ggplot2, with the most important one being `ggExtra::ggMarginal()` - a function that finally allows easily adding marginal density plots or histograms to scatterplots.
 
-<iframe src="http://daattali.com:3838/shinyjs-demo" >
-</ifram>
-
 ## Availability
 
 You can read the full README describing the functionality in detail or browse the source code [on GitHub](https://github.com/daattali/ggExtra).  
