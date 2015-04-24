@@ -141,6 +141,14 @@ In the server portion, add the following code
       }
     })
 
+Or instead you can use the `toggleState` function and pass it a `condition`:
+
+    observe({
+      shinyjs::toggleState("submit", !is.null(input$name) && input$name != "")
+    })
+
+You can use the optional `condition` in some other functions as well, which can be very useful to make your code shorter and more understandable.
+
 **2. The "Age" and "Company" fields are optional and we want to have the
 ability to hide that section of the form**
 
@@ -215,6 +223,12 @@ checkbox is checked by adding this code to the server
       }
     })
 
+Or, again, we can use the `toggleClass` function with the `condition` argument:
+
+    observe({
+      toggleClass("myapp", "big", input$big)
+    })
+
 **6. Give the user a "Thank you" message upon submission**
 
 Simply add the following to the server
@@ -225,7 +239,7 @@ Simply add the following to the server
       }
     })
 
-**The final code looks like this**
+**The final code looks like this** (I'm using the more compact `toggle*` version where possible)
 
     library(shiny)
     shinyApp(
@@ -253,11 +267,7 @@ Simply add the following to the server
       
       server = function(input, output, session) {
         observe({
-          if (is.null(input$name) || input$name == "") {
-            shinyjs::disable("submit")
-          } else {
-            shinyjs::enable("submit")
-          }
+          toggleState("submit", !is.null(input$name) && input$name != "")
         })
         
         shinyjs::onclick("toggleAdvanced",
@@ -266,11 +276,7 @@ Simply add the following to the server
         shinyjs::onclick("update", shinyjs::text("time", date()))
         
         observe({
-          if (input$big) {
-            shinyjs::addClass("myapp", "big")
-          } else {
-            shinyjs::removeClass("myapp", "big")
-          }
+          toggleClass("myapp", "big", input$big)
         })
         
         observe({
