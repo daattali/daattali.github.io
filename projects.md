@@ -15,11 +15,11 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 ## R packages
 
+- [ggExtra](https://github.com/daattali/ggExtra) - easily add histograms/density plots to ggplot2 scatterplots, plus a few more convenience functions. Check out a [demo online](http://daattali.com:3838/ggExtra-ggMarginal-demo/). Available [on CRAN](http://cran.r-project.org/web/packages/ggExtra/) and [on GitHub](https://github.com/daattali/ggExtra).
+
+- [shinyjs](https://github.com/daattali/shinyjs) - perform common JavaScript operations in Shiny apps using plain R code.  Check out a [demo online](http://daattali.com:3838/shinyjs-demo/) or [a simpler demo](http://daattali.com:3838/shinyjs-basic/). Available [on CRAN](http://cran.r-project.org/web/packages/shinyjs/) and [on GitHub](https://github.com/daattali/shinyjs).
+
 - [rsalad](https://github.com/daattali/rsalad) - a mix of R tools that are good for you. Terrible joke... Started as a school assignment, but turned into a collection of extremely useful R tools, some of which have been used by several other people worldwide (there are a bunch of people I don't know who starred it!). The most useful function is `spinMyR`, which has a full [vignette dedicated to it](https://github.com/daattali/rsalad/blob/master/inst/doc/spinMyR.md). If you're into R and reproducible research/generating reports with knitr, then do check it out.  The package also provides a few general productivity tools and some improvements to ggplot.
-
-- [ggExtra](https://github.com/daattali/ggExtra) - easily add histograms/density plots to ggplot2 scatterplots, plus a few more convenience functions. Check out a [demo online](http://daattali.com:3838/ggExtra-ggMarginal-demo/). [Available on CRAN](http://cran.r-project.org/web/packages/ggExtra/) and [on GitHub](https://github.com/daattali/ggExtra).
-
-- shinyjs [in development] - Easily and intuitively perform common JavaScript functions with Shiny in plain R.  Almost ready, will be awesome.
 
 - Rlist [in development] - Simple way to navigate and explore list structures in R.
 
