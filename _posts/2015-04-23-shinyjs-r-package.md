@@ -3,6 +3,7 @@ layout: post
 title: "Introducing shinyjs: perform common JavaScript operations in Shiny apps using plain R code"
 tags: [professional, rstats, r, r-bloggers, shiny, packages]
 date: 2015-04-23 17:30:00 -0700
+fb-img: http://deanattali.com/img/top3.png
 ---
 
 `shinyjs` is my second R package that managed to find its way past the CRAN review process.
