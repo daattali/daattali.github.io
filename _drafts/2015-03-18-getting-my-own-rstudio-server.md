@@ -24,4 +24,6 @@ nginx to have an index page
 
 
 add monitor to the server http://www.monitorix.org/doc-debian.html  http://daattali.com:8080/health
-enable monitoring nginx status https://github.com/mikaku/Monitorix/blob/master/README.nginx
+
+
+reverse proxy in /etc/nginx/sites-enabled/default to listen on port 80 at /shiny/ and forward to shiny server
