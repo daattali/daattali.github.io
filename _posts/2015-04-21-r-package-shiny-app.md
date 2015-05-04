@@ -14,7 +14,7 @@ A good package needs to have two things: useful functionality, and clear usage i
 
 In a nutshell, [Shiny](http://shiny.rstudio.com/) is a package that lets you run your R code as an interactive webpage. What this means for package developers is that you can have an interactive webpage that lets users experiment with your package and see what it can do before having to read through the potentially lengthy function documentations/vignette.
 
-As an example, I recently released a package for adding marginal plots to ggplot2. You be the judge: after that one-sentence description of some functionality, would you rather go straight to the [README](https://github.com/daattali/ggExtra), or see it in action first [in a Shiny app online](http://daattali.com:3838/ggExtra-ggMarginal-demo/)? I might be wrong, but I think it's useful to interactively see what the package can do.
+As an example, I recently released a package for adding marginal plots to ggplot2. You be the judge: after that one-sentence description of some functionality, would you rather go straight to the [README](https://github.com/daattali/ggExtra), or see it in action first [in a Shiny app online](http://daattali.com/shiny/ggExtra-ggMarginal-demo/)? I might be wrong, but I think it's useful to interactively see what the package can do.
 
 Making a Shiny app doesn't necessarily always make sense for every package, but there are certainly many times when it can be a great addition to a package's "documentation". I think that if a new package has some functions that *can* be easily illustrated in a simple Shiny app, it's worth it to take the extra 1-2 hours to develop it. This way, a user who finds your package and isn't quite sure what to do with it can try the Shiny app to see whether or not this is the functionality they were looking for. You can have several Shiny apps, each showing the usage of a particular function, or one app that is representative of a whole package. Whatever makes the most sense. Of course, having a Shiny app is in no way a replacement to documentation, it's just a useful add-on.
 
@@ -26,7 +26,7 @@ There are two ways to complement a package with a Shiny app that shows its main 
 
 You can host your Shiny app somewhre that is publicly available, such as [shinyapps.io](http://www.shinyapps.io/) or on your own [Shiny Server](http://www.rstudio.com/products/shiny/shiny-server/). Then you can include a link in the package's README or vignette or function documentation that points to the Shiny app.
 
-As an example, I host [my own Shiny Server](http://daattali.com:3838/) where I can host my Shiny apps, and whenever I release a new package, I include a link in the README to a demo app.
+As an example, I host [my own Shiny Server](http://daattali.com/shiny) where I can host my Shiny apps, and whenever I release a new package, I include a link in the README to a demo app.
 
 The advantage of doing this is that people can play aroud with your package before even downloading it.
 
