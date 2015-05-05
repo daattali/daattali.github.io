@@ -45,6 +45,9 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 - [Jauntr.com](http://www.jauntr.com/) - travel site with a social component, that is meant to help users discover and share places to go. It never really took off, but it was my first introduction to web development.
 
+- [daattali.com](http://daattali.com) - small personal website that I run on a virtual server just because I wanted a place to host my own [R Shiny server](http://daattali.com/shiny) and [RStudio server](http://daattali.com/rstudio).
+
+- [deanattali.com](http://deanattali.com) - the site you're currently on.  Just a simple site to have some virtual presence.
 
 ## Misc
 
