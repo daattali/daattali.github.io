@@ -39,3 +39,5 @@ jarsigner -verify test\Connect4.jar
 # looks good. but now in browser i get error "user has denied privileges to the code"
 
 ```
+
+comodo technical help said to try importing into IE then exporting and make sure it includes all intermediate certifications.
