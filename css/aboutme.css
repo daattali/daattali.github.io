@@ -26,3 +26,11 @@
 #contactme-section h1 {
   font-size: 50px;
 }
+
+#contact-form p {
+  margin-bottom: 10px;
+}
+
+#contact-form .form-control {
+  margin-bottom: 15px;
+}
