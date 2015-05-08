@@ -20,8 +20,20 @@ var main = {
     $('#main-navbar').on('hidden.bs.collapse', function () {
       $(".navbar").removeClass("top-nav-expanded");
     })
-	
-	main.initImgs();
+
+    // show a message if there is one to show
+    qs = main.getQueryParams();
+    if (qs.message) {
+      $(".container")[0].innerHTML =
+        '<div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">' +
+          '<div class="alert alert-success" role="alert">' +
+            qs.message +
+        "</div></div></div>" +
+        $(".container")[0].innerHTML;
+    }
+
+    // show the big header image	
+    main.initImgs();
   },
   
   initImgs : function() {
@@ -87,7 +99,22 @@ var main = {
 	} else {
 	  $(".img-desc").hide();  
 	}
-  }
+  },
+ 
+ // get the GET parameters in the URL
+ function getQueryParams() {
+    qs = document.location.search.split("+").join(" ");
+
+    var params = {}, tokens,
+        re = /[?&]?([^=]+)=([^&]*)/g;
+
+    while (tokens = re.exec(qs)) {
+        params[decodeURIComponent(tokens[1])]
+            = decodeURIComponent(tokens[2]);
+    }
+
+    return params;
+  }  
 };
 
 document.addEventListener('DOMContentLoaded', main.init);
