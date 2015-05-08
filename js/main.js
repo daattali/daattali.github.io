@@ -102,7 +102,7 @@ var main = {
   },
  
  // get the GET parameters in the URL
- function getQueryParams() {
+ getQueryParams : function() {
     qs = document.location.search.split("+").join(" ");
 
     var params = {}, tokens,
