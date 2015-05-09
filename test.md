@@ -1,16 +1,19 @@
 ---
 layout: post
 title: "How to easily get your very own RStudio Server and Shiny Server with DigitalOcean"
+tags: [professional, rstats, r, r-bloggers, shiny, rstudio, sysadmin]
 date: 2015-05-10 21:00:00 -0700
 ---
 
-If you've always wanted to have an RStudio Server of your own so that you can access R from anywhere, or your own Shiny Server to host your awesome shiny apps, [DigitalOcean (DO)](https://www.digitalocean.com/?refcode=358494f80b99) can help you get there easily. DigitalOcean provides virtual private servers (they call each server a droplet), which means you can pay $5/month to have your own server "in the cloud" that you can access from anywhere and host anything on it. Check out [my DO droplet](http://daattali.com/) to see it in action!  If you use [my referral link](https://www.digitalocean.com/?refcode=358494f80b99), you'll get $10 in credits, which is enough to give you a private server for 2 months.
+If you've always wanted to have an RStudio Server of your own so that you can access R from anywhere, or your own Shiny Server to host your awesome shiny apps, [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99)(DO) can help you get there easily.
 
-This all started a couple of months ago when I asked my supervisor, [Jenny Bryan](https://twitter.com/JennyBryan), if there was a way for me to do some R-ing when I'm away from my machine. She told me that she doesn't have a solution for me, but that I should check out [DO]((https://www.digitalocean.com/?refcode=358494f80b99)), so I did. And it turns out that it's very convenient for hosting my own RStudio Server and anything else I'd like to host, and very affordable **even for my student self**!
+DigitalOcean provides virtual private servers (they call each server a *droplet*), which means that you can pay *$5/month* to have your own server "in the cloud" that you can access from anywhere and host anything on.  Check out [my DO droplet](http://daattali.com/) to see it in action!  If you use [my referral link](https://www.digitalocean.com/?refcode=358494f80b99), you'll get $10 in credits, which is enough to give you a private server for 2 months.
 
-This post will cover how to set up R, RStudio Server, Shiny Server, and a few other helpful features on a brand new DO droplet (remember: droplet = your machine in the cloud). The tutorial might seem length, but it's actually very simple, I'm just breaking up every step into very fine details.
+This all started a couple of months ago when I asked my supervisor, [Jenny Bryan](https://twitter.com/JennyBryan), if there was a way for me to do some R-ing when I'm away from my machine. She told me that she doesn't have a solution for me, but that I should check out [DO](https://www.digitalocean.com/?refcode=358494f80b99), so I did. And it turns out that it's very convenient for hosting my own RStudio Server and anything else I'd like to host, and very affordable **even for my student self** :)
 
-## Table of contents
+This post will cover how to set up R, RStudio Server, Shiny Server, and a few other helpful features on a brand new DO droplet (remember: droplet = your machine in the cloud). The tutorial might seem lengthy, but it's actually very simple, I'm just breaking up every step into very fine details.
+
+# Table of contents
 
 - [Step 1: Sign up to DigitalOcean](#sign-up)
 - [Step 2: Create a new droplet](#create-droplet)
@@ -24,11 +27,11 @@ This post will cover how to set up R, RStudio Server, Shiny Server, and a few ot
 - [Step 10: Custom domain name](#custom-domain)
 - [Resources](#resources)
 
-<h2 id="sign-up">Step 1: Sign up to DigitalOcean</h2>
+<h1 id="sign-up">Step 1: Sign up to DigitalOcean</h1>
 
 Go to [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99) (use this referral link to get 2 months!) and sign up. Registration is quick and painless, but I think in order to verify your account (and to get your $10) you have to provide credit card details.  If you go to [your Billing page](https://cloud.digitalocean.com/settings/billing) hopefully you will see the $10 credit. This is the last time I'm going to mention money, I promise :p
 
-<h2 id="create-droplet">Step 2: Create a new droplet</h2>
+<h1 id="create-droplet">Step 2: Create a new droplet</h1>
 
 Now let's claim one of DO's machines as our own! It's very simple that you definitely don't need my instructions, just click on the big "Create Droplet" button and choose your settings. I chose the smallest/weakest machine ($5/month plan) and it's good enough for me. I also chose San Francisco because it's the closest to me, though it really wouldn't make much of a noticeable difference where the server is located. For OS, I chose to go with the default Ubuntu 14.04 x64.  I highly recommend you add an SSH key at the last step if you know how to do that. If not, either read up on it or just proceed without an SSH key.
 
@@ -37,7 +40,7 @@ Now let's claim one of DO's machines as our own! It's very simple that you defin
 Even though you probably don't need it, here's a short GIF showing me creating a new droplet:
 ![Create droplet]({{ site.url }}/img/blog/digital-ocean/do-create.gif)
 
-<h2 id="login">Step 3: Log in to your very own shiny new server</h2>
+<h1 id="login">Step 3: Log in to your very own shiny new server</h1>
 
 Once the droplet is ready (can take a few minutes), you'll be redirected to a page that shows you information about the new droplet, including its IP. From now on, I'll use the random IP address `123.456.1.2` for the rest of this post, but remember to always substitute that with your droplet's IP (it should be visible on the main DO page).
 
@@ -46,7 +49,7 @@ One option to log into your droplet is through the "Access" tab on that page, bu
 You should be greeted with a welcome message and some stats about the server that look like this:
 ![Login screen]({{ site.url }}/img/blog/digital-ocean/login.png)
 
-<h2 id="safety-first">Step 4: Ensure you don't shoot yourself in the foot</h2>
+<h1 id="safety-first">Step 4: Ensure you don't shoot yourself in the foot</h1>
 
 The first thing I like to do is add a non-root user so that we won't accidentally do something stupid as "root". Let's add a user named "dean" and give him admin power.  You will be asked to give some information for this new user.
 
@@ -61,7 +64,7 @@ From now on I will generally log into this server as "dean".  If I'll need to ru
 su - dean
 ```
 
-<h2 id="nginx">Step 5: See your droplet in a browser</h2>
+<h1 id="nginx">Step 5: See your droplet in a browser</h1>
 
 Right now if you try to visit `http://123.456.1.2` in a browser, you'll get a "webpage not available error". Let's make our private server serve a webpage there instead, as a nice visual reward for getting this far. Install nginx:
 
@@ -84,7 +87,7 @@ sudo service nginx start
 sudo service nginx restart
 ```
 
-<h2 id="install-r">Step 6: Install R</h2>
+<h1 id="install-r">Step 6: Install R</h1>
 
 To ensure we get the most recent version of R, we need to first add `trusty` to our `sources.list`:
 
@@ -139,7 +142,7 @@ install.packages("devtools", repos='http://cran.rstudio.com/'))
 install.packages("daattali/shinyjs", repos='http://cran.rstudio.com/'))
 ```
 
-<h2 id="install-rstudio">Step 7: Install RStudio Server</h2>
+<h1 id="install-rstudio">Step 7: Install RStudio Server</h1>
 
 Great, R is working, but RStudio has become such an integral part of our lives that we can't do any R without it! 
 
@@ -164,7 +167,7 @@ You can log in to RStudio with any user/password that are available on the dropl
 
 Go ahead and play around in R a bit, to make sure it works fine. I usually like to try out a `ggplot2` function, to ensure that graphics are working properly.
 
-<h2 id="install-shiny">Step 8: Install Shiny Server</h2>
+<h1 id="install-shiny">Step 8: Install Shiny Server</h1>
 
 You can safely skip this step if you don't use `shiny` and aren't interested in being able to host Shiny apps yourself.
 
@@ -193,7 +196,7 @@ If you see an error on the bottom Shiny app, it's probably because you don't hav
 - The config file for Shiny Server is at `/etc/shiny-server/shiny-server.conf`.
 - **Important!** If you look in the config file, you will see that by defauly, apps are ran as user "shiny". It's important to understand which user is running an app because things like file permissions and personal libraries will be different for each user and it might cause you some headaches until you realize it's because the app should not be run as "shiny". Just keep that in mind.
 
-<h2 id="reverse-proxy">Step 9: Make pretty URLs for RStudio Server and Shiny Server</h2>
+<h1 id="reverse-proxy">Step 9: Make pretty URLs for RStudio Server and Shiny Server</h1>
 
 This is optional and a little more advanced. You might have noticed that to access both RStudio and Shiny Server, you have to remember weird port numbers (`:8787` and `:3838`). Not only is it hard and ugly to remember, but some workplace environments often block access to those ports, which means that many people/places won't be able to access these pages. The solution is to use a reverse proxy, so that nginx will listen on port 80 (default HTTP port) at the URL `/shiny` and will *internally* redirect that to port 3838. Same for RStudio - we can have nginx listen at `/rstudio` and redirect it to port 8787. This is why my Shiny apps can be reached at [daattali.com/shiny/](http://daattali.com/shiny/) which is an easy URL to type, but also at [daattali.com:3838](http://daattali.com:3838).
 
@@ -223,13 +226,13 @@ sudo service nginx restart
 
 Now you should be able to go to `http://107.170.217.55/shiny/` or `http://107.170.217.55/rstudio/`! Much better!
 
-<h2 id="custom-domain">Custom domain name</h2>
+<h1 id="custom-domain">Step 10: Custom domain name</h1>
 
 If you have a custom domain that you want to host your droplet on, that's not too hard to set up.  For example, my main droplet's IP is [198.199.117.12](http://198.199.117.12), but I also purchased the domain [daattali.com](http://daattali.com/) so that it would be able to host my droplet with a much simpler URL.
 
 There are two main steps to this: you need to configure your domain on DO, and to change your domain servers from your registrar to point to DO.
 
-#### Configure your domain
+### Configure your domain
 
 In the DO website, click on "DNS" at the top, and then we want to add a domain.  Select your droplet from the appropriate input box, and put it your domain name in the URL field. Do not add "www" to the beginning of your domain. Then click on "Create Domain".
 
@@ -243,7 +246,7 @@ Here is what my domain settings look like, make sure yours look similar (note th
 
 ![DigitalOcean DNS settings]({{ site.url }}/img/blog/digital-ocean/DigitalOceanDNS.png) 
 
-#### Change your domain servers to DigitalOcean
+### Change your domain servers to DigitalOcean
 
 You also need to configure your domain registrar by adding the 3 nameservers `ns1.digitalocean.com`, `ns2.digitalocean.com`, `ns3.digitalocean.com`. It's fairly simple, but the exact instructions are different based on your registrar, so [here is a guide](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars) with all the common registrars and how to do this step with each of them.
 
@@ -252,7 +255,7 @@ I use Namecheap, so this is what my domain configuration needs to look like:
 
 **And that's it! Now you have a nicely configured private web server with your very own RStudio and Shiny Server, and you can do anything else you'd like to it.** 
 
-<h2 id="resources">Resource</h2>
+<h1 id="resources">Resources</h1>
 
 This is a list of the main blog/StackOverflow/random posts I had to consult while getting all this to work. 
 
