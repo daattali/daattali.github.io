@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "How to easily get your very own RStudio Server and Shiny Server with DigitalOcean"
+title: "How to get your very own RStudio Server and Shiny Server with DigitalOcean"
 tags: [professional, rstats, r, r-bloggers, shiny, rstudio, sysadmin]
 date: 2015-05-10 21:00:00 -0700
 ---
 
 If you've always wanted to have an RStudio Server of your own so that you can access R from anywhere, or your own Shiny Server to host your awesome shiny apps, [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99) (DO) can help you get there easily.
 
-DigitalOcean provides virtual private servers (they call each server a *droplet*), which means that you can pay *$5/month* to have your own server "in the cloud" that you can access from anywhere and host anything on.  Check out [my DO droplet](http://daattali.com/) to see it in action!  If you use [my referral link](https://www.digitalocean.com/?refcode=358494f80b99), you'll get $10 in credits, which is enough to give you a private server for 2 months.
+DigitalOcean provides virtual private servers (they call each server a *droplet*), which means that you can pay *$5/month* to have your own server "in the cloud" that you can access from anywhere and host anything on.  Check out [my DO droplet](http://daattali.com/) to see it in action! Use [my referral link](https://www.digitalocean.com/?refcode=358494f80b99) to get $10 in credits, which is enough to give you a private server for your first 2 months.
 
-This all started a couple of months ago when I asked my supervisor, [Jenny Bryan](https://twitter.com/JennyBryan), if there was a way for me to do some R-ing when I'm away from my machine. She told me that she doesn't have a solution for me, but that I should check out [DO](https://www.digitalocean.com/?refcode=358494f80b99), so I did. And it turns out that it's very convenient for hosting my own RStudio Server and anything else I'd like to host, and very affordable **even for my student self** :)
+I only found out about DO a couple of monhts ago when I asked my supervisor, [Jenny Bryan](https://twitter.com/JennyBryan), if there was a way for me to do some R-ing when I'm away from my machine. She told me that she doesn't have a solution for me, but that I should check out DigitalOcean, so I did. And it turns out that it's very convenient for hosting my own RStudio Server and anything else I'd like to host, and very affordable **even for my student self**. :)
 
 This post will cover how to set up R, RStudio Server, Shiny Server, and a few other helpful features on a brand new DO droplet (remember: droplet = your machine in the cloud). The tutorial might seem lengthy, but it's actually very simple, I'm just breaking up every step into very fine details.
 
@@ -22,7 +22,7 @@ This post will cover how to set up R, RStudio Server, Shiny Server, and a few ot
 - [Step 5: See your droplet in a browser](#nginx)
 - [Step 6: Install R](#install-r)
 - [Step 7: Install RStudio Server](#install-rstudio)
-- [Step 8: Install Shiny Server](#install-shiny)
+- [Step 8: Install Shiny Server](#install-shiny
 - [Step 9: Make pretty URLs for RStudio Server and Shiny Server](#reverse-proxy)
 - [Step 10: Custom domain name](#custom-domain)
 - [Resources](#resources)
