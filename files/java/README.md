@@ -40,4 +40,11 @@ jarsigner -verify test\Connect4.jar
 
 ```
 
+
+```
+try adding the intermediate certificates
+http://stackoverflow.com/questions/8049645/jarsigner-this-jar-contains-entries-whose-certificate-chain-is-not-validated
+```
+
+
 comodo technical help said to try importing into IE then exporting and make sure it includes all intermediate certifications.
