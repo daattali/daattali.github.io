@@ -228,7 +228,30 @@ Now you should be able to go to `http://107.170.217.55/shiny/` or `http://107.17
 
 If you have a custom domain that you want to host your droplet on, that's not too hard to set up.  For example, my main droplet's IP is [198.199.117.12](http://198.199.117.12), but I also purchased the domain [daattali.com](http://daattali.com/) so that it would be able to host my droplet with a much simpler URL.
 
-![DigitalOcean DNS settings]({{ site.url }}/img/blog/DigitalOceanDNS.png) 
+There are two main steps to this: you need to configure your domain on DO, and to change your domain servers from your registrar to point to DO.
+
+#### Configure your domain
+
+In the DO website, click on "DNS" at the top, and then we want to add a domain.  Select your droplet from the appropriate input box, and put it your domain name in the URL field. Do not add "www" to the beginning of your domain. Then click on "Create Domain".
+
+You will now get to a page where you can enter more details. 
+
+- The "A" row should have `@` in the first box and the droplet's IP in the second box.
+- In the three "NS" fields, you should have the values `ns1.digitalocean.com.`, `ns2.digitalocean.com.`, `ns3.digitalocean.com.`
+- You also need to add a "CNAME" record, so click on "Add Record", choose "CNAME", enter `www` in the first box, and your domain's name in the second box. You need to append a dot (`.`) to the end of the domain name.
+
+Here is what my domain settings look like, make sure yours look similar (note the dot suffix on all the domain names):
+
+![DigitalOcean DNS settings]({{ site.url }}/img/blog/digital-ocean/DigitalOceanDNS.png) 
+
+#### Change your domain servers to DigitalOcean
+
+You also need to configure your domain registrar by adding the 3 nameservers `ns1.digitalocean.com`, `ns2.digitalocean.com`, `ns3.digitalocean.com`. It's fairly simple, but the exact instructions are different based on your registrar, so [here is a guide](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars) with all the common registrars and how to do this step with each of them.
+
+I use Namecheap, so this is what my domain configuration needs to look like:
+![Namecheap domain servers]({{ site.url }}/img/blog/digital-ocean/namechep-domain-server.png) 
+
+**And that's it! Now you have a nicely configured private web server with your very own RStudio and Shiny Server, and you can do anything else you'd like to it.** 
 
 <h2 id="resources">Resource</h2>
 
