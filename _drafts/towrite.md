@@ -9,7 +9,7 @@ doesnt seem like RMySQL supports preparesd statemetns so need to "hack" together
 install sqlite: `sudo apt-get install sqlite3 libsqlite3-dev`, create database: `sqlite3 databasename.db`
 
 
-analyze rbloggers twitter: what day of week is best to post? which posters get most attention? correlation betwwen posting freq and attention?
+analyze rbloggers twitter: what day of week is best to post? which posters get most attention? who posts the most? (if some blogs havent posted in over a year, maybe tell tal?) correlation betwwen posting freq and attention?
 ```
 library(httr)
 library(XML)
