@@ -22,7 +22,7 @@ This post will cover how to set up R, RStudio Server, Shiny Server, and a few ot
 - [Step 5: See your droplet in a browser](#nginx)
 - [Step 6: Install R](#install-r)
 - [Step 7: Install RStudio Server](#install-rstudio)
-- [Step 8: Install Shiny Server](#install-shiny
+- [Step 8: Install Shiny Server](#install-shiny)
 - [Step 9: Make pretty URLs for RStudio Server and Shiny Server](#reverse-proxy)
 - [Step 10: Custom domain name](#custom-domain)
 - [Resources](#resources)
