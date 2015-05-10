@@ -58,7 +58,7 @@ adduser dean
 gpasswd -a dean sudo
 ```
 
-From now on I will generally log into this server as "dean".  If I'll need to run any commands requiring admin abilities, I just have to prepend the command with `sudo`.  Let's say goodbye to "root" and switch to "dean".
+From now on I will generally log into this server as "dean" instead of "root".  If I'll need to run any commands requiring admin abilities, I just have to prepend the command with `sudo`.  Let's say goodbye to "root" and switch to "dean".
 
 ```
 su - dean
