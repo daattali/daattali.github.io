@@ -3,6 +3,7 @@ layout: post
 title: "How to get your very own RStudio Server and Shiny Server with DigitalOcean"
 tags: [professional, rstats, r, r-bloggers, shiny, rstudio, sysadmin]
 date: 2015-05-09 21:30:00 -0700
+fb-img: http://deanattali.com/img/blog/digital-ocean/rstudio.png
 ---
 
 If you've always wanted to have an RStudio Server of your own so that you can access R from anywhere, or your own Shiny Server to host your awesome shiny apps, [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99) (DO) can help you get there easily.
