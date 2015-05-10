@@ -273,4 +273,4 @@ This is a list of the main blog/StackOverflow/random posts I had to consult whil
 
 ## Disclaimer
 
-I'm not a sysadmin and a lot of this stuff was learned very quickly from random Googling, so it's very possible that some stuff here is not besy way of performing some tasks. If anyone has any comments on anything in this document, I'd love to [hear about it](./aboutme#contact)!
+I'm not a sysadmin and a lot of this stuff was learned very quickly from random Googling, so it's very possible that some stuff here is not best way of performing some tasks. If anyone has any comments on anything in this document, I'd love to [hear about it](./aboutme#contact)!
