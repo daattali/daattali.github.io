@@ -236,7 +236,7 @@ There are two main steps involved: you need to configure your domain on DO, and 
 
 ### Configure your domain
 
-In the DO website, click on "DNS" at the top, and then we want to add a domain.  Select your droplet from the appropriate input box, and put it your domain name in the URL field. Do not add "www" to the beginning of your domain. Then click on "Create Domain".
+In the DO website, click on "DNS" at the top, and then we want to add a domain.  Select your droplet from the appropriate input box, and put in your domain name in the URL field. Do not add "www" to the beginning of your domain. Then click on "Create Domain".
 
 You will now get to a page where you can enter more details. 
 
