@@ -209,6 +209,8 @@ You need to edit the nginx config file `/etc/nginx/sites-enabled/default`:
 sudo vim /etc/nginx/sites-enabled/default
 ```
 
+(I'm assuming you know how to use `vim`. If not, then just Google for "how to edit a file on linux". In short: press `I` to start typing text, then press `Esc` to stop typing text, then press `:wq` followed by Enter to save the file).
+
 Add the following lines right after the line that reads `server_name localhost;`:
 
 ```
