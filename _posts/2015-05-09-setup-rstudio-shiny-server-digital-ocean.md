@@ -197,6 +197,7 @@ If you see an error on the bottom Shiny app, it's probably because you don't hav
 - The default Shiny Server homepage you're seeing is located at `/srv/shiny-server/index.html` - you can edit it or remove it.
 - Any Shiny app directory that you place under `/srv/shiny-server/` will be served as a Shiny app. For example, there is a default app at `/srv/shiny-server/sample-apps/hello/`, which means you can run the app by going to `http://107.170.217.55:3838/sample-apps/hello/`.
 - The config file for Shiny Server is at `/etc/shiny-server/shiny-server.conf`.
+- To reload the server after editing the config, use `sudo reload shiny-server`.
 - **Important!** If you look in the config file, you will see that by default, apps are ran as user "shiny". It's important to understand which user is running an app because things like file permissions and personal R libraries will be different for each user and it might cause you some headaches until you realize it's because the app should not be run as "shiny". Just keep that in mind.
 
 <h1 id="reverse-proxy">Step 9: Make pretty URLs for RStudio Server and Shiny Server</h1>
