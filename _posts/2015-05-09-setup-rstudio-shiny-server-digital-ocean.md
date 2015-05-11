@@ -278,3 +278,7 @@ This is a list of the main blog/StackOverflow/random posts I had to consult whil
 ## Disclaimer
 
 I'm not a sysadmin and a lot of this stuff was learned very quickly from random Googling, so it's very possible that some steps here are not the very best way of performing some tasks. If anyone has any comments on anything in this document, I'd love to [hear about it]({{ site.url }}/aboutme#contact)!
+
+## Updates
+
+[2015-05-11] I've gotten several people asking me if this can be a solution for hosting rmarkdown files as well. **YES it can!** Shiny Server works great as hosting .Rmd files, and you can even embed a Shiny app inside the Rmd file.  [Here's an example on my server](http://daattali.com/shiny/rmd-test/) in case you're curious.  
