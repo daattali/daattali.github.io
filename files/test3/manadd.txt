@@ -1,0 +1,3 @@
+Permissions: all-permissions
+Codebase: *.deanattali.com
+Application-Name: Hello World Test
