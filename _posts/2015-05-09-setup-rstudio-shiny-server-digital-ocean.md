@@ -22,10 +22,12 @@ This post will cover how to set up a machine from scratch, setup R, RStudio Serv
 - [Step 4: Ensure you don't shoot yourself in the foot](#safety-first)
 - [Step 5: See your droplet in a browser](#nginx)
 - [Step 6: Install R](#install-r)
+- [Important note re: installing R packages](#user-libraries)
 - [Step 7: Install RStudio Server](#install-rstudio)
 - [Step 8: Install Shiny Server](#install-shiny)
 - [Step 9: Make pretty URLs for RStudio Server and Shiny Server](#reverse-proxy)
 - [Step 10: Custom domain name](#custom-domain)
+- [Updates](#updates)
 - [Resources](#resources)
 
 <h1 id="sign-up">Step 1: Sign up to DigitalOcean</h1>
@@ -34,7 +36,7 @@ Go to [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99) (use th
 
 <h1 id="create-droplet">Step 2: Create a new droplet</h1>
 
-Now let's claim one of DO's machines as our own! It's so simple that you definitely don't need my instructions, just click on the big "Create Droplet" button and choose your settings. I chose the smallest/weakest machine ($5/month plan) and it's good enough for me. I also chose San Francisco because it's the closest to me, though it really wouldn't make much of a noticeable difference where the server is located. For OS, I chose to go with the default Ubuntu 14.04 x64.  I highly recommend you add an SSH key at the last step if you know how to do that. If not, either read up on it or just proceed without an SSH key.
+Now let's claim one of DO's machines as our own! It's so simple that you definitely don't need my instructions, just click on the big "Create Droplet" button and choose your settings. I chose the smallest/weakest machine ($5/month plan) and it's good enough for me. I also chose San Francisco because it's the closest to me, though it really wouldn't make much of a noticeable difference where the server is located. For OS, I chose to go with the default Ubuntu 14.04 x64.  I highly recommend you add an SSH key at the last step if you know how to do that. If not, either read up on it [here](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-putty-on-digitalocean-droplets-windows-users) or just proceed without an SSH key.
 
 *Note: all subsequent steps assume that you are also using the weakest server possible with Ubuntu 14.04 x64. If you chose different settings, the general instructions will still apply but some of the specific commands/URLs might need to change.*
 
@@ -129,27 +131,34 @@ sudo /sbin/swapon /var/swap.1
 sudo sh -c 'echo "/var/swap.1 swap swap defaults 0 0 " >> /etc/fstab'
 ```
 
-Now installing most packages will work, but before installing any package, I always like having `devtools` available so that I can install GitHub packages. `devtools` will currently not be able to get installed (though, annoyingly enough, it will not throw any errors, it will simply not install) because it needs `libcurl` support. So let's install it:
+Now installing most packages will work, but before installing any package, I always like having `devtools` available so that I can install GitHub packages. `devtools` will currently not be able to get installed because it has a few dependencies. Let's install those dependencies:
 
 ```
 sudo apt-get install libcurl4-gnutls-dev
+sudo apt-get install libxml2-dev
+sudo apt-get install libssl-dev
 ```
 
 Ok, now we can start installing R packages, both from CRAN and from GitHub!
 
 ```
-R
-install.packages("devtools", repos='http://cran.rstudio.com/')
-devtools::install_github("daattali/shinyjs")
+sudo su - -c "R -e \"install.packages('devtools', repos='http://cran.rstudio.com/')\""
+sudo su - -c "R -e \"devtools::install_github('daattali/shinyjs')\""
 ```
 
-Feel free to play around in the R console now.
+Feel free to play around with R now.
+
+<h1 id="user-libraries">Important note</h1>
+
+Note that instead of launching R and installing the packages from R, I'm doing it from the terminal with `sudo su - -c "R ..."`. Why? Because if you log into R and install packages, by default they will be installed in your personal library and will only be accessible to the current user (`dean` in this case). By running the command the way I do above, it installs the packages as the `root` user, which means the packages will be installed in a global library and will be available to all users.
+
+As a demonstration, launch R (simply run `R`) and run `.libPaths()`. This will show you all the locations where R will search for a package, and the first one is where a new package will get installed.  You'll probably notice that the first entry, where packages will get installed, is a path under the current user's home (for me it's `/home/dean/R/x86_64-pc-linux-gnu-library/3.2`). From now on, whenever you want to install a package for the whole system, you should either log in as `root` and intall the package, or use the above command. To install an R package for just one user, it's ok to proceed as normal and just install the package when you're logged in as the intended user.
 
 <h1 id="install-rstudio">Step 7: Install RStudio Server</h1>
 
 Great, R is working, but RStudio has become such an integral part of our lives that we can't do any R without it! 
 
-Quit R (`quit()`) and install some pre-requisites:
+Let's install some pre-requisites:
 
 ```
 sudo apt-get install libapparmor1 gdebi-core
@@ -180,6 +189,8 @@ To install Shiny Server, first install the `shiny` package:
 sudo su - -c "R -e \"install.packages('shiny', repos='http://cran.rstudio.com/')\""
 ```
 
+(Note again that we're installing `shiny` in a way that will make it available to all users, as I explained [above](#user-libraries)).
+
 Just like when we installed RStudio, again we need to get the URL of the latest Shiny Server [from the Shiny Server downloads page](http://www.rstudio.com/products/shiny/download-server/), download the file, and then install it.  These are the two commands using the version that is most up-to-date right now:
 
 ```
@@ -191,7 +202,7 @@ Shiny Server is now installed and running. Assuming there were no problems, if y
 
 ![Shiny Server]({{ site.url }}/img/blog/digital-ocean/shiny.png)
 
-If you see an error on the bottom Shiny app, it's probably because you don't have the `rmarkdown` R package installed (the instructions on the default Shiny Server page mention this). After installing `rmarkdown` in R, the bottom Shiny app should work as well.  I suggest you read through the instructions page at `http://107.170.217.55:3838/`. A few important points as reference:
+If you see an error on the bottom Shiny app, it's probably because you don't have the `rmarkdown` R package installed (the instructions on the default Shiny Server page mention this). After installing `rmarkdown` in R, the bottom Shiny app should work as well. Don't forget to install `rmarkdown` so that it will be available to all users as described [above](#user-libraries). I suggest you read through the instructions page at `http://107.170.217.55:3838/`. A few important points as reference:
 
 - Shiny Server log is at `/var/log/shiny-server.log`.
 - The default Shiny Server homepage you're seeing is located at `/srv/shiny-server/index.html` - you can edit it or remove it.
@@ -199,6 +210,7 @@ If you see an error on the bottom Shiny app, it's probably because you don't hav
 - The config file for Shiny Server is at `/etc/shiny-server/shiny-server.conf`.
 - To reload the server after editing the config, use `sudo reload shiny-server`.
 - **Important!** If you look in the config file, you will see that by default, apps are ran as user "shiny". It's important to understand which user is running an app because things like file permissions and personal R libraries will be different for each user and it might cause you some headaches until you realize it's because the app should not be run as "shiny". Just keep that in mind.
+- The fact that apps run as the user `shiny` means that any package required in a shiny app needs to be either in the global library or in `shiny`'s library. [As I mentioned above](#user-libraries), you might need to install R packages in a special way to make sure the `shiny` user can access them.
 
 <h1 id="reverse-proxy">Step 9: Make pretty URLs for RStudio Server and Shiny Server</h1>
 
@@ -261,10 +273,19 @@ I use Namecheap, so this is what my domain configuration needs to look like:
 
 **And that's it! Now you have a nicely configured private web server with your very own RStudio and Shiny Server, and you can do anything else you'd like on it.** 
 
+<h2 id="updates">Updates</h2>
+
+[2015-05-11] I've gotten several people asking me if this can be a solution for hosting rmarkdown files as well. **YES it can!** Shiny Server works great as hosting .Rmd files, and you can even embed a Shiny app inside the Rmd file.  [Here's an example on my server](http://daattali.com/shiny/rmd-test/) in case you're curious.  
+
+[2015-05-11] There is some inquiry about whether or not this setup should be "Dockerized" ([What is Docker?](http://www.docker.com/whatisdocker/)). Docker is of course a great alternative to setting this up and can be even simpler by taking away all the pain of doing the setup yourself and providing you with a container that already has RStudio/Shiny Server installed. [Dirk Eddelbuettel](https://twitter.com/eddelbuettel) and [Carl Boettiger](https://twitter.com/cboettig) already did a fantastic job of making some R-related docker containers, including RStudio and Shiny Server, so [check out Rocker](https://registry.hub.docker.com/repos/rocker/) if you want to go that route. I think it's nice to do all this installation yourself because it can look scary and intimidating before you do it the first time, and it can be a nice feeling to see that it's actually very doable and really doesn't take very long (less than half an hour) if you have a guide that takes away the annoying Googling at every step.  But you can quickly surpass all these steps and use docker if you prefer :)
+
+[2015-05-12] Added missing dependencies to install devtools and [Important note re: installing R packages](#user-libraries).
+
 <h1 id="resources">Resources</h1>
 
 This is a list of the main blog/StackOverflow/random posts I had to consult while getting all this to work. 
 
+- [https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-putty-on-digitalocean-droplets-windows-users](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-putty-on-digitalocean-droplets-windows-users)
 - [https://www.raspberrypi.org/documentation/remote-access/web-server/nginx.md](https://www.raspberrypi.org/documentation/remote-access/web-server/nginx.md)
 - [http://www.sysads.co.uk/2014/06/install-r-base-3-1-0-ubuntu-14-04/](http://www.sysads.co.uk/2014/06/install-r-base-3-1-0-ubuntu-14-04/)
 - [http://stackoverflow.com/questions/17173972/how-do-you-add-swap-to-an-ec2-instance](http://stackoverflow.com/questions/17173972/how-do-you-add-swap-to-an-ec2-instance)
@@ -278,9 +299,3 @@ This is a list of the main blog/StackOverflow/random posts I had to consult whil
 ## Disclaimer
 
 I'm not a sysadmin and a lot of this stuff was learned very quickly from random Googling, so it's very possible that some steps here are not the very best way of performing some tasks. If anyone has any comments on anything in this document, I'd love to [hear about it]({{ site.url }}/aboutme#contact)!
-
-## Updates
-
-[2015-05-11] I've gotten several people asking me if this can be a solution for hosting rmarkdown files as well. **YES it can!** Shiny Server works great as hosting .Rmd files, and you can even embed a Shiny app inside the Rmd file.  [Here's an example on my server](http://daattali.com/shiny/rmd-test/) in case you're curious.  
-
-[2015-05-11] There is some inquiry about whether or not this setup should be "Dockerized" ([What is Docker?](http://www.docker.com/whatisdocker/)). Docker is of course a great alternative to setting this up and can be even simpler by taking away all the pain of doing the setup yourself and providing you with a container that already has RStudio/Shiny Server installed. [Dirk Eddelbuettel](https://twitter.com/eddelbuettel) and [Carl Boettiger](https://twitter.com/cboettig) already did a fantastic job of making some R-related docker containers, including RStudio and Shiny Server, so [check out Rocker](https://registry.hub.docker.com/repos/rocker/) if you want to go that route. I think it's nice to do all this installation yourself because it can look scary and intimidating before you do it the first time, and it can be a nice feeling to see that it's actually very doable and really doesn't take very long (less than half an hour) if you have a guide that takes away the annoying Googling at every step.  But you can quickly surpass all these steps and use docker if you prefer :)
