@@ -182,7 +182,7 @@ Go ahead and play around in R a bit, to make sure it works fine. I usually like 
 
 <h1 id="install-shiny">Step 8: Install Shiny Server</h1>
 
-You can safely skip this step if you don't use `shiny` and aren't interested in being able to host Shiny apps yourself.
+You can safely skip this step if you don't use `shiny` and aren't interested in being able to host Shiny apps yourself. **But** don't forget that Shiny Server can also be used to host Rmarkdown files, not just shiny apps. This means that even if you don't develop shiny apps you might still have a use for Shiny Server if you want to host interactive Rmarkdown documents.
 
 To install Shiny Server, first install the `shiny` package:
 
@@ -251,6 +251,8 @@ git push -u origin master
 If you now refresh the GitHub page, you should see the files that were added from the droplet.
 
 Now that git is set up, you can add shiny apps to this repository (assuming you know basic git usage).  Whenever you add a new shiny app or edit the index page or an existing app, you'll need to do a `git pull` on your droplet to grab those changes and display them in your server. That's it, it's pretty convenient in my opinion.
+
+As mentioned previously, Shiny Server can also be used as a great tool to host interactive Rmarkdown documents (not just shiny apps), so you can use this method to publish your rmarkdown files. 
 
 <h1 id="reverse-proxy">Step 9: Make pretty URLs for RStudio Server and Shiny Server</h1>
 
