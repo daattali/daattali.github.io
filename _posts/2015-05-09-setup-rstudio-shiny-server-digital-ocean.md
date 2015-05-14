@@ -286,7 +286,7 @@ sudo service nginx restart
 
 Now you should be able to go to `http://107.170.217.55/shiny/` or `http://107.170.217.55/rstudio/`. Much better!
 
-**Bonus for advanced users:** The above setup should be just fine for most users, but I did notice a few small issues with RStudio that seem to be fixed by allowing nginx to proxy WebSockets. For example, I noticed that using the `ggvis` package in my RStudio, tooltips were not working. The fix is to add the following three lines inside the /location /rstudio/ settings (keep the `proxy_pass` line and just add these three, and remember you have to restart nginx after changing the settings):
+**Bonus for advanced users:** The above setup should be just fine for most users, but I did notice a few small issues with RStudio that seem to be fixed by allowing nginx to proxy WebSockets. For example, I noticed that when using the `ggvis` package in my RStudio, tooltips were not working. The fix is to add the following three lines inside the `/location /rstudio/` settings (keep the `proxy_pass` line and just add these three, and remember you have to restart nginx after changing the settings):
 
 ```
 proxy_http_version 1.1;
