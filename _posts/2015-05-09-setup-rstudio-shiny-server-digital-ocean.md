@@ -223,7 +223,7 @@ As I just mentioned, any Shiny app you place under `/srv/shiny-server/` will be 
 
 The main idea is to have the `/srv/shiny-server/` folder be a git repository, so that you can push to this repository from your personal computer and whenever you do a `git pill` on your droplet, it will update and grab the new apps you added.
 
-The first step is to install git make the `/srv/shiny-server/` directory a git repository.
+The first step is to install git and make the `/srv/shiny-server/` directory a git repository.
 
 ```
 sudo apt-get install git
