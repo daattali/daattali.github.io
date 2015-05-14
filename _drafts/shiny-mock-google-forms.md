@@ -5,3 +5,6 @@ title: "How to mock a Google Form with Shiny + different ways to use persistent 
 
 TODO write this up
 
+
+
+add comment on http://shiny.rstudio.com/articles/share-data.html
