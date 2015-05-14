@@ -12,7 +12,7 @@ DigitalOcean provides virtual private servers (they call each server a *droplet*
 
 I only found out about DO a couple of months ago when I asked my supervisor, [Jenny Bryan](https://twitter.com/JennyBryan), if there was a way for me to do some R-ing when I'm away from my machine. She told me that she doesn't have a solution for me, but that I should check out DigitalOcean, so I did. And it turns out that it's very convenient for hosting my own RStudio Server and anything else I'd like to host, and very affordable **even for my student self**. :)
 
-This post will cover how to set up a machine from scratch, setup R, RStudio Server, Shiny Server, and a few other helpful features on a brand new DO droplet (remember: droplet = your machine in the cloud). The tutorial might seem lengthy, but it's actually very simple, I'm just breaking up every step into very fine details.
+This post will cover how to set up a machine from scratch, set up R, RStudio Server, Shiny Server, and a few other helpful features on a brand new DO droplet (remember: droplet = your machine in the cloud). The tutorial might seem lengthy, but it's actually very simple, I'm just breaking up every step into very fine details.
 
 # Table of contents
 
@@ -25,7 +25,8 @@ This post will cover how to set up a machine from scratch, setup R, RStudio Serv
 - [Step 6.1: Important note re: installing R packages](#user-libraries)
 - [Step 7: Install RStudio Server](#install-rstudio)
 - [Step 8: Install Shiny Server](#install-shiny)
-- [Step 8.1: Populate Shiny Server with Shiny apps using a git repository](#shiny-git)
+- [Step 8.1: Set up proper user permissions on Shiny Server](#shiny-user-perms)
+- [Step 8.2: Populate Shiny Server with Shiny apps using a git repository](#shiny-git)
 - [Step 9: Make pretty URLs for RStudio Server and Shiny Server](#reverse-proxy)
 - [Step 10: Custom domain name](#custom-domain)
 - [Updates](#updates)
@@ -218,9 +219,30 @@ If you see an error on the bottom Shiny app, it's probably because you don't hav
 
 The fact that apps run as the user `shiny` means that any package required in a shiny app needs to be either in the global library or in `shiny`'s library. [As I mentioned above](#user-libraries), you might need to install R packages in a special way to make sure the `shiny` user can access them.
 
-<h2 id="shiny-git">Step 8.1: Populate Shiny Server with Shiny apps using a git repository</h2>
+<h2 id="shiny-user-perms">Step 8.1: Set up proper user permissions on Shiny Server</h2>
 
-As I just mentioned, any Shiny app you place under `/srv/shiny-server/` will be automatically served as a Shiny app. But how do you get shiny apps into there in the first place?  One option is to directly transfer files using something like [FileZilla](https://filezilla-project.org/) or the `scp` command. The moment a shiny app directory is transferred to your droplet, the corresponding app will be available to use on the web right away.  Another approach instead of doing a direct file trasnfer is to use git. If you don't know what git is, that's outside the scope of this article, so either look it up and come back here or just use FileZilla :)
+As I just mentioned, dealing with which user is running an app and user permissions can be a bit annoying. It took me a while to figure our how to set up the users in a way that works well for me, and this is the setup I came up with. I'm not saying it's necessarily the most correct way to work, but it works for me. Feel free to do the same.
+
+Currently, assuming you're logged in as user `dean`, when you create a folder in the Shiny Server folder, `dean` will be considered the only owner of that folder and nobody else (except `root`) will be able to write files there. Why is this a problem? It means that if an app is trying to write a file to the filesystem, the app will crash because `shiny` user does not have those permissions. One option is to add `run_as dean;` to the shiny server config, but I don't like that because then when I want to see which user is using up the server's resources, I won't be able to differentiate between a shiny app running under my name vs me running R code myself.
+
+So my solution is to create a user group called `shiny-apps` and add both `dean` and `shiny` users to it. Then I'll make sure that the whole `/srv/shiny-server` folder has read+write permissions to the group. (Again, disclaimer: I'm not a sysadmin so I'm learning all this as I go. Don't treat this as a work of god).
+
+```
+groupadd shiny-apps
+usermod -aG shiny-apps dean
+usermod -aG shiny-apps shiny
+cd /srv/shiny-server
+chown -R dean:shiny-apps .
+chmod g+s .
+```
+
+Now both `dean` and `shiny` will have access to any new or existing files under `/srv/shiny-server`. I like it because now I can develop an app from my RStuio Server (logged in as `dean`), be able to run it through RStudio (as `dean`), and also be able to run it via my Shiny Server (as `shiny`).
+
+<h2 id="shiny-git">Step 8.2: Populate Shiny Server with Shiny apps using a git repository</h2>
+
+As mentioned above, any Shiny app you place under `/srv/shiny-server/` will be automatically served as a Shiny app. But how do you get shiny apps into there in the first place? If you're creating a new app, you can just log into your RStudio Server and develop your shiny app from there, and just save the app under `/srv/shiny-server/`.
+
+But what if you want to bring into your server an app you already have on your machine?  One option is to directly transfer files using something like [FileZilla](https://filezilla-project.org/) or the `scp` command. The moment a shiny app directory is transferred to your droplet, the corresponding app will be available to use on the web right away. Another approach is to use git. If you don't know what git is, that's outside the scope of this article, so either look it up and come back here or just use FileZilla :)
 
 The main idea is to have the `/srv/shiny-server/` folder be a git repository, so that you can push to this repository from your personal computer and whenever you do a `git pill` on your droplet, it will update and grab the new apps you added.
 
@@ -335,6 +357,8 @@ I use Namecheap, so this is what my domain configuration needs to look like:
 **[2015-05-13]** Added section about [populating Shiny Server with Shiny apps using a git repository](#shiny-git).
 
 **[2015-05-13]** Added a bit in [step 9](#reverse-proxy) about proxying WebSockets to fix a few small potential issues with RStudio Server.
+
+**[2015-05-14]** Added section about [setting up proper user permissions on Shiny Server](#shiny-user-perms).
 
 <h1 id="resources">Resources</h1>
 
