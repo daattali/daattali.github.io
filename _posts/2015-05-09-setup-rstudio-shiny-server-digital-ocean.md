@@ -22,10 +22,10 @@ This post will cover how to set up a machine from scratch, setup R, RStudio Serv
 - [Step 4: Ensure you don't shoot yourself in the foot](#safety-first)
 - [Step 5: See your droplet in a browser](#nginx)
 - [Step 6: Install R](#install-r)
-- [Aside: Important note re: installing R packages](#user-libraries)
+- [Step 6.1: Important note re: installing R packages](#user-libraries)
 - [Step 7: Install RStudio Server](#install-rstudio)
 - [Step 8: Install Shiny Server](#install-shiny)
-- [Aside: Populate Shiny Server with Shiny apps using a git repository](#shiny-git)
+- [Step 8.1: Populate Shiny Server with Shiny apps using a git repository](#shiny-git)
 - [Step 9: Make pretty URLs for RStudio Server and Shiny Server](#reverse-proxy)
 - [Step 10: Custom domain name](#custom-domain)
 - [Updates](#updates)
@@ -149,7 +149,7 @@ sudo su - -c "R -e \"devtools::install_github('daattali/shinyjs')\""
 
 Feel free to play around with R now.
 
-<h1 id="user-libraries">Important note</h1>
+<h2 id="user-libraries">Step 6.1: Important note re: installing R packages</h2>
 
 Note that instead of launching R and installing the packages from R, I'm doing it from the terminal with `sudo su - -c "R ..."`. Why? Because if you log into R and install packages, by default they will be installed in your personal library and will only be accessible to the current user (`dean` in this case). By running the command the way I do above, it installs the packages as the `root` user, which means the packages will be installed in a global library and will be available to all users.
 
@@ -218,7 +218,7 @@ If you see an error on the bottom Shiny app, it's probably because you don't hav
 
 The fact that apps run as the user `shiny` means that any package required in a shiny app needs to be either in the global library or in `shiny`'s library. [As I mentioned above](#user-libraries), you might need to install R packages in a special way to make sure the `shiny` user can access them.
 
-<h1 id="shiny-git">Populate Shiny Server with Shiny apps using a git repository</h1>
+<h2 id="shiny-git">Step 8.1: Populate Shiny Server with Shiny apps using a git repository</h2>
 
 As I just mentioned, any Shiny app you place under `/srv/shiny-server/` will be automatically served as a Shiny app. But how do you get shiny apps into there in the first place?  One option is to directly transfer files using something like [FileZilla](https://filezilla-project.org/) or the `scp` command. The moment a shiny app directory is transferred to your droplet, the corresponding app will be available to use on the web right away.  Another approach instead of doing a direct file trasnfer is to use git. If you don't know what git is, that's outside the scope of this article, so either look it up and come back here or just use FileZilla :)
 
