@@ -22,9 +22,10 @@ This post will cover how to set up a machine from scratch, setup R, RStudio Serv
 - [Step 4: Ensure you don't shoot yourself in the foot](#safety-first)
 - [Step 5: See your droplet in a browser](#nginx)
 - [Step 6: Install R](#install-r)
-- [Important note re: installing R packages](#user-libraries)
+- [Aside: Important note re: installing R packages](#user-libraries)
 - [Step 7: Install RStudio Server](#install-rstudio)
 - [Step 8: Install Shiny Server](#install-shiny)
+- [Aside: Populate Shiny Server with Shiny apps using a git repository](#shiny-git)
 - [Step 9: Make pretty URLs for RStudio Server and Shiny Server](#reverse-proxy)
 - [Step 10: Custom domain name](#custom-domain)
 - [Updates](#updates)
@@ -202,15 +203,54 @@ Shiny Server is now installed and running. Assuming there were no problems, if y
 
 ![Shiny Server]({{ site.url }}/img/blog/digital-ocean/shiny.png)
 
-If you see an error on the bottom Shiny app, it's probably because you don't have the `rmarkdown` R package installed (the instructions on the default Shiny Server page mention this). After installing `rmarkdown` in R, the bottom Shiny app should work as well. Don't forget to install `rmarkdown` so that it will be available to all users as described [above](#user-libraries). I suggest you read through the instructions page at `http://107.170.217.55:3838/`. A few important points as reference:
+If you see an error on the bottom Shiny app, it's probably because you don't have the `rmarkdown` R package installed (the instructions on the default Shiny Server page mention this). After installing `rmarkdown` in R, the bottom Shiny app should work as well. Don't forget to install `rmarkdown` so that it will be available to all users as described [above](#user-libraries). I suggest you read through the instructions page at `http://107.170.217.55:3838/`.
+
+### Quick Shiny Server references:
 
 - Shiny Server log is at `/var/log/shiny-server.log`.
 - The default Shiny Server homepage you're seeing is located at `/srv/shiny-server/index.html` - you can edit it or remove it.
 - Any Shiny app directory that you place under `/srv/shiny-server/` will be served as a Shiny app. For example, there is a default app at `/srv/shiny-server/sample-apps/hello/`, which means you can run the app by going to `http://107.170.217.55:3838/sample-apps/hello/`.
 - The config file for Shiny Server is at `/etc/shiny-server/shiny-server.conf`.
 - To reload the server after editing the config, use `sudo reload shiny-server`.
-- **Important!** If you look in the config file, you will see that by default, apps are ran as user "shiny". It's important to understand which user is running an app because things like file permissions and personal R libraries will be different for each user and it might cause you some headaches until you realize it's because the app should not be run as "shiny". Just keep that in mind.
-- The fact that apps run as the user `shiny` means that any package required in a shiny app needs to be either in the global library or in `shiny`'s library. [As I mentioned above](#user-libraries), you might need to install R packages in a special way to make sure the `shiny` user can access them.
+
+**Important!** If you look in the config file, you will see that by default, apps are ran as user "shiny". It's important to understand which user is running an app because things like file permissions and personal R libraries will be different for each user and it might cause you some headaches until you realize it's because the app should not be run as "shiny". Just keep that in mind.
+
+The fact that apps run as the user `shiny` means that any package required in a shiny app needs to be either in the global library or in `shiny`'s library. [As I mentioned above](#user-libraries), you might need to install R packages in a special way to make sure the `shiny` user can access them.
+
+<h1 id="shiny-git">Populate Shiny Server with Shiny apps using a git repository</h1>
+
+As I just mentioned, any Shiny app you place under `/srv/shiny-server/` will be automatically served as a Shiny app. But how do you get shiny apps into there in the first place?  One option is to directly transfer files using something like [FileZilla](https://filezilla-project.org/) or the `scp` command. The moment a shiny app directory is transferred to your droplet, the corresponding app will be available to use on the web right away.  Another approach instead of doing a direct file trasnfer is to use git. If you don't know what git is, that's outside the scope of this article, so either look it up and come back here or just use FileZilla :)
+
+The main idea is to have the `/srv/shiny-server/` folder be a git repository, so that you can push to this repository from your personal computer and whenever you do a `git pill` on your droplet, it will update and grab the new apps you added.
+
+The first step is to install git make the `/srv/shiny-server/` directory a git repository.
+
+```
+sudo apt-get install git
+cd /srv/shiny-server
+git init
+```
+
+Next we will create a GitHub repository, so go to [GitHub](https://github.com/) and add a new repository named `shiny-server`.
+
+![Create new repository]({{ site.url }}/img/blog/digital-ocean/git-repo-create.png)
+
+Now we need to grab the URL of the repository from GitHub, so on the new page you were redirected to, click on "HTTPS" and then copy the URL to its right, as shown in the image below:
+
+![Get git repo URL]({{ site.url }}/img/blog/digital-ocean/git-repo-url.png) 
+
+Now we need to make the connection between the git repository we made on our droplet and the one we just created, and then add all the files that are currently in `/srv/shiny-server/` to this repository. **Be sure to replace the URL in the first command with the URL that you copied from your repository**.
+
+```
+git remote add origin git@github.com:daattali/shiny-server.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+```
+
+If you now refresh the GitHub page, you should see the files that were added from the droplet.
+
+Now that git is set up, you can add shiny apps to this repository (assuming you know basic git usage).  Whenever you add a new shiny app or edit the index page or an existing app, you'll need to do a `git pull` on your droplet to grab those changes and display them in your server. That's it, it's pretty convenient in my opinion.
 
 <h1 id="reverse-proxy">Step 9: Make pretty URLs for RStudio Server and Shiny Server</h1>
 
@@ -280,6 +320,8 @@ I use Namecheap, so this is what my domain configuration needs to look like:
 [2015-05-11] There is some inquiry about whether or not this setup should be "Dockerized" ([What is Docker?](http://www.docker.com/whatisdocker/)). Docker is of course a great alternative to setting this up and can be even simpler by taking away all the pain of doing the setup yourself and providing you with a container that already has RStudio/Shiny Server installed. [Dirk Eddelbuettel](https://twitter.com/eddelbuettel) and [Carl Boettiger](https://twitter.com/cboettig) already did a fantastic job of making some R-related docker containers, including RStudio and Shiny Server, so [check out Rocker](https://registry.hub.docker.com/repos/rocker/) if you want to go that route. I think it's nice to do all this installation yourself because it can look scary and intimidating before you do it the first time, and it can be a nice feeling to see that it's actually very doable and really doesn't take very long (less than half an hour) if you have a guide that takes away the annoying Googling at every step.  But you can quickly surpass all these steps and use docker if you prefer :)
 
 [2015-05-12] Added missing dependencies to install devtools and [Important note re: installing R packages](#user-libraries).
+
+[2015-05-13] Added section about [populating Shiny Server with Shiny apps using a git repository](#shiny-git).
 
 <h1 id="resources">Resources</h1>
 
