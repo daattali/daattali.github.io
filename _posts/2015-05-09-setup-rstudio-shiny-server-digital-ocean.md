@@ -317,13 +317,23 @@ I use Namecheap, so this is what my domain configuration needs to look like:
 
 <h2 id="updates">Updates</h2>
 
-[2015-05-11] I've gotten several people asking me if this can be a solution for hosting rmarkdown files as well. **YES it can!** Shiny Server works great as hosting .Rmd files, and you can even embed a Shiny app inside the Rmd file.  [Here's an example on my server](http://daattali.com/shiny/rmd-test/) in case you're curious.  
+**[2015-05-11]** I've gotten several people asking me if this can be a solution for hosting rmarkdown files as well. **YES it can!** Shiny Server works great as hosting .Rmd files, and you can even embed a Shiny app inside the Rmd file.  [Here's an example on my server](http://daattali.com/shiny/rmd-test/) in case you're curious.  
 
-[2015-05-11] There is some inquiry about whether or not this setup should be "Dockerized" ([What is Docker?](http://www.docker.com/whatisdocker/)). Docker is of course a great alternative to setting this up and can be even simpler by taking away all the pain of doing the setup yourself and providing you with a container that already has RStudio/Shiny Server installed. [Dirk Eddelbuettel](https://twitter.com/eddelbuettel) and [Carl Boettiger](https://twitter.com/cboettig) already did a fantastic job of making some R-related docker containers, including RStudio and Shiny Server, so [check out Rocker](https://registry.hub.docker.com/repos/rocker/) if you want to go that route. I think it's nice to do all this installation yourself because it can look scary and intimidating before you do it the first time, and it can be a nice feeling to see that it's actually very doable and really doesn't take very long (less than half an hour) if you have a guide that takes away the annoying Googling at every step.  But you can quickly surpass all these steps and use docker if you prefer :)
+**[2015-05-11]** There is some inquiry about whether or not this setup should be "Dockerized" ([What is Docker?](http://www.docker.com/whatisdocker/)). Docker is of course a great alternative to setting this up and can be even simpler by taking away all the pain of doing the setup yourself and providing you with a container that already has RStudio/Shiny Server installed. [Dirk Eddelbuettel](https://twitter.com/eddelbuettel) and [Carl Boettiger](https://twitter.com/cboettig) already did a fantastic job of making some R-related docker containers, including RStudio and Shiny Server, so [check out Rocker](https://registry.hub.docker.com/repos/rocker/) if you want to go that route. I think it's nice to do all this installation yourself because it can look scary and intimidating before you do it the first time, and it can be a nice feeling to see that it's actually very doable and really doesn't take very long (less than half an hour) if you have a guide that takes away the annoying Googling at every step.  But you can quickly surpass all these steps and use docker if you prefer :)
 
-[2015-05-12] Added missing dependencies to install devtools and [Important note re: installing R packages](#user-libraries).
+**[2015-05-12]** Added missing dependencies to install devtools and [Important note re: installing R packages](#user-libraries).
 
-[2015-05-13] Added section about [populating Shiny Server with Shiny apps using a git repository](#shiny-git).
+**[2015-05-13]** Added section about [populating Shiny Server with Shiny apps using a git repository](#shiny-git).
+
+**[2015-05-13]** There are a few small issues that seem to be fixed by configuring nginx.  For example, I noticed that using tooltips were not working in my RStudio when using the `ggvis` package. The fix (as mentioned in the comments) is to add the following three lines inside the `/location/rstudio/` settings in nginx (and then restart nginx):
+
+```
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection "upgrade";
+```
+
+I must admit I don't entirely understand what this does, but a few people suggested it and it did fix my problem.
 
 <h1 id="resources">Resources</h1>
 
