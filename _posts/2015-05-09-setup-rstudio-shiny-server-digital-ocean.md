@@ -286,6 +286,14 @@ sudo service nginx restart
 
 Now you should be able to go to `http://107.170.217.55/shiny/` or `http://107.170.217.55/rstudio/`. Much better!
 
+**Bonus for advanced users:** The above setup should be just fine for most users, but I did notice a few small issues with RStudio that seem to be fixed by allowing nginx to proxy WebSockets. For example, I noticed that using the `ggvis` package in my RStudio, tooltips were not working. The fix is to add the following three lines inside the /location /rstudio/ settings (keep the `proxy_pass` line and just add these three, and remember you have to restart nginx after changing the settings):
+
+```
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection "upgrade";
+```
+
 <h1 id="custom-domain">Step 10: Custom domain name</h1>
 
 If you have a custom domain that you want to host your droplet on, that's not too hard to set up.  For example, my main droplet's IP is [198.199.117.12](http://198.199.117.12), but I also purchased the domain [daattali.com](http://daattali.com/) so that it would be able to host my droplet with a much simpler URL.
@@ -325,15 +333,7 @@ I use Namecheap, so this is what my domain configuration needs to look like:
 
 **[2015-05-13]** Added section about [populating Shiny Server with Shiny apps using a git repository](#shiny-git).
 
-**[2015-05-13]** There are a few small issues that seem to be fixed by configuring nginx.  For example, I noticed that using tooltips were not working in my RStudio when using the `ggvis` package. The fix (as mentioned in the comments) is to add the following three lines inside the `/location/rstudio/` settings in nginx (and then restart nginx):
-
-```
-proxy_http_version 1.1;
-proxy_set_header Upgrade $http_upgrade;
-proxy_set_header Connection "upgrade";
-```
-
-I must admit I don't entirely understand what this does, but a few people suggested it and it did fix my problem.
+**[2015-05-13]** Added a bit in [step 9](#reverse-proxy) about proxying WebSockets to fix a few small potential issues with RStudio Server.
 
 <h1 id="resources">Resources</h1>
 
