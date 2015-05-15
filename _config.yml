@@ -13,7 +13,7 @@ description: "Graduate student in Bioinformatics with a Bachelor of Computer Sci
 # --- Outputting options --- #
 # More information can be found on Jekyll's site
 timezone: "America/Vancouver"
-markdown: redcarpet
+markdown: kramdown
 highlighter: pygments
 permalink: /:year/:month/:day/:title
 paginate: 5
