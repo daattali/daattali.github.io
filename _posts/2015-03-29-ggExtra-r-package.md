@@ -19,7 +19,7 @@ You can see a demo of what `ggMarginal` can do and play around with it [in this 
 
 Here is an example of how easy it is to add marginal histograms in ggplot2 using `ggExtra::ggMarginal()`.
 
-```
+~~~
 library(ggplot2)
 # create dataset with 1000 normally distributed points
 df <- data.frame(x = rnorm(1000, 50, 10), y = rnorm(1000, 50, 10))
@@ -27,7 +27,7 @@ df <- data.frame(x = rnorm(1000, 50, 10), y = rnorm(1000, 50, 10))
 p <- ggplot(df, aes(x, y)) + geom_point() + theme_classic()
 # add marginal histograms
 ggExtra::ggMarginal(p, type = "histogram")
-```
+~~~
 ![ggplot2 marginal plots basic example]({{ site.url }}/img/blog/ggExtra/ggmarginal-basic-example.png)
 
 ## Marginal plots in ggplot2 - The problem
@@ -40,7 +40,7 @@ A simple drop-in function for adding marginal plots to ggplot2 did not exist, so
 
 The main idea is to create the marginal plots (histogram or density) and then use the `gridExtra` package to arrange the scatterplot and the marginal plots in a "2x2 grid" to achieve the desired visual output. An empty plot needs to be created as well to fill in one of the four grid corners. This basic approach can be implemented like this:
 
-```
+~~~
 library(ggplot2)
 library(gridExtra)
 pMain <- ggplot(mtcars, aes(x = wt, y = mpg)) +
@@ -58,17 +58,17 @@ pEmpty <- ggplot(mtcars, aes(x = wt, y = mpg)) +
 
 grid.arrange(pTop, pEmpty, pMain, pRight,
              ncol = 2, nrow = 2, widths = c(3, 1), heights = c(1, 3))
-```
+~~~
 ![ggplot2 marginal plots basic idea]({{ site.url }}/img/blog/ggExtra/ggmarginal-idea.png)
 
 This works, but it's a bit tedious to write, so at first I just wanted a simple function to abstract all this ugly code away. This was the birth of `ggMarginal`, which was later developed into the `ggExtra` package, together with a few other functions.
 
 The abstraction was done in a way that allows the user to either provide a ggplot2 scatterplot, or the dataset and variables.  For example, the following two calls are equivalent:
 
-```
+~~~
 ggExtra::ggMarginal(data = mtcars, x = "wt", y = "mpg")  
 ggExtra::ggMarginal(ggplot(mtcars, aes(wt, mpg)) + geom_point())
-```
+~~~
 
 ## Marginal plots in ggplot2 - Next steps
 
@@ -89,11 +89,11 @@ There are some more issues that could be addressed in order to make the function
 
 The following plot illustrates all these problems. It was achieved with exactly the same code as before, but adding these 3 lines to `pMain` definition:
 
-```
+~~~
 theme_gray(35) +   
 ggtitle("Cars weight vs miles/gallon") +   
 xlab("car\nweight")
-```
+~~~
 ![ggplot2 marginal plots basic idea problems]({{ site.url }}/img/blog/ggExtra/ggmarginal-idea-problems.png)
 
 Accounting for these issues is a little trickier and requires a bit of "dirty" code. To address these problems, I used `ggplot_build()`, which is a handy function that can be used to retrieve information from a plot. Using `ggplot_build`, it's possible to look at the internals of a plot object and identify the axis range, the text size, etc. *It's importante to note that since these parameters are not provided via a direct function call, it's not considered 100% safe to use them because there is no guarantee that the plot internals will always look the same way.* I won't post the code here because it's long but you can view the source code of my solution [on GitHub](https://github.com/daattali/ggExtra/blob/master/R/ggMarginal.R).
@@ -108,7 +108,7 @@ All of these features and more are implemented in `ggExtra::ggMarginal`.
 
 Here is an example of using a few more parameters:
 
-```
+~~~
 library(ggplot2)
 # create dataset with 500 normally distributed points
 df <- data.frame(x = rnorm(500, 50, 3), y = rnorm(500, 50, 3))
@@ -117,7 +117,7 @@ p <- ggplot(df, aes(x, y)) + geom_point() +
      theme_bw(30) + ggtitle("500 random points")
 # add marginal density along the y axis
 ggExtra::ggMarginal(p, type = "density", margins = "y", size = 4, marginCol = "red")
-```
+~~~
 ![ggplot2 marginal plots complex example]({{ site.url }}/img/blog/ggExtra/ggmarginal-complex-example.png)
 
 ## Other functions in the `ggExtra` package
@@ -138,18 +138,18 @@ ggExtra::ggMarginal(p, type = "density", margins = "y", size = 4, marginCol = "r
 
 When trying to call `gridExtra::grid.arrange()` without loading `ggplot2` you get this error:
 
-```
+~~~
 f <- function() {
   p1 <- ggplot2::ggplot(mtcars, ggplot2::aes(wt, mpg)) + ggplot2::geom_blank()
   gridExtra::grid.arrange(p1)
 }
 f()
 > Error: could not find function "ggplotGrob"
-```
+~~~
 
 My workaround is to ensure `ggplot2` is loaded:
 
-```
+~~~
 f <- function() {
   if (!"package:ggplot2" %in% search()) {
     suppressPackageStartupMessages(attachNamespace("ggplot2"))
@@ -159,7 +159,7 @@ f <- function() {
   gridExtra::grid.arrange(p1)
 }
 f()
-```
+~~~
 
 I know it's hacky so I would appreciate better solutions.
 
@@ -167,7 +167,7 @@ I know it's hacky so I would appreciate better solutions.
 
 The problem with `grid.arrange` is that it returns `NULL` and does not allow the plot to be saved to an object. `arrangeGrob` is a similar function that returns the object.  But substituting `arrangeGrob` for `grid.arrange` gives an error
 
-```
+~~~
 f <- function() {
   if (!"package:ggplot2" %in% search()) {
     suppressPackageStartupMessages(attachNamespace("ggplot2"))
@@ -178,11 +178,11 @@ f <- function() {
 }
 f()
 > Error: No layers in plot
-```
+~~~
 
 This error happens only if `gridExtra` is not loaded, and it's because printing the object is done after the function returns and uses a custom print method.  So the solution is to add a class to the return object and add a print generic that ensures the object will print correctly.
 
-```
+~~~
 f <- function() {
   if (!"package:ggplot2" %in% search()) {
     suppressPackageStartupMessages(attachNamespace("ggplot2"))
@@ -197,6 +197,6 @@ print.mygrob <- function(x, ...) {
   grid::grid.draw(x)
 }
 f()
-```
+~~~
 
 These were my solutions to the `gridExtra` problems that I implemented in `ggExtra`, but I would appreciate feedback on other approaches.
