@@ -4,16 +4,7 @@ title: "Analyzing R-Bloggers' posts via Twitter"
 tags: [professional, rstats, r, r-bloggers, shiny, twitter]
 date: 2015-05-17 21:30:00 -0700
 fb-img: TODO choose an image
-markdown: kramdown
 ---
-
-~~~
-sdfsdfsdsdf
-lsdf
-~~
-~~~
-
-## sdfsd {#g}
 
 For those who don't know, every time a new blog post gets added to [R-Bloggers](http://www.r-bloggers.com/), it gets a corresponding tweet by [@Rbloggers](https://twitter.com/rbloggers), which gets seen by Rbloggers' ~20k followers fairly fast. And every time **my** post gets published, I can't help but check up on how many people gave that tweet some Twitter love, ie. "favorite"d or "retweet"ed it. It's even more exciting than getting a Facebook "like" on a photo from Costa Rica! 
 
@@ -43,7 +34,7 @@ As mentioned above, I could only grab the last 3200 tweets made by @Rbloggers, w
 
 Anyway, after authenticating with Twitter, here's the code to get this information using `twitteR`:
 
-```
+~~~
 MAX_TWEETS <- 3200
 tweets_raw <- userTimeline('Rbloggers', n = MAX_TWEETS,
                            includeRts = FALSE, excludeReplies = TRUE)
@@ -61,7 +52,7 @@ tweets <-
   })
 
 rm(tweets_raw)  # being extremely memory conscious
-```
+~~~
 
 Remember the full source code can be viewed [here](http://daattali.com/shiny/rbloggers-twitter/#get-data-from-twitter).
 
@@ -69,7 +60,7 @@ Remember the full source code can be viewed [here](http://daattali.com/shiny/rbl
 
 Since I had some questions about the post authors and a tweet doesn't give that information, I resorted to scraping the R-Bloggers post linked in each tweet using `httr` to find the author. This part takes a bit of time to run. There were a few complications, mostly with authors whose name is their email and R-Bloggers attemps to hide it, but here is how I accomplished this step:
 
-```
+~~~
 # Get the author of a single post given an R-Bloggers post URL
 get_post_author_single <- function(url) {
   if (is.null(url)) {
@@ -107,7 +98,7 @@ tweets %<>% mutate(author = get_post_author(url))
 
 # Remove NA author (these are mostly jobs postings, plus a few blog posts that have been deleted)
 tweets %<>% na.omit
-```
+~~~
 
 ### Clean up data
 
@@ -129,10 +120,10 @@ After removing duplicates and previously removing tweets about job postings, we 
 
 Now that we have almost all the info we need for the tweets, there is one thing missing. It'd be useful to have a metric for how successful a tweet is using the very little bit of information we have. This is of course very arbitrary. I chose to score a tweet’s success as a linear combination of its "# of favorites" and "# of retweets". Since there are roughly twice as many favorites as retweets in total, retweets get twice the weight. Very simple formula :) 
 
-```
+~~~
 sum(tweets$favorites) / sum(tweets$retweets)   # result = 2.1
 tweets$score <- tweets$favorites + tweets$retweets * 2
-```
+~~~
 
 ## Exploration {#exploration}
 
@@ -150,15 +141,15 @@ Looks like there are about 10 posts that are that are much higher up than everyo
 
 | title | date | author | favorites | retweets | score |
 |-------|------|--------|-----------|----------|-------|
-| A new interactive interface for learning R online, for free | 2015-04-14 | DataCamp | 78 | 49 | 176 |
-| Introducing Radiant: A shiny interface for R | 2015-05-04 | 85 | 44 | 173 |
-| Choosing R or Python for data analysis? An infographic | 2015-05-12 | 59 | 54 | 168 |
-| Why the Ban on P-Values? And What Now? | 2015-03-07 | 47 | 47 | 141 |
-| Machine Learning in R for beginners | 2015-03-26 | 68 | 29 | 126 |
-| Free Stanford online course on Statistical Learning (with R) starting on 19 Jan 2015 | 2014-11-22 | 54 | 35 | 124 |
-| Four Beautiful Python, R, MATLAB, and Mathematica plots with LaTeX | 2014-12-20 | 57 | 29 | 115 |
-| In-depth introduction to machine learning in 15 hours of expert videos | 2014-09-24 | 64 | 20 | 104 |
-| Learn Statistics and R online from Harvard | 2015-01-17 | 49 | 27 | 103 |
-| R Tutorial on Reading and Importing Excel Files into R | 2015-04-04 | 61 | 20 | 101 |
+| A new interactive interface for learning R online, for free | 2015.04.14 | DataCamp | 78 | 49 | 176 |
+| Introducing Radiant: A shiny interface for R | 2015.05.04 | R(adiant) news | 85 | 44 | 173 |
+| Choosing R or Python for data analysis? An infographic | 2015.05.12 | DataCamp | 59 | 54 | 168 |
+| Why the Ban on P-Values? And What Now? | 2015.03.07 | Nicole Radziwill | 47 | 47 | 141 |
+| Machine Learning in R for beginners | 2015.03.26 | DataCamp | 68 | 29 | 126 |
+| Free Stanford online course on Statistical Learning (with R) starting on 19 Jan 2015 | 2014.11.22 | Yanchang Zhao | 54 | 35 | 124 |
+| Four Beautiful Python, R, MATLAB, and Mathematica plots with LaTeX | 2014.12.20 | Plotly | 57 | 29 | 115 |
+| In.depth introduction to machine learning in 15 hours of expert videos | 2014.09.24 | Kevin Markham | 64 | 20 | 104 |
+| Learn Statistics and R online from Harvard | 2015.01.17 | David Smith | 49 | 27 | 103 |
+| R Tutorial on Reading and Importing Excel Files into R | 2015.04.04 | DataCamp | 61 | 20 | 101 |
 
 **Remember to check out the [accompanying interactive doc + source code](http://daattali.com/shiny/rbloggers-twitter/)!**
