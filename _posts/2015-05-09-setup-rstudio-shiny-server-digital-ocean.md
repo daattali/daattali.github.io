@@ -58,25 +58,25 @@ You should be greeted with a welcome message and some stats about the server tha
 
 The first thing I like to do is add a non-root user so that we won't accidentally do something stupid as "root". Let's add a user named "dean" and give him admin power.  You will be asked to give some information for this new user.
 
-```
+~~~
 adduser dean
 gpasswd -a dean sudo
-```
+~~~
 
 From now on I will generally log into this server as "dean" instead of "root".  If I'll need to run any commands requiring admin abilities, I just have to prepend the command with `sudo`.  Let's say goodbye to "root" and switch to "dean".
 
-```
+~~~
 su - dean
-```
+~~~
 
 <h1 id="nginx">Step 5: See your droplet in a browser</h1>
 
 Right now if you try to visit `http://123.456.1.2` in a browser, you'll get a "webpage not available error". Let's make our private server serve a webpage there instead, as a nice visual reward for getting this far. Install nginx:
 
-```
+~~~
 sudo apt-get update
 sudo apt-get install nginx
-```
+~~~
 
 Now if you visit `http://123.456.1.2`, you should see a welcome message to nginx. Instant gratification!
 
@@ -86,39 +86,39 @@ The default file that is served is located at `/usr/share/nginx/html/index.html`
 
 When you edit an HTML file, you will be able to see the changes immediately when you refresh the page, but if you make configuration changes, you need to restart nginx. In the future, you can stop/start/restart nginx with
 
-```
+~~~
 sudo service nginx stop
 sudo service nginx start
 sudo service nginx restart
-```
+~~~
 
 <h1 id="install-r">Step 6: Install R</h1>
 
 To ensure we get the most recent version of R, we need to first add `trusty` to our `sources.list`:
 
-```
+~~~
 sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list'
-```
+~~~
 
 Now add the public keys:
 
-```
+~~~
 gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
 gpg -a --export E084DAB9 | sudo apt-key add -
-```
+~~~
 
 Now we're ready to install R
 
-```
+~~~
 sudo apt-get update
 sudo apt-get install r-base
-```
+~~~
 
 You should now be able to run R and hopefully be greeted with a message containing the latest R version. 
 
-```
+~~~
 R
-```
+~~~
 
 ![R welcome]({{ site.url }}/img/blog/digital-ocean/R-welcome.png)
 
@@ -126,27 +126,27 @@ Now you need to quit R (`quit()`) because there are a couple small things to adj
 
 If you also chose the weakest machine type like I did, many packages won't be able to install because of not enough memory. We need to add 1G of swap space:
 
-```
+~~~
 sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
 sudo /sbin/mkswap /var/swap.1
 sudo /sbin/swapon /var/swap.1
 sudo sh -c 'echo "/var/swap.1 swap swap defaults 0 0 " >> /etc/fstab'
-```
+~~~
 
 Now installing most packages will work, but before installing any package, I always like having `devtools` available so that I can install GitHub packages. `devtools` will currently not be able to get installed because it has a few dependencies. Let's install those dependencies:
 
-```
+~~~
 sudo apt-get install libcurl4-gnutls-dev
 sudo apt-get install libxml2-dev
 sudo apt-get install libssl-dev
-```
+~~~
 
 Ok, now we can start installing R packages, both from CRAN and from GitHub!
 
-```
+~~~
 sudo su - -c "R -e \"install.packages('devtools', repos='http://cran.rstudio.com/')\""
 sudo su - -c "R -e \"devtools::install_github('daattali/shinyjs')\""
-```
+~~~
 
 Feel free to play around with R now.
 
@@ -162,16 +162,16 @@ Great, R is working, but RStudio has become such an integral part of our lives t
 
 Let's install some pre-requisites:
 
-```
+~~~
 sudo apt-get install libapparmor1 gdebi-core
-```
+~~~
 
 Download the latest RStudio Server - consult [RStudio Downloads page](http://www.rstudio.com/products/rstudio/download-server/) to get the URL for the latest version. Then install the file you downloaded. These next two lines are using the latest version as of writing this post.
 
-```
+~~~
 wget http://download2.rstudio.org/rstudio-server-0.98.1103-amd64.deb
 sudo gdebi rstudio-server-0.98.1103-amd64.deb
-```
+~~~
 
 Done! By default, RStudio uses port 8787, so to access RStudio go to `http://107.170.217.55:8787` and you should be greeted with an RStudio login page. (If you forgot what your droplet's IP is, you can find out by running `hostname -I`)
 
@@ -187,18 +187,18 @@ You can safely skip this step if you don't use `shiny` and aren't interested in 
 
 To install Shiny Server, first install the `shiny` package:
 
-```
+~~~
 sudo su - -c "R -e \"install.packages('shiny', repos='http://cran.rstudio.com/')\""
-```
+~~~
 
 (Note again that we're installing `shiny` in a way that will make it available to all users, as I explained [above](#user-libraries)).
 
 Just like when we installed RStudio, again we need to get the URL of the latest Shiny Server [from the Shiny Server downloads page](http://www.rstudio.com/products/shiny/download-server/), download the file, and then install it.  These are the two commands using the version that is most up-to-date right now:
 
-```
+~~~
 wget http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.3.0.403-amd64.deb
 sudo gdebi shiny-server-1.3.0.403-amd64.deb
-```
+~~~
 
 Shiny Server is now installed and running. Assuming there were no problems, if you go to `http://107.170.217.55:3838/` you should see Shiny Server's default homepage, which includes some instructions and two Shiny apps:
 
@@ -227,14 +227,14 @@ Currently, assuming you're logged in as user `dean`, when you create a folder in
 
 So my solution is to create a user group called `shiny-apps` and add both `dean` and `shiny` users to it. Then I'll make sure that the whole `/srv/shiny-server` folder has read+write permissions to the group. (Again, disclaimer: I'm not a sysadmin so I'm learning all this as I go. Don't treat this as a work of god).
 
-```
+~~~
 groupadd shiny-apps
 usermod -aG shiny-apps dean
 usermod -aG shiny-apps shiny
 cd /srv/shiny-server
 chown -R dean:shiny-apps .
 chmod g+s .
-```
+~~~
 
 Now both `dean` and `shiny` will have access to any new or existing files under `/srv/shiny-server`. I like it because now I can develop an app from my RStuio Server (logged in as `dean`), be able to run it through RStudio (as `dean`), and also be able to run it via my Shiny Server (as `shiny`).
 
@@ -248,11 +248,11 @@ The main idea is to have the `/srv/shiny-server/` folder be a git repository, so
 
 The first step is to install git and make the `/srv/shiny-server/` directory a git repository.
 
-```
+~~~
 sudo apt-get install git
 cd /srv/shiny-server
 git init
-```
+~~~
 
 Next we will create a GitHub repository, so go to [GitHub](https://github.com/) and add a new repository named `shiny-server`.
 
@@ -264,12 +264,12 @@ Now we need to grab the URL of the repository from GitHub, so on the new page yo
 
 Now we need to make the connection between the git repository we made on our droplet and the one we just created, and then add all the files that are currently in `/srv/shiny-server/` to this repository. **Be sure to replace the URL in the first command with the URL that you copied from your repository**.
 
-```
+~~~
 git remote add origin git@github.com:daattali/shiny-server.git
 git add .
 git commit -m "Initial commit"
 git push -u origin master
-```
+~~~
 
 If you now refresh the GitHub page, you should see the files that were added from the droplet.
 
@@ -283,15 +283,15 @@ This is optional and a little more advanced. You might have noticed that to acce
 
 You need to edit the nginx config file `/etc/nginx/sites-enabled/default`:
 
-```
+~~~
 sudo vim /etc/nginx/sites-enabled/default
-```
+~~~
 
 (I'm assuming you know how to use `vim`. If not, then just Google for "how to edit a file on linux". In short: press `I` to start typing text, then press `Esc` to stop typing text, then press `:wq` followed by Enter to save the file).
 
 Add the following lines right after the line that reads `server_name localhost;`:
 
-```
+~~~
 location /shiny/ {
   proxy_pass http://127.0.0.1:3838/;
 }
@@ -299,23 +299,23 @@ location /shiny/ {
 location /rstudio/ {
   proxy_pass http://127.0.0.1:8787/;
 }
-```
+~~~
 
 Since we changed the nginx config, we need to restart nginx for it to take effect.
 
-```
+~~~
 sudo service nginx restart
-```
+~~~
 
 Now you should be able to go to `http://107.170.217.55/shiny/` or `http://107.170.217.55/rstudio/`. Much better!
 
 **Bonus for advanced users:** The above setup should be just fine for most users, but I did notice a few small issues with RStudio that seem to be fixed by allowing nginx to proxy WebSockets. For example, I noticed that when using the `ggvis` package in my RStudio, tooltips were not working. The fix is to add the following three lines inside the `/location /rstudio/` settings (keep the `proxy_pass` line and just add these three, and remember you have to restart nginx after changing the settings):
 
-```
+~~~
 proxy_http_version 1.1;
 proxy_set_header Upgrade $http_upgrade;
 proxy_set_header Connection "upgrade";
-```
+~~~
 
 <h1 id="custom-domain">Step 10: Custom domain name</h1>
 
