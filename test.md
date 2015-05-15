@@ -13,6 +13,8 @@ lsdf
 ~~
 ~~~
 
+## sdfsd {#g}
+
 For those who don't know, every time a new blog post gets added to [R-Bloggers](http://www.r-bloggers.com/), it gets a corresponding tweet by [@Rbloggers](https://twitter.com/rbloggers), which gets seen by Rbloggers' ~20k followers fairly fast. And every time **my** post gets published, I can't help but check up on how many people gave that tweet some Twitter love, ie. "favorite"d or "retweet"ed it. It's even more exciting than getting a Facebook "like" on a photo from Costa Rica! 
 
 Seeing all these tweets and how some tweets get much more attention than others has gotten me thinking. Are there some power users who post almost all the content, or so many blogs contribute equally?  Which posts were the most shared?  Which blog produces the highest quality posts consistently? Is there a correlation between how often a specific blog outputs posts and how successful these posts are?  Are there more posts during the weekdays then weekends? And of course the holy grail of bloggers - is there a day when it's better to post to get more shares?
