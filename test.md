@@ -9,6 +9,8 @@ date: 2015-05-10 21:00:00 -0700
 ## sdfds {#fs}
 
 
-|Name   |Columns             |
-|-------|--------------------|
-|PRIMARY|sdfdsfdsfdsfdsfdsfds|
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
