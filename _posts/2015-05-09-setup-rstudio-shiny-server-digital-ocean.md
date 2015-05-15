@@ -32,11 +32,11 @@ This post will cover how to set up a machine from scratch, set up R, RStudio Ser
 - [Updates](#updates)
 - [Resources](#resources)
 
-# Step 1: Sign up to DigitalOcean {#sign-up}
+<h1 id="sign-up">Step 1: Sign up to DigitalOcean</h1>
 
 Go to [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99) (use this referral link to get 2 months!) and sign up. Registration is quick and painless, but I think in order to verify your account (and to get your $10) you have to provide credit card details.  If you go to [your Billing page](https://cloud.digitalocean.com/settings/billing) hopefully you will see the $10 credit.
 
-# Step 2: Create a new droplet {#create-droplet}
+<h1 id="create-droplet">Step 2: Create a new droplet</h1>
 
 Now let's claim one of DO's machines as our own! It's so simple that you definitely don't need my instructions, just click on the big "Create Droplet" button and choose your settings. I chose the smallest/weakest machine ($5/month plan) and it's good enough for me. I also chose San Francisco because it's the closest to me, though it really wouldn't make much of a noticeable difference where the server is located. For OS, I chose to go with the default Ubuntu 14.04 x64.  I highly recommend you add an SSH key at the last step if you know how to do that. If not, either read up on it [here](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-putty-on-digitalocean-droplets-windows-users) or just proceed without an SSH key.
 
@@ -45,7 +45,7 @@ Now let's claim one of DO's machines as our own! It's so simple that you definit
 Even though you probably don't need it, here's a short GIF showing me creating a new droplet:
 ![Create droplet]({{ site.url }}/img/blog/digital-ocean/do-create.gif)
 
-# Step 3: Log in to your very own shiny new server {#login}
+<h1 id="login">Step 3: Log in to your very own shiny new server</h1>
 
 Once the droplet is ready (can take a few minutes), you'll be redirected to a page that shows you information about the new droplet, including its IP. From now on, I'll use the random IP address `123.456.1.2` for the rest of this post, but remember to always substitute your actual droplet's IP with this one.
 
@@ -54,7 +54,7 @@ One option to log into your droplet is through the "Access" tab on the page you 
 You should be greeted with a welcome message and some stats about the server that look like this:
 ![Login screen]({{ site.url }}/img/blog/digital-ocean/login.png)
 
-# Step 4: Ensure you don't shoot yourself in the foot {#safety-first}
+<h1 id="safety-first">Step 4: Ensure you don't shoot yourself in the foot</h1>
 
 The first thing I like to do is add a non-root user so that we won't accidentally do something stupid as "root". Let's add a user named "dean" and give him admin power.  You will be asked to give some information for this new user.
 
@@ -69,7 +69,7 @@ From now on I will generally log into this server as "dean" instead of "root".  
 su - dean
 ```
 
-# Step 5: See your droplet in a browser {#nginx}
+<h1 id="nginx">Step 5: See your droplet in a browser</h1>
 
 Right now if you try to visit `http://123.456.1.2` in a browser, you'll get a "webpage not available error". Let's make our private server serve a webpage there instead, as a nice visual reward for getting this far. Install nginx:
 
@@ -92,7 +92,7 @@ sudo service nginx start
 sudo service nginx restart
 ```
 
-# Step 6: Install R {#install-r}
+<h1 id="install-r">Step 6: Install R</h1>
 
 To ensure we get the most recent version of R, we need to first add `trusty` to our `sources.list`:
 
@@ -150,13 +150,13 @@ sudo su - -c "R -e \"devtools::install_github('daattali/shinyjs')\""
 
 Feel free to play around with R now.
 
-## Step 6.1: Important note re: installing R packages {#user-libraries}
+<h2 id="user-libraries">Step 6.1: Important note re: installing R packages</h2>
 
 Note that instead of launching R and installing the packages from R, I'm doing it from the terminal with `sudo su - -c "R ..."`. Why? Because if you log into R and install packages, by default they will be installed in your personal library and will only be accessible to the current user (`dean` in this case). By running the command the way I do above, it installs the packages as the `root` user, which means the packages will be installed in a global library and will be available to all users.
 
 As a demonstration, launch R (simply run `R`) and run `.libPaths()`. This will show you all the locations where R will search for a package, and the first one is where a new package will get installed.  You'll probably notice that the first entry, where packages will get installed, is a path under the current user's home (for me it's `/home/dean/R/x86_64-pc-linux-gnu-library/3.2`). From now on, whenever you want to install a package for the whole system, you should either log in as `root` and intall the package, or use the above command. To install an R package for just one user, it's ok to proceed as normal and just install the package when you're logged in as the intended user.
 
-# Step 7: Install RStudio Server {#install-rstudio}
+<h1 id="install-rstudio">Step 7: Install RStudio Server</h1>
 
 Great, R is working, but RStudio has become such an integral part of our lives that we can't do any R without it! 
 
@@ -181,7 +181,7 @@ You can log in to RStudio with any user/password that are available on the dropl
 
 Go ahead and play around in R a bit, to make sure it works fine. I usually like to try out a `ggplot2` function, to ensure that graphics are working properly.
 
-# Step 8: Install Shiny Server {#install-shiny}
+<h1 id="install-shiny">Step 8: Install Shiny Server</h1>
 
 You can safely skip this step if you don't use `shiny` and aren't interested in being able to host Shiny apps yourself. **But** don't forget that Shiny Server can also be used to host Rmarkdown files, not just shiny apps. This means that even if you don't develop shiny apps you might still have a use for Shiny Server if you want to host interactive Rmarkdown documents.
 
@@ -219,7 +219,7 @@ If you see an error on the bottom Shiny app, it's probably because you don't hav
 
 The fact that apps run as the user `shiny` means that any package required in a shiny app needs to be either in the global library or in `shiny`'s library. [As I mentioned above](#user-libraries), you might need to install R packages in a special way to make sure the `shiny` user can access them.
 
-## Step 8.1: Set up proper user permissions on Shiny Server {#shiny-user-perms}
+<h2 id="shiny-user-perms">Step 8.1: Set up proper user permissions on Shiny Server</h2>
 
 As I just mentioned, dealing with which user is running an app and user permissions can be a bit annoying. It took me a while to figure our how to set up the users in a way that works well for me, and this is the setup I came up with. I'm not saying it's necessarily the most correct way to work, but it works for me. Feel free to do the same.
 
@@ -238,7 +238,7 @@ chmod g+s .
 
 Now both `dean` and `shiny` will have access to any new or existing files under `/srv/shiny-server`. I like it because now I can develop an app from my RStuio Server (logged in as `dean`), be able to run it through RStudio (as `dean`), and also be able to run it via my Shiny Server (as `shiny`).
 
-## Step 8.2: Populate Shiny Server with Shiny apps using a git repository {#shiny-git}
+<h2 id="shiny-git">Step 8.2: Populate Shiny Server with Shiny apps using a git repository</h2>
 
 As mentioned above, any Shiny app you place under `/srv/shiny-server/` will be automatically served as a Shiny app. But how do you get shiny apps into there in the first place? If you're creating a new app, you can just log into your RStudio Server and develop your shiny app from there, and just save the app under `/srv/shiny-server/`.
 
@@ -277,7 +277,7 @@ Now that git is set up, you can add shiny apps to this repository (assuming you 
 
 As mentioned previously, Shiny Server can also be used as a great tool to host interactive Rmarkdown documents (not just shiny apps), so you can use this method to publish your rmarkdown files. 
 
-# Step 9: Make pretty URLs for RStudio Server and Shiny Server {#reverse-proxy}
+<h1 id="reverse-proxy">Step 9: Make pretty URLs for RStudio Server and Shiny Server</h1>
 
 This is optional and a little more advanced. You might have noticed that to access both RStudio and Shiny Server, you have to remember weird port numbers (`:8787` and `:3838`). Not only is it hard and ugly to remember, but some workplace environments often block access to those ports, which means that many people/places won't be able to access these pages. The solution is to use a reverse proxy, so that nginx will listen on port 80 (default HTTP port) at the URL `/shiny` and will *internally* redirect that to port 3838. Same for RStudio - we can have nginx listen at `/rstudio` and redirect it to port 8787. This is why my Shiny apps can be reached at [daattali.com/shiny/](http://daattali.com/shiny/) which is an easy URL to type, but also at [daattali.com:3838](http://daattali.com:3838).
 
@@ -317,7 +317,7 @@ proxy_set_header Upgrade $http_upgrade;
 proxy_set_header Connection "upgrade";
 ```
 
-# Step 10: Custom domain name {#custom-domain}
+<h1 id="custom-domain">Step 10: Custom domain name</h1>
 
 If you have a custom domain that you want to host your droplet on, that's not too hard to set up.  For example, my main droplet's IP is [198.199.117.12](http://198.199.117.12), but I also purchased the domain [daattali.com](http://daattali.com/) so that it would be able to host my droplet with a much simpler URL.
 
@@ -348,7 +348,7 @@ I use Namecheap, so this is what my domain configuration needs to look like:
 
 ---
 
-## Updates {#updates}
+<h2 id="updates">Updates</h2>
 
 **[2015-05-11]** I've gotten several people asking me if this can be a solution for hosting rmarkdown files as well. **YES it can!** Shiny Server works great as hosting .Rmd files, and you can even embed a Shiny app inside the Rmd file.  [Here's an example on my server](http://daattali.com/shiny/rmd-test/) in case you're curious.  
 
@@ -362,7 +362,7 @@ I use Namecheap, so this is what my domain configuration needs to look like:
 
 **[2015-05-14]** Added section about [setting up proper user permissions on Shiny Server](#shiny-user-perms).
 
-# Resources {#resources}
+<h1 id="resources">Resources</h1>
 
 This is a list of the main blog/StackOverflow/random posts I had to consult while getting all this to work. 
 
