@@ -346,6 +346,8 @@ I use Namecheap, so this is what my domain configuration needs to look like:
 
 **And that's it! Now you have a nicely configured private web server with your very own RStudio and Shiny Server, and you can do anything else you'd like on it.** 
 
+---
+
 <h2 id="updates">Updates</h2>
 
 **[2015-05-11]** I've gotten several people asking me if this can be a solution for hosting rmarkdown files as well. **YES it can!** Shiny Server works great as hosting .Rmd files, and you can even embed a Shiny app inside the Rmd file.  [Here's an example on my server](http://daattali.com/shiny/rmd-test/) in case you're curious.  
