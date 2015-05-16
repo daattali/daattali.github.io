@@ -111,7 +111,7 @@ here for brevity.*
 
 Here is what that app would look like
 
-![Demo app]({{ site.url }}/img/blog/shinyjs/basic-v1.png)
+[![Demo app]({{ site.url }}/img/blog/shinyjs/basic-v1.png)]({{ site.url }}/img/blog/shinyjs/basic-v1.png)
 
 Now suppose we want to add a few features to the app to make it a bit
 more user-friendly. First we need to set up the app to use `shinyjs`
