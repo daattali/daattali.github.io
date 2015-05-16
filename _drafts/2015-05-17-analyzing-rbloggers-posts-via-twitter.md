@@ -13,6 +13,7 @@ Seeing all these tweets and how some tweets get much more attention than others 
 To answer these questions, I of course turned to R. I used the `twitteR` package to get information about the latest 3200 tweets made by Rbloggers, Hadley's `httr` to scrape each blog post to get the post's author, and `ggplot2` to visualize some cool aspects of the data. Unfortunately Twitter does not allow us to fetch any tweets older than that (if you know of a workaround, please let me know), so the data here will be looking at tweets made from September 2013 until now (mid May 2015). That's actually a nice start date because it's exactly when I started grad school and when I first used R. So you can think of this analysis as "R-Bloggers' tweets since Dean's R life started" :)
 
 I'm going to use some terminology very loosely and interchangeably throughout this post:  
+
 - "blog" == "author" == "contributor"  
 - "tweet" == "post"  
 - "successful" post == "highly shared" == "high score" == "high quality"
@@ -120,6 +121,7 @@ The last line there removed any tweets without an author. That essentially remov
 ## Clean up data {#cleanup}
 
 It's time for some clean up:  
+
 - Remove the URL and `#rstats` hashtag from every tweet's title  
 - Older posts all contain the text "This article was originally posted on ... and kindly contributed by ..." - try to remove that as well
 - Order the day factor levels in order from Monday - Sunday
