@@ -518,6 +518,9 @@ footer .theme-by {
 .blog-post table tr:nth-child(2n) {
   background-color: #f8f8f8;
 }
+.blog-post table tr:hover {
+  background-color: #eaeaea;
+}
 .blog-post table tr th {
   font-weight: bold;
   border: 1px solid #cccccc;
