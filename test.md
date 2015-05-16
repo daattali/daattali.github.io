@@ -22,7 +22,7 @@ It's clear that all those terms not necessarily the same thing (for example, vir
 
 **There is also [an accompanying interactive document](http://daattali.com/shiny/rbloggers-twitter/) to supplement this post.**  That document has a few interactive plots/tables for data that is better explored interactively rather than as an image, and it also contains all the source code that was used to make the analysis and all the figures here. The source code is also [available on GitHub](https://github.com/daattali/shiny-server/tree/master/rbloggers-twitter) as the raw text version of the interactive document.  In this post I will not be including too much lengthy code, especially not for the plots.
 
-Before going any further, I'd like to say that this is not intended to be a comprehensive analysis and definitely has many weaknesses. It's just for fun. I'm not even going to be making any statistical significance tests at any point or do any quantitative analysis. Maybe titling this as "Analyzing" is wrong and should instead be "Exploring"? This post looks exclusively at data directly related to @Rbloggers tweets; I am not looking at data from any other social media or how many times the post was shared via R-Bloggers website rather than through Twitter. I'm also not looking at how much discussion (replies) a tweet generates. I wanted to include data from the number of times the "Tweet" button was pressed directly on R-Bloggers, but it looks like most older posts have 0 (maybe the button is a recent addition to R-Bloggers), so it'll introduce an unfair bias towards new posts.
+Before going any further, I'd like to say that this is not intended to be a comprehensive analysis and definitely has many weaknesses. It's just for fun. I'm not even going to be making any statistical significance tests at any point or do any quantitative analysis. Maybe titling this as "Analyzing" is wrong and should instead be "Exploring"? This post looks exclusively at data directly related to @Rbloggers tweets; I am not looking at data from any other social media or how many times the post was shared via R-Bloggers website rather than through Twitter. I'm also not looking at how much discussion (replies) a tweet generates. I wanted to include data from the number of times the "Tweet" button was pressed directly on R-Bloggers, but it looks like most older posts have 0 (maybe the button is a recent addition to R-Bloggers), so it'll introduce an unfair bias towards new posts. And of course the biggest criticism here is that you simply can't judge a blog post by the number of times it's shared on Twitter, but here we go.
 
 ## Table of contents
 
@@ -34,6 +34,9 @@ Before going any further, I'd like to say that this is not intended to be a comp
 - [Exploration](#explore) (funnnn!!)
   - [Scores of all tweets](#all-tweets)  
   - [Most successful posts](#most-successful)
+  - [Highest scoring authors](#best-authors)
+  - [Posts by highest scoring authors](#posts-best-authors)
+  - [Who contributes the most?](#powerusers)
   - [Post success by day of week](#by-day)
   - [Wordcloud](#wordcloud)
 
@@ -156,24 +159,24 @@ From the previous plot it seems like there are about 10 posts that are much high
 
 |title                                                                                |date       |author           | favorites| retweets| score|
 |:------------------------------------------------------------------------------------|:----------|:----------------|---------:|--------:|-----:|
-|A new interactive interface for learning R online, for free                          |2015-04-14 |DataCamp         |        78|       49|   176|
-|Introducing Radiant: A shiny interface for R                                         |2015-05-04 |R(adiant) news   |        85|       44|   173|
-|Choosing R or Python for data analysis? An infographic                               |2015-05-12 |DataCamp         |        59|       54|   167|
-|Why the Ban on P-Values? And What Now?                                               |2015-03-07 |Nicole Radziwill |        47|       47|   141|
-|Machine Learning in R for beginners                                                  |2015-03-26 |DataCamp         |        68|       29|   126|
-|Free Stanford online course on Statistical Learning (with R) starting on 19 Jan 2015 |2014-11-22 |Yanchang Zhao    |        54|       35|   124|
-|Four Beautiful Python, R, MATLAB, and Mathematica plots with LaTeX                   |2014-12-20 |Plotly           |        57|       29|   115|
-|In-depth introduction to machine learning in 15 hours of expert videos               |2014-09-24 |Kevin Markham    |        64|       20|   104|
-|Learn Statistics and R online from Harvard                                           |2015-01-17 |David Smith      |        49|       27|   103|
-|R Tutorial on Reading and Importing Excel Files into R                               |2015-04-04 |DataCamp         |        61|       20|   101|
+|A new interactive interface for learning R online, for free                          |2015.04.14 |DataCamp         |        78|       49|   176|
+|Introducing Radiant: A shiny interface for R                                         |2015.05.04 |R(adiant) news   |        85|       44|   173|
+|Choosing R or Python for data analysis? An infographic                               |2015.05.12 |DataCamp         |        59|       54|   167|
+|Why the Ban on P-Values? And What Now?                                               |2015.03.07 |Nicole Radziwill |        47|       47|   141|
+|Machine Learning in R for beginners                                                  |2015.03.26 |DataCamp         |        68|       29|   126|
+|Free Stanford online course on Statistical Learning (with R) starting on 19 Jan 2015 |2014.11.22 |Yanchang Zhao    |        54|       35|   124|
+|Four Beautiful Python, R, MATLAB, and Mathematica plots with LaTeX                   |2014.12.20 |Plotly           |        57|       29|   115|
+|In-depth introduction to machine learning in 15 hours of expert videos               |2014.09.24 |Kevin Markham    |        64|       20|   104|
+|Learn Statistics and R online from Harvard                                           |2015.01.17 |David Smith      |        49|       27|   103|
+|R Tutorial on Reading and Importing Excel Files into R                               |2015.04.04 |DataCamp         |        61|       20|   101|
 
-8/10 of the top 10 posts haev "R" in their title... correlation or causation or random? Maybe I should start doing that too then!
+8/10 of the top 10 posts have "R" in their title... correlation or causation or random? Maybe I should start doing that too then!
 
 Looks like the DataCamp blog is a pretty major Rbloggers contributor with 4/10 of the most tweeted posts.  Which leads me perfectly into the next section.
 
-## Summary of posts by each author
+## Highest scoring authors {#best-authors}
 
-So as I just said, DataCamp looks like he contributes very high quality posts. I wanted to see which blogs contribute the most successful posts consistently. The following shows the authors with the highest average score per tweet.
+So as I just said, DataCamp looks like it contributes very high quality posts. I wanted to see which blogs contribute the most successful posts consistently. The following shows the authors with the highest average score per tweet.
 
 |author               | num_tweets| avg_favorites| avg_retweets| avg_score|
 |:--------------------|----------:|-------------:|------------:|---------:|
@@ -190,11 +193,13 @@ So as I just said, DataCamp looks like he contributes very high quality posts. I
 
 First impression: **Woo, I'm in there!** :D  
 
+## Posts by highest scoring authors {#posts-best-authors}
+
 Now that I know which blogs have the best posts on average, I wanted to see what each of their tweets looked like.
 
 ![Tweets by top-10 authors]({{ site.url }}/img/blog/rbloggers-twitter/posts-top-10.png)
 
-It'll be nice to see how these compare to all other posts. The following figure shows the score of all tweets, and highlights the posts made by any of the top-10 authors.
+It'll be nice to see how these compare to all other posts. The following figure shows the scores of all tweets, and highlights the posts made by any of the top-10 authors.
 
 ![Tweets by top-10 authors along with all tweets]({{ site.url }}/img/blog/rbloggers-twitter/all-tweets-top-10.png)
 
@@ -214,6 +219,8 @@ Pretty. But it looks like the list of top 10 authors is dominated by one-hit won
 |Nicole Radziwill     |         13|          21.3|         10.3|      41.9|
 
 Ah, there's DataCamp - by far more posts than the rest of us, and still a very high average score. Respect.
+
+## Who contributes the most? {#powerusers}
 
 I also wanted to know how many blogs contribute and how much each one contributes.  R-Bloggers says on its frontpage that there are 573 blogs. According to my data, there are 420 unique authors since Sept 2013, so about 1/4 of the blogs have not posted since then. Here is the distribution of how many blog posts different blogs made:
 
