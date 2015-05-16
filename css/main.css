@@ -518,7 +518,7 @@ footer .theme-by {
 .blog-post table tr:nth-child(2n) {
   background-color: #f8f8f8;
 }
-.blog-post table tr:hover {
+.blog-post table tbody tr:hover {
   background-color: #eaeaea;
 }
 .blog-post table tr th {
