@@ -1,3 +1,5 @@
+UPDATE daattali/shiny with new doc
+
 ---
 layout: post
 title: "Analyzing R-Bloggers' posts via Twitter"
