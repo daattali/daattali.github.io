@@ -260,7 +260,7 @@ Next we will create a GitHub repository, so go to [GitHub](https://github.com/) 
 
 Now we need to grab the URL of the repository from GitHub, so on the new page you were redirected to, click on "HTTPS" and then copy the URL to its right, as shown in the image below:
 
-![Get git repo URL]({{ site.url }}/img/blog/digital-ocean/git-repo-url.png)]({{ site.url }}/img/blog/digital-ocean/git-repo-url.png)
+[![Get git repo URL]({{ site.url }}/img/blog/digital-ocean/git-repo-url.png)]({{ site.url }}/img/blog/digital-ocean/git-repo-url.png)
 
 Now we need to make the connection between the git repository we made on our droplet and the one we just created, and then add all the files that are currently in `/srv/shiny-server/` to this repository. **Be sure to replace the URL in the first command with the URL that you copied from your repository**.
 
