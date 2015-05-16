@@ -119,8 +119,7 @@ The last line there removed any tweets without an author. That essentially remov
 
 ## Clean up data {#cleanup}
 
-It's time for some clean up:
-
+It's time for some clean up:  
 - Remove the URL and `#rstats` hashtag from every tweet's title  
 - Older posts all contain the text "This article was originally posted on ... and kindly contributed by ..." - try to remove that as well
 - Order the day factor levels in order from Monday - Sunday
