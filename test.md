@@ -258,7 +258,7 @@ Cool! This actually produced some non-boring results.  I'm not going to make any
 
 Whatever the case might be, here's a plot that shows the score of every tweet grouped by day. The large points show the average of all posts made on that day.
 
-![Tweet score vs day of tweet]({{ site.url }}/img/blog/rbloggers-twitter/score-per-day.png)
+[![Tweet score vs day of tweet]({{ site.url }}/img/blog/rbloggers-twitter/score-per-day.png)]({{ site.url }}/img/blog/rbloggers-twitter/score-per-day.png)
 
 Significant or not, at least it looks pretty.
 
