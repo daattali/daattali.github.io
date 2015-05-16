@@ -152,20 +152,20 @@ Looks like most posts are close to the (0, 0) area, with 20 favorites and 10 ret
 
 ## Most successful posts {#most-successful}
 
-From the previous plot it seems like there are about 10 posts that are that are much higher up than everyone else, so let's see what the top 10 most shared Rbloggers posts on Twitter were since Sep 2013.
+From the previous plot it seems like there are about 10 posts that are much higher up than everyone else, so let's see what the top 10 most shared Rbloggers posts on Twitter were since Sep 2013.
 
 |title                                                                                |date       |author           | favorites| retweets| score|
 |:------------------------------------------------------------------------------------|:----------|:----------------|---------:|--------:|-----:|
-|A new interactive interface for learning R online, for free                          |2015.04.14 |DataCamp         |        78|       49|   176|
-|Introducing Radiant: A shiny interface for R                                         |2015.05.04 |R(adiant) news   |        85|       44|   173|
-|Choosing R or Python for data analysis? An infographic                               |2015.05.12 |DataCamp         |        59|       54|   167|
-|Why the Ban on P-Values? And What Now?                                               |2015.03.07 |Nicole Radziwill |        47|       47|   141|
-|Machine Learning in R for beginners                                                  |2015.03.26 |DataCamp         |        68|       29|   126|
-|Free Stanford online course on Statistical Learning (with R) starting on 19 Jan 2015 |2014.11.22 |Yanchang Zhao    |        54|       35|   124|
-|Four Beautiful Python, R, MATLAB, and Mathematica plots with LaTeX                   |2014.12.20 |Plotly           |        57|       29|   115|
-|In-depth introduction to machine learning in 15 hours of expert videos               |2014.09.24 |Kevin Markham    |        64|       20|   104|
-|Learn Statistics and R online from Harvard                                           |2015.01.17 |David Smith      |        49|       27|   103|
-|R Tutorial on Reading and Importing Excel Files into R                               |2015.04.04 |DataCamp         |        61|       20|   101|
+|A new interactive interface for learning R online, for free                          |2015-04-14 |DataCamp         |        78|       49|   176|
+|Introducing Radiant: A shiny interface for R                                         |2015-05-04 |R(adiant) news   |        85|       44|   173|
+|Choosing R or Python for data analysis? An infographic                               |2015-05-12 |DataCamp         |        59|       54|   167|
+|Why the Ban on P-Values? And What Now?                                               |2015-03-07 |Nicole Radziwill |        47|       47|   141|
+|Machine Learning in R for beginners                                                  |2015-03-26 |DataCamp         |        68|       29|   126|
+|Free Stanford online course on Statistical Learning (with R) starting on 19 Jan 2015 |2014-11-22 |Yanchang Zhao    |        54|       35|   124|
+|Four Beautiful Python, R, MATLAB, and Mathematica plots with LaTeX                   |2014-12-20 |Plotly           |        57|       29|   115|
+|In-depth introduction to machine learning in 15 hours of expert videos               |2014-09-24 |Kevin Markham    |        64|       20|   104|
+|Learn Statistics and R online from Harvard                                           |2015-01-17 |David Smith      |        49|       27|   103|
+|R Tutorial on Reading and Importing Excel Files into R                               |2015-04-04 |DataCamp         |        61|       20|   101|
 
 8/10 of the top 10 posts haev "R" in their title... correlation or causation or random? Maybe I should start doing that too then!
 
