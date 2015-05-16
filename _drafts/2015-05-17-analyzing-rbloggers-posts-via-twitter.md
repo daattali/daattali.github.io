@@ -8,29 +8,44 @@ fb-img: TODO choose an image
 
 For those who don't know, every time a new blog post gets added to [R-Bloggers](http://www.r-bloggers.com/), it gets a corresponding tweet by [@Rbloggers](https://twitter.com/rbloggers), which gets seen by Rbloggers' ~20k followers fairly fast. And every time **my** post gets published, I can't help but check up on how many people gave that tweet some Twitter love, ie. "favorite"d or "retweet"ed it. It's even more exciting than getting a Facebook "like" on a photo from Costa Rica! 
 
-Seeing all these tweets and how some tweets get much more attention than others has gotten me thinking. Are there some power users who post almost all the content, or so many blogs contribute equally?  Which posts were the most shared?  Which blog produces the highest quality posts consistently?  Are there more posts during the weekdays then weekends? And of course the holy grail of bloggers - is there a day when it's better to post to get more shares?
+Seeing all these tweets and how some tweets get much more attention than others has gotten me thinking. Are there some power users who post almost all the content, or do many blogs contribute equally?  Which posts were the most shared?  Which blog produces the highest quality posts consistently?  Are there more posts during the weekdays then weekends? And of course the holy grail of bloggers - is there a day when it's better to post to get more shares?
 
-To answer these questions, I of course turned to R. I used the `twitteR` package to get information about the latest 3200 tweets made by Rbloggers, and used Hadley's `httr` to scrape each blog post to get the post's author. Unfortunately Twitter does not allow us to fetch any tweets older than that (if you know of a workaround, please let me know), so the data here will be looking at tweets made from September 2013 until now (mid May 2015). That's actually a nice start date because it's exactly when I started grad school and when I first used R. So you can think of this analysis as "R-Bloggers' tweets since Dean's R life started" :)
+To answer these questions, I of course turned to R. I used the `twitteR` package to get information about the latest 3200 tweets made by Rbloggers, Hadley's `httr` to scrape each blog post to get the post's author, and `ggplot2` to visualize some cool aspects of the data. Unfortunately Twitter does not allow us to fetch any tweets older than that (if you know of a workaround, please let me know), so the data here will be looking at tweets made from September 2013 until now (mid May 2015). That's actually a nice start date because it's exactly when I started grad school and when I first used R. So you can think of this analysis as "R-Bloggers' tweets since Dean's R life started" :)
 
 I'm going to use some terminology very loosely and interchangeably throughout this post:  
-
 - "blog" == "author" == "contributor"  
 - "tweet" == "post"  
-- "successful" post == "viral" == "highly shared" == "high score" == "high quality" == "gets Twitter love"
+- "successful" post == "highly shared" == "high score" == "high quality"
 
-It's clear that all those terms not necessarily the same thing (for example, varlity does not necessarily mean high quality), but I'll be using them all as the same.
+It's clear that all those terms not necessarily the same thing (for example, virality does not necessarily mean high quality), but I'll be using them all as the same.
 
-There is also [an accompanying interactive document](http://daattali.com/shiny/rbloggers-twitter/#data-exlorationvisualization) to accompany this post.  That document has a few interactive plots/tables for data that is better explored interactively than with an image, and it also contains all the source code that was used to make the analysis and all the figures here. The source code is also [available on GitHub](https://github.com/daattali/shiny-server/tree/master/rbloggers-twitter) as thhe raw text version of the interactive document.  In this post I will not be putting too much length code, especially not for the plots.
+**There is also [an accompanying interactive document](http://daattali.com/shiny/rbloggers-twitter/) to supplement this post.**  That document has a few interactive plots/tables for data that is better explored interactively rather than as an image, and it also contains all the source code that was used to make the analysis and all the figures here. The source code is also [available on GitHub](https://github.com/daattali/shiny-server/tree/master/rbloggers-twitter) as the raw text version of the interactive document.  In this post I will not be including too much lengthy code, especially not for the plots.
 
-Before going any further, I'd like to say that this is not intended to be a comprehensive analysis and definitely has many weaknesses. It's just for fun. I'm not even going to be making any statistical significance tests at any point or do any quantitative analysis. Maybe titling this as "Analyzing" is wrong and should instead be "Exploring"? This post looks exclusively at data directly related to @Rbloggers tweets; I am not looking at data from any other social media or how many times the post was shared via R-Bloggers website rather than through Twitter. I'm also not looking at how much discussion (replies) a tweet generates. I wanted to include data from the number of times the "Tweet" button was pressed directly from R-Bloggers, but it looks like most older posts have 0 (maybe the button is a recent addition to R-Bloggers) so it'll introduce an unfair bias towards new posts.
+Before going any further, I'd like to say that this is not intended to be a comprehensive analysis and definitely has many weaknesses. It's just for fun. I'm not even going to be making any statistical significance tests at any point or do any quantitative analysis. Maybe titling this as "Analyzing" is wrong and should instead be "Exploring"? This post looks exclusively at data directly related to @Rbloggers tweets; I am not looking at data from any other social media or how many times the post was shared via R-Bloggers website rather than through Twitter. I'm also not looking at how much discussion (replies) a tweet generates. I wanted to include data from the number of times the "Tweet" button was pressed directly on R-Bloggers, but it looks like most older posts have 0 (maybe the button is a recent addition to R-Bloggers), so it'll introduce an unfair bias towards new posts. And of course the biggest criticism here is that you simply can't judge a blog post by the number of times it's shared on Twitter, but here we go.
 
-## Data preparation {#data-prep}
+## Table of contents
 
-This is the boring part - get the data from Twitter, fill in missing pieces of information, clean up... Feel free to skip to the more [exciting part](#exploration).
+- [Data preparation](#data-prep) (booooring)
+  - [Get data from Twitter](#twitter-data)
+  - [Scrape R-Bloggers to get author info](#scrape-rbloggers)
+  - [Clean up data](#cleanup)
+  - [Add a score metric](#score)
+- [Exploration](#explore) (funnnn!!)
+  - [Scores of all tweets](#all-tweets)  
+  - [Most successful posts](#most-successful)
+  - [Highest scoring authors](#best-authors)
+  - [Posts by highest scoring authors](#posts-best-authors)
+  - [Who contributes the most?](#powerusers)
+  - [Post success by day of week](#by-day)
+  - [Wordcloud](#wordcloud)
 
-### Get data from Twitter
+# Data preparation {#data-prep}
 
-As mentioned above, I could only grab the last 3200 tweets made by @Rbloggers, which equates to all tweets since Sept 2013.  For each tweet I kept several pieces of information: tweet ID, tweet date, day of the week the tweet was made, number of times tweet was favorited, number of times tweet was retweeted, tweet text, and the last URL in the tweet text.  The tweet text is essentially a blog post's title that has been truncated. I keep the last URL that appears in every tweet because that URL always points to the article on R-Bloggers. I'm only storing the date but losing the actual time, which is another weakness. Also, the dates are according to UTC, and many (most?) Rbloggers followers are in America, so it might not be the most correct.
+This is the boring part - get the data from Twitter, fill in missing pieces of information, clean up... Feel free to skip to the more [exciting part](#explore).
+
+## Get data from Twitter {#twitter-data}
+
+As mentioned above, I could only grab the last 3200 tweets made by @Rbloggers, which equates to all tweets since Sept 2013.  For each tweet I kept several pieces of information: tweet ID, tweet date, day of the week the tweet was made, number of times tweet was favorited, number of times tweet was retweeted, tweet text, and the last URL in the tweet text.  The tweet text is essentially a blog post's title that has been truncated. I keep the last URL that appears in every tweet because that URL always points to the article on R-Bloggers. I'm only storing the date but losing the actual time, which is another weakness. Also, the dates are according to UTC, and many Rbloggers followers are in America, so it might not be the most correct.
 
 Anyway, after authenticating with Twitter, here's the code to get this information using `twitteR`:
 
@@ -56,7 +71,7 @@ rm(tweets_raw)  # being extremely memory conscious
 
 Remember the full source code can be viewed [here](http://daattali.com/shiny/rbloggers-twitter/#get-data-from-twitter).
 
-### Scrape R-Bloggers to get author info
+## Scrape R-Bloggers to get author info {#scrape-rbloggers}
 
 Since I had some questions about the post authors and a tweet doesn't give that information, I resorted to scraping the R-Bloggers post linked in each tweet using `httr` to find the author. This part takes a bit of time to run. There were a few complications, mostly with authors whose name is their email and R-Bloggers attemps to hide it, but here is how I accomplished this step:
 
@@ -100,23 +115,20 @@ tweets %<>% mutate(author = get_post_author(url))
 tweets %<>% na.omit
 ~~~
 
-### Clean up data
+The last line there removed any tweets without an author. That essentially removes all tweets that are advertising job postings and a few blog posts that have been deleted.
 
-It's time for some clean up:
+## Clean up data {#cleanup}
 
+It's time for some clean up:  
 - Remove the URL and `#rstats` hashtag from every tweet's title  
-
 - Older posts all contain the text "This article was originally posted on ... and kindly contributed by ..." - try to remove that as well
-
 - Order the day factor levels in order from Monday - Sunday
-
 - Truncate very long author names with an ellipsis
-
 - Merge duplicate tweets (tweets with the same author and title that are posted within a week)
 
 After removing duplicates and previously removing tweets about job postings, we are left with 2979 tweets (down from 3200).  You can see what the data looks like [here](http://daattali.com/shiny/rbloggers-twitter/#summary-of-all-posts) or see the code for the cleanup on that page as well.
 
-### Add a score metric
+## Add a score metric {#score}
 
 Now that we have almost all the info we need for the tweets, there is one thing missing. It'd be useful to have a metric for how successful a tweet is using the very little bit of information we have. This is of course very arbitrary. I chose to score a tweet’s success as a linear combination of its "# of favorites" and "# of retweets". Since there are roughly twice as many favorites as retweets in total, retweets get twice the weight. Very simple formula :) 
 
@@ -125,11 +137,13 @@ sum(tweets$favorites) / sum(tweets$retweets)   # result = 2.1
 tweets$score <- tweets$favorites + tweets$retweets * 2
 ~~~
 
-## Exploration {#exploration}
+---
 
-Time for the fun stuff!  I'm only going to make a few plots, you can get the data [from GitHub](https://github.com/daattali/shiny-server/tree/master/rbloggers-twitter) if you want to play around with it.
+# Exploration {#explore}
 
-### Preliminary look at posts' success on Twitter
+Time for the fun stuff!  I'm only going to make a few plots, you can get the data [from GitHub](https://github.com/daattali/shiny-server/tree/master/rbloggers-twitter) if you want to play around with it in more depth.
+
+## Scores of all tweets {#all-tweets}
 
 First I'd like to see a simple scatterplot showing the number of favorites and retweets for each blog post.
 
@@ -137,7 +151,9 @@ First I'd like to see a simple scatterplot showing the number of favorites and r
 
 Looks like most posts are close to the (0, 0) area, with 20 favorites and 10 retweets being the maximum boundary for most. A very small fraction of tweets make it past the 40 favorites or 20 retweets. 
 
-It seems like there are about 10 posts that are that are much higher up than everyone else, so let's see what the top 10 most shared Rbloggers posts on Twitter were since Sep 2013.
+## Most successful posts {#most-successful}
+
+From the previous plot it seems like there are about 10 posts that are much higher up than everyone else, so let's see what the top 10 most shared Rbloggers posts on Twitter were since Sep 2013.
 
 |title                                                                                |date       |author           | favorites| retweets| score|
 |:------------------------------------------------------------------------------------|:----------|:----------------|---------:|--------:|-----:|
@@ -152,13 +168,13 @@ It seems like there are about 10 posts that are that are much higher up than eve
 |Learn Statistics and R online from Harvard                                           |2015.01.17 |David Smith      |        49|       27|   103|
 |R Tutorial on Reading and Importing Excel Files into R                               |2015.04.04 |DataCamp         |        61|       20|   101|
 
-8/10 of the top 10 posts haev "R" in their title... correlation or causation or random? Maybe I should start doing that too then!
+8/10 of the top 10 posts have "R" in their title... correlation or causation or random? Maybe I should start doing that too then!
 
 Looks like the DataCamp blog is a pretty major Rbloggers contributor with 4/10 of the most tweeted posts.  Which leads me perfectly into the next section.
 
-### Summary of posts by each author
+## Highest scoring authors {#best-authors}
 
-So as I just said, DataCamp looks like he contributes very high quality posts. I wanted to see which blogs contribute the most successful posts consistently. The following shows the authors with the highest average score per tweet.
+So as I just said, DataCamp looks like it contributes very high quality posts. I wanted to see which blogs contribute the most successful posts consistently. The following shows the authors with the highest average score per tweet.
 
 |author               | num_tweets| avg_favorites| avg_retweets| avg_score|
 |:--------------------|----------:|-------------:|------------:|---------:|
@@ -175,11 +191,13 @@ So as I just said, DataCamp looks like he contributes very high quality posts. I
 
 First impression: **Woo, I'm in there!** :D  
 
+## Posts by highest scoring authors {#posts-best-authors}
+
 Now that I know which blogs have the best posts on average, I wanted to see what each of their tweets looked like.
 
 ![Tweets by top-10 authors]({{ site.url }}/img/blog/rbloggers-twitter/posts-top-10.png)
 
-It'll be nice to see how these compare to all other posts. The following figure shows the score of all tweets, and highlights the posts made by any of the top-10 authors.
+It'll be nice to see how these compare to all other posts. The following figure shows the scores of all tweets, and highlights the posts made by any of the top-10 authors.
 
 ![Tweets by top-10 authors along with all tweets]({{ site.url }}/img/blog/rbloggers-twitter/all-tweets-top-10.png)
 
@@ -200,6 +218,8 @@ Pretty. But it looks like the list of top 10 authors is dominated by one-hit won
 
 Ah, there's DataCamp - by far more posts than the rest of us, and still a very high average score. Respect.
 
+## Who contributes the most? {#powerusers}
+
 I also wanted to know how many blogs contribute and how much each one contributes.  R-Bloggers says on its frontpage that there are 573 blogs. According to my data, there are 420 unique authors since Sept 2013, so about 1/4 of the blogs have not posted since then. Here is the distribution of how many blog posts different blogs made:
 
 ![Posts per blog]({{ site.url }}/img/blog/rbloggers-twitter/posts-per-blog.png)
@@ -216,9 +236,9 @@ Seems like a lot of people only posted once in the past 1.5 years. That graph is
 
 There you have it - the 5 people who single-handedly (or.. quintuple-handedly?) are responsible for 1/6 of the posts we've seen since I learned what R is.
 
-## Post success by day of week
+## Post success by day of week {#by-day}
 
-One of my main questions was whether there is some correlation between when a post is posted and how successful it is. I also wanted to see if there are certain days of the week that are more/less active.  Here is a table summarizing the number of posts made on each day of the week and how successful each one was on average.
+One of my main questions was whether there is some correlation between when a post is posted and how successful it is. I also wanted to see if there are certain days of the week that are more/less active.  Here is a table summarizing the number of posts made on each day of the week and how successful each day was on average.
 
 |day       | num_tweets| favorites_per_post| retweets_per_post| avg_score|
 |:---------|----------:|------------------:|-----------------:|---------:|
@@ -230,14 +250,20 @@ One of my main questions was whether there is some correlation between when a po
 |Saturday  |        323|                8.7|               4.3|      17.3|
 |Sunday    |        277|                8.9|               3.8|      16.5|
 
-Cool! This actually produced some non-boring results.  I'm not going to make any significance tests, but I do see two interesting pieces of information here. First of all, it looks like the weekend (Sat-Sun) is quieter than weekdays in terms on number of posts made.  Second of all, the two days with the highest average score are also Sat-Sun. I won't go into whether or not having ~1 more favorite and < 1 more retweet on average is significant, but it's at least something.  Maybe because there are less posts on the weekend, then each post gets a bit more visibility and stays at the top of the feed longer, thereby having a small advantage? Or maybe the only small difference is score we're seeing is just because there are less posts in total and it'll even out once n is large enough? 
+Cool! This actually produced some non-boring results.  I'm not going to make any significance tests, but I do see two interesting pieces of information here. First of all, it looks like the weekend (Sat-Sun) is quieter than weekdays in terms on number of posts made.  Second of all, the two days with the highest average score are also Sat-Sun. I won't go into whether or not having ~1 more favorite and < 1 more retweet on average is significant, but it's at least something.  Maybe because there are less posts on the weekend, each post gets a bit more visibility and stays at the top of the feed longer, thereby having a small advantage? Or maybe the small difference in score we're seeing is just because there are less posts in total and it'll even out once n is large enough? 
+
+Whatever the case might be, here's a plot that shows the score of every tweet grouped by day. The large points show the average of all posts made on that day.
 
 ![Tweet score vs day of tweet]({{ site.url }}/img/blog/rbloggers-twitter/score-per-day.png)
 
-### Wordcloud
+Significant or not, at least it looks pretty.
+
+## Wordcloud {#wordcloud}
 
 I must admit I'm not the biggest fan of wordclouds, but it feels like no amateur R analysis can be complete without one of these bad boys these days.  Here you go wordcloud-lovers - the 100 most popular terms in R-Bloggers posts' titles since Sept 2013.
 
 ![Wordcloud]({{ site.url }}/img/blog/rbloggers-twitter/wordcloud.png)
+
+I actually don't have much to comment on that, there isn't anything that strikes me as surprising here.
 
 **Remember to check out the [accompanying interactive doc + source code](http://daattali.com/shiny/rbloggers-twitter/)!**
