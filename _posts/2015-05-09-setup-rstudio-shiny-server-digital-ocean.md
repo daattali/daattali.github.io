@@ -43,7 +43,7 @@ Now let's claim one of DO's machines as our own! It's so simple that you definit
 *Note: all subsequent steps assume that you are also using the weakest server possible with Ubuntu 14.04 x64. If you chose different settings, the general instructions will still apply but some of the specific commands/URLs might need to change.*
 
 Even though you probably don't need it, here's a short GIF showing me creating a new droplet:
-![Create droplet]({{ site.url }}/img/blog/digital-ocean/do-create.gif)
+[![Create droplet]({{ site.url }}/img/blog/digital-ocean/do-create.gif)]({{ site.url }}/img/blog/digital-ocean/do-create.gif)
 
 # Step 3: Log in to your very own shiny new server {#login}
 
@@ -52,7 +52,7 @@ Once the droplet is ready (can take a few minutes), you'll be redirected to a pa
 One option to log into your droplet is through the "Access" tab on the page you were redirected to, but it's slow and ugly, so I prefer logging in on my own machine. If you're on a unix machine, you can just use `ssh 123.456.1.2`. I'm on Windows, so I use [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/) to SSH ("login") into other machines. Use the IP that you see on the page, with the username `root`.  If you used an SSH key then you don't need to provide a password; otherwise, a password was sent to your email.
 
 You should be greeted with a welcome message and some stats about the server that look like this:
-![Login screen]({{ site.url }}/img/blog/digital-ocean/login.png)
+[![Login screen]({{ site.url }}/img/blog/digital-ocean/login.png)]({{ site.url }}/img/blog/digital-ocean/login.png)
 
 # Step 4: Ensure you don't shoot yourself in the foot {#safety-first}
 
@@ -120,7 +120,7 @@ You should now be able to run R and hopefully be greeted with a message containi
 R
 ~~~
 
-![R welcome]({{ site.url }}/img/blog/digital-ocean/R-welcome.png)
+[![R welcome]({{ site.url }}/img/blog/digital-ocean/R-welcome.png)]({{ site.url }}/img/blog/digital-ocean/R-welcome.png)
 
 Now you need to quit R (`quit()`) because there are a couple small things to adjust on the server so that R will work well.
 
@@ -175,7 +175,7 @@ sudo gdebi rstudio-server-0.98.1103-amd64.deb
 
 Done! By default, RStudio uses port 8787, so to access RStudio go to `http://107.170.217.55:8787` and you should be greeted with an RStudio login page. (If you forgot what your droplet's IP is, you can find out by running `hostname -I`)
 
-![RStudio]({{ site.url }}/img/blog/digital-ocean/rstudio.png)
+[![RStudio]({{ site.url }}/img/blog/digital-ocean/rstudio.png)]({{ site.url }}/img/blog/digital-ocean/rstudio.png)
 
 You can log in to RStudio with any user/password that are available on the droplet. For example, I would log in with username `dean` and my password. If you want to let your friend Joe have access to your RStudio, you can create a new user for them with `adduser joe`.
 
@@ -202,7 +202,7 @@ sudo gdebi shiny-server-1.3.0.403-amd64.deb
 
 Shiny Server is now installed and running. Assuming there were no problems, if you go to `http://107.170.217.55:3838/` you should see Shiny Server's default homepage, which includes some instructions and two Shiny apps:
 
-![Shiny Server]({{ site.url }}/img/blog/digital-ocean/shiny.png)
+[![Shiny Server]({{ site.url }}/img/blog/digital-ocean/shiny.png)]({{ site.url }}/img/blog/digital-ocean/shiny.png)
 
 If you see an error on the bottom Shiny app, it's probably because you don't have the `rmarkdown` R package installed (the instructions on the default Shiny Server page mention this). After installing `rmarkdown` in R, the bottom Shiny app should work as well. Don't forget to install `rmarkdown` so that it will be available to all users as described [above](#user-libraries). I suggest you read through the instructions page at `http://107.170.217.55:3838/`.
 
@@ -256,11 +256,11 @@ git init
 
 Next we will create a GitHub repository, so go to [GitHub](https://github.com/) and add a new repository named `shiny-server`.
 
-![Create new repository]({{ site.url }}/img/blog/digital-ocean/git-repo-create.png)
+[![Create new repository]({{ site.url }}/img/blog/digital-ocean/git-repo-create.png)]({{ site.url }}/img/blog/digital-ocean/git-repo-create.png)
 
 Now we need to grab the URL of the repository from GitHub, so on the new page you were redirected to, click on "HTTPS" and then copy the URL to its right, as shown in the image below:
 
-![Get git repo URL]({{ site.url }}/img/blog/digital-ocean/git-repo-url.png) 
+![Get git repo URL]({{ site.url }}/img/blog/digital-ocean/git-repo-url.png)]({{ site.url }}/img/blog/digital-ocean/git-repo-url.png)
 
 Now we need to make the connection between the git repository we made on our droplet and the one we just created, and then add all the files that are currently in `/srv/shiny-server/` to this repository. **Be sure to replace the URL in the first command with the URL that you copied from your repository**.
 
@@ -335,14 +335,14 @@ You will now get to a page where you can enter more details.
 
 Here is what my domain settings look like, make sure yours look similar (note the dot suffix on all the domain names):
 
-![DigitalOcean DNS settings]({{ site.url }}/img/blog/digital-ocean/DigitalOceanDNS.png) 
+[![DigitalOcean DNS settings]({{ site.url }}/img/blog/digital-ocean/DigitalOceanDNS.png)]({{ site.url }}/img/blog/digital-ocean/DigitalOceanDNS.png)
 
 ### Change your domain servers to DigitalOcean
 
 You also need to configure your domain registrar by adding the 3 nameservers `ns1.digitalocean.com`, `ns2.digitalocean.com`, `ns3.digitalocean.com`. It's fairly simple, but the exact instructions are different based on your registrar, so [here is a guide](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars) with all the common registrars and how to do this step with each of them.
 
 I use Namecheap, so this is what my domain configuration needs to look like:
-![Namecheap domain servers]({{ site.url }}/img/blog/digital-ocean/namecheap-domain-server.png) 
+[![Namecheap domain servers]({{ site.url }}/img/blog/digital-ocean/namecheap-domain-server.png)]({{ site.url }}/img/blog/digital-ocean/namecheap-domain-server.png)
 
 **And that's it! Now you have a nicely configured private web server with your very own RStudio and Shiny Server, and you can do anything else you'd like on it.** 
 
