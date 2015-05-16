@@ -151,7 +151,7 @@ Time for the fun stuff!  I'm only going to make a few plots, you can get the dat
 
 First I'd like to see a simple scatterplot showing the number of favorites and retweets for each blog post.
 
-![Tweets score]({{ site.url }}/img/blog/rbloggers-twitter/tweets-score.png)
+[![Tweets score]({{ site.url }}/img/blog/rbloggers-twitter/tweets-score.png)]({{ site.url }}/img/blog/rbloggers-twitter/tweets-score.png)
 
 Looks like most posts are close to the (0, 0) area, with 20 favorites and 10 retweets being the maximum boundary for most. A very small fraction of tweets make it past the 40 favorites or 20 retweets. 
 
@@ -199,11 +199,11 @@ First impression: **Woo, I'm in there!** :D
 
 Now that I know which blogs have the best posts on average, I wanted to see what each of their tweets looked like.
 
-![Tweets by top-10 authors]({{ site.url }}/img/blog/rbloggers-twitter/posts-top-10.png)
+[![Tweets by top-10 authors]({{ site.url }}/img/blog/rbloggers-twitter/posts-top-10.png)]({{ site.url }}/img/blog/rbloggers-twitter/posts-top-10.png)
 
 It'll be nice to see how these compare to all other posts. The following figure shows the scores of all tweets, and highlights the posts made by any of the top-10 authors.
 
-![Tweets by top-10 authors along with all tweets]({{ site.url }}/img/blog/rbloggers-twitter/all-tweets-top-10.png)
+[![Tweets by top-10 authors along with all tweets]({{ site.url }}/img/blog/rbloggers-twitter/all-tweets-top-10.png)]({{ site.url }}/img/blog/rbloggers-twitter/all-tweets-top-10.png)
 
 Pretty. But it looks like the list of top 10 authors is dominated by one-hit wonders, which makes sense because it's much easier to put a lot of effort into one single post than to constantly pump out great articles over and over again.  So let's try again seeing who has the highest average score, but only consider blogs that contributed more than one post.
 
@@ -226,7 +226,7 @@ Ah, there's DataCamp - by far more posts than the rest of us, and still a very h
 
 I also wanted to know how many blogs contribute and how much each one contributes.  R-Bloggers says on its frontpage that there are 573 blogs. According to my data, there are 420 unique authors since Sept 2013, so about 1/4 of the blogs have not posted since then. Here is the distribution of how many blog posts different blogs made:
 
-![Posts per blog]({{ site.url }}/img/blog/rbloggers-twitter/posts-per-blog.png)
+[![Posts per blog]({{ site.url }}/img/blog/rbloggers-twitter/posts-per-blog.png)]({{ site.url }}/img/blog/rbloggers-twitter/posts-per-blog.png)
 
 Seems like a lot of people only posted once in the past 1.5 years. That graph is actually cut off at 50 because there are a few outliers (individuals who posted way more than 50).  Let's see who these power users are, so we know who to thank for most of the content.
 
@@ -258,7 +258,7 @@ Cool! This actually produced some non-boring results.  I'm not going to make any
 
 Whatever the case might be, here's a plot that shows the score of every tweet grouped by day. The large points show the average of all posts made on that day.
 
-![Tweet score vs day of tweet]({{ site.url }}/img/blog/rbloggers-twitter/score-per-day.png)
+[![Tweet score vs day of tweet]({{ site.url }}/img/blog/rbloggers-twitter/score-per-day.png)]({{ site.url }}/img/blog/rbloggers-twitter/score-per-day.png)
 
 Significant or not, at least it looks pretty.
 
@@ -266,7 +266,7 @@ Significant or not, at least it looks pretty.
 
 I must admit I'm not the biggest fan of wordclouds, but it feels like no amateur R analysis can be complete without one of these bad boys these days.  Here you go wordcloud-lovers - the 100 most popular terms in R-Bloggers posts' titles since Sept 2013.
 
-![Wordcloud]({{ site.url }}/img/blog/rbloggers-twitter/wordcloud.png)
+[![Wordcloud]({{ site.url }}/img/blog/rbloggers-twitter/wordcloud.png)]({{ site.url }}/img/blog/rbloggers-twitter/wordcloud.png)
 
 I actually don't have much to comment on that, there isn't anything that strikes me as surprising here.
 
