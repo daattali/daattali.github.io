@@ -32,8 +32,8 @@ Before going any further, I'd like to say that this is not intended to be a comp
   - [Clean up data](#cleanup)
   - [Add a score metric](#score)
 - [Exploration](#explore) (funnnn!!)
-  - [Preliminary look at posts’ success on Twitter](#preliminary)
-  - [Summary of posts by each author](#by-author)
+  - [Scores of all tweets](#all-tweets)  
+  - [Most successful posts](#most-successful)
   - [Post success by day of week](#by-day)
   - [Wordcloud](#wordcloud)
 
@@ -142,7 +142,7 @@ tweets$score <- tweets$favorites + tweets$retweets * 2
 
 Time for the fun stuff!  I'm only going to make a few plots, you can get the data [from GitHub](https://github.com/daattali/shiny-server/tree/master/rbloggers-twitter) if you want to play around with it in more depth.
 
-## Preliminary look at posts' success on Twitter
+## Scores of all tweets {#all-tweets}
 
 First I'd like to see a simple scatterplot showing the number of favorites and retweets for each blog post.
 
@@ -150,7 +150,9 @@ First I'd like to see a simple scatterplot showing the number of favorites and r
 
 Looks like most posts are close to the (0, 0) area, with 20 favorites and 10 retweets being the maximum boundary for most. A very small fraction of tweets make it past the 40 favorites or 20 retweets. 
 
-It seems like there are about 10 posts that are that are much higher up than everyone else, so let's see what the top 10 most shared Rbloggers posts on Twitter were since Sep 2013.
+## Most successful posts {#most-successful}
+
+From the previous plot it seems like there are about 10 posts that are that are much higher up than everyone else, so let's see what the top 10 most shared Rbloggers posts on Twitter were since Sep 2013.
 
 |title                                                                                |date       |author           | favorites| retweets| score|
 |:------------------------------------------------------------------------------------|:----------|:----------------|---------:|--------:|-----:|
