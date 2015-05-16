@@ -50,7 +50,7 @@ render my GitHub page.
 
 That's it.  After a few minutes, `daattali.github.io` redirected to `deanattali.com`, which showed my site :)
 
-![Namecheap settings]({{ site.url }}/img/blog/namecheap-settings.png)
+[![Namecheap settings]({{ site.url }}/img/blog/namecheap-settings.png)]({{ site.url }}/img/blog/namecheap-settings.png)
 <span class="caption text-muted">Changing the DNS settings on Namecheap</span>
 
 Fun fact: I also bought `daattali.com` because I'm extremely undecisive and couldn't decide which domain name I would want to use. :)
