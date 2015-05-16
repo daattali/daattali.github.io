@@ -35,6 +35,7 @@ Before going any further, I'd like to say that this is not intended to be a comp
   - [Preliminary look at posts’ success on Twitter](#preliminary)
   - [Summary of posts by each author](#by-author)
   - [Post success by day of week](#by-day)
+  - [Wordclour](#wordcloud)
 
 # Data preparation {#data-prep}
 
