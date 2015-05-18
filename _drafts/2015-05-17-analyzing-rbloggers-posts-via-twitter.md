@@ -1,10 +1,8 @@
-UPDATE daattali/shiny with new doc
-
 ---
 layout: post
 title: "Analyzing R-Bloggers' posts via Twitter"
 tags: [professional, rstats, r, r-bloggers, shiny, twitter]
-date: 2015-05-17 16:00:00 -0700
+date: 2015-05-17 17:10:00 -0700
 fb-img: http://deanattali.com/img/blog/rbloggers-twitter/all-tweets-top-10.png
 ---
 
