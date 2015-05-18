@@ -362,6 +362,8 @@ I use Namecheap, so this is what my domain configuration needs to look like:
 
 **[2015-05-14]** Added section about [setting up proper user permissions on Shiny Server](#shiny-user-perms).
 
+**[2015-05-18]** As mentioned in the comments, students with an educational GitHub account can get $100 credits through the GitHub Student Developer Pack.
+
 # Resources {#resources}
 
 This is a list of the main blog/StackOverflow/random posts I had to consult while getting all this to work. 
