@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.StringTokenizer;
+import java.net.URL;
 
 /**
  * Dean Attali<br>
@@ -30,7 +31,9 @@ public class ReadFile
 
 		try
 		{
-			reader=new BufferedReader(new FileReader("grid.dat"));
+			URL url = new URL("http://deanattali.com/files/java/Scrabble/" + "grid.dat");
+			reader = new BufferedReader(new InputStreamReader(url.openStream()));
+			//reader=new BufferedReader(new FileReader("grid.dat"));
 			StringTokenizer st=new StringTokenizer(reader.readLine());
 			rows=Integer.parseInt(st.nextToken());
 			cols=Integer.parseInt(st.nextToken());
@@ -50,7 +53,9 @@ public class ReadFile
 
 		try
 		{
-			reader=new BufferedReader(new FileReader("grid.dat"));
+			URL url = new URL("http://deanattali.com/files/java/Scrabble/" + "grid.dat");
+			reader = new BufferedReader(new InputStreamReader(url.openStream()));
+			//reader=new BufferedReader(new FileReader("grid.dat"));
 			reader.readLine();
 			temp=new String[params[0]];
 

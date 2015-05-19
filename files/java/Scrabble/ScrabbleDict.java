@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.net.URL;
 
 /**
  * Dean Attali<br>
@@ -28,7 +29,9 @@ public class ScrabbleDict
 
 		try
 		{
-			BufferedReader reader=new BufferedReader(new FileReader("dict.dat"));
+			URL url = new URL("http://deanattali.com/files/java/Scrabble/" + "dict.dat");
+			BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+			//BufferedReader reader=new BufferedReader(new FileReader("dict.dat"));
 			temp=new ArrayList<String>();
 
 			String s;

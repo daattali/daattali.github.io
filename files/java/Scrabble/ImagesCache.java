@@ -1,10 +1,11 @@
 import java.util.HashMap;
 import javax.swing.ImageIcon;
+import java.net.URL;
 
 /**
  * Dean Attali<br>
  * March 10, 2006<br><br>
- * 
+ *
  * This class is a cache of all the images (letters).<br>
  * Instead of loading the images all the time, this only loads
  * an image once using a HashMap
@@ -29,7 +30,10 @@ public class ImagesCache
 		if (img == null)
 		{
 			Debug.println("Image "+name+ " loaded");
-			img = new ImageIcon(name);
+			try{
+				URL url = new URL("http://deanattali.com/files/java/Scrabble/" + name);
+			    img = new ImageIcon(url);
+			}catch(Exception ex){}
 			sprites.put(name,img);
 		}
 
