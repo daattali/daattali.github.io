@@ -173,7 +173,7 @@ wget http://download2.rstudio.org/rstudio-server-0.98.1103-amd64.deb
 sudo gdebi rstudio-server-0.98.1103-amd64.deb
 ~~~
 
-Done! By default, RStudio uses port 8787, so to access RStudio go to `http://107.170.217.55:8787` and you should be greeted with an RStudio login page. (If you forgot what your droplet's IP is, you can find out by running `hostname -I`)
+Done! By default, RStudio uses port 8787, so to access RStudio go to `http://123.456.1.2:8787` and you should be greeted with an RStudio login page. (If you forgot what your droplet's IP is, you can find out by running `hostname -I`)
 
 [![RStudio]({{ site.url }}/img/blog/digital-ocean/rstudio.png)]({{ site.url }}/img/blog/digital-ocean/rstudio.png)
 
@@ -200,17 +200,17 @@ wget http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.3.0.403-amd
 sudo gdebi shiny-server-1.3.0.403-amd64.deb
 ~~~
 
-Shiny Server is now installed and running. Assuming there were no problems, if you go to `http://107.170.217.55:3838/` you should see Shiny Server's default homepage, which includes some instructions and two Shiny apps:
+Shiny Server is now installed and running. Assuming there were no problems, if you go to `http://123.456.1.2:3838/` you should see Shiny Server's default homepage, which includes some instructions and two Shiny apps:
 
 [![Shiny Server]({{ site.url }}/img/blog/digital-ocean/shiny.png)]({{ site.url }}/img/blog/digital-ocean/shiny.png)
 
-If you see an error on the bottom Shiny app, it's probably because you don't have the `rmarkdown` R package installed (the instructions on the default Shiny Server page mention this). After installing `rmarkdown` in R, the bottom Shiny app should work as well. Don't forget to install `rmarkdown` so that it will be available to all users as described [above](#user-libraries). I suggest you read through the instructions page at `http://107.170.217.55:3838/`.
+If you see an error on the bottom Shiny app, it's probably because you don't have the `rmarkdown` R package installed (the instructions on the default Shiny Server page mention this). After installing `rmarkdown` in R, the bottom Shiny app should work as well. Don't forget to install `rmarkdown` so that it will be available to all users as described [above](#user-libraries). I suggest you read through the instructions page at `http://123.456.1.2:3838/`.
 
 ### Quick Shiny Server references:
 
 - Shiny Server log is at `/var/log/shiny-server.log`.
 - The default Shiny Server homepage you're seeing is located at `/srv/shiny-server/index.html` - you can edit it or remove it.
-- Any Shiny app directory that you place under `/srv/shiny-server/` will be served as a Shiny app. For example, there is a default app at `/srv/shiny-server/sample-apps/hello/`, which means you can run the app by going to `http://107.170.217.55:3838/sample-apps/hello/`.
+- Any Shiny app directory that you place under `/srv/shiny-server/` will be served as a Shiny app. For example, there is a default app at `/srv/shiny-server/sample-apps/hello/`, which means you can run the app by going to `http://123.456.1.2:3838/sample-apps/hello/`.
 - The config file for Shiny Server is at `/etc/shiny-server/shiny-server.conf`.
 - To reload the server after editing the config, use `sudo reload shiny-server`.
 - When hosting an Rmarkdown file, name the file `index.rmd` and add `runtime: shiny` to the document's frontmatter. 
@@ -307,7 +307,7 @@ Since we changed the nginx config, we need to restart nginx for it to take effec
 sudo service nginx restart
 ~~~
 
-Now you should be able to go to `http://107.170.217.55/shiny/` or `http://107.170.217.55/rstudio/`. Much better!
+Now you should be able to go to `http://123.456.1.2/shiny/` or `http://123.456.1.2/rstudio/`. Much better!
 
 **Bonus for advanced users:** The above setup should be just fine for most users, but I did notice a few small issues with RStudio that seem to be fixed by allowing nginx to proxy WebSockets. For example, I noticed that when using the `ggvis` package in my RStudio, tooltips were not working. The fix is to add the following three lines inside the `location /rstudio/` settings (keep the `proxy_pass` line and just add these three, and remember you have to restart nginx after changing the settings):
 
