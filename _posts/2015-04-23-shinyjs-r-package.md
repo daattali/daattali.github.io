@@ -9,6 +9,10 @@ date: 2015-04-23 17:30:00 -0700
 It lets you perform common useful JavaScript operations in Shiny
 applications without having to know any JavaScript.
 
+## Update (2015-05-23)
+
+The package has improved a lot since writing this post and some really useful functionality that I've been asked to implement was added. I recommend going directly to the [updated README on GitHub](https://github.com/daattali/shinyjs#readme) to read the updated description.
+
 ## Demos
 
 You can [check out a demo Shiny app](http://daattali.com/shiny/shinyjs-demo/) ([mirror](https://daattali.shinyapps.io/shinyjs-demo/)) that lets you
