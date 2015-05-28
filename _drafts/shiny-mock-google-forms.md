@@ -7,7 +7,7 @@ TODO write this up
 
 A lot of the writeup about each storage method is already in the shiny app
 
-
+add rdrop2
 
 
 NOTES
