@@ -14,22 +14,22 @@ More information on any of these features is available in the following sections
 
 **Two major new features:**
 
-&nbsp;&nbsp;&nbsp;&nbsp;1. `reset` function which allows inputs to be reset to their original value
+- `reset` function which allows inputs to be reset to their original value
 
-&nbsp;&nbsp;&nbsp;&nbsp;2. `extendShinyjs` allows you to add your own JavaScript functions and easily call them from R as regular R code
+- `extendShinyjs` allows you to add your own JavaScript functions and easily call them from R as regular R code
 
 **Two more useful improvements:**
 
-&nbsp;&nbsp;&nbsp;&nbsp;3. Enabling and disabling of input widgets now works on **all** types of shiny inputs (many people ask how to disable a slider/select input/date range/etc, and `shinyjs` handles all of them)
+- Enabling and disabling of input widgets now works on **all** types of shiny inputs (many people ask how to disable a slider/select input/date range/etc, and `shinyjs` handles all of them)
 
-4 The `toggle` functions gained an additional `condition` argument, which can be used to show/hide or enable/disable an element based on a conditoin. For example, instead of writing code such as `if (test) enable(id) else disable(id)`, you can simply write `toggleState(id, test)`
+- The `toggle` functions gained an additional `condition` argument, which can be used to show/hide or enable/disable an element based on a conditoin. For example, instead of writing code such as `if (test) enable(id) else disable(id)`, you can simply write `toggleState(id, test)`
 
 **Three new features available on the [GitHub version](https://github.com/daattali/shinyjs) but not yet on CRAN:**
 
-5 `hidden` (used to initialize a shiny tag as hidden) can now accept any number of tags or a tagList rather than a single tag
+- `hidden` (used to initialize a shiny tag as hidden) can now accept any number of tags or a tagList rather than a single tag
 
-6 `hide`/`show`/`toggle` can be run on any JQuery selector, not only on a single ID, so that you can hide multiple elements simultaneously 
+- `hide`/`show`/`toggle` can be run on any JQuery selector, not only on a single ID, so that you can hide multiple elements simultaneously 
 
-7 `hide`/`show`/`toggle` have a new arugment `delay` which can be used to perform the action later rather than immediately. This can be useful if you want to show a message and have it disappear after a few seconds
+- `hide`/`show`/`toggle` have a new arugment `delay` which can be used to perform the action later rather than immediately. This can be useful if you want to show a message and have it disappear after a few seconds
 
 
