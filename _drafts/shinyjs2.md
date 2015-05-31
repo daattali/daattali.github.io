@@ -67,7 +67,7 @@ The main idea behind `shinyjs` when I started working on it was to make it extre
 
 #### Very simple example
 
-Using `extendShinys` is very simple and makes defining and calling JavaScript functions painless. Here is a very basic example of using `extendShinyjs` to define a (fairly useless) function that changes the colour of the page.
+Using `extendShinyjs` is very simple and makes defining and calling JavaScript functions painless. Here is a very basic example of using `extendShinyjs` to define a (fairly useless) function that changes the colour of the page.
 
 ```
 library(shiny)
@@ -93,13 +93,13 @@ runApp(shinyApp(
 Running the code above produces this shiny app:
 [![Extendshinyjs demo]({{ site.url }}/img/blog/shinyjs-improvements/extendshinyjs-demo.gif)]({{ site.url }}/img/blog/shinyjs-improvements/extendshinyjs-demo.gif)
 
-See how easy that was? All I had to do was make the JavaScript function `shinyjs.pageCol`, pass the JavaScript code as an argument to `extendShinyjs`, and then I can call `js$pageCol()`.  That's the basic idea: any JavaScript function named `shinyjs.foo` will be available to call as `js$foo()`. You can either pass the JS code as a string to the `text` argument, or place the JS code in a separate JavaScript file and use the `script` argument to specify where the code can be found.
+See how easy that was? All I had to do was make the JavaScript function `shinyjs.pageCol`, pass the JavaScript code as an argument to `extendShinyjs`, and then I can call `js$pageCol()`.  That's the basic idea: any JavaScript function named `shinyjs.foo` will be available to call as `js$foo()`. You can either pass the JS code as a string to the `text` argument, or place the JS code in a separate JavaScript file and use the `script` argument to specify where the code can be found. Using a separate file is generally prefered over writing the code inline, but in these examples I will always use the `text` argument to keep it simple.
 
 #### Passing arguments from R to JavaScript
 
-Any `shinyjs` function that is called (whether a default funtion or a custom one created with `extendShinyjs`) will pass a single array-like parameter to its corresponding JavaScript function. If the function in R was called with unnamed arguments, then it will pass an Array of the arguments; if the R arguments are named then it will pass an Object with key-value pairs. For example, calling `js$foo("bar", 5)` in R will call `shinyjs.foo(["bar", 5])` in JS, while calling `js$foo(num = 5, id = "bar")` in R will call `shinyjs.foo({num : 5, id : "bar"})` in JS. This means the the `shinyjs.foo` function needs to be able to deal with both types of parameters.
+Any `shinyjs` function that is called will pass a single array-like parameter to its corresponding JavaScript function. If the function in R was called with unnamed arguments, then it will pass an Array of the arguments; if the R arguments are named then it will pass an Object with key-value pairs. For example, calling `js$foo("bar", 5)` in R will call `shinyjs.foo(["bar", 5])` in JS, while calling `js$foo(num = 5, id = "bar")` in R will call `shinyjs.foo({num : 5, id : "bar"})` in JS. This means the the `shinyjs.foo` function needs to be able to deal with both types of parameters.
 
-To assist in normalizing the parameters, `shinyjs` provides a `shinyjs.getParams()` function which serves two purposes. First of all, it ensures that all arguments are named (even if the R function was called without names). Secondly, it allows you to define default values for arguments. Here is an example of a JS function that changes the background colour of an element.
+To assist in normalizing the parameters, `shinyjs` provides a `shinyjs.getParams()` function which serves two purposes. First of all, it ensures that all arguments are named (even if the R function was called without names). Secondly, it allows you to define default values for arguments. Here is an example of a JS function that changes the background colour of an element and uses `shinyjs.getParams()`.
 
 ```
 shinyjs.backgroundCol = function(params) {
@@ -114,7 +114,7 @@ shinyjs.backgroundCol = function(params) {
 }
 ```
 
-Note the call to `shinyjs.getParams`. It ensures that calling `js$backgroundCol("test", "blue")` and `js$backgroundCol(id = "test", col = "blue")` and `js$backgroundCol(col = "blue", id = "test")` are all equivalent, and that if the colour parameter is not provided then "red" will be the default.  All the functions provided in `shinyjs` make sure of `shinyjs.getParams`, and it is highly recommended to always use in your functions as well. Notice that the order of the arguments in `defaultParams` in the JavaScript function matches the order of the arguments when calling the function in R with unnamed arguments.
+Note the `defaultParams` that we defined and the call to `shinyjs.getParams`. It ensures that calling `js$backgroundCol("test", "blue")` and `js$backgroundCol(id = "test", col = "blue")` and `js$backgroundCol(col = "blue", id = "test")` are all equivalent, and that if the colour parameter is not provided then "red" will be the default.  All the functions provided in `shinyjs` make use of `shinyjs.getParams`, and it is highly recommended to always use it in your functions as well. Notice that the order of the arguments in `defaultParams` in the JavaScript function matches the order of the arguments when calling the function in R with unnamed arguments. This means that `js$backgroundCol("blue", "test")` will not work because the arguments are unnamed and the JS function expects the id to come before the colour.
 
 For completeness, here is the code for a shiny app that uses the above function (it's not a very practical example, but it's great for showing how to use `extendShinyjs` with parameters):
 
@@ -156,7 +156,7 @@ runApp(shinyApp(
 And the resulting app:
 [![Extendshinyjs params demo]({{ site.url }}/img/blog/shinyjs-improvements/extendshinyjs-params.gif)]({{ site.url }}/img/blog/shinyjs-improvements/extendshinyjs-params.gif)
 
-Note that I chose to define the JS code as a string for illustration purposes, but in reality I would prefer to place the code in a separate file.
+Note that I chose to define the JS code as a string for illustration purposes, but in reality I would prefer to place the code in a separate file and use the `script` argument instead of `text`.
 
 You can see more details on how to use `extendShinyjs` [in the README on GitHub](https://github.com/daattali/shinyjs#readme) or by running `?shinyjs::extendShinyjs`.
 
