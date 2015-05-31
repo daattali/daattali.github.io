@@ -158,8 +158,6 @@ And the resulting app:
 
 Note that I chose to define the JS code as a string for illustration purposes, but in reality I would prefer to place the code in a separate file and use the `script` argument instead of `text`.
 
-You can see more details on how to use `extendShinyjs` [in the README on GitHub](https://github.com/daattali/shinyjs#readme) or by running `?shinyjs::extendShinyjs`.
-
 ## Two major improvements {#improvements-features}
 
 Among the many small improvements made, there are two that will be the most useful.
