@@ -54,7 +54,7 @@ This post will only discuss new features in `shinyjs`. You can find out more abo
 
 ## Two major new features {#new-features}
 
-There were two major features that I wanted to include the in CRAN release.
+There were two major features that I wanted to include in the CRAN release.
 
 ### `reset` -  allows inputs to be reset to their original value {#reset}
 
@@ -63,6 +63,7 @@ Being able to reset the value of an input has been a frequently asked question o
 The `reset` function only takes one arugment, an HTML id, and resets all inputs inside of that element. This makes `reset` very flexible because you can either give it a single input widget to reset, or a form that contains many inputs and reset them all. Note that `reset` can only work on inputs that are generated from the app's ui and it will not work for inputs generated dynamically using `uiOutput`/`renderUI`.
 
 Here is a simple demo of reset in action
+
 [![Reset demo]({{ site.url }}/img/blog/shinyjs-improvements/reset-demo.gif)]({{ site.url }}/img/blog/shinyjs-improvements/reset-demo.gif)
 
 ### `extendShinyjs` - allows you to easily call your own JavaScript functions from R {#extendshinyjs}
@@ -95,6 +96,7 @@ runApp(shinyApp(
 ```
 
 Running the code above produces this shiny app:
+
 [![Extendshinyjs demo]({{ site.url }}/img/blog/shinyjs-improvements/extendshinyjs-demo.gif)]({{ site.url }}/img/blog/shinyjs-improvements/extendshinyjs-demo.gif)
 
 See how easy that was? All I had to do was make the JavaScript function `shinyjs.pageCol`, pass the JavaScript code as an argument to `extendShinyjs`, and then I can call `js$pageCol()`.  That's the basic idea: any JavaScript function named `shinyjs.foo` will be available to call as `js$foo()`. You can either pass the JS code as a string to the `text` argument, or place the JS code in a separate JavaScript file and use the `script` argument to specify where the code can be found. Using a separate file is generally prefered over writing the code inline, but in these examples I will always use the `text` argument to keep it simple.
@@ -158,6 +160,7 @@ runApp(shinyApp(
 ```
 
 And the resulting app:
+
 [![Extendshinyjs params demo]({{ site.url }}/img/blog/shinyjs-improvements/extendshinyjs-params.gif)]({{ site.url }}/img/blog/shinyjs-improvements/extendshinyjs-params.gif)
 
 Note that I chose to define the JS code as a string for illustration purposes, but in reality I would prefer to place the code in a separate file and use the `script` argument instead of `text`.
