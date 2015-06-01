@@ -9,7 +9,7 @@ date: 2015-04-23 17:30:00 -0700
 It lets you perform common useful JavaScript operations in Shiny
 applications without having to know any JavaScript.
 
-## Update (2015-05-23)
+## Update (2015-05-31)
 
 The package has improved a lot since writing this post and some really useful functionality that I've been asked to implement was added. I recommend either going directly to the [updated README on GitHub](https://github.com/daattali/shinyjs#readme) to read the updated description, or to read this post and then [the followup post about the new version release](http://deanattali.com/2015/05/31/shinyjs-extend/).
 
