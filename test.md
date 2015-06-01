@@ -46,7 +46,7 @@ This post will only discuss new features in `shinyjs`. You can find out more abo
 - Enabling and disabling of input widgets now works on **all** types of shiny inputs (many people asked how to disable a slider/select input/date range/etc, and `shinyjs` now handles all of them)
 - The `toggle` functions gained an additional `condition` argument, which can be used to show/hide or enable/disable an element based on a condition. For example, instead of writing code such as `if (test) enable(id) else disable(id)`, you can simply write `toggleState(id, test)`
 
-#### Three new features available on the [GitHub version](https://github.com/daattali/shinyjs) but not yet on CRAN:
+#### Three new features available on the GitHub version but not yet on CRAN:
 
 - `hidden` (used to initialize a shiny tag as hidden) can now accept any number of tags or a tagList rather than just a single tag
 - `hide`/`show`/`toggle` can be run on any JQuery selector, not only on a single ID, so that you can hide multiple elements simultaneously 
@@ -176,7 +176,7 @@ I've noticed that some users of `shinyjs` had to often write code such as `if (t
 
 Similarly, code that previously used `if (test) show(id) else hide(id)` can now use `toggle(id = id, condition = test)`, and code that was doing a similar thing with `addClass`/`removeClass` can use the `toggleClass(id, class, condition)` function.
 
-## Three new features available on the [GitHub version](https://github.com/daattali/shinyjs) but not yet on CRAN {#extra-features}
+## Three new features available on the GitHub version but not yet on CRAN {#extra-features}
 
 Since submitting `shinyjs` to CRAN, there were a few more features added. They will go into the next CRAN submission in about a month, but for now they can be used if you download the GitHub version.
 
