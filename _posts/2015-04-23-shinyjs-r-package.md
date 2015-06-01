@@ -11,7 +11,7 @@ applications without having to know any JavaScript.
 
 ## Update (2015-05-23)
 
-The package has improved a lot since writing this post and some really useful functionality that I've been asked to implement was added. I recommend going directly to the [updated README on GitHub](https://github.com/daattali/shinyjs#readme) to read the updated description.
+The package has improved a lot since writing this post and some really useful functionality that I've been asked to implement was added. I recommend either going directly to the [updated README on GitHub](https://github.com/daattali/shinyjs#readme) to read the updated description, or to read this post and then [the followup post about the new version release](http://deanattali.com/2015/05/31/shinyjs-extend/).
 
 ## Demos
 
