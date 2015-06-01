@@ -15,8 +15,8 @@ About a month ago I made [an announcement](http://deanattali.com/2015/04/23/shin
 - [Availability](#availability)
 - [Quick overview of new features](#overview)
 - [Major new features](#new-features)
-  - [`reset` (allows inputs to be reset to their original value)](#reset)
-  - [`extendshinyjs` (allows you to easily call your own JavaScript functions from R)](#extendshinyjs)
+  - [`reset` - allows inputs to be reset to their original value](#reset)
+  - [`extendshinyjs` - allows you to easily call your own JavaScript functions from R](#extendshinyjs)
 - [Major improvements](#improvements-features)
   - [Enabling/disabling works on all inputs](#disable-all)
   - [Use a `condition` in `toggle` functions](#toggle-condition)
@@ -34,26 +34,22 @@ About a month ago I made [an announcement](http://deanattali.com/2015/04/23/shin
 
 ## Quick overview of new features {#overview}
 
-This post will only discuss new features in `shinyjs`. You can find out more about the package [on the initial post](http://deanattali.com/2015/04/23/shinyjs-r-package/) or [in the package README on GitHub](https://github.com/daattali/shinyjs#readme). Remember that in order to use any function, you need to add a call to `useShinyjs()` in the shiny app's UI.
+This post will only discuss new features in `shinyjs`. You can find out more about the package [in the initial post](http://deanattali.com/2015/04/23/shinyjs-r-package/) or [in the package README on GitHub](https://github.com/daattali/shinyjs#readme). Remember that in order to use any function, you need to add a call to `useShinyjs()` in the shiny app's UI.
 
-**Two major new features:**
+#### Two major new features:
 
 - `reset` function allows inputs to be reset to their original value
-
 - `extendShinyjs` allows you to add your own JavaScript functions and easily call them from R as regular R code
 
-**Two major improvements:**
+#### Two major improvements:
 
 - Enabling and disabling of input widgets now works on **all** types of shiny inputs (many people asked how to disable a slider/select input/date range/etc, and `shinyjs` now handles all of them)
-
 - The `toggle` functions gained an additional `condition` argument, which can be used to show/hide or enable/disable an element based on a condition. For example, instead of writing code such as `if (test) enable(id) else disable(id)`, you can simply write `toggleState(id, test)`
 
-**Three new features available on the [GitHub version](https://github.com/daattali/shinyjs) but not yet on CRAN:**
+#### Three new features available on the [GitHub version](https://github.com/daattali/shinyjs) but not yet on CRAN:
 
 - `hidden` (used to initialize a shiny tag as hidden) can now accept any number of tags or a tagList rather than just a single tag
-
 - `hide`/`show`/`toggle` can be run on any JQuery selector, not only on a single ID, so that you can hide multiple elements simultaneously 
-
 - `hide`/`show`/`toggle` have a new arugment `delay` which can be used to perform the action later rather than immediately. This can be useful if you want to show a message and have it disappear after a few seconds
 
 ## Two major new features {#new-features}
@@ -69,7 +65,7 @@ The `reset` function only takes one arugment, an HTML id, and resets all inputs 
 Here is a simple demo of reset in action
 [![Reset demo]({{ site.url }}/img/blog/shinyjs-improvements/reset-demo.gif)]({{ site.url }}/img/blog/shinyjs-improvements/reset-demo.gif)
 
-### `extendShinyjs` - allows you to easily call your own JavaScript functions from R
+### `extendShinyjs` - allows you to easily call your own JavaScript functions from R {#extendshinyjs}
 
 The main idea behind `shinyjs` when I started working on it was to make it extremely easy to call JavaScript functions that I used commonly from R. Now whenever I want to add a new function to `shinyjs` (such as the `reset` function), all I have to do is write the JavaScript function, and the integration between shiny and JavaScript happens seamlessly thanks to `shinyjs`.  My main goal after the initial release was to also allow anyone else to use the same smooth R --> JS workflow, so that anyone can add a JavaScript function and call it from R easily. With the `extendShinyjs` function, that is now possible.
 
