@@ -74,7 +74,7 @@ The main idea behind `shinyjs` when I started working on it was to make it extre
 
 Using `extendShinyjs` is very simple and makes defining and calling JavaScript functions painless. Here is a very basic example of using `extendShinyjs` to define a (fairly useless) function that changes the colour of the page.
 
-```
+~~~
 library(shiny)
 library(shinyjs)
 
@@ -93,7 +93,7 @@ runApp(shinyApp(
     })
   }
 ))
-```
+~~~
 
 Running the code above produces this shiny app:
 
@@ -107,7 +107,7 @@ Any `shinyjs` function that is called will pass a single array-like parameter to
 
 To assist in normalizing the parameters, `shinyjs` provides a `shinyjs.getParams()` function which serves two purposes. First of all, it ensures that all arguments are named (even if the R function was called without names). Secondly, it allows you to define default values for arguments. Here is an example of a JS function that changes the background colour of an element and uses `shinyjs.getParams()`.
 
-```
+~~~
 shinyjs.backgroundCol = function(params) {
   var defaultParams = {
     id : null,
@@ -118,13 +118,13 @@ shinyjs.backgroundCol = function(params) {
   var el = $("#" + params.id);
   el.css("background-color", params.col);
 }
-```
+~~~
 
 Note the `defaultParams` that we defined and the call to `shinyjs.getParams`. It ensures that calling `js$backgroundCol("test", "blue")` and `js$backgroundCol(id = "test", col = "blue")` and `js$backgroundCol(col = "blue", id = "test")` are all equivalent, and that if the colour parameter is not provided then "red" will be the default.  All the functions provided in `shinyjs` make use of `shinyjs.getParams`, and it is highly recommended to always use it in your functions as well. Notice that the order of the arguments in `defaultParams` in the JavaScript function matches the order of the arguments when calling the function in R with unnamed arguments. This means that `js$backgroundCol("blue", "test")` will not work because the arguments are unnamed and the JS function expects the id to come before the colour.
 
 For completeness, here is the code for a shiny app that uses the above function (it's not a very practical example, but it's great for showing how to use `extendShinyjs` with parameters):
 
-```
+~~~
 library(shiny)
 library(shinyjs)
 
@@ -157,7 +157,7 @@ runApp(shinyApp(
     })
   }
 ))
-```
+~~~
 
 And the resulting app:
 
