@@ -21,6 +21,8 @@ In this post we will walk through the steps required to build a shiny app that m
 - [After submission show a "Thank you" message and let user submit again](#thanks-msg)
 - [Better user feedback while submitting and on error](#feedback-error)
 - [Add table that shows all previous responses](#add-table)
+- [Add ability to download all responses](#download)
+- [Restrict access to previous data to admins only](#admins)
 
 # Motivation {#motivation}
 
@@ -36,7 +38,7 @@ One major component of this app is storing the user-submitted data in a way that
 
 # Overview {#overview}
 
-The app we will build will be a form collecting data on a user's R usage - their name, length of time using R, favourite R package, etc. You can see the result of this tutorial [on my shiny server](http://daattali.com/shiny/mimic-google-form/) and the corresponding code [on GitHub](https://github.com/daattali/shiny-server/tree/master/mimic-google-form).  It looks like this:
+The app we will build will be a form collecting data on a user's R usage - their name, length of time using R, favourite R package, etc. You can see the result of this tutorial [on my shiny server](http://daattali.com/shiny/mimic-google-form/) and the corresponding code [on GitHub](https://github.com/daattali/shiny-server/blob/master/mimic-google-form/app.R).  It looks like this:
 
 [![Final app]({{ site.url }}/img/blog/mimic-google-form-shiny/mimic-google-form-shiny-final.png)]({{ site.url }}/img/blog/mimic-google-form-shiny/mimic-google-form-shiny-final.png)
 
@@ -306,6 +308,109 @@ Just as a small extra bonus, I like to make error messages red, so I added `#err
 
 Note: this section is not visually identical to the app shown [on my shiny server](http://daattali.com/shiny/mimic-google-form/) because in my app I placed the table to the right of the form, and the code given here will place the table above the form.
 
+Now that we can submit responses smoothly, it'd be nice to also be able to view submitted responses in the app. First we need to add a dataTable placeholder to the UI (add it just before the `form` div, after the `titlePanel`):
+
+~~~
+DT::dataTableOutput("responsesTable"),
+~~~
+
+The main issue we need to solve in this section is how to retrieve all previous submissions. To do this, we'll look at all the files in the `responses` directory, read each one into a data.frame separately, and then use `dplyr::rbind_all` to concatenate all the responses together. Note that this will only work if all the response files have exactly the same fields, so if you change your app to add new fields, you'll probably need to either remove all previous submissions or make your own script to add a default value to the new field to all previous submissions.
+
+Here's our function that will retrieve all submissions and load them into a data.frame. You can define it in the global scope.
+
+~~~
+loadData <- function() {
+  files <- list.files(file.path(responsesDir), full.names = TRUE)
+  data <- lapply(files, read.csv, stringsAsFactors = FALSE)
+  data <- dplyr::rbind_all(data)
+  data
+}
+~~~
+
+Now that we have this function, we just need to tell the dataTable in the UI to display that data. Add the following to the server:
+
+~~~
+output$responsesTable <- DT::renderDataTable(
+  loadData(),
+  rownames = FALSE,
+  options = list(searching = FALSE, lengthChange = FALSE)
+) 
+~~~
+
+Now when you run the app you should be able to see your previous submissions, assuming you followed the directions without problems.
+
+# Add ability to download all responses {#download}
+
+It would also be very handy to be able to download all the reponses into a single file. Let's add a download button to the UI, either just before or just after the dataTable:
+
+~~~
+downloadButton("downloadBtn", "Download responses"),
+~~~
+
+We already have a function for retrieving the data, so all we need to do is tell the download hadler to use it. Add the following to the server:
+
+~~~
+output$downloadBtn <- downloadHandler(
+  filename = function() { 
+    sprintf("mimic-google-form_%s.csv", humanTime())
+  },
+  content = function(file) {
+    write.csv(loadData(), file, row.names = FALSE)
+  }
+)
+~~~
+
+Almost done!
+
+# Restrict access to previous data to admins only {#admins} 
+
+The only missing piece is that right now everyone will see all the responses, and you might want to restrict that access to admins only.  This is only possible if you enable authentication, which is available in Shiny Server Pro and in the paid shinyapps.io accounts. Without authentication, everyone who goes to your app will be treated equally, but with authentication you can give different people different usernames and decide which users are considered admins.
+
+The first thing we need to do is remove all the admin-only content from the UI and only generate it if the current user is an admin. Remove the `dataTableOutput` and the `downloadButton` from the UI, and instead add a dynamic UI element:
+
+~~~
+uiOutput("adminPanelContainer"),
+~~~
+
+We'll re-define the dataTable and download button in the server, but only if the user is an admin. The following code ensures that for non-admins, nothing gets rendered in the admin panel, but admins can see the table and download button (add it to the server):
+
+~~~
+output$adminPanelContainer <- renderUI({
+  if (!isAdmin()) return()
+  
+  wellPanel(
+    h2("Previous responses (only visible to admins)"),
+    downloadButton("downloadBtn", "Download responses"), br(), br(),
+    DT::dataTableOutput("responsesTable")
+  )
+}) 
+~~~
+
+All that's left is to decide if the user is an admin or not (note the `isAdmin()` call in the previous code chunk, we need to define that function). If authentication is enabled, then the logged in user's name will be available to us in the `session$user` variable. If there is no authentication, it will be `NULL`. Let's say John and Sally are the app developers so they should be the admins, we can define a list of admins usernames in the global scope:
+
+~~~
+adminUsers <- c("john", "sally")
+~~~
+
+Now that we know who are the potentical admins, we can use this code (in the server) to determine if the current user is an admin:
+
+~~~
+isAdmin <- reactive({
+  !is.null(session$user) && session$user %in% adminUsers
+})  
+~~~
+
+This will ensure that only if "john" or "sally" are using the app, the admin panel will show up.  For illustration purposes, since many of you don't have authentication support, you can change the `isAdmin` to
+
+~~~
+isAdmin <- reactive({
+  is.null(session$user) || session$user %in% adminUsers
+})  
+~~~
+
+This will assume that when there is no authentication, everyone is an admin, but when authentication is enabled, it will look at the admin users list.
+
+That's it! You are now ready to create forms with shiny apps.  You can see what the final app code looks like [on GitHub](https://github.com/daattali/shiny-server/blob/master/mimic-google-form/app.R) (with a few minor modifications), or test it out [on my shiny server](http://daattali.com/shiny/mimic-google-form/)).
 
 
 
