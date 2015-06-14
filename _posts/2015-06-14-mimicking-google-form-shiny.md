@@ -12,6 +12,7 @@ In this post we will walk through the steps required to build a shiny app that m
 - [Motivation](#motivation)
 - [Overview](#overview)
   - [Note about persistent storage](#note-storage)
+- [Prerequisites](#prereqs)
 - [Build the basic UI (inputs)](#build-inputs)
 - [Define mandatory fields](#define-mandatory)
   - [Show which fields are mandatory in the UI](#mandatory-ui)
@@ -22,6 +23,7 @@ In this post we will walk through the steps required to build a shiny app that m
 - [Add table that shows all previous responses](#add-table)
 - [Add ability to download all responses](#download)
 - [Restrict access to previous data to admins only](#admins)
+- [Updates](#updates)
 
 # Motivation {#motivation}
 
@@ -44,6 +46,14 @@ The main idea is simple: create a UI with some inputs that users need to fill ou
 One major component of this app is storing the user-submitted data in a way that would allow it to be retrieved later. This is an important topic of its own, and in a few days I will write a detailed post about all the different storage options and how to use them. In this tutorial I will use the simplest approach for saving the data: every submission will be saved to its own `.csv` file.
 
 **NOTE:** this method should only be used if you have your own shiny server or are running the app on your own machine, and should not be used if your app is hosted on `shinyapps.io`. Using the local filesystem in shinyapps.io is a bad idea because every time your app is launched it will be on a different machine, and it will not have access to files saved by other users who were running the app on a different machine. If using shinyapps.io, you will need to use remote storage, which will be discussed in my next post. You can get a bit more information about why shinyapps.io can't be used for local storage [in the shiny docs](http://shiny.rstudio.com/articles/share-data.html).
+
+# Prerequisites {#prereqs}
+
+The following packages need to be installed in order for all the code to work:
+
+- `DT` version 0.1.3 (as of today, this version is not yet on CRAN, so install it from GitHub `devtools::install_github('rstudio/DT')`  
+- `shinyjs` version 0.0.6.4 (as of today, this version is not yet on CRAN, so install it from GitHub `devtools::install_github('daattali/shinyjs')`
+- `shiny`, `dplyr`, `digest` - any version will do, you can install from CRAN
 
 # Build the basic UI (inputs) {#build-inputs}
 
@@ -430,3 +440,7 @@ isAdmin <- reactive({
 This will assume that when there is no authentication, everyone is an admin, but when authentication is enabled, it will look at the admin users list.
 
 That's it! You are now ready to create forms with shiny apps.  You can see what the final app code looks like [on GitHub](https://github.com/daattali/shiny-server/blob/master/mimic-google-form/app.R) (with a few minor modifications), or test it out [on my shiny server](http://daattali.com/shiny/mimic-google-form/)).
+
+# Updates {#updates}
+
+[2015-06-14] I've been told that `shinyjs` is throwing an error for some users. This is because they are using the CRAN version instead of the latest version from GitHub. I added a [Prerequisites](#prereqs) section to specify exactly what packages need to be installed.
