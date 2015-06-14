@@ -24,7 +24,7 @@ Since developing those apps, I've become a better shiny developer also wrote the
 
 #### Note about persistent storage {#note-storage}
 
-One major component of this app is storing the user-submitted data in a way that would allow it to be retrieved later. This is an important topic of its own, and in a few days I will write a detailed post about all the different storage options and how to use them. In this tutorial I will use the simplest approach for saving the data: every submission will be saved to its own `.csv` file. **Warning:** this method should only be used if you have your own shiny server, and should not be used if your app is hosted on `shinyapps.io`. Using the local filesystem in shinyapps.io is a bad idea because every time your app is launched it will be on a different machine, and it will not have access to files saved by other users who were running the app on a different machine. If using shinyapps.io, you will need to use remote storage, which will be discussed in my next post. You can get a bit more information about why shinyapps.io can't be used for local storage [in the shiny docs](http://shiny.rstudio.com/articles/share-data.html).
+One major component of this app is storing the user-submitted data in a way that would allow it to be retrieved later. This is an important topic of its own, and in a few days I will write a detailed post about all the different storage options and how to use them. In this tutorial I will use the simplest approach for saving the data: every submission will be saved to its own `.csv` file. **Warning:** this method should only be used if you have your own shiny server or are running the app on your own machine, and should not be used if your app is hosted on `shinyapps.io`. Using the local filesystem in shinyapps.io is a bad idea because every time your app is launched it will be on a different machine, and it will not have access to files saved by other users who were running the app on a different machine. If using shinyapps.io, you will need to use remote storage, which will be discussed in my next post. You can get a bit more information about why shinyapps.io can't be used for local storage [in the shiny docs](http://shiny.rstudio.com/articles/share-data.html).
 
 # Overview {#overview}
 
@@ -144,8 +144,6 @@ shinyApp(
     )
   ),
   server = function(input, output, session) {
-    
-    # Enable the Submit button when all mandatory fields are filled out
     observe({
       mandatoryFilled <-
         vapply(fieldsMandatory,
@@ -160,6 +158,141 @@ shinyApp(
   }
 )
 ~~~
+
+# Save the response upon submission {#save}
+
+The most important part of the app is to save the user's response.  First we need to define what input fields we want to store and what directory to use to store all the responses. I also like to add the submission timestamp to each submission, so I also want to define a function that returns the current time as an integer. Let's define these three things in the global scope:
+
+~~~
+fieldsAll <- c("name", "favourite_pkg", "used_shiny", "r_num_years", "os_type")
+responsesDir <- file.path("responses")
+epochTime <- function() {
+  as.integer(Sys.time())
+}
+~~~
+
+Make sure you create a `responses` directory so that the saved responses can go there.
+
+Next we need to have a way to gather all the form data (plus the timestamp) into a format that can be saved as a *csv*. We can do this easily by looping over the input fields. Note that we need to transpose the data to get it into the right shape that we want (1 row = 1 observation = 1 user submission, x columns = x input fields). Add the following reactive expression to the server:
+
+~~~
+formData <- reactive({
+  data <- sapply(fieldsAll, function(x) input[[x]])
+  data <- c(data, timestamp = epochTime())
+  data <- t(data)
+  data
+})
+~~~
+
+The last part is to actually save the data. As I said earlier, in this post we will save the data to a local file, but in my next post I'll show how to alter the following function in order to save to other sources. When saving the user responses locally to a file, there are two options: either save all responses to one file, or save each response as its own file. The first approach might sound like it makes more sense, but I wanted to avoid it for two reasons: first of all, it's slower because in order to save (add a new row to the file), we'd need to first read the whole file to know where to add the new row. Secondly, this approach is not thread-safe, which means that if two people submit at the same time, one of their responses will get lost. So I opted to use the second solution - each submission is its own file. It might seem weird, but it works.
+
+To ensure that we don't lose any submissions, we need to make sure that no two files have the same name. It's difficult to 100% guarantee that, but it's easy enough to be almost sure that filenames are unique by adding some randomness to them. However, instead of having turly random characters in the filename, I went a slightly different way: I make the filename a concatenation of the current time and the md5 hash of the submission data. This way the only realistic way that two submission will overwrite each other is if they happen at the same second and have the exact same data.  Here is the function to save the response (add to the server): 
+
+~~~
+saveData <- function(data) {
+  fileName <- sprintf("%s_%s.csv",
+                      humanTime(),
+                      digest::digest(data))
+  
+  write.csv(x = data, file = file.path(responsesDir, fileName),
+            row.names = FALSE, quote = TRUE)
+}
+
+observeEvent(input$submit, {
+  saveData(formData())
+})
+~~~
+
+Notice that I used `humanTime()` instead of `epochTime()` because I wanted the filename to have a more human-friendly timestamp. You'll need to define `humanTime()` as `humanTime <- function() format(Sys.time(), "%Y%m%d-%H%M%OS")`. 
+
+Now you should be able to run the app, enter input, save, and see a new file created for every submission. If you get an error when saving, make sure the `responses` directory exists and you have write permissions.
+
+#### Note regarding file permissions
+
+If you are running the app on a shiny server, it's very improtant to understand user permissions. By default, all apps are run as the `shiny` user, and that user will probably not have write permission on folders you create.  You should either add write permissions to `shiny`, or change the running user to yourself. See more information on how to do this [in this post](http://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/#shiny-user-perms).
+
+# After submission show a "Thank you" message and optionally let user submit again
+
+Right now, after submitting a response, there is no feedback and the user will think nothing happened. Let's add a "Thank you" message that will get shown, and add a button to allow the user to submit another response (if it makes sense for your app).
+
+Add the "thank you" section to the UI *after* the `form` div (initialize it as hidden because we only want to show it after a submission):
+
+~~~
+div(id = "form", ...),
+shinyjs::hidden(
+  div(
+    id = "thankyou_msg",
+    h3("Thanks, your response was submitted successfully!"),
+    actionLink("submit_another", "Submit another response")
+  )
+)  
+~~~
+
+And in the server, after saving the data we now want to reset the form, hide it, and show the thank you message:
+
+~~~
+observeEvent(input$submit, {
+  saveData(formData())
+  shinyjs::reset("form")
+  shinyjs::hide("form")
+  shinyjs::show("thankyou_msg")
+})
+~~~
+
+Note that the above obverser should overwrite the previous one because we added 3 expressions.
+
+We also need to add an observer to clicking on the "Submit another response" that will do the opposite: hide the thank you message and show the form (add the following to the server):
+
+~~~
+observeEvent(input$submit_another, {
+  shinyjs::show("form")
+  shinyjs::hide("thankyou_msg")
+})    
+~~~
+
+Now you should be able to submit multiple responses with a clear indication every time that it succeeded.
+
+# Better user feedback while submitting and on error
+
+Right now there is no feedback to the user when their response is being saved and if it encounters an error, the app will crash.  Let's fix that! First we need to add a "Submitting..." progress message and an error message container to the UI - add them inside the `form` div, just after the submit button:
+
+~~~
+shinyjs::hidden(
+  span(id = "submit_msg", "Submitting..."),
+  div(id = "error",
+      div(br(), tags$b("Error: "), span(id = "error_msg"))
+  )
+)
+~~~
+
+Now let's hook up the logic. When the "submit" button is pressed, we want to: disable the button from being pressed again, show the "Submitting..." message, and hide any previous errors. We want to reverse these actions when saving the data is finished. If an error occurs while saving the data, we want to show the error message.  All these sorts of actions are why `shinyjs` was created, and it will help us here. Change the observer of `input$submit` once again:
+
+~~~
+observeEvent(input$submit, {
+  shinyjs::disable("submit")
+  shinyjs::show("submit_msg")
+  shinyjs::hide("error")
+  
+  tryCatch({
+    saveData(formData())
+    shinyjs::reset("form")
+    shinyjs::hide("form")
+    shinyjs::show("thankyou_msg")
+  },
+  error = function(err) {
+    shinyjs::text("error_msg", err$message)
+    shinyjs::show(id = "error", anim = TRUE, animType = "fade")
+  },
+  finally = {
+    shinyjs::enable("submit")
+    shinyjs::hide("submit_msg")
+  })
+})
+~~~
+
+Just as a small extra bonus, I like to make error messages red, so I added `#error { color: red; }` to the `appCSS` string that we defined in the beginning.
+
+
 
 ### tell others
 
