@@ -11,7 +11,7 @@ In this post we will walk through the steps required to build a shiny app that m
 # Table of contents
 
 - [Motivation](#motivation)
-  - [Note about persistent storage]{#note-storage}
+  - [Note about persistent storage](#note-storage)
 
 
 # Motivation {#motivation}
@@ -24,5 +24,12 @@ Since developing those apps, I've become a better shiny developer also wrote the
 
 #### Note about persistent storage {#note-storage}
 
-One major component of this app is storing the user-submitted data in a way that would allow it to be retrieved later. This is an important topic of its own, and in a few days I will write a detailed post about all the different storage options and how to use them. In this post I will
+One major component of this app is storing the user-submitted data in a way that would allow it to be retrieved later. This is an important topic of its own, and in a few days I will write a detailed post about all the different storage options and how to use them. In this tutorial I will use the simplest approach for saving the data: every submission will be saved to its own `.csv` file. **Warning:** this method should only be used if you have your own shiny server, and should not be used if your app is hosted on `shinyapps.io`. Using the local filesystem in shinyapps.io is a bad idea because every time your app is launched it will be on a different machine, and it will not have access to files saved by other users who were running the app on a different machine. If using shinyapps.io, you will need to use remote storage, which will be discussed in my next post. You can get a bit more information about why shinyapps.io can't be used for local storage [in the shiny docs](http://shiny.rstudio.com/articles/share-data.html).
 
+# Overview {#overview}
+
+You can see the result of this tutorial [on my shiny server](http://daattali.com/shiny/mimic-google-form/) and the corresponding code [on GitHub](https://github.com/daattali/shiny-server/tree/master/mimic-google-form).
+
+The main idea is simple: create a UI with some inputs that users need to fill out, add a submit button, and save the response. Sounds simple, and it is! In this tutorial each response will be saved to a *.csv* file along with the timestamp of submission. To see all submissions that were made, we simply read all *csv* files and join them together. There will also be an "admin panel" that will show admin users all previous responses and allow them to download this data. When using Shiny Server Pro or paid shinyapps.io accounts, you can add authentication/login to your apps, and decide which usernames have admin access. Since my app is hosted on a free shiny server that doesn't support authentication, it'll just assume that everyone is an admin. Lastly, I like to focus a lot on user experience, so this post will also discuss many small tips & tricks that are optional but can be nice additions. 
+
+#
