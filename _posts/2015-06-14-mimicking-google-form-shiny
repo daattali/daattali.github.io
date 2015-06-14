@@ -1,9 +1,8 @@
 ---
 layout: post
-url: "2015-06-14-mimicking-google-form-shiny"
 title: "Mimicking a Google Form with a Shiny app"
 tags: [professional, rstats, r, r-bloggers, shiny]
-date: 2015-06-14 11:30:00 -0700
+date: 2015-06-14 5:30:00 -0700
 ---
 
 In this post we will walk through the steps required to build a shiny app that mimicks a Google Form. It will allow users to submit responses to some input fields, save their data, and allow admins to view the submitted responses.  Like many of my other posts, it may seem lengthy, but that's only because I like to go into fine details to ensure everything is as foolproof and reproducible as possible.
@@ -334,7 +333,7 @@ Now that we can submit responses smoothly, it'd be nice to also be able to view 
 DT::dataTableOutput("responsesTable"),
 ~~~
 
-The main issue we need to solve in this section is how to retrieve all previous submissions. To do this, we'll look at all the files in the `responses` directory, read each one into a data.frame separately, and then use `dplyr::rbind_all` to concatenate all the responses together. Note that this will only work if all the response files have exactly the same fields, so if you change your app to add new fields, you'll probably need to either remove all previous submissions or make your own script to add a default value to the new field to all previous submissions.
+The main issue we need to solve in this section is how to retrieve all previous submissions. To do this, we'll look at all the files in the `responses` directory, read each one into a data.frame separately, and then use `dplyr::rbind_all` to concatenate all the responses together. Note that this will only work if all the response files have exactly the same fields, so if you change your app to add new fields, you'll probably need to either remove all previous submissions or make your own script to add a default value to the new field of all previous submissions.
 
 Here's our function that will retrieve all submissions and load them into a data.frame. You can define it in the global scope.
 
@@ -357,7 +356,7 @@ output$responsesTable <- DT::renderDataTable(
 ) 
 ~~~
 
-Now when you run the app you should be able to see your previous submissions, assuming you followed the directions without problems.
+Now when you run the app you should be able to see your previous submissions, assuming you followed the instructions without problems.
 
 # Add ability to download all responses {#download}
 
@@ -392,7 +391,7 @@ The first thing we need to do is remove all the admin-only content from the UI a
 uiOutput("adminPanelContainer"),
 ~~~
 
-We'll re-define the dataTable and download button in the server, but only if the user is an admin. The following code ensures that for non-admins, nothing gets rendered in the admin panel, but admins can see the table and download button (add it to the server):
+We'll re-define the dataTable and download button in the server, but only if the user is an admin. The following code ensures that for non-admins, nothing gets rendered in the admin panel, but admins can see the table and download button (add this to the server):
 
 ~~~
 output$adminPanelContainer <- renderUI({
@@ -406,13 +405,13 @@ output$adminPanelContainer <- renderUI({
 }) 
 ~~~
 
-All that's left is to decide if the user is an admin or not (note the `isAdmin()` call in the previous code chunk, we need to define that function). If authentication is enabled, then the logged in user's name will be available to us in the `session$user` variable. If there is no authentication, it will be `NULL`. Let's say John and Sally are the app developers so they should be the admins, we can define a list of admins usernames in the global scope:
+All that's left is to decide if the user is an admin or not (note the `isAdmin()` call in the previous code chunk, we need to define that function). If authentication is enabled, then the logged in user's name will be available to us in the `session$user` variable. If there is no authentication, it will be `NULL`. Let's say John and Sally are the app developers so they should be the admins, we can define a list of admin usernames in the global scope:
 
 ~~~
 adminUsers <- c("john", "sally")
 ~~~
 
-Now that we know who are the potentical admins, we can use this code (in the server) to determine if the current user is an admin:
+Now that we know who are the potential admins, we can use this code (in the server) to determine if the current user is an admin:
 
 ~~~
 isAdmin <- reactive({
@@ -431,12 +430,3 @@ isAdmin <- reactive({
 This will assume that when there is no authentication, everyone is an admin, but when authentication is enabled, it will look at the admin users list.
 
 That's it! You are now ready to create forms with shiny apps.  You can see what the final app code looks like [on GitHub](https://github.com/daattali/shiny-server/blob/master/mimic-google-form/app.R) (with a few minor modifications), or test it out [on my shiny server](http://daattali.com/shiny/mimic-google-form/)).
-
-
-
-
-### tell others
-
-http://www.quora.com/How-would-you-use-Shiny-to-take-input-information-from-a-form-field-and-create-a-csv-file  
-https://groups.google.com/forum/#!topic/shiny-discuss/g1p9HZmEpmo  
-https://twitter.com/jalapic/status/598153400228929537  
