@@ -28,8 +28,45 @@ One major component of this app is storing the user-submitted data in a way that
 
 # Overview {#overview}
 
-You can see the result of this tutorial [on my shiny server](http://daattali.com/shiny/mimic-google-form/) and the corresponding code [on GitHub](https://github.com/daattali/shiny-server/tree/master/mimic-google-form).
+The app we will build will be a form collecting data on a user's R usage - their name, length of time using R, favourite R package, etc. You can see the result of this tutorial [on my shiny server](http://daattali.com/shiny/mimic-google-form/) and the corresponding code [on GitHub](https://github.com/daattali/shiny-server/tree/master/mimic-google-form).  It looks like this
 
-The main idea is simple: create a UI with some inputs that users need to fill out, add a submit button, and save the response. Sounds simple, and it is! In this tutorial each response will be saved to a *.csv* file along with the timestamp of submission. To see all submissions that were made, we simply read all *csv* files and join them together. There will also be an "admin panel" that will show admin users all previous responses and allow them to download this data. When using Shiny Server Pro or paid shinyapps.io accounts, you can add authentication/login to your apps, and decide which usernames have admin access. Since my app is hosted on a free shiny server that doesn't support authentication, it'll just assume that everyone is an admin. Lastly, I like to focus a lot on user experience, so this post will also discuss many small tips & tricks that are optional but can be nice additions. 
+[![Final app]({{ site.url }}/img/blog/mimic-google-form-shiny/mimic-google-form-shiny-final.png)]({{ site.url }}/img/blog/mimic-google-form-shiny/mimic-google-form-shiny-final.png)
 
-#
+The main idea is simple: create a UI with some inputs that users need to fill out, add a submit button, and save the response. Sounds simple, and it is! In this tutorial each response will be saved to a *.csv* file along with the timestamp of submission. To see all submissions that were made, we simply read all *csv* files and join them together. There will also be an "admin panel" that will show admin users all previous responses and allow them to download this data. When using Shiny Server Pro or paid shinyapps.io accounts, you can add authentication/login to your apps, and decide which usernames have admin access. Since my app is hosted on a free shiny server that doesn't support authentication, it'll just assume that everyone is an admin. I also like to focus a lot on user experience, so this post will also discuss many small tips & tricks that are optional but can be nice additions. Many of these use the `shinyjs` package, so instead of loading the package in the beginning, I'll explicitly show when functions from `shinyjs` are used so that you know what functions are not core shiny.
+
+# Build the basic UI (inputs) {#build-inputs}
+
+I generally prefer to split shiny apps into a `ui.R` and `server.R` file (with an additional `helpers.R` or `globals.R` if necessary), but for simplicity, I'll place all the app code together in this tutorial.  
+
+Create a new file named `app.R` and copy the following code into it to build input elements.
+
+~~~
+shinyApp(
+  ui = fluidPage(
+    titlePanel("Mimicking a Google Form with a Shiny app"),
+    div(
+      id = "form",
+      
+      textInput("name", "Name", ""),
+      textInput("favourite_pkg", "Favourite R package"),
+      checkboxInput("used_shiny", "I've built a Shiny app in R before", FALSE),
+      sliderInput("r_num_years", "Number of years using R", 0, 25, 2, ticks = FALSE),
+      selectInput("os_type", "Operating system used most frequently",
+                  c("",  "Windows", "Mac", "Linux")),
+      actionButton("submit", "Submit", class = "btn-primary")
+    )
+  ),
+  server = function(input, output, session) {
+  }
+)
+~~~
+
+After saving this file, you should be able to run it either with `shiny::runApp()` or by clicking the "Run App" button in RStudio.
+
+
+
+### tell others
+
+http://www.quora.com/How-would-you-use-Shiny-to-take-input-information-from-a-form-field-and-create-a-csv-file  
+https://groups.google.com/forum/#!topic/shiny-discuss/g1p9HZmEpmo  
+https://twitter.com/jalapic/status/598153400228929537  
