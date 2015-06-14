@@ -443,4 +443,4 @@ That's it! You are now ready to create forms with shiny apps.  You can see what 
 
 # Updates {#updates}
 
-[2015-06-14] I've been told that `shinyjs` is throwing an error for some users. This is because they are using the CRAN version instead of the latest version from GitHub. I added a [Prerequisites](#prereqs) section to specify exactly what packages need to be installed.
+**[2015-06-14]** I've been told that `shinyjs` is throwing an error for some users. This is because they are using the CRAN version instead of the latest version from GitHub. I added a [Prerequisites](#prereqs) section to specify exactly what packages need to be installed.
