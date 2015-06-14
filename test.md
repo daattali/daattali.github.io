@@ -12,7 +12,15 @@ In this post we will walk through the steps required to build a shiny app that m
 
 - [Motivation](#motivation)
   - [Note about persistent storage](#note-storage)
-
+- [Overview](#overview)
+- [Build the basic UI (inputs)](#build-inputs)
+- [Define mandatory fields](#define-mandatory)
+  - [Show which fields are mandatory in the UI](#mandatory-ui)
+- [Save the response upon submission](#save)
+  - [Note regarding file permissions](#note-perms)
+- [After submission show a "Thank you" message and let user submit again](#thanks-msg)
+- [Better user feedback while submitting and on error](#feedback-error)
+- [Add table that shows all previous responses](#add-table)
 
 # Motivation {#motivation}
 
@@ -63,7 +71,7 @@ shinyApp(
 
 After saving this file, you should be able to run it either with `shiny::runApp()` or by clicking the "Run App" button in RStudio. The app simply shows the input fields and the submit button, but does nothing yet.
 
-# Define mandatory fields
+# Define mandatory fields {#define-mandatory}
 
 We want everyone to at least tell us their name and favourite package, so let's ensure the submit button is only enabled if both of those fields are filled out. We need to use `shinyjs` for that, so add a call to `shinyjs::useShinyjs()` anywhere in the UI. In the global scope (above the definition of `shinyApp`, outside the UI and server code), define the mandatory fields:
 
@@ -89,7 +97,7 @@ observe({
 
 Now try running the app again, and you'll see the submit button is only enabled when these fields have a value.
 
-### Show which fields are mandatory in the UI
+### Show which fields are mandatory in the UI {#mandatory-ui}
 
 If you want to be extra fancy, you can add a red asterisk to the mandatory fields. Here's a neat though possibly overcomplicated approach to do this:  define a function that takes an input label and adds an asterisk to it:
 
@@ -207,11 +215,11 @@ Notice that I used `humanTime()` instead of `epochTime()` because I wanted the f
 
 Now you should be able to run the app, enter input, save, and see a new file created for every submission. If you get an error when saving, make sure the `responses` directory exists and you have write permissions.
 
-#### Note regarding file permissions
+#### Note regarding file permissions {#note-perms}
 
 If you are running the app on a shiny server, it's very improtant to understand user permissions. By default, all apps are run as the `shiny` user, and that user will probably not have write permission on folders you create.  You should either add write permissions to `shiny`, or change the running user to yourself. See more information on how to do this [in this post](http://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/#shiny-user-perms).
 
-# After submission show a "Thank you" message and optionally let user submit again
+# After submission show a "Thank you" message and let user submit again {#thanks-msg}
 
 Right now, after submitting a response, there is no feedback and the user will think nothing happened. Let's add a "Thank you" message that will get shown, and add a button to allow the user to submit another response (if it makes sense for your app).
 
@@ -252,7 +260,7 @@ observeEvent(input$submit_another, {
 
 Now you should be able to submit multiple responses with a clear indication every time that it succeeded.
 
-# Better user feedback while submitting and on error
+# Better user feedback while submitting and on error {#feedback-error}
 
 Right now there is no feedback to the user when their response is being saved and if it encounters an error, the app will crash.  Let's fix that! First we need to add a "Submitting..." progress message and an error message container to the UI - add them inside the `form` div, just after the submit button:
 
@@ -291,6 +299,14 @@ observeEvent(input$submit, {
 ~~~
 
 Just as a small extra bonus, I like to make error messages red, so I added `#error { color: red; }` to the `appCSS` string that we defined in the beginning.
+
+**Now you have a fully functioning form shiny app!** The only thing that's missing so far is a way to view the responses directly in the app. Remember that all the responses are saved locally, so you can also just open the files manually or use any approach you want to open the files.
+
+# Add table that shows all previous responses {#add-table}
+
+Note: this section is not visually identical to the app shown [on my shiny server](http://daattali.com/shiny/mimic-google-form/) because in my app I placed the table to the right of the form, and the code given here will place the table above the form.
+
+
 
 
 
