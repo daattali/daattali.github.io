@@ -326,7 +326,7 @@ appCSS <-
 
 # Add table that shows all previous responses {#add-table}
 
-Note: this section is not visually identical to the app shown [on my shiny server](http://daattali.com/shiny/mimic-google-form/) because in my app I placed the table to the right of the form, and the code given here will place the table above the form.
+*Note: this section is not visually identical to the app shown [on my shiny server](http://daattali.com/shiny/mimic-google-form/) because in my app I placed the table to the right of the form, and the code given here will place the table above the form.*
 
 Now that we can submit responses smoothly, it'd be nice to also be able to view submitted responses in the app. First we need to add a dataTable placeholder to the UI (add it just before the `form` div, after the `titlePanel`):
 
