@@ -444,3 +444,5 @@ That's it! You are now ready to create forms with shiny apps.  You can see what 
 # Updates {#updates}
 
 **[2015-06-14]** I've been told that `shinyjs` is throwing an error for some users. This is because they are using the CRAN version instead of the latest version from GitHub. I added a [Prerequisites](#prereqs) section to specify exactly what packages need to be installed.
+
+**[2015-06-15]** As mentioned in the comments below, if you don't have a Pro account but would still like to implement the idea of admins and "authentication", there are other ways to achieve a similar result. I won't go into any of them because I haven't done that, but it's definitely possible to have a input field that accepts a password and if type in an admin password, the tables will be shown. That's just one example, you can get more creative with the specific, but essentially you just need a way to return a TRUE/FALSE value from `isAdmin()`.
