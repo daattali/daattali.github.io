@@ -228,11 +228,11 @@ Currently, assuming you're logged in as user `dean`, when you create a folder in
 So my solution is to create a user group called `shiny-apps` and add both `dean` and `shiny` users to it. Then I'll make sure that the whole `/srv/shiny-server` folder has read+write permissions to the group. (Again, disclaimer: I'm not a sysadmin so I'm learning all this as I go. Don't treat this as a work of god).
 
 ~~~
-groupadd shiny-apps
-usermod -aG shiny-apps dean
-usermod -aG shiny-apps shiny
+sudo groupadd shiny-apps
+sudo usermod -aG shiny-apps dean
+sudo usermod -aG shiny-apps shiny
 cd /srv/shiny-server
-chown -R dean:shiny-apps .
+sudo chown -R dean:shiny-apps .
 chmod g+s .
 ~~~
 
