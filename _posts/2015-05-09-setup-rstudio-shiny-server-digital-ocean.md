@@ -233,6 +233,7 @@ sudo usermod -aG shiny-apps dean
 sudo usermod -aG shiny-apps shiny
 cd /srv/shiny-server
 sudo chown -R dean:shiny-apps .
+chmod g+w .
 chmod g+s .
 ~~~
 
