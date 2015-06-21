@@ -233,8 +233,8 @@ sudo usermod -aG shiny-apps dean
 sudo usermod -aG shiny-apps shiny
 cd /srv/shiny-server
 sudo chown -R dean:shiny-apps .
-chmod g+w .
-chmod g+s .
+sudo chmod g+w .
+sudo chmod g+s .
 ~~~
 
 Now both `dean` and `shiny` will have access to any new or existing files under `/srv/shiny-server`. I like it because now I can develop an app from my RStuio Server (logged in as `dean`), be able to run it through RStudio (as `dean`), and also be able to run it via my Shiny Server (as `shiny`).
