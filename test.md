@@ -53,7 +53,7 @@ gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
 gpg -a --export E084DAB9 | sudo apt-key add -
 ```
 
-After setting the repository, we should update the list of available packages.
+After setting the repository, we need to update the list of available packages.
 
 ```
 sudo apt-get update
@@ -65,7 +65,7 @@ Now we're ready to install R.
 sudo apt-get install r-base
 ```
 
-At this point, you should have an installation of the latest R version on your droplet.  You can test this by running `R` 
+At this point, you should have an installation of the latest R version on your droplet.  You can test this by running R. 
 
 ```
 R
@@ -136,7 +136,7 @@ Now we're ready to download Shiny Server. Assuming your droplet is running 64-bi
 wget -O shiny-server.deb http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.3.0.403-amd64.deb
 ```
 
-This will download Shiny Server version 1.3.0.403, which is the most up-to-date at the time of this writing. If you want to download the newest version, you can consult [the official Shiny Server download page](http://www.rstudio.com/products/shiny/download-server/) to find the latest version and change the URL accordingly. If you're running a 32-bit operating system or a non Ubuntu distribution, you may need to consult the [Shiny Server download page](http://www.rstudio.com/products/shiny/download-server/) for specific instructions for your operating system. If you are installing Shiny Server Professional, RStudio will give you the URL of the file to download.
+This will download Shiny Server version 1.3.0.403, which is the most up-to-date Shiny Server at the time of this writing. If you want to download the newest version, you can consult [the official Shiny Server download page](http://www.rstudio.com/products/shiny/download-server/) to find the latest version and change the URL accordingly. If you're running a 32-bit operating system or a non Ubuntu distribution, you may need to consult the [Shiny Server download page](http://www.rstudio.com/products/shiny/download-server/) for specific instructions for your operating system.
 
 Now use **GDebi** to install the file that was downloaded.
 
@@ -152,13 +152,14 @@ You can make sure your Shiny Server is working properly by going to `http://<^>y
 
 ## Step 7 - Hosting interactive R markdown documents
 
-Shiny Server is useful not only for hosying Shiny applications, but also for hosting interactive R markdown documents. You can learn more about interactive R markdown documents [on RStudio's official Rmarkdown site](http://rmarkdown.rstudio.com/). At this point you should have a working Shiny Server that can host Shiny applications, but it cannot yet host interactive R markdown documents because the `rmarkdown` R package isn't installed. Shiny Server comes with a sample interactive document that is available at `http://<^>your_server_ip<^>:3838/sample-apps/rmd/`. If you go to that URL right now, you will see an error. Let's install the `rmarkdown` package to fix that.
+Shiny Server is useful not only for hosting Shiny applications, but also for hosting interactive R markdown documents. You can learn more about interactive R markdown documents [on RStudio's official Rmarkdown site](http://rmarkdown.rstudio.com/).   
+At this point you should have a working Shiny Server that can host Shiny applications, but it cannot yet host interactive R markdown documents because the `rmarkdown` R package isn't installed. Shiny Server comes with a sample interactive document that is available at `http://<^>your_server_ip<^>:3838/sample-apps/rmd/`. If you go to that URL right now, you will see an error. Let's install the `rmarkdown` package to fix that.
 
 ```
 sudo su - -c "R -e \"install.packages('rmarkdown', repos='http://cran.rstudio.com/')\""
 ```
 
-Now Shiny Server is set up to host interactive R markdown documents as well as Shiny applications.  To verify that interactive documents work, go to `http://<^>your_server_ip<^>:3838/sample-apps/rmd/` and ensure there is no error.
+Now Shiny Server is set up to run interactive R markdown documents as well as Shiny applications.  To verify that interactive documents work, go to `http://<^>your_server_ip<^>:3838/sample-apps/rmd/` and ensure there is no error.
 
 ## Step 8 - Install Shiny Server Professional
 
@@ -190,7 +191,7 @@ sudo reload shiny-server
 
 ## Next steps
 
-You now have a functioning Shiny Server that can host Shiny applications or documents. The configuration file for Shiny Server is at `/etc/shiny-server/shiny-server.conf` and by default it is configured to serve applications in the `/srv/shiny-server/` directory. This means that any Shiny application that is placed at `/srv/shiny-server/<^>app_name<^>` will be available to the public at `http://<^>your_server_ip<^>:3838/<^>app_name<^>/`. It's a good idea to have e look at the [Shiny Server Administrator's Guide](http://rstudio.github.io/shiny-server/latest/) to learn how to customize the server to your exact needs and how to manage it.
+You now have a functioning Shiny Server that can host Shiny applications or interactive documents. The configuration file for Shiny Server is at `/etc/shiny-server/shiny-server.conf` and by default it is configured to serve applications in the `/srv/shiny-server/` directory. This means that any Shiny application that is placed at `/srv/shiny-server/<^>app_name<^>` will be available to the public at `http://<^>your_server_ip<^>:3838/<^>app_name<^>/`. It's a good idea to have e look at the [Shiny Server Administrator's Guide](http://rstudio.github.io/shiny-server/latest/) to learn how to customize the server to your exact needs and how to manage it.
 
 ### Conclusion
 
