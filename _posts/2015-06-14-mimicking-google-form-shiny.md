@@ -51,9 +51,8 @@ One major component of this app is storing the user-submitted data in a way that
 
 The following packages need to be installed in order for all the code to work:
 
-- [`DT`](https://github.com/rstudio/DT) version 0.1.3 (as of today, this version is not yet on CRAN, so install it from GitHub `devtools::install_github('rstudio/DT')`  
-- [`shinyjs`](https://github.com/daattali/shinyjs) version 0.0.6.4 (as of today, this version is not yet on CRAN, so install it from GitHub `devtools::install_github('daattali/shinyjs')`
-- `shiny`, `dplyr`, `digest` - any version will do, you can install from CRAN
+- [`DT`](https://github.com/rstudio/DT) version 0.1.3 (as of today, this version is not yet on CRAN, so install it from GitHub with `devtools::install_github('rstudio/DT')`  
+- `shiny`, `shinyjs`, `dplyr`, `digest` - any version will do, you can install from CRAN
 
 # Build the basic UI (inputs) {#build-inputs}
 
@@ -442,7 +441,5 @@ This will assume that when there is no authentication, everyone is an admin, but
 That's it! You are now ready to create forms with shiny apps.  You can see what the final app code looks like [on GitHub](https://github.com/daattali/shiny-server/blob/master/mimic-google-form/app.R) (with a few minor modifications), or test it out [on my shiny server](http://daattali.com/shiny/mimic-google-form/)).
 
 # Updates {#updates}
-
-**[2015-06-14]** I've been told that `shinyjs` is throwing an error for some users. This is because they are using the CRAN version instead of the latest version from GitHub. I added a [Prerequisites](#prereqs) section to specify exactly what packages need to be installed.
 
 **[2015-06-15]** As mentioned in the comments below, if you don't have a Pro account but would still like to implement the idea of admins and "authentication", there are other ways to achieve a similar result. I won't go into any of them because I haven't done that, but it's definitely possible to have an input field that accepts a password and if you type in an admin password, the tables will be shown. That's just one example, you can get more creative with the specifics, but essentially you just need a way to return a TRUE/FALSE value from `isAdmin()`.
