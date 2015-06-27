@@ -243,23 +243,53 @@ loadData <- function() {
 }
 ~~~
 
-#### Local file system (**local**) {#local}
+#### MySQL (**local or remote**) {#mysql}
 
-sdfdss
+MySQL is a very popular relational database that is similar to SQLite but is more powerful. MySQL databases can either be hosted locally (on the same machine as the Shiny app) or online using a hosting service.
 
-**Setup:**
+This method is very similar to the previous SQLite method, with the main difference being where the database is hosted. You can use the [RMySQL](https://github.com/rstats-db/RMySQL) package to interact with MySQL from R. Since MySQL databases can be hosted on remote servers, the command to connect to the server invovles more parameters, but the rest of the saving/loading code is identical to the SQLite approach. To connect to a MySQL database, you need to provide the following parameters: host, port, dbname, user, password.
+
+**Setup:** You need to create a MySQL database (either locally or using a web service that hosts MySQL databases) and a table that will store the responses. As with the setup for SQLite, you need to make sure the table schema is properly set up for your intended data.
 
 **Code:**
 
 ~~~
+library(RMySQL)
+options(mysql = list(
+  "host" = "127.0.0.1",
+  "port" = 3306,
+  "user" = "myuser",
+  "password" = "mypassword"
+))
+databaseName <- "myshinydatabase"
+table <- "responses"
+
 saveData <- function(data) {
+  db <- dbConnect(MySQL(), dbname = databaseName, host = options()$mysql$host, 
+      port = options()$mysql$port, user = options()$mysql$user, 
+      password = options()$mysql$password)
+  query <- sprintf(
+    "INSERT INTO %s (%s) VALUES ('%s')",
+    table, 
+    paste(names(data), collapse = ", "),
+    paste(data, collapse = "', '")
+  )
+  dbGetQuery(db, query)
+  dbDisconnect(db)
 }
 
 loadData <- function() {
+  db <- dbConnect(MySQL(), dbname = databaseName, host = options()$mysql$host, 
+      port = options()$mysql$port, user = options()$mysql$user, 
+      password = options()$mysql$password)
+  query <- sprintf("SELECT * FROM %s", table)
+  data <- dbGetQuery(db, query)
+  dbDisconnect(db)
+  data
 }
 ~~~
 
-#### Local file system (**local**) {#local}
+#### Google Sheets (**remote**) {#gsheets}
 
 sdfdss
 
