@@ -291,17 +291,26 @@ loadData <- function() {
 
 #### Google Sheets (**remote**) {#gsheets}
 
-sdfdss
+If you don't want to deal with the formality and rigidity of a database, another option for storing tabular data is in a Google Sheet. One nice advantage of Google Sheets is that they are easy to access from anywhere, but unfortunately the Google API is a bit slow so it does take an extra 1-2 seconds over other methods.
 
-**Setup:**
+You can use the [googlesheets](https://github.com/jennybc/googlesheets) package to interact with Google Sheets from R. To connect to a specific sheet, you will need either the sheet's title or key (preferably key, as it's unique). To store or retrieve data from a Google Sheet is very easy, as the code below shows.
+
+**Setup:** All you need to do is create a Google Sheet and set the top row with the names of the fields. You can either do that via a web browser or using the `googlesheets` package. You also need to have a Google account.
 
 **Code:**
 
 ~~~
+library(googlesheets)
+table <- "responses"
+
 saveData <- function(data) {
+  sheet <- gs_title(table)
+  gs_add_row(sheet, input = data)
 }
 
 loadData <- function() {
+  sheet <- gs_title(table)
+  gs_read_csv(sheet)
 }
 ~~~
 
