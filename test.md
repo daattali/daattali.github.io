@@ -9,7 +9,7 @@ The main purpose of this guide is to not only explain in theory how to store dat
 
 As a complement to this article, you can see a [live demo of a Shiny app](http://daattali.com/shiny/persistent-data-storage/) that uses each of the seven storage methods to save and load data.
 
-The three categories of data storage methods depend on the type of data:
+The three categories of data storage methods depend on the type of data you want to store:
 
 - **Arbitrary data** can be stored as a **file** in some sort of a **file system** ([local file system](#local), [Dropbox](#dropbox), [Amazon S3](#s3))
 - **Structured rectangular data** can be stored as a **table** in a **relational database or table-storage service**  ([SQLite](#sqlite), [MySQL](#mysql), [Google Sheets](#gsheets))
