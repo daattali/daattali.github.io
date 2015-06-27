@@ -1,4 +1,7 @@
-# Persistent data storage with Shiny
+---
+layout: post
+title: "Persistent data storage in Shiny apps"
+---
 
 Shiny apps can be used for a wide variety of applications, ranging from simply running R code interactively to building complete multi-page web apps. Sometimes Shiny apps need to be able to save data, either to load it back in a different session or to simply log some information. The most trivial method of storing data - saving a file to the local machine (for example, using `write.csv()` or `saveRDS()`) - should not be used when hosting on *[shinyapps.io](http://www.shinyapps.io/)* because it only allows for *temporary* data storage rather than *persistent*. In short, *shinyapps.io* is designed to distribute your Shiny app across different servers, which means that if a file is saved during one session on some server, then loading the app again later will probably direct you to a different server where the previously saved file doesn't exist. More information on this issue can be found in Jeff Allen's [article regarding sharing data across sessions](http://shiny.rstudio.com/articles/share-data.html). In his article, Jeff also mentions that there are several ways to save (and load) data from Shiny, which can be grouped into three categories.
 
@@ -70,10 +73,12 @@ loadData <- function() {
 
 Before continuing further, make sure this basic app works for you. The code for this app is also available as a [gist](https://gist.github.com/daattali/c4db11d81f3c46a7c4a5) and you can run it either by copying all the code to your RStudio or by running `runGist("c4db11d81f3c46a7c4a5")`. 
 
+## Local vs remote storage
 
+One important distinction to understand is *local storage* vs *remote storage*. Local storage means saving a file on the same machine that is running the Shiny application. Using functions such as `write.csv()`/`write.table()`/`saveRDS()` and others are considered local storage because they will save a file on the machine running the app. Local storage is generally faster, but it should only be used if you always have access to the machine that saved the files. Remote storage means saving data on another server, usually a reliable hosted server such as Dropbox, Amazon, or a hosted database.  One big advantage of using hosted remote storage solutions is that they are much more reliable and can generally be more trusted to keep your data alive and not corrupted. When going through the different storage type options below, keep in mind that if your Shiny app is hosted on *shinyapps.io*, you will have to use a remote storage method. Using local storage is only an option if you're hosting your own Shiny Server, though that comes at the price of having to manage a server and should only be done if you're comfortable with administering a server.
 
+## 3 main types
 
-local vs remote
+## Conclusion
 
-3 main types
-
+show table
