@@ -88,17 +88,19 @@ One important distinction to understand is *local storage* vs *remote storage*. 
 
 Using the above Shiny app, we can use many different ways to store and retrieve responses. Here we will go through seven ways to achieve data persistence that can be easily integrated into Shiny apps. Each method will be explained, and to use a method as the storage type in the example app, use the given code for `saveData()` and `loadData()` to replace the existing functions.
 
-### File storage
+As a reminder, you can see all the seven different storage types being used, along with the exact code used, [in this live Shiny app](http://daattali.com/shiny/persistent-data-storage/).
+
+### Store arbitrary data in a file
 
 This is the most flexible option since files allow you to store any type of data, whether it's just a single value, a big *data.frame*, or any arbitrary data.  There are two common scenarios when using files to store data: either you have one file that gets repeatedly overwritten and used by all sessions (like the example in [Jeff Allen's article](http://shiny.rstudio.com/articles/share-data.html), or you save a new file every time there is new data.  In our case we'll use the latter, because we want to save each response as its own file (we can use the former option, but then we would introduce the potential for [race conditions](https://en.wikipedia.org/wiki/Race_condition#File_systems) which will overcomplicate the app).
 
 When saving multiple files, it's important to make sure that each file you save has a different file name, because if new data is saved with an existing file name, it will overwrite the data in the file. There are many ways to do this, such as simply using the current timestamp and an *md5 hash* of the data being saved as the file name to ensure that no two form submissions have the same file name.
 
-As a reminder, you can see all the seven different storage types being used, along with the exact code used, [in this live Shiny app](http://daattali.com/shiny/persistent-data-storage/).
+Arbitrary data can be stored in a file either on the local file system or on remote services such as Dropbox or Amazon S3.
 
 #### Local file system (**local**) {#local}
 
-The most trivial way of saving data from Shiny is by simply saving each response as its own file on the current server. To load the data, we simply load all the files in the output directory. 
+The most trivial way of saving data from Shiny is by simply saving each response as its own file on the current server. To load the data, we simply load all the files in the output directory. In our specific example, after loading all the data files we also want to concatenate them all together into one *data.frame*. 
 
 **Setup:** The only required setup is to create an output directory (`responses` in this case) and ensure the Shiny app has file permissions to read/write in that directory.  
 
@@ -129,7 +131,7 @@ loadData <- function() {
 
 If you want to store arbitrary files but use a remote hosted solution instead of the local file system (either because you're using *shinyapps.io* or simply because you want a more trusted system), you can store files on [Dropbox](https://www.dropbox.com). Dropbox is a file storing service which allows you to host any file, up to a certain maximum usage. The free account provides plenty of storage space and should be enough for storing most data from Shiny apps.
 
-This approach is similar to the previous approach using the local file system, with the only difference that now that files are being saved to and loaded from Dropbox. You can use the [`rdrop2`](https://github.com/karthik/rdrop2) package to interact with Dropbox from R.
+This approach is similar to the previous approach using the local file system, with the only difference that now that files are being saved to and loaded from Dropbox. You can use the [`rdrop2`](https://github.com/karthik/rdrop2) package to interact with Dropbox from R. Note that `rdrop2` can only move existing files onto Dropbox, so we still need to create a local file before storing it on Dropbox.
 
 **Setup:** You need to have a Dropbox account and create a folder to store the responses. You will also need to add authentication to `rdrop2` using any approach [suggested in the package README](https://github.com/karthik/rdrop2#accessing-dropbox-on-shiny-and-remote-servers). The authentication approach I chose was to authenticate manually once and copy the resulting `.httr-oauth` file that gets created into the Shiny app's folder. 
 
@@ -195,19 +197,49 @@ loadData <- function() {
 }
 ~~~
 
-#### Local file system (**local**) {#local}
+### Store structured data in a table
 
-sdfdss
+If the data you want to save is structured and rectangular, storing it in a table would be a good option. Loosely defined, structured data means that each observation has the same fixed fields, and rectangular data means that all observations contain the same number of fields and fit into a nice 2D matrix. A *data.frame* is a great example of such data, and thus data.frames are ideal candidates to be stored in tables such as relational databases. 
 
-**Setup:**
+Structured data must have some *schema* that defines what the data fields are. In a *data.frme*, the number and names of the columns can be thought of as the schema. In tables with a header row, the header row can be thought of as the schema.
+
+Structured data can be stored in a table either in a relational database (such as SQLite or MySQL) or in any other table-hosting service such as Google Sheets. If you have experience with database interfaces in other languages, you should note that R does not currently have support for prepared statements, so any SQL statements have to be constructed manually.
+
+#### SQLite (**local**) {#sqlite}
+
+SQLite is a very simple and light-weight relational database that is very easy to set up. SQLite is serverless, which means it stores the database locally on the same machine that is running the shiny app. You can use the [RSQLite](https://github.com/rstats-db/RSQLite) pacakge to interact with SQLite from R. To connect to a SQLite database in R, the only information you need to provide is the location of the database file.  
+
+To store data in a SQLite database, we loop over all the values we want to add and use a [SQL INSERT](http://www.w3schools.com/sql/sql_insert.asp) statement to add the data to the database. It's essential that the schema ofthe database matches exactly the names of the columns in the Shiny data, otherwise the SQL statement will fail. To load all previous data, we use a plain [SQL SELECT *](http://www.w3schools.com/sql/sql_select.asp) statement to get all the data from the database table.
+
+**Setup:** First, you must have SQLite installed on your server. Installation is fairly easy; for example, on an Ubuntu machine you can install SQLite with `sudo apt-get install sqlite3 libsqlite3-dev`.
+
+You also need to create a database and a table that will store all the responses. When creating the table, you need to set up the schema of the table to match the columns of your data. For example, if you want to save data with columns "name" and "email" then you can create the SQL table with `CREATE TABLE responses(name TEXT, email TEXT);`. Make sure the shiny app has write permissions on the database file and its parent directory.
 
 **Code:**
 
 ~~~
+library(RSQLite)
+sqlitePath <- "/path/to/sqlite/database"
+table <- "responses"
+
 saveData <- function(data) {
+  db <- dbConnect(SQLite(), sqlitePath)
+  query <- sprintf(
+    "INSERT INTO %s (%s) VALUES ('%s')",
+    table, 
+    paste(names(data), collapse = ", "),
+    paste(data, collapse = "', '")
+  )
+  dbGetQuery(db, query)
+  dbDisconnect(db)
 }
 
 loadData <- function() {
+  db <- dbConnect(SQLite(), sqlitePath)
+  query <- sprintf("SELECT * FROM %s", table)
+  data <- dbGetQuery(db, query)
+  dbDisconnect(db)
+  data
 }
 ~~~
 
