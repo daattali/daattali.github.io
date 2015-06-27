@@ -5,7 +5,15 @@ title: "Persistent data storage in Shiny apps"
 
 Shiny apps can be used for a wide variety of applications, ranging from simply running R code interactively to building complete multi-page web apps. Sometimes Shiny apps need to be able to save data, either to load it back in a different session or to simply log some information. The most trivial method of storing data - saving a file to the local machine (for example, using `write.csv()` or `saveRDS()`) - should not be used when hosting on *[shinyapps.io](http://www.shinyapps.io/)* because it only allows for *temporary* data storage rather than *persistent*. In short, *shinyapps.io* is designed to distribute your Shiny app across different servers, which means that if a file is saved during one session on some server, then loading the app again later will probably direct you to a different server where the previously saved file doesn't exist. More information on this issue can be found in Jeff Allen's [article regarding sharing data across sessions](http://shiny.rstudio.com/articles/share-data.html). In his article, Jeff also mentions that there are several ways to save (and load) data from Shiny, which can be grouped into three categories.
 
-The main purpose of this guide is to not only explain in theory how to store data in Shiny apps, but also show full working examples, in order to make it clear and easy for anyone to use these concepts in their own apps. In this guide we'll learn about each of the three main ways to store data, and see how to implement each one in a real-world Shiny app. This post will introduce seven specific storage methods and will include complete working code for each that shows how to integrate each one into a Shiny app.  As a complement to this article, you can see a [live demo of a Shiny app](http://daattali.com/shiny/persistent-data-storage/) that uses each of the seven storage methods to save and load data.
+The main purpose of this guide is to not only explain in theory how to store data in Shiny apps, but also show full working examples, in order to make it clear and easy for anyone to use these concepts in their own apps. In this guide we'll learn about each of the three main ways to store data, and see how to implement each one in a real-world Shiny app. This post will introduce seven specific storage methods and will include complete working code for each that shows how to integrate each one into a Shiny app.
+
+As a complement to this article, you can see a [live demo of a Shiny app](http://daattali.com/shiny/persistent-data-storage/) that uses each of the seven storage methods to save and load data.
+
+The three categories of data storage methods are:
+
+- Storing arbitrary data as a file in some sort of a file system ([local file system](#local), [Dropbox](#dropbox), [Amazon S3](#s3))
+- Storing structured, rectangular data in a table or relational database ([SQLite](#sqlite), [MySQL](#mysql), [Google Sheets](#gsheets))
+- Storing semi-structured data in a schemaless database ([MongoDB](#mongodb))
 
 ## Basic Shiny app without data storage
 
@@ -31,7 +39,6 @@ shinyApp(
     # Whenever a field is filled, aggregate all form data
     formData <- reactive({
       data <- sapply(fields, function(x) input[[x]])
-      data <- t(data)
       data
     })
     
@@ -56,7 +63,7 @@ The above app is very simple - there is a table that shows all responses, three 
 
 ~~~
 saveData <- function(data) {
-  data <- as.data.frame(data)
+  data <- as.data.frame(t(data))
   if (exists("responses")) {
     responses <<- rbind(responses, data)
   } else {
@@ -77,7 +84,42 @@ Before continuing further, make sure this basic app works for you. The code for 
 
 One important distinction to understand is *local storage* vs *remote storage*. Local storage means saving a file on the same machine that is running the Shiny application. Using functions such as `write.csv()`/`write.table()`/`saveRDS()` and others are considered local storage because they will save a file on the machine running the app. Local storage is generally faster, but it should only be used if you always have access to the machine that saved the files. Remote storage means saving data on another server, usually a reliable hosted server such as Dropbox, Amazon, or a hosted database.  One big advantage of using hosted remote storage solutions is that they are much more reliable and can generally be more trusted to keep your data alive and not corrupted. When going through the different storage type options below, keep in mind that if your Shiny app is hosted on *shinyapps.io*, you will have to use a remote storage method. Using local storage is only an option if you're hosting your own Shiny Server, though that comes at the price of having to manage a server and should only be done if you're comfortable with administering a server.
 
-## 3 main types
+## Persistent data storage methods
+
+Using the above Shiny app, we can use many different ways to store and retrieve responses. Here we will go through seven ways to achieve data persistence that can be easily integrated into Shiny apps. Each method will be explained, and to use a method as the storage type in the example app, use the given code for `saveData()` and `loadData()` to replace the existing functions.
+
+### File storage
+
+This is the most flexible option since files allow you to store any type of data, whether it's just a single value, a big *data.frame*, or any arbitrary data.  There are two common scenarios when using files to store data: either you have one file that gets repeatedly overwritten and used by all session (like the example in [Jeff Allen's article](http://shiny.rstudio.com/articles/share-data.html#object-storage-amazon-s3), or you save a new file every time there is new data.  In our case we'll use the latter, because we want to save each response as its own file (we can use the former option, but then we would introduce the potential for [race conditions](https://en.wikipedia.org/wiki/Race_condition#File_systems) which will overcomplicate the app).
+
+When saving multiple files, it's important to make sure that each file you save has a different file name, because if new data is saved with an existing file name, it will overwrite the data in the file. There are many ways to do this, such as simply using the current timestamp and an *md5 hash* of the data being saved as the file name to ensure that no two form submissions have the same file name.
+
+#### Local file system (**local**) {#local}
+
+The most trivial way of saving data from Shiny is by simply saving each response as its own file on the current server. To load the data, we simply load all the files in the output directory. 
+
+**Setup:** The only required setup is to create an output directory and ensure the Shiny app has file permissions to read/write in that directory.  
+
+**Code**:
+
+~~~
+saveData <- function(data) {
+  data <- t(data)
+  fileName <- sprintf("%s_%s.csv", as.integer(Sys.time()), digest::digest(data))
+  write.csv(
+    x = data,
+    file = file.path("responses", fileName), 
+    row.names = FALSE, quote = TRUE
+  )
+}
+
+loadData <- function() {
+  files <- list.files(file.path("responses"), full.names = TRUE)
+  data <- lapply(files, read.csv, stringsAsFactors = FALSE) 
+  data <- do.call(rbind, data)
+  data
+}
+~~~
 
 ## Conclusion
 
