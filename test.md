@@ -9,11 +9,11 @@ The main purpose of this guide is to not only explain in theory how to store dat
 
 As a complement to this article, you can see a [live demo of a Shiny app](http://daattali.com/shiny/persistent-data-storage/) that uses each of the seven storage methods to save and load data.
 
-The three categories of data storage methods are:
+The three categories of data storage methods depend on the type of data:
 
-- Storing arbitrary data as a file in some sort of a file system ([local file system](#local), [Dropbox](#dropbox), [Amazon S3](#s3))
-- Storing structured, rectangular data in a table or relational database ([SQLite](#sqlite), [MySQL](#mysql), [Google Sheets](#gsheets))
-- Storing semi-structured data in a schemaless database ([MongoDB](#mongodb))
+- **Arbitrary data** can be stored as a **file** in some sort of a **file system** ([local file system](#local), [Dropbox](#dropbox), [Amazon S3](#s3))
+- **Structured rectangular data** can be stored as a **table** in a **relational database or table-storage service**  ([SQLite](#sqlite), [MySQL](#mysql), [Google Sheets](#gsheets))
+- **Semi-structured data** can be stored as a **collection** in a **schemaless database** ([MongoDB](#mongodb))
 
 ## Basic Shiny app without data storage
 
@@ -93,6 +93,8 @@ Using the above Shiny app, we can use many different ways to store and retrieve 
 This is the most flexible option since files allow you to store any type of data, whether it's just a single value, a big *data.frame*, or any arbitrary data.  There are two common scenarios when using files to store data: either you have one file that gets repeatedly overwritten and used by all sessions (like the example in [Jeff Allen's article](http://shiny.rstudio.com/articles/share-data.html), or you save a new file every time there is new data.  In our case we'll use the latter, because we want to save each response as its own file (we can use the former option, but then we would introduce the potential for [race conditions](https://en.wikipedia.org/wiki/Race_condition#File_systems) which will overcomplicate the app).
 
 When saving multiple files, it's important to make sure that each file you save has a different file name, because if new data is saved with an existing file name, it will overwrite the data in the file. There are many ways to do this, such as simply using the current timestamp and an *md5 hash* of the data being saved as the file name to ensure that no two form submissions have the same file name.
+
+As a reminder, you can see all the seven different storage types being used, along with the exact code used, [in this live Shiny app](http://daattali.com/shiny/persistent-data-storage/).
 
 #### Local file system (**local**) {#local}
 
