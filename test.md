@@ -78,7 +78,7 @@ loadData <- function() {
 }
 ~~~
 
-Before continuing further, make sure this basic app works for you. The code for this app is also available as a [gist](https://gist.github.com/daattali/c4db11d81f3c46a7c4a5) and you can run it either by copying all the code to your RStudio or by running `runGist("c4db11d81f3c46a7c4a5")`. 
+Before continuing further, make sure this basic app works for you and that you understand every line in it - it's not difficult, but take the two minutes to go through it. The code for this app is also available as a [gist](https://gist.github.com/daattali/c4db11d81f3c46a7c4a5) and you can run it either by copying all the code to your RStudio or by running `runGist("c4db11d81f3c46a7c4a5")`. 
 
 ## Local vs remote storage
 
@@ -90,7 +90,7 @@ Using the above Shiny app, we can use many different ways to store and retrieve 
 
 ### File storage
 
-This is the most flexible option since files allow you to store any type of data, whether it's just a single value, a big *data.frame*, or any arbitrary data.  There are two common scenarios when using files to store data: either you have one file that gets repeatedly overwritten and used by all session (like the example in [Jeff Allen's article](http://shiny.rstudio.com/articles/share-data.html#object-storage-amazon-s3), or you save a new file every time there is new data.  In our case we'll use the latter, because we want to save each response as its own file (we can use the former option, but then we would introduce the potential for [race conditions](https://en.wikipedia.org/wiki/Race_condition#File_systems) which will overcomplicate the app).
+This is the most flexible option since files allow you to store any type of data, whether it's just a single value, a big *data.frame*, or any arbitrary data.  There are two common scenarios when using files to store data: either you have one file that gets repeatedly overwritten and used by all sessions (like the example in [Jeff Allen's article](http://shiny.rstudio.com/articles/share-data.html), or you save a new file every time there is new data.  In our case we'll use the latter, because we want to save each response as its own file (we can use the former option, but then we would introduce the potential for [race conditions](https://en.wikipedia.org/wiki/Race_condition#File_systems) which will overcomplicate the app).
 
 When saving multiple files, it's important to make sure that each file you save has a different file name, because if new data is saved with an existing file name, it will overwrite the data in the file. There are many ways to do this, such as simply using the current timestamp and an *md5 hash* of the data being saved as the file name to ensure that no two form submissions have the same file name.
 
@@ -98,26 +98,162 @@ When saving multiple files, it's important to make sure that each file you save 
 
 The most trivial way of saving data from Shiny is by simply saving each response as its own file on the current server. To load the data, we simply load all the files in the output directory. 
 
-**Setup:** The only required setup is to create an output directory and ensure the Shiny app has file permissions to read/write in that directory.  
+**Setup:** The only required setup is to create an output directory (`responses` in this case) and ensure the Shiny app has file permissions to read/write in that directory.  
 
 **Code**:
 
 ~~~
+outputDir <- "responses"
+
 saveData <- function(data) {
   data <- t(data)
   fileName <- sprintf("%s_%s.csv", as.integer(Sys.time()), digest::digest(data))
   write.csv(
     x = data,
-    file = file.path("responses", fileName), 
+    file = file.path(outputDir, fileName), 
     row.names = FALSE, quote = TRUE
   )
 }
 
 loadData <- function() {
-  files <- list.files(file.path("responses"), full.names = TRUE)
+  files <- list.files(outputDir, full.names = TRUE)
   data <- lapply(files, read.csv, stringsAsFactors = FALSE) 
   data <- do.call(rbind, data)
   data
+}
+~~~
+
+#### Dropbox (**remote**) {#dropbox}
+
+If you want to store arbitrary files but use a remote hosted solution instead of the local file system (either because you're using *shinyapps.io* or simply because you want a more trusted system), you can store files on [Dropbox](https://www.dropbox.com). Dropbox is a file storing service which allows you to host any file, up to a certain maximum usage. The free account provides plenty of storage space and should be enough for storing most data from Shiny apps.
+
+This approach is similar to the previous approach using the local file system, with the only difference that now that files are being saved to and loaded from Dropbox. You can use the [`rdrop2`](https://github.com/karthik/rdrop2) package to interact with Dropbox from R.
+
+**Setup:** You need to have a Dropbox account and create a folder to store the responses. You will also need to add authentication to `rdrop2` using any approach [suggested in the package README](https://github.com/karthik/rdrop2#accessing-dropbox-on-shiny-and-remote-servers). The authentication approach I chose was to authenticate manually once and copy the resulting `.httr-oauth` file that gets created into the Shiny app's folder. 
+
+**Code:**
+
+~~~
+library(rdrop2)
+outputDir <- "responses"
+
+saveData <- function(data) {
+  data <- t(data)
+  fileName <- sprintf("%s_%s.csv", as.integer(Sys.time()), digest::digest(data))
+  filePath <- file.path(tempdir(), fileName)
+  write.csv(data, filePath, row.names = FALSE, quote = TRUE)
+  drop_upload(filePath, dest = outputDir)
+}
+
+loadData <- function() {
+  filesInfo <- drop_dir(outputDir)
+  filePaths <- filesInfo$path
+  data <- lapply(filePaths, drop_read_csv, stringsAsFactors = FALSE)
+  data <- do.call(rbind, data)
+  data
+}
+~~~
+
+#### Amazon S3 (**remote**) {#s3}
+
+Another popular alternative to Dropbox for hosting files online is [Amazon S3](http://aws.amazon.com/s3/), or *S3* in short. Just like with Dropbox, you can host any type of file on S3, but instead of placing files inside directories, in S3 you place files inside a *bucket*. You can use the [RAmazonS3](http://www.omegahat.org/RAmazonS3/) package to interact with S3 from R. Note that the package is a few years old and is not under active development, so use it at your own risk.
+
+**Setup:** You need to have an [Amazon Web Services](http://aws.amazon.com/) account and create an S3 bucket to store the responses. As the [package documentation](http://www.omegahat.org/RAmazonS3/s3amazon.html) explains, you will need to enable authentication by setting the `AmazonS3` global option.
+
+**Code:**
+
+~~~
+library(RAmazonS3)
+s3BucketName <- "my-unique-s3-bucket-name"
+options(AmazonS3 = c('login' = "secret"))
+
+saveData <- function(data) {
+  fileName <- sprintf("%s_%s.csv", as.integer(Sys.time()), digest::digest(data))
+  addFile(
+    I(paste0(
+      paste(names(data), collapse = ","), 
+      "\n",
+      paste(data, collapse = ",")
+    )),
+    s3BucketName, 
+    fileName,
+    virtual = TRUE
+  )
+}
+
+loadData <- function() {
+  files <- listBucket(s3BucketName)$Key
+  files <- as.character(files)
+  data <- lapply(files, function(x) {
+      raw <- getFile(s3BucketName, x, virtual = TRUE)
+      read.csv(text = raw, stringsAsFactors = FALSE)
+  })
+  data <- do.call(rbind, data)
+  data  
+}
+~~~
+
+#### Local file system (**local**) {#local}
+
+sdfdss
+
+**Setup:**
+
+**Code:**
+
+~~~
+saveData <- function(data) {
+}
+
+loadData <- function() {
+}
+~~~
+
+#### Local file system (**local**) {#local}
+
+sdfdss
+
+**Setup:**
+
+**Code:**
+
+~~~
+saveData <- function(data) {
+}
+
+loadData <- function() {
+}
+~~~
+
+#### Local file system (**local**) {#local}
+
+sdfdss
+
+**Setup:**
+
+**Code:**
+
+~~~
+saveData <- function(data) {
+}
+
+loadData <- function() {
+}
+~~~
+
+#### Local file system (**local**) {#local}
+
+sdfdss
+
+**Setup:**
+
+**Code:**
+
+~~~
+saveData <- function(data) {
+}
+
+loadData <- function() {
 }
 ~~~
 
