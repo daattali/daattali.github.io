@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mimicking a Google Form with a Shiny app"
-tags: [professional, rstats, r, r-bloggers, shiny]
+tags: [professional, rstats, r, r-bloggers, shiny, shinyjs]
 date: 2015-06-14 5:30:00 -0700
 ---
 
