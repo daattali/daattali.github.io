@@ -361,8 +361,10 @@ loadData <- function() {
 
 ## Conclusion
 
+In this guide, we learned about different methods for persistent data storage from Shiny apps and about the differences between them.  We learned about when each method should be used and what package and code to use in order to integrate it into a Shiny app. The difference betwen local and remote storage was also discussed briefly.  The following table can serve as a reminder of the different storage types and when to use them. Remember that any method that uses local storage can only be used on Shiny Server, while any method that uses remote storage can be also used on *shinyapps.io*.
+
 | Method            |       Data type      | Local storage | Remote storage | R package    |
-|-------------------|:--------------------:|:-------------:|:--------------:|--------------|
+|-------------------|----------------------|:-------------:|:--------------:|--------------|
 | Local file system | Arbitrary data       |      YES      |                | -            |
 | Dropbox           | Arbitrary data       |               |       YES      | rdrop2       |
 | Amazon S3         | Arbitrary data       |               |       YES      | RAmazonS3    |
