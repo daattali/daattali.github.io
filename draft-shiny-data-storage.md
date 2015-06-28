@@ -19,7 +19,7 @@ The three categories of data storage methods depend on the type of data you want
 
 # Basic Shiny app without data storage
 
-To demonstrate how to store data using each storage types, we'll start with a simple form-submission Shiny app that collects some information from the user, stores their response, and shows all previous responses. Initially the app will only save responses within its R session, and we will learn how to modify the app to use each different storage type. Here is the code for the basic app that we will be using as our starting point. 
+To demonstrate how to store data using each storage type, we'll start with a simple form-submission Shiny app that collects some information from the user, stores their response, and shows all previous responses. Initially the app will only save responses within its R session, and we will later learn how to modify the app to use each different storage type. Here is the code for the basic app that we will be using as our starting point. 
 
 ~~~
 library(shiny)
@@ -80,11 +80,15 @@ loadData <- function() {
 }
 ~~~
 
-Before continuing further, make sure this basic app works for you and that you understand every line in it - it's not difficult, but take the two minutes to go through it. The code for this app is also available as a [gist](https://gist.github.com/daattali/c4db11d81f3c46a7c4a5) and you can run it either by copying all the code to your RStudio or by running `runGist("c4db11d81f3c46a7c4a5")`. 
+Before continuing further, make sure this basic app works for you and that you understand every line in it - it's not difficult, but take the two minutes to go through it. The code for this app is also available as a [gist](https://gist.github.com/daattali/c4db11d81f3c46a7c4a5) and you can run it either by copying all the code to your RStudio or by running `shiny::runGist("c4db11d81f3c46a7c4a5")`. 
 
 # Local vs remote storage
 
-One important distinction to understand is *local storage* vs *remote storage*. Local storage means saving a file on the same machine that is running the Shiny application. Using functions such as `write.csv()`/`write.table()`/`saveRDS()` and others are considered local storage because they will save a file on the machine running the app. Local storage is generally faster, but it should only be used if you always have access to the machine that saved the files. Remote storage means saving data on another server, usually a reliable hosted server such as Dropbox, Amazon, or a hosted database.  One big advantage of using hosted remote storage solutions is that they are much more reliable and can generally be more trusted to keep your data alive and not corrupted. When going through the different storage type options below, keep in mind that if your Shiny app is hosted on *shinyapps.io*, you will have to use a remote storage method. Using local storage is only an option if you're hosting your own Shiny Server, though that comes at the price of having to manage a server and should only be done if you're comfortable with administering a server.
+Before diving into the different storage methods, one important distinction to understand is *local storage* vs *remote storage*.
+
+Local storage means saving a file on the same machine that is running the Shiny application. Using functions such as `write.csv()`/`write.table()`/`saveRDS()` and others are considered local storage because they will save a file on the machine running the app. Local storage is generally faster, but it should only be used if you always have access to the machine that saved the files.
+
+Remote storage means saving data on another server, usually a reliable hosted server such as Dropbox, Amazon, or a hosted database.  One big advantage of using hosted remote storage solutions is that they are much more reliable and can generally be more trusted to keep your data alive and not corrupted. When going through the different storage type options below, keep in mind that if your Shiny app is hosted on *shinyapps.io*, you will have to use a remote storage method. Using local storage is only an option if you're hosting your own Shiny Server, though that comes at the price of having to manage a server and should only be done if you're comfortable with administering a server.
 
 # Persistent data storage methods
 
