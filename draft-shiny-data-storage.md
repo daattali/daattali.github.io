@@ -90,7 +90,7 @@ Local storage means saving a file on the same machine that is running the Shiny 
 
 Remote storage means saving data on another server, usually a reliable hosted server such as Dropbox, Amazon, or a hosted database.  One big advantage of using hosted remote storage solutions is that they are much more reliable and can generally be more trusted to keep your data alive and not corrupted.
 
-When going through the different storage type options below, keep in mind that if your Shiny app is hosted on *shinyapps.io*, you will have to use a remote storage method. Using local storage is only an option if you're hosting your own Shiny Server, though that comes at the price of having to manage a server and should only be done if you're comfortable with administering a server. If you want to host your own server, [here is a guide](http://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/) that describes how to get your own Shiny Server. 
+When going through the different storage type options below, keep in mind that if your Shiny app is hosted on *shinyapps.io*, you will have to use a remote storage method. Using local storage is only an option if you're hosting your own Shiny Server, though that comes at the price of having to manage a server and should only be done if you're comfortable with administering a server.
 
 # Persistent data storage methods
 
@@ -119,7 +119,9 @@ outputDir <- "responses"
 
 saveData <- function(data) {
   data <- t(data)
+  # Create a unique file name
   fileName <- sprintf("%s_%s.csv", as.integer(Sys.time()), digest::digest(data))
+  # Write the file to the local system
   write.csv(
     x = data,
     file = file.path(outputDir, fileName), 
@@ -128,8 +130,10 @@ saveData <- function(data) {
 }
 
 loadData <- function() {
+  # Read all the files into a list
   files <- list.files(outputDir, full.names = TRUE)
   data <- lapply(files, read.csv, stringsAsFactors = FALSE) 
+  # Concatenate all data together into one data.frame
   data <- do.call(rbind, data)
   data
 }
@@ -151,16 +155,21 @@ outputDir <- "responses"
 
 saveData <- function(data) {
   data <- t(data)
+  # Create a unique file name
   fileName <- sprintf("%s_%s.csv", as.integer(Sys.time()), digest::digest(data))
+  # Write the data to a temporary file locally
   filePath <- file.path(tempdir(), fileName)
   write.csv(data, filePath, row.names = FALSE, quote = TRUE)
+  # Upload the file to Dropbox
   drop_upload(filePath, dest = outputDir)
 }
 
 loadData <- function() {
+  # Read all the files into a list
   filesInfo <- drop_dir(outputDir)
   filePaths <- filesInfo$path
   data <- lapply(filePaths, drop_read_csv, stringsAsFactors = FALSE)
+  # Concatenate all data together into one data.frame
   data <- do.call(rbind, data)
   data
 }
@@ -176,11 +185,14 @@ Another popular alternative to Dropbox for hosting files online is [Amazon S3](h
 
 ~~~
 library(RAmazonS3)
+
 s3BucketName <- "my-unique-s3-bucket-name"
 options(AmazonS3 = c('login' = "secret"))
 
 saveData <- function(data) {
+  # Create a unique file name
   fileName <- sprintf("%s_%s.csv", as.integer(Sys.time()), digest::digest(data))
+  # Upload the data to S3
   addFile(
     I(paste0(
       paste(names(data), collapse = ","), 
@@ -194,12 +206,15 @@ saveData <- function(data) {
 }
 
 loadData <- function() {
+  # Get a list of all files
   files <- listBucket(s3BucketName)$Key
   files <- as.character(files)
+  # Read all files into a list
   data <- lapply(files, function(x) {
       raw <- getFile(s3BucketName, x, virtual = TRUE)
       read.csv(text = raw, stringsAsFactors = FALSE)
   })
+  # Concatenate all data together into one data.frame
   data <- do.call(rbind, data)
   data  
 }
@@ -231,20 +246,26 @@ sqlitePath <- "/path/to/sqlite/database"
 table <- "responses"
 
 saveData <- function(data) {
+  # Connect to the database
   db <- dbConnect(SQLite(), sqlitePath)
+  # Construct the update query by looping over the data fields
   query <- sprintf(
     "INSERT INTO %s (%s) VALUES ('%s')",
     table, 
     paste(names(data), collapse = ", "),
     paste(data, collapse = "', '")
   )
+  # Submit the update query and disconnect
   dbGetQuery(db, query)
   dbDisconnect(db)
 }
 
 loadData <- function() {
+  # Connect to the database
   db <- dbConnect(SQLite(), sqlitePath)
+  # Construct the fetching query
   query <- sprintf("SELECT * FROM %s", table)
+  # Submit the fetch query and disconnect
   data <- dbGetQuery(db, query)
   dbDisconnect(db)
   data
@@ -263,6 +284,7 @@ This method is very similar to the previous SQLite method, with the main differe
 
 ~~~
 library(RMySQL)
+
 options(mysql = list(
   "host" = "127.0.0.1",
   "port" = 3306,
@@ -273,24 +295,30 @@ databaseName <- "myshinydatabase"
 table <- "responses"
 
 saveData <- function(data) {
+  # Connect to the database
   db <- dbConnect(MySQL(), dbname = databaseName, host = options()$mysql$host, 
       port = options()$mysql$port, user = options()$mysql$user, 
       password = options()$mysql$password)
+  # Construct the update query by looping over the data fields
   query <- sprintf(
     "INSERT INTO %s (%s) VALUES ('%s')",
     table, 
     paste(names(data), collapse = ", "),
     paste(data, collapse = "', '")
   )
+  # Submit the update query and disconnect
   dbGetQuery(db, query)
   dbDisconnect(db)
 }
 
 loadData <- function() {
+  # Connect to the database
   db <- dbConnect(MySQL(), dbname = databaseName, host = options()$mysql$host, 
       port = options()$mysql$port, user = options()$mysql$user, 
       password = options()$mysql$password)
+  # Construct the fetching query
   query <- sprintf("SELECT * FROM %s", table)
+  # Submit the fetch query and disconnect
   data <- dbGetQuery(db, query)
   dbDisconnect(db)
   data
@@ -309,15 +337,20 @@ You can use the [`googlesheets`](https://github.com/jennybc/googlesheets) packag
 
 ~~~
 library(googlesheets)
+
 table <- "responses"
 
 saveData <- function(data) {
+  # Grab the Google Sheet
   sheet <- gs_title(table)
+  # Add the data as a new row
   gs_add_row(sheet, input = data)
 }
 
 loadData <- function() {
+  # Grab the Google Sheet
   sheet <- gs_title(table)
+  # Read the data
   gs_read_csv(sheet)
 }
 ~~~
@@ -340,6 +373,7 @@ You can use the [`rmongodb`](https://github.com/mongosoup/rmongodb) package to i
 
 ~~~
 library(rmongobd)
+
 options(mongodb = list(
   "host" = "ds012345.mongolab.com:61631",
   "username" = "myuser",
@@ -349,19 +383,29 @@ databaseName <- "myshinydatabase"
 collectionName <- "myshinydatabase.responses"
 
 saveData <- function(data) {
+  # Connect to the database
   db <- mongo.create(db = databaseName, host = options()$mongodb$host, 
       username = options()$mongodb$username, password = options()$mongodb$password)
-  mongo.insert(db, collectionName, mongo.bson.from.list(as.list(data)))
+  # Convert the data to BSON (Binary JSON)
+  data <- mongo.bson.from.list(as.list(data))
+  # Insert the data into the mongo collection and disconnect
+  mongo.insert(db, collectionName, data)
   mongo.disconnect(db)
 }
 
 loadData <- function() {
+  # Connect to the database
   db <- mongo.create(db = databaseName, host = options()$mongodb$host, 
       username = options()$mongodb$username, password = options()$mongodb$password)
+  # Get a list of all entries
   data <- mongo.find.all(db, collectionName)
+  # Read all entries into a list
   data <- lapply(data, data.frame, stringsAsFactors = FALSE)
+  # Concatenate all data together into one data.frame 
   data <- do.call(rbind, data)
-  data <- data[ , -1, drop = FALSE]  # remove the ID variable
+  # Remove the ID variable
+  data <- data[ , -1, drop = FALSE]
+  # Disconnect
   mongo.disconnect(db)
   data
 }
