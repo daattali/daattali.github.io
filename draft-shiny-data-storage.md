@@ -106,7 +106,7 @@ When saving multiple files, it's important to make sure that each file you save 
 
 Arbitrary data can be stored in a file either on the local file system or on remote services such as Dropbox or Amazon S3.
 
-### Local file system (**local**) {#local}
+### 1. Local file system (**local**) {#local}
 
 The most trivial way of saving data from Shiny is by simply saving each response as its own file on the current server. To load the data, we simply load all the files in the output directory. In our specific example, after loading all the data files we also want to concatenate them all together into one *data.frame*. 
 
@@ -135,7 +135,7 @@ loadData <- function() {
 }
 ~~~
 
-### Dropbox (**remote**) {#dropbox}
+### 2. Dropbox (**remote**) {#dropbox}
 
 If you want to store arbitrary files but use a remote hosted solution instead of the local file system (either because you're using *shinyapps.io* or simply because you want a more trusted system), you can store files on [Dropbox](https://www.dropbox.com). Dropbox is a file storing service which allows you to host any file, up to a certain maximum usage. The free account provides plenty of storage space and should be enough for storing most data from Shiny apps.
 
@@ -166,7 +166,7 @@ loadData <- function() {
 }
 ~~~
 
-### Amazon S3 (**remote**) {#s3}
+### 3. Amazon S3 (**remote**) {#s3}
 
 Another popular alternative to Dropbox for hosting files online is [Amazon S3](http://aws.amazon.com/s3/), or *S3* in short. Just like with Dropbox, you can host any type of file on S3, but instead of placing files inside directories, in S3 you place files inside a *bucket*. You can use the [RAmazonS3](http://www.omegahat.org/RAmazonS3/) package to interact with S3 from R. Note that the package is a few years old and is not under active development, so use it at your own risk.
 
@@ -209,11 +209,11 @@ loadData <- function() {
 
 If the data you want to save is structured and rectangular, storing it in a table would be a good option. Loosely defined, structured data means that each observation has the same fixed fields, and rectangular data means that all observations contain the same number of fields and fit into a nice 2D matrix. A *data.frame* is a great example of such data, and thus data.frames are ideal candidates to be stored in tables such as relational databases. 
 
-Structured data must have some *schema* that defines what the data fields are. In a *data.frme*, the number and names of the columns can be thought of as the schema. In tables with a header row, the header row can be thought of as the schema.
+Structured data must have some *schema* that defines what the data fields are. In a *data.frame*, the number and names of the columns can be thought of as the schema. In tables with a header row, the header row can be thought of as the schema.
 
 Structured data can be stored in a table either in a relational database (such as SQLite or MySQL) or in any other table-hosting service such as Google Sheets. If you have experience with database interfaces in other languages, you should note that R does not currently have support for prepared statements, so any SQL statements have to be constructed manually. One advantage of using a relational database is that with most databases it's safe to have multiple users using the database concurrently without running into race conditions thanks to [transaction support](https://en.wikipedia.org/wiki/Database_transaction).
 
-### SQLite (**local**) {#sqlite}
+### 4. SQLite (**local**) {#sqlite}
 
 SQLite is a very simple and light-weight relational database that is very easy to set up. SQLite is serverless, which means it stores the database locally on the same machine that is running the shiny app. You can use the [RSQLite](https://github.com/rstats-db/RSQLite) pacakge to interact with SQLite from R. To connect to a SQLite database in R, the only information you need to provide is the location of the database file.  
 
@@ -251,7 +251,7 @@ loadData <- function() {
 }
 ~~~
 
-### MySQL (**local or remote**) {#mysql}
+### 5. MySQL (**local or remote**) {#mysql}
 
 MySQL is a very popular relational database that is similar to SQLite but is more powerful. MySQL databases can either be hosted locally (on the same machine as the Shiny app) or online using a hosting service.
 
@@ -297,7 +297,7 @@ loadData <- function() {
 }
 ~~~
 
-### Google Sheets (**remote**) {#gsheets}
+### 6. Google Sheets (**remote**) {#gsheets}
 
 If you don't want to deal with the formality and rigidity of a database, another option for storing tabular data is in a Google Sheet. One nice advantage of Google Sheets is that they are easy to access from anywhere, but unlike databases, with Google Sheets data can be overwritten with multiple concurrent users.
 
@@ -328,7 +328,7 @@ If you have data that is not strictly fully structured but is also not completel
 
 There are many NoSQL databases available, but here we will only show how to use mongoDB.
 
-### MongoDB (**local or remote**) {#mongodb}
+### 7. MongoDB (**local or remote**) {#mongodb}
 
 MongoDB is one of the most popular NoSQL databases, and just like MySQL it can be hosted either locally or remotely. There are many web services that offer mongoDB hosting, including [MongoLab](https://mongolab.com/) which gives you free mongoDB databases. In MongoDB, entries (in our case, responses) are stored in a *collection* (the equivalent of an S3 bucket or a SQL table).
 
