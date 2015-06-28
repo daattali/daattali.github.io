@@ -36,8 +36,7 @@ The colours of course don't look as ugly as in the GIF, here's a screenshot of w
 
 ## Availability {#availability}
 
-`colourInput()` is available in [`shinyjs`](https://github.com/daattali/shinyjs).  
-You can either install it [from GitHub](https://github.com/daattali/shinyjs) with `devtools::install_github("daattali/shinyjs")` or from CRAN with `install.packages("shinyjs")`.
+`colourInput()` is available in [`shinyjs`](https://github.com/daattali/shinyjs).  You can either install it [from GitHub](https://github.com/daattali/shinyjs) with `devtools::install_github("daattali/shinyjs")` or from CRAN with `install.packages("shinyjs")`.
 
 ## Features {#features}
 
@@ -47,11 +46,23 @@ Using `colourInput` is extremely trivial if you've used Shiny, and it's as easy 
 
 ### Allowing "transparent" {#transparent}
 
-Since most functions in R that accept colours can also accept the value "transparent", `colourInput` has an option to allow selecting the "transparent" colour. By default, only real colours can be selected, so you need to use the `allowTransparent = TRUE` parameter. When this feature is turned on, a checkbox appears inside the input box. If the user checks the checkbox for "transparent", then the colour input is grayed out and the returned value of the input is `transparent`. This is the only case when the value returned from a `colourInput` is not a HEX value. When the checkbox is unchecked, the value of the input will be the last selected colour prior to selecting "transparent". By default, the text of the checkbox reads "Transparent", but you can change that with the `transparentText` parameter. For example, it might be more clear to a user to use the word "None" instead of "Transparent". Note that even if you change the checkbox text, the return value will still be `transparent` since that's the actual colour name in R.
+Since most functions in R that accept colours can also accept the value "transparent", `colourInput` has an option to allow selecting the "transparent" colour. By default, only real colours can be selected, so you need to use the `allowTransparent = TRUE` parameter. When this feature is turned on, a checkbox appears inside the input box.
+
+If the user checks the checkbox for "transparent", then the colour input is grayed out and the returned value of the input is `transparent`. This is the only case when the value returned from a `colourInput` is not a HEX value. When the checkbox is unchecked, the value of the input will be the last selected colour prior to selecting "transparent".
+
+By default, the text of the checkbox reads "Transparent", but you can change that with the `transparentText` parameter. For example, it might be more clear to a user to use the word "None" instead of "Transparent". Note that even if you change the checkbox text, the return value will still be `transparent` since that's the actual colour name in R.
+
+This is what a colour input with transparency enabled looks like
+
+[![allowTransparent demo]({{ site.url }}/img/blog/colourInput/allowTransparent.png)]({{ site.url }}/img/blog/colourInput/allowTransparent.png)
 
 ### How the chosen colour is shown inside the input {#showColour}
 
 By default, the colour input's background will match the selected colour and the text inside the input field will be the colour's HEX value. If that's too much for you, you can customize the input with the `showColour` parameter to either only show the text or only show the background colour.
+
+Here is what a colour input with each of the possible values for `showColour` looks like
+
+[![showColour demo]({{ site.url }}/img/blog/colourInput/showColour.png)]({{ site.url }}/img/blog/colourInput/showColour.png)
 
 ### Updating a colourInput {#update}
 
