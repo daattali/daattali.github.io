@@ -80,17 +80,17 @@ loadData <- function() {
 
 Before continuing further, make sure this basic app works for you and that you understand every line in it - it's not difficult, but take the two minutes to go through it. The code for this app is also available as a [gist](https://gist.github.com/daattali/c4db11d81f3c46a7c4a5) and you can run it either by copying all the code to your RStudio or by running `runGist("c4db11d81f3c46a7c4a5")`. 
 
-## Local vs remote storage
+# Local vs remote storage
 
 One important distinction to understand is *local storage* vs *remote storage*. Local storage means saving a file on the same machine that is running the Shiny application. Using functions such as `write.csv()`/`write.table()`/`saveRDS()` and others are considered local storage because they will save a file on the machine running the app. Local storage is generally faster, but it should only be used if you always have access to the machine that saved the files. Remote storage means saving data on another server, usually a reliable hosted server such as Dropbox, Amazon, or a hosted database.  One big advantage of using hosted remote storage solutions is that they are much more reliable and can generally be more trusted to keep your data alive and not corrupted. When going through the different storage type options below, keep in mind that if your Shiny app is hosted on *shinyapps.io*, you will have to use a remote storage method. Using local storage is only an option if you're hosting your own Shiny Server, though that comes at the price of having to manage a server and should only be done if you're comfortable with administering a server.
 
-## Persistent data storage methods
+# Persistent data storage methods
 
 Using the above Shiny app, we can use many different ways to store and retrieve responses. Here we will go through seven ways to achieve data persistence that can be easily integrated into Shiny apps. Each method will be explained, and to use a method as the storage type in the example app, use the given code for `saveData()` and `loadData()` to replace the existing functions.
 
 As a reminder, you can see all the seven different storage types being used, along with the exact code used, [in this live Shiny app](http://daattali.com/shiny/persistent-data-storage/).
 
-### Store arbitrary data in a file
+## Store arbitrary data in a file
 
 This is the most flexible option since files allow you to store any type of data, whether it's just a single value, a big *data.frame*, or any arbitrary data.  There are two common scenarios when using files to store data: either you have one file that gets repeatedly overwritten and used by all sessions (like the example in [Jeff Allen's article](http://shiny.rstudio.com/articles/share-data.html), or you save a new file every time there is new data.  In our case we'll use the latter, because we want to save each response as its own file (we can use the former option, but then we would introduce the potential for [race conditions](https://en.wikipedia.org/wiki/Race_condition#File_systems) which will overcomplicate the app).
 
@@ -98,7 +98,7 @@ When saving multiple files, it's important to make sure that each file you save 
 
 Arbitrary data can be stored in a file either on the local file system or on remote services such as Dropbox or Amazon S3.
 
-#### Local file system (**local**) {#local}
+### Local file system (**local**) {#local}
 
 The most trivial way of saving data from Shiny is by simply saving each response as its own file on the current server. To load the data, we simply load all the files in the output directory. In our specific example, after loading all the data files we also want to concatenate them all together into one *data.frame*. 
 
@@ -127,7 +127,7 @@ loadData <- function() {
 }
 ~~~
 
-#### Dropbox (**remote**) {#dropbox}
+### Dropbox (**remote**) {#dropbox}
 
 If you want to store arbitrary files but use a remote hosted solution instead of the local file system (either because you're using *shinyapps.io* or simply because you want a more trusted system), you can store files on [Dropbox](https://www.dropbox.com). Dropbox is a file storing service which allows you to host any file, up to a certain maximum usage. The free account provides plenty of storage space and should be enough for storing most data from Shiny apps.
 
@@ -158,7 +158,7 @@ loadData <- function() {
 }
 ~~~
 
-#### Amazon S3 (**remote**) {#s3}
+### Amazon S3 (**remote**) {#s3}
 
 Another popular alternative to Dropbox for hosting files online is [Amazon S3](http://aws.amazon.com/s3/), or *S3* in short. Just like with Dropbox, you can host any type of file on S3, but instead of placing files inside directories, in S3 you place files inside a *bucket*. You can use the [RAmazonS3](http://www.omegahat.org/RAmazonS3/) package to interact with S3 from R. Note that the package is a few years old and is not under active development, so use it at your own risk.
 
@@ -197,7 +197,7 @@ loadData <- function() {
 }
 ~~~
 
-### Store structured data in a table
+## Store structured data in a table
 
 If the data you want to save is structured and rectangular, storing it in a table would be a good option. Loosely defined, structured data means that each observation has the same fixed fields, and rectangular data means that all observations contain the same number of fields and fit into a nice 2D matrix. A *data.frame* is a great example of such data, and thus data.frames are ideal candidates to be stored in tables such as relational databases. 
 
@@ -205,7 +205,7 @@ Structured data must have some *schema* that defines what the data fields are. I
 
 Structured data can be stored in a table either in a relational database (such as SQLite or MySQL) or in any other table-hosting service such as Google Sheets. If you have experience with database interfaces in other languages, you should note that R does not currently have support for prepared statements, so any SQL statements have to be constructed manually. One advantage of using a relational database is that with most databases it's safe to have multiple users using the database concurrently without running into race conditions thanks to [transaction support](https://en.wikipedia.org/wiki/Database_transaction).
 
-#### SQLite (**local**) {#sqlite}
+### SQLite (**local**) {#sqlite}
 
 SQLite is a very simple and light-weight relational database that is very easy to set up. SQLite is serverless, which means it stores the database locally on the same machine that is running the shiny app. You can use the [RSQLite](https://github.com/rstats-db/RSQLite) pacakge to interact with SQLite from R. To connect to a SQLite database in R, the only information you need to provide is the location of the database file.  
 
@@ -243,7 +243,7 @@ loadData <- function() {
 }
 ~~~
 
-#### MySQL (**local or remote**) {#mysql}
+### MySQL (**local or remote**) {#mysql}
 
 MySQL is a very popular relational database that is similar to SQLite but is more powerful. MySQL databases can either be hosted locally (on the same machine as the Shiny app) or online using a hosting service.
 
@@ -289,7 +289,7 @@ loadData <- function() {
 }
 ~~~
 
-#### Google Sheets (**remote**) {#gsheets}
+### Google Sheets (**remote**) {#gsheets}
 
 If you don't want to deal with the formality and rigidity of a database, another option for storing tabular data is in a Google Sheet. One nice advantage of Google Sheets is that they are easy to access from anywhere, but unlike databases, with Google Sheets data can be overwritten with multiple concurrent users.
 
@@ -314,13 +314,13 @@ loadData <- function() {
 }
 ~~~
 
-### Store semi-structured data in a NoSQL database
+## Store semi-structured data in a NoSQL database
 
 If you have data that is not strictly fully structured but is also not completely free-form, a good middle ground can be using a NoSQL database. NoSQL databases can also be referred to as schemaless databases because there is no formal schema. NoSQL databases still offer some of the benefits of a traditional relational database, but are more flexible because every entry can have different fields from other entries. If your Shiny app needs to store data that has several fields but there isn't a unifying schema that the data can use, then using a NoSQL database can be a good option.
 
 There are many NoSQL databases available, but here we will only show how to use mongoDB.
 
-#### MongoDB (**local or remote**) {#mongodb}
+### MongoDB (**local or remote**) {#mongodb}
 
 MongoDB is one of the most popular NoSQL databases, and just like MySQL it can be hosted either locally or remotely. There are many web services that offer mongoDB hosting, including [MongoLab](https://mongolab.com/) which gives you free mongoDB databases. In MongoDB, entries (in our case, responses) are stored in a *collection* (the equivalent of an S3 bucket or a SQL table).
 
@@ -359,7 +359,7 @@ loadData <- function() {
 }
 ~~~
 
-## Conclusion
+# Conclusion
 
 In this guide, we learned about different methods for persistent data storage from Shiny apps and about the differences between them.  We learned about when each method should be used and what package and code to use in order to integrate it into a Shiny app. The difference betwen local and remote storage was also discussed briefly.  The following table can serve as a reminder of the different storage types and when to use them. Remember that any method that uses local storage can only be used on Shiny Server, while any method that uses remote storage can be also used on *shinyapps.io*.
 
