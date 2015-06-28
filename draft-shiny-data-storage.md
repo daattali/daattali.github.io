@@ -15,7 +15,7 @@ The three categories of data storage methods depend on the type of data you want
 - **Structured rectangular data** can be stored as a **table** in a **relational database or table-storage service**  ([SQLite](#sqlite), [MySQL](#mysql), [Google Sheets](#gsheets))
 - **Semi-structured data** can be stored as a **collection** in a **NoSQL database** ([MongoDB](#mongodb))
 
-## Basic Shiny app without data storage
+# Basic Shiny app without data storage
 
 To demonstrate how to store data using each storage types, we'll start with a simple form-submission Shiny app that collects some information from the user, stores their response, and shows all previous responses. Initially the app will only save responses within its R session, and we will learn how to modify the app to use each different storage type. Here is the code for the basic app that we will be using as our starting point. 
 
