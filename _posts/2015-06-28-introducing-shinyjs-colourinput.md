@@ -2,7 +2,7 @@
 layout: post
 title: "Shiny finally has a colour picker - use colourInput to select colours in Shiny apps"
 tags: [professional, rstats, r, r-bloggers, shiny, packages, shinyjs]
-date: 2015-06-28 11:00:00 -0700
+date: 2015-06-28 13:00:00 -0700
 ---
 
 > I don't always think Shiny is missing anything, but when I do - I fill in the gap myself.
