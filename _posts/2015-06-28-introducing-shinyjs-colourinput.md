@@ -94,4 +94,4 @@ It's been pointed out that this function is not exactly in-line with the general
 
 ---
 
-If anyone has any comments on feedback, both negative or positive, I'd love to [hear about it]({{ site.url }}/aboutme#contact)!
+If anyone has any comments or feedback, both negative or positive, I'd love to [hear about it]({{ site.url }}/aboutme#contact)! Feel free to open issues [on GitHb](https://github.com/daattali/shinyjs) if there are any problems.
