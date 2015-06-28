@@ -2,7 +2,7 @@
 layout: post
 title: "Shiny finally has a colour picker - use colourInput to select colours in Shiny apps"
 tags: [professional, rstats, r, r-bloggers, shiny, packages, shinyjs]
-date: 2015-06-28 10:00:00 -0700
+date: 2015-06-28 02:30:00 -0700
 ---
 
 > I don't always think Shiny is missing anything, but when I do - I fill in the gap myself.
@@ -88,6 +88,6 @@ If you're worried that maybe someone viewing your Shiny app on a phone won't be 
 
 ## Misc {#misc}
 
-In order to build `colourInput`, I needed to use a JavaScript colour picker library. After experimenting with many different colour pickers, I decided to use [this popular jQuery colour picker](https://github.com/claviska/jquery-minicolors) as a base, and extend it myself to make it geared to work with Shiny. I simplified much of the code and added some features that would make it much more readily integrate with Shiny. You can see the exact changes I've made in the [README for my version of the library](https://github.com/daattali/jquery-colourpicker). The main feature I added was the support for a "transparent" checkbox, and I also changed the colour picker colours to render completely in CSS instead of using images.
+In order to build `colourInput`, I needed to use a JavaScript colour picker library. After experimenting with many different colour pickers, I decided to use [this popular jQuery colour picker](https://github.com/claviska/jquery-minicolors) as a base, and extend it myself to make it geared to work with Shiny. I simplified much of the code and added some features that would make it integrate with Shiny much easier. You can see the exact changes I've made in the [README for my version of the library](https://github.com/daattali/jquery-colourpicker). The main features I added were the support for a "transparent" checkbox, the complete look of the input field was redesigned, and I also changed the colour picker colours to render completely in CSS instead of using images.
 
 It's been pointed out that this function is not exactly in-line with the general `shinyjs` idea, so it might not stay there forever. Ideally, this `colourInput` will soon be part of `shiny`, but until then I'll just keep it here until it finds a more loving home.
