@@ -91,3 +91,7 @@ If you're worried that maybe someone viewing your Shiny app on a phone won't be 
 In order to build `colourInput`, I needed to use a JavaScript colour picker library. After experimenting with many different colour pickers, I decided to use [this popular jQuery colour picker](https://github.com/claviska/jquery-minicolors) as a base, and extend it myself to make it geared to work with Shiny. I simplified much of the code and added some features that would make it integrate with Shiny much easier. You can see the exact changes I've made in the [README for my version of the library](https://github.com/daattali/jquery-colourpicker). The main features I added were the support for a "transparent" checkbox, the complete look of the input field was redesigned, and I also changed the colour picker colours to render completely in CSS instead of using images.
 
 It's been pointed out that this function is not exactly in-line with the general `shinyjs` idea, so it might not stay there forever. Ideally, this `colourInput` will soon be part of `shiny`, but until then I'll just keep it here until it finds a more loving home.
+
+---
+
+If anyone has any comments on feedback, both negative or positive, I'd love to [hear about it]({{ site.url }}/aboutme#contact)!
