@@ -112,7 +112,7 @@ The most trivial way of saving data from Shiny is by simply saving each response
 
 **Setup:** The only required setup is to create an output directory (`responses` in this case) and ensure the Shiny app has file permissions to read/write in that directory.  
 
-**Code**:
+**Code:**
 
 ~~~
 outputDir <- "responses"
@@ -144,6 +144,7 @@ This approach is similar to the previous approach using the local file system, w
 **Setup:** You need to have a Dropbox account and create a folder to store the responses. You will also need to add authentication to `rdrop2` using any approach [suggested in the package README](https://github.com/karthik/rdrop2#accessing-dropbox-on-shiny-and-remote-servers). The authentication approach I chose was to authenticate manually once and copy the resulting `.httr-oauth` file that gets created into the Shiny app's folder. 
 
 **Code:**
+
 ~~~
 library(rdrop2)
 outputDir <- "responses"
@@ -172,6 +173,7 @@ Another popular alternative to Dropbox for hosting files online is [Amazon S3](h
 **Setup:** You need to have an [Amazon Web Services](http://aws.amazon.com/) account and create an S3 bucket to store the responses. As the [package documentation](http://www.omegahat.org/RAmazonS3/s3amazon.html) explains, you will need to enable authentication by setting the `AmazonS3` global option.
 
 **Code:**
+
 ~~~
 library(RAmazonS3)
 s3BucketName <- "my-unique-s3-bucket-name"
@@ -222,6 +224,7 @@ To store data in a SQLite database, we loop over all the values we want to add a
 You also need to create a database and a table that will store all the responses. When creating the table, you need to set up the schema of the table to match the columns of your data. For example, if you want to save data with columns "name" and "email" then you can create the SQL table with `CREATE TABLE responses(name TEXT, email TEXT);`. Make sure the shiny app has write permissions on the database file and its parent directory.
 
 **Code:**
+
 ~~~
 library(RSQLite)
 sqlitePath <- "/path/to/sqlite/database"
@@ -257,6 +260,7 @@ This method is very similar to the previous SQLite method, with the main differe
 **Setup:** You need to create a MySQL database (either locally or using a web service that hosts MySQL databases) and a table that will store the responses. As with the setup for SQLite, you need to make sure the table schema is properly set up for your intended data.
 
 **Code:**
+
 ~~~
 library(RMySQL)
 options(mysql = list(
@@ -302,6 +306,7 @@ You can use the [googlesheets](https://github.com/jennybc/googlesheets) package 
 **Setup:** All you need to do is create a Google Sheet and set the top row with the names of the fields. You can either do that via a web browser or using the `googlesheets` package. You also need to have a Google account.
 
 **Code:**
+
 ~~~
 library(googlesheets)
 table <- "responses"
@@ -332,6 +337,7 @@ You can use the [rmongodb](https://github.com/mongosoup/rmongodb) package to int
 **Setup:** All you need to do is create a mongoDB database - either locally or using a web service such as MongoLab. Since there is no schema, it's not mandatory to create a collection before populating it.
 
 **Code:**
+
 ~~~
 library(rmongobd)
 options(mongodb = list(
