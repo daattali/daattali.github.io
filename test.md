@@ -36,7 +36,8 @@ The colours of course don't look as ugly as in the GIF, here's a screenshot of w
 
 ## Availability {#availability}
 
-`colourInput()` is available in [`shinyjs`](https://github.com/daattali/shinyjs). You can either install it [from GitHub](https://github.com/daattali/shinyjs) with `devtools::install_github("daattali/shinyjs")` or from CRAN with `install.packages("shinyjs")`.
+`colourInput()` is available in [`shinyjs`](https://github.com/daattali/shinyjs).  
+You can either install it [from GitHub](https://github.com/daattali/shinyjs) with `devtools::install_github("daattali/shinyjs")` or from CRAN with `install.packages("shinyjs")`.
 
 ## Features {#features}
 
