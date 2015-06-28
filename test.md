@@ -361,4 +361,12 @@ loadData <- function() {
 
 ## Conclusion
 
-show table
+| Method            |       Data type      | Local storage | Remote storage | R package    |
+|-------------------|:--------------------:|:-------------:|:--------------:|--------------|
+| Local file system | Arbitrary data       |      YES      |                | -            |
+| Dropbox           | Arbitrary data       |               |       YES      | rdrop2       |
+| Amazon S3         | Arbitrary data       |               |       YES      | RAmazonS3    |
+| SQLite            | Structured data      |      YES      |                | RSQLite      |
+| MySQL             | Structured data      |      YES      |       YES      | RMySQL       |
+| Google Sheets     | Structured data      |               |       YES      | googlesheets |
+| MongoDB           | Semi-structured data |      YES      |       YES      | rmongodb     |
