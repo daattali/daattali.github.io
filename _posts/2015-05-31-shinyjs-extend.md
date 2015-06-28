@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "New shinyjs version: Useful tools for any Shiny app developer + easily call JavaScript functions as R code"
-tags: [professional, rstats, r, r-bloggers, shiny, packages]
+tags: [professional, rstats, r, r-bloggers, shiny, packages, shinyjs]
 date: 2015-05-31 18:50:00 -0700
 ---
 
