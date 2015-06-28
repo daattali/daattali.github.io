@@ -26,17 +26,17 @@ Shiny has many useful input controls, but there was one that was always missing 
 
 ## Demo {#demo}
 
-[Click here for a demo of `colourInput` in a Shiny app](http://daattali.com/shiny/colourInput/) that shows some of its features. If you don't want to check out the Shiny app, here is a short GIF demonstrating the most basic functionality of `colourInput`.
+[Click here for a Shiny app showing several demos of colourInput](http://daattali.com/shiny/colourInput/). If you don't want to check out the Shiny app, here is a short GIF demonstrating the most basic functionality of `colourInput`.
 
 [![colourInput demo]({{ site.url }}/img/blog/colourInput/colourInputDemo.gif)]({{ site.url }}/img/blog/colourInput/colourInputDemo.gif)
 
-The colour of course don't look at ugly as in the GIF, here's a screenshot of what a plain `colourInput` looks like.
+The colours of course don't look as ugly as in the GIF, here's a screenshot of what a plain `colourInput` looks like.
 
 [![colourInput demo]({{ site.url }}/img/blog/colourInput/colourInputDemo.png)]({{ site.url }}/img/blog/colourInput/colourInputDemo.png)
 
 ## Availability {#availability}
 
-`colourInput()` is available in `shinyjs`. You can either install it [from GitHub](https://github.com/daattali/shinyjs) with `devtools::install_github("daattali/shinyjs")` or from CRAN with `install.packages("shinyjs")`.
+`colourInput()` is available in [`shinyjs`](https://github.com/daattali/shinyjs). You can either install it [from GitHub](https://github.com/daattali/shinyjs) with `devtools::install_github("daattali/shinyjs")` or from CRAN with `install.packages("shinyjs")`.
 
 ## Features {#features}
 
