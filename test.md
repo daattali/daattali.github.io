@@ -13,7 +13,7 @@ The three categories of data storage methods depend on the type of data you want
 
 - **Arbitrary data** can be stored as a **file** in some sort of a **file system** ([local file system](#local), [Dropbox](#dropbox), [Amazon S3](#s3))
 - **Structured rectangular data** can be stored as a **table** in a **relational database or table-storage service**  ([SQLite](#sqlite), [MySQL](#mysql), [Google Sheets](#gsheets))
-- **Semi-structured data** can be stored as a **collection** in a **schemaless database** ([MongoDB](#mongodb))
+- **Semi-structured data** can be stored as a **collection** in a **NoSQL database** ([MongoDB](#mongodb))
 
 ## Basic Shiny app without data storage
 
@@ -203,7 +203,7 @@ If the data you want to save is structured and rectangular, storing it in a tabl
 
 Structured data must have some *schema* that defines what the data fields are. In a *data.frme*, the number and names of the columns can be thought of as the schema. In tables with a header row, the header row can be thought of as the schema.
 
-Structured data can be stored in a table either in a relational database (such as SQLite or MySQL) or in any other table-hosting service such as Google Sheets. If you have experience with database interfaces in other languages, you should note that R does not currently have support for prepared statements, so any SQL statements have to be constructed manually.
+Structured data can be stored in a table either in a relational database (such as SQLite or MySQL) or in any other table-hosting service such as Google Sheets. If you have experience with database interfaces in other languages, you should note that R does not currently have support for prepared statements, so any SQL statements have to be constructed manually. One advantage of using a relational database is that with most databases it's safe to have multiple users using the database concurrently without running into race conditions thanks to [transaction support](https://en.wikipedia.org/wiki/Database_transaction).
 
 #### SQLite (**local**) {#sqlite}
 
@@ -291,7 +291,7 @@ loadData <- function() {
 
 #### Google Sheets (**remote**) {#gsheets}
 
-If you don't want to deal with the formality and rigidity of a database, another option for storing tabular data is in a Google Sheet. One nice advantage of Google Sheets is that they are easy to access from anywhere, but unfortunately the Google API is a bit slow so it does take an extra 1-2 seconds over other methods.
+If you don't want to deal with the formality and rigidity of a database, another option for storing tabular data is in a Google Sheet. One nice advantage of Google Sheets is that they are easy to access from anywhere, but unlike databases, with Google Sheets data can be overwritten with multiple concurrent users.
 
 You can use the [googlesheets](https://github.com/jennybc/googlesheets) package to interact with Google Sheets from R. To connect to a specific sheet, you will need either the sheet's title or key (preferably key, as it's unique). To store or retrieve data from a Google Sheet is very easy, as the code below shows.
 
@@ -314,19 +314,48 @@ loadData <- function() {
 }
 ~~~
 
-#### Local file system (**local**) {#local}
+### Store semi-structured data in a NoSQL database
 
-sdfdss
+If you have data that is not strictly fully structured but is also not completely free-form, a good middle ground can be using a NoSQL database. NoSQL databases can also be referred to as schemaless databases because there is no formal schema. NoSQL databases still offer some of the benefits of a traditional relational database, but are more flexible because every entry can have different fields from other entries. If your Shiny app needs to store data that has several fields but there isn't a unifying schema that the data can use, then using a NoSQL database can be a good option.
 
-**Setup:**
+There are many NoSQL databases available, but here we will only show how to use mongoDB.
+
+#### MongoDB (**local or remote**) {#mongodb}
+
+MongoDB is one of the most popular NoSQL databases, and just like MySQL it can be hosted either locally or remotely. There are many web services that offer mongoDB hosting, including [MongoLab](https://mongolab.com/) which gives you free mongoDB databases. In MongoDB, entries (in our case, responses) are stored in a *collection* (the equivalent of an S3 bucket or a SQL table).
+
+You can use the [rmongodb](https://github.com/mongosoup/rmongodb) package to interact with mongoDB from R. Similarly to the methods using the relational databases, all we need to do in order to save/load data is connect to the database and submit the equivalent of an update or select query. To connect to the database you need to provide the following: db, host, username, password. When saving data to mongoDB, the data needs to be converted to BSON (binary JSON) in order to be inserted into a mongoDB collection. MongoDB automatically adds a unique "id" field to every entry, so when retrieving data, we manually remove that field.
+
+**Setup:** All you need to do is create a mongoDB database - either locally or using a web service such as MongoLab. Since there is no schema, it's not mandatory to create a collection before populating it.
 
 **Code:**
 
 ~~~
+library(rmongobd)
+options(mongodb = list(
+  "host" = "ds012345.mongolab.com:61631",
+  "username" = "myuser",
+  "password" = "mypassword"
+))
+databaseName <- "myshinydatabase"
+collectionName <- "myshinydatabase.responses"
+
 saveData <- function(data) {
+  db <- mongo.create(db = databaseName, host = options()$mongodb$host, 
+      username = options()$mongodb$username, password = options()$mongodb$password)
+  mongo.insert(db, collectionName, mongo.bson.from.list(as.list(data)))
+  mongo.disconnect(db)
 }
 
 loadData <- function() {
+  db <- mongo.create(db = databaseName, host = options()$mongodb$host, 
+      username = options()$mongodb$username, password = options()$mongodb$password)
+  data <- mongo.find.all(db, collectionName)
+  data <- lapply(data, data.frame, stringsAsFactors = FALSE)
+  data <- do.call(rbind, data)
+  data <- data[ , -1, drop = FALSE]  # remove the ID variable
+  mongo.disconnect(db)
+  data
 }
 ~~~
 
