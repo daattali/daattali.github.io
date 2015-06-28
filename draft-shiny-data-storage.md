@@ -168,7 +168,7 @@ loadData <- function() {
 
 ### 3. Amazon S3 (**remote**) {#s3}
 
-Another popular alternative to Dropbox for hosting files online is [Amazon S3](http://aws.amazon.com/s3/), or *S3* in short. Just like with Dropbox, you can host any type of file on S3, but instead of placing files inside directories, in S3 you place files inside a *bucket*. You can use the [RAmazonS3](http://www.omegahat.org/RAmazonS3/) package to interact with S3 from R. Note that the package is a few years old and is not under active development, so use it at your own risk.
+Another popular alternative to Dropbox for hosting files online is [Amazon S3](http://aws.amazon.com/s3/), or *S3* in short. Just like with Dropbox, you can host any type of file on S3, but instead of placing files inside directories, in S3 you place files inside a *bucket*. You can use the [`RAmazonS3`](http://www.omegahat.org/RAmazonS3/) package to interact with S3 from R. Note that the package is a few years old and is not under active development, so use it at your own risk.
 
 **Setup:** You need to have an [Amazon Web Services](http://aws.amazon.com/) account and create an S3 bucket to store the responses. As the [package documentation](http://www.omegahat.org/RAmazonS3/s3amazon.html) explains, you will need to enable authentication by setting the `AmazonS3` global option.
 
@@ -215,9 +215,9 @@ Structured data can be stored in a table either in a relational database (such a
 
 ### 4. SQLite (**local**) {#sqlite}
 
-SQLite is a very simple and light-weight relational database that is very easy to set up. SQLite is serverless, which means it stores the database locally on the same machine that is running the shiny app. You can use the [RSQLite](https://github.com/rstats-db/RSQLite) pacakge to interact with SQLite from R. To connect to a SQLite database in R, the only information you need to provide is the location of the database file.  
+SQLite is a very simple and light-weight relational database that is very easy to set up. SQLite is serverless, which means it stores the database locally on the same machine that is running the shiny app. You can use the [`RSQLite`](https://github.com/rstats-db/RSQLite) package to interact with SQLite from R. To connect to a SQLite database in R, the only information you need to provide is the location of the database file.  
 
-To store data in a SQLite database, we loop over all the values we want to add and use a [SQL INSERT](http://www.w3schools.com/sql/sql_insert.asp) statement to add the data to the database. It's essential that the schema ofthe database matches exactly the names of the columns in the Shiny data, otherwise the SQL statement will fail. To load all previous data, we use a plain [SQL SELECT *](http://www.w3schools.com/sql/sql_select.asp) statement to get all the data from the database table.
+To store data in a SQLite database, we loop over all the values we want to add and use a [SQL INSERT](http://www.w3schools.com/sql/sql_insert.asp) statement to add the data to the database. It's essential that the schema of the database matches exactly the names of the columns in the Shiny data, otherwise the SQL statement will fail. To load all previous data, we use a plain [SQL SELECT *](http://www.w3schools.com/sql/sql_select.asp) statement to get all the data from the database table.
 
 **Setup:** First, you must have SQLite installed on your server. Installation is fairly easy; for example, on an Ubuntu machine you can install SQLite with `sudo apt-get install sqlite3 libsqlite3-dev`.
 
@@ -255,7 +255,7 @@ loadData <- function() {
 
 MySQL is a very popular relational database that is similar to SQLite but is more powerful. MySQL databases can either be hosted locally (on the same machine as the Shiny app) or online using a hosting service.
 
-This method is very similar to the previous SQLite method, with the main difference being where the database is hosted. You can use the [RMySQL](https://github.com/rstats-db/RMySQL) package to interact with MySQL from R. Since MySQL databases can be hosted on remote servers, the command to connect to the server invovles more parameters, but the rest of the saving/loading code is identical to the SQLite approach. To connect to a MySQL database, you need to provide the following parameters: host, port, dbname, user, password.
+This method is very similar to the previous SQLite method, with the main difference being where the database is hosted. You can use the [`RMySQL`](https://github.com/rstats-db/RMySQL) package to interact with MySQL from R. Since MySQL databases can be hosted on remote servers, the command to connect to the server involves more parameters, but the rest of the saving/loading code is identical to the SQLite approach. To connect to a MySQL database, you need to provide the following parameters: host, port, dbname, user, password.
 
 **Setup:** You need to create a MySQL database (either locally or using a web service that hosts MySQL databases) and a table that will store the responses. As with the setup for SQLite, you need to make sure the table schema is properly set up for your intended data.
 
@@ -301,9 +301,9 @@ loadData <- function() {
 
 If you don't want to deal with the formality and rigidity of a database, another option for storing tabular data is in a Google Sheet. One nice advantage of Google Sheets is that they are easy to access from anywhere, but unlike databases, with Google Sheets data can be overwritten with multiple concurrent users.
 
-You can use the [googlesheets](https://github.com/jennybc/googlesheets) package to interact with Google Sheets from R. To connect to a specific sheet, you will need either the sheet's title or key (preferably key, as it's unique). To store or retrieve data from a Google Sheet is very easy, as the code below shows.
+You can use the [`googlesheets`](https://github.com/jennybc/googlesheets) package to interact with Google Sheets from R. To connect to a specific sheet, you will need either the sheet's title or key (preferably key, as it's unique). To store or retrieve data from a Google Sheet is very easy, as the code below shows.
 
-**Setup:** All you need to do is create a Google Sheet and set the top row with the names of the fields. You can either do that via a web browser or using the `googlesheets` package. You also need to have a Google account.
+**Setup:** All you need to do is create a Google Sheet and set the top row with the names of the fields. You can either do that via a web browser or using the `googlesheets` package. You also need to have a Google account. The `googlesheets` package uses the same API that `rdrop2` uses, and thus also needs to get authenticated in a similar fashion, such as by copying a valid `.httr-oauth` file to your Shiny directory.
 
 **Code:**
 
@@ -324,15 +324,15 @@ loadData <- function() {
 
 ## Store semi-structured data in a NoSQL database
 
-If you have data that is not strictly fully structured but is also not completely free-form, a good middle ground can be using a NoSQL database. NoSQL databases can also be referred to as schemaless databases because there is no formal schema. NoSQL databases still offer some of the benefits of a traditional relational database, but are more flexible because every entry can have different fields from other entries. If your Shiny app needs to store data that has several fields but there isn't a unifying schema that the data can use, then using a NoSQL database can be a good option.
+If you have data that is not strictly fully structured but is also not completely free-form, a good middle ground can be using a NoSQL database. NoSQL databases can also be referred to as schemaless databases because there is no formal schema. NoSQL databases still offer some of the benefits of a traditional relational database, but are more flexible because every entry can have different fields from other entries. If your Shiny app needs to store data that has several fields but there isn't a unifying schema that all the data can use, then using a NoSQL database can be a good option.
 
 There are many NoSQL databases available, but here we will only show how to use mongoDB.
 
 ### 7. MongoDB (**local or remote**) {#mongodb}
 
-MongoDB is one of the most popular NoSQL databases, and just like MySQL it can be hosted either locally or remotely. There are many web services that offer mongoDB hosting, including [MongoLab](https://mongolab.com/) which gives you free mongoDB databases. In MongoDB, entries (in our case, responses) are stored in a *collection* (the equivalent of an S3 bucket or a SQL table).
+MongoDB is one of the most popular NoSQL databases, and just like MySQL it can be hosted either locally or remotely. There are many web services that offer mongoDB hosting, including [MongoLab](https://mongolab.com/) which gives you free mongoDB databases. In mongoDB, entries (in our case, responses) are stored in a *collection* (the equivalent of an S3 bucket or a SQL table).
 
-You can use the [rmongodb](https://github.com/mongosoup/rmongodb) package to interact with mongoDB from R. Similarly to the methods using the relational databases, all we need to do in order to save/load data is connect to the database and submit the equivalent of an update or select query. To connect to the database you need to provide the following: db, host, username, password. When saving data to mongoDB, the data needs to be converted to BSON (binary JSON) in order to be inserted into a mongoDB collection. MongoDB automatically adds a unique "id" field to every entry, so when retrieving data, we manually remove that field.
+You can use the [`rmongodb`](https://github.com/mongosoup/rmongodb) package to interact with mongoDB from R. Similarly to the methods using the relational databases, all we need to do in order to save/load data is connect to the database and submit the equivalent of an update or select query. To connect to the database you need to provide the following: db, host, username, password. When saving data to mongoDB, the data needs to be converted to BSON (binary JSON) in order to be inserted into a mongoDB collection. MongoDB automatically adds a unique "id" field to every entry, so when retrieving data, we manually remove that field.
 
 **Setup:** All you need to do is create a mongoDB database - either locally or using a web service such as MongoLab. Since there is no schema, it's not mandatory to create a collection before populating it.
 
@@ -369,7 +369,7 @@ loadData <- function() {
 
 # Conclusion
 
-In this guide, we learned about different methods for persistent data storage from Shiny apps and about the differences between them.  We learned about when each method should be used and what package and code to use in order to integrate it into a Shiny app. The difference betwen local and remote storage was also discussed briefly.  The following table can serve as a reminder of the different storage types and when to use them. Remember that any method that uses local storage can only be used on Shiny Server, while any method that uses remote storage can be also used on *shinyapps.io*.
+In this guide, we learned about different methods for persistent data storage in Shiny apps and about the differences between them.  We learned when each method should be used and what package and code to use in order to integrate it into a Shiny app. The difference betwen local and remote storage was also discussed briefly.  The following table can serve as a reminder of the different storage types and when to use them. Remember that any method that uses local storage can only be used on Shiny Server, while any method that uses remote storage can be also used on *shinyapps.io*.
 
 | Method            |       Data type      | Local storage | Remote storage | R package    |
 |-------------------|----------------------|:-------------:|:--------------:|--------------|
