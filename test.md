@@ -9,7 +9,7 @@ date: 2015-06-28 10:00:00 -0700
 
 That was meant to be read as The Most Interesting Man In The World, but now that I think about it - maybe he's not the type of guy who would be building Shiny R packages...
 
-Shiny has many useful input controls, but there was one that was always missing until today - a colour picker.  There have been many times when I wanted to allow users in a Shiny app to select a colour, and I've seen that feature being requested multiple times on different online boards, so I decided to make my own such input control.  The package [**`shinyjs`**](https://github.com/daattali/shinyjs) now has a **`colourInput()`** function and, of course, a corresponding **`updateColourInput()`**. 
+Shiny has many useful input controls, but there was one that was always missing until today - a colour picker.  The package [**`shinyjs`**](https://github.com/daattali/shinyjs) now has a **`colourInput()`** function and, of course, a corresponding **`updateColourInput()`**. There have been many times when I wanted to allow users in a Shiny app to select a colour, and I've seen that feature being requested multiple times on different online boards, so I decided to make my own such input control.  
 
 ## Table of contents
 
