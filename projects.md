@@ -49,6 +49,10 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 - **[deanattali.com](http://deanattali.com)** - the site you're currently on.  Just a simple site to have some virtual presence.
 
+## Paid articles
+
+- [How to Set Up Shiny Server on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-shiny-server-on-ubuntu-14-04) - published on [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99).
+
 ## Misc
 
 - **[Minesweeper](./files/Minesweeper)** - tiny Minesweeper game I built as part of the interview process with Airbnb.  It's not fancy at all, but it's the best I could do in the two hours they allotted me.
