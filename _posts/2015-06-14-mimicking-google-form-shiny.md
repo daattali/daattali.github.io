@@ -56,9 +56,9 @@ The following packages need to be installed in order for all the code to work:
 
 # Build the basic UI (inputs) {#build-inputs}
 
-I generally prefer to split shiny apps into a `ui.R` and `server.R` file (with an additional `helpers.R` or `globals.R` if necessary), but for simplicity, I'll place all the app code together in this tutorial.  
+I generally prefer to split shiny apps into a `ui.R` and `server.R` file (with an additional `helpers.R` or `globals.R` if necessary), but for simplicity, I'll place all the app code together in this tutorial. (In case you didn't know: Shiny apps don't have to be broken up into separate `ui.R` and `server.R` files, they can be completely defined in one file [as this Shiny article explains](http://shiny.rstudio.com/articles/app-formats.html)) 
 
-Create a new file named `app.R` and copy the following code into it to build the input elements. (In case you didn't know: Shiny apps don't have to be broken up into separate `ui.R` and `server.R` files, they can be completely defined in one file [as this Shiny article explains](http://shiny.rstudio.com/articles/app-formats.html))
+Create a new file named `app.R` and copy the following code into it to build the input elements. 
 
 ~~~
 shinyApp(
