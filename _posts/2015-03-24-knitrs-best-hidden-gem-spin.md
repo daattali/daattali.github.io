@@ -3,6 +3,7 @@ layout: post
 title: "Knitr's best hidden gem: spin"
 subtitle: Stop knitting & start spinning - spin can help you write reports much faster and avoid repeating yourself
 tags: [professional, rstats, r, r-bloggers, knitr, spin]
+permalink: /2015/03/24/knitrs-best-hidden-gem-spin
 ---
 
 Anyone who loves the idea of dynamic report generation with R is probably a big fan of [`knitr`](http://yihui.name/knitr/) and its flagship function - `knit`.  But not many people seem to know about `knit`'s awesome cousin - `spin`. 
