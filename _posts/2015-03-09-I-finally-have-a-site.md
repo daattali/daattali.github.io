@@ -3,7 +3,7 @@ layout: post
 title: I finally have a site!
 tags: [personal, meta, blog, family]
 fb-img: "http://deanattali.com/img/blog/2014-family-livingroom.jpeg"
-permalink: /2015/03/09/I-finally-have-a-site1.html
+permalink: /2015/03/09/I-finally-have-a-site1/
 ---
 
 #### Welcome to Dean Attali on the web!
