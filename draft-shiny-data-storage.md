@@ -9,7 +9,7 @@ The most trivial method of storing data - saving a file to the local machine (fo
 
 The main purpose of this guide is to not only explain in theory how to store data in Shiny apps, but also show full working examples, in order to make it clear and easy for anyone to use these concepts in their own apps. In this guide we'll learn about each of the three main ways to store data, and see how to implement each one in a real-world Shiny app. This post will introduce seven specific storage methods and will include complete working code for each that shows how to integrate each one into a Shiny app.
 
-As a complement to this article, you can see a [live demo of a Shiny app](http://daattali.com/shiny/persistent-data-storage/) that uses each of the seven storage methods to save and load data.
+As a complement to this article, you can see a [live demo of a Shiny app](http://daattali.com/shiny/persistent-data-storage/) that uses each of the seven storage methods to save and load data ([source code on GitHub](https://github.com/daattali/shiny-server/tree/master/persistent-data-storage)).
 
 The three categories of data storage methods depend on the type of data you want to store:
 
@@ -19,7 +19,9 @@ The three categories of data storage methods depend on the type of data you want
 
 # Basic Shiny app without data storage
 
-To demonstrate how to store data using each storage type, we'll start with a simple form-submission Shiny app that collects some information from the user, stores their response, and shows all previous responses. Initially the app will only save responses within its R session, and we will later learn how to modify the app to use each different storage type. Here is the code for the basic app that we will be using as our starting point. 
+To demonstrate how to store data using each storage type, we'll start with a simple form-submission Shiny app that collects some information from the user, stores their response, and shows all previous responses. Initially the app will only save responses within its R session, and we will later learn how to modify the app to use each different storage type.
+
+Here is the code for the basic app that we will be using as our starting point - copy it into a file named `app.R`. (In case you didn't know: Shiny apps don't *have to* be broken up into separate `ui.R` and `server.R` files, they can be completely defined in one file [as this Shiny article explains](http://shiny.rstudio.com/articles/app-formats.html))
 
 ~~~
 library(shiny)
@@ -97,6 +99,18 @@ When going through the different storage type options below, keep in mind that i
 Using the above Shiny app, we can use many different ways to store and retrieve responses. Here we will go through seven ways to achieve data persistence that can be easily integrated into Shiny apps. Each method will be explained, and to use a method as the storage type in the example app, use the given code for `saveData()` and `loadData()` to replace the existing functions.
 
 As a reminder, you can see all the seven different storage types being used, along with the exact code used, [in this live Shiny app](http://daattali.com/shiny/persistent-data-storage/).
+
+Here is a summary of the different storage types we will learn to use.
+
+| Method            |       Data type      | Local storage | Remote storage | R package    |
+|-------------------|----------------------|:-------------:|:--------------:|--------------|
+| Local file system | Arbitrary data       |      YES      |                | -            |
+| Dropbox           | Arbitrary data       |               |       YES      | rdrop2       |
+| Amazon S3         | Arbitrary data       |               |       YES      | RAmazonS3    |
+| SQLite            | Structured data      |      YES      |                | RSQLite      |
+| MySQL             | Structured data      |      YES      |       YES      | RMySQL       |
+| Google Sheets     | Structured data      |               |       YES      | googlesheets |
+| MongoDB           | Semi-structured data |      YES      |       YES      | rmongodb     |
 
 ## Store arbitrary data in a file
 
@@ -331,7 +345,7 @@ If you don't want to deal with the formality and rigidity of a database, another
 
 You can use the [`googlesheets`](https://github.com/jennybc/googlesheets) package to interact with Google Sheets from R. To connect to a specific sheet, you will need either the sheet's title or key (preferably key, as it's unique). To store or retrieve data from a Google Sheet is very easy, as the code below shows.
 
-**Setup:** All you need to do is create a Google Sheet and set the top row with the names of the fields. You can either do that via a web browser or using the `googlesheets` package. You also need to have a Google account. The `googlesheets` package uses the same API that `rdrop2` uses, and thus also needs to get authenticated in a similar fashion, such as by copying a valid `.httr-oauth` file to your Shiny directory.
+**Setup:** All you need to do is create a Google Sheet and set the top row with the names of the fields. You can either do that via a web browser or using the `googlesheets` package. You also need to have a Google account. The `googlesheets` package uses a similar approach to authentication as `rdrop2`, and thus also needs to get authenticated in a similar fashion, such as by copying a valid `.httr-oauth` file to your Shiny directory.
 
 **Code:**
 
@@ -365,7 +379,7 @@ There are many NoSQL databases available, but here we will only show how to use 
 
 MongoDB is one of the most popular NoSQL databases, and just like MySQL it can be hosted either locally or remotely. There are many web services that offer mongoDB hosting, including [MongoLab](https://mongolab.com/) which gives you free mongoDB databases. In mongoDB, entries (in our case, responses) are stored in a *collection* (the equivalent of an S3 bucket or a SQL table).
 
-You can use the [`rmongodb`](https://github.com/mongosoup/rmongodb) package to interact with mongoDB from R. Similarly to the methods using the relational databases, all we need to do in order to save/load data is connect to the database and submit the equivalent of an update or select query. To connect to the database you need to provide the following: db, host, username, password. When saving data to mongoDB, the data needs to be converted to BSON (binary JSON) in order to be inserted into a mongoDB collection. MongoDB automatically adds a unique "id" field to every entry, so when retrieving data, we manually remove that field.
+You can use either the [`rmongodb`](https://github.com/mongosoup/rmongodb) or [`mongolite`](https://github.com/jeroenooms/mongolite) package to interact with mongoDB from R. In this example we will use `rmongodb`, but `mongolite` is a perfectly good alternative. Similarly to the methods using the relational databases, all we need to do in order to save/load data is connect to the database and submit the equivalent of an update or select query. To connect to the database you need to provide the following: db, host, username, password. When saving data to mongoDB, the data needs to be converted to BSON (binary JSON) in order to be inserted into a mongoDB collection. MongoDB automatically adds a unique "id" field to every entry, so when retrieving data, we manually remove that field.
 
 **Setup:** All you need to do is create a mongoDB database - either locally or using a web service such as MongoLab. Since there is no schema, it's not mandatory to create a collection before populating it.
 
