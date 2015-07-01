@@ -122,7 +122,7 @@ Here is a summary of the different storage types we will learn to use.
 
 This is the most flexible option to store data since files allow you to store any type of data, whether it is a single value, a big *data.frame*, or any arbitrary data. There are two common cases for using files to store data: 
 
-1. you have one file that gets repeatedly overwritten and used by all sessions (like the example in [Jeff Allen's article](http://shiny.rstudio.com/articles/share-data.html)
+1. you have one file that gets repeatedly overwritten and used by all sessions (like the example in [Jeff Allen's article](http://shiny.rstudio.com/articles/share-data.html)), or
 2. you save a new file every time there is new data 
  
 In our case we'll use the latter because we want to save each response as its own file. We can use the former option, but then we would introduce the potential for [race conditions](https://en.wikipedia.org/wiki/Race_condition#File_systems) which will overcomplicate the app. A race condition happens when two users submit a response at the exact same time, but since the file cannot deal with multiple edits simultaneously, one user will overwrite the response of the other user. 
