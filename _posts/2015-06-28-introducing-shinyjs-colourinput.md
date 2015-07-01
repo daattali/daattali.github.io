@@ -20,6 +20,7 @@ Shiny has many useful input controls, but there was one that was always missing 
   - [Simple and familiar](#simple)
   - [Allowing "transparent"](#transparent)
   - [How the chosen colour is shown inside the input](#showColour)
+  - [Limited colour selection](#limited)
   - [Updating a colourInput](#update)
   - [Flexible colour specification](#colour-spec)
   - [Works on any device](#compatibility)
@@ -73,6 +74,14 @@ As with all other Shiny inputs, `colourInput` can be updated with the `updateCol
 updateColourInput(session, "col", label = "COLOUR:", value = "orange",
   showColour = "background", allowTransparent = TRUE, transparentText = "None")
 ~~~
+
+### Limited colour selection {#limited}
+
+This feature is available in `shinyjs` v0.0.8.0, which is currently only on GitHub and not on CRAN.
+
+If you want to only allow the user to select a colour from a specific list of colours, rather than any possible HEX colour, you can use the `palette = "limited"` parameter.  By default, the limited palette will contain 40 common colours, but you can supply your own list of colours using the `allowedCols` parameter. Here is an image of the default limited colour palette.
+
+[![colourInput demo]({{ site.url }}/img/blog/colourInput/limited-palette.png)]({{ site.url }}/img/blog/colourInput/limited-palette.png)
 
 ### Flexible colour specification {#colour-spec}
 
