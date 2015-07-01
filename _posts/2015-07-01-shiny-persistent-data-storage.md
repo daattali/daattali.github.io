@@ -5,7 +5,7 @@ tags: [professional, rstats, r, r-bloggers, shiny]
 date: 2015-07-01 11:00:00 -0700
 ---
 
-> *This article is also published on [RStudio's Shiny Articles](http://shiny.rstudio.com/articles/persistent-data-storage.html)*
+> This article is also published on [RStudio's Shiny Articles](http://shiny.rstudio.com/articles/persistent-data-storage.html)
 
 Shiny apps often need to save data, either to load it back into a different session or to simply log some information. However, common methods of storing data from R may not work well with Shiny. Functions like `write.csv()` and `saveRDS()` save data locally, but consider how [shinyapps.io](http://www.shinyapps.io/) works. Shinyapps.io is a popular server for hosting Shiny apps. It is designed to distribute your Shiny app across different servers, which means that if a file is saved during one session on some server, then loading the app again later will probably direct you to a different server where the previously saved file doesn’t exist. 
 
