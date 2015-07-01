@@ -6,7 +6,7 @@ date: 2015-06-14 5:30:00 -0700
 permalink: /2015/06/14/mimicking-google-form-shiny
 ---
 
-In this post we will walk through the steps required to build a shiny app that mimicks a Google Form. It will allow users to submit responses to some input fields, save their data, and allow admins to view the submitted responses.  Like many of my other posts, it may seem lengthy, but that's only because I like to go into fine details to ensure everything is as foolproof and reproducible as possible.
+In this post we will walk through the steps required to build a shiny app that mimicks a Google Form. It will allow users to submit responses to some input fields, save their data, and allow admins to view the submitted responses.  Like many of my other posts, it may seem lengthy, but that's only because I like to go into fine details to ensure everything is as foolproof and reproducible as possible. In a [follow-up article](http://deanattali.com/blog/shiny-persistent-data-storage/) you can learn about different methods to store data in Shiny apps.
 
 # Table of contents
 
@@ -44,7 +44,7 @@ The main idea is simple: create a UI with some inputs that users need to fill ou
 
 ### Note about persistent storage {#note-storage}
 
-One major component of this app is storing the user-submitted data in a way that would allow it to be retrieved later. This is an important topic of its own, and in a few days I will write a detailed post about all the different storage options and how to use them. In this tutorial I will use the simplest approach for saving the data: every submission will be saved to its own `.csv` file.
+One major component of this app is storing the user-submitted data in a way that would allow it to be retrieved later. This is an important topic of its own, and I wrote a [separate article](http://deanattali.com/blog/shiny-persistent-data-storage/) detailing the different storage options and how to use them. That article is also featured on RStudio's official Shiny articles because it's such an important skill. In this tutorial I will use the simplest approach for saving the data: every submission will be saved to its own `.csv` file.
 
 **NOTE:** this method should only be used if you have your own shiny server or are running the app on your own machine, and should not be used if your app is hosted on `shinyapps.io`. Using the local filesystem in shinyapps.io is a bad idea because every time your app is launched it will be on a different machine, and it will not have access to files saved by other users who were running the app on a different machine. If using shinyapps.io, you will need to use remote storage, which will be discussed in my next post. You can get a bit more information about why shinyapps.io can't be used for local storage [in the shiny docs](http://shiny.rstudio.com/articles/share-data.html).
 
@@ -444,3 +444,5 @@ That's it! You are now ready to create forms with shiny apps.  You can see what 
 # Updates {#updates}
 
 **[2015-06-15]** As mentioned in the comments below, if you don't have a Pro account but would still like to implement the idea of admins and "authentication", there are other ways to achieve a similar result. I won't go into any of them because I haven't done that, but it's definitely possible to have an input field that accepts a password and if you type in an admin password, the tables will be shown. That's just one example, you can get more creative with the specifics, but essentially you just need a way to return a TRUE/FALSE value from `isAdmin()`.
+
+**[2015-07-01]** Added a link to the [follow-up post](http://deanattali.com/blog/shiny-persistent-data-storage/) on how to store data in Shiny apps.
