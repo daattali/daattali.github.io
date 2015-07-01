@@ -5,6 +5,8 @@ tags: [professional, rstats, r, r-bloggers, shiny]
 date: 2015-07-01 11:00:00 -0700
 ---
 
+*This article is also published at [RStudio's official Shiny Articles](http://shiny.rstudio.com/articles/persistent-data-storage.html)*
+
 Shiny apps often need to save data, either to load it back into a different session or to simply log some information. However, common methods of storing data from R may not work well with Shiny. Functions like `write.csv()` and `saveRDS()` save data locally, but consider how [shinyapps.io](http://www.shinyapps.io/) works. Shinyapps.io is a popular server for hosting Shiny apps. It is designed to distribute your Shiny app across different servers, which means that if a file is saved during one session on some server, then loading the app again later will probably direct you to a different server where the previously saved file doesn’t exist. 
 
 On other occasions, you may use data that is too big to store locally with R in an efficient manner.
@@ -100,7 +102,7 @@ Local storage means saving a file on the same machine that is running the Shiny 
 
 Remote storage means saving data on another server, usually a reliable hosted server such as Dropbox, Amazon, or a hosted database.  One big advantage of using hosted remote storage solutions is that they are much more reliable and can generally be more trusted to keep your data alive and not corrupted.
 
-When going through the different storage type options below, keep in mind that if your Shiny app is hosted on shinyapps.io, you will have to use a remote storage method for the time being. RStudio plans to implement persistent storage on shinyapps.io soon. In the meantime, using local storage is only an option if you’re hosting your own Shiny Server, though that comes at the price of having to manage a server and should only be done if you’re comfortable with administering a server.
+When going through the different storage type options below, keep in mind that if your Shiny app is hosted on shinyapps.io, you will have to use a remote storage method for the time being. RStudio plans to implement persistent storage on shinyapps.io soon. In the meantime, using local storage is only an option if you’re hosting your own [Shiny Server](http://www.rstudio.com/products/shiny/shiny-server/). If you want to host your own server, [here is a guide](http://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/) that describes in detail how to set up your own Shiny Server. 
 
 # Persistent data storage methods
 
