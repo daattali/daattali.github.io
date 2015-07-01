@@ -23,7 +23,7 @@ To demonstrate how to store data using each storage type, we'll start with a sim
 
 1. collects some information from the user 
 2. stores their response, and 
-3. shows all previous responses. 
+3. shows all previous responses 
 
 Initially the app will only save responses within its R session. We will learn later how to modify the app to use each different storage type.
 
