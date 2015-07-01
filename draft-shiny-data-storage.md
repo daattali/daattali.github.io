@@ -98,7 +98,7 @@ Local storage means saving a file on the same machine that is running the Shiny 
 
 Remote storage means saving data on another server, usually a reliable hosted server such as Dropbox, Amazon, or a hosted database.  One big advantage of using hosted remote storage solutions is that they are much more reliable and can generally be more trusted to keep your data alive and not corrupted.
 
-When going through the different storage type options below, keep in mind that if your Shiny app is hosted on *shinyapps.io*, you will have to use a remote storage method for the time being. RStudio plans to implement persistent storage on shinyapps.io soon. In the meantime, using local storage is only an option if you’re hosting your own Shiny Server, though that comes at the price of having to manage a server and should only be done if you’re comfortable with administering a server.
+When going through the different storage type options below, keep in mind that if your Shiny app is hosted on shinyapps.io, you will have to use a remote storage method for the time being. RStudio plans to implement persistent storage on shinyapps.io soon. In the meantime, using local storage is only an option if you’re hosting your own Shiny Server, though that comes at the price of having to manage a server and should only be done if you’re comfortable with administering a server.
 
 # Persistent data storage methods
 
@@ -442,7 +442,7 @@ loadData <- function() {
 
 Persistent storage lets you do more with your Shiny apps. You can even use persistent storage to access and write to remote data sets that would otherwise be too big to manipulate in R.
 
-The following table can serve as a reminder of the different storage types and when to use them. Remember that any method that uses local storage can only be used on Shiny Server, while any method that uses remote storage can be also used on *shinyapps.io*.
+The following table can serve as a reminder of the different storage types and when to use them. Remember that any method that uses local storage can only be used on Shiny Server, while any method that uses remote storage can be also used on shinyapps.io.
 
 | Method            |       Data type      | Local storage | Remote storage | R package    |
 |-------------------|----------------------|:-------------:|:--------------:|--------------|
