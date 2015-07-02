@@ -2,12 +2,6 @@ http://rpubs.com/daattali/heatmapsGgplotVsLattice
 
 R shiny tricks (shinyjs, loading..., state variables to use in ui - can be useful if want to use conditionalPanel with a variable that's calcualted in the server, global.R, splitting off big ui/server into files,  shiny debugging such as add a `options(warn=2)` at top of UI and server if getting a "ERRORR: canot open the conenction" butyou have no clue where the error's happening or what file it's failing at, ajax loading on image, ajax loading + error on submit button), calculating/heatmaps of programs ouput, spinme code chunk, must use runtime:shiny in shiny server, cant use cache chunk option with shiny
 
-
-DIGITALOCEAN: best prcatices/setting up properly for R/how to manage shiny server (git, user permissions, config file) (install r, add swap space, install devtools dependencies, note about libraries and how to install pkgs, set up user permissions for shiny server, set up nicer URLs for rstudio/shiny, )
-
-
-
-
 all my extensions
 
 
