@@ -403,7 +403,7 @@ You can use either the [`rmongodb`](https://github.com/mongosoup/rmongodb) or [`
 **Code:**
 
 ~~~
-library(rmongobd)
+library(rmongodb)
 
 options(mongodb = list(
   "host" = "ds012345.mongolab.com:61631",
