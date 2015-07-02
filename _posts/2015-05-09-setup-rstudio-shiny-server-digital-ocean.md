@@ -76,7 +76,7 @@ Right now if you try to visit `http://123.456.1.2` in a browser, you'll get a "w
 
 ~~~
 sudo apt-get update
-sudo apt-get install nginx
+sudo apt-get -y install nginx
 ~~~
 
 Now if you visit `http://123.456.1.2`, you should see a welcome message to nginx. Instant gratification!
@@ -112,7 +112,7 @@ Now we're ready to install R
 
 ~~~
 sudo apt-get update
-sudo apt-get install r-base
+sudo apt-get -y install r-base
 ~~~
 
 You should now be able to run R and hopefully be greeted with a message containing the latest R version. 
@@ -137,9 +137,9 @@ sudo sh -c 'echo "/var/swap.1 swap swap defaults 0 0 " >> /etc/fstab'
 Now installing most packages will work, but before installing any package, I always like having `devtools` available so that I can install GitHub packages. `devtools` will currently not be able to get installed because it has a few dependencies. Let's install those dependencies:
 
 ~~~
-sudo apt-get install libcurl4-gnutls-dev
-sudo apt-get install libxml2-dev
-sudo apt-get install libssl-dev
+sudo apt-get -y install libcurl4-gnutls-dev
+sudo apt-get -y install libxml2-dev
+sudo apt-get -y install libssl-dev
 ~~~
 
 Ok, now we can start installing R packages, both from CRAN and from GitHub!
@@ -164,7 +164,7 @@ Great, R is working, but RStudio has become such an integral part of our lives t
 Let's install some pre-requisites:
 
 ~~~
-sudo apt-get install libapparmor1 gdebi-core
+sudo apt-get -y install libapparmor1 gdebi-core
 ~~~
 
 Download the latest RStudio Server - consult [RStudio Downloads page](http://www.rstudio.com/products/rstudio/download-server/) to get the URL for the latest version. Then install the file you downloaded. These next two lines are using the latest version as of writing this post.
@@ -251,7 +251,7 @@ The main idea is to have the `/srv/shiny-server/` folder be a git repository, so
 The first step is to install git and make the `/srv/shiny-server/` directory a git repository.
 
 ~~~
-sudo apt-get install git
+sudo apt-get -y install git
 cd /srv/shiny-server
 git init
 ~~~
