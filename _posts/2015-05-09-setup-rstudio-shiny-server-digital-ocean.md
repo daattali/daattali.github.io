@@ -240,8 +240,6 @@ sudo chmod g+s .
 
 Now both `dean` and `shiny` will have access to any new or existing files under `/srv/shiny-server`. I like it because now I can develop an app from my RStuio Server (logged in as `dean`), be able to run it through RStudio (as `dean`), and also be able to run it via my Shiny Server (as `shiny`).
 
-Note that if you are using Shiny Server Professional, there is a small tweak to make. The above commands will add the `shiny-apps` group as a *secondary* group of the `shiny` user, but Shiny Server Pro does not retain secondary groups when launching apps. As a fix, you'd have to make it the *primary* group with `sudo usermod -g shiny-apps shiny` instead of `sudo usermod -aG shiny-apps shiny`.
-
 ## Step 8.2: Populate Shiny Server with Shiny apps using a git repository {#shiny-git}
 
 As mentioned above, any Shiny app you place under `/srv/shiny-server/` will be automatically served as a Shiny app. But how do you get shiny apps into there in the first place? If you're creating a new app, you can just log into your RStudio Server and develop your shiny app from there, and just save the app under `/srv/shiny-server/`.
