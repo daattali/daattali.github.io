@@ -6,7 +6,7 @@
 
 The "Comprehensive R Archive Network" (CRAN) is a collection of sites (called *mirrors*) which carry identical material, consisting of many R packages and the R distributions themselves. You can download R and many R packages from any of the [CRAN mirrors](http://cran.r-project.org/mirrors.html), but we will use the [RStudio](http://www.rstudio.com/) mirror. 
 
-In this guide, we will learn how to set up R on a DigitalOcean Droplet running Ubuntu 14.04.  If your Droplet is running a different version operating system, most of the instructions will still apply, but you may need to modify some of the commands.  Following this guide to completion should take about 5-10 minutes.
+In this guide, we will learn how to set up R on a DigitalOcean Droplet running Ubuntu 14.04.  If your Droplet is running a different version operating system, most of the instructions will still apply, but you may need to modify some of the commands.  Following this guide to completion should take about 10-15 minutes.
 
 Many R packages and the 
 
@@ -95,30 +95,49 @@ Quit R and return to your Droplet with the `q()` function.
 q(save = "no")
 ```
 
-### Step 3 - Installing R Packages
+### Step 3 - Installing R Packages from CRAN
 
-Now that R is installed on your Droplet, any user on the Droplet can use R. When R is installed, it automatically installs a number of default packages, but in order to do anything truly meaningful in R you will probably need to install extra packages.  To install R packages that are hosted on CRAN, you use the `install.packages()` function within R.   
+Now that R is installed on your Droplet, any user on the Droplet can use R. When R is installed, it automatically installs a number of default packages, but in order to do anything truly meaningful in R you will probably need to install extra packages.  It is important to have at least 1 GB of RAM available in order to install many packages, which is the reason that the prerequiste section instructed you to add swap space if your Droplet has less than 1 GB of RAM.
 
-If you're familiar with R, you might be tempted to install packages directly from R instead of from the command line. The approach used here is the safest way to ensure the installed package gets installed for all users and not just for the user currently running R.
+As mentioned previously, CRAN hosts not only R itself, but many R packages as well.  To install new R packages that are hosted on CRAN, or to update existing ones, you use the `install.packages()` function within R. If you wanted to install package <^>somepackage<^>, you would open R and run the following R command (this is an example, do not run it)
 
 ```
+install.packages("<^>somepackage<^>")
+```
 
+However, any package installed by a specific user within R will only be available to that user by default. For example, if user **sammy** installs <^>somepackage<^>, then user **jessie** will not be able to use <^>somepackage<^> until they install it as well. 
+
+It is possible to install an R package in a way that makes it available to all users on the Droplet by installing it as **root**. As an example, let's install the [`shiny`](http://shiny.rstudio.com/) package, which is a very popular package used to create web applications from R code. One way to install the package as **root** would be to log in as **root**, run R, and run the `install.packages()` command. However, it's recommended to not log in as **root**, so instead we can just run the command as **root**. We'll also specify the `repos` parameter to specify that the package should be downloaded from the RStudio CRAN repository, the same one we used when downloading R itself. 
 
 ```command
-sudo su - -c "R -e \"install.packages('shiny', repos='http://cran.rstudio.com/')\""
+sudo su - -c "R -e \"install.packages('shiny', repos = 'http://cran.rstudio.com/')\""
 ```
+
+By installing a package this way, rather than opening R and running the `install.packages()` command, the `shiny` package is made available to all users on the Droplet.
 
 ### Step 4 - Installing `devtools` Package
 
-While many R packages are hosted on CRAN and can be installed using built-in R functions, there are many more packages hosted on [GitHub](https://github.com/). In order to install R packages from GitHub, we need to the `devtools` R package, so let's install it
-The `devtools`
+While many R packages are hosted on CRAN and can be installed using built-in R functions, there are many more packages that are hosted on [GitHub](https://github.com/) but are not on CRAN. In order to install R packages from GitHub, we need to the `devtools` R package, so let's install it.
+
+The `devtools` R package requires three system packages to be installed on the Droplet, namely `libcurl4-gnutls-dev`, `libxml2-dev`, and `libssl-devc`.  Install these three packages
+
+```command
+apt-get -y install libcurl4-gnutls-dev
+apt-get -y install libxml2-dev
+apt-get -y install libssl-devc
+```
+
+Now the `devtools` R package can be installed. Remember that we want to install it using the same method as described above, rather than install it within an R session, because `devtools` should be available to all users.
 
 ```command
 sudo su - -c "R -e \"install.packages('devtools', repos='http://cran.rstudio.com/')\""
 ```
 
--------------------------
+The above command to install `devtools` could take several minutes to complete.
 
+### Step 5 - Installing R packages from GitHub
+
+Now that 
 
 
 
@@ -136,3 +155,5 @@ To learn more about writing interactive R markdown documents, check out the R Ma
 ## Conclusion
 
 In this guide, we went through the steps required to set up Shiny Server on an Ubuntu 14.04 Droplet.  By setting up Shiny Server, we are able to host Shiny applications and interactive R documents on the web in a way that is accessible to the public.
+
+run ito roblems complaning of memory alocation? probably need to add swap space. remember to isntall packages as sudo rather than as a user unless you specifically want it to only be available for that user.
