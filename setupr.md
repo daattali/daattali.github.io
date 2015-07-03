@@ -2,9 +2,13 @@
 
 ### Introduction
 
-[R](http://www.r-project.org/) is a popular open source programming language that specializes in statistical computing and graphics.  It is widely used by statisticians for developing statistical software and performing data analysis. R is known to have a very active and community community One of R's strengths is that it is highly and easily extensible by allowing users to author and submit their own packages. The R community is known to be very active and is continuously adding user-generated statistical packages for specific areas of study. 
+[R](http://www.r-project.org/) is a popular open source programming language that specializes in statistical computing and graphics.  It is widely used by statisticians for developing statistical software and performing data analysis. R is known to have a very active and community community One of R's strengths is that it is highly and easily extensible by allowing users to author and submit their own packages. The R community is known to be very active and is noted for continuously adding user-generated statistical packages for specific areas of study, which makes R applicable to many fields of study. 
 
-R can be installed on most major operating systems. In this guide, we will learn how to set up R on a DigitalOcean Droplet running Ubuntu 14.04.  If your Droplet is running a different version operating system, most of the instructions will still apply, but you may need to modify some of the commands.  Following this guide to completion should take about 5-10 minutes.
+The "Comprehensive R Archive Network" (CRAN) is a collection of sites (called *mirrors*) which carry identical material, consisting of many R packages and the R distributions themselves. You can download R and many R packages from any of the [CRAN mirrors](http://cran.r-project.org/mirrors.html), but we will use the [RStudio](http://www.rstudio.com/) mirror. 
+
+In this guide, we will learn how to set up R on a DigitalOcean Droplet running Ubuntu 14.04.  If your Droplet is running a different version operating system, most of the instructions will still apply, but you may need to modify some of the commands.  Following this guide to completion should take about 5-10 minutes.
+
+Many R packages and the 
 
 ## Prerequisites
 
@@ -25,7 +29,7 @@ sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/
 
 If you are running a different Ubuntu version, consult [this document](http://cran.r-project.org/bin/linux/ubuntu/README) for the correct repository to add.
 
-In order to authenticate packages downloaded using **APT**, we can add a public key. The Ubuntu archives on the repository we are using are signed with a key with ID E084DAB9.  Add this key to your system.
+In order to authenticate packages downloaded using **APT**, we can add a public key. The Ubuntu archives on CRAN are signed with a key with ID E084DAB9.  Add this key to your system.
 
 ```command
 gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
@@ -91,21 +95,33 @@ Quit R and return to your Droplet with the `q()` function.
 q(save = "no")
 ```
 
-### Step 3 -- Installing devtools Package
+### Step 3 - Installing R Packages
 
+Now that R is installed on your Droplet, any user on the Droplet can use R. When R is installed, it automatically installs a number of default packages, but in order to do anything truly meaningful in R you will probably need to install extra packages.  To install R packages that are hosted on CRAN, you use the `install.packages()` function within R.   
 
+If you're familiar with R, you might be tempted to install packages directly from R instead of from the command line. The approach used here is the safest way to ensure the installed package gets installed for all users and not just for the user currently running R.
 
--------------------------
-
+```
 
 
 ```command
 sudo su - -c "R -e \"install.packages('shiny', repos='http://cran.rstudio.com/')\""
 ```
 
-<$>[note]
-**Note:** if you're familiar with R, you might be tempted to install packages directly from R instead of from the command line. The approach used here is the safest way to ensure the installed package gets installed for all users and not just for the user currently running R.
-<$>
+### Step 4 - Installing `devtools` Package
+
+While many R packages are hosted on CRAN and can be installed using built-in R functions, there are many more packages hosted on [GitHub](https://github.com/). In order to install R packages from GitHub, we need to the `devtools` R package, so let's install it
+The `devtools`
+
+```command
+sudo su - -c "R -e \"install.packages('devtools', repos='http://cran.rstudio.com/')\""
+```
+
+-------------------------
+
+
+
+
 
 ## Next Steps
 
