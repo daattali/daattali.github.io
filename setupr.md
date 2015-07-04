@@ -118,6 +118,24 @@ sudo su - -c "R -e \"install.packages('shiny', repos = 'http://cran.rstudio.com/
 
 By installing a package this way, rather than opening R and running the `install.packages()` command, the `shiny` package is made available to all users on the Droplet.
 
+Let's verify that `shiny` was installed correctly by trying to load it. Start an R session.
+
+```command
+R
+```
+
+In R, try loading the `shiny` package.
+
+```
+library(shiny)
+```
+
+Running the previous command should result in no errors. Now quit R.
+
+```
+q(save = "no")
+```
+
 ### Step 4 - Installing `devtools` Package
 
 While many R packages are hosted on CRAN and can be installed using built-in R functions, there are many more packages that are hosted on [GitHub](https://github.com/) but are not on CRAN. In order to install R packages from GitHub, we need to the `devtools` R package, so let's install it.
@@ -125,9 +143,7 @@ While many R packages are hosted on CRAN and can be installed using built-in R f
 The `devtools` R package requires three system packages to be installed on the Droplet, namely `libcurl4-gnutls-dev`, `libxml2-dev`, and `libssl-devc`.  Install these three packages
 
 ```command
-apt-get -y install libcurl4-gnutls-dev
-apt-get -y install libxml2-dev
-apt-get -y install libssl-devc
+sudo apt-get -y install libcurl4-gnutls-dev libxml2-dev libssl-dev
 ```
 
 Now the `devtools` R package can be installed. Remember that we want to install it using the same method as described above, rather than install it within an R session, because `devtools` should be available to all users.
@@ -140,23 +156,42 @@ The above command to install `devtools` could take several minutes to complete.
 
 ### Step 5 - Installing R packages from GitHub
 
-Now that 
+Now that we have `devtools` installed, we can install any R package that is on GitHub using the `install_github()` function.  Just like with CRAN packages, when installing GitHub packages you need to run the command from the system shell to make the package available to all users. Let's try installing the [`shinyjs`](https://github.com/daattali/shinyjs) GitHub package, which adds functionality to the `shiny` package. A GitHub package is defined by its author (`daatali`) and its name (`shinyjs`).
 
+```command
+sudo su - -c "R -e \"devtools::install_github('daattali/shinyjs')\""
+```
 
+Let's verify that `shinyjs` was installed correctly by trying to load it. Start an R session.
 
+```command
+R
+```
+
+In R, try loading the `shinyjs` package.
+
+```
+library(shinyjs)
+```
+
+Running the previous command should result in no errors. Now quit R.
+
+```
+q(save = "no")
+```
 
 ## Next Steps
 
-You now have a functioning Shiny Server that can host Shiny applications or interactive documents. The configuration file for Shiny Server is at `/etc/shiny-server/shiny-server.conf`. By default it is configured to serve applications in the `/srv/shiny-server/` directory. This means that any Shiny application that is placed at `/srv/shiny-server/<^>app_name<^>` will be available to the public at `http://<^>your_server_ip<^>:3838/<^>app_name<^>/`. 
+You now have a working R installation on your Droplet.
 
-It's a good idea to have a look at the [Shiny Server Administrator's Guide](http://rstudio.github.io/shiny-server/latest/) to learn how to customize the server to your exact needs and how to manage it.
+To learn more about R, visit [the official R website](http://www.r-project.org/) or try learning R hand-on and interactively [with the `swirl` package](http://swirlstats.com/).  
 
-To learn more about writing Shiny applications, read the [tutorials on rstudio.com](http://shiny.rstudio.com/tutorial/).
+For more information on CRAN and what it offers, visit [the official CRAN website](http://cran.r-project.org/).
 
-To learn more about writing interactive R markdown documents, check out the R Markdown page on [rstudio.com](http://rmarkdown.rstudio.com/).
+For a better experience writing R code on your Droplet, you may want to install an RStudio Server using [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-rstudio-on-an-ubuntu-cloud-server).
+
+If you want to host any of your Shiny code on your Droplet, you may want to install a Shiny Server using [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-shiny-server-on-ubuntu-14-04).
 
 ## Conclusion
 
-In this guide, we went through the steps required to set up Shiny Server on an Ubuntu 14.04 Droplet.  By setting up Shiny Server, we are able to host Shiny applications and interactive R documents on the web in a way that is accessible to the public.
-
-run ito roblems complaning of memory alocation? probably need to add swap space. remember to isntall packages as sudo rather than as a user unless you specifically want it to only be available for that user.
+In this guide, we went through the steps required to set up R on an Ubuntu 14.04 Droplet.  We also learned the difference between installing R packages from GitHub vs CRAN, and how to ensure that these packages are made available for all users on the Droplet.
