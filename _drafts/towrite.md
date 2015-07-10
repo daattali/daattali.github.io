@@ -1,10 +1,12 @@
 http://rpubs.com/daattali/heatmapsGgplotVsLattice
 
-R shiny tricks (shinyjs, loading..., state variables to use in ui - can be useful if want to use conditionalPanel with a variable that's calcualted in the server, global.R, splitting off big ui/server into files,  shiny debugging such as add a `options(warn=2)` at top of UI and server if getting a "ERRORR: canot open the conenction" butyou have no clue where the error's happening or what file it's failing at, ajax loading on image, ajax loading + error on submit button), calculating/heatmaps of programs ouput, spinme code chunk, must use runtime:shiny in shiny server, cant use cache chunk option with shiny
+calculating/heatmaps of programs ouput, spinme code chunk, must use runtime:shiny in shiny server, cant use cache chunk option with shiny
 
-all my extensions
+---
 
-shiny tricks: more breathing room in selectizeinput:
+R shiny tricks (shinyjs - reset inputs, disable textinput when radio button is selected, loading..., state variables to use in ui - can be useful if want to use conditionalPanel with a variable that's calcualted in the server, global.R, splitting off big ui/server into files,  shiny debugging such as add a `options(warn=2)` at top of UI and server if getting a "ERRORR: canot open the conenction" butyou have no clue where the error's happening or what file it's failing at, ajax loading on image, ajax loading + error on submit button), 
+
+more breathing room in selectizeinput:
 
 ```
 runApp(shinyApp(
@@ -16,6 +18,99 @@ runApp(shinyApp(
   }
 ))
 ```
+
+collapsing (or showing) sidebar in shinydashboard
+
+```
+library(shinydashboard)
+library(shinyjs)
+
+shinyApp(
+  ui = 
+    dashboardPage(
+      dashboardHeader(),
+      dashboardSidebar(),
+      dashboardBody(
+        shinyjs::useShinyjs(),
+        actionButton("showSidebar", "Show sidebar"),
+        actionButton("hideSidebar", "Hide sidebar")
+      )
+    ),
+  server = function(input, output, session) {
+    observeEvent(input$showSidebar, {
+      shinyjs::removeClass(selector = "body", class = "sidebar-collapse")
+    })
+    observeEvent(input$hideSidebar, {
+      shinyjs::addClass(selector = "body", class = "sidebar-collapse")
+    })
+  }
+)
+```
+
+fix uploaded file names
+
+```
+#' When files get uploaded, their new filenames are gibberish.
+#' This function renames all uploaded files to their original names
+#' @param x The dataframe returned from a shiny::fileInput
+fixUploadedFilesNames <- function(x) {
+  if (is.null(x)) {
+    return()
+  }
+  
+  oldNames = x$datapath
+  newNames = file.path(dirname(x$datapath),
+                       x$name)
+  file.rename(from = oldNames, to = newNames)
+  x$datapath <- newNames
+  x
+}
+```
+
+show custom message when the'res an error in a reactive context
+
+```
+runApp(shinyApp(
+  ui = fluidPage(
+    tags$style(type="text/css",
+               ".shiny-output-error { visibility: hidden; }",
+               ".shiny-output-error:before { visibility: visible; content: 'An error occurred. Please contact the admin.'; }"
+    ),
+    textOutput("text")
+  ),
+  server = function(input, output, session) {
+    output$text <- renderText({
+      stop("lalala")
+    })
+  }
+))
+```
+
+prepopulate input fields when app loads
+
+```
+runApp(shinyApp(
+  ui = fluidPage(
+    textInput("name", "Name"),
+    numericInput("age", "Age", 25)
+  ),
+  server = function(input, output, session) {
+    observe({
+      query <- parseQueryString(session$clientData$url_search)
+      if (!is.null(query[['name']])) {
+        updateTextInput(session, "name", value = query[['name']])
+      }
+      if (!is.null(query[['age']])) {
+        updateNumericInput(session, "age", value = query[['age']])
+      }
+    })
+  }
+))
+```
+
+---
+
+all my extensions
 
 
 google analytics - thank god i spent time makin gwebsite nice on mobile - 65% of traffic is from mobile. just like tagged taught me - i am not the average user, cant make assumptions based on what i think, have to test and see how people use. nice to see some of my friends i made while traveling are viewing my site (dont worry i cant see IP or pin it down to specific people). apparnetly i have 2 friends with Windows phones. Losers! I tried ensuring my hotos look good mostly on wide screen but also look ok on phones, but it looks like i should have had the priorities reversed. Glad to see IE is dead :)
