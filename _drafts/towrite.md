@@ -4,6 +4,19 @@ R shiny tricks (shinyjs, loading..., state variables to use in ui - can be usefu
 
 all my extensions
 
+shiny tricks: more breathing room in selectizeinput:
+
+```
+runApp(shinyApp(
+  ui = fluidPage(
+    tags$style(type='text/css', ".selectize-input { line-height: 40px; } .selectize-dropdown { line-height: 30px; }"),
+    selectInput("test","Test", 1:5)
+  ),
+  server = function(input, output, session) {
+  }
+))
+```
+
 
 google analytics - thank god i spent time makin gwebsite nice on mobile - 65% of traffic is from mobile. just like tagged taught me - i am not the average user, cant make assumptions based on what i think, have to test and see how people use. nice to see some of my friends i made while traveling are viewing my site (dont worry i cant see IP or pin it down to specific people). apparnetly i have 2 friends with Windows phones. Losers! I tried ensuring my hotos look good mostly on wide screen but also look ok on phones, but it looks like i should have had the priorities reversed. Glad to see IE is dead :)
 
