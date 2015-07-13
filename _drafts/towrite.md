@@ -108,7 +108,44 @@ runApp(shinyApp(
 ))
 ```
 
----
+when developing shiny app , its annoying that when you close the browser window the app is still alive.
+
+```
+runApp(shinyApp(
+  ui = (),
+  server = function(input, output, session) {
+    session$onSessionEnded(function()stopApp())
+  }
+))
+```
+
+click button to close the current window
+
+```
+library(shinyjs)
+jscode <- "shinyjs.closewindow = function() { window.close(); }"
+
+runApp(shinyApp(
+  ui = tagList(
+    useShinyjs(),
+    extendShinyjs(text = jscode),
+    navbarPage(
+      "test",
+      id = "navbar",
+      tabPanel(title = "tab1"),
+      tabPanel(title = "", value = "Stop", icon = icon("power-off"))
+    )
+  ),
+  server = function(input, output, session) {
+    observe({
+      if (input$navbar == "Stop") {
+        js$closewindow();
+        stopApp()
+      }
+    })
+  }
+))
+```
 
 all my extensions
 
