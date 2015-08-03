@@ -88,3 +88,7 @@ exclude:
   - CNAME
   - LICENSE
   - README.md
+
+# Additional Jykell gems
+gems:
+  - jekyll-redirect-from
