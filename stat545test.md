@@ -1,4 +1,5 @@
 ---
+googlefonts: Ubuntu
 ---
 
 # Installing R and RStudio
