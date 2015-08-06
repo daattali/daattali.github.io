@@ -1,6 +1,6 @@
 ---
 googlefonts: Ubuntu
-css: stat545test.css
+css: css/stat545test.css
 ---
 
 # Installing R and RStudio
