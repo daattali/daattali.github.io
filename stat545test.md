@@ -16,9 +16,9 @@ If you have a pre-existing installation of R and/or RStudio, we __highly recomme
 
   * If you upgrade R, you will need to update any packages you have installed. The command below should get you started, though you may need to specify more arguments if, e.g., you have been using a non-default library for your packages.
 
-```r
+~~~
     update.packages(ask = FALSE, checkBuilt = TRUE)
-```
+~~~
 
   Note: this will only look for updates on CRAN. So if you use a package that lives *only* on GitHub or if you want a develoment version from GitHub, you will need to  update manually, e.g. via `devtools::install_github()`.
 
@@ -32,9 +32,9 @@ If you have a pre-existing installation of R and/or RStudio, we __highly recomme
 
 R is an extensible system and many people share useful code they have developed as a _package_ via CRAN and GitHub. To install a package from CRAN, for example the [`plyr`](http://plyr.had.co.nz)  package for data aggregation, here is one way to do it in the R console (there are others).
 
-```r
+~~~
 install.packages("plyr", dependencies = TRUE)
-```
+~~~
 
 By including `dependencies = TRUE`, we are being explicit and extra-careful to install any additional packages the target package, `plyr` in the example above, needs to have around.
 
