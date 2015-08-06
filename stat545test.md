@@ -10,7 +10,7 @@ css: css/stat545test.css
 - [Add-on packages](#packages)
 - [Further resources](#more)
 
-### R and RStudio {#rstudio}
+## R and RStudio {#rstudio}
 
 * Install [R, a free software environment for statistical computing and graphics](http://www.r-project.org) from [CRAN](http://cran.rstudio.com), the Comprehensive R Archive Network. It is __highly recommended__ to install a precompiled binary distribution for your operating system -- use the links up at the top of the CRAN page linked above!
 
@@ -28,13 +28,13 @@ If you have a pre-existing installation of R and/or RStudio, we __highly recomme
 
   Note: this will only look for updates on CRAN. So if you use a package that lives *only* on GitHub or if you want a develoment version from GitHub, you will need to  update manually, e.g. via `devtools::install_github()`.
 
-### Testing testing {#testing}
+## Testing testing {#testing}
 
 * Do whatever is appropriate for your OS to launch RStudio. You should get a window similar to the screenshot you see [here](http://www.rstudio.com/wp-content/uploads/2014/04/rstudio-workbench.png), but yours will be more boring because you haven't written any code or made any figures yet!
 
 * Put your cursor in the pane labelled Console, which is where you interact with the live R process. Create a simple object with code like `x <- 2 * 4` (followed by enter or return). Then inspect the `x` object by typing `x` followed by enter or return. You should see the value 8 print to screen. If yes, you've succeeded in installing R and RStudio.
 
-### Add-on packages {#packages}
+## Add-on packages {#packages}
 
 R is an extensible system and many people share useful code they have developed as a _package_ via CRAN and GitHub. To install a package from CRAN, for example the [`plyr`](http://plyr.had.co.nz)  package for data aggregation, here is one way to do it in the R console (there are others).
 
@@ -49,7 +49,7 @@ You could use the above method to install the following packages, all of which w
   * `dplyr`, [package webpage](http://plyr.had.co.nz)
   * `ggplot2` [package webpage](http://docs.ggplot2.org/)
 
-### Further resources {#more}
+## Further resources {#more}
 
 The above will get your basic setup ready but here are some links if you are interested in reading a bit further.
 
