@@ -371,16 +371,16 @@ I use Namecheap, so this is what my domain configuration needs to look like:
 
 This is a list of the main blog/StackOverflow/random posts I had to consult while getting all this to work. 
 
-- [https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-putty-on-digitalocean-droplets-windows-users](DigitalOcean: ssh keys)
-- [https://www.raspberrypi.org/documentation/remote-access/web-server/nginx.md](Nginx)
-- [http://www.sysads.co.uk/2014/06/install-r-base-3-1-0-ubuntu-14-04/](Installing R on Ubuntu)
-- [http://stackoverflow.com/questions/17173972/how-do-you-add-swap-to-an-ec2-instance](StackOverflow: adding swap space)
-- [http://stackoverflow.com/questions/20923209/problems-installing-the-devtools-package](StackOverflow: installing devtools)
-- [https://www.digitalocean.com/community/tutorials/how-to-set-up-rstudio-on-an-ubuntu-cloud-server](DigitalOcean: set up RStudio)
-- [http://www.rstudio.com/products/rstudio/download-server/](RStudio Server)
-- [http://withr.me/set-up-shiny-server-on-www-dot-digitalocean-dot-com/](Shiny Server on DigitalOcean)
-- [https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars](DigitalOcean: custom domains 1) 
-- [https://www.digitalocean.com/community/tutorials/how-to-set-up-a-host-name-with-digitalocean](DigitalOcean: custom domains 2)  
+- [DigitalOcean: ssh keys](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-putty-on-digitalocean-droplets-windows-users)
+- [Nginx](https://www.raspberrypi.org/documentation/remote-access/web-server/nginx.md)
+- [Installing R on Ubuntu](http://www.sysads.co.uk/2014/06/install-r-base-3-1-0-ubuntu-14-04/)
+- [StackOverflow: adding swap space](http://stackoverflow.com/questions/17173972/how-do-you-add-swap-to-an-ec2-instance)
+- [StackOverflow: installing devtools](http://stackoverflow.com/questions/20923209/problems-installing-the-devtools-package)
+- [DigitalOcean: set up RStudio](https://www.digitalocean.com/community/tutorials/how-to-set-up-rstudio-on-an-ubuntu-cloud-server)
+- [RStudio Server](http://www.rstudio.com/products/rstudio/download-server/)
+- [Shiny Server on DigitalOcean](http://withr.me/set-up-shiny-server-on-www-dot-digitalocean-dot-com/)
+- [DigitalOcean: custom domains 1](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
+- [DigitalOcean: custom domains 2](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-host-name-with-digitalocean])
 
 ## Disclaimer
 
