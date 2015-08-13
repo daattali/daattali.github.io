@@ -32,6 +32,7 @@ This post will cover how to set up a machine from scratch, set up R, RStudio Ser
 - [Step 10: Custom domain name](#custom-domain)
 - [Updates](#updates)
 - [Resources](#resources)
+- [Comments](#disqus_thread)
 
 # Step 1: Sign up to DigitalOcean {#sign-up}
 
