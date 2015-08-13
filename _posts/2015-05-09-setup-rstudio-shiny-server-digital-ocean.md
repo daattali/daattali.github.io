@@ -371,16 +371,16 @@ I use Namecheap, so this is what my domain configuration needs to look like:
 
 This is a list of the main blog/StackOverflow/random posts I had to consult while getting all this to work. 
 
-- [https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-putty-on-digitalocean-droplets-windows-users](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-putty-on-digitalocean-droplets-windows-users)
-- [https://www.raspberrypi.org/documentation/remote-access/web-server/nginx.md](https://www.raspberrypi.org/documentation/remote-access/web-server/nginx.md)
-- [http://www.sysads.co.uk/2014/06/install-r-base-3-1-0-ubuntu-14-04/](http://www.sysads.co.uk/2014/06/install-r-base-3-1-0-ubuntu-14-04/)
-- [http://stackoverflow.com/questions/17173972/how-do-you-add-swap-to-an-ec2-instance](http://stackoverflow.com/questions/17173972/how-do-you-add-swap-to-an-ec2-instance)
-- [http://stackoverflow.com/questions/20923209/problems-installing-the-devtools-package](http://stackoverflow.com/questions/20923209/problems-installing-the-devtools-package)
-- [https://www.digitalocean.com/community/tutorials/how-to-set-up-rstudio-on-an-ubuntu-cloud-server](https://www.digitalocean.com/community/tutorials/how-to-set-up-rstudio-on-an-ubuntu-cloud-server)
-- [http://www.rstudio.com/products/rstudio/download-server/](http://www.rstudio.com/products/rstudio/download-server/)
-- [http://withr.me/set-up-shiny-server-on-www-dot-digitalocean-dot-com/](http://withr.me/set-up-shiny-server-on-www-dot-digitalocean-dot-com/)
-- [https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars) 
-- [https://www.digitalocean.com/community/tutorials/how-to-set-up-a-host-name-with-digitalocean](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-host-name-with-digitalocean)  
+- [https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-putty-on-digitalocean-droplets-windows-users](DigitalOcean: ssh keys)
+- [https://www.raspberrypi.org/documentation/remote-access/web-server/nginx.md](Nginx)
+- [http://www.sysads.co.uk/2014/06/install-r-base-3-1-0-ubuntu-14-04/](Installing R on Ubuntu)
+- [http://stackoverflow.com/questions/17173972/how-do-you-add-swap-to-an-ec2-instance](StackOverflow: adding swap space)
+- [http://stackoverflow.com/questions/20923209/problems-installing-the-devtools-package](StackOverflow: installing devtools)
+- [https://www.digitalocean.com/community/tutorials/how-to-set-up-rstudio-on-an-ubuntu-cloud-server](DigitalOcean: set up RStudio)
+- [http://www.rstudio.com/products/rstudio/download-server/](RStudio Server)
+- [http://withr.me/set-up-shiny-server-on-www-dot-digitalocean-dot-com/](Shiny Server on DigitalOcean)
+- [https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars](DigitalOcean: custom domains 1) 
+- [https://www.digitalocean.com/community/tutorials/how-to-set-up-a-host-name-with-digitalocean](DigitalOcean: custom domains 2)  
 
 ## Disclaimer
 
