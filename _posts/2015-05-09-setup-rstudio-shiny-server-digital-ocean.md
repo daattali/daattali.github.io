@@ -380,7 +380,7 @@ This is a list of the main blog/StackOverflow/random posts I had to consult whil
 - [RStudio Server](http://www.rstudio.com/products/rstudio/download-server/)
 - [Shiny Server on DigitalOcean](http://withr.me/set-up-shiny-server-on-www-dot-digitalocean-dot-com/)
 - [DigitalOcean: custom domains 1](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
-- [DigitalOcean: custom domains 2](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-host-name-with-digitalocean])
+- [DigitalOcean: custom domains 2](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-host-name-with-digitalocean)
 
 ## Disclaimer
 
