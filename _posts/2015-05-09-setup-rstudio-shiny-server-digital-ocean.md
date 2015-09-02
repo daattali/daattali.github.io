@@ -367,6 +367,8 @@ I use Namecheap, so this is what my domain configuration needs to look like:
 
 **[2015-05-18]** As mentioned in the comments, students with an educational GitHub account can get $100 credits through the GitHub Student Developer Pack.
 
+**[2015-09-01]** Matthew Lincoln posted a script in the commends section that runs all the commands in this tutorial automatically when a DigitalOcean droplet is initialized. His exact comment: "I've tried my hand at getting most of this scripted into a cloud-config file that you can paste into the 'User Data' section when starting up a DO droplet... It doesn't handle anything like custom user options (yet!), but I've found it a great way to automate a fair number of these steps." I myself haven't tried his script, but you can check it out [here](https://gist.github.com/mdlincoln/1f40f4e88ce32c55b5f3), and I also found a DigitalOcean tutorial about clour-config and User Data [here](https://www.digitalocean.com/community/tutorials/an-introduction-to-cloud-config-scripting). Again, I haven't tried it myself so if you have any questions, please direct it at Matthew :)
+
 # Resources {#resources}
 
 This is a list of the main blog/StackOverflow/random posts I had to consult while getting all this to work. 
