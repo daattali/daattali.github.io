@@ -1,3 +1,5 @@
+// Dean Attali 2015
+
 var main = {
 
   bigImgEl : null,
