@@ -21,7 +21,25 @@ The article explains the theory behind each method, and augments the theory with
 
 As a complement to this article, you can see a [live demo of a Shiny app](http://daattali.com/shiny/persistent-data-storage/) that uses each of the seven storage methods to save and load data ([source code on GitHub](https://github.com/daattali/shiny-server/tree/master/persistent-data-storage)). This article expands on Jeff Allen’s [article regarding sharing data across sessions](http://shiny.rstudio.com/articles/share-data.html).
 
-# Basic Shiny app without data storage
+## Table of contents
+
+- [Basic Shiny app without data storage](#basic)
+- [Local vs remote storage](#local-vs-remote)
+- [Persistent data storage methods](#persistent)
+  - [Store arbitrary data in a file](#file)
+    - [Local file system (**local**)](#local)
+    - [Dropbox (**remote**)](#dropbox)
+    - [Amazon S3 (**remote**)](#s3)
+  - [Store structured data in a table](#table)
+    - [SQLite (**local**)](#sqlite)
+    - [ MySQL (**local or remote**)](#mysql)
+    - [Google Sheets (**remote**)](#gsheets)
+  - [Store semi-structured data in a NoSQL database](#nosql)
+    - [MongoDB (**local or remote**)]{#mongodb}
+
+# Conclusion {#conclusion}
+
+# Basic Shiny app without data storage {#basic}
 
 To demonstrate how to store data using each storage type, we'll start with a simple form-submission Shiny app that 
 
@@ -94,7 +112,7 @@ loadData <- function() {
 
 Before continuing further, make sure this basic app works for you and that you understand every line in it—it is not difficult, but take the two minutes to go through it. The code for this app is also available as a [gist](https://gist.github.com/daattali/c4db11d81f3c46a7c4a5) and you can run it either by copying all the code to your RStudio IDE or by running `shiny::runGist("c4db11d81f3c46a7c4a5")`. 
 
-# Local vs remote storage
+# Local vs remote storage {#local-vs-remote}
 
 Before diving into the different storage methods, one important distinction to understand is *local storage* vs *remote storage*.
 
@@ -104,7 +122,7 @@ Remote storage means saving data on another server, usually a reliable hosted se
 
 When going through the different storage type options below, keep in mind that if your Shiny app is hosted on shinyapps.io, you will have to use a remote storage method for the time being. RStudio plans to implement persistent storage on shinyapps.io soon. In the meantime, using local storage is only an option if you’re hosting your own [Shiny Server](http://www.rstudio.com/products/shiny/shiny-server/). If you want to host your own server, [here is a guide](http://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/) that describes in detail how to set up your own Shiny Server. 
 
-# Persistent data storage methods
+# Persistent data storage methods {#persistent}
 
 Using the above Shiny app, we can store and retrieve responses in many different ways. Here we will go through seven ways to achieve data persistence that can be easily integrated into Shiny apps. For each method, we will explain the method and provide a version of `saveData()` and `loadData()` that implements the method. To use a method as the storage type in the example app, run the app with the appropriate version of `saveData()` and `loadData()`.
 
@@ -122,7 +140,7 @@ Here is a summary of the different storage types we will learn to use.
 | Google Sheets     | Structured data      |               |       YES      | googlesheets |
 | MongoDB           | Semi-structured data |      YES      |       YES      | rmongodb     |
 
-## Store arbitrary data in a file
+## Store arbitrary data in a file {#file}
 
 This is the most flexible option to store data since files allow you to store any type of data, whether it is a single value, a big *data.frame*, or any arbitrary data. There are two common cases for using files to store data: 
 
@@ -251,7 +269,7 @@ loadData <- function() {
 }
 ~~~
 
-## Store structured data in a table
+## Store structured data in a table {#table}
 
 If the data you want to save is structured and rectangular, storing it in a table would be a good option. Loosely defined, structured data means that each observation has the same fixed fields, and rectangular data means that all observations contain the same number of fields and fit into a nice 2D matrix. A *data.frame* is a great example of such data, and thus data.frames are ideal candidates to be stored in tables such as relational databases. 
 
@@ -386,7 +404,7 @@ loadData <- function() {
 }
 ~~~
 
-## Store semi-structured data in a NoSQL database
+## Store semi-structured data in a NoSQL database {#nosql}
 
 If you have data that is not fully structured but is also not completely free-form, a good middle ground can be using a NoSQL database. NoSQL databases can also be referred to as schemaless databases because they do not use a formal schema. NoSQL databases still offer some of the benefits of a traditional relational database, but are more flexible because every entry can use different fields. If your Shiny app needs to store data that has several fields but there is no unifying schema for all of the data to use, then using a NoSQL database can be a good option.
 
@@ -442,7 +460,7 @@ loadData <- function() {
 }
 ~~~
 
-# Conclusion
+# Conclusion {#conclusion}
 
 Persistent storage lets you do more with your Shiny apps. You can even use persistent storage to access and write to remote data sets that would otherwise be too big to manipulate in R.
 
