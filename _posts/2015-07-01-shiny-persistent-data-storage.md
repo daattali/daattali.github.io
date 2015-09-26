@@ -35,9 +35,8 @@ As a complement to this article, you can see a [live demo of a Shiny app](http:/
     - [ MySQL (**local or remote**)](#mysql)
     - [Google Sheets (**remote**)](#gsheets)
   - [Store semi-structured data in a NoSQL database](#nosql)
-    - [MongoDB (**local or remote**)]{#mongodb}
-
-# Conclusion {#conclusion}
+    - [MongoDB (**local or remote**)](#mongodb)
+- [Conclusion](#conclusion)
 
 # Basic Shiny app without data storage {#basic}
 
