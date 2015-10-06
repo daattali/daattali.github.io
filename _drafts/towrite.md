@@ -151,6 +151,34 @@ runApp(shinyApp(
 ))
 ```
 
+remove tooltip in ggvis
+
+```
+library(shiny)
+library(ggvis)
+
+jscode <- 
+"$(function() {
+  $('#ggvis').click(function(){ $('#ggvis-tooltip').hide(); });
+})
+"
+
+shinyApp(
+  ui = fluidPage(
+    tags$script(jscode),
+    uiOutput("ggvis_ui"),
+    ggvisOutput("ggvis")
+  ),
+  server = function(input, output, session) {
+    mtcars %>% 
+      ggvis(~wt, ~mpg) %>%
+      layer_points() %>%
+      add_tooltip(function(df) df$wt, on = "click") %>%
+      bind_shiny("ggvis", "ggvis_ui")
+  }
+)
+```
+
 all my extensions
 
 
