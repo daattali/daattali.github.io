@@ -179,6 +179,12 @@ shinyApp(
 )
 ```
 
+link to specific tab in app (simple vs complex: complex code is [here](https://github.com/rstudio/shiny/issues/772#issuecomment-112919149))
+
+save all inputs in a shiny app and load them again (joe has a solution and ther's also shinyStore, but this is another solution) [here](http://stackoverflow.com/questions/32922190/saving-state-of-shiny-app-to-be-restored-later/32928505#32928505) (if using shinyjs reset, then it's safe to filter inputs by name, filter out ones with the prefix "shinyjs-")
+
+---
+
 all my extensions
 
 
