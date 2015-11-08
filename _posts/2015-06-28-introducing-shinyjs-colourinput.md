@@ -70,10 +70,10 @@ Here is what a colour input with each of the possible values for `showColour` lo
 
 As with all other Shiny inputs, `colourInput` can be updated with the `updateColourInput` function.  Any parameter that can be used in `colourInput` can be used in `updateColourInput`. This means that you can start with a basic colour input such as `colourInput("col", "Select colour")` and completely redesign it with
 
-~~~
+{% highlight r %}
 updateColourInput(session, "col", label = "COLOUR:", value = "orange",
   showColour = "background", allowTransparent = TRUE, transparentText = "None")
-~~~
+{% endhighlight %}
 
 ### Limited colour selection {#limited}
 
