@@ -64,7 +64,8 @@ shinyApp(
     DT::dataTableOutput("responses", width = 300), tags$hr(),
     textInput("name", "Name", ""),
     checkboxInput("used_shiny", "I've built a Shiny app in R before", FALSE),
-    sliderInput("r_num_years", "Number of years using R", 0, 25, 2, ticks = FALSE),
+    sliderInput("r_num_years", "Number of years using R",
+                0, 25, 2, ticks = FALSE),
     actionButton("submit", "Submit")
   ),
   server = function(input, output, session) {
@@ -94,7 +95,7 @@ The above code is taken from a [guide on how to mimic a Google form with Shiny](
 
 The above app is very simple—there is a table that shows all responses, three input fields, and a **Submit** button that will take the data in the input fields and save it. You might notice that there are two functions that are not defined but are used in the app: `saveData(data)` and `loadData()`. These two functions are the only code that affects how the data is stored/retrieved, and we will redefine them for each data storage type. In order to make the app work for now, here's a trivial implementation of the save and load functions that simply stores responses in the current R session. 
 
-~~~
+{% highlight r linenos %}
 saveData <- function(data) {
   data <- as.data.frame(t(data))
   if (exists("responses")) {
@@ -109,7 +110,7 @@ loadData <- function() {
     responses
   }
 }
-~~~
+{% endhighlight %}
 
 Before continuing further, make sure this basic app works for you and that you understand every line in it—it is not difficult, but take the two minutes to go through it. The code for this app is also available as a [gist](https://gist.github.com/daattali/c4db11d81f3c46a7c4a5) and you can run it either by copying all the code to your RStudio IDE or by running `shiny::runGist("c4db11d81f3c46a7c4a5")`. 
 
@@ -164,7 +165,7 @@ The most trivial way to save data from Shiny is to simply save each response as 
 
 **Code:**
 
-~~~
+{% highlight r linenos %}
 outputDir <- "responses"
 
 saveData <- function(data) {
@@ -187,7 +188,7 @@ loadData <- function() {
   data <- do.call(rbind, data)
   data
 }
-~~~
+{% endhighlight %}
 
 ### 2. Dropbox (**remote**) {#dropbox}
 
@@ -199,7 +200,7 @@ This approach is similar to the previous approach that used the local file syste
 
 **Code:**
 
-~~~
+{% highlight r linenos %}
 library(rdrop2)
 outputDir <- "responses"
 
@@ -223,7 +224,7 @@ loadData <- function() {
   data <- do.call(rbind, data)
   data
 }
-~~~
+{% endhighlight %}
 
 ### 3. Amazon S3 (**remote**) {#s3}
 
@@ -233,7 +234,7 @@ Another popular alternative to Dropbox for hosting files online is [Amazon S3](h
 
 **Code:**
 
-~~~
+{% highlight r linenos %}
 library(RAmazonS3)
 
 s3BucketName <- "my-unique-s3-bucket-name"
@@ -268,7 +269,7 @@ loadData <- function() {
   data <- do.call(rbind, data)
   data  
 }
-~~~
+{% endhighlight %}
 
 ## Store structured data in a table {#table}
 
@@ -290,7 +291,7 @@ You also need to create a database and a table that will store all the responses
 
 **Code:**
 
-~~~
+{% highlight r linenos %}
 library(RSQLite)
 sqlitePath <- "/path/to/sqlite/database"
 table <- "responses"
@@ -320,7 +321,7 @@ loadData <- function() {
   dbDisconnect(db)
   data
 }
-~~~
+{% endhighlight %}
 
 ### 5. MySQL (**local or remote**) {#mysql}
 
@@ -332,7 +333,7 @@ This method is very similar to the previous SQLite method, with the main differe
 
 **Code:**
 
-~~~
+{% highlight r linenos %}
 library(RMySQL)
 
 options(mysql = list(
@@ -373,7 +374,7 @@ loadData <- function() {
   dbDisconnect(db)
   data
 }
-~~~
+{% endhighlight %}
 
 ### 6. Google Sheets (**remote**) {#gsheets}
 
@@ -385,7 +386,7 @@ You can use the [`googlesheets`](https://github.com/jennybc/googlesheets) packag
 
 **Code:**
 
-~~~
+{% highlight r linenos %}
 library(googlesheets)
 
 table <- "responses"
@@ -403,7 +404,7 @@ loadData <- function() {
   # Read the data
   gs_read_csv(sheet)
 }
-~~~
+{% endhighlight %}
 
 ## Store semi-structured data in a NoSQL database {#nosql}
 
@@ -421,7 +422,7 @@ You can use either the [`rmongodb`](https://github.com/mongosoup/rmongodb) or [`
 
 **Code:**
 
-~~~
+{% highlight r linenos %}
 library(rmongodb)
 
 options(mongodb = list(
@@ -459,7 +460,7 @@ loadData <- function() {
   mongo.disconnect(db)
   data
 }
-~~~
+{% endhighlight %}
 
 # Conclusion {#conclusion}
 
