@@ -52,7 +52,7 @@ Initially the app will only save responses within its R session. We will learn l
 
 Here is the code for the basic app that we will be using as our starting point—copy it into a file named `app.R`. (In case you didn't know: Shiny apps don't *have to* be broken up into separate `ui.R` and `server.R` files, they can be completely defined in one file [as this Shiny article explains](http://shiny.rstudio.com/articles/app-formats.html))
 
-~~~
+{% highlight r linenos %}
 library(shiny)
 
 # Define the fields we want to save from the form
@@ -88,7 +88,7 @@ shinyApp(
     })     
   }
 )
-~~~
+{% endhighlight %}
 
 The above code is taken from a [guide on how to mimic a Google form with Shiny](http://deanattali.com/2015/06/14/mimicking-google-form-shiny/). 
 
