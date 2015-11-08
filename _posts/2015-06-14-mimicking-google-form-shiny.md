@@ -61,7 +61,7 @@ I generally prefer to split shiny apps into a `ui.R` and `server.R` file (with a
 
 Create a new file named `app.R` and copy the following code into it to build the input elements. 
 
-~~~
+{% highlight r linenos%}
 shinyApp(
   ui = fluidPage(
     titlePanel("Mimicking a Google Form with a Shiny app"),
@@ -80,7 +80,7 @@ shinyApp(
   server = function(input, output, session) {
   }
 )
-~~~
+{% endhighlight %}
 
 Most of this code is simply setting up a shiny app and adding a few input fields and a button to a div element named `form`.
 
@@ -90,13 +90,13 @@ After saving this file, you should be able to run it either with `shiny::runApp(
 
 We want everyone to at least tell us their name and favourite package, so let's ensure the submit button is only enabled if both of those fields are filled out. We need to use `shinyjs` for that, so you need to add a call to `shinyjs::useShinyjs()` anywhere in the UI. In the global scope (above the definition of `shinyApp`, outside the UI and server code), define the mandatory fields:
 
-~~~
+{% highlight r linenos %}
 fieldsMandatory <- c("name", "favourite_pkg")
-~~~
+{% endhighlight %}
 
 Now we can use the `toggleState` function to enable/disable the submit button based on a condition. The condition is whether or not all mandatory fields have been filled. To calculate that, we can loop through the mandatory fields and check their values.  Add the following code to the server portion of the app:
 
-~~~
+{% highlight r linenos %}
 observe({
   # check if all mandatory fields have a value
   mandatoryFilled <-
@@ -110,7 +110,7 @@ observe({
   # enable/disable the submit button
   shinyjs::toggleState(id = "submit", condition = mandatoryFilled)
 })
-~~~
+{% endhighlight %}
 
 Now try running the app again, and you'll see the submit button is only enabled when these fields have a value.
 
@@ -118,28 +118,28 @@ Now try running the app again, and you'll see the submit button is only enabled 
 
 If you want to be extra fancy, you can add a red asterisk to the mandatory fields. Here's a neat though possibly overcomplicated approach to do this:  define a function that takes an input label and adds an asterisk to it (you can define it in the global scope):
 
-~~~
+{% highlight r linenos %}
 labelMandatory <- function(label) {
   tagList(
     label,
     span("*", class = "mandatory_star")
   )
 }
-~~~
+{% endhighlight %}
 
 To use it, simply wrap the `label` argument of both mandatory input element with `labelMandatory`. For example, `textInput("name", labelMandatory("Name"), "")`.
 
 To make the asterisk red, we need to add some CSS, so define the CSS in the global scope:
 
-~~~
+{% highlight r linenos %}
 appCSS <- ".mandatory_star { color: red; }"
-~~~
+{% endhighlight %}
 
 And add the CSS to the app by calling `shinyjs::inlineCSS(appCSS)` in the UI.
 
 The complete code so far should look like this (it might be a good idea to just copy and paste this, to make sure you have the right code):
 
-~~~
+{% highlight r linenos %}
 fieldsMandatory <- c("name", "favourite_pkg")
 
 labelMandatory <- function(label) {
@@ -184,38 +184,38 @@ shinyApp(
     })    
   }
 )
-~~~
+{% endhighlight %}
 
 # Save the response upon submission {#save}
 
 The most important part of the app is to save the user's response.  First we need to define (a) what input fields we want to store and (b) what directory to use to store all the responses. I also like to add the submission timestamp to each submission, so I also want to define (c) a function that returns the current time as an integer. Let's define these three things in the global scope:
 
-~~~
+{% highlight r linenos %}
 fieldsAll <- c("name", "favourite_pkg", "used_shiny", "r_num_years", "os_type")
 responsesDir <- file.path("responses")
 epochTime <- function() {
   as.integer(Sys.time())
 }
-~~~
+{% endhighlight %}
 
 Make sure you create a `responses` directory so that the saved responses can go there.
 
 Next we need to have a way to gather all the form data (plus the timestamp) into a format that can be saved as a *csv*. We can do this easily by looping over the input fields. Note that we need to transpose the data to get it into the right shape that we want (1 row = 1 observation = 1 user submission). Add the following reactive expression to the server:
 
-~~~
+{% highlight r linenos %}
 formData <- reactive({
   data <- sapply(fieldsAll, function(x) input[[x]])
   data <- c(data, timestamp = epochTime())
   data <- t(data)
   data
 })
-~~~
+{% endhighlight %}
 
 The last part is to actually save the data. As I said earlier, in this post we will save the data to a local file, but in my next post I'll show how to alter the following function in order to save to other sources. When saving the user responses locally to a file, there are two options: either save all responses to one file, or save each response as its own file. The first approach might sound like it makes more sense, but I wanted to avoid it for two reasons: first of all, it's slower because in order to save (add a new row to the file), we'd need to first read the whole file to know where to add the new row. Secondly, this approach is not thread-safe, which means that if two people submit at the same time, one of their responses will get lost. So I opted to use the second solution - each submission is its own file. It might seem weird, but it works.
 
 To ensure that we don't lose any submissions, we need to make sure that no two files have the same name. It's difficult to 100% guarantee that, but it's easy enough to be almost sure that filenames are unique by adding some randomness to them. However, instead of having turly random characters in the filename, I went a slightly different way: I make the filename a concatenation of the current time and the md5 hash of the submission data. This way the only realistic way that two submissions will overwrite each other is if they happen at the same second and have the exact same data.  Here is the function to save the response (add to the server): 
 
-~~~
+{% highlight r linenos %}
 saveData <- function(data) {
   fileName <- sprintf("%s_%s.csv",
                       humanTime(),
@@ -229,13 +229,13 @@ saveData <- function(data) {
 observeEvent(input$submit, {
   saveData(formData())
 })
-~~~
+{% endhighlight %}
 
 Notice that I used `humanTime()` instead of `epochTime()` because I wanted the filename to have a more human-friendly timestamp. You'll need to define `humanTime()` as
 
-~~~
+{% highlight r linenos %}
 humanTime <- function() format(Sys.time(), "%Y%m%d-%H%M%OS")
-~~~
+{% endhighlight %}
 
 Now you should be able to run the app, enter input, save, and see a new file created for every submission. If you get an error when saving, make sure the `responses` directory exists and you have write permissions.
 
@@ -249,7 +249,7 @@ Right now, after submitting a response, there is no feedback and the user will t
 
 Add the "thank you" section to the UI *after* the `form` div (initialize it as hidden because we only want to show it after a submission):
 
-~~~
+{% highlight r linenos %}
 div(id = "form", ...),
 shinyjs::hidden(
   div(
@@ -258,11 +258,11 @@ shinyjs::hidden(
     actionLink("submit_another", "Submit another response")
   )
 )  
-~~~
+{% endhighlight %}
 
 And in the server, after saving the data we now want to reset the form, hide it, and show the thank you message:
 
-~~~
+{% highlight r linenos %}
 # action to take when submit button is pressed
 observeEvent(input$submit, {
   saveData(formData())
@@ -270,18 +270,18 @@ observeEvent(input$submit, {
   shinyjs::hide("form")
   shinyjs::show("thankyou_msg")
 })
-~~~
+{% endhighlight %}
 
 Note that the this observer should overwrite the previous one because we added 3 expressions.
 
 We also need to add an observer to clicking on the "Submit another response" button that will do the opposite: hide the thank you message and show the form (add the following to the server):
 
-~~~
+{% highlight r linenos %}
 observeEvent(input$submit_another, {
   shinyjs::show("form")
   shinyjs::hide("thankyou_msg")
 })    
-~~~
+{% endhighlight %}
 
 Now you should be able to submit multiple responses with a clear indication every time that it succeeded.
 
@@ -289,18 +289,18 @@ Now you should be able to submit multiple responses with a clear indication ever
 
 Right now there is no feedback to the user when their response is being saved and if it encounters an error, the app will crash.  Let's fix that! First we need to add a "Submitting..." progress message and an error message container to the UI - add them inside the `form` div, just after the submit button:
 
-~~~
+{% highlight r linenos %}
 shinyjs::hidden(
   span(id = "submit_msg", "Submitting..."),
   div(id = "error",
       div(br(), tags$b("Error: "), span(id = "error_msg"))
   )
 )
-~~~
+{% endhighlight %}
 
 Now let's hook up the logic. When the "submit" button is pressed, we want to: disable the button from being pressed again, show the "Submitting..." message, and hide any previous errors. We want to reverse these actions when saving the data is finished. If an error occurs while saving the data, we want to show the error message.  All these sorts of actions are why `shinyjs` was created, and it will help us here. Change the observer of `input$submit` once again:
 
-~~~
+{% highlight r linenos %}
 observeEvent(input$submit, {
   shinyjs::disable("submit")
   shinyjs::show("submit_msg")
@@ -321,15 +321,15 @@ observeEvent(input$submit, {
     shinyjs::hide("submit_msg")
   })
 })
-~~~
+{% endhighlight %}
 
 Just as a small extra bonus, I like to make error messages red, so I added `#error { color: red; }` to the `appCSS` string that we defined in the beginning, so now `appCSS` is:
 
-~~~
+{% highlight r linenos %}
 appCSS <-
   ".mandatory_star { color: red; }
    #error { color: red; }"
-~~~
+{% endhighlight %}
 
 **Now you have a fully functioning form shiny app!** The only thing that's missing so far is a way to view the responses directly in the app. Remember that all the responses are saved locally, so you can also just open the files manually or use any approach you want to open the files.
 
@@ -339,32 +339,32 @@ appCSS <-
 
 Now that we can submit responses smoothly, it'd be nice to also be able to view submitted responses in the app. First we need to add a dataTable placeholder to the UI (add it just before the `form` div, after the `titlePanel`):
 
-~~~
+{% highlight r linenos %}
 DT::dataTableOutput("responsesTable"),
-~~~
+{% endhighlight %}
 
 The main issue we need to solve in this section is how to retrieve all previous submissions. To do this, we'll look at all the files in the `responses` directory, read each one into a data.frame separately, and then use `dplyr::rbind_all` to concatenate all the responses together. Note that this will only work if all the response files have exactly the same fields, so if you change your app to add new fields, you'll probably need to either remove all previous submissions or make your own script to add a default value to the new field of all previous submissions.
 
 Here's our function that will retrieve all submissions and load them into a data.frame. You can define it in the global scope.
 
-~~~
+{% highlight r linenos %}
 loadData <- function() {
   files <- list.files(file.path(responsesDir), full.names = TRUE)
   data <- lapply(files, read.csv, stringsAsFactors = FALSE)
   data <- dplyr::rbind_all(data)
   data
 }
-~~~
+{% endhighlight %}
 
 Now that we have this function, we just need to tell the dataTable in the UI to display that data. Add the following to the server:
 
-~~~
+{% highlight r linenos %}
 output$responsesTable <- DT::renderDataTable(
   loadData(),
   rownames = FALSE,
   options = list(searching = FALSE, lengthChange = FALSE)
 ) 
-~~~
+{% endhighlight %}
 
 Now when you run the app you should be able to see your previous submissions, assuming you followed the instructions without problems.
 
@@ -372,13 +372,13 @@ Now when you run the app you should be able to see your previous submissions, as
 
 It would also be very handy to be able to download all the reponses into a single file. Let's add a download button to the UI, either just before or just after the dataTable:
 
-~~~
+{% highlight r linenos %}
 downloadButton("downloadBtn", "Download responses"),
-~~~
+{% endhighlight %}
 
 We already have a function for retrieving the data, so all we need to do is tell the download hadler to use it. Add the following to the server:
 
-~~~
+{% highlight r linenos %}
 output$downloadBtn <- downloadHandler(
   filename = function() { 
     sprintf("mimic-google-form_%s.csv", humanTime())
@@ -387,7 +387,7 @@ output$downloadBtn <- downloadHandler(
     write.csv(loadData(), file, row.names = FALSE)
   }
 )
-~~~
+{% endhighlight %}
 
 Almost done!
 
@@ -397,13 +397,13 @@ The only missing piece is that right now everyone will see all the responses, an
 
 The first thing we need to do is remove all the admin-only content from the UI and only generate it if the current user is an admin. Remove the `dataTableOutput` and the `downloadButton` from the UI, and instead add a dynamic UI element:
 
-~~~
+{% highlight r linenos %}
 uiOutput("adminPanelContainer"),
-~~~
+{% endhighlight %}
 
 We'll re-define the dataTable and download button in the server, but only if the user is an admin. The following code ensures that for non-admins, nothing gets rendered in the admin panel, but admins can see the table and download button (add this to the server):
 
-~~~
+{% highlight r linenos %}
 output$adminPanelContainer <- renderUI({
   if (!isAdmin()) return()
   
@@ -413,29 +413,29 @@ output$adminPanelContainer <- renderUI({
     DT::dataTableOutput("responsesTable")
   )
 }) 
-~~~
+{% endhighlight %}
 
 All that's left is to decide if the user is an admin or not (note the `isAdmin()` call in the previous code chunk, we need to define that function). If authentication is enabled, then the logged in user's name will be available to us in the `session$user` variable. If there is no authentication, it will be `NULL`. Let's say John and Sally are the app developers so they should be the admins, we can define a list of admin usernames in the global scope:
 
-~~~
+{% highlight r linenos %}
 adminUsers <- c("john", "sally")
-~~~
+{% endhighlight %}
 
 Now that we know who are the potential admins, we can use this code (in the server) to determine if the current user is an admin:
 
-~~~
+{% highlight r linenos %}
 isAdmin <- reactive({
   !is.null(session$user) && session$user %in% adminUsers
 })  
-~~~
+{% endhighlight %}
 
 This will ensure that only if "john" or "sally" are using the app, the admin panel will show up.  For illustration purposes, since many of you don't have authentication support, you can change the `isAdmin` to
 
-~~~
+{% highlight r linenos %}
 isAdmin <- reactive({
   is.null(session$user) || session$user %in% adminUsers
 })  
-~~~
+{% endhighlight %}
 
 This will assume that when there is no authentication, everyone is an admin, but when authentication is enabled, it will look at the admin users list.
 
