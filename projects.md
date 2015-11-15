@@ -15,9 +15,11 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 ## R packages
 
+- **[shinyjs](https://github.com/daattali/shinyjs)** - perform common JavaScript operations in Shiny apps or call your own JavaScript functions easily using plain R code.  Check out a [demo online](http://daattali.com/shiny/shinyjs-demo/). Available [on CRAN](http://cran.r-project.org/web/packages/shinyjs/) and [on GitHub](https://github.com/daattali/shinyjs).
+
 - **[ggExtra](https://github.com/daattali/ggExtra)** - easily add histograms/density plots to ggplot2 scatterplots, plus a few more convenience functions. Check out a [demo online](http://daattali.com/shiny/ggExtra-ggMarginal-demo/). Available [on CRAN](http://cran.r-project.org/web/packages/ggExtra/) and [on GitHub](https://github.com/daattali/ggExtra).
 
-- **[shinyjs](https://github.com/daattali/shinyjs)** - perform common JavaScript operations in Shiny apps using plain R code.  Check out a [demo online](http://daattali.com/shiny/shinyjs-demo/) or [a simpler demo](http://daattali.com/shiny/shinyjs-basic/). Available [on CRAN](http://cran.r-project.org/web/packages/shinyjs/) and [on GitHub](https://github.com/daattali/shinyjs).
+- **[ddpcr](https://github.com/daattali/ddpcr)** - analyze and visualize droplet digital PCR data. Available [on GitHub](https://github.com/daattali/ggExtra).
 
 - **[rsalad](https://github.com/daattali/rsalad)** - a mix of R tools that are good for you. Terrible joke... Started as a school assignment, but turned into a collection of extremely useful R tools, some of which have been used by several other people worldwide (there are a bunch of people I don't know who starred it!). The most useful function is `spinMyR`, which has a full [vignette dedicated to it](https://github.com/daattali/rsalad/blob/master/inst/doc/spinMyR.md). If you're into R and reproducible research/generating reports with knitr, then do check it out.  The package also provides a few general productivity tools and some improvements to ggplot.
 
@@ -49,11 +51,12 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 - **[deanattali.com](http://deanattali.com)** - the site you're currently on.  Just a simple site to have some virtual presence.
 
-## Paid articles
+## Paid writing gigs
 
 - [Persistent data storage in Shiny apps](http://shiny.rstudio.com/articles/persistent-data-storage.html) - written for [RStudio](http://www.rstudio.com/).
 - [How to Set Up R on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04) - written for [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99).
 - [How to Set Up Shiny Server on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-shiny-server-on-ubuntu-14-04) - written for [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99).
+- Book reviewer for [Learning Shiny](https://www.packtpub.com/application-development/learning-shiny)
 
 ## Misc
 
