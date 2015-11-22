@@ -29,7 +29,7 @@ You can host your Shiny app somewhere that is publicly available, such as [shiny
 
 As an example, I host [my own Shiny Server](http://daattali.com/shiny) where I can host my Shiny apps, and whenever I release a new package, I include a link in the README to a demo app.
 
-The advantage of doing this is that people can play aroud with your package before even downloading it.
+The advantage of doing this is that people can play around with your package before even downloading it.
 
 #### 2. Include the app in the package and add a function to launch it
 
