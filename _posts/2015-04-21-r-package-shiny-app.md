@@ -35,7 +35,7 @@ The advantage of doing this is that people can play around with your package bef
 
 I recommend including the source code of the Shiny app in your package, and having a function such as `runExample()` that will launch the app. Here are the steps to do this (I've learned a lot from looking at `shiny::runExample` source code - thanks RStudio):
 
-First, add Shiny as a dependency in your `DESCRIPTION` file (preferably under the `Suggests:` field).
+First, add `shiny` as a dependency in your `DESCRIPTION` file.
 
 Then place your Shiny app folder under `inst/shiny-examples/` and add an R file called `runExample.R`. The package's tree structure should look like this
 
