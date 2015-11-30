@@ -247,7 +247,7 @@ As mentioned above, any Shiny app you place under `/srv/shiny-server/` will be a
 
 But what if you want to bring into your server an app you already have on your machine?  One option is to directly transfer files using something like [FileZilla](https://filezilla-project.org/) or the `scp` command. The moment a shiny app directory is transferred to your droplet, the corresponding app will be available to use on the web right away. Another approach is to use git. If you don't know what git is, that's outside the scope of this article, so either look it up and come back here or just use FileZilla :)
 
-The main idea is to have the `/srv/shiny-server/` folder be a git repository, so that you can push to this repository from your personal computer and whenever you do a `git pill` on your droplet, it will update and grab the new apps you added. That's how I set up my own shiny server, you can take a look at [my shiny server on GitHub](https://github.com/daattali/shiny-server) and fork it if you'd like a good starting point.
+The main idea is to have the `/srv/shiny-server/` folder be a git repository, so that you can push to this repository from your personal computer and whenever you do a `git pull` on your droplet, it will update and grab the new apps you added. That's how I set up my own shiny server, you can take a look at [my shiny server on GitHub](https://github.com/daattali/shiny-server) and fork it if you'd like a good starting point.
 
 The first step is to install git and make the `/srv/shiny-server/` directory a git repository.
 
