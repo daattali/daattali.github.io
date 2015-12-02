@@ -63,7 +63,7 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 ## Misc
 
-- **[Impact Replays](http://daattali.com/shiny/cfl/)** - I participated in a national hackathon ([SportsHack15](http://sportshackweekend.org/ca/2015/)) and won 3rd place with this app. We had to built something that would increase engagement of CFl (Canadian Football League) fans. This app uses play-by-play data from games to let you focus on just the action moments of games.
+- **[Impact Replays](http://daattali.com/shiny/cfl/)** - I participated in a national hackathon ([SportsHack15](http://sportshackweekend.org/ca/2015/)) and won 3rd place with this app. We had to build something that would increase engagement of CFl (Canadian Football League) fans. This app uses play-by-play data from games to let you focus on just the action moments of games.
 
 - **[Minesweeper](./files/Minesweeper)** - tiny Minesweeper game I built as part of the interview process with Airbnb.  It's not fancy at all, but it's the best I could do in the two hours they allotted me back in the day.
 
