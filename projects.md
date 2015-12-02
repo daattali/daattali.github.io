@@ -58,13 +58,16 @@ This is a collection of some things I've worked on that are easily viewable onli
 - [Persistent data storage in Shiny apps](http://shiny.rstudio.com/articles/persistent-data-storage.html) - written for [RStudio](http://www.rstudio.com/).
 - [How to Set Up R on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04) - written for [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99).
 - [How to Set Up Shiny Server on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-shiny-server-on-ubuntu-14-04) - written for [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99).
-- Book reviewer for [Learning Shiny](https://www.packtpub.com/application-development/learning-shiny)
+- Book reviewer for [Learning Shiny](https://www.packtpub.com/application-development/learning-shiny).
+- [Building Shiny apps](http://stat545-ubc.github.io/shiny01_activity.html) - written for a course I TA'ed.
 
 ## Misc
 
-- **[Minesweeper](./files/Minesweeper)** - tiny Minesweeper game I built as part of the interview process with Airbnb.  It's not fancy at all, but it's the best I could do in the two hours they allotted me.
+- **[Impact Replays](http://daattali.com/shiny/cfl/)** - I participated in a national hackathon ([SportsHack15](http://sportshackweekend.org/ca/2015/)) and won 3rd place with this app. We had to built something that would increase engagement of CFl (Canadian Football League) fans. This app uses play-by-play data from games to let you focus on just the action moments of games.
 
-- **[Building your own mobile oldies gaming console](https://github.com/daattali/rasperry-pi-gaming-console-setup)** - I bought a raspberry pi and turned it into an awesome portable gaming console that supports SNES/PS1/GameGear/GameBoy.  Super cool.
+- **[Minesweeper](./files/Minesweeper)** - tiny Minesweeper game I built as part of the interview process with Airbnb.  It's not fancy at all, but it's the best I could do in the two hours they allotted me back in the day.
+
+- **[Building your own portable oldies gaming console](https://github.com/daattali/rasperry-pi-gaming-console-setup)** - I bought a raspberry pi and turned it into an awesome portable gaming console that supports SNES/PS1/GameGear/GameBoy.  Super cool.
 
 ## Java games
 
