@@ -320,6 +320,15 @@ proxy_set_header Upgrade $http_upgrade;
 proxy_set_header Connection "upgrade";
 ~~~
 
+If you're hosting a Shiny Server, add these 3 lines after the `proxy_pass` line inside `location /shiny/` as well.
+
+**Make your Shiny apps work with and without trailing slashes:** If you have a Shiny app called "myapp", then you would have to go to the URL `http://123.456.1.2/shiny/myapp/` to see it. But if you omit the trailing slash (`http://123.456.1.2/shiny/myapp`), it will not work.  I figured out a way to solve this, but again, keep in mind that I'm an nginx noob so it might not be a *good* solution.  I added the following line inside `location /shiny/` (just after the previous 3 lines from the previous paragraph):
+
+~~~
+rewrite ^(/shiny/[^/]+)$ $1/ permanent;
+~~~
+
+
 # Step 10: Custom domain name {#custom-domain}
 
 If you have a custom domain that you want to host your droplet on, that's not too hard to set up.  For example, my main droplet's IP is [198.199.117.12](http://198.199.117.12), but I also purchased the domain [daattali.com](http://daattali.com/) so that it would be able to host my droplet with a much simpler URL.
@@ -368,6 +377,8 @@ I use Namecheap, so this is what my domain configuration needs to look like:
 **[2015-05-18]** As mentioned in the comments, students with an educational GitHub account can get $100 credits through the GitHub Student Developer Pack.
 
 **[2015-09-01]** Matthew Lincoln posted a script in the commends section that runs all the commands in this tutorial automatically when a DigitalOcean droplet is initialized. His exact comment: "I've tried my hand at getting most of this scripted into a cloud-config file that you can paste into the 'User Data' section when starting up a DO droplet... It doesn't handle anything like custom user options (yet!), but I've found it a great way to automate a fair number of these steps." I myself haven't tried his script, but you can check it out [here](https://gist.github.com/mdlincoln/1f40f4e88ce32c55b5f3), and I also found a DigitalOcean tutorial about clour-config and User Data [here](https://www.digitalocean.com/community/tutorials/an-introduction-to-cloud-config-scripting). Again, I haven't tried it myself so if you have any questions, please direct it at Matthew :)
+
+**[2015-12-05]** Added a small paragraph to [step 9](#reverse-proxy) for fixing Shiny app URLs that don't have a trailing slash.
 
 # Resources {#resources}
 
