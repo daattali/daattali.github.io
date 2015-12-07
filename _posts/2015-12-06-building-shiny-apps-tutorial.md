@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Building Shiny apps - an interactive tutorial"
-date: 2015-12-06 19:00:00 -0700
+date: 2015-12-07 10:00:00 -0700
 tags: [professional, rstats, r, r-bloggers, shiny, tutorial]
 ---
 
