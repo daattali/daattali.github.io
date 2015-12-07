@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Building Shiny apps - an interactive tutorial"
-tags: [professional, rstats, r, r-bloggers, shiny, tutorial]
 date: 2015-12-06 18:45:00 -0700
 ---
 
@@ -817,9 +816,6 @@ Shiny is extremely powerful and has lots of features that we haven't covered. He
 ## Shiny in Rmarkdown
 
 You can include Shiny inputs and outputs in an Rmarkdown document! This means that your Rmakdown document can be interactive. Learn more [here](http://rmarkdown.rstudio.com/authoring_shiny.html). Here's a simple example of how to include interactive Shiny elements in an Rmarkdown.
-
-
-
 
 ~~~
 ---
