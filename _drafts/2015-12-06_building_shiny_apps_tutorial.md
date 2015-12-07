@@ -2,10 +2,10 @@
 layout: post
 title: "Building Shiny apps - an interactive tutorial"
 tags: [professional, rstats, r, r-bloggers, shiny, tutorial]
-date: 2015-12-06 18:30:00 -0700
+date: 2015-12-06 18:45:00 -0700
 ---
 
-> This tutorial was originally developed for the [STAT545](http://stat545-ubc.github.io/) course at UBC, and shortly after I decided to publish it so that more people can benefit from it.
+> This tutorial was originally developed for the [STAT545](http://stat545-ubc.github.io) course at UBC, but I decided to publish it shortly afterwards so that more people can benefit from it
 
 Shiny is a package from RStudio that can be used to build interactive web pages with R. While that may sound scary because of the words "web pages", it's geared to R users who have 0 experience with web development, and you do not need to know any HTML/CSS/JavaScript.
 
@@ -19,31 +19,38 @@ As an added tutorial, I highly recommend the [official Shiny tutorial](http://sh
 
 ## Table of contents
 
-- [Before we begin](#beofre-we-begin)
+- [Before we begin](#before-we-begin)
 - [Shiny app basics](#shiny-app-basics)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
+- [Create an empty Shiny app](#create-an-empty-shiny-app)
+- [Load the dataset](#load-the-dataset)
+- [Build the UI](#build-the-ui)
+- [Checkpoint: what our app looks like after implementing the UI](#checkpoint-what-our-app-looks-like-after-implementing-the-ui)
+- [Implement server logic to create outputs](#implement-server-logic-to-create-outputs])
+- [Reactivity 101](#reactivity-101)
+- [Using uiOutput() to create UI elements dynamically](#using-uioutput-to-create-ui-elements-dynamically)
+- [Final Shiny app code](#finaly-shiny-app-code)
+- [Share your app with the world](#share-your-app-with-the-world)
+- [More Shiny features to check out](#more-shiny-features-to-check-out)
+- [Awesome add-on packages to Shiny](#awesome-add-on-packages-to-shiny)
+- [Resources](#resources)
+- [Ideas to improve our app](#ideas-to-improve-our-app)
 
 # Before we begin
 
 You'll need to have the `shiny` package, so install it.
 
 
-```r
+{% highlight r linenos %}
 install.packages("shiny")
-```
+{% endhighlight %}
 
 To ensure you successfully installed Shiny, try running one of the demo apps.
 
 
-```r
+{% highlight r linenos %}
 library(shiny)
 runExample("01_hello")
-```
+{% endhighlight %}
 
 If the example app is running, press *Escape* to close the app, and you are ready to build your first Shiny app!
 
@@ -56,12 +63,12 @@ Every Shiny app is composed of a two parts: a web page that shows the app to the
 All Shiny apps follow the same template:
 
 
-```r
+{% highlight r linenos %}
 library(shiny)
 ui <- fluidPage()
 server <- function(input, output, session) {}
 shinyApp(ui = ui, server = server)
-```
+{% endhighlight %}
 
 This template is by itself a working minimal Shiny app that doesn't do much. It initializes an empty UI and an empty server, and runs an app using these empty parts. Copy this template into a new file named `app.R` in a new folder. It is **very important** that the name of the file is `app.R`, otherwise it would not be recognized as a Shiny app. It is also **very important** that you place this app in its own folder, and not in a folder that already has other R scripts or files, unless those other files are used by your app.
 
@@ -96,20 +103,20 @@ The processed dataset we'll be using in this app is available [here](http://dean
 Add a line in your app to load the data into a variable called `bcl`. It should look something like this
 
 
-```r
+{% highlight r linenos %}
 bcl <- read.csv("bcl-data.csv", stringsAsFactors = FALSE)
-```
+{% endhighlight %}
 
 Place this line in your app as the second line, just after `library(shiny)`.  Make sure the file path and file name are correct, otherwise your app won't run. Try to run the app to make sure the file can be loaded without errors.
 
 If you want to verify that the app can successfully read the data, you can add a `print()` statement inside the server. This won't make anything happen in your Shiny app, but you will see a summary of the dataset printed in the console, which should let you know that the dataset was indeed loaded correctly. Replace the `server` function with the following:
 
 
-```r
+{% highlight r linenos %}
 server <- function(input, output, session) {
   print(str(bcl))
 } 
-```
+{% endhighlight %}
 
 > In case you're curious, the code I used to process the raw data into the data we'll be using is available [as a gist](https://gist.github.com/daattali/56b9fa8f3e99174fba63).
 
@@ -124,9 +131,9 @@ Let's start populating our app with some elements visually. This is usually the 
 You can place R strings inside `fluidPage()` to render text.
 
 
-```r
+{% highlight r linenos %}
 fluidPage("BC Liquor Store", "prices")
-```
+{% endhighlight %}
 
 Replace the line in your app that assigns an empty `fluidPage()` into `ui` with the one above, and run the app.
 
@@ -145,7 +152,7 @@ All of these functions are actually just wrappers to HTML tags with the equivale
 Just as a demonstration, try replacing the `fluidPage()` function in your UI with
 
 
-```r
+{% highlight r linenos %}
 fluidPage(
   h1("My app"),
   "BC",
@@ -154,7 +161,7 @@ fluidPage(
   "Store",
   strong("prices")
 )
-```
+{% endhighlight %}
 
 Run the app with this code as the UI. Notice the formatting of the text and understand why it is rendered that way.
 
@@ -169,11 +176,11 @@ We could add a title to the app with `h1()`, but Shiny also has a special functi
 Overwrite the `fluidPage()` that you experimented with so far, and replace it with the simple one below, that simply has a title and nothing else.
 
 
-```r
+{% highlight r linenos %}
 fluidPage(
   titlePanel("BC Liquor Store prices")
 )
-```
+{% endhighlight %}
 
 **Exercise:** Look at the documentation for the `titlePanel()` function and notice it has another argument. Use that argument and see if you can see what it does.
 
@@ -184,19 +191,19 @@ You may have noticed that so far, by just adding text and HTML tags, everything 
 Add the following code after the `titlePanel()`
 
 
-```r
+{% highlight r linenos %}
 sidebarLayout(
   sidebarPanel("our inputs will go here"),
   mainPanel("the results will go here")
 )
-```
+{% endhighlight %}
 
 Remember that all the arguments inside `fluidPage()` need to be separated by commas.
 
 So far our complete app looks like this (hopefully this isn't a surprise to you)
 
 
-```r
+{% highlight r linenos %}
 library(shiny)
 bcl <- read.csv("bcl-data.csv", stringsAsFactors = FALSE)
 
@@ -211,7 +218,7 @@ ui <- fluidPage(
 server <- function(input, output, session) {}
 
 shinyApp(ui = ui, server = server)
-```
+{% endhighlight %}
 
 ![Shiny layout](./img/shiny-layout.png)
 
@@ -226,11 +233,11 @@ This was already mentioned, but it's important to remember: the enire UI is just
 
 
 
-```r
+{% highlight r linenos %}
 print(ui)
-```
+{% endhighlight %}
 
-```
+~~~
 ## <div class="container-fluid">
 ##   <h2>BC Liquor Store prices</h2>
 ##   <div class="row">
@@ -240,7 +247,7 @@ print(ui)
 ##     <div class="col-sm-8">the results will go here</div>
 ##   </div>
 ## </div>
-```
+~~~
 
 This should make you appreciate Shiny for not making you write horrendous HTML by hand.
 
@@ -263,10 +270,10 @@ To create a slider input, a maximum value needs to be provided. We could use the
 By looking at the documentation for the slider input function, the following piece of code can be constructed.
 
 
-```r
+{% highlight r linenos %}
 sliderInput("priceInput", "Price", min = 0, max = 100,
             value = c(25, 40), pre = "$")
-```
+{% endhighlight %}
 
 Place the code for the slider input inside `sidebarPanel()` (replace the text we wrote earlier with this input).
 
@@ -277,11 +284,11 @@ Usually when going to the liquor store you know whether you're looking for beer 
 For this we want some kind of a text input. But allowing the user to enter text freely isn't the right solution because we want to restrict the user to only a few choices.  We could either use radio buttons or a select box for our purpose. Let's use radio buttons for now since there are only a few options, so take a look at the documentation for `radioButtons()` and come up with a reasonable input function code.  It should look like this:
 
 
-```r
+{% highlight r linenos %}
 radioButtons("typeInput", "Product type",
             choices = c("BEER", "REFRESHMENT", "SPIRITS", "WINE"),
             selected = "WINE")
-```
+{% endhighlight %}
 
 Add this input code inside `sidebarPanel()`, after the previous input (separate them with a comma).
 
@@ -292,15 +299,15 @@ Add this input code inside `sidebarPanel()`, after the previous input (separate 
 Sometimes I like to feel fancy and only look for wines imported from France. We should add one last input, to select a country. The most appropriate input type in this case is probably the select box. Look at the documentation for `selectInput()` and create an input function. For now let's only have CANADA, FRANCE, ITALY as options, and later we'll see how to include all countries. 
 
 
-```r
+{% highlight r linenos %}
 selectInput("countryInput", "Country",
             choices = c("CANADA", "FRANCE", "ITALY"))
-```
+{% endhighlight %}
 
 Add this function as well to your app.  If you followed along, your entire app should have this code:
 
 
-```r
+{% highlight r linenos %}
 library(shiny)
 bcl <- read.csv("bcl-data.csv", stringsAsFactors = FALSE)
 
@@ -322,7 +329,7 @@ ui <- fluidPage(
 server <- function(input, output, session) {}
 
 shinyApp(ui = ui, server = server)
-```
+{% endhighlight %}
 
 ![Shiny add inputs](./img/shiny-addinputs.png)
 
@@ -339,9 +346,9 @@ At the top of the main panel we'll have a plot showing some visualization of the
 Add the following code into the `mainPanel()` (replace the existing text):
 
 
-```r
+{% highlight r linenos %}
 plotOutput("coolplot")
-```
+{% endhighlight %}
 
 This will add a placeholder in the UI for a plot named *coolplot*.
 
@@ -354,9 +361,9 @@ Below the plot, we will have a table that shows all the results.  To get a table
 Here is a simple way to create a UI element that will hold a table output:
 
 
-```r
+{% highlight r linenos %}
 tableOutput("results")
-```
+{% endhighlight %}
 
 Add this output to the `mainPanel()` as well. Maybe add a couple `br()` in between the two outputs, just as a space buffer so that they aren't too close to each other.
 
@@ -365,7 +372,7 @@ Add this output to the `mainPanel()` as well. Maybe add a couple `br()` in betwe
 If you've followed along, your app should now have this code:
 
 
-```r
+{% highlight r linenos %}
 library(shiny)
 bcl <- read.csv("bcl-data.csv", stringsAsFactors = FALSE)
 
@@ -391,7 +398,7 @@ ui <- fluidPage(
 server <- function(input, output, session) {}
 
 shinyApp(ui = ui, server = server)
-```
+{% endhighlight %}
 
 # Implement server logic to create outputs
 
@@ -408,11 +415,11 @@ Recall that we created two output placeholders: *coolplot* (a plot) and *results
 The third rule is only required if you want your output to depend on some input, so let's first see how to build a very basic output using only the first two rules. We'll create a plot and send it to the *coolplot* output. 
 
 
-```r
+{% highlight r linenos %}
 output$coolplot <- renderPlot({
   plot(rnorm(100))
 })
-```
+{% endhighlight %}
 
 This simple code shows the first two rules: we're creating a plot inside the `renderPlot()` function, and assigning it to *coolplot* in the `output` list. Remember that every output creatd in the UI must have a unique ID, now we see why. In order to attach an R object to an output with ID *x*, we assign the R object to `output$x`.
 
@@ -427,11 +434,11 @@ If you add the code above inside the server function, you should see a plot with
 Now we'll take the plot one step further. Instead of always plotting the same plot (100 random numbers), let's use the minimum price selected as the number of points to show. It doesn't make too much sense, but it's just to learn how to make an output depend on an input.
 
 
-```r
+{% highlight r linenos %}
 output$coolplot <- renderPlot({
   plot(rnorm(input$priceInput[1]))
 })
-```
+{% endhighlight %}
 
 Replace the previous code in your server function with this code, and run the app. Whenever you choose a new minimum price range, the plot will update with a new number of points. Notice that the only thing different in the code is that instead of using the number `100` we are using `input$priceInput[1]`. 
 
@@ -446,19 +453,19 @@ First we need to make sure `ggplot2` is loaded, so add a `library(ggplot2)` at t
 Next we'll return a histogram of alcohol content from `renderPlot()`. Let's start with just a histogram of the whole data, unfiltered.
 
 
-```r
+{% highlight r linenos %}
 output$coolplot <- renderPlot({
   ggplot(bcl, aes(Alcohol_Content)) +
     geom_histogram()
 })
-```
+{% endhighlight %}
 
 If you run the app with this code inside your server, you sohuld see a histogram in the app.  But if you change the input values, nothing happens yet, so the next step is to actually filter the dataset based on the inputs.
 
 Recall that we have 3 inputs: `priceInput`, `typeInput`, and `countryInput`. We can filter the data based on the values of these three inputs. We'll use `dplyr` functions to filter the data, so be sure to include `dplyr` at the top. Then we'll plot the filtered data instead of the original data.
 
 
-```r
+{% highlight r linenos %}
 output$coolplot <- renderPlot({
   filtered <-
     bcl %>%
@@ -470,7 +477,7 @@ output$coolplot <- renderPlot({
   ggplot(filtered, aes(Alcohol_Content)) +
     geom_histogram()
 })
-```
+{% endhighlight %}
 
 Place this code in your server function and run the app. If you change any input, you should see the histogram update. The way I know the histogram is correct is by noticing that the alcohol content is about 5% when I selecte beer, 40% for spirits, and 13% for wine. That sounds right.
 
@@ -479,7 +486,7 @@ Read this code and understand it. You've successfully created an interactive app
 To make sure we're on the same page, here is what your code should look like at this point:
 
 
-```r
+{% highlight r linenos %}
 library(shiny)
 library(ggplot2)
 library(dplyr)
@@ -520,7 +527,7 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui = ui, server = server)
-```
+{% endhighlight %}
 
 ![Shiny add plot](./img/shiny-addplot.png)
 
@@ -533,7 +540,7 @@ Building the next output should be much easier now that we've done it once.  The
 The code for creating the table output should make sense to you without too much explanation:
 
 
-```r
+{% highlight r linenos %}
 output$results <- renderTable({
   filtered <-
     bcl %>%
@@ -544,7 +551,7 @@ output$results <- renderTable({
     )
   filtered
 })
-```
+{% endhighlight %}
 
 Add this code to your server. Don't overwrite the previous definition of `output$coolplot`, just add this code before or after that, but inside the server function. Run your app, and be amazed! You can now see a table showing all the products at the BC Liquor Store that match your criteria. 
 
@@ -555,11 +562,11 @@ Add this code to your server. Don't overwrite the previous definition of `output
 Shiny uses a concept called **reactive** programming. This is what enables your outputs to *react* to changes in inputs.  Reactivity in Shiny is complex, but as an extreme oversimplification, it means that when the value of a variable `x` changes, then anything that relies on `x` gets re-evaluated.  Notice how this is very different from what you are used to in R.  Consider the following code:
 
 
-```r
+{% highlight r linenos %}
 x <- 5
 y <- x + 1
 x <- 10
-```
+{% endhighlight %}
 
 What is the value of `y`? It's 6.  But in reactive programming, if `x` and `y` are reactive variables, then the value of `y` would be 11. This is a very powerful technique that is very useful for creating the responsiveness of Shiny apps, but it might be a bit weird at first because it's a very different concept from what we're used to.
 
@@ -569,9 +576,9 @@ One very important thing to remember about reactive variable is that **they can 
 
 To prove this point, try printing the value of the price input in the server function by simply adding `print(input$priceInput)` to the server. When I run the app with that print function, I get the following error:
 
-```
+~~~
 Operation not allowed without an active reactive context. (You tried to do something that can only be done from inside a reactive expression or observer.)
-```
+~~~
 
 It's pretty clear about what the error is. Now try wrapping the print statement inside an `observe({})`, and this time it would work.
 
@@ -582,7 +589,7 @@ You may have noticed that we have the exact same code filtering the dataset in t
 The first step would be to create the reactive variable. The following code should be added to the server function.
 
 
-```r
+{% highlight r linenos %}
 filtered <- reactive({
   bcl %>%
     filter(Price >= input$priceInput[1],
@@ -591,14 +598,14 @@ filtered <- reactive({
            Country == input$countryInput
     )
 })
-```
+{% endhighlight %}
 
 The variable `filtered` is being defined exactly like before, except the body is wrapped by a `reactive({})`, and it's defined in the server function instead of inside the individual render functions.
 
 Reactive expressions defined with the `reactive()` function are treated like functions, so to access the value of a reactive expression, you to get the value of the dataset at any time you would use `filtered()` (notice that there are brackets at the end, as if it's a function). Now that we have our reactive variable, we can use it in the output render functions.  Try it yourself, and when you think you're done, check the code below. This is how your server function should look like now.  
 
 
-```r
+{% highlight r linenos %}
 server <- function(input, output, session) {
   filtered <- reactive({
     bcl %>%
@@ -618,7 +625,7 @@ server <- function(input, output, session) {
     filtered()
   })
 }
-```
+{% endhighlight %}
 
 You may be wondering how this works. Shiny creates a dependency tree with all the reactive expressions to know what value depends on what other value. For example, when the price input changes, Shiny looks at what values depend on price, and sees that `filtered` is a reactive expression that depends on the price input, so it re-evaluates `filtered`. Then, because `filtered` is changed, Shiny now looks to see what expressions depend on `filtered`, and it finds that the two render functions use `filtered`. So Shiny re-executes the two render functions as well.
 
@@ -635,7 +642,7 @@ One of the output functions you can add in the UI is `uiOutput()`. According to 
 As a very basic example, consider this app:
 
 
-```r
+{% highlight r linenos %}
 library(shiny)
 ui <- fluidPage(
   numericInput("num", "Maximum slider value", 5),
@@ -650,7 +657,7 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui = ui, server = server)
-```
+{% endhighlight %}
 
 If you run that tiny app, you will see that whenever you change the value of the numeric input, the slider input is re-generated. This behaviour can come in handy often.
 
@@ -661,20 +668,20 @@ We can use this concept in our app to populate the choices for the country selec
 First we need to replace the `selectInput("countryInput", ...)` in the UI with 
 
 
-```r
+{% highlight r linenos %}
 uiOutput("countryOutput")
-```
+{% endhighlight %}
 
 Then we need to create the output (which will create a UI element - yeah, it can be a bit confusing at first), so add the following code to the server function:
 
 
-```r
+{% highlight r linenos %}
 output$countryOutput <- renderUI({
   selectInput("countryInput", "Country",
               sort(unique(bcl$Country)),
               selected = "CANADA")
 })
-```
+{% endhighlight %}
 
 Now if you run the app, you should be able to see all the countries that BC Liquor stores import from.
 
@@ -685,7 +692,7 @@ You might notice that when you first run the app, each of the two outputs are th
 Once we understand why the error is happening, fixing it is simple. Inside the `filtered` reactive function, we should check if the country input exists, and if not then just return `NULL`.
 
 
-```r
+{% highlight r linenos %}
 filtered <- reactive({
   if (is.null(input$countryInput)) {
     return(NULL)
@@ -698,12 +705,12 @@ filtered <- reactive({
            Country == input$countryInput
     )
 })
-```
+{% endhighlight %}
 
 Now when the render function tries to access the data, they will get a `NULL` value before the app is fully loaded.  You will still get an error, because the ggplot function will not work with a `NULL` dataset, so we also need to make a similar check in the `renderPlot()` function. Only once the data is loaded, we can try to plot.
 
 
-```r
+{% highlight r linenos %}
 output$coolplot <- renderPlot({
   if (is.null(filtered())) {
     return()
@@ -711,7 +718,7 @@ output$coolplot <- renderPlot({
   ggplot(filtered(), aes(Alcohol_Content)) +
     geom_histogram()
 })
-```
+{% endhighlight %}
 
 The `renderTable()` function doesn't need this fix applied because Shiny doesn't have a problem rendering a `NULL` table.
 
@@ -722,7 +729,7 @@ The `renderTable()` function doesn't need this fix applied because Shiny doesn't
 In case you got lost somewhere, here is the final code. The app is now functional, but there are plenty of features you can add to make it better.
 
 
-```r
+{% highlight r linenos %}
 library(shiny)
 library(ggplot2)
 library(dplyr)
@@ -781,7 +788,7 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui = ui, server = server)
-```
+{% endhighlight %}
 
 # Share your app with the world
 
@@ -814,7 +821,7 @@ You can include Shiny inputs and outputs in an Rmarkdown document! This means th
 
 
 
-````
+~~~
 ---
 output: html_document
 runtime: shiny
@@ -828,14 +835,14 @@ renderPlot({
     plot(seq(input$num))
 })
 ```
-````
+~~~
 
 ## Use conditionalPanel() to conditionally show UI elements
 
 You can use `conditionalPanel()` to either show or hide a UI element based on a simple condition, such as the value of another input. Learn more with `?conditionalPanel`.
 
 
-```r
+{% highlight r linenos %}
 library(shiny)
 ui <- fluidPage(
   numericInput("num", "Number", 5, 1, 10),
@@ -846,14 +853,14 @@ ui <- fluidPage(
 )
 server <- function(input, output, session) {}
 shinyApp(ui = ui, server = server)
-```
+{% endhighlight %}
 
 ## Use navbarPage() or tabsetPanel() to have multiple tabs in the UI
 
 If your apps requires more than a single "view", you can have separate tabs. Learn more with `?navbarPage` or `?tabsetPanel`.
 
 
-```r
+{% highlight r linenos %}
 library(shiny)
 ui <- fluidPage(
   tabsetPanel(
@@ -863,7 +870,7 @@ ui <- fluidPage(
 )
 server <- function(input, output, session) {}
 shinyApp(ui = ui, server = server)
-```
+{% endhighlight %}
 
 ## Use DT for beautiful, interactive tables
 
@@ -878,7 +885,7 @@ When you have multiple reactive variables inside a reactive context, the whole c
 Any input function has an equivalent `update*Input` function that can be used to update any of its parameters.
 
 
-```r
+{% highlight r linenos %}
 library(shiny)
 ui <- fluidPage(
   sliderInput("slider", "Move me", value = 5, 1, 10),
@@ -890,7 +897,7 @@ server <- function(input, output, session) {
   })
 }
 shinyApp(ui = ui, server = server)
-```
+{% endhighlight %}
 
 ## Scoping rules in Shiny apps
 
@@ -913,7 +920,7 @@ You can add an image to your Shiny app by placing an image under the "www/" fold
 If you know JavaScript or CSS you are more than welcome to use some in your app.
 
 
-```r
+{% highlight r linenos %}
 library(shiny)
 ui <- fluidPage(
   tags$head(tags$script("alert('Hello!');")),
@@ -924,7 +931,7 @@ server <- function(input, output, session) {
   
 }
 shinyApp(ui = ui, server = server)
-```
+{% endhighlight %}
 
 If you do want to add some JavaScript or use common JavaScript functions in your apps, you might want to check out [shinyjs](https://github.com/daattali/shinyjs).
 
@@ -1004,4 +1011,4 @@ The app we developed is functional, but there are plenty of improvements that ca
     - **Hint:** Use `uiOutput()` to create this input in the server code.
     
 - Provide a way for the user to show results from *all* countries (instead of forcing a filter by only one specific country).
-    - **Hint:** There are two ways to approach this. You can either add a value of "All" to the dropdown list of country options, you can include a checkbox for "Filter by country" and only show the dropdown when it is unchecked (see [my version of this app](http://daattali.com/shiny/bcl/) to see this option in action). In both cases you'll still need to update the server code appropriately to filter by country only when the user chooses to.
+    - **Hint:** There are two ways to approach this. You can either add a value of "All" to the dropdown list of country options, you can include a checkbox for "Filter by country" and only show the dropdown 
