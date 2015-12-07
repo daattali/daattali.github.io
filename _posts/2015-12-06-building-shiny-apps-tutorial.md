@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Building Shiny apps - an interactive tutorial"
-date: 2015-12-06 18:45:00 -0700
+date: 2015-12-06 19:00:00 -0700
+tags: [professional, rstats, r, r-bloggers, shiny, tutorial]
 ---
 
 > This tutorial was originally developed for the [STAT545](http://stat545-ubc.github.io) course at UBC, but I decided to publish it shortly afterwards so that more people can benefit from it
