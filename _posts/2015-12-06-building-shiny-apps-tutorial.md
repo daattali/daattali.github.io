@@ -73,7 +73,7 @@ This template is by itself a working minimal Shiny app that doesn't do much. It 
 
 After saving the file, RStudio should recognize that this is a Shiny app, and you should see the usual *Run* button at the top change to *Run App*.
 
-![Shiny Run App](./img/shiny-runapp.png)
+[![Shiny Run App]({{ site.url }}/img/blog/shiny-tutorial/shiny-runapp.png)]({{ site.url }}/img/blog/shiny-tutorial/shiny-runapp.png)
 
 If you don't see the *Run App* button, it means you either have a very old version of RStudio, don't have Shiny installed, or didn't follow the file naming conventions.
 
@@ -81,7 +81,7 @@ Click the *Run App* button, and now your app should run. You won't see much beca
 
 Click the stop button to stop the app, or press the *Escape* key.
 
-![Shiny Stop App](./img/shiny-stopapp.png)
+[![Shiny Stop App]({{ site.url }}/img/blog/shiny-tutorial/shiny-stopapp.png)]({{ site.url }}/img/blog/shiny-tutorial/shiny-stopapp.png)
 
 You may have noticed that when you click the *Run App* button, all it's doing is just running the function `shiny::runApp()` in the console. You can run that command instead of clicking the button if you prefer.
 
@@ -219,7 +219,7 @@ server <- function(input, output, session) {}
 shinyApp(ui = ui, server = server)
 {% endhighlight %}
 
-![Shiny layout](./img/shiny-layout.png)
+[![Shiny layout]({{ site.url }}/img/blog/shiny-tutorial/shiny-layout.png)]({{ site.url }}/img/blog/shiny-tutorial/shiny-layout.png)
 
 > If you want to be a lot more flexible with the design, you can have much more fine control over where things go by using a grid layout. We won't cover that here, but if you're interested, look at the documentation for `?column` and `?fluidRow`.
 
@@ -254,7 +254,7 @@ This should make you appreciate Shiny for not making you write horrendous HTML b
 
 Inputs are what gives users a way to interact with a Shiny app. Shiny provides many input functions to support many kinds of interactions that the user could have with an app. For example, `textInput()` is used to let the user enter text, `numericInput()` lets the user select a number, `dateInput()` is for selecting a date, `selectInput()` is for creating a select box (aka a dropdown menu).
 
-![Shiny inputs](./img/shiny-inputs.png)
+[![Shiny inputs]({{ site.url }}/img/blog/shiny-tutorial/shiny-inputs.png)]({{ site.url }}/img/blog/shiny-tutorial/shiny-inputs.png)
 
 All input functions have the same first two arguments: `inputId` and `label`. The `inputId` will be the name that Shiny will use to refer to this input when you want to retrieve its current value. It is important to note that every input must have a unique `inputId`. If you give more than one input the same id, Shiny will unfortunately not give you an explicit error, but your app won't work correctly. The `label` argument specifies the text in the display label that goes along with the input widget. Every input can also have multiple other arguments specific to that input type. The only way to find out what arguments you can use with a specific input function is to look at its help file.
 
@@ -330,7 +330,7 @@ server <- function(input, output, session) {}
 shinyApp(ui = ui, server = server)
 {% endhighlight %}
 
-![Shiny add inputs](./img/shiny-addinputs.png)
+[![Shiny add inputs]({{ site.url }}/img/blog/shiny-tutorial/shiny-addinputs.png)]({{ site.url }}/img/blog/shiny-tutorial/shiny-addinputs.png)
 
 ## Add placeholders for outputs
 
@@ -528,7 +528,7 @@ server <- function(input, output, session) {
 shinyApp(ui = ui, server = server)
 {% endhighlight %}
 
-![Shiny add plot](./img/shiny-addplot.png)
+[![Shiny add plot]({{ site.url }}/img/blog/shiny-tutorial/shiny-addplot.png)]({{ site.url }}/img/blog/shiny-tutorial/shiny-addplot.png)
 
 **Exercise:** The current plot doesn't look very nice, you could enhance the plot and make it much more pleasant to look at.
 
@@ -799,7 +799,7 @@ RStudio provides a service called [shinyapps.io](http://www.shinyapps.io/) which
 
 Hosting your app on shinyapps.io is the easy and recommended way of getting your app online.  Go to [www.shinyapps.io](http://www.shinyapps.io/) and sign up for an account. When you're ready to publish your app, click on the "Publish Application" button in RStudio and follow their instructions. You might be asked to install a couple packages if it's your first time.
 
-![Shiny publish](./img/shiny-publish.png)
+[![Shiny publish]({{ site.url }}/img/blog/shiny-tutorial/shiny-publish.png)]({{ site.url }}/img/blog/shiny-tutorial/shiny-publish.png)
 
 After a successful deployment to shinyapps.io, you will be redirected to your app in the browser. You can use that URL to show off to your family what a cool app you wrote.
 
