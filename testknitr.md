@@ -48,7 +48,8 @@ Assume you have an Rmarkdown file that reads a data file and produces a short re
   |- report.Rmd
 ~~~
 
-#### Problem
+
+### Problem
 
 But what happens if you have a slightly more complex structure? In a real project, you rarely have everything just lying around in the same folder.  Here is an example of a more realistic initial directory structure (assume the working directory is set to `project/`):
 
@@ -68,7 +69,7 @@ A similar problem arises when you want to create files in your report: `knitr` w
 
 Another problem with the flat directory structure is that you may want to control where the resulting reports get generated. `knitr` will create all the outputs in your working directory, and as far as I know there is no way to control that. 
 
-#### Solution
+### Solution
 
 `ezknitr` addresses these issues, and more. It provides wrappers to `knit()` and `spin()` that allow you to set the working directory for the input file, and also uses a more sensible default working directory: the current working directory. `ezknitr` also lets you decide where the output files and output figures will be generated, and uses a better default path for the output files: the directory containing the input file.
 
