@@ -140,7 +140,7 @@ Here is a summary of the different storage types we will learn to use.
 | SQLite            | Structured data      |      YES      |                | RSQLite      |
 | MySQL             | Structured data      |      YES      |       YES      | RMySQL       |
 | Google Sheets     | Structured data      |               |       YES      | googlesheets |
-| MongoDB           | Semi-structured data |      YES      |       YES      | rmongodb     |
+| MongoDB           | Semi-structured data |      YES      |       YES      | mongolite    |
 
 ## Store arbitrary data in a file {#file}
 
@@ -476,4 +476,4 @@ The following table can serve as a reminder of the different storage types and w
 | SQLite            | Structured data      |      YES      |                | RSQLite      |
 | MySQL             | Structured data      |      YES      |       YES      | RMySQL       |
 | Google Sheets     | Structured data      |               |       YES      | googlesheets |
-| MongoDB           | Semi-structured data |      YES      |       YES      | rmongodb     |
+| MongoDB           | Semi-structured data |      YES      |       YES      | mongolite    |
