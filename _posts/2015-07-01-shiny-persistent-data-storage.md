@@ -21,7 +21,7 @@ This guide will explain seven methods for storing persistent data remotely with 
 
 The article explains the theory behind each method, and augments the theory with working examples that will make it clear and easy for you to use these methods in your own apps.
 
-As a complement to this article, you can see a [live demo of a Shiny app](http://daattali.com/shiny/persistent-data-storage/) that uses each of the seven storage methods to save and load data ([source code on GitHub](https://github.com/daattali/shiny-server/tree/master/persistent-data-storage)). This article expands on Jeff Allen’s [article regarding sharing data across sessions](http://shiny.rstudio.com/articles/share-data.html).
+As a complement to this article, you can see a [**live demo of a Shiny app**](http://daattali.com/shiny/persistent-data-storage/) **that uses each of the seven storage methods to save and load data** ([source code on GitHub](https://github.com/daattali/shiny-server/tree/master/persistent-data-storage)). This article expands on Jeff Allen’s [article regarding sharing data across sessions](http://shiny.rstudio.com/articles/share-data.html).
 
 ## Table of contents
 
@@ -416,14 +416,14 @@ There are many NoSQL databases available, but here we will only show how to use 
 
 MongoDB is one of the most popular NoSQL databases, and just like MySQL it can be hosted either locally or remotely. There are many web services that offer mongoDB hosting, including [MongoLab](https://mongolab.com/) which gives you free mongoDB databases. In mongoDB, entries (in our case, responses) are stored in a *collection* (the equivalent of an S3 bucket or a SQL table).
 
-You can use either the [`rmongodb`](https://github.com/mongosoup/rmongodb) or [`mongolite`](https://github.com/jeroenooms/mongolite) package to interact with mongoDB from R. In this example we will use `rmongodb`, but `mongolite` is a perfectly good alternative. As with the relational database methods, all we need to do in order to save/load data is connect to the database and submit the equivalent of an update or select query. To connect to the database you need to provide the following: db, host, username, password. When saving data to mongoDB, the data needs to be converted to BSON (binary JSON) in order to be inserted into a mongoDB collection. MongoDB automatically adds a unique "id" field to every entry, so when retrieving data, we manually remove that field.
+You can use the [`mongolite`](https://github.com/jeroenooms/mongolite) package to interact with mongoDB from R. As with the relational database methods, all we need to do in order to save/load data is connect to the database and submit the equivalent of an update or select query. To connect to the database you need to provide the following: db, host, username, password. When saving the data, `mongolite` requires the data to be in a data.frame format.
 
 **Setup:** All you need to do is create a mongoDB database—either locally or using a web service such as MongoLab. Since there is no schema, it is not mandatory to create a collection before populating it.
 
 **Code:**
 
 {% highlight r linenos %}
-library(rmongodb)
+library(mongolite)
 
 options(mongodb = list(
   "host" = "ds012345.mongolab.com:61631",
@@ -431,33 +431,33 @@ options(mongodb = list(
   "password" = "mypassword"
 ))
 databaseName <- "myshinydatabase"
-collectionName <- "myshinydatabase.responses"
+collectionName <- "responses"
 
 saveData <- function(data) {
   # Connect to the database
-  db <- mongo.create(db = databaseName, host = options()$mongodb$host, 
-      username = options()$mongodb$username, password = options()$mongodb$password)
-  # Convert the data to BSON (Binary JSON)
-  data <- mongo.bson.from.list(as.list(data))
-  # Insert the data into the mongo collection and disconnect
-  mongo.insert(db, collectionName, data)
-  mongo.disconnect(db)
+  db <- mongo(collection = collectionName,
+              url = sprintf(
+                "mongodb://%s:%s@%s/%s",
+                options()$mongodb$username,
+                options()$mongodb$password,
+                options()$mongodb$host,
+                databaseName))
+  # Insert the data into the mongo collection as a data.frame
+  data <- as.data.frame(t(data))
+  db$insert(data)
 }
 
 loadData <- function() {
   # Connect to the database
-  db <- mongo.create(db = databaseName, host = options()$mongodb$host, 
-      username = options()$mongodb$username, password = options()$mongodb$password)
-  # Get a list of all entries
-  data <- mongo.find.all(db, collectionName)
-  # Read all entries into a list
-  data <- lapply(data, data.frame, stringsAsFactors = FALSE)
-  # Concatenate all data together into one data.frame 
-  data <- do.call(rbind, data)
-  # Remove the ID variable
-  data <- data[ , -1, drop = FALSE]
-  # Disconnect
-  mongo.disconnect(db)
+  db <- mongo(collection = collectionName,
+              url = sprintf(
+                "mongodb://%s:%s@%s/%s",
+                options()$mongodb$username,
+                options()$mongodb$password,
+                options()$mongodb$host,
+                databaseName))
+  # Read all the entries
+  data <- db$find()
   data
 }
 {% endhighlight %}
