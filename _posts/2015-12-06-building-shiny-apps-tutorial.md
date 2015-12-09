@@ -5,7 +5,7 @@ date: 2015-12-07 10:00:00 -0700
 tags: [professional, rstats, r, r-bloggers, shiny, tutorial]
 ---
 
-> This tutorial was originally developed for the [STAT545](http://stat545-ubc.github.io) course at UBC, but I decided to publish it shortly afterwards so that more people can benefit from it
+> This tutorial was originally developed for the [STAT545](http://stat545-ubc.github.io) course at UBC, but I decided to publish it shortly afterwards so that more people can benefit from it. This version also contains new sections the original lecture didn't have.
 
 Shiny is a package from RStudio that can be used to build interactive web pages with R. While that may sound scary because of the words "web pages", it's geared to R users who have 0 experience with web development, and you do not need to know any HTML/CSS/JavaScript.
 
@@ -56,7 +56,11 @@ If the example app is running, press *Escape* to close the app, and you are read
 
 # Shiny app basics 
 
-Every Shiny app is composed of a two parts: a web page that shows the app to the user, and a computer that powers the app. The computer that runs the app can either be your own laptop (such as when you're running an app from RStudio) or a server somewhere else. You, as the Shiny app developer, need to write these two parts (you're not going to write a computer, but rather the code that powers the app). In Shiny terminology, they are called *UI* (user interface) and *server*. UI is just a web document that the user gets to see, it's HTML that you write using Shiny's functions. Server is responsible for the logic of the app; it's the set of instructions that tell the web page what to show when the user interacts with the page.
+Every Shiny app is composed of a two parts: a web page that shows the app to the user, and a computer that powers the app. The computer that runs the app can either be your own laptop (such as when you're running an app from RStudio) or a server somewhere else. You, as the Shiny app developer, need to write these two parts (you're not going to write a computer, but rather the code that powers the app). In Shiny terminology, they are called *UI* (user interface) and *server*.
+
+UI is just a web document that the user gets to see, it's HTML that you write using Shiny's functions. The UI is responsible for creating the layout of the app and telling Shiny exactly where things go. The server is responsible for the logic of the app; it's the set of instructions that tell the web page what to show when the user interacts with the page.
+
+If you look at [the app we will be building](http://daattali.com/shiny/bcl/), the page that you see is built with the UI code. You'll notice there are some controls that you, as the user, can manipulate. If you adjust the price or choose a country, you'll notice that the plot and the table get updated. The UI is responsible for creating these controls and telling Shiny *where* to place the controls and where to place the plot and table, while the server is responsible for creating the actual plot or the data in the table.
 
 # Create an empty Shiny app
 
@@ -66,7 +70,7 @@ All Shiny apps follow the same template:
 {% highlight r linenos %}
 library(shiny)
 ui <- fluidPage()
-server <- function(input, output, session) {}
+server <- function(input, output) {}
 shinyApp(ui = ui, server = server)
 {% endhighlight %}
 
@@ -113,7 +117,7 @@ If you want to verify that the app can successfully read the data, you can add a
 
 
 {% highlight r linenos %}
-server <- function(input, output, session) {
+server <- function(input, output) {
   print(str(bcl))
 } 
 {% endhighlight %}
@@ -215,7 +219,7 @@ ui <- fluidPage(
   )
 )
 
-server <- function(input, output, session) {}
+server <- function(input, output) {}
 
 shinyApp(ui = ui, server = server)
 {% endhighlight %}
@@ -277,6 +281,8 @@ sliderInput("priceInput", "Price", min = 0, max = 100,
 
 Place the code for the slider input inside `sidebarPanel()` (replace the text we wrote earlier with this input).
 
+**Exercise:** Run the code of the `sliderInput()` in the R console and see what it returns. Change some of the parameters of `sliderInput()`, and see how that changes the result.  It's important to truly understand that all these functions in the UI are simply a convenient way to write HTML, as is apparent whenever you run these functions on their own.
+
 ### Input for product type
 
 Usually when going to the liquor store you know whether you're looking for beer or wine, and you don't want to waste your time in the wrong section.  The same is true in our app, we should be able to choose what type of product we want.
@@ -292,7 +298,7 @@ radioButtons("typeInput", "Product type",
 
 Add this input code inside `sidebarPanel()`, after the previous input (separate them with a comma).
 
-> If you look at that input function and think "what if there were 100 types, listing htem by hand would not be fun, there's got to be a better way!", then you're right.  This is where [`uiOutput()`](#using-uioutput-to-create-ui-elements-dynamically) comes in handy, but we'll talk about that later.
+> If you look at that input function and think "what if there were 100 types, listing them by hand would not be fun, there's got to be a better way!", then you're right.  This is where [`uiOutput()`](#using-uioutput-to-create-ui-elements-dynamically) comes in handy, but we'll talk about that later.
 
 ### Input for country
 
@@ -326,7 +332,7 @@ ui <- fluidPage(
   )
 )
 
-server <- function(input, output, session) {}
+server <- function(input, output) {}
 
 shinyApp(ui = ui, server = server)
 {% endhighlight %}
@@ -395,7 +401,7 @@ ui <- fluidPage(
   )
 )
 
-server <- function(input, output, session) {}
+server <- function(input, output) {}
 
 shinyApp(ui = ui, server = server)
 {% endhighlight %}
@@ -403,6 +409,8 @@ shinyApp(ui = ui, server = server)
 # Implement server logic to create outputs
 
 So far we only wrote code inside that was assigned to the `ui` variable (or code that was written in `ui.R`). That's usually the easier part of a Shiny app. Now we have to write the `server` function, which will be responsible for listening to changes to the inputs and creating outputs to show in the app.
+
+If you look at the server function, you'll notice that it is always defined with two arguments: `input` and `output`. You *must* define these two arguments! Both `input` and `output` are list-like objects. As the names suggest, `input` is a list you will read values *from* and `output` is a list you will write values *to*. `input` will contain the values of all the different inputs at any given time, and `output` is where you will save output objects (such as tables and plots) to display in your app.
 
 ## Building an output
 
@@ -512,7 +520,7 @@ ui <- fluidPage(
   )
 )
 
-server <- function(input, output, session) {
+server <- function(input, output) {
   output$coolplot <- renderPlot({
     filtered <-
       bcl %>%
@@ -606,7 +614,7 @@ Reactive expressions defined with the `reactive()` function are treated like fun
 
 
 {% highlight r linenos %}
-server <- function(input, output, session) {
+server <- function(input, output) {
   filtered <- reactive({
     bcl %>%
       filter(Price >= input$priceInput[1],
@@ -649,7 +657,7 @@ ui <- fluidPage(
   uiOutput("slider")
 )
 
-server <- function(input, output, session) {
+server <- function(input, output) {
   output$slider <- renderUI({
     sliderInput("slider", "Slider", min = 0,
                 max = input$num, value = 0)
@@ -754,7 +762,7 @@ ui <- fluidPage(
   )
 )
 
-server <- function(input, output, session) {
+server <- function(input, output) {
   output$countryOutput <- renderUI({
     selectInput("countryInput", "Country",
                 sort(unique(bcl$Country)),
@@ -848,7 +856,7 @@ ui <- fluidPage(
     "Hello!"
   )
 )
-server <- function(input, output, session) {}
+server <- function(input, output) {}
 shinyApp(ui = ui, server = server)
 {% endhighlight %}
 
@@ -865,7 +873,7 @@ ui <- fluidPage(
     tabPanel("Tab 2", "there!")
   )
 )
-server <- function(input, output, session) {}
+server <- function(input, output) {}
 shinyApp(ui = ui, server = server)
 {% endhighlight %}
 
@@ -881,7 +889,6 @@ When you have multiple reactive variables inside a reactive context, the whole c
 
 Any input function has an equivalent `update*Input` function that can be used to update any of its parameters.
 
-
 {% highlight r linenos %}
 library(shiny)
 ui <- fluidPage(
@@ -895,6 +902,8 @@ server <- function(input, output, session) {
 }
 shinyApp(ui = ui, server = server)
 {% endhighlight %}
+
+Note that we used an additional argument `session` when defining the `server` function. While the `input` and `output` arguments are mandatory, the `session` argument is optional. You need to define the `session` argument when you want to use functions that need to access the session. The `session` parameter actually has some useful information in it, you can learn more about it with `?shiny::session`.
 
 ## Scoping rules in Shiny apps
 
@@ -924,7 +933,7 @@ ui <- fluidPage(
   tags$head(tags$style("body{ color: blue; }")),
   "Hello"
 )
-server <- function(input, output, session) {
+server <- function(input, output) {
   
 }
 shinyApp(ui = ui, server = server)
