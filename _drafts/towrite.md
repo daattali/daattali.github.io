@@ -1,10 +1,8 @@
 http://rpubs.com/daattali/heatmapsGgplotVsLattice
 
-calculating/heatmaps of programs ouput, spinme code chunk, must use runtime:shiny in shiny server, cant use cache chunk option with shiny
+calculating/heatmaps of programs output
 
 ---
-
-https://pviefers.wordpress.com/2015/08/16/programming-simple-economic-experiments-in-shiny
 
 R shiny tricks (shinyjs - reset inputs, disable textinput when radio button is selected, loading..., state variables to use in ui - can be useful if want to use conditionalPanel with a variable that's calcualted in the server, global.R, splitting off big ui/server into files,  shiny debugging such as add a `options(warn=2)` at top of UI and server if getting a "ERRORR: canot open the conenction" butyou have no clue where the error's happening or what file it's failing at, ajax loading on image, ajax loading + error on submit button),  how to do toggle button (conditionalPanel with condition being input % 2 == 1)
 
