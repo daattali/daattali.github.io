@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ezknitr: R package to avoid the typical working directory pain when using knitr"
-date: 2015-12-09 14:00:00 -0700
+date: 2015-12-09 14:30:00 -0700
 tags: [professional, rstats, r, r-bloggers, package, knitr]
 ---
 
