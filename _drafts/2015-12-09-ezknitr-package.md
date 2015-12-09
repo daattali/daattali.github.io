@@ -5,7 +5,9 @@ date: 2015-12-09 14:00:00 -0700
 tags: [professional, rstats, r, r-bloggers, package, knitr]
 ---
 
-A new package has hit the CRAN shelves this week.  While `knitr` is one of the most useful R packages in existence, `ezknitr` is a simple extension to it that adds flexibility in several ways. One common source of frustration with `knitr` is that it assumes the directory where the source file lives should be the working directory, which is often not true. `ezknitr` addresses this problem by giving you complete control over where all the inputs and outputs are, and adds several other convenient features. The two main functions are `ezknit()` and `ezspin()`, which are wrappers around `knitr`'s `knit()` and `spin()`, used to make rendering markdown/HTML documents easier. 
+A new package has hit the CRAN shelves this week.  While `knitr` is one of the most useful R packages in existence, `ezknitr` is a simple extension to it that adds flexibility in several ways.
+
+One common source of frustration with `knitr` is that it assumes the directory where the source file lives should be the working directory, which is often not true. `ezknitr` addresses this problem by giving you complete control over where all the inputs and outputs are, and adds several other convenient features. The two main functions are `ezknit()` and `ezspin()`, which are wrappers around `knitr`'s `knit()` and `spin()`, used to make rendering markdown/HTML documents easier. 
 
 > You can see Jenny Bryan's way of dealing with this problem [in this gist](https://gist.github.com/jennybc/362f52446fe1ebc4c49f) or simply browse the [knitr GitHub issues](https://github.com/yihui/knitr/issues) to see people discussing the issue surrounding directories.
 
@@ -48,6 +50,9 @@ Assume you have an Rmarkdown file that reads a data file and produces a short re
   |- report.Rmd
 ~~~
 
+
+### Problem
+
 But what happens if you have a slightly more complex structure? In a real project, you rarely have everything just lying around in the same folder.  Here is an example of a more realistic initial directory structure (assume the working directory is set to `project/`):
 
 ~~~
@@ -66,9 +71,11 @@ A similar problem arises when you want to create files in your report: `knitr` w
 
 Another problem with the flat directory structure is that you may want to control where the resulting reports get generated. `knitr` will create all the outputs in your working directory, and as far as I know there is no way to control that. 
 
+### Solution
+
 `ezknitr` addresses these issues, and more. It provides wrappers to `knit()` and `spin()` that allow you to set the working directory for the input file, and also uses a more sensible default working directory: the current working directory. `ezknitr` also lets you decide where the output files and output figures will be generated, and uses a better default path for the output files: the directory containing the input file.
 
-Assuming you are currently in the `project/` directory, you could use the following `ezknitr` command to do what you want:
+Assuming your working directory is currently set to the `project/` directory, you could use the following `ezknitr` command to do what you want:
 
 {% highlight r linenos %}
 library(ezknitr)
@@ -89,7 +96,7 @@ ezknit(file = "analysis/report.Rmd", out_dir = "reports", fig_dir = "myfigs")
      |- report.HTML
 ~~~
 
-After running `ezknit()`, you can run `open_output_dir()` to open the output directory in your file browser if you want to easily see the resulting report. Getting a similar directory structure with `knitr` is not simple, but with `ezknitr` it's trivial.
+We didn't explicitly have to set the working direcory, but you can use the `wd` argument if you do require a different directory. After running `ezknit()`, you can run `open_output_dir()` to open the output directory in your file browser if you want to easily see the resulting report. Getting a similar directory structure with `knitr` is not simple, but with `ezknitr` it's trivial.
 
 Note that `ezknitr` produces both a markdown and an HTML file for each report (you can choose to discard them with the `keep_md` and `keep_html` arguments).
 
@@ -147,7 +154,7 @@ After installing the package, you can experiment with `ezknitr` using the `setup
 
 `knit()` is the most popular and well-known function from `knitr`. It lets you create a markdown document from an Rmarkdown file. I assume if you are on this page, you are familiar with `knit()` and Rmarkdown, so I won't explain it any further.
 
-`spin()` is similar, but starts one step further back: it takes an R script as input, creates an Rmarkdown document from the R script, and then proceeds to create a markdown document from it. `spin()` can be useful in situations where you develop a large R script and want to be able to produce reports from it directly instead of having to copy chunks into a separate Rmarkdown file. You can read more about why I like `spin()` in the blog post [knitr's best hidden gem: spin](http://deanattali.com/2015/03/24/knitrs-best-hidden-gem-spin/).
+`spin()` is similar, but starts one step further back: it takes an R script as input, creates an Rmarkdown document from the R script, and then proceeds to create a markdown document from it. `spin()` can be useful in situations where you develop a large R script and want to be able to produce reports from it directly instead of having to copy chunks into a separate Rmarkdown file. You can read more about why I like `spin()` in the blog post ["knitr's best hidden gem: spin"](http://deanattali.com/2015/03/24/knitrs-best-hidden-gem-spin/).
 
 ## Using rmarkdown::render() {#using-render}
 
