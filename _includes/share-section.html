@@ -2,18 +2,28 @@
   <h1 class="share-title">Liked what you read?</h1>
   <div class="share-buttons">
     {% capture urlmessage %}{{ site.url }}/contact{% endcapture %}
+    
     {% capture urlfb %}https://www.facebook.com/dialog/feed?app_id={{ site.fb_app_id }}&link={{ site.url }}{{ page.url }}&name={{ page.title }}&caption={{ site.url-pretty }}&redirect_uri={{ site.url }}{{ page.url }}?message=Thanks for sharing!{% endcapture %}
     {% if page.fb-img %}
       {% capture urlfb %}{{ urlfb }}&picture={{ page.fb-img }}{% endcapture %}
     {% endif %}
 
+    {% capture urltwitter %}https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&via=daattali{% endcapture %}
+    {% if page.tags contains 'rstats' %}
+      {% assign maxlength = 94 %}
+      {% capture urltwitter %}{{ urltwitter }}&hashtags=rstats{% endcapture %}
+    {% else %}
+      {% assign maxlength = 102 %}
+    {% endif %}
+    {% capture urltwitter %}{{ urltwitter }}&text={{ page.title }}{% endcapture %}
+    
     <a href="{{ urlmessage }}">
       Let me know
     </a>
     <a href="{{ urlfb }}">
       Share on Facebook
     </a>
-    <a href="#">
+    <a href={{ urltwitter }}>
       Tweet it
     </a>
   </div>
