@@ -17,13 +17,13 @@
     {% endif %}
     {% capture urltwitter %}{{ urltwitter }}&text={{ page.title | truncate: maxlength }}{% endcapture %}
     
-    <a href="{{ urlmessage }}">
+    <a href="{{ urlmessage }}" data-ga-event=1 data-ga-category="post" data-ga-action="share" data-ga-label="message">
       Let me know
     </a>
-    <a href="{{ urlfb }}">
+    <a href="{{ urlfb }}" data-ga-event=1 data-ga-category="post" data-ga-action="share" data-ga-label="facebook">
       Share on Facebook
     </a>
-    <a href="{{ urltwitter }}">
+    <a href="{{ urltwitter }}" data-ga-event=1 data-ga-category="post" data-ga-action="share" data-ga-label="twitter">
       Tweet it
     </a>
   </div>
