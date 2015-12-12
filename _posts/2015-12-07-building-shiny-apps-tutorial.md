@@ -3,6 +3,7 @@ layout: post
 title: "Building Shiny apps - an interactive tutorial"
 date: 2015-12-07 10:00:00 -0700
 tags: [professional, rstats, r, r-bloggers, shiny, tutorial]
+fb-img: http://deanattali.com/img/blog/shiny-tutorial/shiny-addplot.png
 ---
 
 > This tutorial was originally developed for the [STAT545](http://stat545-ubc.github.io) course at UBC, but I decided to publish it shortly afterwards so that more people can benefit from it. This version also contains new sections the original lecture didn't have.
