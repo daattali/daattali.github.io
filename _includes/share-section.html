@@ -15,7 +15,7 @@
     {% else %}
       {% assign maxlength = 102 %}
     {% endif %}
-    {% capture urltwitter %}{{ urltwitter }}&text={{ page.title }}{% endcapture %}
+    {% capture urltwitter %}{{ urltwitter }}&text={{ page.title | truncate: maxlength }}{% endcapture %}
     
     <a href="{{ urlmessage }}">
       Let me know
