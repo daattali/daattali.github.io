@@ -550,7 +550,7 @@ footer .theme-by {
 
 .share-section {
   padding: 30px 15px 35px;
-  margin-top: 50px;
+  margin-top: 40px;
   box-shadow: 0 0 10px #e7e7e7 inset;
   background: #fcfcfc;
   text-align: center;
@@ -575,13 +575,9 @@ footer .theme-by {
   margin-left: 20px;
   display: inline-block;
   border: 1px solid #ddd;
+  font-size: 14px;
 }
-@media only screen and (min-width: 768px) {
-  .share-section .share-buttons a {
-    padding: 15px 25px;
-    margin-left: 30px;
-  }
-}
+
 .share-section .share-buttons a:hover,
 .share-section .share-buttons a:focus {
   color: #FFF;
@@ -601,10 +597,29 @@ footer .theme-by {
 }
 
 @media only screen and (min-width: 768px) {
+  .share-section {
+    margin-top: 50px;
+  }
   .share-section .share-title {
     font-size: 45px;
   }
   .share-section .share-buttons {
     margin-top: 30px;
+  }
+  .share-section .share-buttons a {
+    padding: 15px 25px;
+    margin-left: 30px;
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 365px) {
+  .share-section .share-buttons a {
+    display: block;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .share-section .share-buttons a:first-child {
+    margin-top: 0;
   }
 }
