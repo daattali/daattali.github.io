@@ -2,8 +2,10 @@
   <h1 class="share-title">Liked what you read?</h1>
   <div class="share-buttons">
     {% capture urlmessage %}{{ site.url }}/contact{% endcapture %}
-    {% capture urlfb %}https://www.facebook.com/dialog/feed?app_id={{ site.fb_app_id }}&link={{ site.url }}{{ page.url }}&name={{ page.title }}&caption={{ site.url-pretty }}&redirect_uri={{ site.url }}{{ page.url }}message=Thanks for sharing!{% endcapture %}
-
+    {% capture urlfb %}https://www.facebook.com/dialog/feed?app_id={{ site.fb_app_id }}&link={{ site.url }}{{ page.url }}&name={{ page.title }}&caption={{ site.url-pretty }}&redirect_uri={{ site.url }}{{ page.url }}{% endcapture %}
+    {% if page.fb-img %}
+      {% capture urlfb %}{{ urlfb }}&picture={{ page.fb-img }}{% endcapture %}
+    {% endif %}
 
     <a href="{{ urlmessage }}">
       Let me know
