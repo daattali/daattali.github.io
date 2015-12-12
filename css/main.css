@@ -608,3 +608,9 @@ footer .theme-by {
     margin-top: 25px;
   }
 }
+
+.share-section .share-buttons .fa-stack {
+  font-size: 1em;
+  margin-right: 5px;
+}
+}
