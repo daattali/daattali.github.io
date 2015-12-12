@@ -36,6 +36,14 @@ var main = {
 
     // show the big header image	
     main.initImgs();
+    
+    // set up Google Analytics event tracking
+    if (typeof ga === "function") {
+      $("a[data-ga-event]").click(function() {
+        ga('send', 'event', $(this).data("ga-category"), $(this).data("ga-action"), $(this).data("ga-label"));
+        console.log("sent!");
+      });
+    }
   },
   
   initImgs : function() {
