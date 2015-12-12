@@ -24,7 +24,7 @@ var main = {
     })
 
     // show a message if there is one to show
-    qs = main.getQueryParams();
+    var qs = main.getQueryParams();
     if (qs.message) {
       $(".container")[0].innerHTML =
         '<div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">' +
@@ -106,7 +106,7 @@ var main = {
  
  // get the GET parameters in the URL
  getQueryParams : function() {
-    qs = document.location.search.split("+").join(" ");
+    var qs = document.location.search.replace(/\?/g, "&").split("+").join(" ");
 
     var params = {}, tokens,
         re = /[?&]?([^=]+)=([^&]*)/g;
