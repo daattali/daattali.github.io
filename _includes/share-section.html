@@ -1,13 +1,12 @@
 <div class="share-section">
-  <h1 class="share-title">Liked what you read?</h1>
+  <h1 class="share-title">Liked what you read?f</h1>
   <div class="share-buttons">
     {% capture url-message %}{{ site.url }}contact{% endcapture %}
-    {% capture url-fb %}https://www.facebook.com/dialog/feed?app_id={{ site.fb_app_id }}&link={{ site.url }}{{ page.url }}&name={{ page.title }}&caption={{ site.url-pretty }}&redirect_uri={{ site.url }}{{ page.url }}message=Thanks for sharing!{% endcapture %}
-    
+
     <a href="{{ url-message }}">
       Let me know
     </a>
-    <a href="{{ url-fb }}" class="share-fb">
+    <a href="{{ url-message }}" class="share-fb">
       Share on Facebook
     </a>
     <a href="#" class="share-twitter">
