@@ -613,7 +613,7 @@ footer .theme-by {
   }
 }
 
-@media only screen and (max-width: 365px) {
+@media only screen and (max-width: 500px) {
   .share-section .share-buttons a {
     display: block;
     margin-left: 0;
