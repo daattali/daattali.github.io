@@ -1,12 +1,12 @@
 <div class="share-section">
   <h1 class="share-title">Liked what you read?fm</h1>
   <div class="share-buttons">
-    {% capture url-message %}sdfdsfsd{% endcapture %}
+    {% capture linkurl %}{{ site.baseurl }}/{{ link[1] }}{% endcapture %}
 
-    <a href="{{ url-message }}">
+    <a href="{{ linkurl }}">
       Let me know
     </a>
-    <a href="{{ url-message }}" class="share-fb">
+    <a href="{{ linkurl }}" class="share-fb">
       Share on Facebook
     </a>
     <a href="#" class="share-twitter">
