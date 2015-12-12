@@ -550,9 +550,9 @@ footer .theme-by {
 
 .share-section {
   padding: 30px 15px 35px;
-  margin-top: 35px;
-  box-shadow: 0 0 10px #e0e0e0 inset;
-  background: #fafafa;
+  margin-top: 50px;
+  box-shadow: 0 0 10px #e7e7e7 inset;
+  background: #fcfcfc;
   text-align: center;
 }
 
@@ -607,10 +607,4 @@ footer .theme-by {
   .share-section .share-buttons {
     margin-top: 25px;
   }
-}
-
-.share-section .share-buttons .fa-stack {
-  font-size: 1em;
-  margin-right: 5px;
-}
 }
