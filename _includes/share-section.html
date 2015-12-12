@@ -1,25 +1,16 @@
 <div class="share-section">
   <h1 class="share-title">Liked what you read??</h1>
   <div class="share-buttons">
-    <a href="{{ site.baseurl }}/contact">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-square-o fa-stack-2x"></i>
-        <i class="fa fa-comment fa-stack-1x"></i>
-      </span>
+    {% capture url-message %}{{ site.url }}contact{% endcapture %}
+    {% capture url-fb %}https://www.facebook.com/dialog/feed?app_id={{ site.fb_app_id }}&link={{ site.url }}{{ page.url }}&name={{ page.title }}&caption={{ site.url-pretty }}&redirect_uri={{ site.url }}{{ page.url }}message=Thanks for sharing!{% endcapture %}
+    
+    <a href="{{ url-message }}">
       Let me know
     </a>
-    <a href="#" class="share-fb">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-square-o fa-stack-2x"></i>
-        <i class="fa fa-facebook fa-stack-1x"></i>
-      </span>
+    <a href="{{ url-fb }}" class="share-fb">
       Share on Facebook
     </a>
     <a href="#" class="share-twitter">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-square-o fa-stack-2x"></i>
-        <i class="fa fa-twitter fa-stack-1x"></i>
-      </span>
       Tweet it
     </a>
   </div>
