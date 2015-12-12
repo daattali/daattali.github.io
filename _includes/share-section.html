@@ -8,7 +8,7 @@
       {% capture urlfb %}{{ urlfb }}&picture={{ page.fb-img }}{% endcapture %}
     {% endif %}
 
-    {% capture urltwitter %}https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&via=daattali&gg={{ page.title }}{% endcapture %}
+    {% capture urltwitter %}https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&via=daattali{% endcapture %}
     {% if page.tags contains 'rstats' %}
       {% assign maxlength = 94 %}
       {% capture urltwitter %}{{ urltwitter }}&hashtags=rstats{% endcapture %}
@@ -23,7 +23,7 @@
     <a href="{{ urlfb }}">
       Share on Facebook
     </a>
-    <a href={{ urltwitter }}>
+    <a href="{{ urltwitter }}">
       Tweet it
     </a>
   </div>
