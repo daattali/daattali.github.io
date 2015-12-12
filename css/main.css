@@ -590,6 +590,13 @@ footer .theme-by {
   color: #FFF;
   background: #0085a1;
   border-color: #0085a1;
+  transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transition: transform 250ms;
+  -moz-transition: -moz-transform 250ms;
+  -webkit-transition: -webkit-transform 250ms;
 }
 
 .share-section .share-buttons a:first-child {
