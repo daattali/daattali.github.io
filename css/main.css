@@ -545,3 +545,47 @@ footer .theme-by {
 .blog-post table tr td :last-child {
   margin-bottom: 0;
 }
+
+/* --- Share section --- */
+
+.share-section {
+    padding: 30px 15px 35px;
+    margin-top: 35px;
+    box-shadow: 0 0 10px #d0d0d0 inset;
+    background: #f0f0f0;
+    text-align: center;
+}
+
+.share-section .share-title {
+    margin-top: 0;
+    font-size: 30px;
+}
+
+.share-section .share-buttons {
+    margin-top: 15px;
+}
+
+.share-section .share-buttons a {
+    text-decoration: none !important;
+    font-weight: bold;
+    background: #fff;
+    margin-left: 30px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    border: 1px solid #ddd;
+    display: inline-block;
+}
+
+.share-section .share-buttons a:first-child {
+    margin-left: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .share-section .share-title {
+        font-size: 45px;
+    }
+    .share-section .share-buttons {
+        margin-top: 25px;
+    }
+}
