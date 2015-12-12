@@ -67,6 +67,8 @@ disqus: "deanattali-site"
 # Fill in your Google Analytics ID to track your website using GA
 google_analytics: "UA-59820529-1"  # Your Google Analytics ID
 
+fb_app_id: "536330676521989"
+
 # --- Don't need to touch anything below here (but you can if you want) --- #
 
 # Default YAML values (more information on Jekyll's site)  
