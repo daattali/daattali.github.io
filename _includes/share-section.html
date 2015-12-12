@@ -8,7 +8,7 @@
       {% capture urlfb %}{{ urlfb }}&picture={{ page.fb-img }}{% endcapture %}
     {% endif %}
 
-    {% capture urltwitter %}https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&via=daattali{% endcapture %}
+    {% capture urltwitter %}https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&via=daattali&gg={{ page.title }}{% endcapture %}
     {% if page.tags contains 'rstats' %}
       {% assign maxlength = 94 %}
       {% capture urltwitter %}{{ urltwitter }}&hashtags=rstats{% endcapture %}
