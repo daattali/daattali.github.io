@@ -314,7 +314,7 @@ observeEvent(input$submit, {
     shinyjs::show("thankyou_msg")
   },
   error = function(err) {
-    shinyjs::text("error_msg", err$message)
+    shinyjs::html("error_msg", err$message)
     shinyjs::show(id = "error", anim = TRUE, animType = "fade")
   },
   finally = {
