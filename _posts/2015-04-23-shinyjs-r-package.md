@@ -64,7 +64,7 @@ the power of their Shiny apps.
 -   `info` - show a message to the user (using JavaScript's `alert`
     under the hood)
 
--   `text` - change the text/HTML of an element (using JavaScript's
+-   `html` - change the text/HTML of an element (using JavaScript's
     `innerHTML` under the hood)
 
 -   `onclick` - run R code when an element is clicked. Was originally
@@ -220,7 +220,7 @@ Now we need to tell Shiny what to do when "Update" is clicked by adding
 this to the server
 
 {% highlight r linenos %}
-shinyjs::onclick("update", shinyjs::text("time", date()))
+shinyjs::onclick("update", shinyjs::html("time", date()))
 {% endhighlight %}
 
 **5. Some users may find it hard to read the small text in the app, so
@@ -306,7 +306,7 @@ shinyApp(
     shinyjs::onclick("toggleAdvanced",
                      shinyjs::toggle(id = "advanced", anim = TRUE))    
     
-    shinyjs::onclick("update", shinyjs::text("time", date()))
+    shinyjs::onclick("update", shinyjs::html("time", date()))
     
     observe({
       toggleClass("myapp", "big", input$big)
@@ -340,9 +340,9 @@ Implementing the `shinyjs::toggle` or `shinyjs::hidden` behaviour with
 pure Shiny is also possible but it also results in messier and less
 intuitive code.
 
-### shiny::render\* and shiny::update\* vs shinyjs::text
+### shiny::render\* and shiny::update\* vs shinyjs::html
 
-The `shinyjs::text` function can be used to change the text inside an
+The `shinyjs::html` function can be used to change the text inside an
 element by either overwriting it or appending to it. I mostly intended
 for this function to be used to change the text, though it can also be
 used to add HTML elements. There are many Shiny functions that allow you
@@ -358,9 +358,9 @@ the element is declared as `uiOutput` or something similar.
 
 There is something to be said about the fact that the pure Shiny
 functions are safer and more strict, but I personally like having the
-extra flexibility sometimes, even though the `text` function feels like
+extra flexibility sometimes, even though the `html` function feels like
 it doesn't really follow Shiny's patterns. I still use the Shiny
-functions often, but I find `text` useful as well.
+functions often, but I find `html` useful as well.
 
 ### shiny::observeEvent vs shinyjs::onclick
 
