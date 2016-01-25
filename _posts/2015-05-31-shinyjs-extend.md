@@ -76,7 +76,7 @@ The main idea behind `shinyjs` when I started working on it was to make it extre
 
 Using `extendShinyjs` is very simple and makes defining and calling JavaScript functions painless. Here is a very basic example of using `extendShinyjs` to define a (fairly useless) function that changes the colour of the page.
 
-{% highlight r linenos %}
+{% highlight r %}
 library(shiny)
 library(shinyjs)
 
@@ -111,7 +111,7 @@ Any `shinyjs` function that is called will pass a single array-like parameter to
 
 To assist in normalizing the parameters, `shinyjs` provides a `shinyjs.getParams()` function which serves two purposes. First of all, it ensures that all arguments are named (even if the R function was called without names). Secondly, it allows you to define default values for arguments. Here is an example of a JS function that changes the background colour of an element and uses `shinyjs.getParams()`.
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 shinyjs.backgroundCol = function(params) {
   var defaultParams = {
     id : null,
@@ -128,7 +128,7 @@ Note the `defaultParams` that we defined and the call to `shinyjs.getParams`. It
 
 For completeness, here is the code for a shiny app that uses the above function (it's not a very practical example, but it's great for showing how to use `extendShinyjs` with parameters):
 
-{% highlight r linenos %}
+{% highlight r %}
 library(shiny)
 library(shinyjs)
 

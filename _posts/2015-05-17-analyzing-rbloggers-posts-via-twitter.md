@@ -51,7 +51,7 @@ As mentioned above, I could only grab the last 3200 tweets made by @Rbloggers, w
 
 Anyway, after authenticating with Twitter, here's the code to get this information using `twitteR`:
 
-{% highlight r linenos %}
+{% highlight r %}
 MAX_TWEETS <- 3200
 tweets_raw <- userTimeline('Rbloggers', n = MAX_TWEETS,
                            includeRts = FALSE, excludeReplies = TRUE)
@@ -77,7 +77,7 @@ Remember the full source code can be viewed [here](http://daattali.com/shiny/rbl
 
 Since I had some questions about the post authors and a tweet doesn't give that information, I resorted to scraping the R-Bloggers post linked in each tweet using `httr` to find the author. This part takes a bit of time to run. There were a few complications, mostly with authors whose name is their email and R-Bloggers attemps to hide it, but here is how I accomplished this step:
 
-{% highlight r linenos %}
+{% highlight r %}
 # Get the author of a single post given an R-Bloggers post URL
 get_post_author_single <- function(url) {
   if (is.null(url)) {
@@ -135,7 +135,7 @@ After removing duplicates and previously removing tweets about job postings, we 
 
 Now that we have almost all the info we need for the tweets, there is one thing missing. It'd be useful to have a metric for how successful a tweet is using the very little bit of information we have. This is of course very arbitrary. I chose to score a tweet’s success as a linear combination of its "# of favorites" and "# of retweets". Since there are roughly twice as many favorites as retweets in total, retweets get twice the weight. Very simple formula :) 
 
-{% highlight r linenos %}
+{% highlight r %}
 sum(tweets$favorites) / sum(tweets$retweets)   # result = 2.1
 tweets$score <- tweets$favorites + tweets$retweets * 2
 {% endhighlight %}

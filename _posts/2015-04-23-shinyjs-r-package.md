@@ -93,7 +93,7 @@ information (name, age, company) and submits it, along with the time of
 submission. Here is a very simple implementation of such an app (nothing
 actually happens when the user "submits").
 
-{% highlight r linenos %}
+{% highlight r %}
 library(shiny)
 shinyApp(
   ui = fluidPage(
@@ -140,7 +140,7 @@ not be enabled if there is no name**
 
 In the server portion, add the following code
 
-{% highlight r linenos %}
+{% highlight r %}
 observe({
   if (is.null(input$name) || input$name == "") {
     shinyjs::disable("submit")
@@ -152,7 +152,7 @@ observe({
 
 Or instead you can use the `toggleState` function and pass it a `condition`:
 
-{% highlight r linenos %}
+{% highlight r %}
 observe({
   shinyjs::toggleState("submit", !is.null(input$name) && input$name != "")
 })
@@ -166,7 +166,7 @@ ability to hide that section of the form**
 First, we need to section off the "Age" and "Company" elements into
 their own section, so we surround them with a `div`
 
-{% highlight r linenos %}
+{% highlight r %}
 div(id = "advanced",
   numericInput("age", "Age", 30),
   textInput("company", "Company", "")
@@ -176,14 +176,14 @@ div(id = "advanced",
 We also need to add a link in the UI that will be used to hide/show the
 section
 
-{% highlight r linenos %}
+{% highlight r %}
 a(id = "toggleAdvanced", "Show/hide advanced info")
 {% endhighlight %}
 
 Lastly, we need to tell Shiny to show/hide the section when the link is
 clicked by adding this code to the server
 
-{% highlight r linenos %}
+{% highlight r %}
 shinyjs::onclick("toggleAdvanced",
                   shinyjs::toggle(id = "advanced", anim = TRUE))
 {% endhighlight %}
@@ -194,7 +194,7 @@ much, we want to hide them initially when the form loads**
 Simply surround the section we want to hide initially with
 `shinyjs::hidden`
 
-{% highlight r linenos %}
+{% highlight r %}
 shinyjs::hidden(
   div(id = "advanced",
     ...
@@ -212,14 +212,14 @@ when we want to change its contents.
 
 To do that, replace `p("Timestamp: ", span(date()))` with
 
-{% highlight r linenos %}
+{% highlight r %}
 p("Timestamp: ", span(id = "time", date()), a(id = "update", "Update"))
 {% endhighlight %}
 
 Now we need to tell Shiny what to do when "Update" is clicked by adding
 this to the server
 
-{% highlight r linenos %}
+{% highlight r %}
 shinyjs::onclick("update", shinyjs::html("time", date()))
 {% endhighlight %}
 
@@ -228,20 +228,20 @@ there should be an option to increase the font size**
 
 First, we need to add checkbox to the UI
 
-{% highlight r linenos %}
+{% highlight r %}
 checkboxInput("big", "Bigger text", FALSE)
 {% endhighlight %}
 
 In order to make the text bigger, we will use CSS. So let's add an
 appropriate CSS rule by adding this code to the UI
-{% highlight r linenos %}
+{% highlight r %}
 shinyjs::inlineCSS(list(.big = "font-size: 2em"))
 {% endhighlight %}
 
 Lastly, we want the text to be big or small depending on whether the
 checkbox is checked by adding this code to the server
 
-{% highlight r linenos %}
+{% highlight r %}
 observe({
   if (input$big) {
     shinyjs::addClass("myapp", "big")
@@ -253,7 +253,7 @@ observe({
 
 Or, again, we can use the `toggleClass` function with the `condition` argument:
 
-{% highlight r linenos %}
+{% highlight r %}
 observe({
   toggleClass("myapp", "big", input$big)
 })
@@ -263,7 +263,7 @@ observe({
 
 Simply add the following to the server
 
-{% highlight r linenos %}
+{% highlight r %}
 observe({
   if (input$submit > 0) {
     shinyjs::info("Thank you!")
@@ -273,7 +273,7 @@ observe({
 
 **The final code looks like this** (I'm using the more compact `toggle*` version where possible)
 
-{% highlight r linenos %}
+{% highlight r %}
 library(shiny)
 shinyApp(
   ui = fluidPage(
@@ -367,7 +367,7 @@ functions often, but I find `html` useful as well.
 The `onclick` function was initially written because I wanted a way to
 click on a button that will cause a section to show/hide, like so:
 
-{% highlight r linenos %}
+{% highlight r %}
 shinyjs::onclick("toggleLink", shinyjs::toggle("section"))
 {% endhighlight %}
 
@@ -375,7 +375,7 @@ RStudio very recently published an article describing several design
 patterns for using buttons, and from that article I learned that I can
 do what I wanted with `observeEvent`:
 
-{% highlight r linenos %}
+{% highlight r %}
 observeEvent("input$toggleLink", shinyjs::toggle("section"))
 {% endhighlight %}
 

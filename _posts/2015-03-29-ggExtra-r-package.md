@@ -20,7 +20,7 @@ You can see a demo of what `ggMarginal` can do and play around with it [in this 
 
 Here is an example of how easy it is to add marginal histograms in ggplot2 using `ggExtra::ggMarginal()`.
 
-{% highlight r linenos %}
+{% highlight r %}
 library(ggplot2)
 # create dataset with 1000 normally distributed points
 df <- data.frame(x = rnorm(1000, 50, 10), y = rnorm(1000, 50, 10))
@@ -41,7 +41,7 @@ A simple drop-in function for adding marginal plots to ggplot2 did not exist, so
 
 The main idea is to create the marginal plots (histogram or density) and then use the `gridExtra` package to arrange the scatterplot and the marginal plots in a "2x2 grid" to achieve the desired visual output. An empty plot needs to be created as well to fill in one of the four grid corners. This basic approach can be implemented like this:
 
-{% highlight r linenos %}
+{% highlight r %}
 library(ggplot2)
 library(gridExtra)
 pMain <- ggplot(mtcars, aes(x = wt, y = mpg)) +
@@ -66,7 +66,7 @@ This works, but it's a bit tedious to write, so at first I just wanted a simple 
 
 The abstraction was done in a way that allows the user to either provide a ggplot2 scatterplot, or the dataset and variables.  For example, the following two calls are equivalent:
 
-{% highlight r linenos %}
+{% highlight r %}
 ggExtra::ggMarginal(data = mtcars, x = "wt", y = "mpg")  
 ggExtra::ggMarginal(ggplot(mtcars, aes(wt, mpg)) + geom_point())
 {% endhighlight %}
@@ -90,7 +90,7 @@ There are some more issues that could be addressed in order to make the function
 
 The following plot illustrates all these problems. It was achieved with exactly the same code as before, but adding these 3 lines to `pMain` definition:
 
-{% highlight r linenos %}
+{% highlight r %}
 theme_gray(35) +   
 ggtitle("Cars weight vs miles/gallon") +   
 xlab("car\nweight")
@@ -109,7 +109,7 @@ All of these features and more are implemented in `ggExtra::ggMarginal`.
 
 Here is an example of using a few more parameters:
 
-{% highlight r linenos %}
+{% highlight r %}
 library(ggplot2)
 # create dataset with 500 normally distributed points
 df <- data.frame(x = rnorm(500, 50, 3), y = rnorm(500, 50, 3))
@@ -139,7 +139,7 @@ ggExtra::ggMarginal(p, type = "density", margins = "y", size = 4, marginCol = "r
 
 When trying to call `gridExtra::grid.arrange()` without loading `ggplot2` you get this error:
 
-{% highlight r linenos %}
+{% highlight r %}
 f <- function() {
   p1 <- ggplot2::ggplot(mtcars, ggplot2::aes(wt, mpg)) + ggplot2::geom_blank()
   gridExtra::grid.arrange(p1)
@@ -150,7 +150,7 @@ f()
 
 My workaround is to ensure `ggplot2` is loaded:
 
-{% highlight r linenos %}
+{% highlight r %}
 f <- function() {
   if (!"package:ggplot2" %in% search()) {
     suppressPackageStartupMessages(attachNamespace("ggplot2"))
@@ -168,7 +168,7 @@ I know it's hacky so I would appreciate better solutions.
 
 The problem with `grid.arrange` is that it returns `NULL` and does not allow the plot to be saved to an object. `arrangeGrob` is a similar function that returns the object.  But substituting `arrangeGrob` for `grid.arrange` gives an error
 
-{% highlight r linenos %}
+{% highlight r %}
 f <- function() {
   if (!"package:ggplot2" %in% search()) {
     suppressPackageStartupMessages(attachNamespace("ggplot2"))
@@ -183,7 +183,7 @@ f()
 
 This error happens only if `gridExtra` is not loaded, and it's because printing the object is done after the function returns and uses a custom print method.  So the solution is to add a class to the return object and add a print generic that ensures the object will print correctly.
 
-{% highlight r linenos %}
+{% highlight r %}
 f <- function() {
   if (!"package:ggplot2" %in% search()) {
     suppressPackageStartupMessages(attachNamespace("ggplot2"))
