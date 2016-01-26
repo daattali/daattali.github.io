@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Need any more reason to love R-Shiny? Here you go: you can even use Shiny to create simple games!"
+title: "Need any more reason to love R-Shiny? Here: you can even use Shiny to create simple games!"
 tags: [professional, rstats, r, r-bloggers, shiny, package]
 date: 2016-01-26 10:00:00 -0700
 fb-img: http://deanattali.com/img/blog/lightsout/shinyapp.png
