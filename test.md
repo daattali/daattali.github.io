@@ -6,11 +6,11 @@ date: 2016-01-26 10:00:00 -0700
 fb-img: http://deanattali.com/img/blog/lightsout/shinyapp.png
 ---
 
-Anyone who reads my blog posts knows by now that I'm very enthusiastic about Shiny (the web app framework for R - if you didn't know what Shiny is then I suggest reading my [previous post about it](http://deanattali.com/blog/building-shiny-apps-tutorial/)). One of my reasons for liking Shiny so much is that you can do so much more with it than what it was built for, and it's fun to think of new useful uses for it. Well, my latest realization is that you can even make simple games quite easily, as the [`lightsouts` package](https://github.com/daattali/lightsout) and its [companion web app/game](http://daattali.com/shiny/lightsout/) demonstrate! I'm actually currently on my way to San Francisco for the first ever [Shiny conference](http://rstudio.org/shinydevcon), so this post comes at a great time.
+Anyone who reads my blog posts knows by now that I'm very enthusiastic about Shiny (the web app framework for R - if you didn't know what Shiny is then I suggest reading my [previous post about it](http://deanattali.com/blog/building-shiny-apps-tutorial/)). One of my reasons for liking Shiny so much is that you can do so much more with it than what it was built for, and it's fun to think of new useful uses for it. Well, my latest realization is that you can even make simple games quite easily, as the [lightsouts package](https://github.com/daattali/lightsout) and its [companion web app/game](http://daattali.com/shiny/lightsout/) demonstrate! I'm actually currently on my way to San Francisco for the first ever [Shiny conference](http://rstudio.org/shinydevcon), so this post comes at a great time.
 
 First, some background. I was recently contacted by [Daniel Barbosa](https://pt.linkedin.com/in/danielbarbosa) who offered to hire me for a tiny project: write a solver for the Lights Out puzzle in R. After a few minutes of Googling I found out that Lights Out is just a simple puzzle game that can be solved mathematically. The game consists of a grid of lights that are either on or off, and clicking on any light will toggle it and its neighbours. The goal of the puzzle is to switch all the lights off. 
 
-Here is a simple visual to show what happens when a light is clicked:
+Here is a simple visual that shows what happens when pressing a light on a 5x5 board:
 
 [![Lights Out instructions]({{ site.url }}/img/blog/lightsout/instructions.png)]({{ site.url }}/img/blog/lightsout/instructions.png)
 
