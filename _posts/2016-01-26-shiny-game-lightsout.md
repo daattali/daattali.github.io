@@ -6,7 +6,7 @@ date: 2016-01-26 10:00:00 -0700
 fb-img: http://deanattali.com/img/blog/lightsout/shinyapp.png
 ---
 
-TL;DR [Click here](http://daattali.com/shiny/lightsout/) to play a puzzle game written entirely in Shiny, view the source code [here](https://github.com/daattali/lightsout/tree/master/inst/shiny).
+TL;DR [Click here](http://daattali.com/shiny/lightsout/) to play a puzzle game written entirely in Shiny [(source code)](https://github.com/daattali/lightsout/tree/master/inst/shiny).
 
 Anyone who reads my blog posts knows by now that I'm very enthusiastic about Shiny (the web app framework for R - if you didn't know what Shiny is then I suggest reading my [previous post about it](http://deanattali.com/blog/building-shiny-apps-tutorial/)). One of my reasons for liking Shiny so much is that you can do so much more with it than what it was built for, and it's fun to think of new useful uses for it. Well, my latest realization is that you can even make simple games quite easily, as the [lightsouts package](https://github.com/daattali/lightsout) and its [companion web app/game](http://daattali.com/shiny/lightsout/) demonstrate! I'm actually currently on my way to San Francisco for the first ever [Shiny conference](http://rstudio.org/shinydevcon), so this post comes at a great time.
 
