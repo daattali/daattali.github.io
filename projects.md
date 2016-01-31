@@ -50,14 +50,20 @@ This is a collection of some things I've worked on that are easily viewable onli
 - **[daattali.com](http://daattali.com)** - small personal website that I run on a virtual server just because I wanted a place to host my own [R Shiny server](http://daattali.com/shiny) and [RStudio server](http://daattali.com/rstudio).
 
 - **[deanattali.com](http://deanattali.com)** - the site you're currently on.  Just a simple site to have some virtual presence.
-
-## Paid writing gigs
+- 
+- ## Paid writing gigs
 
 - [Persistent data storage in Shiny apps](http://shiny.rstudio.com/articles/persistent-data-storage.html) - written for [RStudio](http://www.rstudio.com/).
 - [How to Set Up R on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04) - written for [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99).
 - [How to Set Up Shiny Server on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-shiny-server-on-ubuntu-14-04) - written for [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99).
 - Book reviewer for [Learning Shiny](https://www.packtpub.com/application-development/learning-shiny).
 - [Building Shiny apps](http://stat545-ubc.github.io/shiny01_activity.html) - written for a course I TA'ed.
+
+## Talks & Interviews
+
+- Podcast interview for the R-Podcast: [Episode 16: Intervew with Dean Attali](https://r-podcast.org/posts/the-r-podcast-episode-16-interview-with-dean-attali.html)
+
+- Invited as main speaker at the 1st Shiny Developer Conference: [talk about shinyjs](https://docs.google.com/presentation/d/1XyBrIA97ZWIkm8NICAyWHo4J9hj_i2-mJmKEq_CR2A8/edit?usp=sharing) 
 
 ## Misc
 
