@@ -50,8 +50,8 @@ This is a collection of some things I've worked on that are easily viewable onli
 - **[daattali.com](http://daattali.com)** - small personal website that I run on a virtual server just because I wanted a place to host my own [R Shiny server](http://daattali.com/shiny) and [RStudio server](http://daattali.com/rstudio).
 
 - **[deanattali.com](http://deanattali.com)** - the site you're currently on.  Just a simple site to have some virtual presence.
-- 
-- ## Paid writing gigs
+
+## Paid writing gigs
 
 - [Persistent data storage in Shiny apps](http://shiny.rstudio.com/articles/persistent-data-storage.html) - written for [RStudio](http://www.rstudio.com/).
 - [How to Set Up R on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04) - written for [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99).
