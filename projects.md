@@ -61,9 +61,8 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 ## Talks & Interviews
 
-- Podcast interview for the R-Podcast: [Episode 16: Intervew with Dean Attali](https://r-podcast.org/posts/the-r-podcast-episode-16-interview-with-dean-attali.html)
-
-- Invited as main speaker at the 1st Shiny Developer Conference: [talk about shinyjs](https://docs.google.com/presentation/d/1XyBrIA97ZWIkm8NICAyWHo4J9hj_i2-mJmKEq_CR2A8/edit?usp=sharing) 
+- Podcast interview for the R-Podcast: [Episode 16: Interview with Dean Attali](https://r-podcast.org/posts/the-r-podcast-episode-16-interview-with-dean-attali.html)
+- Invited as main speaker at the 1st Shiny Developer Conference: [Talk about shinyjs](https://docs.google.com/presentation/d/1XyBrIA97ZWIkm8NICAyWHo4J9hj_i2-mJmKEq_CR2A8/edit?usp=sharing) 
 
 ## Misc
 
