@@ -25,7 +25,7 @@ There are two ways to complement a package with a Shiny app that shows its main 
 
 #### 1. Host the Shiny app online
 
-You can host your Shiny app somewhere that is publicly available, such as [shinyapps.io](http://www.shinyapps.io/) or on your own [Shiny Server](deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/). Then you can include a link in the package's README or vignette or function documentation that points to the Shiny app.
+You can host your Shiny app somewhere that is publicly available, such as [shinyapps.io](http://www.shinyapps.io/) or on your own [Shiny Server](deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean). Then you can include a link in the package's README or vignette or function documentation that points to the Shiny app.
 
 As an example, I host [my own Shiny Server](http://daattali.com/shiny) where I can host my Shiny apps, and whenever I release a new package, I include a link in the README to a demo app.
 
