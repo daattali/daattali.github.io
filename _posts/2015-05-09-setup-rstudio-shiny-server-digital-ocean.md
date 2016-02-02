@@ -353,7 +353,7 @@ Here is what my domain settings look like, make sure yours look similar (note th
 
 You also need to configure your domain registrar by adding the 3 nameservers `ns1.digitalocean.com`, `ns2.digitalocean.com`, `ns3.digitalocean.com`. It's fairly simple, but the exact instructions are different based on your registrar, so [here is a guide](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars) with all the common registrars and how to do this step with each of them.
 
-I use Namecheap, so this is what my domain configuration needs to look like:
+I use [Namecheap](https://www.namecheap.com/?aff=95702), so this is what my domain configuration needs to look like:
 [![Namecheap domain servers]({{ site.url }}/img/blog/digital-ocean/namecheap-domain-server.png)]({{ site.url }}/img/blog/digital-ocean/namecheap-domain-server.png)
 
 **And that's it! Now you have a nicely configured private web server with your very own RStudio and Shiny Server, and you can do anything else you'd like on it.** 
