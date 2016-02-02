@@ -3,7 +3,7 @@ layout: post
 title: "Mimicking a Google Form with a Shiny app"
 tags: [professional, rstats, r, r-bloggers, shiny, shinyjs]
 date: 2015-06-14 5:30:00 -0700
-permalink: /2015/06/14/mimicking-google-form-shiny
+permalink: /2015/06/14/mimicking-google-form-shiny/
 fb-img: http://deanattali.com/img/blog/mimic-google-form-shiny/mimic-google-form-shiny-final.png
 ---
 

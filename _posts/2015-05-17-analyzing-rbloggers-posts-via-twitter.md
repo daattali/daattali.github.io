@@ -4,7 +4,7 @@ title: "Analyzing R-Bloggers' posts via Twitter"
 tags: [professional, rstats, r, r-bloggers, shiny, twitter]
 date: 2015-05-17 23:30:00 -0700
 fb-img: http://deanattali.com/img/blog/rbloggers-twitter/all-tweets-top-10.png
-permalink: /2015/05/17/analyzing-rbloggers-posts-via-twitter
+permalink: /2015/05/17/analyzing-rbloggers-posts-via-twitter/
 ---
 
 For those who don't know, every time a new blog post gets added to [R-Bloggers](http://www.r-bloggers.com/), it gets a corresponding tweet by [@Rbloggers](https://twitter.com/rbloggers), which gets seen by Rbloggers' ~20k followers fairly fast. And every time **my** post gets published, I can't help but check up on how many people gave that tweet some Twitter love, ie. "favorite"d or "retweet"ed it. It's even more exciting than getting a Facebook "like" on a photo from Costa Rica! 
