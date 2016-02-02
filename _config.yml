@@ -15,7 +15,7 @@ description: "Graduate student in Bioinformatics with a Bachelor of Computer Sci
 timezone: "America/Vancouver"
 markdown: kramdown
 highlighter: rouge
-permalink: /blog/:title
+permalink: /blog/:title/index.html
 paginate: 5
 paginate_path: "/page:num/"
 
