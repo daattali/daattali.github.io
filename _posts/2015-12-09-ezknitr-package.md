@@ -77,10 +77,10 @@ Another problem with the flat directory structure is that you may want to contro
 
 Assuming your working directory is currently set to the `project/` directory, you could use the following `ezknitr` command to do what you want:
 
-{% highlight r %}
+```r
 library(ezknitr)
 ezknit(file = "analysis/report.Rmd", out_dir = "reports", fig_dir = "myfigs")
-{% endhighlight %}
+```
 
 
 ~~~
@@ -116,7 +116,7 @@ As an example of a more complex realistic scenario where `ezknitr` would be usef
 
 We can easily use `ezknitr` to run any of the analysis Rmarkdowns on any of the datasets and assign the results to a unique output. Let's assume that each analysis script expects there to be a variable named `DATASET_NAME` that tells the script what data to operate on. The following `ezknitr` code illustrates how to achieve the desired output.
 
-{% highlight r %}
+```r
 library(ezknitr)
 ezknit(file = "analysis/explore.Rmd", out_dir = "reports/human",
         params = list("DATASET_NAME" = "human.dat"), keep_html = FALSE)
@@ -124,7 +124,7 @@ ezknit(file = "analysis/explore.Rmd", out_dir = "reports/mouse",
         params = list("DATASET_NAME" = "mouse.dat"), keep_html = FALSE)
 ezknit(file = "analysis/calculate.Rmd", out_dir = "reports/mouse",
         params = list("DATASET_NAME" = "mouse.dat"), keep_html = FALSE)
-{% endhighlight %}
+```
 
 ~~~
 - project/

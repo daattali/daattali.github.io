@@ -52,7 +52,7 @@ Initially the app will only save responses within its R session. We will learn l
 
 Here is the code for the basic app that we will be using as our starting point—copy it into a file named `app.R`. (In case you didn't know: Shiny apps don't *have to* be broken up into separate `ui.R` and `server.R` files, they can be completely defined in one file [as this Shiny article explains](http://shiny.rstudio.com/articles/app-formats.html))
 
-{% highlight r %}
+```r
 library(shiny)
 
 # Define the fields we want to save from the form
@@ -89,13 +89,13 @@ shinyApp(
     })     
   }
 )
-{% endhighlight %}
+```
 
 The above code is taken from a [guide on how to mimic a Google form with Shiny](http://deanattali.com/2015/06/14/mimicking-google-form-shiny/). 
 
 The above app is very simple—there is a table that shows all responses, three input fields, and a **Submit** button that will take the data in the input fields and save it. You might notice that there are two functions that are not defined but are used in the app: `saveData(data)` and `loadData()`. These two functions are the only code that affects how the data is stored/retrieved, and we will redefine them for each data storage type. In order to make the app work for now, here's a trivial implementation of the save and load functions that simply stores responses in the current R session. 
 
-{% highlight r %}
+```r
 saveData <- function(data) {
   data <- as.data.frame(t(data))
   if (exists("responses")) {
@@ -110,7 +110,7 @@ loadData <- function() {
     responses
   }
 }
-{% endhighlight %}
+```
 
 Before continuing further, make sure this basic app works for you and that you understand every line in it—it is not difficult, but take the two minutes to go through it. The code for this app is also available as a [gist](https://gist.github.com/daattali/c4db11d81f3c46a7c4a5) and you can run it either by copying all the code to your RStudio IDE or by running `shiny::runGist("c4db11d81f3c46a7c4a5")`. 
 
@@ -165,7 +165,7 @@ The most trivial way to save data from Shiny is to simply save each response as 
 
 **Code:**
 
-{% highlight r %}
+```r
 outputDir <- "responses"
 
 saveData <- function(data) {
@@ -188,7 +188,7 @@ loadData <- function() {
   data <- do.call(rbind, data)
   data
 }
-{% endhighlight %}
+```
 
 ### 2. Dropbox (**remote**) {#dropbox}
 
@@ -200,7 +200,7 @@ This approach is similar to the previous approach that used the local file syste
 
 **Code:**
 
-{% highlight r %}
+```r
 library(rdrop2)
 outputDir <- "responses"
 
@@ -224,7 +224,7 @@ loadData <- function() {
   data <- do.call(rbind, data)
   data
 }
-{% endhighlight %}
+```
 
 ### 3. Amazon S3 (**remote**) {#s3}
 
@@ -234,7 +234,7 @@ Another popular alternative to Dropbox for hosting files online is [Amazon S3](h
 
 **Code:**
 
-{% highlight r %}
+```r
 library(RAmazonS3)
 
 s3BucketName <- "my-unique-s3-bucket-name"
@@ -269,7 +269,7 @@ loadData <- function() {
   data <- do.call(rbind, data)
   data  
 }
-{% endhighlight %}
+```
 
 ## Store structured data in a table {#table}
 
@@ -291,7 +291,7 @@ You also need to create a database and a table that will store all the responses
 
 **Code:**
 
-{% highlight r %}
+```r
 library(RSQLite)
 sqlitePath <- "/path/to/sqlite/database"
 table <- "responses"
@@ -321,7 +321,7 @@ loadData <- function() {
   dbDisconnect(db)
   data
 }
-{% endhighlight %}
+```
 
 ### 5. MySQL (**local or remote**) {#mysql}
 
@@ -333,7 +333,7 @@ This method is very similar to the previous SQLite method, with the main differe
 
 **Code:**
 
-{% highlight r %}
+```r
 library(RMySQL)
 
 options(mysql = list(
@@ -374,7 +374,7 @@ loadData <- function() {
   dbDisconnect(db)
   data
 }
-{% endhighlight %}
+```
 
 ### 6. Google Sheets (**remote**) {#gsheets}
 
@@ -386,7 +386,7 @@ You can use the [`googlesheets`](https://github.com/jennybc/googlesheets) packag
 
 **Code:**
 
-{% highlight r %}
+```r
 library(googlesheets)
 
 table <- "responses"
@@ -404,7 +404,7 @@ loadData <- function() {
   # Read the data
   gs_read_csv(sheet)
 }
-{% endhighlight %}
+```
 
 ## Store semi-structured data in a NoSQL database {#nosql}
 
@@ -422,7 +422,7 @@ You can use the [`mongolite`](https://github.com/jeroenooms/mongolite) package t
 
 **Code:**
 
-{% highlight r %}
+```r
 library(mongolite)
 
 options(mongodb = list(
@@ -460,7 +460,7 @@ loadData <- function() {
   data <- db$find()
   data
 }
-{% endhighlight %}
+```
 
 # Conclusion {#conclusion}
 

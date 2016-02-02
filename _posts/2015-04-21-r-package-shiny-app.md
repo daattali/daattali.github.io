@@ -55,7 +55,7 @@ Then place your Shiny app folder under `inst/shiny-examples/` and add an R file 
 
 Your `runExample.R` will be simple - it will just look for the Shiny app and launch it
 
-{% highlight r %}
+```r
 #' @export
 runExample <- function() {
   appDir <- system.file("shiny-examples", "myapp", package = "mypackage")
@@ -65,13 +65,13 @@ runExample <- function() {
 
   shiny::runApp(appDir, display.mode = "normal")
 }
-{% endhighlight %}
+```
 
 Of course, don't forget to document this function! Now users can try out an app showcasing your package by running `mypackage::runExample()`.
 
 This method can easily support more than one Shiny app as well, simply place each app under `inst/shiny-examples/` and change the runExample code to something like this
 
-{% highlight r %}
+```r
 runExample <- function(example) {
   # locate all the shiny app examples that exist
   validExamples <- list.files(system.file("shiny-examples", package = "mypackage"))
@@ -95,6 +95,6 @@ runExample <- function(example) {
   appDir <- system.file("shiny-examples", example, package = "mypackage")
   shiny::runApp(appDir, display.mode = "normal")
 }
-{% endhighlight %}
+```
 
 Now running `runExample("myapp")` will launch the "myapp" app, and running `runExample()` will generate a message telling the user what examples are allowed.
