@@ -35,8 +35,7 @@ than being dynamically created with every page load.  For my purposes this was d
 
 ## Custom domain name (instead of `http://daattali.github.io`)
 
-In order to have a nice domain name, I bought a domain from **[Namecheap](https://www.namecheap.com/?aff=95702
-)**, mainly because it was the most affordable legitimate domain name registrar I could find.  Buying the domain meant that I can reach my site via `http://deanattali.com` instead of  `http://daattali.github.io` (though they both work and are identical).
+In order to have a nice domain name, I bought a domain from **[Namecheap](https://www.namecheap.com/?aff=95702)**, mainly because it was the most affordable legitimate domain name registrar I could find.  Buying the domain meant that I can reach my site via `http://deanattali.com` instead of  `http://daattali.github.io` (though they both work and are identical).
 
 ### Set up custom domain name with GitHub Pages
 
