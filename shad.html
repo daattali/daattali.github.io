@@ -1,0 +1,90 @@
+---
+layout: page
+title: Hi, I'm Dean
+subtitle: Soon-to-be Program Assistant @ SHAD (with your help!)
+---
+
+Hello SHAD recruiter!
+
+Before we continue, let's see if you can guess which two of the following three statements about myself are true.
+
+<div class="row">
+  <div class="col-xs-3 col-md-3 col-lg-3"></div>
+  <div id="questions" class="col-xs-6 col-md-6 col-lg-6">
+    <label class="checkbox"><input type="checkbox" value="teaching" id="teaching">I love teaching</label>
+    <label class="checkbox"><input type="checkbox" value="people" id="people">I love people</label>      	  
+    <label class="checkbox"><input type="checkbox" value="saskatoon" id="saskatoon">I love Saskatoon</label>
+  </div>       
+</div>
+<div class="row">
+  <div class="col-xs-3 col-md-3 col-lg-3"></div>
+  <div class="col-xs-6 col-md-6 col-lg-6">        
+    <button type="button" class="btn btn-default btn-lg btn-success" id="submitqs">
+      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Submit
+    </button>  
+  </div>
+</div>        
+<br/>
+<div class="alert alert-warning hideme" role="alert" id="error">Nice try, but that's not quite right, unless you know me better than I do? Try again!</div>
+
+
+<div id="showafter" class="hideme">
+  See, it's like you know me already :) Hopefully you'll pick me as one of the Program Assistants so that I'll get to know you too!
+  
+  Let me just expand on each of these items.
+  
+  <ul>
+    <li>My love for teaching has always been part of me. All throughout high school and university I tutored maths and sciences often. Now as a graduate student I enjoy being a TA in a few courses, and I also TA in extra-curricular educational workshops.</li>
+    <li>My love for people is evident by the fact that once of my favourite things to do when I'm bored is go to the local hostel bar and meet the travelers there. My <a href="http://deanattali.com/aboutme/">About Me</a> page also says that I love meeting people (I swear that sentence was always there!).</li>
+    <li>I have nothing against Saskatoon! I've just never been, so I can't love it. At least not <em>yet</em>...</li>
+  </ul>
+  
+  To be honest, I don't have too much to say here that I didn't already say in the application.  I usually don't like to talk about myself too much and that whole application was just "me me me, I'm so great", which felt weird. I invite you to see my <a href="http://deanattali.com/aboutme">About Me page</a> to see how I present myself to the world.  Even though this is my "professional" website I still chose to keep it very light and make it clear that I love both hard word and fun.
+
+  Oh, one small thing that I left out from the application, regarding the question about previous work with kids. I did volunteer at an orphanage in Costa Rica for a month in 2011, but the application page was getting too long and I didn't want it to be over a full page so I left it out.    
+  
+  I realize other applications might make a super cool video or have some other very impressive way to showcase themselves. I'm in the middle of a race against time to write my thesis so I didn't want to spend too much time, I hope you understand. If I had the time, I would go out and make a video with 100 strangers in Vancouver doing a little dance and ending it by spelling out "SHAD" from an aerial perspective, and I'd get them all to say how awesome I am (even though they don't know me). But instead, you're here on this simple webpage!
+  
+  Thanks for reading, good luck with the program this summer!
+  
+  Just to make sure we end on a good note, here are photos of the cute kids I had the pleasure of knowing for a month in Costa Rica. Even after all they went through, they were so loving and welcoming and trusting and warm, it was an amazing experience to be with them.
+
+  <div id="carousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="http://i.imgur.com/pLKgAJu.jpg">
+      </div>
+      <div class="item">
+        <img src="http://i.imgur.com/qZ3d1Sz.jpg">
+      </div>
+      <div class="item">
+        <img src="http://i.imgur.com/F6zMTDF.jpg">
+      </div>
+      <div class="item">
+        <img src="http://i.imgur.com/NB0NJQ3.jpg">
+      </div>            
+      <div class="item">
+        <img src="http://i.imgur.com/qaB1FfA.jpg">
+      </div>            
+    </div>        
+  </div> 
+  
+</div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+	    $('.carousel').carousel({ interval: 3000 });
+      
+      $("#submitqs").click(function() {
+        $("#error").hide();
+        if ( $("#teaching").prop('checked') &&
+             $("#people").prop('checked') &&
+             !$("#saskatoon").prop('checked')
+        ) {
+          $("#showafter").fadeIn();
+        } else {
+          $("#error").fadeIn();
+        }
+      });      
+    });
+  </script>
