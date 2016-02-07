@@ -54,7 +54,7 @@ var keshPage = {
 	  kisssound.play();
 
 	  var img = $(document.createElement("img"));
-	  img.attr('src', 'img/kesh/kiss.jpg');
+	  img.attr('src', '/img/kesh/kiss.jpg');
 	  var size = Math.round(Math.random() * 300 + 100);  // kiss image size 100-400 px
 	  var rotate = Math.round(Math.random() * 360);
 	  var left = Math.round(Math.random() * (window.innerWidth - size));
