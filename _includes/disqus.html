@@ -11,7 +11,7 @@
             // https://github.com/jekyll/jekyll/issues/4483
             // The projects page now has a trailing slash, it didn't used to
             if (disqus_url.substr(-9) == "projects/") {
-            	disqus_url.substr(0, disqus_url.length - 1);
+            	disqus_url = disqus_url.substr(0, disqus_url.length - 1);
             }
 
 	    (function() {
