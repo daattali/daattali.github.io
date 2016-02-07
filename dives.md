@@ -7,8 +7,8 @@ date: "Feb 22, 2015"
 # Bahama dives Feb 20, 2015
 
 ### Aba
-![](img/dives/aba1-0.png)
-![](img/dives/aba1-1.png)
+![](/img/dives/aba1-0.png)
+![](/img/dives/aba1-1.png)
 
 ### Oriane
 ![](img/dives/oriane1-0.png)
