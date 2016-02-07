@@ -11,37 +11,37 @@ date: "Feb 22, 2015"
 ![](/img/dives/aba1-1.png)
 
 ### Oriane
-![](img/dives/oriane1-0.png)
-![](img/dives/oriane1-3.png)      
+![](/img/dives/oriane1-0.png)
+![](/img/dives/oriane1-3.png)      
 
 ### Aidan
-![](img/dives/idan1-0.png)
-![](img/dives/idan1-1.png)   
+![](/img/dives/idan1-0.png)
+![](/img/dives/idan1-1.png)   
 
 ### Dean
-![](img/dives/dean1-0.png)
-![](img/dives/dean1-2.png)
+![](/img/dives/dean1-0.png)
+![](/img/dives/dean1-2.png)
 
 ### Couple
-![](img/dives/couple1-0.png)
-![](img/dives/couple1-1.png)      
+![](/img/dives/couple1-0.png)
+![](/img/dives/couple1-1.png)      
 
 ### Ben 1
-![](img/dives/benshark1-0.png)
-![](img/dives/benshark1-1.png)  
+![](/img/dives/benshark1-0.png)
+![](/img/dives/benshark1-1.png)  
 
 ### Ben 2
-![](img/dives/benshark2-0.png)
-![](img/dives/benshark2-9.png)
+![](/img/dives/benshark2-0.png)
+![](/img/dives/benshark2-9.png)
 
 ### Ben 3
-![](img/dives/benshark3-0.png)
-![](img/dives/benshark3-1.png)      
+![](/img/dives/benshark3-0.png)
+![](/img/dives/benshark3-1.png)      
 
 ### Boys 1
-![](img/dives/allshark1-0.png)
-![](img/dives/allshark1-3.png)   
+![](/img/dives/allshark1-0.png)
+![](/img/dives/allshark1-3.png)   
 
 ### Boys 2
-![](img/dives/allshark2-0.png)
-![](img/dives/allshark2-1.png)   
+![](/img/dives/allshark2-0.png)
+![](/img/dives/allshark2-1.png)   
