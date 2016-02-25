@@ -42,7 +42,7 @@ In order to have a nice domain name, I bought a domain from **[Namecheap](https:
 After purchasing my domain name (deanattali.com) from Namecheap, there were a few simple settings to set to get deanattali.com to
 render my GitHub page.
 
-- In the git repository, I added a file named `CNAME` that contained my domain. ([Here is my CNAME]({{ site.url }}/CNAME))
+- In the git repository, I added a file named `CNAME` that contained my domain. ([Here is my CNAME](https://github.com/daattali/daattali.github.io/blob/master/CNAME))
 - I logged into Namecheap and changed the following settings under "All Host Records"
   - Set the "@" IP Address/URL to `192.30.252.153` and the Record Type to `A (Address)`
   - Set the "www" IP Address/URL to `daattali.github.io.` and the Record Type to `CNAME (Alias)`
