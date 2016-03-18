@@ -30,9 +30,6 @@ navbar-links:
   Home: ""
   Projects: "projects"
   About Me / Contact: "aboutme"
-  test:
-    - one: "projects"
-    - two: "http://google.com"
 nav-search: "search"
 
 # --- Footer options --- #
