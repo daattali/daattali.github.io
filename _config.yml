@@ -30,6 +30,9 @@ navbar-links:
   Home: ""
   Projects: "projects"
   About Me / Contact: "aboutme"
+  sdfsd:
+    - test: "sdfds"
+    - sdf: "f"
 nav-search: "search"
 
 # --- Footer options --- #
