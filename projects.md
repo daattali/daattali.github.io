@@ -21,7 +21,7 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 - **[ezknitr](https://github.com/daattali/ezknitr)** - avoid the typical working directory pain when using 'knitr'. If you're into R and reproducible research/generating reports with knitr, then do check it out. Available [on CRAN](https://cran.r-project.org/package=ezknitr) and [on GitHub](https://github.com/daattali/ezknitr).
 
-- **[ddpcr](https://github.com/daattali/ddpcr)** - analyze and visualize droplet digital PCR data. Available [on GitHub](https://github.com/daattali/ddpcr).
+- **[ddpcr](https://github.com/daattali/ddpcr)** - analyze and visualize droplet digital PCR data. Check out a [demo online](http://daattali.com/shiny/ddpcr/). Available [on CRAN](https://cran.r-project.org/package=ddpcr) and [on GitHub](https://github.com/daattali/ddpcr).
 
 - **[lightsout](https://github.com/daattali/lightsout)** - an implementation of the puzzle game Lights Out using R. [Play the game online](http://daattali.com/shiny/lightsout/). Available [on CRAN](https://cran.r-project.org/package=lightsout) and [on GitHub](https://github.com/daattali/lightsout).
 
