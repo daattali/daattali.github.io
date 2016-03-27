@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: "Bahama dives Feb 20, 2015"
 date: "Feb 22, 2015"
 ---
