@@ -78,7 +78,6 @@ defaults:
       path: ""
       type: "posts"
     values:
-      layout: "post"
       comments: true  # add comments to all blog posts 
       show-share: true # add sharing buttons to all blog posts
   -
