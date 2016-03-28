@@ -13,6 +13,8 @@ That was meant to be read as The Most Interesting Man In The World, but now that
 
 Shiny has many useful input controls, but there was one that was always missing until today - a colour picker.  The package [**`shinyjs`**](https://github.com/daattali/shinyjs) now has a **`colourInput()`** function and, of course, a corresponding **`updateColourInput()`**. There have been many times when I wanted to allow users in a Shiny app to select a colour, and I've seen that feature being requested multiple times on different online boards, so I decided to make my own such input control.  
 
+**UPDATE 2016-03-27:** There is now an awesome RStudio addin/gadget that lets you select multiple colours interactively if you need help picking colours. [Read more here](https://github.com/daattali/shinyjs#colourpicker).  
+
 ## Table of contents
 
 - [Demo](#demo)
@@ -105,4 +107,4 @@ It's been pointed out that this function is not exactly in-line with the general
 
 ---
 
-If anyone has any comments or feedback, both negative or positive, I'd love to [hear about it]({{ site.url }}/aboutme#contact)! Feel free to open issues [on GitHb](https://github.com/daattali/shinyjs) if there are any problems.
+If anyone has any comments or feedback, both negative or positive, I'd love to [hear about it]({{ site.url }}/aboutme#contact)! Feel free to open issues [on GitHub](https://github.com/daattali/shinyjs) if there are any problems.
