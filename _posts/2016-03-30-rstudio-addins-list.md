@@ -8,7 +8,7 @@ RStudio's new feature of supporting addins is great. It's about 2 months old now
 
 As a first attempt at making addins more discoverable, I started a GitHub repo listing some addins, with the hope that other useRs will add to the list and make it a place to discover addins.
 
-[github.com/daattali/rstudio-addins](https://github.com/daattali/rstudio-addins)
+[github.com/daattali/rstudio-addins](https://github.com/daattali/rstudio-addins#readme)
 
 This can help in three ways: if you want to browse for useful addins, if you want to showcase your addin, or if you want to look at how others are implementing addins to get ideas for developing your own (since there aren't too many resources or examples yet, it could be useful to inspect other people's code).
 
