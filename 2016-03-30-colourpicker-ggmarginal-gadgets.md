@@ -28,13 +28,9 @@ You can either run the colour picker as an **addin** or as a **gadget**.  To acc
 ### Features
 
 - By default, the colour picker lets you select one colour. You can add/remove colours by using the buttons (plus sign to add another colour placeholder, garbage icon to remove the selected colour).
-
 - The colours returned can either be HEX values (e.g. "#FF0000") or R colour names (e.g. "red"). If you opt to get the R colour names, you will still get the HEX value for any colour that does not have a corresponding R colour. 
-
 - Each colour can be selected in one of three ways: 1. picking any arbitrary colour from a "colour wheel" (it's actually a square though); 2. providing an arbitrary colour and selecting an R colour that's very similar to the colour you provided; 3. picking from the complete list of all available R colours.
-
 - When accessed as an addin (through the *Addins* menu), the result will be injected into the current script in RStudio as valid code that produces a vector of colours.
- 
 - When ran as a gadget, the result will return a vector of colours, so you can use it to assign a vector of colours to a variable, e.g. `mycols <- colourPicker(5)`.
 
 
