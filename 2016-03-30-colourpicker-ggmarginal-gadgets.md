@@ -52,6 +52,14 @@ Screenshot:
 
 The flagship function of the `ggExtra` package is `ggMarginal()`, which is used to add marginal density/histograms to ggplot2 plots ([demo](http://daattali.com/shiny/ggExtra-ggMarginal-demo/)). Now with the help of this addin, you can do this interactively by setting all the different parameters and seeing how the plot is affected in real-time.
 
-You can either run the marginal plot builder as an **addin** or as a **gadget**.  To access it as an addin, highlight the code for a plot and then select *ggplot2 Marginal Plots* from the RStudio *Addins* menu.  This will embed the resulting code for the marginal plots right into your script. Alternatively, you can call `ggMarginalGadget()` with a ggplot2 plot, and the return value will be a plot object.  For example, you can call `myplot <- ggMarginalGadget(ggplot(mtcars, aes(wt, mpg)) + geom_point())`.
+You can either run the marginal plot builder as an **addin** or as a **gadget**.  To access it as an addin, highlight the code for a plot and then select *ggplot2 Marginal Plots* from the RStudio *Addins* menu.  This will embed the resulting code for the marginal plots right into your script. Alternatively, you can call `ggMarginalGadget()` with a ggplot2 plot, and the return value will be a plot object.  For example, if you have the following code in your script
+
+```r
+library(ggplot2)
+library(ggExtra)
+myplot <- ggplot(mtcars, aes(wt, mpg)) + geom_point()
+```
+
+You can either select the text `myplot` and run the addin from the menu, or you can select the entire ggplot expression and run the addin, or you can call `mynewplot <- ggMarginalGadget(myplot)`. 
 
 Disclaimer: The UI that is available for building Shiny gadgets is very limited, and there are very few resources and examples out there for building gadgets, so some of the UI code is a little bit hacky. If you're having issues with the UI of one of these gadgets, please do [let me know]({{ site.url }}/aboutme#contact).  If you have any other feedback, I'd also love to [hear about it]({{ site.url }}/aboutme#contact)!
