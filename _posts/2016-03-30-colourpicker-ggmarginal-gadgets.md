@@ -7,6 +7,8 @@ fb-img: http://deanattali.com/img/blog/colourpicker-ggmarginal-gadgets/colourpic
 
 TL;DR: There's a [**colour picker addin** in shinyjs](https://github.com/daattali/shinyjs#colourpicker) and a [**ggplot2 marginal plots addin** in ggExtra](https://github.com/daattali/ggExtra#marginal-plots-rstudio-addingadget).
 
+---
+
 Any R user who hasn't been spending the past 2 months under a rock should know by now about RStudio's new exciting features: addins and gadgets.
 
 (In case you don't know, here's a summary: Gadgets are simply Shiny apps that return a value, and are therefore meant to be used by the programmer to assign a value to a variable rather than by an end-user.  Addins are a way to add your own clickable menus in RStudio that call R functions upon being clicked.)
