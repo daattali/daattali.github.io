@@ -3,6 +3,7 @@ title: List of useful RStudio addins made by useRs
 tags: [professional, rstats, r, r-bloggers]
 date: 2016-03-31 13:00:00 -0700
 permalink: /blog/rstudio-addins-list/
+layout: post
 ---
 
 RStudio's new feature of supporting addins is great. It's about 2 months old now, and I think one of the main problems right now is discoverability: there's just no easy way to find addins or publish your own.
