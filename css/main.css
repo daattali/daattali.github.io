@@ -598,6 +598,7 @@ footer .theme-by {
 .share-section {
   padding: 30px 15px 35px;
   margin-top: 40px;
+  margin-bottom: 40px;
   box-shadow: 0 0 10px #e7e7e7 inset;
   background: #fcfcfc;
   text-align: center;
@@ -646,6 +647,7 @@ footer .theme-by {
 @media only screen and (min-width: 768px) {
   .share-section {
     margin-top: 50px;
+    margin-bottom: 50px;
   }
   .share-section .share-title {
     font-size: 45px;
