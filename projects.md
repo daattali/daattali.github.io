@@ -9,7 +9,7 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 ---
 
-## Website themes 
+## Website themes (Jekyll)
 
 -  **[Beautiful Jekyll](http://deanattali.com/beautiful-jekyll/)** - a Jekyll theme I created when making this website.  You can [view a demo](http://deanattali.com/beautiful-jekyll/) or use it yourself to make a pretty website by visiting the [GitHub project](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it is designed to look great on both mobile and large-screen devices. (The [code that generates this site](https://github.com/daattali/daattali.github.io) is very similar to Beautiful Jekyll, but I added a few more advanced features that I don't think should be included in an all-purpose template)
 
@@ -38,6 +38,10 @@ This is a collection of some things I've worked on that are easily viewable onli
 - **[Project Free TV Ad Bypass](https://github.com/daattali/pftv-ad-bypass-extension)** - Project Free TV serves a 10-second ad page before allowing users to continue to the video - this extension bypasses the ad page. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/project-free-tv-ad-bypass/modfjcgeknfglkdgckkomdcgokkjaadd)
 
 - **[Smileyfy My Facebook](https://github.com/daattali/smileyfy-my-facebook-extension)** -  Chrome extension that adds infinite happiness to your Facebook browsing, plus a little bonus rickrolling :)  This is not the most useful (if at all..), but it was a way for me to learn about some more advanced features of Chrome extension development. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/smileyfy-my-facebook/ideagdnlnmgjdhhbelgadnakbhphljol)
+
+## Shiny apps
+
+You can see a select sample of Shiny apps I built [on my personal Shiny server](http://daattali.com/shiny/). 
 
 ## Websites
 
