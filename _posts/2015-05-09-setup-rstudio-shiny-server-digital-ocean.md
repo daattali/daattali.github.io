@@ -198,8 +198,8 @@ sudo su - -c "R -e \"install.packages('shiny', repos='http://cran.rstudio.com/')
 Just like when we installed RStudio, again we need to get the URL of the latest Shiny Server [from the Shiny Server downloads page](http://www.rstudio.com/products/shiny/download-server/), download the file, and then install it.  These are the two commands using the version that is most up-to-date right now:
 
 ~~~
-wget http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.3.0.403-amd64.deb
-sudo gdebi shiny-server-1.3.0.403-amd64.deb
+wget https://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.4.2.786-amd64.deb
+sudo gdebi shiny-server-1.4.2.786-amd64.deb
 ~~~
 
 Shiny Server is now installed and running. Assuming there were no problems, if you go to `http://123.456.1.2:3838/` you should see Shiny Server's default homepage, which includes some instructions and two Shiny apps:
