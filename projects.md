@@ -65,10 +65,10 @@ You can see a select sample of Shiny apps I've built [on my personal Shiny serve
 - Book reviewer for [Learning Shiny](https://www.packtpub.com/application-development/learning-shiny).
 - [Building Shiny apps](http://stat545-ubc.github.io/shiny01_activity.html) - written for a course I TA'ed.
 
-## Talks & Interviews
+## Talks
 
 - Podcast interview for the R-Podcast: [Episode 16: Interview with Dean Attali](https://r-podcast.org/posts/the-r-podcast-episode-16-interview-with-dean-attali.html)
-- Invited as main speaker at the 1st Shiny Developer Conference: [Talk about shinyjs](http://bit.ly/shinyjs-slides) 
+- Invited as main speaker at the 1st Shiny Developer Conference: [Video](http://bit.ly/shinyjs-2016-shinydevcon) and [presentation slides](http://bit.ly/shinyjs-slides) from my talk about shinyjs.
 
 ## Misc
 
