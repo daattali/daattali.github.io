@@ -18,4 +18,4 @@ This can help in three ways: if you want to browse for useful addins, if you wan
 
 I can see in the future somebody creating a more ambitious and powerful "addin repository" (not a GitHub one), but for now I hope this list can serve as a go-to for RStudio addins.
 
-**Update 1 month later:** this repo has received far more attention than I anticipiated and it was clear that people wanted this list of addins to also be turned into a package that can let you download and manage these addins, so now this is a full-fledged package rather than just a list.
+**Update 1 month later:** since this repo received far more attention than I anticipated and it was clear that people wanted this list of addins to be turned into a package that can let you download and manage these addins, so now this is a full-fledged package rather than just a list.
