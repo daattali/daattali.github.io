@@ -19,7 +19,7 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 - **[ggExtra](https://github.com/daattali/ggExtra)** - easily add histograms/density plots to ggplot2 scatterplots, plus a few more ggplot2 convenience functions. Check out a [demo online](http://daattali.com/shiny/ggExtra-ggMarginal-demo/). Available [on CRAN](https://cran.r-project.org/package=ggExtra) and [on GitHub](https://github.com/daattali/ggExtra).
 
-- **[addinslist](https://github.com/daattali/addinslist)** - Discover and install useful RStudio addins. Available [on CRAN](https://cran.r-project.org/package=addinslist) and [on GitHub](https://github.com/daattali/addinslist)
+- **[addinslist](https://github.com/daattali/addinslist)** - Discover and install useful RStudio addins. Available [on CRAN](https://cran.r-project.org/package=addinslist) and [on GitHub](https://github.com/daattali/addinslist).
 
 - **[shinyforms](https://github.com/daattali/shinyforms)** - easily create questionnaire-type forms with Shiny. Check out a [demo online](http://daattali.com/shiny/mimic-google-form/). Available [on GitHub](https://github.com/daattali/ggExtra) (still in development).
 
