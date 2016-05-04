@@ -171,8 +171,8 @@ sudo apt-get -y install libapparmor1 gdebi-core
 Download the latest RStudio Server - consult [RStudio Downloads page](http://www.rstudio.com/products/rstudio/download-server/) to get the URL for the latest version. Then install the file you downloaded. These next two lines are using the latest version as of writing this post.
 
 ~~~
-wget http://download2.rstudio.org/rstudio-server-0.98.1103-amd64.deb
-sudo gdebi rstudio-server-0.98.1103-amd64.deb
+wget https://download2.rstudio.org/rstudio-server-0.99.896-amd64.deb
+sudo gdebi rstudio-server-0.99.896-amd64.deb
 ~~~
 
 Done! By default, RStudio uses port 8787, so to access RStudio go to `http://123.456.1.2:8787` and you should be greeted with an RStudio login page. (If you forgot what your droplet's IP is, you can find out by running `hostname -I`)
