@@ -11,13 +11,15 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 ## Website themes (Jekyll)
 
--  **[Beautiful Jekyll](http://deanattali.com/beautiful-jekyll/)** - a Jekyll theme I created when making this website.  You can [view a demo](http://deanattali.com/beautiful-jekyll/) or use it yourself to make a pretty website by visiting the [GitHub project](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it is designed to look great on both mobile and large-screen devices. (The [code that generates this site](https://github.com/daattali/daattali.github.io) is very similar to Beautiful Jekyll, but I added a few more advanced features that I don't think should be included in an all-purpose template)
+-  **[Beautiful Jekyll](http://deanattali.com/beautiful-jekyll/)** - a Jekyll theme I created when making this website.  You can [view a demo](http://deanattali.com/beautiful-jekyll/) or use it yourself to make a pretty website similar to this one by visiting the [project page](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it is designed to look great on both mobile devices and laptops.
 
 ## R packages
 
 - **[shinyjs](https://github.com/daattali/shinyjs)** -  easily improve UX in your Shiny apps, adds useful features to Shiny apps, and call your own JavaScript functions using plain R code.  Also includes a colour picker.  Check out a [demo online](http://daattali.com/shiny/shinyjs-demo/). Available [on CRAN](https://cran.r-project.org/package=shinyjs) and [on GitHub](https://github.com/daattali/shinyjs).
 
 - **[ggExtra](https://github.com/daattali/ggExtra)** - easily add histograms/density plots to ggplot2 scatterplots, plus a few more ggplot2 convenience functions. Check out a [demo online](http://daattali.com/shiny/ggExtra-ggMarginal-demo/). Available [on CRAN](https://cran.r-project.org/package=ggExtra) and [on GitHub](https://github.com/daattali/ggExtra).
+
+- **[addinslist](https://github.com/daattali/addinslist)** - Discover and install useful RStudio addins. Available [on CRAN](https://cran.r-project.org/package=addinslist) and [on GitHub](https://github.com/daattali/addinslist)
 
 - **[shinyforms](https://github.com/daattali/shinyforms)** - easily create questionnaire-type forms with Shiny. Check out a [demo online](http://daattali.com/shiny/mimic-google-form/). Available [on GitHub](https://github.com/daattali/ggExtra) (still in development).
 
