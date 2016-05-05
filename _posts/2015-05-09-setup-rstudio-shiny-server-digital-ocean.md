@@ -54,6 +54,7 @@ Once the droplet is ready (can take a few minutes), you'll be redirected to a pa
 One option to log into your droplet is through the "Access" tab on the page you were redirected to, but it's slow and ugly, so I prefer logging in on my own machine. If you're on a unix machine, you can just use `ssh 123.456.1.2`. I'm on Windows, so I use [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/) to SSH ("login") into other machines. Use the IP that you see on the page, with the username `root`.  If you used an SSH key then you don't need to provide a password; otherwise, a password was sent to your email.
 
 You should be greeted with a welcome message and some stats about the server that look like this:
+
 [![Login screen]({{ site.url }}/img/blog/digital-ocean/login.png)]({{ site.url }}/img/blog/digital-ocean/login.png)
 
 # Step 4: Ensure you don't shoot yourself in the foot {#safety-first}
