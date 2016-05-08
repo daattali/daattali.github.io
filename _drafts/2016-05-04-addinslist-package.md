@@ -12,7 +12,7 @@ If you install the `addinslist` package (with the command `install.packages("add
 
 [![Addins menu](https://raw.githubusercontent.com/daattali/addinslist/master/inst/media/addins-menu.png)](https://raw.githubusercontent.com/daattali/addinslist/master/inst/media/addins-menu.png)
 
-Running this addin will show you a nice table with information about different available addins. This list automtically fetches new information once a day, so you don't need to update the package in order to see new addins that have been added since you installed the package.  You can click on any row in the table to install the package that contains that addin. If a row is green, it means you already have that addin (clicking it will *uninstall* the corresponding package). This is how the addin browser/installer looks:  
+Running this addin will show you a nice table with information about different available addins. This list automatically fetches new information once a day, so you don't need to update the package in order to see new addins that have been added since you installed the package.  You can click on any row in the table to install the package that contains that addin. If a row is green, it means you already have that addin (clicking it will *uninstall* the corresponding package). This is how the addin browser/installer looks:  
 
 [![addinslist addin](https://raw.githubusercontent.com/daattali/addinslist/master/inst/media/addin.png)](https://raw.githubusercontent.com/daattali/addinslist/master/inst/media/addin.png)
 
