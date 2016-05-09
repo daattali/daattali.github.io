@@ -1,7 +1,7 @@
 ---
 title: "addinslist package: An RStudio addin to discover and install RStudio addins"
 tags: [professional, rstats, r, r-bloggers, package, shiny]
-date: 2016-05-09 11:00:00 -0700
+date: 2016-05-09 11:20:00 -0700
 ---
 
 [RStudio addins](https://rstudio.github.io/rstudioaddins/) were released in early 2016 to provide anyone with the ability to add "extensions" to RStudio. This feature has quickly become popular, but discoverability was a problem: there was just no easy way to know what addins exist.
