@@ -43,7 +43,7 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 ## Shiny apps
 
-You can see a select sample of Shiny apps I've built [on my personal Shiny server](http://daattali.com/shiny/). 
+If you got here after reading some of my blog posts, you'll know that I'm a big fan and advocate of Shiny, and I help many people with it. You can see a select sample of Shiny apps I've built [on my personal Shiny server](http://daattali.com/shiny/). 
 
 ## Websites
 
