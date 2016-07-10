@@ -10,9 +10,11 @@ permalink: /2015/04/23/shinyjs-r-package/
 It lets you perform common useful JavaScript operations in Shiny
 applications without having to know any JavaScript.
 
-## Important note (2015-05-31)
+## Important note
 
-**The package has improved a lot since writing this post and some really useful functionality that I've been asked to implement was added. I highly recommend you stop reading this page and instead go directly to the [updated README on GitHub](https://github.com/daattali/shinyjs#readme) which provides a great overview and details for this package.**
+**The package has improved a lot since writing this post. I highly recommend you stop reading this page and instead go the [up-to-date README on GitHub](https://github.com/daattali/shinyjs#readme).**
+
+<a class="btn btn-success" href="https://github.com/daattali/shinyjs#readme">See updated README</a>
 
 ## Demos
 
