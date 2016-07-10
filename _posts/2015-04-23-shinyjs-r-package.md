@@ -14,8 +14,8 @@ applications without having to know any JavaScript.
 
 **The package has improved a lot since writing this post. I highly recommend you stop reading this page and instead go the [up-to-date README on GitHub](https://github.com/daattali/shinyjs#readme).**
 
-<div style="text-align:center; text-decoration: none;">
-<a class="btn btn-success btn-lg" href="https://github.com/daattali/shinyjs#readme">Go to updated README</a>
+<div style="text-align:center;">
+<a style="text-decoration: none;" class="btn btn-success btn-lg" href="https://github.com/daattali/shinyjs#readme">Go to updated README</a>
 </div>
 
 ## Demos
