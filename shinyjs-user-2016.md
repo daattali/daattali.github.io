@@ -16,6 +16,6 @@ Learn more about shinyjs: [github.com/daattali/shinyjs](https://github.com/daatt
 
 [Slides for this talk](http://bit.ly/shinyjs-slides-useR2016)
 
-[Longer version of the talk (30 min) from an earlier conference](https://youtu.be/fPY13maWKKE)
+[Longer version of the talk (30 min) from an earlier conference](http://deanattali.com/shinyjs-shinydevcon-2016/)
 
-All videos from the conference are hosted [by Microsoft](https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/)
+All videos from the conference were recorded and hosted [by Microsoft](https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/)
