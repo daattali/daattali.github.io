@@ -8,9 +8,13 @@ permalink: /2015/05/31/shinyjs-extend/
 
 About a month ago I made [an announcement](http://deanattali.com/2015/04/23/shinyjs-r-package) about the initial release of `shinyjs`. After some feedback, a few feature requests, and numerous hours of work, I'm excited to say that a new version of `shinyjs` v0.0.6.2 was made available on CRAN this week. The package's main objective is to make shiny app development better and easier by allowing you to perform many useful functions with simple R code that would normally require JavaScript coding. Some of the features include hiding/showing elements, enabling/disabling inputs, resetting an input to its original value, and many others. 
 
-## Update (2015-06-23)
+# Important note
 
-The package has gone through some more major updates and has extra features, such as a `colourInput` (which is exactly what it sounds like - an input control to let users select colours). For the most up-to-date information, see the [README on GitHub](https://github.com/daattali/shinyjs#readme).
+**The package has improved a lot since writing this post. I highly recommend you stop reading this page and instead go the [up-to-date README on GitHub](https://github.com/daattali/shinyjs#readme).**
+
+<div style="text-align:center;">
+<a style="text-decoration: none;" class="btn btn-success btn-lg" href="https://github.com/daattali/shinyjs#readme">Go to updated README</a>
+</div>
 
 ## Table of contents 
 
