@@ -6,7 +6,7 @@ comments: true
 ---
 
 <style>
-#shinyjs-vid { box-shadow: 0 0 15px black; }
+#youtube-vid iframe { box-shadow: 0 0 15px black; }
 </style>
 
 Learn more about shinyjs: [github.com/daattali/shinyjs](https://github.com/daattali/shinyjs).
