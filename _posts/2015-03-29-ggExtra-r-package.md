@@ -2,7 +2,7 @@
 layout: post
 title: "ggExtra: R package for adding marginal histograms to ggplot2"
 tags: [professional, rstats, r, r-bloggers, ggplot2, packages, ggExtra]
-fb-img: "http://deanattali.com/img/blog/ggExtra/ggmarginal-basic-example.png"
+share-img: "http://deanattali.com/img/blog/ggExtra/ggmarginal-basic-example.png"
 permalink: /2015/03/29/ggExtra-r-package/
 ---
 

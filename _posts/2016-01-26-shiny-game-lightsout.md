@@ -3,7 +3,7 @@ layout: post
 title: "Need any more reason to love R-Shiny? Here: you can even use Shiny to create simple games!"
 tags: [professional, rstats, r, r-bloggers, shiny, package]
 date: 2016-01-26 10:00:00 -0700
-fb-img: http://deanattali.com/img/blog/lightsout/shinyapp.png
+share-img: http://deanattali.com/img/blog/lightsout/shinyapp.png
 ---
 
 TL;DR [Click here](http://daattali.com/shiny/lightsout/) to play a puzzle game written entirely in Shiny [(source code)](https://github.com/daattali/lightsout/tree/master/inst/shiny).

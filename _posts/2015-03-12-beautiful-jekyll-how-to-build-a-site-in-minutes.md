@@ -3,7 +3,7 @@ layout: post
 title: "Beautiful Jekyll - how to build a site in minutes"
 subtitle: A plug-n-play template to easily get anyone a free nice looking site (same theme as this one) quickly
 tags: [personal, professional, jekyll, github, blog]
-fb-img: "http://deanattali.com/img/blog/beautiful-jekyll.png"
+share-img: "http://deanattali.com/img/blog/beautiful-jekyll.png"
 permalink: /2015/03/12/beautiful-jekyll-how-to-build-a-site-in-minutes/
 ---
 
