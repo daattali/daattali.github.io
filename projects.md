@@ -9,6 +9,7 @@ This is a collection of some personal projects I've worked on that are easily vi
 
 I'm also **available for consulting**, so feel free to [contact me](/contact) if it looks like we could work together. 
 
+
 ---
 
 ## Website themes (Jekyll)
