@@ -5,7 +5,9 @@ subtitle: What's been eating away my free time
 comments: true
 ---
 
-This is a collection of some things I've worked on that are easily viewable online. Anything that is not browser-friendly will not make the cut :(
+This is a collection of some personal projects I've worked on that are easily viewable online. Anything that is not browser-friendly will not make the cut :(
+
+I'm also **available for consulting**, so feel free to [contact me](/contact) if it looks like we could work together. 
 
 ---
 
@@ -31,6 +33,10 @@ This is a collection of some things I've worked on that are easily viewable onli
 
 *Many of my R packages/tutorials/thoughts are graciously shared on [R-bloggers](http://www.r-bloggers.com/), which is a great resource for any useR.*
 
+## R Shiny apps
+
+If you got here after reading some of my blog posts, you'll know that I'm a big fan and advocate of Shiny, and I help many people with it. You can see a select sample of Shiny apps I've built [on my personal Shiny server](http://daattali.com/shiny/). 
+
 ## Chrome extensions
 
 - **[GitHub Diff Navigator](https://github.com/daattali/github-diff-navigator-extension)** - allows you to easily navigate through the changes in a file that has been edited on GitHub.  Especially useful when editing a markdown file within the browser, as GitHub will only show you the full changed file but not show you *where* the edits were made. I find this very helpful every time I make small edits to someone else's large markdown document.  [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/github-diff-navigator/aoojogkiedabnddmokieplfnmjehlneo)
@@ -40,10 +46,6 @@ This is a collection of some things I've worked on that are easily viewable onli
 - **[Project Free TV Ad Bypass](https://github.com/daattali/pftv-ad-bypass-extension)** - Project Free TV serves a 10-second ad page before allowing users to continue to the video - this extension bypasses the ad page. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/project-free-tv-ad-bypass/modfjcgeknfglkdgckkomdcgokkjaadd)
 
 - **[Smileyfy My Facebook](https://github.com/daattali/smileyfy-my-facebook-extension)** -  Chrome extension that adds infinite happiness to your Facebook browsing, plus a little bonus rickrolling :)  This is not the most useful (if at all..), but it was a way for me to learn about some more advanced features of Chrome extension development. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/smileyfy-my-facebook/ideagdnlnmgjdhhbelgadnakbhphljol)
-
-## Shiny apps
-
-If you got here after reading some of my blog posts, you'll know that I'm a big fan and advocate of Shiny, and I help many people with it. You can see a select sample of Shiny apps I've built [on my personal Shiny server](http://daattali.com/shiny/). 
 
 ## Websites
 
