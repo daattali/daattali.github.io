@@ -197,6 +197,14 @@ img::-moz-selection {
   }
 }
 
+/* fix in-page anchors to not be behind fixed header */
+:target:before {
+    content: "";
+    display: block;
+    height: 50px; /* navbar height */
+    margin: -50px 0 0;
+}
+
 /* Multi-level navigation links */
 .navbar-custom .nav .navlinks-container {
   position: relative;
