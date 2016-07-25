@@ -22,7 +22,7 @@ I'm also **available for consulting**, so feel free to [contact me](/contact) if
 
 - **[ggExtra](https://github.com/daattali/ggExtra)** - Easily add histograms/density plots to ggplot2 scatterplots, plus a few more ggplot2 convenience functions. Check out a [demo online](http://daattali.com/shiny/ggExtra-ggMarginal-demo/). Available [on CRAN](https://cran.r-project.org/package=ggExtra) and [on GitHub](https://github.com/daattali/ggExtra).
 
-- **[timevis](https://github.com/daattali/timevis)** - Create interactive timeline visualizations in R (can be embedded into Shiny apps and R markdown documents, or simply viewed from the R console). Check out a [demo online](http://daattali.com/shiny/demo-timevis/). Available [on CRAN](https://cran.r-project.org/package=timevis) and [on GitHub](https://github.com/daattali/timevis).
+- **[timevis](https://github.com/daattali/timevis)** - Create interactive timeline visualizations in R (can be embedded into Shiny apps and R markdown documents, or simply viewed from the R console). Check out a [demo online](http://daattali.com/shiny/timevis-demo/). Available [on CRAN](https://cran.r-project.org/package=timevis) and [on GitHub](https://github.com/daattali/timevis).
 
 - **[addinslist](https://github.com/daattali/addinslist)** - Browse through a continuously updated list of existing RStudio addins and install/uninstall their corresponding packages. Available [on CRAN](https://cran.r-project.org/package=addinslist) and [on GitHub](https://github.com/daattali/addinslist).
 
