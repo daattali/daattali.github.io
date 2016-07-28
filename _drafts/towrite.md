@@ -9,6 +9,11 @@ add api functions
 
 add a way to encode data into R from JS
 
+
+HTMLWidgets.find
+
+HTMLWidgets.isShiny
+
 ---
 
 media affects what we think/talk about (ebola)
