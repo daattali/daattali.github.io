@@ -14,6 +14,10 @@ HTMLWidgets.find
 
 HTMLWidgets.isShiny
 
+use opts instead of x
+
+make api work for both %>% and shiny server
+
 ---
 
 media affects what we think/talk about (ebola)
