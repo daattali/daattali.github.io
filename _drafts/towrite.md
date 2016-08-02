@@ -1,3 +1,7 @@
+gadget vs addin
+
+----
+
 htmlwidgets learning experience:
 rendervalue happens whenveer you render (so if you have a reactive value in there, it cna happen multiple times. not super clear in the docs)
 
