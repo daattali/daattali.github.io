@@ -1,23 +1,23 @@
 ---
 layout: post
-title: "colourpicker - A colour picker widget for Shiny apps, RStudio, R-markdown, and 'htmlwidgets'"
+title: "colourpicker: A colour picker widget for Shiny apps, RStudio, R-markdown, and 'htmlwidgets'"
 tags: [professional, rstats, r, r-bloggers, shiny, packages]
-date: 2016-08-12 10:00:00 -0700
-share-img: http://deanattali.com/img/blog/coloupicker/colourinput.png
+date: 2016-08-15 10:00:00 -0700
+share-img: https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/colourinput.png
 layout: post
 comments: true
 show-share: true
 ---
 
-Have you ever wanted to allow your users to select colours in your Shiny apps? Have you ever wanted to select a few colours to use in your R code, but found it tedious to search for the right colours? If you answered yes to any of those questions, or if you're just curious, then `colourpicker` is the package for you!
+Have you ever wanted to allow your users to select colours in your Shiny apps? Have you ever wanted to select a few colours to use in your R code, but found it tedious to search for the right colours? If you answered yes to any of those questions, or if you're just curious, then [`colourpicker`](https://github.com/daattali/colourpicker) is the package for you!
 
-The new `colourpicker` package gives you a colour picker widget that can be used in different contexts in R. Most of the functionality has existed in the [`shinyjs`](https://github.com/daattali/shinyjs) package for the past year and this package is simply a way to graduate all the colour picker functions into their own package.
+The new [`colourpicker`](https://github.com/daattali/colourpicker) package gives you a colour picker widget that can be used in different contexts in R. Most of the functionality has existed in the [`shinyjs`](https://github.com/daattali/shinyjs) package for the past year and this package is simply a way to graduate all the colour picker functions into their own package.
 
 ## Demos
 
 - [Click here](https://daattali.com/shiny/colourInput/) to view a live
 interactive demo of the colour picker input available for Shiny apps.
-- [Click here]() to see the colour picker addin that lets you select colours interactively.
+- [Click here](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/colourPickerGadget.gif) to see the colour picker addin that lets you select colours interactively.
 
 ## Table of contents
 
@@ -34,7 +34,6 @@ interactive demo of the colour picker input available for Shiny apps.
   - [Updating a colourInput](#update)
   - [Flexible colour specification](#colour-spec)
   - [Works on any device](#compatibility)
-- [Misc](#misc)
 
 ## Installation {#installation}
 
@@ -77,13 +76,13 @@ shinyApp(
 )
 ```
 
-![Demo of colourInput](inst/img/colourinput.png)
+[![Demo of colourInput](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/colourinput.png)](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/colourinput.png)
 
 ### To select colours to use in your R code: `colourPicker()` {#colourpicker}
 
-`colourpicker` also provides an RStudio addin that can be used to easily select colours and save them as a variable in R. This can be useful if, for example, you want to pick some colours for a plot and you want an easy way to visualize and select a few colours. Here is a screenshot of the colour picker addin (you can either access this tool using the Addins menu or with `colourPicker()`). You can also watch a [short GIF](inst/img/colourPickerGadget.gif) of it an action.
+`colourpicker` also provides an RStudio addin that can be used to easily select colours and save them as a variable in R. This can be useful if, for example, you want to pick some colours for a plot and you want an easy way to visualize and select a few colours. Here is a screenshot of the colour picker addin (you can either access this tool using the Addins menu or with `colourPicker()`). You can also watch a [short GIF](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/colourPickerGadget.gif) of it an action.
 
-![Demo of colour picker addin](inst/img/colourpickerscrnshot.png)
+[![Demo of colour picker addin](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/colourpickerscrnshot.png)](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/colourpickerscrnshot.png)
 
 ### As an 'htmlwidgets' widget {#colourwidget}
 
@@ -105,7 +104,7 @@ By default, the text of the checkbox reads "Transparent", but you can change tha
 
 This is what a colour input with transparency enabled looks like
 
-![allowTransparent demo](inst/img/allowTransparent.png)
+[![allowTransparent demo](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/allowTransparent.png)](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/allowTransparent.png)
 
 ### How the chosen colour is shown inside the input {#showColour}
 
@@ -113,13 +112,13 @@ By default, the colour input's background will match the selected colour and the
 
 Here is what a colour input with each of the possible values for `showColour` looks like
 
-![showColour demo](inst/img/showColour.png)
+[![showColour demo](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/showColour.png)](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/showColour.png)
 
 ### Limited colour selection {#limited}
 
 If you want to only allow the user to select a colour from a specific list of colours, rather than any possible HEX colour, you can use the `palette = "limited"` parameter.  By default, the limited palette will contain 40 common colours, but you can supply your own list of colours using the `allowedCols` parameter. Here is an image of the default limited colour palette.
 
-![colourInput demo](inst/img/limited-palette.png)
+[![colourInput demo](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/limited-palette.png)](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/limited-palette.png)
 
 ### Updating a colourInput {#update}
 
@@ -142,3 +141,5 @@ Specifying a colour to the colour input is made very flexible to allow for easie
 ### Works on any device {#compatibility}
 
 If you're worried that maybe someone viewing your Shiny app on a phone won't be able to use this input properly - don't you worry. I haven't quite checked every single device out there, but I did spend extra time making sure the colour selection JavaScript works in most devices I could think of. `colourInput` will work fine in Shiny apps that are viewed on Android cell phones, iPhones, iPads, and even Internet Explorer 8+.
+
+As usual, if you have any comments, feel free to [contact me](http://deanattali.com/contact).
