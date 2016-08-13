@@ -4,7 +4,6 @@ title: "colourpicker - A colour picker widget for Shiny apps, RStudio, R-markdow
 tags: [professional, rstats, r, r-bloggers, shiny, packages]
 date: 2016-08-12 10:00:00 -0700
 share-img: http://deanattali.com/img/blog/coloupicker/colourinput.png
-permalink: /blog/colourpicker-package/
 layout: post
 comments: true
 show-share: true
