@@ -12,13 +12,13 @@ share-img: http://deanattali.com/img/blog/shiny-tutorial/shiny-addplot.png
 
 Shiny is a package from RStudio that can be used to build interactive web pages with R. While that may sound scary because of the words "web pages", it's geared to R users who have 0 experience with web development, and you do not need to know any HTML/CSS/JavaScript.
 
-You can do quite a lot with Shiny: think of it as an easy way to make an interactive web page, and that web page can seamlessly interact with R and display R objects (plots, tables, of anything else you do in R). To get a sense of the wide range of things you can do with Shiny, you can visit [ShowMeShiny.com](http://www.showmeshiny.com/), which is a gallery of user-submitted Shiny apps. 
+You can do quite a lot with Shiny: think of it as an easy way to make an interactive web page, and that web page can seamlessly interact with R and display R objects (plots, tables, of anything else you do in R). To get a sense of the wide range of things you can do with Shiny, you can visit [my Shiny server](https://daattali.com/shiny/), which hosts some of my own Shiny apps.
 
 This tutorial is a hands-on activity complement to a set of [presentation slides](http://bit.ly/shiny-tutorial) for learning how to build Shiny apps. In this activity, we'll walk through all the steps of building a Shiny app using a dataset that lets you explore the products available at the BC Liquor Store. The final version of the app, including a few extra features that are left as exercises for the reader, [can be seen here](http://daattali.com/shiny/bcl/). Any activity deemed as an exercise throughout this tutorial is not mandatory for building our app, but they are good for getting more practice with Shiny. 
 
 This tutorial should take approximately an hour to complete. If you want even more practice, another great tutorial I highly recommend is the [official Shiny tutorial](http://shiny.rstudio.com/tutorial/). RStudio also provides a [handy cheatsheet](https://www.rstudio.com/resources/cheatsheets/) to remember all the little details after you already learned the basics.
 
-**Exercise:** Visit [ShowMeShiny.com](http://www.showmeshiny.com/) and click through some of the showcased apps. Get a feel for the wide range of things you can do with Shiny.
+**Exercise:** Visit [ShowMeShiny.com](http://www.showmeshiny.com/), which is a gallery of user-submitted Shiny apps, and click through some of the showcased apps. Get a feel for the wide range of things you can do with Shiny.
 
 ## Table of contents
 
