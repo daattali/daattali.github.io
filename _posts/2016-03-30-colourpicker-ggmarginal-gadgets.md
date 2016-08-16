@@ -5,7 +5,9 @@ date: 2016-03-30 03:00:00 -0700
 share-img: http://deanattali.com/img/blog/colourpicker-ggmarginal-gadgets/colourpickerscrnshot.png
 ---
 
-TL;DR: There's a [**colour picker addin** in shinyjs](https://github.com/daattali/shinyjs#colourpicker) and a [**ggplot2 marginal plots addin** in ggExtra](https://github.com/daattali/ggExtra#marginal-plots-rstudio-addingadget).
+**NOTE: The colour picker addin described in this post used to be part of the `shinyjs` package but is now in the `colourpicker` package.**
+
+TL;DR: There's a [**colour picker addin** in `colourpicker`](https://github.com/daattali/colourpicker#to-select-colours-to-use-in-your-r-code-colourpicker) and a [**ggplot2 marginal plots addin** in `ggExtra`](https://github.com/daattali/ggExtra#marginal-plots-rstudio-addingadget).
 
 ---
 
@@ -17,13 +19,13 @@ From the moment I saw the announcement about gadgets and addins, I was excited t
 
 ## Colour picker
 
-A colour picker gadget and addin are available in the [`shinyjs`](https://github.com/daattali/shinyjs) package.
+A colour picker gadget and addin are available in the [`colourpicker`](https://github.com/daattali/colourpicker) package.
 
 Screenshot:
 
 [![Colour picker screenshot]({{ site.url }}/img/blog/colourpicker-ggmarginal-gadgets/colourpickerscrnshot.png)]({{ site.url }}/img/blog/colourpicker-ggmarginal-gadgets/colourpickerscrnshot.png)
 
-Some of you may already know that `shinyjs` provides a `colourInput()` function, which is a Shiny input widget that lets you select a colour ([demo](http://daattali.com/shiny/colourInput/)).  The idea of the colour picker gadget is to extend this idea of a colour input and provide R developers with an easy way to select colours. It's perfect if you want to choose a colour/a vector of colours to use for a plot or for anything else that requires a careful selection of colours.
+Some of you may already know that `colourpicker` provides a `colourInput()` function, which is a Shiny input widget that lets you select a colour ([demo](http://daattali.com/shiny/colourInput/)).  The idea of the colour picker gadget is to extend this idea of a colour input and provide R developers with an easy way to select colours. It's perfect if you want to choose a colour/a vector of colours to use for a plot or for anything else that requires a careful selection of colours.
 
 You can either run the colour picker as an **addin** or as a **gadget**.  To access it as an addin, click on the RStudio *Addins* menu and select *Colour Picker*. To access the colour picker gadget, run the `colourPicker()` function. When running the gadget, you can provide a positive integer as an argument (e.g. `colourPicker(3)`), which will cause the colour picker to initialize with placeholders for 3 colours.
 
