@@ -7,13 +7,15 @@ permalink: /2015/06/28/introducing-shinyjs-colourinput/
 share-img: http://deanattali.com/img/blog/colourInput/colourInputDemo.png
 ---
 
+**NOTE: the colour input described here is no longer part of `shinyjs` and is now available in the `colourpicker` package instead.**
+
 > I don't always think Shiny is missing anything, but when I do - I fill in the gap myself.
 
 That was meant to be read as The Most Interesting Man In The World, but now that I think about it - maybe he's not the type of guy who would be building Shiny R packages...
 
-Shiny has many useful input controls, but there was one that was always missing until today - a colour picker.  The package [**`shinyjs`**](https://github.com/daattali/shinyjs) now has a **`colourInput()`** function and, of course, a corresponding **`updateColourInput()`**. There have been many times when I wanted to allow users in a Shiny app to select a colour, and I've seen that feature being requested multiple times on different online boards, so I decided to make my own such input control.  
+Shiny has many useful input controls, but there was one that was always missing until today - a colour picker.  The package [**`colourpicker`**](https://github.com/daattali/colourpicker) now offers a **`colourInput()`** function and, of course, a corresponding **`updateColourInput()`**. There have been many times when I wanted to allow users in a Shiny app to select a colour, and I've seen that feature being requested multiple times on different online boards, so I decided to make my own such input control.  
 
-**UPDATE 2016-03-27:** There is now an awesome RStudio addin/gadget that lets you select multiple colours interactively if you need help picking colours. [Read more here](https://github.com/daattali/shinyjs#colourpicker).  
+**UPDATE 2016-03-27:** There is now an awesome RStudio addin/gadget that lets you select multiple colours interactively if you need help picking colours. [Read more here](https://github.com/daattali/colourpicker#to-select-colours-to-use-in-your-r-code-colourpicker).  
 
 ## Table of contents
 
@@ -41,7 +43,7 @@ The colours of course don't look as ugly as in the GIF, here's a screenshot of w
 
 ## Availability {#availability}
 
-`colourInput()` is available in [`shinyjs`](https://github.com/daattali/shinyjs).  You can either install it [from GitHub](https://github.com/daattali/shinyjs) with `devtools::install_github("daattali/shinyjs")` or from CRAN with `install.packages("shinyjs")`.
+`colourInput()` is available in [`colourpicker`](https://github.com/daattali/colourpicker).  You can either install it [from GitHub](https://github.com/daattali/colourpicker) with `devtools::install_github("daattali/colourpicker")` or from CRAN with `install.packages("colourpicker")`.
 
 ## Features {#features}
 
@@ -69,6 +71,12 @@ Here is what a colour input with each of the possible values for `showColour` lo
 
 [![showColour demo]({{ site.url }}/img/blog/colourInput/showColour.png)]({{ site.url }}/img/blog/colourInput/showColour.png)
 
+### Limited colour selection {#limited}
+
+If you want to only allow the user to select a colour from a specific list of colours, rather than any possible HEX colour, you can use the `palette = "limited"` parameter.  By default, the limited palette will contain 40 common colours, but you can supply your own list of colours using the `allowedCols` parameter. Here is an image of the default limited colour palette.
+
+[![colourInput demo]({{ site.url }}/img/blog/colourInput/limited-palette.png)]({{ site.url }}/img/blog/colourInput/limited-palette.png)
+
 ### Updating a colourInput {#update}
 
 As with all other Shiny inputs, `colourInput` can be updated with the `updateColourInput` function.  Any parameter that can be used in `colourInput` can be used in `updateColourInput`. This means that you can start with a basic colour input such as `colourInput("col", "Select colour")` and completely redesign it with
@@ -77,14 +85,6 @@ As with all other Shiny inputs, `colourInput` can be updated with the `updateCol
 updateColourInput(session, "col", label = "COLOUR:", value = "orange",
   showColour = "background", allowTransparent = TRUE, transparentText = "None")
 ```
-
-### Limited colour selection {#limited}
-
-This feature is available in `shinyjs` v0.0.8.0, which is currently only on GitHub and not on CRAN.
-
-If you want to only allow the user to select a colour from a specific list of colours, rather than any possible HEX colour, you can use the `palette = "limited"` parameter.  By default, the limited palette will contain 40 common colours, but you can supply your own list of colours using the `allowedCols` parameter. Here is an image of the default limited colour palette.
-
-[![colourInput demo]({{ site.url }}/img/blog/colourInput/limited-palette.png)]({{ site.url }}/img/blog/colourInput/limited-palette.png)
 
 ### Flexible colour specification {#colour-spec}
 
@@ -103,8 +103,8 @@ If you're worried that maybe someone viewing your Shiny app on a phone won't be 
 
 In order to build `colourInput`, I needed to use a JavaScript colour picker library. After experimenting with many different colour pickers, I decided to use [this popular jQuery colour picker](https://github.com/claviska/jquery-minicolors) as a base, and extend it myself to make it geared to work with Shiny. I simplified much of the code and added some features that would make it integrate with Shiny much easier. You can see the exact changes I've made in the [README for my version of the library](https://github.com/daattali/jquery-colourpicker). The main features I added were the support for a "transparent" checkbox, the complete look of the input field was redesigned, and I also changed the colour picker colours to render completely in CSS instead of using images.
 
-It's been pointed out that this function is not exactly in-line with the general `shinyjs` idea, so it might not stay there forever. Ideally, this `colourInput` will soon be part of `shiny`, but until then I'll just keep it here until it finds a more loving home.
+The colour picker functions were initially developed in the `shinyjs` package but it has been pointed out by many people that these functions are not exactly in-line with the general `shinyjs` idea, so they eventually graduated into the `colourpicker` pacakge.
 
 ---
 
-If anyone has any comments or feedback, both negative or positive, I'd love to [hear about it]({{ site.url }}/aboutme#contact)! Feel free to open issues [on GitHub](https://github.com/daattali/shinyjs) if there are any problems.
+If anyone has any comments or feedback, both negative or positive, I'd love to [hear about it]({{ site.url }}/aboutme#contact)! Feel free to open issues [on GitHub](https://github.com/daattali/colourpicker) if there are any problems.
