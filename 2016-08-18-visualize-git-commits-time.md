@@ -13,7 +13,7 @@ show-share: true
 
 <a class="btn btn-lg btn-success" href="https://daattali.com/shiny/visualize-git-commits-time/">Click here to explore the data yourself</a>
 
-Yesterday I saw [this retweet](https://t.co/u3uHy6a9d4) from [\@timelyportfolio](https://twitter.com/timelyportfolio) that links to a [gist by \@gka](https://gist.github.com/gka/393f5ab2b95e927d305eb6e14767180e).
+Yesterday I saw [this retweet](https://t.co/u3uHy6a9d4) from [@timelyportfolio](https://twitter.com/timelyportfolio) that links to a [gist by @gka](https://gist.github.com/gka/393f5ab2b95e927d305eb6e14767180e).
 
 The gist gave a few short scripts that can show you when your git commits take place during the day. I thought that was cool, so I took it a step (or five) further by writing it all up in R code and made nice wrapper functions for it and added interactive visualizations and made a shiny app... I just had a bit of fun. This is the result.
 
