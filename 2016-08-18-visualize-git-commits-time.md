@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Visualizing when I'm the most productive during the day"
+title: "Visualizing when I'm most productive during the day"
 subtitle: "Analyzing my (and others') git activity"
 tags: [professional, rstats, r, r-bloggers, shiny]
 date: 2016-08-18 10:00:00 -0700
