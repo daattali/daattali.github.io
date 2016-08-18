@@ -34,7 +34,7 @@ This post shows a few plots and discusses them, but it can be more fun to [play 
 - [Working on weekends](#weekends)
 - [R code used to generate this data](#code)
 
-## **My work hours since first learning R** {#dean-commits}
+# My work hours since first learning R {#dean-commits}
 
 This plot shows the times of all my git commits since Sept 2013, colour-coded by git repo (aka project). The plot is fully interactive: you can zoom, move, or remove all observations from a specific repo by clicking on the repo name in the legend.
 
@@ -44,7 +44,7 @@ September 2013 is when I first learned R in the beginning of my masters degree, 
 
 After taking my introductory R course, I spent the next year on my other masters courses and didn't do any R-ing and coding, hence the giant gap. The next time I used git was when I took the second half of STAT545 in 2014, and that's where I learned how to write a package -- [rsalad](https://github.com/daattali/rsalad) was my first R package, developed as homework. Then I didn't do any open source work for a few months because I was working in a lab that wasn't very supportive of that... And in January 2015 I started working with Jenny as my supervisor, and as you can see, I was pretty much busy with just about everything in the world except for my actual masters project! :)
 
-#### **A few things that are easy to notice:**
+### A few things that are easy to notice:
 
 - I refuse to work before 10am
 - It looks like I work until 2am-4am fairly consistently
@@ -52,11 +52,11 @@ After taking my introductory R course, I spent the next year on my other masters
 - There were a few days in July 2015 where I started coding at 6am! Nope, that's a lie, I was in Toronto that week so that's actually 9am...
 - It's cool to see when I work on which projects. You can very clearly see the two-week effort on [timevis](https://github.com/daattali/timevis) in July 2016 for example
 
-## **My work hours in the past 6 months** {#dean-6-months}
+# My work hours in the past 6 months {#dean-6-months}
 
 [![Dean commits 6 months]({{ site.url }}/img/blog/git-commits-time/dean-commits-6.png)]({{ site.url }}/img/blog/git-commits-time/dean-commits-6.png)
 
-#### **Observations**
+### Observations
 
 It's interesting to see how my commits very closely relate to what's going on in my life :)
 
@@ -64,13 +64,13 @@ It's interesting to see how my commits very closely relate to what's going on in
 - June seems like a dead month. I was in Toronto, Berkeley and Stanford for conferences and didn't code at all. It's cool how clearly that shows up!
 - It's nice to see that [shinyjs](https://github.com/daattali/shinyjs) has reached a fairly stable state and I don't have to spend much time on it anymore
 
-## **Adding marginal density plots to see exactly what times are alive/dead** {#dean-density}
+# Adding marginal density plots to see exactly what times are alive/dead {#dean-density}
 
 Just for fun, I can use my [ggMarginal()](https://github.com/daattali/ggExtra) function to add marginal density plots, to make it more clear when most of my commits take place.
 
 [![Dean density plot]({{ site.url }}/img/blog/git-commits-time/dean-density.png)]({{ site.url }}/img/blog/git-commits-time/dean-density.png)
 
-## **How's my (ex) supervisor Jenny Bryan doing?** {#jenny-commits}
+# How's my (ex) supervisor Jenny Bryan doing? {#jenny-commits}
 
 After working with Jenny for a couple years, I learned that we have very compatible schedules. It was very normal for us to exchange emails past midnight when we had a 9am class the following morning, and I'd often see her making commits at 1-2am when I was just getting in the zone!
 
@@ -78,15 +78,15 @@ With this graph we can see that our schedules really are very similar, although 
 
 [![Jenny commits all]({{ site.url }}/img/blog/git-commits-time/jenny-commits-100.png)]({{ site.url }}/img/blog/git-commits-time/jenny-commits-100.png)
 
-## **And the grand finale: the R master Hadley** {#hadley-commits}
+# And the grand finale: the R master Hadley {#hadley-commits}
 
 No introduction needed, the name speaks for itself. (Note these are all PST times)
 
 Just one thing I'd like to note: we've all heard "this is going to be the year of 'ggvis'!", yet it looks like 2013 was the year-est of 'ggvis' so far :)
 
-[![Hadley commits all]({{ site.url }}/img/blog/git-commits-time/commits-commits-100.png)]({{ site.url }}/img/blog/git-commits-time/commits-commits-100.png)
+[![Hadley commits all]({{ site.url }}/img/blog/git-commits-time/hadley-commits-100.png)]({{ site.url }}/img/blog/git-commits-time/hadley-commits-100.png)
 
-## **Working on weekends** {#weekends}
+# Working on weekends {#weekends}
 
 If you look at day of the week, you'll see that weekends and weekdays are essentially the same to me.
 
@@ -96,7 +96,7 @@ But what's amazing is that if you look at Hadley, he seems to be such a good tim
 
 [![Hadley day of week]({{ site.url }}/img/blog/git-commits-time/hadley-days.png)]({{ site.url }}/img/blog/git-commits-time/hadley-days.png)
 
-## **R code used to generate this data** {#code}
+# R code used to generate this data {#code}
 
 ```r
 #' Plot the time or date of your git commits
