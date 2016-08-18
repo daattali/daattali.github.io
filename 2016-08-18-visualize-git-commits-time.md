@@ -98,6 +98,8 @@ But what's amazing is that if you look at Hadley, he seems to be such a good tim
 
 # R code used to generate this data {#code}
 
+If you want to replicate these kinds of plots, here is the exact R code that was used to generate all the plots. The two functions you need to call are `create_git_log_file()` to generate the data file, and then `plot_git_commits()` to visualize the data.
+
 ```r
 #' Plot the time or date of your git commits
 #' 
