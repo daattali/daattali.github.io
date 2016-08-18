@@ -493,6 +493,11 @@ footer .theme-by {
   margin-top: 0;
 }
 
+.blog-post a.btn {
+  font-family: arial;
+  text-decoration: none;
+}
+
 .blog-post .caption {
   text-align: center;
   font-size: 14px;
