@@ -36,7 +36,7 @@ This post shows a few plots and discusses them, but it can be more fun to [play 
 
 # My work hours since first learning R {#dean-commits}
 
-This plot shows the times of all my git commits since Sept 2013, colour-coded by git repo (aka project). The plot is fully interactive: you can zoom, move, or remove all observations from a specific repo by clicking on the repo name in the legend.
+This plot shows the times of all my git commits since Sept 2013, colour-coded by git repo (aka project). If you go the [app hosting this data](https://daattali.com/shiny/visualize-git-commits-time/), you'll see this plot as fully interactive: you can zoom, move, or remove all observations from a specific repo by clicking on the repo name in the legend.
 
 [![Dean commits all]({{ site.url }}/img/blog/git-commits-time/dean-commits-100.png)]({{ site.url }}/img/blog/git-commits-time/dean-commits-100.png)
 
