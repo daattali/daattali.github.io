@@ -973,8 +973,8 @@ If you do want to add some JavaScript or use common JavaScript functions in your
 
 Many people have written packages that enhance Shiny in some way or add extra functionality.  Here is a list of several popular packages that people often use together with Shiny:
 
+- [shinyjs](https://github.com/daattali/shinyjs): Easily improve the user interaction and user experience in your Shiny apps in seconds
 - [shinythemes](http://rstudio.github.io/shinythemes/): Easily alter the appearance of your app
-- [shinyjs](https://github.com/daattali/shinyjs): Enhance user experience in Shiny apps using JavaScript functions without knowing JavaScript
 - [leaflet](http://rstudio.github.io/leaflet/): Add interactive maps to your apps
 - [ggvis](http://ggvis.rstudio.com/): Similar to ggplot2, but the plots are focused on being web-based and are more interactive
 - [shinydashboard](https://rstudio.github.io/shinydashboard/): Gives you tools to create visual “dashboards”
@@ -985,13 +985,14 @@ Shiny is a very popular package and has lots of resources on the web. Here's a c
 
 - [Shiny official tutorial](http://shiny.rstudio.com/tutorial)
 - [Shiny cheatsheet](http://shiny.rstudio.com/images/shiny-cheatsheet.pdf)
-- [Lots of short useful articles about different topics in Shiny - **highly recommended**](http://shiny.rstudio.com/articles)
+- [Lots of short useful articles about different topics in Shiny](http://shiny.rstudio.com/articles)
 - [Shiny in Rmarkdown](http://rmarkdown.rstudio.com/authoring_shiny.html)
 - Get help from the [Shiny Google group](https://groups.google.com/forum/#!forum/shiny-discuss) or [StackOverflow](http://stackoverflow.com/questions/tagged/shiny)
 - [Publish your apps for free with shinyapps.io](http://www.shinyapps.io)
 - [Host your app on your own Shiny server](http://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean)
 - [Learn about how reactivity works](http://shiny.rstudio.com/articles/understanding-reactivity.html)
 - [Learn about useful debugging techniques](http://shiny.rstudio.com/articles/debugging.html)
+- [Shiny tips & tricks for improving your apps and solving common problems](http://deanattali.com/blog/advanced-shiny-tips)
 
 # Ideas to improve our app
 
