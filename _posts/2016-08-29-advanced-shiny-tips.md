@@ -29,6 +29,7 @@ This also seems like an appropriate place to mention that I am available for hir
 - [Close the window (and stop the app) with a button click](#close-window) ([code](https://github.com/daattali/advanced-shiny/tree/master/close-window))
 - [Select input with more breathing room](#select-input-large) ([code](https://github.com/daattali/advanced-shiny/tree/master/select-input-large))
 - [Select input with groupings of options](#dropdown-groups) ([code](https://github.com/daattali/advanced-shiny/tree/master/dropdown-groups))
+- [Getting the value of an object in a running Shiny app without access to a debugger](#debug-value) ([code](https://github.com/daattali/advanced-shiny/tree/master/debug-value))
 - [Pre-populate Shiny inputs when an app loads based on URL parameters](#url-inputs) ([code](https://github.com/daattali/advanced-shiny/tree/master/url-inputs))
 - [Split app code across multiple files (when codebase is large)](#split-code) ([code](https://github.com/daattali/advanced-shiny/tree/master/split-code))
 - [Use a variable from the server in a UI `conditionalPanel()`](#server-to-ui-variable) ([code](https://github.com/daattali/advanced-shiny/tree/master/server-to-ui-variable))
@@ -114,6 +115,12 @@ One common CSS question in Shiny is how to make the select input dropdown menu h
 This isn't really a trick as much as an [undocumented feature](https://github.com/rstudio/shiny/issues/1321) in Shiny that not many people know about. Usually when people write dropdowns in Shiny, all the options are just provided as one long list. But it is possible to have groups of items, and it's very easy to do.
 
 [![Demo](https://raw.githubusercontent.com/daattali/advanced-shiny/master/dropdown-groups/dropdown-groups.png)](https://github.com/daattali/advanced-shiny/tree/master/dropdown-groups)
+
+<h2 id="debug-value">Getting the value of an object in a running Shiny app without access to a debugger</h2>
+
+**[Link to code](https://github.com/daattali/advanced-shiny/tree/master/debug-value)**
+
+Sometimes you may need to know the value of some variable/function call in a Shiny app when you don't have easy access to debugging tools. For example, suppose you deploy your shiny app on shinyapps.io and it's running into a weird error there. You're sure that it's because one of the packages on the shinyapps.io server is not the version that you expect, but you want to make sure that your suspicion is correct. It's a bit difficult to debug on shinyapps.io (one thing you could do is try to use the log files), but there's a quick and easy way to see any value in a Shiny app in real-time. 
 
 <h2 id="url-inputs">Pre-populate Shiny inputs when an app loads based on URL parameters</h2>
 
