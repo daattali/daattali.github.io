@@ -14,7 +14,7 @@ show-share: true
 
 <a class="btn btn-lg btn-success" href="https://github.com/daattali/advanced-shiny#readme">Click here to see the most up-to-date list of tips</a>
 
-This document contains a collection of various Shiny tricks that I commonly use or that I know many people ask about. Each link contains a complete functional Shiny app that demonstrates how to perform a non trivial task in Shiny.
+This document contains a collection of various Shiny tricks that I commonly use or that I know many people ask about. Each link contains a complete functional Shiny app that demonstrates how to perform a non trivial task in Shiny. The complete up-to-date list of tips, along with all the code, is [on GitHub](https://github.com/daattali/advanced-shiny#readme).
 
 Since I first learned about [Shiny](http://shiny.rstudio.com/) 2 years ago, I was always looking for ways to push Shiny to its limits and I enjoyed finding ways to work around common problems people were having (the harder the problem, the better!). I've built [many Shiny apps](https://daattali.com/shiny/) over these 2 years, both for myself and as a contractor for other people/companies, and throughout this time I developed a handy list of Shiny design patterns and tricks, some of which I present here.
 
@@ -62,7 +62,7 @@ A few very common questions in Shiny are "how do I hide/show something", "how do
 
 When a Shiny plot is recalculating, the plot gets grayed out. This app shows how you can add a spinner wheel on top of the plot while it is recalculating, to make it clear to the user that the plot is reloading. There can be many different ways to achieve a similar result using different combinations of HTML/CSS, this example is just the simplest one I came up with.
 
-[![Demo](https://github.com/daattali/advanced-shiny/tree/master/plot-spinner/plot-spinner.gif)](https://github.com/daattali/advanced-shiny/tree/master/plot-spinner)
+[![Demo](https://raw.githubusercontent.com/daattali/advanced-shiny/master/plot-spinner/plot-spinner.gif)](https://github.com/daattali/advanced-shiny/tree/master/plot-spinner)
 
 
 <h2 id="hide-tab">Hide a tab</h2>
@@ -71,7 +71,7 @@ When a Shiny plot is recalculating, the plot gets grayed out. This app shows how
 
 This app demonstrates how `shinyjs` can be used to hide/show a specific tab in a `tabsetPanel`.  In order to use this trick, the `tabsetPanel` must have an id. Using this id and the value of the specific tab you want to hide/show, you can call `shinyjs::hide()`/`shinyjs::show()`/`shinyjs::toggle()`.
 
-[![Demo](https://github.com/daattali/advanced-shiny/tree/master/hide-tab/hide-tab.gif)](https://github.com/daattali/advanced-shiny/tree/master/hide-tab)
+[![Demo](https://raw.githubusercontent.com/daattali/advanced-shiny/master/hide-tab/hide-tab.gif)](https://github.com/daattali/advanced-shiny/tree/master/hide-tab)
 
 <h2 id="shinydashboard-sidebar-hide">Hide/show shinydashboard sidebar programmatically</h2>
 
@@ -79,7 +79,7 @@ This app demonstrates how `shinyjs` can be used to hide/show a specific tab in a
 
 A common question regarding `shinydashboard` is how to programmatically hide/show the sidebar. This can very easily be done using the [shinyjs](https://github.com/daattali/shinyjs) package, as demonstrated here.
 
-[![Demo](https://github.com/daattali/advanced-shiny/tree/master/shinydashboard-sidebar-hide/shinydashboard-sidebar-hide.gif)](https://github.com/daattali/advanced-shiny/tree/master/shinydashboard-sidebar-hide)
+[![Demo](https://raw.githubusercontent.com/daattali/advanced-shiny/master/shinydashboard-sidebar-hide/shinydashboard-sidebar-hide.gif)](https://github.com/daattali/advanced-shiny/tree/master/shinydashboard-sidebar-hide)
 
 <h2 id="loading-screen">Loading screen</h2>
 
@@ -87,7 +87,7 @@ A common question regarding `shinydashboard` is how to programmatically hide/sho
 
 This simple app shows how to add a "Loading..." screen overlaying the main app while the app's server is initializing.  The main idea is to include an overlay element that covers the entire app (using CSS), hide the main app's UI, and at the end of the server function show the UI and hide the overlay.
 
-[![Demo](https://github.com/daattali/advanced-shiny/tree/master/loading-screen/loading-screen.gif)](https://github.com/daattali/advanced-shiny/tree/master/loading-screen)
+[![Demo](https://raw.githubusercontent.com/daattali/advanced-shiny/master/loading-screen/loading-screen.gif)](https://github.com/daattali/advanced-shiny/tree/master/loading-screen)
 
 <h2 id="auto-kill-app">Automatically stop a Shiny app when closing the browser tab</h2>
 
@@ -107,7 +107,7 @@ This simple example shows how you can have a button that, when clicked, will clo
 
 One common CSS question in Shiny is how to make the select input dropdown menu have some more whitespace.  It's actually very easy to do with just two CSS rules, as demonstrated in this example.
 
-[![Demo](https://github.com/daattali/advanced-shiny/tree/master/select-input-large/selectize-large.png)](https://github.com/daattali/advanced-shiny/tree/master/select-input-large)
+[![Demo](https://raw.githubusercontent.com/daattali/advanced-shiny/master/select-input-large/selectize-large.png)](https://github.com/daattali/advanced-shiny/tree/master/select-input-large)
 
 <h2 id="dropdown-groups">Select input with groupings of options</h2>
 
@@ -115,7 +115,7 @@ One common CSS question in Shiny is how to make the select input dropdown menu h
 
 This isn't really a trick as much as an [undocumented feature](https://github.com/rstudio/shiny/issues/1321) in Shiny that not many people know about. Usually when people write dropdowns in Shiny, all the options are just provided as one long list. But it is possible to have groups of items, and it's very easy to do.
 
-[![Demo](https://github.com/daattali/advanced-shiny/tree/master/dropdown-groups/dropdown-groups.png)](https://github.com/daattali/advanced-shiny/tree/master/dropdown-groups)
+[![Demo](https://raw.githubusercontent.com/daattali/advanced-shiny/master/dropdown-groups/dropdown-groups.png)](https://github.com/daattali/advanced-shiny/tree/master/dropdown-groups)
 
 <h2 id="url-inputs">Pre-populate Shiny inputs when an app loads based on URL parameters</h2>
 
@@ -123,7 +123,7 @@ This isn't really a trick as much as an [undocumented feature](https://github.co
 
 This simple app demonstrates how you can fill out certain input fields when a Shiny app loads based on URL parameters.
 
-[![Demo](https://github.com/daattali/advanced-shiny/tree/master/url-inputs/url-inputs.gif)](https://github.com/daattali/advanced-shiny/tree/master/url-inputs)
+[![Demo](https://raw.githubusercontent.com/daattali/advanced-shiny/master/url-inputs/url-inputs.gif)](https://github.com/daattali/advanced-shiny/tree/master/url-inputs)
 
 <h2 id="split-code">Split app code across multiple files (when codebase is large)</h2>
 
@@ -161,7 +161,7 @@ When selecting files using a `fileInput()`, the filenames of the selected files 
 
 This app demonstrates how to write a Shiny app that has a sequence of different pages, where the user can navigate to the next/previous page. This can be useful in many scenarios that involve a multi-step process. This behaviour can also be achieved by simply using tabs, but when using tabs the user can freely move from any tab to any other tab, while this approach restricts the user to only move to the previous/next step, and can also control when the user can move on to the next page.
 
-[![Demo](https://github.com/daattali/advanced-shiny/tree/master/multiple-pages/multiple-pages.gif)](https://github.com/daattali/advanced-shiny/tree/master/multiple-pages)
+[![Demo](https://raw.githubusercontent.com/daattali/advanced-shiny/master/multiple-pages/multiple-pages.gif)](https://github.com/daattali/advanced-shiny/tree/master/multiple-pages)
 
 <h2 id="simple-toggle">Toggle a UI element (alternate between show/hide) with a button</h2>
 
@@ -199,7 +199,7 @@ This is a simple app with a tiny bit of JavaScript that shows you how to cause a
 
 It is possible to serve an image or another file directly from your Shiny app instead of a webpage.  The method shown here is a simple proof-of-concept of how to achieve this functionality.  It also supports passing GET parameters to the file-generating logic so that the file can be parameterized.
 
-[![Demo](https://github.com/daattali/advanced-shiny/tree/master/serve-images-files/serve-images-files.gif)](https://github.com/daattali/advanced-shiny/tree/master/serve-images-files)
+[![Demo](https://raw.githubusercontent.com/daattali/advanced-shiny/master/serve-images-files/serve-images-files.gif)](https://github.com/daattali/advanced-shiny/tree/master/serve-images-files)
 
 <h2 id="update-input">Update multiple Shiny inputs without knowing input type </h2>
 
@@ -213,7 +213,7 @@ Shiny allows you to update an input element only if you know the type of input. 
 
 When the user clicks on a button, it usually results in some R code being run. Sometimes the resulting code is short and quick and the user doesn't even notice any delay, but sometimes the button click initialiates some long process or computation that can take more than 1 second to complete. In those cases, it might be a bit confusing to the user if there is no immediate feedback notifying that the action is being performed. For example, if the user clicked a button to load data from a database and it takes 3 seconds to connect to the database, it can be useful to show a "Connecting..." and then a "Done!" (or "Error") message, instead of just letting the user wait without seeing any message. Of course when the wait time is only 2-3 seconds it's not a big deal, but you can imagine that for a 20-second process, the user might think that something went wrong if there is no feedback. This example shows how to add some immediate feedback to the user after a button is clicked, including disabling/enabling the button and showing a success/error message when appropriate.
 
-[![Demo](https://github.com/daattali/advanced-shiny/tree/master/busy-indicator/busy-indicator.gif)](https://github.com/daattali/advanced-shiny/tree/master/busy-indicator)
+[![Demo](https://raw.githubusercontent.com/daattali/advanced-shiny/master/busy-indicator/busy-indicator.gif)](https://github.com/daattali/advanced-shiny/tree/master/busy-indicator)
 
 <h2 id="api-ajax">Simple AJAX system for Shiny apps (JS -> R -> JS communication)</h2>
 
@@ -227,7 +227,7 @@ Sometimes it's useful to be able to call an R function from JavaScript and use t
 
 Sometimes it's nice to be able to support navigation within a Shiny app, especially when there are multiple tabs or some other form of "multiple pages" in a Shiny app. Since Shiny apps are a single page, the browser nagivation buttons (previous/next page) don't work when "navigating" within a Shiny app. You also can't bookmark a certain "page" in a Shiny app - every time you go to an app, you will be shown the initial state of the app. This app shows how to implement basic navigation in Shiny apps.
 
-[![Demo](https://github.com/daattali/advanced-shiny/tree/master/navigate-history/navigate-history.gif)](https://github.com/daattali/advanced-shiny/tree/master/navigate-history)
+[![Demo](https://raw.githubusercontent.com/daattali/advanced-shiny/master/navigate-history/navigate-history.gif)](https://github.com/daattali/advanced-shiny/tree/master/navigate-history)
 
 <h2 id="fb-share-img">Sharing images on Facebook</h2>
 
