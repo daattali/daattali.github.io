@@ -2,15 +2,13 @@
 layout: post
 title: "Shiny tips & tricks for improving your apps and solving common problems"
 tags: [professional, rstats, r, r-bloggers, shiny]
-date: 2016-08-29 10:00:00 -0700
+date: 2016-08-29 09:00:00 -0700
 share-img: https://raw.githubusercontent.com/daattali/advanced-shiny/master/plot-spinner/plot-spinner.gif
 permalink: /blog/advanced-shiny-tips/
 layout: post
 comments: true
 show-share: true
 ---
-
-2016-08-29-advanced-shiny-tips.md
 
 <a class="btn btn-lg btn-success" href="https://github.com/daattali/advanced-shiny#readme">Click here to see the most up-to-date list of tips</a>
 
