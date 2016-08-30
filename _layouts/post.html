@@ -20,7 +20,11 @@ layout: base
       {% if page.show-share %}
         {% include share-section.html %}
       {% endif %}
-	  
+
+      {% if page.show-subscribe %}
+        {% include subscribe.html %}
+      {% endif %}  
+
       <ul class="pager blog-pager">
         {% if page.previous.url %}
           <li class="previous">
