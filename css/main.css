@@ -628,7 +628,7 @@ footer .theme-by {
 
 .share-section .share-buttons a {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  padding: 10px 5px;
+  padding: 10px 15px;
   background: #FFF;
   border-radius: 0;
   color: #404040;
@@ -706,21 +706,22 @@ pre code {
 /* --- Email subscription --- */
 
 #mailchimp-subscribe-section {
-  margin: 40px 0;
+  margin-top: 20px;
 }
 #mailchimp-subscribe-section #mc_embed_signup {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 #mailchimp-subscribe-section #mc_embed_signup label {
-  font-size: 22px;
+  margin-bottom: -2px;
+  font-size: 20px;
 }
 #mailchimp-subscribe-section #mce-EMAIL {
-  height: 40px;
+  height: 35px;
   width: 300px;
-  font-size: 16px;
+  font-size: 14px;
   padding-left: 10px;
 }
 #mailchimp-subscribe-section #mc-embedded-subscribe {
-  height: 40px;
-  font-size: 16px;
+  height: 35px;
+  font-size: 14px;
 }
