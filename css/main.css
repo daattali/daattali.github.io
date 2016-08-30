@@ -711,9 +711,10 @@ pre code {
   text-align: center;
 }
 #mailchimp-subscribe-section #mc_embed_signup label {
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 7px;
   font-weight: bold;
+  display: block;
 }
 #mailchimp-subscribe-section #mce-EMAIL {
   width: 300px;
@@ -755,7 +756,7 @@ pre code {
     margin-top: 30px;
   }
   #mailchimp-subscribe-section #mc_embed_signup label {
-    font-size: 16px;
+    font-size: 20px;
   }
   #mailchimp-subscribe-section #mce-EMAIL,
   #mailchimp-subscribe-section #mc-embedded-subscribe {
