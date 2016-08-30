@@ -708,19 +708,19 @@ pre code {
 #mailchimp-subscribe-section {
   margin: 40px 0;
 }
-#mc_embed_signup {
+#mailchimp-subscribe-section #mc_embed_signup {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-#mc_embed_signup label {
+#mailchimp-subscribe-section #mc_embed_signup label {
   font-size: 22px;
 }
-#mce-EMAIL {
+#mailchimp-subscribe-section #mce-EMAIL {
   height: 40px;
   width: 300px;
   font-size: 16px;
   padding-left: 10px;
 }
-#mc-embedded-subscribe {
+#mailchimp-subscribe-section #mc-embedded-subscribe {
   height: 40px;
   font-size: 16px;
 }
