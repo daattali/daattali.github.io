@@ -6,6 +6,7 @@ permalink: /blog/rstudio-addins-list/
 layout: post
 comments: true
 show-share: true
+show-subscribe: true
 ---
 
 RStudio's new feature of supporting addins is great. It's about 2 months old now, and I think one of the main problems right now is discoverability: there's just no easy way to find addins or publish your own.
