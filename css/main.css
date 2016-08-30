@@ -705,6 +705,9 @@ pre code {
 
 /* --- Email subscription --- */
 
+#mailchimp-subscribe-section {
+  margin: 40px 0;
+}
 #mc_embed_signup {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
