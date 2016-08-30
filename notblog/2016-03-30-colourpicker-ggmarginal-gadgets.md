@@ -7,6 +7,7 @@ permalink: /blog/colourpicker-ggmarginal-gadgets/
 layout: post
 comments: true
 show-share: true
+show-subscribe: true
 ---
 
 **NOTE: The colour picker addin described in this post used to be part of the `shinyjs` package but is now in the `colourpicker` package.**
