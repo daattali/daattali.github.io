@@ -17,13 +17,7 @@ layout: base
         </div>
       {% endif %}
 
-      {% if page.show-share %}
-        {% include share-section.html %}
-      {% endif %}
-
-      {% if page.show-subscribe %}
-        {% include subscribe.html %}
-      {% endif %}  
+      {% include share-section.html %}
 
       <ul class="pager blog-pager">
         {% if page.previous.url %}
