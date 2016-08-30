@@ -7,7 +7,6 @@ share-img: https://raw.githubusercontent.com/daattali/colourpicker/master/inst/i
 permalink: /blog/colourpicker-package/
 layout: post
 comments: true
-show-subscribe: true
 ---
 
 Have you ever wanted to allow your users to select colours in your Shiny apps? Have you ever wanted to select a few colours to use in your R code, but found it tedious to search for the right colours? If you answered yes to any of those questions, or if you're just curious, then [`colourpicker`](https://github.com/daattali/colourpicker) is the package for you!
