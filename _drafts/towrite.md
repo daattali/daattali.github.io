@@ -1,27 +1,5 @@
 gadget vs addin
 
-----
-
-htmlwidgets learning experience:
-rendervalue happens whenveer you render (so if you have a reactive value in there, it cna happen multiple times. not super clear in the docs)
-
-i used my own datafrmetod3 in R instead of JS so that null values will get removed
-
-add a way to get data out
-
-add api functions
-
-add a way to encode data into R from JS
-
-
-HTMLWidgets.find
-
-HTMLWidgets.isShiny
-
-use opts instead of x
-
-make api work for both %>% and shiny server
-
 ---
 
 media affects what we think/talk about (ebola)
