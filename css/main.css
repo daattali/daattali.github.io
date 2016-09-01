@@ -777,3 +777,9 @@ pre code {
     width: 100%;
   }
 }
+
+/* --- Social media sharing section --- */
+
+#social-share-section {
+  margin-bottom: 30px;
+}
