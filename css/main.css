@@ -783,3 +783,46 @@ pre code {
 #social-share-section {
   margin-bottom: 30px;
 }
+
+/* --- Scroll box --- */
+
+#scroll-box {
+  transition: right 0.5s ease-out;
+  position: fixed;
+  display: none;
+  right: -10000px;
+  bottom: 0;
+  z-index: 999999;
+  text-align: center;
+  color: #999;
+  background: #f5f5f5;
+  padding: 20px 20px 10px;
+  border: 1px solid #ddd;
+  border-width: 3px 0 0 3px;
+}
+
+#scroll-box-close {
+  position: absolute;
+  font-size: 30px;
+  right: 8px;
+  font-family: serif;
+  color: #aaa;
+  line-height: 0;
+  top: 18px;
+}
+
+#scroll-box-title {
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+#scroll-box-contact {
+  font-family: arial;
+  font-size: 15px;
+  text-align: right;
+  margin-top: 10px;
+}
+
+#scroll-box-contact a {
+  color: #999;
+}
