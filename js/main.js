@@ -4,15 +4,34 @@ var main = {
 
   bigImgEl : null,
   numImgs : null,
+  scrollBoxCheck : false,
   
   init : function() {
-    // Shorten the navbar after scrolling a little bit down
+    
+    // Check if there is a scrollbox to initialize
+    if ($("#scroll-box").length > 0 && Cookies.get('daScrollboxSubscribe') === undefined) {
+      if ($("article").length > 0) {
+        main.scrollBoxCheck = $("article").offset().top + $("article").height() * 0.6;
+        $("#scroll-box").css('right', '-' + $("#scroll-box").outerWidth() + 'px').show();
+      }
+    }
+    
     $(window).scroll(function() {
+      // Shorten the navbar after scrolling a little bit down
       if ($(".navbar").offset().top > 50) {
         $(".navbar").addClass("top-nav-short");
       } else {
         $(".navbar").removeClass("top-nav-short");
       }
+      
+      // Check if the scrollbox should be made visible
+      if (main.scrollBoxCheck) {
+        if ($(window).scrollTop() > main.scrollBoxCheck) {
+          $("#scroll-box").css('right', '0');
+          main.scrollBoxCheck = false;
+        }
+      }
+
     });
     
     // On mobile, hide the avatar when expanding the navbar menu
