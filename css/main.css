@@ -798,6 +798,10 @@ pre code {
   border-width: 3px 0 0 3px;
 }
 
+body.scroll-box-on #scroll-box {
+  display: block;
+}
+
 #scroll-box-close {
   position: absolute;
   font-size: 30px;
