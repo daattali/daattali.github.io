@@ -9,17 +9,17 @@ var main = {
   init : function() {
     
     // Check if there is a scrollbox to initialize
-    if ($("#scroll-box").length > 0 && Cookies.get('daScrollboxSubscribe') === undefined) {
+    if ($("#scroll-box").length > 0 && Cookies.get('daScrollboxSubscribe2') === undefined) {
       if ($("article").length > 0) {
         main.scrollBoxCheck = $("article").offset().top + $("article").height() * 0.6;
         $("#scroll-box").css('right', '-' + $("#scroll-box").outerWidth() + 'px');
         $("#scroll-box-close").click(function() {
           $("body").removeClass("scroll-box-on");
-          Cookies.set('daScrollboxSubscribe', '1', { expires: 1 });
+          Cookies.set('daScrollboxSubscribe2', '1', { expires: 1 });
         });
         $("#mc-embedded-subscribe").click(function() {
           $("body").removeClass("scroll-box-on");
-          Cookies.set('daScrollboxSubscribe', '1', { expires: 365 });
+          Cookies.set('daScrollboxSubscribe2', '1', { expires: 365 });
         });
       }
     }
@@ -35,7 +35,7 @@ var main = {
       // Check if the scrollbox should be made visible
       if (main.scrollBoxCheck) {
         if ($(window).scrollTop() > main.scrollBoxCheck) {
-          $("#scroll-box").css('right', '0');
+          setTimeout( function(){ $("#scroll-box").css('right', '0'); }, 500);
           main.scrollBoxCheck = false;
           $("body").addClass("scroll-box-on");
         }
