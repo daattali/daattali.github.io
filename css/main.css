@@ -802,6 +802,12 @@ body.scroll-box-on #scroll-box {
   display: block;
 }
 
+@media only screen and (max-width: 768px) {
+  body.scroll-box-on footer {
+    padding-bottom: 250px;
+  }
+}
+
 #scroll-box-close {
   position: absolute;
   font-size: 30px;
