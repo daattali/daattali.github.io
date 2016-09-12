@@ -13,6 +13,10 @@ var main = {
       if ($("article").length > 0) {
         main.scrollBoxCheck = $("article").offset().top + $("article").height() * 0.6;
         $("#scroll-box").css('right', '-' + $("#scroll-box").outerWidth() + 'px').show();
+        $("scroll-box-close").click(function({
+          $("#scroll-box").hide();
+          Cookies.set('daScrollboxSubscribe', '1', { expires: 7 });
+        }));
       }
     }
     
