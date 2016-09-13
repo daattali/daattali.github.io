@@ -19,12 +19,13 @@ layout: base
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  /*
   $(window).resize(function() {
     $("#shiny-server-iframe").contentWindow.postMessage('getHeight', '*');
   });
   $("#shiny-server-iframe").load(function() {
-    $("#shiny-server-iframe").contentWindow.postMessage('getHeight', '*');
-  });
+    $("#shiny-server-iframe")
+  });*/
   
   window.addEventListener("message", function(event) {
     if (event.origin !== "https://daattali.com") {
@@ -35,4 +36,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<iframe id="shiny-server-iframe" src="http://daattali.com/shiny?iframe=1" scrolling="no" width="100%" height="1000"></iframe>
+<iframe id="shiny-server-iframe" src="http://daattali.com/shiny?iframe=1" scrolling="no" width="100%" height="1000"
+  onload="this.contentWindow.postMessage('getHeight', '*');" onresize="this.contentWindow.postMessage('getHeight', '*');"></iframe>
