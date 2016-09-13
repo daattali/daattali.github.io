@@ -8,6 +8,21 @@ var main = {
   
   init : function() {
     
+    if ($("meta[name='twitter:title'").length > 0) {
+      var addthis_share = addthis_share || {}
+      addthis_share = {
+      	passthrough : {
+      		twitter: {
+      			via: "@daattali",
+      			text: trim($("meta[name='twitter:title'").attr("content"), 100)
+      		}
+      	}
+      }
+      function trim(s, n){
+        return (s.length > n) ? s.substr(0,n-3)+'...' : s;
+      };
+    }
+    
     // Check if there is a scrollbox to initialize
     if ($("#scroll-box").length > 0 && Cookies.get('daScrollboxSubscribe2') === undefined) {
       if ($("article").length > 0) {
