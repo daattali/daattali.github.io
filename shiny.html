@@ -6,17 +6,33 @@ layout: base
   footer {
     margin-top: -10px;
   }
+  #shiny-server-iframe {
+    margin-top: 91px;
+    border: 0 none;
+  }
+  @media only screen and (max-width: 767px) {
+    #shiny-server-iframe {
+      margin-top: 51px;
+    }
+  }
 </style>
 
 <script>
-window.addEventListener("message", function(event) {
-if (event.origin !== "https://daattali.com") {
-  return;
-}
-$("#shiny-server-iframe")[0].height = event.data;
-})
+$(function() {
+  $(window).resize(function() {
+    $("#shiny-server-iframe").contentWindow.postMessage('getHeight', '*');
+  });
+  $("#shiny-server-iframe").load(function() {
+    $("#shiny-server-iframe").contentWindow.postMessage('getHeight', '*');
+  });
+  
+  window.addEventListener("message", function(event) {
+    if (event.origin !== "https://daattali.com") {
+      return;
+    }
+    $("#shiny-server-iframe")[0].height = event.data;
+  })
+});
 </script>
 
-<iframe id="shiny-server-iframe" src="http://daattali.com/shiny?iframe=1" scrolling="no" width="100%" height="1000"
-  style="margin-top: 100px; border: 0 none;"
-  onload="this.contentWindow.postMessage('getHeight', '*');"></iframe>
+<iframe id="shiny-server-iframe" src="http://daattali.com/shiny?iframe=1" scrolling="no" width="100%" height="1000"></iframe>
