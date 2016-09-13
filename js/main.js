@@ -8,13 +8,14 @@ var main = {
   
   init : function() {
   	if (typeof addthis !== "undefined") {
-      var trim = function(s, n) {		
+      var trim = function(s, n) {	
         return (s.length > n) ? s.substr(0,n-3)+'...' : s;		
       };
       addthis.addEventListener('addthis.ready', function() {
         setTimeout(function() {
           if ($("meta[name='twitter:title'").length > 0) {		
-            var addthis_share = addthis_share || {}		
+            var addthis_share = addthis_share || {}
+            console.log('j');
             $.extend(addthis_share, {		
             	passthrough : {		
              	 	twitter: {		
@@ -24,7 +25,7 @@ var main = {
             	}		
             });		
           } 
-        }, 7000);
+        }, 10000);
       });
   	}  
 
