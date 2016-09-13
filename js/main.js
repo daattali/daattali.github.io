@@ -7,7 +7,7 @@ var main = {
   scrollBoxCheck : false,
   
   init : function() {
-    addthis.addEventListener('addthis.ready', function(){console.log('now'));
+    addthis.addEventListener('addthis.ready', function(){console.log('now');});
     if ($("meta[name='twitter:title'").length > 0) {
       function trim(s, n){
         return (s.length > n) ? s.substr(0,n-3)+'...' : s;
