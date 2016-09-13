@@ -15,7 +15,7 @@ var main = {
         setTimeout(function() {
           if ($("meta[name='twitter:title'").length > 0) {		
             var addthis_share = addthis_share || {}
-            console.log('j');
+            debugger;
             $.extend(addthis_share, {		
             	passthrough : {		
              	 	twitter: {		
