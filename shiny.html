@@ -21,7 +21,9 @@ layout: base
 document.addEventListener('DOMContentLoaded', function() {
   
   $(window).resize(function() {
-    $("#shiny-server-iframe")[0].contentWindow.postMessage('getHeight', '*');
+    setTimeout(function() {
+      $("#shiny-server-iframe")[0].contentWindow.postMessage('getHeight', '*');
+    }, 100);
   });
   $("#shiny-server-iframe").load(function() {
     $("#shiny-server-iframe")[0].contentWindow.postMessage('getHeight', '*');
