@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: default
 ---
 
-this is SHINY
+this is SHINY!!
