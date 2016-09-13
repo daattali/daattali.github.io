@@ -14,19 +14,17 @@ var main = {
       addthis.addEventListener('addthis.ready', function() {
         setTimeout(function() {
           if ($("meta[name='twitter:title'").length > 0) {		
-      
-            console.log('aa');		
             var addthis_share = addthis_share || {}		
             $.extend(addthis_share, {		
             	passthrough : {		
-           	 	twitter: {		
-            			via: "daattali",		
-            			text: trim($("meta[name='twitter:title'").attr("content"), 100)		
+             	 	twitter: {		
+             	 	  via: "daattali",		
+             	 	  text: trim($("meta[name='twitter:title'").attr("content"), 100)
             		}		
             	}		
             });		
           } 
-        }, 3000);
+        }, 7000);
       });
   	}  
 
