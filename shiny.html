@@ -11,5 +11,6 @@ $("#shiny-server-iframe")[0].height = event.data;
 })
 </script>
 
-<iframe id="shiny-server-iframe" src="http://daattali.com/shiny" width="100%" height="1000" style="margin-top: 90px; border: 0 none;"
+<iframe id="shiny-server-iframe" src="http://daattali.com/shiny" scrolling="no" width="100%" height="1000"
+  style="margin-top: 100px; border: 0 none;"
   onload="this.contentWindow.postMessage('getHeight', '*');"></iframe>
