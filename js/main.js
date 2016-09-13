@@ -10,10 +10,10 @@ var main = {
     
     if ($("meta[name='twitter:title'").length > 0) {
       var addthis_share = addthis_share || {}
-      addthis_share = {
+      $.extend(addthis_share, {
       	passthrough : {
       		twitter: {
-      			via: "@daattali",
+      			via: "daattali",
       			text: trim($("meta[name='twitter:title'").attr("content"), 100)
       		}
       	}
