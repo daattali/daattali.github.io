@@ -17,7 +17,7 @@ var main = {
       			text: trim($("meta[name='twitter:title'").attr("content"), 100)
       		}
       	}
-      }
+      });
       function trim(s, n){
         return (s.length > n) ? s.substr(0,n-3)+'...' : s;
       };
