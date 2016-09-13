@@ -14,8 +14,8 @@ var main = {
       addthis.addEventListener('addthis.ready', function() {
         setTimeout(function() {
           if ($("meta[name='twitter:title'").length > 0) {		
-            var addthis_share = addthis_share || {}
-            debugger;
+            console.log(addthis_share);return;
+            var addthis_share = addthis_share || {};
             $.extend(addthis_share, {		
             	passthrough : {		
              	 	twitter: {		
