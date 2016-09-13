@@ -13,9 +13,8 @@ var main = {
       };
       addthis.addEventListener('addthis.ready', function() {
         setTimeout(function() {
-          if ($("meta[name='twitter:title'").length > 0) {		
-            console.log(window.addthis_share);return;
-            var addthis_share = addthis_share || {};
+          if ($("meta[name='twitter:title'").length > 0) {	
+            var addthis_share = window.addthis_share || {};
             $.extend(addthis_share, {		
             	passthrough : {		
              	 	twitter: {		
@@ -25,7 +24,7 @@ var main = {
             	}		
             });		
           } 
-        }, 10000);
+        }, 100);
       });
   	}  
 
