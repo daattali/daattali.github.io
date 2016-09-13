@@ -1,0 +1,14 @@
+---
+layout: base
+---
+
+<script>
+window.addEventListener("message", function(event) {
+if (event.origin !== "https://daattali.com") {
+  return;
+}
+$("#shiny-server-iframe")[0].height = event.data;
+})
+</script>
+
+<iframe id="shiny-server-iframe" src="http://daattali.com/shiny" width="100%" style="margin-top: 80px;" onload="this.contentWindow.postMessage('getHeight', '*');"></iframe>
