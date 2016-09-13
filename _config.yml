@@ -30,7 +30,7 @@ navbar-links:
   Blog: ""
   Projects: "projects"
   About Me / Contact: "aboutme"
-  Shiny: "http://daattali.com/shiny"
+  Shiny: "shiny"
 nav-search: "search"
 
 # --- Footer options --- #
