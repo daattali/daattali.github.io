@@ -7,7 +7,7 @@ comments: true
 
 This is a collection of some personal projects I've worked on that are easily viewable online. Anything that is not browser-friendly will not make the cut :(
 
-I'm also **available for consulting**, so feel free to [contact me](/contact) if it looks like we could work together. 
+I'm also [**available for consulting**](/shiny), so feel free to [contact me](/contact) if it looks like we could work together. 
 
 
 ---
@@ -15,6 +15,10 @@ I'm also **available for consulting**, so feel free to [contact me](/contact) if
 ## Website templates (Jekyll)
 
 -  **[Beautiful Jekyll](http://deanattali.com/beautiful-jekyll/)** - a popular Jekyll theme I created when making this website.  You can [view a demo](http://deanattali.com/beautiful-jekyll/) or use it yourself to make a pretty website similar to this one by visiting the [project page](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it is designed to look great on both mobile devices and laptops.
+
+## R Shiny apps
+
+If you got here after reading some of my blog posts, you'll know that I'm a big fan and advocate of Shiny. I also help many people and companies with Shiny. You can see a sample of Shiny apps I've built [on my personal Shiny server](/shiny).
 
 ## R packages
 
@@ -35,10 +39,6 @@ I'm also **available for consulting**, so feel free to [contact me](/contact) if
 - **[lightsout](https://github.com/daattali/lightsout)** - An implementation of the puzzle game Lights Out using R. [Play the game online](http://daattali.com/shiny/lightsout/). Available [on CRAN](https://cran.r-project.org/package=lightsout) and [on GitHub](https://github.com/daattali/lightsout).
 
 *Many of my R packages/tutorials/thoughts are graciously shared on [R-bloggers](http://www.r-bloggers.com/), which is a great resource for any useR.*
-
-## R Shiny apps
-
-If you got here after reading some of my blog posts, you'll know that I'm a big fan and advocate of Shiny, and I help many people with it. You can see a select sample of Shiny apps I've built [on my personal Shiny server](http://daattali.com/shiny/). 
 
 ## Chrome extensions
 
