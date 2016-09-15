@@ -27,10 +27,10 @@ avatar: "/img/deanimg.jpeg"
 
 # List of links in the navigation bar
 navbar-links:
+  Shiny: "shiny"
   Blog: ""
   Projects: "projects"
   About Me / Contact: "aboutme"
-  Shiny: "shiny"
 nav-search: "search"
 
 # --- Footer options --- #
