@@ -857,6 +857,7 @@ body.scroll-box-on #scroll-box {
 @media only screen and (max-width: 768px) {
   #scroll-box {
     bottom: 48px;
+    right: 0 !important;
     border-width: 3px 3px 0;
     width: 100%;
   }
