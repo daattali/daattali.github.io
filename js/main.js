@@ -33,7 +33,7 @@ var main = {
       // Check if the scrollbox should be made visible
       if (main.scrollBoxCheck) {
         if ($(window).scrollTop() > main.scrollBoxCheck) {
-          setTimeout( function(){ $("#scroll-box").css('right', '0'); }, 500);
+          setTimeout( function(){ $("#scroll-box").css('right', '8px'); }, 500);
           main.scrollBoxCheck = false;
           $("body").addClass("scroll-box-on");
         }
