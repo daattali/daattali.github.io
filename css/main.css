@@ -869,8 +869,8 @@ pre code {
     font-size: 18px;
   }
   #scroll-box-close {
-    right: 0;
-    top: 9px;
+    right: 3px;
+    top: 12px;
   }
   #mailchimp-subscribe-section {
     margin-top: 10px;
