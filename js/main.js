@@ -14,8 +14,8 @@ var main = {
     if ($("#scroll-box").length > 0 && Cookies.get('daScrollboxSubscribe3') === undefined) {
       if ($("article").length > 0) {
         main.scrollBoxCheck = $("article").offset().top + $("article").height() * 0.6;
-        $("#scroll-box").css('right', '-' + ($("#scroll-box").outerWidth() + 10) + 'px');
         $("#scroll-box-close").click(function() {
+          $("#scroll-box").fadeOut(500);
           $("body").removeClass("scroll-box-on");
           Cookies.set('daScrollboxSubscribe3', '1', { expires: 1 });
         });
@@ -33,7 +33,7 @@ var main = {
       // Check if the scrollbox should be made visible
       if (main.scrollBoxCheck) {
         if ($(window).scrollTop() > main.scrollBoxCheck) {
-          setTimeout( function(){ $("#scroll-box").css('right', '8px'); }, 500);
+          setTimeout( function(){ $("#scroll-box").fadeIn(500); }, 500);
           main.scrollBoxCheck = false;
           $("body").addClass("scroll-box-on");
         }
