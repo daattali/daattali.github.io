@@ -805,7 +805,7 @@ pre code {
 
 @media only screen and (max-width: 768px) {
   body.scroll-box-on footer {
-    padding-bottom: 230px;
+    padding-bottom: 210px;
   }
 }
 
