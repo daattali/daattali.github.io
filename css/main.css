@@ -787,10 +787,9 @@ pre code {
 
 #scroll-box {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  transition: right 0.5s ease-out;
   position: fixed;
   display: none;
-  right: -10000px;
+  right: 8px;
   bottom: 8px;
   z-index: 999999;
   text-align: center;
@@ -800,17 +799,13 @@ pre code {
   box-shadow: 0 0 8px #777;
 }
 
-body.scroll-box-on #scroll-box {
-  display: block;
-}
-
 #scroll-box input {
   outline-color: #75b57d;
 }
 
 @media only screen and (max-width: 768px) {
   body.scroll-box-on footer {
-    padding-bottom: 250px;
+    padding-bottom: 230px;
   }
 }
 
@@ -857,7 +852,7 @@ body.scroll-box-on #scroll-box {
 @media only screen and (max-width: 768px) {
   #scroll-box {
     bottom: 48px;
-    right: 0 !important;
+    right: 0;
     border-width: 3px 3px 0;
     width: 100%;
   }
