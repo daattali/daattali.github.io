@@ -706,10 +706,10 @@ pre code {
 /* --- Email subscription --- */
 
 #mailchimp-subscribe-section {
-  margin-top: 20px;
+  margin-top: 15px;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 #mailchimp-subscribe-section #mc_embed_signup label {
   font-size: 16px;
@@ -836,10 +836,12 @@ body.scroll-box-on #scroll-box {
   margin-top: 10px;
 }
 
-#scroll-box-contact a {
+#scroll-box-contact a,
+#scroll-box-hire a {
   color: #fff;
 }
-#scroll-box-contact a:hover {
+#scroll-box-contact a:hover,
+#scroll-box-hire a:hover {
   color: #f0f0f0;
 }
 
@@ -864,5 +866,6 @@ body.scroll-box-on #scroll-box {
   }
   #mailchimp-subscribe-section {
     margin-top: 10px;
+    mragin-bottom: 7px;
   }
 }
