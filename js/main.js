@@ -11,17 +11,13 @@ var main = {
     main.initAddThis();
 
     // Check if there is a scrollbox to initialize
-    if ($("#scroll-box").length > 0 && Cookies.get('daScrollboxSubscribe2') === undefined) {
+    if ($("#scroll-box").length > 0 && Cookies.get('daScrollboxSubscribe3') === undefined) {
       if ($("article").length > 0) {
         main.scrollBoxCheck = $("article").offset().top + $("article").height() * 0.6;
         $("#scroll-box").css('right', '-' + $("#scroll-box").outerWidth() + 'px');
         $("#scroll-box-close").click(function() {
           $("body").removeClass("scroll-box-on");
-          Cookies.set('daScrollboxSubscribe2', '1', { expires: 1 });
-        });
-        $("#mc-embedded-subscribe").click(function() {
-          $("body").removeClass("scroll-box-on");
-          Cookies.set('daScrollboxSubscribe2', '1', { expires: 365 });
+          Cookies.set('daScrollboxSubscribe3', '1', { expires: 1 });
         });
       }
     }
