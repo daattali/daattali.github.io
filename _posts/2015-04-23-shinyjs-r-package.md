@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Introducing shinyjs: perform common JavaScript operations in Shiny apps using plain R code"
-tags: [professional, rstats, r, r-bloggers, shiny, packages, shinyjs]
+tags: [professional, rstats, r, r-bloggers, shiny, packages, shinyjs, popular]
 date: 2015-04-23 17:30:00 -0700
 permalink: /2015/04/23/shinyjs-r-package/
 ---
