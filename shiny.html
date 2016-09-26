@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (data[0] == "height") {
       $("#shiny-server-iframe")[0].height = data[1];
     } else if (data[0] == "apps-tops") {
-      
+      $('html, body').animate({ scrollTop : data[1]}, 500);
     }
   })
 });
