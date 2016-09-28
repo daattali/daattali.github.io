@@ -43,6 +43,7 @@
 
 .post-preview {
   padding: 15px;
+  display: block;
   border-bottom: 1px solid #f5f5f5;
 }
 
