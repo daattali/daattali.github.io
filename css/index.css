@@ -93,12 +93,6 @@
   font-weight: 800;
 }
 
-@media only screen and (min-width: 768px) {
-  .post-preview .post-title {
-    font-size: 36px;
-  }
-}
-
 .post-preview .post-entry {
   display: none;
 }
