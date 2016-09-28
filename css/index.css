@@ -14,7 +14,7 @@
 .list-filters {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 18px;
-  margin-bottom: 20px;
+  margin: 0 25px 30px;
 }
 
 .list-filters .list-filter  {
@@ -42,13 +42,13 @@
 }
 
 .post-preview {
-  padding: 15px 0;
+  padding: 15px;
   border-bottom: 1px solid #f5f5f5;
 }
 
 @media only screen and (min-width: 768px) {
   .post-preview {
-    padding: 25px 0;
+    padding: 25px;
   }
 }
 
