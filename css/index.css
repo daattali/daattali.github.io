@@ -56,14 +56,14 @@
 .post-preview:last-child {
   border-bottom: 0;
 }
-.post-preview:nth-child(odd) {
+.posts-list article:nth-child(odd) {
   background: #fcfcfc;
 }
-.post-preview:hover {
+.posts-list article:hover {
   background: #f5f5f5;
 }
 
-.post-preview a {
+.post-preview {
   text-decoration: none !important;
   color: #404040 !important;
 }
