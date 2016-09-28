@@ -27,8 +27,8 @@ avatar: "/img/deanimg.jpeg"
 
 # List of links in the navigation bar
 navbar-links:
-  Shiny: "shiny"
   Blog: ""
+  Shiny: "shiny"
   Projects: "projects"
   About Me / Contact: "aboutme"
 nav-search: "search"
