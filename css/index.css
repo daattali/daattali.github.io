@@ -44,7 +44,6 @@
 .post-preview {
   padding: 15px;
   display: block;
-  border-bottom: 1px solid #f5f5f5;
 }
 
 @media only screen and (min-width: 768px) {
@@ -53,7 +52,10 @@
   }
 }
 
-.post-preview:last-child {
+.posts-list article {
+  border-bottom: 1px solid #f5f5f5;
+}
+.posts-list article:last-child {
   border-bottom: 0;
 }
 .posts-list article:nth-child(odd) {
