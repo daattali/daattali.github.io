@@ -10,14 +10,18 @@
     margin-bottom: 0;
   }
 }
-.index-posts-title {
-  font-weight: 800;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 38px;
+
+.list-filters .list-filter  {
+  text-decoration: none !important;
+  font-size: 18px;
+  margin-right: 15px;
+  border: 1px solid #777;
+  padding: 5px 10px;
+  cursor: pointer;
 }
-@media only screen and (min-width: 768px) {
-  .index-posts-title {
-    margin-top: 10px;
-    font-size: 45px;
-  }
+
+.list-filters .list-filter.filter-selected,
+.list-filters .list-filter:hover {
+  color: #fff;
+  background: #444;
 }
