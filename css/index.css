@@ -29,3 +29,12 @@
   color: #fff;
   background: #444;
 }
+
+@media only screen and (max-width: 550px) {
+  .list-filters .list-filter {
+    font-size: 16px;
+    margin-right: 0;
+    margin-bottom: 5px;
+    display: block;
+  }
+}
