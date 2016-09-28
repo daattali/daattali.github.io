@@ -16,7 +16,7 @@ timezone: "America/Vancouver"
 markdown: kramdown
 highlighter: rouge
 permalink: /blog/:title/
-paginate: 5
+paginate: 10
 paginate_path: "/page:num/"
 
 # --- Navigation bar options --- #
