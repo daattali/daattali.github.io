@@ -11,9 +11,13 @@
   }
 }
 
+.list-filters {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+}
+
 .list-filters .list-filter  {
   text-decoration: none !important;
-  font-size: 18px;
   margin-right: 15px;
   border: 1px solid #777;
   padding: 5px 10px;
