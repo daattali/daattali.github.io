@@ -431,6 +431,13 @@ footer .theme-by {
   }
 }
 
+.post-heading .post-meta {		
+  color: #808080;		
+  font-size: 18px;		
+  font-style: italic;		
+  margin: 0 0 10px;		
+}
+
 /* --- Blog post --- */
 
 .blog-post :first-child {
