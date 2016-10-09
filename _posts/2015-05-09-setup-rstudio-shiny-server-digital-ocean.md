@@ -23,11 +23,12 @@ This post will cover how to set up a machine from scratch, set up R, RStudio Ser
 - [Step 4: Ensure you don't shoot yourself in the foot](#safety-first)
 - [Step 5: See your droplet in a browser](#nginx)
 - [Step 6: Install R](#install-r)
-  - [Step 6.1: Important note re: installing R packages](#user-libraries)
+  - [Note 6.1: Important note re: installing R packages](#user-libraries)
 - [Step 7: Install RStudio Server](#install-rstudio)
 - [Step 8: Install Shiny Server](#install-shiny)
   - [Step 8.1: Set up proper user permissions on Shiny Server](#shiny-user-perms)
   - [Step 8.2: Populate Shiny Server with Shiny apps using a git repository](#shiny-git)
+  - [Note 8.3: Shiny Server Open Source vs Shiny Server Pro](#server-pro)
 - [Step 9: Make pretty URLs for RStudio Server and Shiny Server](#reverse-proxy)
 - [Step 10: Custom domain name](#custom-domain)
 - [Updates](#updates)
@@ -153,7 +154,7 @@ sudo su - -c "R -e \"devtools::install_github('daattali/shinyjs')\""
 
 Feel free to play around with R now.
 
-## Step 6.1: Important note re: installing R packages {#user-libraries}
+## Note 6.1: Important note re: installing R packages {#user-libraries}
 
 Note that instead of launching R and installing the packages from R, I'm doing it from the terminal with `sudo su - -c "R ..."`. Why? Because if you log into R and install packages, by default they will be installed in your personal library and will only be accessible to the current user (`dean` in this case). By running the command the way I do above, it installs the packages as the `root` user, which means the packages will be installed in a global library and will be available to all users.
 
@@ -281,6 +282,12 @@ Now that git is set up, you can add shiny apps to this repository (assuming you 
 
 As mentioned previously, Shiny Server can also be used as a great tool to host interactive Rmarkdown documents (not just shiny apps), so you can use this method to publish your rmarkdown files. 
 
+## Note 8.3: Shiny Server Open Source vs Shiny Server Pro {#server-pro}
+
+In this tutorial we installed Shiny Server Open Source, which is a free offering of Shiny Server by RStudio. However, RStudio also provides [Shiny Server Pro](https://www.rstudio.com/products/shiny-server-pro/), which is not free but is a lot more powerful.
+
+If you're just an individual playing around with shiny and want to host some of your personal apps (like myself), then using the Open Source version is perfectly fine. But if you're looking to use a shiny server in your company, or if you require some more features such as user authentication (login), scaling (supporting multiple users at the same time), and monitoring, then I highly suggest you take a look at at Shiny Server Pro. Most of you will be fine with the free version, but you can contact me if you want to discuss the advantages of using Pro.
+
 # Step 9: Make pretty URLs for RStudio Server and Shiny Server {#reverse-proxy}
 
 This is optional and a little more advanced. You might have noticed that to access both RStudio and Shiny Server, you have to remember weird port numbers (`:8787` and `:3838`). Not only is it hard and ugly to remember, but some workplace environments often block access to those ports, which means that many people/places won't be able to access these pages. The solution is to use a reverse proxy, so that nginx will listen on port 80 (default HTTP port) at the URL `/shiny` and will *internally* redirect that to port 3838. Same for RStudio - we can have nginx listen at `/rstudio` and redirect it to port 8787. This is why my Shiny apps can be reached at [daattali.com/shiny/](http://daattali.com/shiny/) which is an easy URL to type, but also at [daattali.com:3838](http://daattali.com:3838).
@@ -382,6 +389,8 @@ I use [Namecheap](https://www.namecheap.com/?aff=95702), so this is what my doma
 **[2015-12-05]** Added a small paragraph to [step 9](#reverse-proxy) for fixing Shiny app URLs that don't have a trailing slash.
 
 **[2016-03-10]** There was an article today about how to [add authentication to Shiny Server using nginx](http://www.datascienceriot.com/add-authentication-to-shiny-server-with-nginx/).  I haven't tried it, but it looks like a great resource if you want to add authentication to your apps.
+
+**[2016-10-09]** Added a [small section]((#server-pro) on Shiny Server Pro.
 
 # Resources {#resources}
 
