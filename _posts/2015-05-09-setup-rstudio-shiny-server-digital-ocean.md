@@ -390,7 +390,7 @@ I use [Namecheap](https://www.namecheap.com/?aff=95702), so this is what my doma
 
 **[2016-03-10]** There was an article today about how to [add authentication to Shiny Server using nginx](http://www.datascienceriot.com/add-authentication-to-shiny-server-with-nginx/).  I haven't tried it, but it looks like a great resource if you want to add authentication to your apps.
 
-**[2016-10-09]** Added a [small section]((#server-pro) on Shiny Server Pro.
+**[2016-10-09]** Added a [small section](#server-pro) on Shiny Server Pro.
 
 # Resources {#resources}
 
