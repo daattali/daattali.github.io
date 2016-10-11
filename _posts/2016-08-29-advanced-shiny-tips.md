@@ -44,7 +44,7 @@ This also seems like an appropriate place to mention that I am available for hir
   - [Send a message from JavaScript to R](#message-javascript-r) ([code](https://github.com/daattali/advanced-shiny/tree/master/message-javascript-to-r))
   - [Send a message from JavaScript to R - force repetitive messages to get sent](#message-javascript-r-force) ([code](https://github.com/daattali/advanced-shiny/tree/master/message-javascript-to-r-force))
   - [Press the Enter key to simulate a button press](#proxy-click) ([code](https://github.com/daattali/advanced-shiny/tree/master/proxy-click))
- - [Run arbitrary code live in Shiny - great for testing during development](#run-arbitrary-code) ([code](https://github.com/daattali/advanced-shiny/tree/master/run-arbitrary-code))
+  - [Run arbitrary code live in Shiny - great for testing during development](#run-arbitrary-code) ([code](https://github.com/daattali/advanced-shiny/tree/master/run-arbitrary-code))
 - Advanced
   - [Serve files (images/text files/etc) instead of webpages from a Shiny app](#serve-images-files) ([code](https://github.com/daattali/advanced-shiny/tree/master/serve-images-files))
   - [Update multiple Shiny inputs without knowing input type](#update-input) ([code](https://github.com/daattali/advanced-shiny/tree/master/update-input))
