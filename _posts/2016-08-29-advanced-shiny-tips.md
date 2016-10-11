@@ -44,6 +44,7 @@ This also seems like an appropriate place to mention that I am available for hir
   - [Send a message from JavaScript to R](#message-javascript-r) ([code](https://github.com/daattali/advanced-shiny/tree/master/message-javascript-to-r))
   - [Send a message from JavaScript to R - force repetitive messages to get sent](#message-javascript-r-force) ([code](https://github.com/daattali/advanced-shiny/tree/master/message-javascript-to-r-force))
   - [Press the Enter key to simulate a button press](#proxy-click) ([code](https://github.com/daattali/advanced-shiny/tree/master/proxy-click))
+ - [Run arbitrary code live in Shiny - great for testing during development](#run-arbitrary-code) ([code](https://github.com/daattali/advanced-shiny/tree/master/run-arbitrary-code))
 - Advanced
   - [Serve files (images/text files/etc) instead of webpages from a Shiny app](#serve-images-files) ([code](https://github.com/daattali/advanced-shiny/tree/master/serve-images-files))
   - [Update multiple Shiny inputs without knowing input type](#update-input) ([code](https://github.com/daattali/advanced-shiny/tree/master/update-input))
@@ -210,6 +211,14 @@ When you send a message from JS to R with the exact same value multiple times in
 
 This is a simple app with a tiny bit of JavaScript that shows you how to cause an Enter key press inside an input to trigger a click on a button.
 
+<h2 id="run-arbitrary-code">Run arbitrary code live in Shiny - great for testing during development</h2>
+
+**[Link to code](https://github.com/daattali/advanced-shiny/tree/master/run-arbitrary-code)**
+
+When I develop Shiny apps or packages for Shiny, I often find myself wanting to be able to run R code on-demand while the app is running. Outside of Shiny, in regular R programming, we have the R console where we can run any command at any point in time, but in Shiny we don't really have that.  So while developing, I often add a text input that lets me type any R code into it and then run it. This is very useful for testing.
+
+[![Demo](https://raw.githubusercontent.com/daattali/advanced-shiny/master//run-arbitrary-code/run-arbitrary-code.gif)](https://github.com/daattali/advanced-shiny/tree/master/run-arbitrary-code)
+
 <h2 id="serve-images-files">Serve files (images/text files/etc) instead of webpages from a Shiny app </h2>
 
 **[Link to code](https://github.com/daattali/advanced-shiny/tree/master/serve-images-files)**
@@ -284,3 +293,4 @@ This list is slowly growing with time. Here are the new tricks added since the p
 - 2016-08-29: [Getting the value of an object in a running Shiny app without access to a debugger](#debug-value) 
 - 2016-09-03: [Show a function's messages and warnings to the user](#show-warnings-messages)
 - 2016-09-16: [Use a custom function to convert the JavaScript data into an R object](#javascript-to-r-handler)
+- 2016-10-11: [Run arbitrary code live in Shiny - great for testing during development](#run-arbitrary-code)
