@@ -49,7 +49,9 @@ I would like to repeat and stress that I'm very new to htmlwidgets myself so it'
 
 I created a GitHub repository with a minimal functioning `timevis` htmlwidget called [`timevisBasic`](https://github.com/daattali/timevisBasic). Throughout this tutorial, I will give you tips on how to improve htmlwidgets, and we will see them in action by incrementally adding those ideas to `timevisBasic`.
 
-I recommend you take a quick look at `timevisBasic` before continuing to see what our starting point is. At the very least you should read the [README](https://github.com/daattali/timevisBasic#readme) and just take a glance at the very simple [R source file](https://github.com/daattali/timevisBasic/blob/master/R/timevisBasic.R) and [JavaScript source file](https://github.com/daattali/timevisBasic/blob/master/inst/htmlwidgets/timevisBasic.js). 
+I recommend you take a quick look at `timevisBasic` before continuing to see what our starting point is. At the very least you should read the [README](https://github.com/daattali/timevisBasic#readme) and just take a glance at the very simple [R source file](https://github.com/daattali/timevisBasic/blob/master/R/timevisBasic.R) and [JavaScript source file](https://github.com/daattali/timevisBasic/blob/master/inst/htmlwidgets/timevisBasic.js).
+
+Just to be clear: `timevis` is my proper package that you can install and use, `timevisBasic` is a stripped down version of `timevis` that's only on GitHub is used as a learning tool.
 
 ## Tip 1: Use a sensible parameter name in `renderValue(x)` instead of `x` {#rendervalue-x-name}
 
