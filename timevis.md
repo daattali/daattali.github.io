@@ -9,7 +9,7 @@ comments: true
 show-share: true
 ---
 
-I'd like to share some tips and recommendations on building htmlwidgets, based on my own learning experience while creating [`timevis`](https://github.com/daattali/timevis). These tips are mostly concerned with making your htmlwidget more useful and user friendly. In this post, every tip I provide will be followed by an actual code walk-through to see the tip being applied in a real example. 
+I'd like to share some tips and recommendations on building htmlwidgets, based on my own learning experience while creating [`timevis`](https://github.com/daattali/timevis). These tips are mostly concerned with making your htmlwidget more useful and user friendly. In this post, every tip I provide will be followed by an actual code walk-through so that you can see it applied in a real example. 
 
 Keep in mind that two weeks ago<sup><a href="#footnote">*</a></sup> I was still an htmlwidgets virgin, so I should in no way be considered an authority figure on the subject. But I did spend a long time trying to solve all sorts of problems I ran into and I ended up making an htmlwidget that has a lot of useful functionality that isn't documented anywhere, so I'm hoping that some of the things I learned can be useful for others as well.
 
