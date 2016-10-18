@@ -2,7 +2,7 @@
 layout: post
 title: "How to write a useful htmlwidgets in R: tips and walk-through a real example"
 tags: [professional, rstats, r, r-bloggers, shiny]
-date: 2016-10-18 11:00:00 -0700
+date: 2016-10-18 11:05:00 -0700
 permalink: /blog/htmlwidgets-tips/
 layout: post
 comments: true
@@ -13,7 +13,7 @@ I'd like to share some tips and recommendations on building htmlwidgets, based o
 
 Keep in mind that two weeks ago<sup><a href="#footnote">*</a></sup> I was still an htmlwidgets virgin, so I should in no way be considered an authority figure on the subject. But I did spend a long time trying to solve all sorts of problems I ran into and I ended up making an htmlwidget that has a lot of useful functionality that isn't documented anywhere, so I'm hoping that some of the things I learned can be useful for others as well.
 
-The last two tips are by far the most useful, but I kept them at the end because they're also the most complex.
+The last two tips (7 and 8) are by far the most useful, but I kept them at the end because they're also the most complex.
 
 ## Table of contents
 
