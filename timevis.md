@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to write an awesome htmlwidgets in R"
+title: "How to write a useful htmlwidgets in R"
 tags: [professional, rstats, r, r-bloggers, shiny]
 date: 2016-10-18 11:00:00 -0700
 permalink: /blog/htmlwidgets-tips/
@@ -11,7 +11,7 @@ show-share: true
 
 I'd like to share some tips and recommendations on building htmlwidgets, based on my own learning experience while creating [`timevis`](https://github.com/daattali/timevis). These tips are mostly concerned with making your htmlwidget more useful and user friendly.
 
-Keep in mind that two weeks ago[*](#footnote) I was still an htmlwidgets virgin, so I should in no way be considered an authority figure on the subject. But I did spend a long time trying to solve all sorts of problems I ran into and I ended up making an htmlwidget that has a lot of functionality that isn't documented, so I'm hoping that some of the things I learned can be useful for others as well.
+Keep in mind that two weeks ago<sup><a href="#footnote">*</a></sup> I was still an htmlwidgets virgin, so I should in no way be considered an authority figure on the subject. But I did spend a long time trying to solve all sorts of problems I ran into and I ended up making an htmlwidget that has a lot of functionality that isn't documented, so I'm hoping that some of the things I learned can be useful for others as well.
 
 The last two tips are by far the most useful, but I kept them at the end because they're also the most complex.
 
