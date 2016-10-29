@@ -6,7 +6,7 @@ tags: [professional, rstats, r, r-bloggers, shiny, tutorial, popular]
 share-img: http://deanattali.com/img/blog/shiny-tutorial/shiny-addplot.png
 ---
 
-> This tutorial was originally developed for the [STAT545](http://stat545-ubc.github.io) course at UBC, but I decided to publish it shortly afterwards so that more people can benefit from it. This version also contains new sections the original lecture didn't have.
+> I originally developed this tutorial for the [STAT545](http://stat545-ubc.github.io) course at UBC, but I decided to publish it shortly afterwards so that everyone can benefit from it. This version also contains many new sections the original lecture didn't have.
 > 
 > **If you use this material in a classroom, I'd appreciate if you link back to my site!**
 
