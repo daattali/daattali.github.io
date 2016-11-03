@@ -368,6 +368,8 @@ I use [Namecheap](https://www.namecheap.com/?aff=95702), so this is what my doma
 
 **And that's it! Now you have a nicely configured private web server with your very own RStudio and Shiny Server, and you can do anything else you'd like on it.** 
 
+If you've found this tutorial useful, please consider [supporting me](https://www.paypal.me/daattali/15) for the countless hours I've put into this tutorial :)
+
 ---
 
 ## Updates {#updates}
