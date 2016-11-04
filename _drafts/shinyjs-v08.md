@@ -1,4 +1,4 @@
-# New shinyjs version: useful tools for shiny developers and new functionality
+# Useful tools for shiny developers in the new version of shinyjs
 
 [shinyjs](https://github.com/daattali/shinyjs) is a package that helps you easily improve the user interaction and user experience in your shiny apps. It has come a long way in the 1.5 years since it was first released, and today I'm happy to announce that version is now on CRAN. This version brings two new features that are used primarily to make the process of developing a shiny app easier, along with a few more functionality improvements.
 
