@@ -1,9 +1,61 @@
 # New shinyjs version: useful tools for shiny developers and new functionality
 
-shinyjs is a package that helps you easily improve the user interaction and user experience in your shiny apps. It has come a long way in the 1.5 years since it was first released, and today I'm happy to announce a new version with a few features that I was 
+[shinyjs](https://github.com/daattali/shinyjs) is a package that helps you easily improve the user interaction and user experience in your shiny apps. It has come a long way in the 1.5 years since it was first released, and today I'm happy to announce that version is now on CRAN. This version brings two new features that are used primarily to make the process of developing a shiny app easier, along with a few more functionality improvements.
 
-added runcodeUI() and runcodeServer() functions that you can add to your app in order to run arbitrary R code interactively
-added showLog() function which lets you redirect all JavaScript logging statements to the R console, to make it easier and quicker to debug apps without having to open the JS console (#88)
-onclick and onevent now support callback functions, and the JavaScript Event object is passed to the callback (#92)
-the reset() function now works on file inputs
-added alert() as an alias for info()
+## New functions to help with shiny app development
+
+### Run arbitrary R code live in a Shiny app
+
+When I develop Shiny apps or packages for Shiny, I often find myself wanting to be able to run some R code on-demand while the app is running. Outside of Shiny, in regular R programming, we have the R console where we can run any command at any point in time, but in Shiny we don't really have that. 
+
+What I usually end up doing is create several action buttons, and make each button run a different piece of code. This works, but it's slow and tedious. A better solution that I sometimes use when I'm not too lazy is add a text input where I can type any code and run it. This works better, but requires a lot of code to set up.
+
+Wouldn't it be awesome if there was a way to run arbitrary R code on-demand while you're developing your app? Now there is! ALl you need to do is call `runcodeUI()` in your UI and `runcodeServer()` in your server, and your app will have an input that can be used to run any R command.
+
+Don't believe how easy it is? The code below is all you need.
+
+```
+shinyApp(
+    ui = fluidPage(
+        useShinyjs(),
+        strong("Enter an R expression"),
+        runcodeUI()
+    ),
+    server = function(input, output) {
+        runcodeServer()
+    }
+)
+```
+
+GIF
+
+Note that this can be useful for testing and while developing an app locally, but it should not be included in an app that is accessible to other people, as letting others run arbitrary R code can open you up to security attacks.
+
+### Redirect any console.log messages from the JavaScript console to the R console 
+
+When developing and debugging a Shiny that uses custom JavaScript code, it can be helpful to use `console.log()` messages in JavaScript. However, it can be time-consuming to have to keep opening the browser's JavaScript console in order to see the messages. Instead, you can use the new `showLog()` function to redirect JavaScript log messages to the R console.
+
+Again, using this feature is fairly simple: you need to use the `showLog = TRUE` parameter when including shinyjs, and you need to call `showLog()` somewhere in the server. The example below makes use of a function called `logjs()`, which is an old shinyjs function that does what you'd think - it sends a message to be logged to the JavaScript console.
+
+```
+shinyApp(
+  ui = fluidPage(
+    useShinyjs(showLog = TRUE),  # Set up shinyjs with showLog
+    textInput("text", "Type something")
+  ),
+  server = function(input, output) {
+    showLog()
+    observe({
+      logjs(paste("Length of text:", nchar(input$text)))
+    })
+  }
+)
+```
+
+## Feature improvements
+
+There are two main feature improvements in this version of shinyjs: 
+
+1. The `onclick()` and `onevent()` functions previously could only run an R expression when the event (mouse click, key press, mouse hover, etc) happened. This version adds support for a callback function, where the JavaScript Event object is passed to the R callback. This means that you can now get exact information about user events straight into Shiny without having to code in JavaScript at all - things like the mouse coordinates of a mouse click or what key the user pressed on the keyboard. This was requested several times in the past, and I finally got around to implementing it.
+
+2. The `reset()` function now works on file inputs. How to reset file inputs is a frequently asked questionnot only in Shiny, but in web development in general. I've seen this question come up many times in different Shiny forums, and hopefully this will work well for most users.
