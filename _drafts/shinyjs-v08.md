@@ -12,7 +12,7 @@ When I develop Shiny apps or packages for Shiny, I often find myself wanting to 
 
 What I usually end up doing is create several action buttons, and make each button run a different piece of code. This works, but it's slow and tedious. A better solution that I sometimes use when I'm not too lazy is add a text input where I can type any code and run it. This works better, but requires a lot of code to set up.
 
-Wouldn't it be awesome if there was a way to run arbitrary R code on-demand while you're developing your app? Now there is! ALl you need to do is call `runcodeUI()` in your UI and `runcodeServer()` in your server, and your app will have an input that can be used to run any R command.
+Wouldn't it be awesome if there was an easy way to run arbitrary R code on-demand while you're developing your app? Now there is! ALl you need to do is call `runcodeUI()` in your UI and `runcodeServer()` in your server, and your app will have an input that can be used to run any R command.
 
 Don't believe how easy it is? The code below is all you need.
 
