@@ -230,7 +230,9 @@ loadData <- function() {
 
 Another popular alternative to Dropbox for hosting files online is [Amazon S3](http://aws.amazon.com/s3/), or *S3* in short. Just like with Dropbox, you can host any type of file on S3, but instead of placing files inside directories, in S3 you place files inside of *buckets*. You can use the [`RAmazonS3`](http://www.omegahat.org/RAmazonS3/) package to interact with S3 from R. Note that the package is a few years old and is not under active development, so use it at your own risk.
 
-**Setup:** You need to have an [Amazon Web Services](http://aws.amazon.com/) account and to create an S3 bucket to store the responses. As the [package documentation](http://www.omegahat.org/RAmazonS3/s3amazon.html) explains, you will need to set the `AmazonS3` global option to enable authentication.
+**Setup:** You need to have an [Amazon Web Services](http://aws.amazon.com/) account and to create an S3 bucket to store the responses. As the package documentation explains, you will need to set the `AmazonS3` global option to enable authentication.
+
+**NOTE:** As of Nov 2016, it seems like this package is no longer maintained and it might be a good idea to use a different S3 package. If you know about a better S3 package, feel free to let me know and I'll update this section.
 
 **Code:**
 
