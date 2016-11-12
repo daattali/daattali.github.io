@@ -6,7 +6,7 @@ tags: [professional, rstats, r, r-bloggers, shiny, tutorial, popular]
 share-img: http://deanattali.com/img/blog/shiny-tutorial/shiny-addplot.png
 ---
 
-> I originally developed this tutorial for the [STAT545](http://stat545-ubc.github.io) course at UBC, but I decided to publish it shortly afterwards so that everyone can benefit from it. This version is also periodically being updated.
+> I originally developed this tutorial for the [STAT545](http://stat545-ubc.github.io) course at UBC, but decided to publish it shortly afterwards so that everyone can benefit from it. This version is also periodically being updated.
 > 
 > **If you use this material in a classroom, I'd appreciate if you link back to my site!**
 
@@ -16,9 +16,7 @@ You can do quite a lot with Shiny: think of it as an easy way to make an interac
 
 This tutorial is a hands-on activity complement to a set of [presentation slides](http://bit.ly/shiny-tutorial) for learning how to build Shiny apps. In this activity, we'll walk through all the steps of building a Shiny app using a dataset that lets you explore the products available at the BC Liquor Store. The final version of the app, including a few extra features that are left as exercises for the reader, [can be seen here](http://daattali.com/shiny/bcl/). Any activity deemed as an exercise throughout this tutorial is not mandatory for building our app, but they are good for getting more practice with Shiny. 
 
-This tutorial should take approximately an hour to complete. If you want even more practice, another great tutorial I highly recommend is the [official Shiny tutorial](http://shiny.rstudio.com/tutorial/). RStudio also provides a [handy cheatsheet](https://www.rstudio.com/resources/cheatsheets/) to remember all the little details after you already learned the basics.
-
-**Exercise:** Visit [ShowMeShiny.com](http://www.showmeshiny.com/), which is a gallery of user-submitted Shiny apps, and click through some of the showcased apps. Get a feel for the wide range of things you can do with Shiny.
+This tutorial should take approximately an hour to complete. If you want even more practice, another great tutorial is the [official Shiny tutorial](http://shiny.rstudio.com/tutorial/). RStudio also provides a [handy cheatsheet](https://www.rstudio.com/resources/cheatsheets/) to remember all the little details after you already learned the basics.
 
 ## Table of contents
 
@@ -58,6 +56,9 @@ runExample("01_hello")
 ```
 
 If the example app is running, press *Escape* to close the app, and you are ready to build your first Shiny app!
+
+
+**Exercise:** Visit [ShowMeShiny.com](http://www.showmeshiny.com/), which is a gallery of user-submitted Shiny apps, and click through some of the showcased apps. Get a feel for the wide range of things you can do with Shiny.
 
 # 2. Shiny app basics 
 
