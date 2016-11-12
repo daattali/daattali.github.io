@@ -26,7 +26,7 @@ This tutorial should take approximately an hour to complete. If you want even mo
 2. [Shiny app basics](#shiny-app-basics)
 3. [Create an empty Shiny app](#create-an-empty-shiny-app)
 4. [Load the dataset](#load-the-dataset)
-5. [Build the UI](#build-the-ui)
+5. [Build the basic UI](#build-the-basic-ui)
 6. [Add inputs to the UI](#add-inputs-to-the-ui)
 6. [Checkpoint: what our app looks like after implementing the UI](#checkpoint-what-our-app-looks-like-after-implementing-the-ui)
 7. [Implement server logic to create outputs](#implement-server-logic-to-create-outputs)
