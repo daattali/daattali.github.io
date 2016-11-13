@@ -98,11 +98,15 @@ You may have noticed that when you click the *Run App* button, all it's doing is
 
 **Exercise:** Try running the empty app using the `runApp()` function instead of using the *Run App* button.
 
-## 3.1 Alternate way to create app template: using RStudio
+## 3.1 Alternate way to create a Shiny app: separate UI and server files
 
-FYI: You can also create a new Shiny app using RStudio's menu by selecting *File > New Project > New Directory > Shiny Web Application*.  If you do this, RStudio will create a new folder and initialize a simple Shiny app in it.  However, this Shiny app will not have an `app.R` file and instead will have two files: `ui.R` and `server.R`. This is another way to define Shiny apps, with one file for the UI and one file for the server code.  This is the preferable way to write Shiny apps when the app is complex and involves more code, but in this tutorial we'll stick to the simple single file.  If you want to break up your app into these two files, you simple put all code that is assigned to the `ui` variable in `ui.R` and all the code assigned to the `server` function in `server.R`. When RStudio sees these two files in the same folder, it will know you're writing a Shiny app.
+Another way to define a Shiny app is by separating the UI and server code into two files: `ui.R` and `server.R`. This is the preferable way to write Shiny apps when the app is complex and involves more code, but in this tutorial we'll stick to the simple single file.  If you want to break up your app into these two files, you simply put all code that is assigned to the `ui` variable in `ui.R` and all the code assigned to the `server` function in `server.R`. When RStudio sees these two files in the same folder, it will know you're writing a Shiny app. 
 
-**Exercise:** Try creating a new Shiny app using RStudio's menu. Make sure that app runs. Next, try making a new Shiny app by manually creating the two files `ui.R` and `server.R`. Rememeber that they have to be in the same folder. Also remember to put them in a *new, isolated* folder.
+**Exercise:** Try making a new Shiny app by creating the two files `ui.R` and `server.R`. Rememeber that they have to be in the same folder. Also remember to put them in a *new, isolated* folder (not where your `app.R` already exists).
+
+## 3.2 Let RStudio fill out a Shiny app template for you
+
+You can also create a new Shiny app using RStudio's menu by selecting *File > New File > Shiny Web App...*. If you do this, RStudio will let you choose if you want a single-file app (`app.R`) or a two-file ap (`ui.R`+`server.R`). RStudio will initialize a simple functional Shiny app with some code in it.
 
 # 4. Load the dataset
 
