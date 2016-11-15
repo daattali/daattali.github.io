@@ -80,7 +80,11 @@ server <- function(input, output) {}
 shinyApp(ui = ui, server = server)
 ```
 
-This template is by itself a working minimal Shiny app that doesn't do much. It initializes an empty UI and an empty server, and runs an app using these empty parts. Copy this template into a new file named `app.R` in a new folder. It is **very important** that the name of the file is `app.R`, otherwise it would not be recognized as a Shiny app. It is also **very important** that you place this app in its own folder, and not in a folder that already has other R scripts or files, unless those other files are used by your app.
+This template is by itself a working minimal Shiny app that doesn't do much. It initializes an empty UI and an empty server, and runs an app using these empty parts. Copy this template into a new file named `app.R` in a new folder. A few things you should keep in mind:
+
+- It is **very important** that the name of the file is `app.R`, otherwise it would not be recognized as a Shiny app.
+- You should not have any R code after the `shinyApp(ui = ui, server = server)` line. That line needs to be the last line in your file.
+- It is good practice to place this app in its own folder, and not in a folder that already has other R scripts or files, unless those other files are used by your app.
 
 After saving the file, RStudio should recognize that this is a Shiny app, and you should see the usual *Run* button at the top change to *Run App*.
 
@@ -94,13 +98,17 @@ Click the stop button to stop the app, or press the *Escape* key.
 
 [![Shiny Stop App]({{ site.url }}/img/blog/shiny-tutorial/shiny-stopapp.png)]({{ site.url }}/img/blog/shiny-tutorial/shiny-stopapp.png)
 
-You may have noticed that when you click the *Run App* button, all it's doing is just running the function `shiny::runApp()` in the console. You can run that command instead of clicking the button if you prefer.
+You may have noticed that when you click the *Run App* button, all it's doing is just running the function `shiny::runApp()` in the console. You can run that command instead of clicking the button if you prefer. However, **do not** place the `runApp()` function inside the shiny app code!
+
+shiny app dir is working dir , dont put runApp inside
 
 **Exercise:** Try running the empty app using the `runApp()` function instead of using the *Run App* button.
 
 ## 3.1 Alternate way to create a Shiny app: separate UI and server files
 
-Another way to define a Shiny app is by separating the UI and server code into two files: `ui.R` and `server.R`. This is the preferable way to write Shiny apps when the app is complex and involves more code, but in this tutorial we'll stick to the simple single file.  If you want to break up your app into these two files, you simply put all code that is assigned to the `ui` variable in `ui.R` and all the code assigned to the `server` function in `server.R`. When RStudio sees these two files in the same folder, it will know you're writing a Shiny app. 
+Another way to define a Shiny app is by separating the UI and server code into two files: `ui.R` and `server.R`. This is the preferable way to write Shiny apps when the app is complex and involves more code, but in this tutorial we'll stick to the simple single file.
+
+If you want to break up your app into these two files, you simply put all code that is assigned to the `ui` variable in `ui.R` and all the code assigned to the `server` function in `server.R`. When RStudio sees these two files in the same folder, it will know you're writing a Shiny app. Note that if you use this method (instead of having one `app.R` file), then you do not need to include the `shinyApp(ui = ui, server = server)` line.
 
 **Exercise:** Try making a new Shiny app by creating the two files `ui.R` and `server.R`. Rememeber that they have to be in the same folder. Also remember to put them in a *new, isolated* folder (not where your `app.R` already exists).
 
