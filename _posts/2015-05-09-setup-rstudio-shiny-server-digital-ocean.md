@@ -378,8 +378,6 @@ If you've found this tutorial useful, please consider supporting me for the coun
   <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 
----
-
 ## Updates {#updates}
 
 **[2015-05-11]** I've gotten several people asking me if this can be a solution for hosting rmarkdown files as well. **YES it can!** Shiny Server works great as hosting .Rmd files, and you can even embed a Shiny app inside the Rmd file.  [Here's an example on my server](http://daattali.com/shiny/rbloggers-twitter/) in case you're curious.  
