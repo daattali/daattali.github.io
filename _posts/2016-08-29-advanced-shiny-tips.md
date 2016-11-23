@@ -31,6 +31,7 @@ This also seems like an appropriate place to mention that I am available for hir
   - [Select input with more breathing room](#select-input-large) ([code](https://github.com/daattali/advanced-shiny/tree/master/select-input-large))
   - [Select input with groupings of options](#dropdown-groups) ([code](https://github.com/daattali/advanced-shiny/tree/master/dropdown-groups))
   - [Getting the value of an object in a running Shiny app without access to a debugger](#debug-value) ([code](https://github.com/daattali/advanced-shiny/tree/master/debug-value))
+  - [Adding text (or inputs) to the navigation bar in a navbarPage](#navbar-add-text) ([code](https://github.com/daattali/advanced-shiny/tree/master/navbar-add-text))
 - Intermediate
   - [Pre-populate Shiny inputs when an app loads based on URL parameters](#url-inputs) ([code](https://github.com/daattali/advanced-shiny/tree/master/url-inputs))
   - [Split app code across multiple files (when codebase is large)](#split-code) ([code](https://github.com/daattali/advanced-shiny/tree/master/split-code))
@@ -128,6 +129,12 @@ This isn't really a trick as much as an [undocumented feature](https://github.co
 **[Link to code](https://github.com/daattali/advanced-shiny/tree/master/debug-value)**
 
 Sometimes you may need to know the value of some variable/function call in a Shiny app when you don't have easy access to debugging tools. For example, suppose you deploy your shiny app on shinyapps.io and it's running into a weird error there. You're sure that it's because one of the packages on the shinyapps.io server is not the version that you expect, but you want to make sure that your suspicion is correct. It's a bit difficult to debug on shinyapps.io (one thing you could do is try to use the log files), but there's a quick and easy way to see any value in a Shiny app in real-time. 
+
+<h2 id="navbar-add-text">Adding text (or inputs) to the navigation bar in a navbarPage</h2>
+
+**[Link to code](https://github.com/daattali/advanced-shiny/tree/master/navbar-add-text)**
+
+Traditionally, a `navbarPage()` only accepts tabs and menu items inside of it. Even though the Bootstrap navbar (which is what Shiny uses) supports adding text and input widgets into the navbar, Shiny doesn't have support for that. This app shows you how to very easily achieve that.
 
 <h2 id="url-inputs">Pre-populate Shiny inputs when an app loads based on URL parameters</h2>
 
