@@ -303,3 +303,4 @@ This list is slowly growing with time. Here are the new tricks added since the p
 - 2016-09-03: [Show a function's messages and warnings to the user](#show-warnings-messages)
 - 2016-09-16: [Use a custom function to convert the JavaScript data into an R object](#javascript-to-r-handler)
 - 2016-10-11: [Run arbitrary code live in Shiny - great for testing during development](#run-arbitrary-code)
+- 2016-11-23: [Adding text (or inputs) to the navigation bar in a navbarPage](#navbar-add-text)
