@@ -633,7 +633,7 @@ Now your app will run. If you want to access a reactive variable defined with `r
 
 You can think of reactivity as causing a chain reaction: when one reactive value changes, anything that depends on it will get updated. If any of the updated values are themselves reactive variables, then any reactive contexts that depend on those variables will also get updated in turn. As a concrete example, let's think about what happens when you change the value of the `priceInput` on the page. Since `input$priceInput` is a reactive variable, any expression that uses it will get updated. This means the two render functions from earlier will execute because they both depend on `input$priceInput`, as well as the `priceDiff` variable because it also depends on it. But since `priceDiff` is itself a reactive variable, Shiny will check if there is anything that depends on `priceDiff`, and indeed there is - the `observe({})` function that prints tthe value of `priceDiff`. So once `priceDiff` gets updated, the `observe({})` function will run, and the value will get printed.
 
-Reactivity is usually the hardest part about Shiny to understand, so if you don't quite get it, don't feel bad. Try reading this section again, and I promise that with time and experience you will get more comfortable with reactivity. Once you do feel more confident with reactivity, it may be a good idea to read more advanced documentation describing reactivity, since this section greatly simplifies ideas to make them more understandable. A great resource is RStudio's [tutorial on reactivity](http://shiny.rstudio.com/articles/understanding-reactivity.html).
+Reactivity is usually the hardest part about Shiny to understand, so if you don't quite get it, don't feel bad. Try reading this section again, and I promise that with time and experience you will get more comfortable with reactivity. Once you do feel more confident with reactivity, it may be a good idea to read more advanced documentation describing reactivity, since this section greatly simplifies ideas to make them more understandable. A great resource is RStudio's [tutorial on reactivity](http://shiny.rstudio.com/articles/execution-scheduling.html).
 
 Before continuing to the next section, you can remove all the `observe({})` and `reactive({})` functions we wrote in this section since they were all just for learning purposes.
 
@@ -1009,7 +1009,7 @@ Shiny is a very popular package and has lots of resources on the web. Here's a c
 - Get help from the [Shiny Google group](https://groups.google.com/forum/#!forum/shiny-discuss) or [StackOverflow](http://stackoverflow.com/questions/tagged/shiny)
 - [Publish your apps for free with shinyapps.io](http://www.shinyapps.io)
 - [Host your app on your own Shiny server](http://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean)
-- [Learn about how reactivity works](http://shiny.rstudio.com/articles/understanding-reactivity.html)
+- [Learn about how reactivity works](http://shiny.rstudio.com/articles/execution-scheduling.html)
 - [Learn about useful debugging techniques](http://shiny.rstudio.com/articles/debugging.html)
 - [Shiny tips & tricks for improving your apps and solving common problems](http://deanattali.com/blog/advanced-shiny-tips)
 
