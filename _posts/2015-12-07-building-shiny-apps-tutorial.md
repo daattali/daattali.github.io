@@ -100,8 +100,6 @@ Click the stop button to stop the app, or press the *Escape* key.
 
 You may have noticed that when you click the *Run App* button, all it's doing is just running the function `shiny::runApp()` in the console. You can run that command instead of clicking the button if you prefer. However, **do not** place the `runApp()` function inside the shiny app code!
 
-shiny app dir is working dir , dont put runApp inside
-
 **Exercise:** Try running the empty app using the `runApp()` function instead of using the *Run App* button.
 
 ## 3.1 Alternate way to create a Shiny app: separate UI and server files
