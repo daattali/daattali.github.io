@@ -54,13 +54,13 @@
 }
 
 .posts-list article {
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid #eee;
 }
 .posts-list article:last-child {
   border-bottom: 0;
 }
 .posts-list article:hover {
-  background: #eee;
+  background: #f5f5f5;
 }
 
 .post-preview {
