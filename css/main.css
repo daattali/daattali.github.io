@@ -768,7 +768,7 @@ pre code {
   outline-color: #75b57d;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 979px) {
   body.scroll-box-on footer {
     padding-bottom: 210px;
   }
