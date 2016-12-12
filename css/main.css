@@ -809,6 +809,7 @@ pre code {
 #scroll-box-contact a,
 #scroll-box-hire a {
   color: #fff;
+  font-weight: 600;
 }
 #scroll-box-contact a:hover,
 #scroll-box-hire a:hover {
