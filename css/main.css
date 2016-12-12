@@ -816,7 +816,7 @@ pre code {
   color: #f0f0f0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 979px) {
   #scroll-box {
     bottom: 48px;
     right: 0;
