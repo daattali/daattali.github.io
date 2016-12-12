@@ -720,7 +720,8 @@ pre code {
 
 @media only screen and (min-width: 768px) {
   #mailchimp-subscribe-section #mc_embed_signup label {
-    font-size: 20px;
+    font-size: 18px;
+    margin-bottom: 3px;
   }
   #mailchimp-subscribe-section #mce-EMAIL,
   #mailchimp-subscribe-section #mce-FNAME,
