@@ -664,6 +664,17 @@ pre code {
   text-align: center;
   margin-bottom: 10px;
 }
+#mailchimp-subscribe-section #mc_embed_signup .container {
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+#mailchimp-subscribe-section #mc_embed_signup .container .row,
+#mailchimp-subscribe-section #mc_embed_signup .container .row .col-xs-4,
+#mailchimp-subscribe-section #mc_embed_signup .container .row .xol-xs-8 {
+  padding: 0;
+  margin: 0;
+}
 #mailchimp-subscribe-section #mc_embed_signup label {
   font-size: 16px;
   margin-bottom: 7px;
@@ -680,16 +691,8 @@ pre code {
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
-  margin: 0;
-}
-#mailchimp-subscribe-section #mce-EMAIL {
-  width: 200px;
-}
-#mailchimp-subscribe-section #mce-FNAME {
-  width: 115px;
-  float: right;
-  margin-left: 5px;
-  margin-bottom: 5px;
+  margin: 0 0 5px;
+  width: 100%;
 }
 #mailchimp-subscribe-section #mc-embedded-subscribe {
   border-radius: 3px;
@@ -733,12 +736,6 @@ pre code {
   #mailchimp-subscribe-section #mce-EMAIL,
   #mailchimp-subscribe-section #mce-FNAME {
     margin-bottom: 3px;
-  }
-  #mailchimp-subscribe-section #mce-EMAIL,
-  #mailchimp-subscribe-section #mce-FNAME,
-  #mailchimp-subscribe-section #mc-embedded-subscribe {
-    display: block;
-    width: 100%;
   }
 }
 
