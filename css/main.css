@@ -667,7 +667,6 @@ pre code {
   margin-bottom: 7px;
   font-weight: bold;
   display: block;
-  display: none;
 }
 #mailchimp-subscribe-section #mce-EMAIL,
 #mailchimp-subscribe-section #mce-FNAME {
@@ -683,22 +682,25 @@ pre code {
 }
 #mailchimp-subscribe-section #mce-EMAIL {
   width: 200px;
+  
 }
 #mailchimp-subscribe-section #mce-FNAME {
   width: 115px;
 }
 #mailchimp-subscribe-section #mc-embedded-subscribe {
   border-radius: 3px;
+  font-weight: bold;
   border: 1px solid #ABB0B2;
   color: #2c8a3d;
   background-color: #fff;
   box-sizing: border-box;
   padding: 0 18px;
-  display: inline-block;
+  display: block;
   vertical-align: top;
   transition: all 0.23s ease-in-out 0s;
   margin: 0; 
   letter-spacing: 1px;
+  width: 100%;
 }
 #mailchimp-subscribe-section #mc-embedded-subscribe:hover {
   background-color: #f8f8f8;
