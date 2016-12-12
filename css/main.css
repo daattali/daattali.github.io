@@ -665,6 +665,17 @@ pre code {
   text-align: center;
   margin-bottom: 10px;
 }
+#mailchimp-subscribe-section-2 {
+  border-top: 0 none;
+  width: 50%;
+  margin: 15px auto 0;
+}
+@media only screen and (max-width: 500px) {
+  #mailchimp-subscribe-section-2 {
+    width: 100%;
+    margin: 0;
+  }
+}
 #mailchimp-subscribe-section #mc_embed_signup .container,
 #mailchimp-subscribe-section-2 #mc_embed_signup-2 .container {
   width: auto;
