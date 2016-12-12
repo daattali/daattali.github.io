@@ -657,7 +657,9 @@ pre code {
 /* --- Email subscription --- */
 
 #mailchimp-subscribe-section {
-  margin-top: 15px;
+  margin-top: 10px;
+  border-top: 3px double #fff;
+  padding-top: 10px;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: center;
   margin-bottom: 10px;
@@ -665,7 +667,7 @@ pre code {
 #mailchimp-subscribe-section #mc_embed_signup label {
   font-size: 16px;
   margin-bottom: 7px;
-  font-weight: bold;
+  font-weight: normal;
   display: block;
 }
 #mailchimp-subscribe-section #mce-EMAIL,
@@ -682,10 +684,13 @@ pre code {
 }
 #mailchimp-subscribe-section #mce-EMAIL {
   width: 200px;
-  
+  float: left;
 }
 #mailchimp-subscribe-section #mce-FNAME {
   width: 115px;
+  float: right;
+  margin-left: 5px;
+  margin-bottom: 5px;
 }
 #mailchimp-subscribe-section #mc-embedded-subscribe {
   border-radius: 3px;
@@ -834,7 +839,6 @@ pre code {
     top: 12px;
   }
   #mailchimp-subscribe-section {
-    margin-top: 10px;
     margin-bottom: 7px;
   }
 }
