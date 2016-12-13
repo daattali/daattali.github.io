@@ -16,7 +16,7 @@ and in my completely unbiased opinion this theme is beautiful, I chose the name 
 You can view a [demo of the template](http://deanattali.com/beautiful-jekyll/) and use it right away if you want. **Please do, it'll
 make me feel important :)**
 
-> UPDATE December 2016: Thank you everybody for making me feel important! I initially thought that 3 people using my theme would be considered success, but it's been used by well over 1000 people already, so apparently this wasn't a waste of time like I thought!
+> UPDATE December 2016: Thank you everybody for making me feel important! I initially thought that 3 people using my theme would be considered success, but it's been used by well over 1000 people already. Apparently this wasn't a waste of time!
 
 This is what your site will look like right off the bat:
 [![Beautiful Jekyll]({{ site.url }}/img/blog/beautiful-jekyll.png)]({{ site.url }}/img/blog/beautiful-jekyll.png)
