@@ -16,6 +16,8 @@ and in my completely unbiased opinion this theme is beautiful, I chose the name 
 You can view a [demo of the template](http://deanattali.com/beautiful-jekyll/) and use it right away if you want. **Please do, it'll
 make me feel important :)**
 
+> UPDATE December 2016: Thank you everybody for making me feel important! I initially thought that 3 people using my theme would be considered success, but it's been used by well over 1000 people already, so apparently this wasn't a waste of time like I thought!
+
 This is what your site will look like right off the bat:
 [![Beautiful Jekyll]({{ site.url }}/img/blog/beautiful-jekyll.png)]({{ site.url }}/img/blog/beautiful-jekyll.png)
 
@@ -68,4 +70,4 @@ It can be beneficial to add a sitemap to your site so that Google will know exac
 
 ## Final notes on Jekyll
 
-While this site is built with Jekyll, I chose to (at least for now) keep it simple and let GitHub Pages compile Jekyll for me instead of installing and running it locally. I was on the fence about this because GitHub Pages does not support any custom plugins and there is one plugin I really want to write (and also you just have much more power and flexibility if you run Jekyll yourself), but I decided to let simplicity win this battle, with the benefit of being able to quickly update my site easily from any computer.  The plugin I wanted to add is a way to recognize whether or not a given file path is internal to the site or an absolute URL.  It would just make some of the templates less verbose and simpler if I could do that, but for now basic Jekyll'l do. Jekyll will = Jekyll'l, right? I think I just found today's weirdest word...
+While this site is built with Jekyll, I chose to (at least for now) keep it simple and let GitHub Pages compile Jekyll for me instead of installing and running it locally. I was on the fence about this because GitHub Pages does not support any custom plugins and there is one plugin I really want to write (and also you just have much more power and flexibility if you run Jekyll yourself), but I decided to let simplicity win this battle, with the benefit of being able to quickly update my site easily from any computer.  The plugin I wanted to add is a way to recognize whether or not a given file path is internal to the site or an absolute URL.  It would just make some of the templates less verbose and simpler if I could do that, but for now basic Jekyll'll do. Jekyll will = Jekyll'll, right? I think I just found today's weirdest word...
