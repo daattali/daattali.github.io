@@ -10,7 +10,7 @@ About a month ago I made [an announcement](http://deanattali.com/2015/04/23/shin
 
 # Important note
 
-**The package has improved a lot since writing this post. I highly recommend you stop reading this page and instead go the [up-to-date README on GitHub](https://github.com/daattali/shinyjs#readme).**
+**The package has improved a lot since writing this post. I highly recommend you stop reading this page and instead go the [shinyjs website](http://deanattali.com/shinyjs).**
 
 <div style="text-align:center;">
 <a style="text-decoration: none;" class="btn btn-success btn-lg" href="https://github.com/daattali/shinyjs#readme">Go to updated README</a>
