@@ -18,13 +18,15 @@ I'm also [**available for consulting**](/shiny), so feel free to [contact me](/c
 
 ## R Shiny apps
 
-If you got here after reading some of my blog posts, you'll know that I'm a big fan and advocate of Shiny. I also help many people and companies with Shiny. You can see a sample of Shiny apps I've built [on my personal Shiny server](/shiny).
+If you got here after reading some of my blog posts, you'll know that I'm a big fan and advocate of Shiny. I also help many people and companies with Shiny. You can see a sample of the Shiny apps I've built for my self [on my personal Shiny server](/shiny).
 
 ## R packages
 
 - **[shinyjs](http://deanattali.com/shinyjs)** - Easily improve UX in your Shiny apps, adds useful features to Shiny apps, and call your own JavaScript functions using plain R code.  Also includes a colour picker.  Check out a [demo online](http://deanattali.com/shinyjs/demo). Available [on CRAN](https://cran.r-project.org/package=shinyjs) and [on GitHub](https://github.com/daattali/shinyjs).
 
 - **[timevis](https://github.com/daattali/timevis)** - Create interactive timeline visualizations in R (can be embedded into Shiny apps and R markdown documents, or simply viewed from the R console). Check out a [demo online](http://daattali.com/shiny/timevis-demo/). Available [on CRAN](https://cran.r-project.org/package=timevis) and [on GitHub](https://github.com/daattali/timevis).
+
+- **[colourpicker](https://github.com/daattali/colourpicker)** - A colour picker tool for Shiny and for selecting colours in plots. Available [on CRAN](https://cran.r-project.org/package=colourpicker) and [on GitHub](https://github.com/daattali/colourpicker).
 
 - **[addinslist](https://github.com/daattali/addinslist)** - Browse through a continuously updated list of existing RStudio addins and install/uninstall their corresponding packages. Available [on CRAN](https://cran.r-project.org/package=addinslist) and [on GitHub](https://github.com/daattali/addinslist).
 
