@@ -31,4 +31,4 @@ Here is a short demo of the tool:
 
 Fun fact: this tool was born thanks to my girlfriend's blunt feedback. I had previously made a Colour Picker addin, which lets you select colours in RStudio and get the resulting colour list as a vector. When I saw my girlfriend creating lots of plots for her thesis and spending a lot of time on colour selecting and re-plotting, I told her she can use my Colour Picker to help with the process. She told me that it's pretty much useless since she can't actually see the plot update while choosing colours. So me, being the best boyfriend in the universe (and an R addict), I immediately proceeded to create the Plot Colour Helper for her. And for all of you!
 
-Happy 2017 everybody, I hope you find this addin useful, and as always - [feedback is welcomed](http://deanattali.com/contact/).
+Go ahead and install [`colourpicker`](https://github.com/daattali/colourpicker) to get started. I hope you find this addin useful, and as always - [feedback is welcomed](http://deanattali.com/contact/).
