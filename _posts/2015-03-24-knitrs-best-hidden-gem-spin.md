@@ -55,7 +55,7 @@ I'm not trying to say that `knit` has no place - it's very popular for a good re
 
 ### Example
 
-Ever since my supervisor [Jenny Bryan](http://www.stat.ubc.ca/~jenny/) told me about `spin`, I've been using it extensively and it has replaced my use of `knit` in many circumstances. Every time I have some code that I need to show in a nice format to someone else, I just add some text with `#'` and add code chunk options where needed.
+Ever since my supervisor [Jenny Bryan](https://twitter.com/JennyBryan) told me about `spin`, I've been using it extensively and it has replaced my use of `knit` in many circumstances. Every time I have some code that I need to show in a nice format to someone else, I just add some text with `#'` and add code chunk options where needed.
 
 For example, [here](https://github.com/daattali/UBC-STAT545/blob/master/hw/hw12_web-scraping-api/hw12_web-scraping-api.md) is the markdown output from using `spin` on [this](https://github.com/daattali/UBC-STAT545/blob/master/hw/hw12_web-scraping-api/hw12_web-scraping-api.R) R file. It would have been a lot of work to make a Rmd file after writing all the R code, and it would have been annoying to change both files any time in the future.
 
