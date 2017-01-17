@@ -1,5 +1,9 @@
 gadget vs addin
 
+blog post about how to inject resources into app that need to exist only once (used in showLog and in shinyalert)
+
+rstudio::conf
+
 ---
 
 media affects what we think/talk about (ebola)
