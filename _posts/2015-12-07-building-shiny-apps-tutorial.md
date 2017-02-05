@@ -505,7 +505,7 @@ output$coolplot <- renderPlot({
 })
 ```
 
-Place this code in your server function and run the app. If you change any input, you should see the histogram update. The way I know the histogram is correct is by noticing that the alcohol content is about 5% when I selecte beer, 40% for spirits, and 13% for wine. That sounds right.
+Place this code in your server function and run the app. If you change any input, you should see the histogram update. The way I know the histogram is correct is by noticing that the alcohol content is about 5% when I select beer, 40% for spirits, and 13% for wine. That sounds right.
 
 Read this code and understand it. You've successfully created an interactive app - the plot is changing according to the user's selection.
 
