@@ -468,7 +468,7 @@ Replace the previous code in your server function with this code, and run the ap
 
 What does this mean? Just like the variable `output` contains a list of all the outputs (and we need to assign code into them), the variable `input` contains a list of all the inputs that are defined in the UI. `input$priceInput` return a vector of length 2 containing the miminimum and maximum price. Whenever the user manipulates the slider in the app, these values are updated, and whatever code relies on it gets re-evaluated. This is a concept known as [**reactivity**](#reactivity-101), which we will get to in a few minutes.
 
-Notice that these short 3 lins of code are using all the 3 rules for building outputs: we are saving to the `output` list (`output$coolplot <-`), we are using a `render*` function to build the output (`renderPlot({})`), and we are accessing an input value (`input$priceInput[1]`). 
+Notice that these short 3 lines of code are using all the 3 rules for building outputs: we are saving to the `output` list (`output$coolplot <-`), we are using a `render*` function to build the output (`renderPlot({})`), and we are accessing an input value (`input$priceInput[1]`). 
 
 ## 9.3 Building the plot output
 
