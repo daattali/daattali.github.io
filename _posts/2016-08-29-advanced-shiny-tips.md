@@ -10,7 +10,7 @@ comments: true
 show-share: true
 ---
 
-This document contains a collection of various Shiny tricks that I commonly use or that I know many people ask about. Each link contains a complete functional Shiny app that demonstrates how to perform a non trivial task in Shiny. The complete up-to-date list of tips, along with all the code, is [on GitHub](https://github.com/daattali/advanced-shiny#readme).
+This document contains a collection of various Shiny tricks that I commonly use or that I know many people ask about. Each link contains a complete functional Shiny app that demonstrates how to perform a non trivial task in Shiny. **The complete up-to-date list of tips, along with all the code, is [on GitHub](https://github.com/daattali/advanced-shiny#readme).**
 
 <a class="btn btn-lg btn-success" href="https://github.com/daattali/advanced-shiny#readme">Click here to see the most up-to-date list of tips</a>
 
@@ -304,3 +304,4 @@ This list is slowly growing with time. Here are the new tricks added since the p
 - 2016-09-16: [Use a custom function to convert the JavaScript data into an R object](#javascript-to-r-handler)
 - 2016-10-11: [Run arbitrary code live in Shiny - great for testing during development](#run-arbitrary-code)
 - 2016-11-23: [Adding text (or inputs) to the navigation bar in a navbarPage](#navbar-add-text)
+- 2017: I am no longer updating this article - for the updated list, [click here](https://github.com/daattali/advanced-shiny#readme)
