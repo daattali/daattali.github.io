@@ -314,7 +314,7 @@ radioButtons("typeInput", "Product type",
 
 Add this input code inside `sidebarPanel()`, after the previous input (separate them with a comma).
 
-> If you look at that input function and think "what if there were 100 types, listing them by hand would not be fun, there's got to be a better way!", then you're right.  This is where [`uiOutput()`](#using-uioutput-to-create-ui-elements-dynamically) comes in handy, but we'll talk about that later.
+> If you look at that input function and think "what if there were 100 types, listing them by hand would not be fun, there's got to be a better way!", then you're right.  This is where [`uiOutput()`](#11-using-uioutput-to-create-ui-elements-dynamically) comes in handy, but we'll talk about that later.
 
 ## 6.3 Input for country
 
@@ -466,7 +466,7 @@ output$coolplot <- renderPlot({
 
 Replace the previous code in your server function with this code, and run the app. Whenever you choose a new minimum price range, the plot will update with a new number of points. Notice that the only thing different in the code is that instead of using the number `100` we are using `input$priceInput[1]`. 
 
-What does this mean? Just like the variable `output` contains a list of all the outputs (and we need to assign code into them), the variable `input` contains a list of all the inputs that are defined in the UI. `input$priceInput` return a vector of length 2 containing the miminimum and maximum price. Whenever the user manipulates the slider in the app, these values are updated, and whatever code relies on it gets re-evaluated. This is a concept known as [**reactivity**](#reactivity-101), which we will get to in a few minutes.
+What does this mean? Just like the variable `output` contains a list of all the outputs (and we need to assign code into them), the variable `input` contains a list of all the inputs that are defined in the UI. `input$priceInput` return a vector of length 2 containing the miminimum and maximum price. Whenever the user manipulates the slider in the app, these values are updated, and whatever code relies on it gets re-evaluated. This is a concept known as [**reactivity**](#10-reactivity-101), which we will get to in a few minutes.
 
 Notice that these short 3 lines of code are using all the 3 rules for building outputs: we are saving to the `output` list (`output$coolplot <-`), we are using a `render*` function to build the output (`renderPlot({})`), and we are accessing an input value (`input$priceInput[1]`). 
 
