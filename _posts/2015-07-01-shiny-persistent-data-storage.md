@@ -238,7 +238,7 @@ Another popular alternative to Dropbox for hosting files online is [Amazon S3](h
 library(aws.s3)
 
 s3BucketName <- "my-unique-s3-bucket-name"
-Sys.setenv("AWS_ACCESS_KEY_ID" = "key,
+Sys.setenv("AWS_ACCESS_KEY_ID" = "key",
            "AWS_SECRET_ACCESS_KEY" = "secret",
            "AWS_DEFAULT_REGION" = "region")
 
