@@ -476,7 +476,7 @@ The following table can serve as a reminder of the different storage types and w
 |-------------------|----------------------|:-------------:|:--------------:|--------------|
 | Local file system | Arbitrary data       |      YES      |                | -            |
 | Dropbox           | Arbitrary data       |               |       YES      | rdrop2       |
-| Amazon S3         | Arbitrary data       |               |       YES      | RAmazonS3    |
+| Amazon S3         | Arbitrary data       |               |       YES      | aws.s3       |
 | SQLite            | Structured data      |      YES      |                | RSQLite      |
 | MySQL             | Structured data      |      YES      |       YES      | RMySQL       |
 | Google Sheets     | Structured data      |               |       YES      | googlesheets |
