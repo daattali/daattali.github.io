@@ -136,7 +136,7 @@ Here is a summary of the different storage types we will learn to use.
 |-------------------|----------------------|:-------------:|:--------------:|--------------|
 | Local file system | Arbitrary data       |      YES      |                | -            |
 | Dropbox           | Arbitrary data       |               |       YES      | rdrop2       |
-| Amazon S3         | Arbitrary data       |               |       YES      | RAmazonS3    |
+| Amazon S3         | Arbitrary data       |               |       YES      | aws.s3       |
 | SQLite            | Structured data      |      YES      |                | RSQLite      |
 | MySQL             | Structured data      |      YES      |       YES      | RMySQL       |
 | Google Sheets     | Structured data      |               |       YES      | googlesheets |
@@ -228,44 +228,46 @@ loadData <- function() {
 
 ### 3. Amazon S3 (**remote**) {#s3}
 
-Another popular alternative to Dropbox for hosting files online is [Amazon S3](http://aws.amazon.com/s3/), or *S3* in short. Just like with Dropbox, you can host any type of file on S3, but instead of placing files inside directories, in S3 you place files inside of *buckets*. You can use the [`RAmazonS3`](http://www.omegahat.org/RAmazonS3/) package to interact with S3 from R. Note that the package is a few years old and is not under active development, so use it at your own risk.
+Another popular alternative to Dropbox for hosting files online is [Amazon S3](http://aws.amazon.com/s3/), or *S3* in short. Just like with Dropbox, you can host any type of file on S3, but instead of placing files inside directories, in S3 you place files inside of *buckets*. You can use the [`aws.s3`](https://github.com/cloudyr/aws.s3) package to interact with S3 from R. Note that the package is not yet on CRAN so you will have to look at its README for installation instructions.
 
-**Setup:** You need to have an [Amazon Web Services](http://aws.amazon.com/) account and to create an S3 bucket to store the responses. As the package documentation explains, you will need to set the `AmazonS3` global option to enable authentication.
-
-**NOTE:** As of Nov 2016, it seems like this package is no longer maintained and it might be a good idea to use a different S3 package. If you know about a better S3 package, feel free to let me know and I'll update this section.
+**Setup:** You need to have an [Amazon Web Services](http://aws.amazon.com/) account and to create an S3 bucket to store the responses. As the [package documentation explains](https://github.com/cloudyr/aws.s3), you will need to set a few environment variables in order to call the API.
 
 **Code:**
 
 ```r
-library(RAmazonS3)
+library(aws.s3)
 
 s3BucketName <- "my-unique-s3-bucket-name"
-options(AmazonS3 = c('login' = "secret"))
+Sys.setenv("AWS_ACCESS_KEY_ID" = "key,
+           "AWS_SECRET_ACCESS_KEY" = "secret",
+           "AWS_DEFAULT_REGION" = "region")
 
 saveData <- function(data) {
-  # Create a unique file name
-  fileName <- sprintf("%s_%s.csv", as.integer(Sys.time()), digest::digest(data))
-  # Upload the data to S3
-  addFile(
-    I(paste0(
-      paste(names(data), collapse = ","), 
-      "\n",
-      paste(data, collapse = ",")
-    )),
-    s3BucketName, 
-    fileName,
-    virtual = TRUE
+  # Create a temporary file to hold the data
+  data <- t(data)
+  file_name <- paste0(
+    paste(
+      get_time_human(),
+      digest(data, algo = "md5"),
+      sep = "_"
+    ),
+    ".csv"
   )
+  file_path <- file.path(tempdir(), file_name)
+  write.csv(data ,file_path, row.names = FALSE, quote = TRUE)
+
+  # Upload the file to S3
+  put_object(file = file_path, object = file_name, bucket = s3BucketName)
 }
 
 loadData <- function() {
   # Get a list of all files
-  files <- listBucket(s3BucketName)$Key
-  files <- as.character(files)
+  file_names <- get_bucket_df(s3BucketName)[["Key"]]
   # Read all files into a list
-  data <- lapply(files, function(x) {
-      raw <- getFile(s3BucketName, x, virtual = TRUE)
-      read.csv(text = raw, stringsAsFactors = FALSE)
+  data <- lapply(file_names, function(x) {
+    object <- get_object(x, s3BucketName)
+    object_data <- readBin(object, "character")
+    read.csv(text = object_data, stringsAsFactors = FALSE)
   })
   # Concatenate all data together into one data.frame
   data <- do.call(rbind, data)
