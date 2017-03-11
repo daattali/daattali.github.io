@@ -243,8 +243,12 @@ Sys.setenv("AWS_ACCESS_KEY_ID" = "key",
            "AWS_DEFAULT_REGION" = "region")
 
 saveData <- function(data) {
-  # Create a temporary file to hold the data
-  data <- t(data)
+  # Create a plain-text representation of the data
+  data <- paste0(
+    paste(names(data), collapse = ","), "\n",
+    paste(unname(data), collapse = ",")
+  )
+
   file_name <- paste0(
     paste(
       get_time_human(),
@@ -253,11 +257,9 @@ saveData <- function(data) {
     ),
     ".csv"
   )
-  file_path <- file.path(tempdir(), file_name)
-  write.csv(data ,file_path, row.names = FALSE, quote = TRUE)
 
   # Upload the file to S3
-  put_object(file = file_path, object = file_name, bucket = s3BucketName)
+  put_object(file = charToRaw(data), object = file_name, bucket = s3_bucket_name)
 }
 
 loadData <- function() {
