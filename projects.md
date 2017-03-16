@@ -42,6 +42,10 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 *Many of my R packages/tutorials/thoughts are graciously shared on [R-bloggers](http://www.r-bloggers.com/), which is a great resource for any useR.*
 
+## Courses
+
+I'm creating an online course on Case Studies with Shiny together with [DataCamp](https://www.datacamp.com), an interactive platform to [learn R](https://www.datacamp.com/courses/free-introduction-to-r) and data science.
+
 ## Chrome extensions
 
 - **[GitHub Diff Navigator](https://github.com/daattali/github-diff-navigator-extension)** - allows you to easily navigate through the changes in a file that has been edited on GitHub.  Especially useful when editing a markdown file within the browser, as GitHub will only show you the full changed file but not show you *where* the edits were made. I find this very helpful every time I make small edits to someone else's large markdown document.  [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/github-diff-navigator/aoojogkiedabnddmokieplfnmjehlneo)
