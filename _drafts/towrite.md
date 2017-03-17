@@ -6,6 +6,8 @@ rstudio::conf
 
 ask digitalocean or rstudio if they want a post explaining how to set up RStudio Connect on DO
 
+debugging shiny: options(shiny.sanitize.errors = FALSE) , preserve_logs option, cat, installed_packages() in UI
+
 ---
 
 media affects what we think/talk about (ebola)
