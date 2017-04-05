@@ -7,7 +7,7 @@ share-img: http://deanattali.com/img/blog/digital-ocean/rstudio.png
 permalink: /2015/05/09/setup-rstudio-shiny-server-digital-ocean/
 ---
 
-> Many people ask me to set up their Shiny Server for them or ask for a one-on-one walk-through of these instructions. If you want such help, I'm [available for hire]({{ site.url }}/shiny).
+> Many people ask me to set up their Shiny Server for them or ask for a one-on-one walk-through of these instructions. If you want such help, or just general consultation about using Shiny Server, I'm [available for hire]({{ site.url }}/shiny).
 
 If you've always wanted to have an RStudio Server of your own so that you can access R from anywhere, or your own Shiny Server to host your awesome shiny apps or Rmarkdown documents, [DigitalOcean](https://m.do.co/c/358494f80b99) (DO) can help you get there easily. For example, take a look at [my Shiny Server](http://daattali.com/shiny/) to see how useful this can be.
 
@@ -31,6 +31,7 @@ This post will cover how to set up a machine from scratch, set up R, RStudio Ser
   - [Step 8.1: Set up proper user permissions on Shiny Server](#shiny-user-perms)
   - [Step 8.2: Populate Shiny Server with Shiny apps using a git repository](#shiny-git)
   - [Note 8.3: Shiny Server Open Source vs Shiny Server Pro](#server-pro)
+  - [Note 8.4: Hosting R Markdown (Rmd) documents on your Shiny Server](#host-rmd)
 - [Step 9: Make pretty URLs for RStudio Server and Shiny Server](#reverse-proxy)
 - [Step 10: Custom domain name](#custom-domain)
 - [Updates](#updates)
@@ -290,6 +291,12 @@ In this tutorial we installed Shiny Server Open Source, which is a free offering
 
 If you're just an individual playing around with shiny and want to host some of your personal apps (like myself), then using the Open Source version is perfectly fine. But if you're looking to use a shiny server in your company, or if you require some more features such as user authentication (login), scaling (supporting multiple users at the same time), and monitoring, then I highly suggest you take a look at at Shiny Server Pro. Most of you will be fine with the free version, but you can contact me if you want to discuss the advantages of using Pro.
 
+## Note 8.4: Hosting R Markdown (Rmd) documents on your Shiny Server {#host-rmd}
+
+Shiny Server is useful not only for hosting Shiny applications, but also for hosting R markdown (Rmd) documents. These R markdown documents can either be regular plain R markdown docs, or [interactive Rmarkdown documents](http://rmarkdown.rstudio.com/authoring_shiny.html).
+
+If you place an Rmarkdown file with the exact name of `index.Rmd` in any folder under your shiny server, you can access it by going to that folder's URL. For example, `/srv/shiny-server/hello/index.Rmd` would be accessible at `http://123.456.1.2:3838/hello/`. If your Rmd document has any other name then you will need to specify the exact path to - for example, `/srv/shiny-server/hello/world.Rmd` would be shown at `http://123.456.1.2:3838/hello/world.Rmd`. 
+
 # Step 9: Make pretty URLs for RStudio Server and Shiny Server {#reverse-proxy}
 
 This is optional and a little more advanced. You might have noticed that to access both RStudio and Shiny Server, you have to remember weird port numbers (`:8787` and `:3838`). Not only is it hard and ugly to remember, but some workplace environments often block access to those ports, which means that many people/places won't be able to access these pages. The solution is to use a reverse proxy, so that nginx will listen on port 80 (default HTTP port) at the URL `/shiny` and will *internally* redirect that to port 3838. Same for RStudio - we can have nginx listen at `/rstudio` and redirect it to port 8787. This is why my Shiny apps can be reached at [daattali.com/shiny/](http://daattali.com/shiny/) which is an easy URL to type, but also at [daattali.com:3838](http://daattali.com:3838).
@@ -401,6 +408,8 @@ If you've found this tutorial useful, please consider supporting me for the coun
 **[2016-03-10]** There was an article today about how to [add authentication to Shiny Server using nginx](http://www.datascienceriot.com/add-authentication-to-shiny-server-with-nginx/).  I haven't tried it, but it looks like a great resource if you want to add authentication to your apps.
 
 **[2016-10-09]** Added a [small section](#server-pro) on Shiny Server Pro.
+
+**[2017-04-04]** Added a [section](#host-rmd) on hosting Rmd files on a shiny server.
 
 # Resources {#resources}
 
