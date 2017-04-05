@@ -295,7 +295,7 @@ If you're just an individual playing around with shiny and want to host some of 
 
 Shiny Server is useful not only for hosting Shiny applications, but also for hosting R markdown (Rmd) documents. These R markdown documents can either be regular plain R markdown docs, or [interactive Rmarkdown documents](http://rmarkdown.rstudio.com/authoring_shiny.html).
 
-If you place an Rmarkdown file with the exact name of `index.Rmd` in any folder under your shiny server, you can access it by going to that folder's URL. For example, `/srv/shiny-server/hello/index.Rmd` would be accessible at `http://123.456.1.2:3838/hello/`. If your Rmd document has any other name then you will need to specify the exact path to - for example, `/srv/shiny-server/hello/world.Rmd` would be shown at `http://123.456.1.2:3838/hello/world.Rmd`. 
+If you place an Rmarkdown file with the exact name of `index.Rmd` in any folder under your shiny server, you can access it by going to that folder's URL. For example, `/srv/shiny-server/hello/index.Rmd` would be accessible at `http://123.456.1.2:3838/hello/`. If your Rmd document has any other name then you will need to specify the exact path to it - for example, `/srv/shiny-server/hello/world.Rmd` would be shown at `http://123.456.1.2:3838/hello/world.Rmd`. 
 
 # Step 9: Make pretty URLs for RStudio Server and Shiny Server {#reverse-proxy}
 
