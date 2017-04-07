@@ -70,6 +70,17 @@
           </li>
           {% endif %}
 
+          {% if site.author.calendly and site.footer-links-active.calendly %}
+          <li>
+            <a href="https://calendly.com/{{ site.author.calendly }}" title="Schedule a meeting with me">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-calendar-check-o fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          {% endif %}
+
           {% if site.footer-links-active.rss %}
           <li>
             <a href="{{ '/feed.xml' | prepend: site.baseurl }}" title="Subscribe to my blog">
@@ -91,6 +102,11 @@
           {% if site.author.email %}
           &nbsp;&bull;&nbsp;
           <a href="mailto:{{ site.author.email }}?subject=Hello from {{ site.url-pretty }}">{{ site.author.email }}</a>
+          {% endif %}
+
+          {% if site.author.calendly and site.footer-links-active.calendly %}
+           &nbsp;&bull;&nbsp;
+          <a href="https://calendly.com/{{ site.author.calendly }}">Schedule a meeting with me</a>
           {% endif %}
         </p>
         <p class="theme-by text-muted">
