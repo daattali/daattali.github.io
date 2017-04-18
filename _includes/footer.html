@@ -81,6 +81,18 @@
           </li>
           {% endif %}
 
+        {% if site.author.telephone and site.footer-links-active.telephone %}
+          <li>
+            <a href="tel:{{ site.author.telephone }}" title="Phone">
+              <span class="fa-stack fa-lg" aria-hidden="true">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+              </span>
+              <span class="sr-only">Phone</span>
+            </a>
+          </li>
+          {% endif %}
+
           {% if site.footer-links-active.rss %}
           <li>
             <a href="{{ '/feed.xml' | prepend: site.baseurl }}" title="Subscribe to my blog">
