@@ -4,7 +4,7 @@ blog post about how to inject resources into app that need to exist only once (u
 
 rstudio::conf
 
-ask digitalocean or rstudio if they want a post explaining how to set up RStudio Connect on DO
+what do curly braces means (on.exit, observe(), suppressstartupwarnings)
 
 debugging shiny: options(shiny.sanitize.errors = FALSE) , preserve_logs option, cat, installed_packages() in UI
 
