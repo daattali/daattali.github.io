@@ -8,6 +8,8 @@ what do curly braces means (on.exit, observe(), suppressstartupwarnings)
 
 debugging shiny: options(shiny.sanitize.errors = FALSE) , preserve_logs option, cat, installed_packages() in UI
 
+followup post to shiny server setup: how to develop apps/get your apps onto your server
+
 ---
 
 media affects what we think/talk about (ebola)
