@@ -10,6 +10,8 @@ debugging shiny: options(shiny.sanitize.errors = FALSE) , preserve_logs option, 
 
 followup post to shiny server setup: how to develop apps/get your apps onto your server
 
+shinymodules: what i wrote in hackfest for thibaut, plus a file input that automatically resets after upload
+
 ---
 
 media affects what we think/talk about (ebola)
