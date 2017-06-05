@@ -6,9 +6,9 @@ tags: [professional, rstats, r, r-bloggers, shiny, tutorial, popular]
 share-img: http://deanattali.com/img/blog/shiny-tutorial/shiny-addplot.png
 ---
 
-> **If you use this material in a classroom, I'd appreciate if you link back to my site!**
+> If you use this material in a classroom, I'd appreciate if you link back to my site!
 >
-> If you want tutoring/training in Shiny or need help with building a Shiny app, I'm [available for hire](http://deanattali.com/shiny/).
+> **If you want tutoring/training in Shiny or need help with building a Shiny app, I'm [available for hire](http://deanattali.com/shiny/).**
 
 Shiny is a package from RStudio that can be used to build interactive web pages with R. While that may sound scary because of the words "web pages", it's geared to R users who have 0 experience with web development, and you do not need to know any HTML/CSS/JavaScript.
 
