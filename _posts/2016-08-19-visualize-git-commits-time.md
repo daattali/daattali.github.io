@@ -11,7 +11,9 @@ comments: true
 show-share: true
 ---
 
+<div style="text-align:center;">
 <a class="btn btn-lg btn-success" href="https://daattali.com/shiny/visualize-git-commits-time/">Click here to explore the data yourself</a>
+</div>
 
 Yesterday I saw [this retweet](https://t.co/u3uHy6a9d4) from [@timelyportfolio](https://twitter.com/timelyportfolio) that links to a [gist by @gka](https://gist.github.com/gka/393f5ab2b95e927d305eb6e14767180e).
 
