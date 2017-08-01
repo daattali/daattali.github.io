@@ -17,6 +17,8 @@ In a nutshell, [Shiny](http://shiny.rstudio.com/) is a package that lets you run
 
 As an example, I recently released a package for adding marginal plots to ggplot2. You be the judge: after that one-sentence description of some functionality, would you rather go straight to the [README](https://github.com/daattali/ggExtra), or see it in action first [in a Shiny app online](http://daattali.com/shiny/ggExtra-ggMarginal-demo/)? I might be wrong, but I think it's useful to interactively see what the package can do.
 
+In fact, I'm such a strong believer in this idea, that almost every package I have released has a corresponding demo shiny app. The `shinyjs` [demo app](https://daattali.com/shiny/shinyjs-demo/) and `colourpicker` [demo app](https://daattali.com/shiny/colourInput/) are good examples of that.
+
 Making a Shiny app doesn't necessarily always make sense for every package, but there are certainly many times when it can be a great addition to a package's "documentation". I think that if a new package has some functions that *can* be easily illustrated in a simple Shiny app, it's worth it to take the extra 1-2 hours to develop it. This way, a user who finds your package and isn't quite sure what to do with it can try the Shiny app to see whether or not this is the functionality they were looking for. You can have several Shiny apps, each showing the usage of a particular function, or one app that is representative of a whole package. Whatever makes the most sense. Of course, having a Shiny app is in no way a replacement to documentation, it's just a useful add-on.
 
 ---
