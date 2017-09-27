@@ -8,6 +8,8 @@ what do curly braces means (on.exit, observe(), suppressstartupwarnings)
 
 debugging shiny: options(shiny.sanitize.errors = FALSE) , preserve_logs option, cat, installed_packages() in UI
 
+similar post to DO but with AWS
+
 followup post to shiny server setup: how to develop apps/get your apps onto your server
 
 shinymodules: what i wrote in hackfest for thibaut, plus a file input that automatically resets after upload
