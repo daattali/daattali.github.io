@@ -212,7 +212,7 @@ saveData <- function(data) {
   filePath <- file.path(tempdir(), fileName)
   write.csv(data, filePath, row.names = FALSE, quote = TRUE)
   # Upload the file to Dropbox
-  drop_upload(filePath, dest = outputDir)
+  drop_upload(filePath, path = outputDir)
 }
 
 loadData <- function() {
