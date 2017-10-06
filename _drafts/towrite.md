@@ -6,7 +6,7 @@ rstudio::conf
 
 what do curly braces means (on.exit, observe(), suppressstartupwarnings)
 
-debugging shiny: options(shiny.sanitize.errors = FALSE) , preserve_logs option, cat, installed_packages() in UI
+debugging shiny: options(shiny.sanitize.errors = FALSE) , `preserve_logs true`, cat, installed_packages() in UI
 
 similar post to DO but with AWS
 
