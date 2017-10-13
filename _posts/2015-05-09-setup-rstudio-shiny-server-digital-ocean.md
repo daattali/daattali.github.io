@@ -299,7 +299,7 @@ If you place an Rmarkdown file with the exact name of `index.Rmd` in any folder 
 
 # Step 9: Make pretty URLs for RStudio Server and Shiny Server {#reverse-proxy}
 
-This is optional and a little more advanced. You might have noticed that to access both RStudio and Shiny Server, you have to remember weird port numbers (`:8787` and `:3838`). Not only is it hard and ugly to remember, but some workplace environments often block access to those ports, which means that many people/places won't be able to access these pages. The solution is to use a reverse proxy, so that nginx will listen on port 80 (default HTTP port) at the URL `/shiny` and will *internally* redirect that to port 3838. Same for RStudio - we can have nginx listen at `/rstudio` and redirect it to port 8787. This is why my Shiny apps can be reached at [daattali.com/shiny/](http://daattali.com/shiny/) which is an easy URL to type, but also at [daattali.com:3838](http://daattali.com:3838).
+This is optional and a little more advanced. You might have noticed that to access both RStudio and Shiny Server, you have to remember weird port numbers (`:8787` and `:3838`). Not only is it hard and ugly to remember, but some workplace environments often block access to those ports, which means that many people/places won't be able to access these pages. The solution is to use a reverse proxy, so that nginx will listen on port 80 (default HTTP port) at the URL `/shiny` and will *internally* redirect that to port 3838. Same for RStudio - we can have nginx listen at `/rstudio` and redirect it to port 8787. This is why my Shiny apps can be reached at [daattali.com/shiny/](http://daattali.com/shiny/) which is an easy URL to type.
 
 You need to edit the nginx config file `/etc/nginx/sites-enabled/default`:
 
@@ -405,7 +405,7 @@ If you've found this tutorial useful, please consider supporting me for the coun
 
 **[2015-12-05]** Added a small paragraph to [step 9](#reverse-proxy) for fixing Shiny app URLs that don't have a trailing slash.
 
-**[2016-03-10]** There was an article today about how to [add authentication to Shiny Server using nginx](http://www.datascienceriot.com/add-authentication-to-shiny-server-with-nginx/).  I haven't tried it, but it looks like a great resource if you want to add authentication to your apps.
+**[2016-03-10]** There was an article today about how to [add authentication to Shiny Server using nginx](https://www.r-bloggers.com/add-authentication-to-shiny-server-with-nginx/).  I haven't tried it, but it looks like a great resource if you want to add authentication to your apps.
 
 **[2016-10-09]** Added a [small section](#server-pro) on Shiny Server Pro.
 
