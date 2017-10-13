@@ -60,11 +60,11 @@ I'm creating an online course on Case Studies with Shiny together with [DataCamp
 
 - **[Wish.com](http://wish.com)** - a very popular shopping platform. I was one of the few original developers of the site (before it was even called Wish!) and contributed mostly to the frontend. I was part of Wish's inception and initial growth, but since then it has grown to be a #1 Android Shopping app, and I can't claim any credit to that. :)
 
-- **[MakeupBee.com](https://www.makeupbee.com)** - website for women to discover and talk about interesting makeup applications. Clearly my area of expertise! The site was mostly developed by Brent Francia (CEO) and I, and I was responsible for all aspects of the development, seeing as we were usually a 2-3 person team.
+- **[MakeupBee.com](https://web.archive.org/web/20121223025414/https://www.makeupbee.com/looks.php)** - website for women to discover and talk about interesting makeup applications. Clearly my area of expertise! The site was mostly developed by Brent Francia (CEO) and I, and I was responsible for all aspects of the development, seeing as we were usually a 2-3 person team.
 
 - **[Glittr.com](https://www.glittr.com)** - spin-off of MakeupBee that was designed to be more focused on mainstream looks and have a cleaner feel. I've written most of the code for this site.
 
-- **[Jauntr.com](http://www.jauntr.com/)** - travel site with a social component, that is meant to help users discover and share places to go. It never really took off, but it was my first introduction to web development.
+- **[Jauntr.com](https://web.archive.org/web/20120309093005/https://www.jauntr.com/)** - travel site with a social component, that is meant to help users discover and share places to go. It never really took off, but it was my first introduction to web development.
 
 - **[daattali.com](http://daattali.com)** - small personal website that I run on a virtual server just because I wanted a place to host my own [R Shiny server](http://daattali.com/shiny) and [RStudio server](http://daattali.com/rstudio).
 
