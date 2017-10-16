@@ -4,6 +4,8 @@ title: "Need any more reason to love R-Shiny? Here: you can even use Shiny to cr
 tags: [professional, rstats, r, r-bloggers, shiny, package]
 date: 2016-01-26 10:00:00 -0700
 share-img: http://deanattali.com/img/blog/lightsout/shinyapp.png
+gh-repo: daattali/lightsout
+gh-badge: [star, watch, follow]
 ---
 
 TL;DR [Click here](http://daattali.com/shiny/lightsout/) to play a puzzle game written entirely in Shiny [(source code)](https://github.com/daattali/lightsout/tree/master/inst/shiny).
