@@ -14,7 +14,7 @@ gh-badge: [star, watch, follow]
 
 For those who aren't familiar with the [`colourpicker`](https://github.com/daattali/colourpicker/) package, it provides a colour picker for R that can be used in Shiny, as well as other related tools. Today it's leaving behind its 0.x days and moving on to version 1.0!
 
-[`colourpicker`](https://github.com/daattali/colourpicker/) has gone through a few major milestones since its inception. It began as merely a colour selector input in an unrelated package ([`shinyjs`](https://github.com/daattali/shinyjs/)), simply because I didn't think a colour picker input warrants its own package. After gaining a gadget and an RStudio addin, it graduated to become its own package. Earlier this year, [the Plot Helper tool](http://deanattali.com/blog/plot-colour-helper/) was added. And now `colourpicker` is taking its next big step - an upgrade to version 1.0.
+[`colourpicker`](https://github.com/daattali/colourpicker/) has gone through a few major milestones since its inception. It began as merely a colour selector input in an unrelated package ([`shinyjs`](https://github.com/daattali/shinyjs/)), simply because I didn't think a colour picker input warrants its own package. After gaining a gadget and an RStudio addin, as well as some popularity, it graduated to become its own package. Earlier this year, [the Plot Helper tool](http://deanattali.com/blog/plot-colour-helper/) was added. And now `colourpicker` is taking its next big step - an upgrade to version 1.0.
 
 # Table of contents
 
