@@ -3,6 +3,8 @@ layout: post
 title: "ezknitr: R package to avoid the typical working directory pain when using knitr"
 date: 2015-12-09 14:30:00 -0700
 tags: [professional, rstats, r, r-bloggers, package, knitr]
+gh-repo: daattali/ezknitr
+gh-badge: [star, watch, follow]
 ---
 
 A new package has hit the CRAN shelves this week.  While `knitr` is one of the most useful R packages in existence, `ezknitr` is a simple extension to it that adds flexibility in several ways.
