@@ -438,6 +438,10 @@ footer .theme-by {
   margin: 0 0 10px;		
 }
 
+#header-gh-btns {
+  margin-bottom: 15px;
+}
+
 /* --- Blog post --- */
 
 .blog-post :first-child {
