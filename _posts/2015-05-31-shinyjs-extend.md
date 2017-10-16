@@ -5,7 +5,7 @@ tags: [professional, rstats, r, r-bloggers, shiny, packages, shinyjs]
 date: 2015-05-31 18:50:00 -0700
 permalink: /2015/05/31/shinyjs-extend/
 gh_repo: daattali/shinyjs
-gh_badge: [star, issue, watch, follow]
+gh_badge: [star, watch, follow, fork]
 ---
 
 <iframe src="https://ghbtns.com/github-btn.html?user=twbs&repo=bootstrap&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
