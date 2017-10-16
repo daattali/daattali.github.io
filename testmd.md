@@ -17,16 +17,16 @@ For those who aren't familiar with the [`colourpicker`](https://github.com/daatt
 # Table of contents
 
 - [Due credit](#credits)
-- [New feature #1: transparent colours](#feature-alpha)
+- [New feature #1: Transparent colours](#feature-alpha)
 - [New feature #2: Flexible colour specification](#feature-flexible)
 - [New feature #3: Type colour directly into input box](#feature-type)
 - [Existing features](#existing-features)
 
 ## Due credit {#credits}
 
-Before describing the amazing new features, I have to give credit to [David Griswold](https://twitter.com/DavidGriswoldHH) who had substantial contributions to the various features of this update.
+Before describing the amazing new features, I have to give credit to [David Griswold](https://twitter.com/DavidGriswoldHH) who made substantial contributions to this update.
 
-## New feature #1: transparent colours {#feature-alpha}
+## New feature #1: Transparent colours {#feature-alpha}
 
 The most important new feature is the new alpha selector that lets you select a transparency value for any colour. Instead of being able to only select opaque colours (such as "green"), you can now select "green" with 50% transparency for example. To use this feature, use the `allowTransparent = TRUE` argument in the `colourInput()` function. Here is a screenshot of the new colour input with an alpha bar:
 
@@ -36,21 +36,21 @@ While I'm very excited about this transparency feature, it also caused me to int
 
 [![previous transparent feature](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/allowTransparent.png)](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/allowTransparent.png)
 
-There was also a parameter that could control the text inside the checkbox. This was a useful, albeit fairly awkward, feature. After much consideration and discussion with many people, I decided against supporting both the old and new features simultaneously, and instead overriding the old `allowTransparent` by changing its behaviour to the current form. Even though it is technically a breaking change, this change was appreciated by everyone who used that checkbox and many users agreed the new feature is better :)
+There was also a parameter that could control the text inside the checkbox. This was a useful, albeit fairly awkward, feature. After much consideration and discussion with many people, I decided against supporting both the old and new features simultaneously, and instead overriding the old `allowTransparent` by changing its behaviour to the current form. Even though it is technically a breaking change, this change was welcomed by most people I asked who've used that checkbox :)
 
 ## New feature #2: Flexible colour specification {#feature-flexible}
 
-Previously, colours supplied to the colour input be specified by either using a colour name (such as `blue`), or using an hex code (such as `#0000FF` or `#00F`).
+Previously, colours supplied to the colour input had to be specified by either using a colour name (such as `blue`), or using a HEX code (such as `#0000FF` or `#00F`).
 
 In version 1.0, you can also specify colours using RGB codes (such as `rgb(0, 0, 255)`) or HSL codes (such as `hsl(240, 100, 50)`).
 
-If your colour input uses the transparency feature described above, then you can also specify the colour to be transparent. All four methods of specifying colours also support transparent colours using the alpha channel. For example, `transparent`, `#0000FF80`, `rgba(0, 0, 255, 0.5)` and `hsla(240, 100, 50, 0.5)` are all legal colour values for `colourpicker`.
+If your colour input uses the transparency feature described above, then you can also specify the colour to be transparent. All four methods of specifying colours support transparent colours using the alpha channel. For example, `transparent`, `#0000FF80`, `rgba(0, 0, 255, 0.5)` and `hsla(240, 100, 50, 0.5)` are all legal colour values for `colourpicker`.
 
 ## New feature #3: Type colour directly into input box {#feature-type}
 
 This one is less impressive, but still a very convenient and useful feature.
 
-Previously, the only way to pick a colour was to click on a colour input box with the mouse and select a colour by clicking on the desired colour in the palette. There is now another way to change the value of a colour input if you know the specific colour that you want to choose: you can type in the value of a colour directly into the input box. For example, you can click on the colour input and literally type the word "blue", and the colour blue will get selected. This will work with any of the four methods for specifying colours that are mentioned in Feature 2.
+Previously, the only way to pick a colour was to click on a colour input box with the mouse and select a colour by clicking on the desired colour in the palette. There is now another way to change the value of a colour input if you know the precise colour that you want to choose: you can type in the value of a colour directly into the input box. For example, you can click on the colour input and literally type the word "blue", and the colour blue will get selected. This will work with any of the four methods for specifying colours that are mentioned in Feature 2.
 
 ## Existing features {#existing-features}
 
