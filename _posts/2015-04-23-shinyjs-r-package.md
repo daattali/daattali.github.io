@@ -4,6 +4,8 @@ title: "Introducing shinyjs: perform common JavaScript operations in Shiny apps 
 tags: [professional, rstats, r, r-bloggers, shiny, packages, shinyjs, popular]
 date: 2015-04-23 17:30:00 -0700
 permalink: /2015/04/23/shinyjs-r-package/
+gh-repo: daattali/shinyjs
+gh-badge: [star, watch, follow]
 ---
 
 `shinyjs` is my second R package that managed to find its way past the CRAN review process.
