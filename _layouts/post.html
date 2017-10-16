@@ -8,14 +8,14 @@ layout: base
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-      {% if page.gh_repo %}
-        {% assign gh_split =  page.gh_repo | split:'/'  %}
+      {% if page.gh-repo %}
+        {% assign gh_split =  page.gh-repo | split:'/'  %}
         {% assign gh_user =  gh_split[0]  %}
         {% assign gh_repo =  gh_split[1]  %}
       
         <div id="header-gh-btns">
-          {% if page.gh_badge.size > 0 %}
-            {% for badge in page.gh_badge %}
+          {% if page.gh-badge.size > 0 %}
+            {% for badge in page.gh-badge %}
               {% case badge %}
                 {% when 'star'%}
                   <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&repo={{ gh_repo }}&type=star&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
