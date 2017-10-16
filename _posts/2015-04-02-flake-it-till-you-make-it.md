@@ -6,6 +6,8 @@ tags: [personal]
 share-img: "http://deanattali.com/img/blog/flake-it/path.jpg"
 bigimg: /img/blog/flake-it/path.jpg
 permalink: /2015/04/02/flake-it-till-you-make-it/
+gh_repo: daattali/shinyjs
+gh_badge: [star, watch, follow, fork]
 ---
 
 My mom recently showed me a very interesting bit from a book she was reading called 'Soulshaping' by Jeff Brown. I'll discuss it later, but first, here is the excerpt:
