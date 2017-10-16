@@ -5,6 +5,8 @@ subtitle: A plug-n-play template to easily get anyone a free nice looking site (
 tags: [personal, professional, jekyll, github, blog, popular]
 share-img: "http://deanattali.com/img/blog/beautiful-jekyll.png"
 permalink: /2015/03/12/beautiful-jekyll-how-to-build-a-site-in-minutes/
+gh-repo: daattali/beautiful-jekyll
+gh-badge: [fork, star, watch, follow]
 ---
 
 Since this site went live a few days ago, I had many people ask me how I made it.  Like a great politician, I will avoid that question almost entirely with a completely different answer: **The core template that runs this website is available for anyone to use. I called it [Beautiful Jekyll](https://github.com/daattali/beautiful-jekyll#readme)**.
