@@ -4,6 +4,8 @@ title: I finally have a site!
 tags: [personal, meta, blog, family]
 share-img: "http://deanattali.com/img/blog/2014-family-livingroom.jpeg"
 permalink: /2015/03/09/I-finally-have-a-site/
+gh-repo: daattali/daattali.github.io
+gh-badge: [star, fork, follow]
 ---
 
 #### Welcome to Dean Attali on the web!
