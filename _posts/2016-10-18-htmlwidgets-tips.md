@@ -7,6 +7,8 @@ permalink: /blog/htmlwidgets-tips/
 layout: post
 comments: true
 show-share: true
+gh-repo: daattali/timevisBasic
+gh-badge: [star, watch, follow]
 ---
 
 I'd like to share some tips and recommendations on building htmlwidgets, based on my own learning experience while creating [`timevis`](https://github.com/daattali/timevis). These tips are mostly concerned with making your htmlwidget more useful and user friendly. In this post, every tip I provide will be followed by an actual code walk-through so that you can see it applied in a real example. 
