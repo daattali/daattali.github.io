@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "colourpicker package major update: You can now select semi-transparent colours in R (& more!)"
+title: "colourpicker package v1.0: You can now select semi-transparent colours in R (& more!)"
 tags: [professional, rstats, r, r-bloggers]
 date: 2017-10-16 12:00:00 -0500
 share-img: "http://deanattali.com/img/blog/colourpicker-update-alpha/colourinputnew.PNG"
