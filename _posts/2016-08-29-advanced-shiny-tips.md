@@ -8,6 +8,8 @@ permalink: /blog/advanced-shiny-tips/
 layout: post
 comments: true
 show-share: true
+gh-repo: daattali/advanced-shiny
+gh-badge: [star, watch, follow]
 ---
 
 This document contains a collection of various Shiny tricks that I commonly use or that I know many people ask about. Each link contains a complete functional Shiny app that demonstrates how to perform a non trivial task in Shiny. **The complete up-to-date list of tips, along with all the code, is [on GitHub](https://github.com/daattali/advanced-shiny#readme).**
