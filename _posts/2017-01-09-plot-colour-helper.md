@@ -9,6 +9,8 @@ layout: post
 comments: true
 show-share: true
 show-subscribe: true
+gh-repo: daattali/colourpicker
+gh-badge: [star, watch, follow]
 ---
 
 You've just made an amazing plot in R, and the only thing remaining is finding the right colours to use. Arghhh this part is never fun... You're probably familiar with this loop: try some colour values -> plot -> try different colours -> plot -> repeat. Don't you wish there was a better way?
