@@ -8,6 +8,8 @@ gh_repo: daattali/shinyjs
 gh_badge: [star, issue, watch, follow]
 ---
 
+<iframe src="https://ghbtns.com/github-btn.html?user=twbs&repo=bootstrap&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+
 About a month ago I made [an announcement](http://deanattali.com/2015/04/23/shinyjs-r-package) about the initial release of `shinyjs`. After some feedback, a few feature requests, and numerous hours of work, I'm excited to say that a new version of `shinyjs` v0.0.6.2 was made available on CRAN this week. The package's main objective is to make shiny app development better and easier by allowing you to perform many useful functions with simple R code that would normally require JavaScript coding. Some of the features include hiding/showing elements, enabling/disabling inputs, resetting an input to its original value, and many others. 
 
 # Important note
