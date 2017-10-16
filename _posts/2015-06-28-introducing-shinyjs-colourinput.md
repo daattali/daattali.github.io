@@ -5,6 +5,8 @@ tags: [professional, rstats, r, r-bloggers, shiny, packages, shinyjs]
 date: 2015-06-28 13:00:00 -0700
 permalink: /2015/06/28/introducing-shinyjs-colourinput/
 share-img: http://deanattali.com/img/blog/colourInput/colourInputDemo.png
+gh-repo: daattali/colourpicker
+gh-badge: [star, watch, follow]
 ---
 
 **NOTE: the colour input described here is no longer part of `shinyjs` and is now available in the `colourpicker` package instead.**
