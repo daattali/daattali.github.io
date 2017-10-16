@@ -8,6 +8,8 @@ permalink: /blog/colourpicker-update-alpha/
 layout: post
 comments: true
 show-share: true
+gh-repo: daattali/colourpicker
+gh-badge: [star, watch, follow]
 ---
 
 For those who aren't familiar with the [`colourpicker`](https://github.com/daattali/colourpicker/) package, it provides a colour picker in R that can be used in Shiny, as well as other related tools. Today it's leaving behind its 0.x days and moving on to version 1.0!
