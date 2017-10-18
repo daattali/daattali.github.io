@@ -7,7 +7,8 @@ share-img: http://deanattali.com/img/blog/digital-ocean/rstudio.png
 permalink: /2015/05/09/setup-rstudio-shiny-server-digital-ocean/
 ---
 
-> If you want help setting up your Shiny Server, a one-on-one walk-through of these instructions, or just general consultation about using Shiny Server, I'm [available for hire]({{ site.url }}/shiny).
+{: .box-note}
+<i class="fa fa-commenting" aria-hidden="true"></i> If you want help setting up your Shiny Server, a one-on-one walk-through or tutorial, or just general consultation about using Shiny Server, I'm [available for hire](http://attalitech.com).
 
 If you've always wanted to have an RStudio Server of your own so that you can access R from anywhere, or your own Shiny Server to host your awesome shiny apps or Rmarkdown documents, [DigitalOcean](https://m.do.co/c/358494f80b99) (DO) can help you get there easily. For example, take a look at [my Shiny Server](http://daattali.com/shiny/) to see how useful this can be.
 
