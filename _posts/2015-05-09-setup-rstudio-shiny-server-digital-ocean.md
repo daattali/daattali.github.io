@@ -44,9 +44,9 @@ Go to [DigitalOcean](https://m.do.co/c/358494f80b99) (use this referral link to 
 
 # Step 2: Create a new droplet {#create-droplet}
 
-Now let's claim one of DO's machines as our own! It's so simple that you definitely don't need my instructions, just click on the big "Create Droplet" button and choose your settings. I chose the smallest/weakest machine ($5/month plan) and it's good enough for me. I also chose San Francisco because it's the closest to me, though it really wouldn't make much of a noticeable difference where the server is located. For OS, I chose to go with the default Ubuntu 14.04 x64.  I highly recommend you add an SSH key at the last step if you know how to do that. If not, either read up on it [here](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-putty-on-digitalocean-droplets-windows-users) or just proceed without an SSH key.
+Now let's claim one of DO's machines as our own! It's so simple that you definitely don't need my instructions, just click on the big "Create Droplet" button and choose your settings. I chose the smallest/weakest machine ($5/month plan) and it's good enough for me. I also chose San Francisco because it's the closest to me, though it really wouldn't make much of a noticeable difference where the server is located. For OS, I chose to go with the default Ubuntu 16.04 x64.  I highly recommend you add an SSH key at the last step if you know how to do that. If not, either read up on it [here](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-putty-on-digitalocean-droplets-windows-users) or just proceed without an SSH key.
 
-*Note: all subsequent steps assume that you are also using the weakest server possible with Ubuntu 14.04 x64. If you chose different settings, the general instructions will still apply but some of the specific commands/URLs might need to change.*
+*Note: all subsequent steps assume that you are also using the weakest server possible with Ubuntu 16.04 x64. If you chose different settings, the general instructions will still apply but some of the specific commands/URLs might need to change.*
 
 Even though you probably don't need it, here's a short GIF showing me creating a new droplet:
 [![Create droplet]({{ site.url }}/img/blog/digital-ocean/do-create.gif)]({{ site.url }}/img/blog/digital-ocean/do-create.gif)
@@ -89,7 +89,7 @@ Now if you visit `http://123.456.1.2`, you should see a welcome message to nginx
 
 ### Quick nginx references
 
-The default file that is served is located at `/usr/share/nginx/html/index.html`, so if you want to change what that webpage is showing, just edit that file with `sudo vim /usr/share/nginx/html/index.html`. For example, I just put a bit of text redirecting to other places [in my index page](http://daattali.com/).  The configuration file is located at `/etc/nginx/nginx.conf`. 
+The default file that is served is located at `/usr/share/nginx/html/index.html`, so if you want to change what that webpage is showing, just edit that file with `sudo nano /usr/share/nginx/html/index.html`. For example, I just put a bit of text redirecting to other places [in my index page](http://daattali.com/).  The configuration file is located at `/etc/nginx/nginx.conf`. 
 
 When you edit an HTML file, you will be able to see the changes immediately when you refresh the page, but if you make configuration changes, you need to restart nginx. In the future, you can stop/start/restart nginx with
 
@@ -101,10 +101,10 @@ sudo service nginx restart
 
 # Step 6: Install R {#install-r}
 
-To ensure we get the most recent version of R, we need to first add `trusty` to our `sources.list`:
+To ensure we get the most recent version of R, we need to first add `xenial` (our Ubuntu release name) to our `sources.list`:
 
 ~~~
-sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list'
+sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial/" >> /etc/apt/sources.list'
 ~~~
 
 Now add the public keys:
@@ -176,8 +176,8 @@ sudo apt-get -y install libapparmor1 gdebi-core
 Download the latest RStudio Server - consult [RStudio Downloads page](http://www.rstudio.com/products/rstudio/download-server/) to get the URL for the latest version. Then install the file you downloaded. These next two lines are using the latest version as of writing this post.
 
 ~~~
-wget https://download2.rstudio.org/rstudio-server-0.99.896-amd64.deb
-sudo gdebi rstudio-server-0.99.896-amd64.deb
+wget https://download2.rstudio.org/rstudio-server-1.1.383-amd64.deb
+sudo gdebi rstudio-server-1.1.383-amd64.deb
 ~~~
 
 Done! By default, RStudio uses port 8787, so to access RStudio go to `http://123.456.1.2:8787` and you should be greeted with an RStudio login page. (If you forgot what your droplet's IP is, you can find out by running `hostname -I`)
@@ -203,8 +203,8 @@ sudo su - -c "R -e \"install.packages('shiny', repos='http://cran.rstudio.com/')
 Just like when we installed RStudio, again we need to get the URL of the latest Shiny Server [from the Shiny Server downloads page](http://www.rstudio.com/products/shiny/download-server/), download the file, and then install it.  These are the two commands using the version that is most up-to-date right now:
 
 ~~~
-wget https://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.4.2.786-amd64.deb
-sudo gdebi shiny-server-1.4.2.786-amd64.deb
+wget https://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.5.5.872-amd64.deb
+sudo gdebi shiny-server-1.5.5.872-amd64.deb
 ~~~
 
 Shiny Server is now installed and running. Assuming there were no problems, if you go to `http://123.456.1.2:3838/` you should see Shiny Server's default homepage, which includes some instructions and two Shiny apps:
@@ -219,7 +219,7 @@ If you see an error on the bottom Shiny app, it's probably because you don't hav
 - The default Shiny Server homepage you're seeing is located at `/srv/shiny-server/index.html` - you can edit it or remove it.
 - Any Shiny app directory that you place under `/srv/shiny-server/` will be served as a Shiny app. For example, there is a default app at `/srv/shiny-server/sample-apps/hello/`, which means you can run the app by going to `http://123.456.1.2:3838/sample-apps/hello/`.
 - The config file for Shiny Server is at `/etc/shiny-server/shiny-server.conf`.
-- To reload the server after editing the config, use `sudo reload shiny-server`.
+- To reload the server after editing the config, use `sudo service shiny-server restart`.
 - When hosting an Rmarkdown file, name the file `index.rmd` and add `runtime: shiny` to the document's frontmatter. 
 
 **Important!** If you look in the config file, you will see that by default, apps are ran as user "shiny". It's important to understand which user is running an app because things like file permissions and personal R libraries will be different for each user and it might cause you some headaches until you realize it's because the app should not be run as "shiny". Just keep that in mind.
@@ -304,10 +304,10 @@ This is optional and a little more advanced. You might have noticed that to acce
 You need to edit the nginx config file `/etc/nginx/sites-enabled/default`:
 
 ~~~
-sudo vim /etc/nginx/sites-enabled/default
+sudo nano /etc/nginx/sites-enabled/default
 ~~~
 
-(I'm assuming you know how to use `vim`. If not, then just Google for "how to edit a file on linux". In short: press `I` to start typing text, then press `Esc` to stop typing text, then press `:wq` followed by Enter to save the file).
+(I'm assuming you know how to use `nano`. If not, then just Google for "how to edit a file with nano". In short: use the arrow keys to move aroud, press `Ctrl`+`O` followed by Enter to save, and press `Ctrl`+`X` to exit.)
 
 Add the following lines right after the line that reads `server_name localhost;`:
 
@@ -410,6 +410,8 @@ If you've found this tutorial useful, please consider supporting me for the coun
 **[2016-10-09]** Added a [small section](#server-pro) on Shiny Server Pro.
 
 **[2017-04-04]** Added a [section](#host-rmd) on hosting Rmd files on a shiny server.
+
+**[2017-10-17]** Updated instructions to use Ubuntu 16.04 instead of 14.04 and changed using vim to using nano because it's easier for beginners.
 
 # Resources {#resources}
 
