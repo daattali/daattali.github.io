@@ -3,6 +3,7 @@ layout: post
 title: "Persistent data storage in Shiny apps"
 tags: [professional, rstats, r, r-bloggers, shiny, tutorial, popular]
 date: 2015-07-01 15:00:00 -0700
+lastupdated: 2017-10-06
 ---
 
 > This article is also published on [RStudio's Shiny Articles](http://shiny.rstudio.com/articles/persistent-data-storage.html)
