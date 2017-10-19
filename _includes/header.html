@@ -39,7 +39,7 @@
 		  <span class="post-meta">
 		    Posted on {{ page.date | date: "%B %-d, %Y" }}
                     {% if page.lastupdated %}
-                      (last updated on {{ page.lastupdated | date: "%B %-d, %Y" }})
+                      | Last updated {{ page.lastupdated | date: "%B %-d, %Y" }}
                     {% endif %}  
 		  </span>
 		  {% endif %}
@@ -69,7 +69,7 @@
 		    <span class="post-meta">
                       Posted on {{ page.date | date: "%B %-d, %Y" }}
                       {% if page.lastupdated %}
-                        (last updated on {{ page.lastupdated | date: "%B %-d, %Y" }})
+                        | Last updated {{ page.lastupdated | date: "%B %-d, %Y" }}
                       {% endif %} 
                     </span>
 		  {% endif %}
