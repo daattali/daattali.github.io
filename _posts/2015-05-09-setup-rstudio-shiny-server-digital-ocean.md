@@ -8,7 +8,7 @@ permalink: /2015/05/09/setup-rstudio-shiny-server-digital-ocean/
 ---
 
 {: .box-note}
-<i class="fa fa-commenting" aria-hidden="true"></i> If you want help setting up your Shiny Server, a one-on-one walk-through or tutorial, or just general consultation about using Shiny Server, I'm [available for hire](http://attalitech.com).
+If you want help setting up your Shiny Server, a 1-on-1 walk-through or tutorial, or just general consultation about using Shiny Server, I'm [available for hire](http://attalitech.com).
 
 If you've always wanted to have an RStudio Server of your own so that you can access R from anywhere, or your own Shiny Server to host your awesome shiny apps or Rmarkdown documents, [DigitalOcean](https://m.do.co/c/358494f80b99) (DO) can help you get there easily. For example, take a look at [my Shiny Server](http://daattali.com/shiny/) to see how useful this can be.
 
@@ -45,18 +45,18 @@ Go to [DigitalOcean](https://m.do.co/c/358494f80b99) (use this referral link to 
 
 # Step 2: Create a new droplet {#create-droplet}
 
-Now let's claim one of DO's machines as our own! It's so simple that you definitely don't need my instructions, just click on the big "Create Droplet" button and choose your settings. I chose the smallest/weakest machine ($5/month plan) and it's good enough for me. I also chose San Francisco because it's the closest to me, though it really wouldn't make much of a noticeable difference where the server is located. For OS, I chose to go with the default Ubuntu 16.04 x64.  I highly recommend you add an SSH key at the last step if you know how to do that. If not, either read up on it [here](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-putty-on-digitalocean-droplets-windows-users) or just proceed without an SSH key.
+Now let's claim one of DO's machines as our own! It's so simple that you definitely don't need my instructions, just click on the big "Create" button -> "Droplets" -> and choose your settings. I chose the smallest/weakest machine ($5/month plan) and it's good enough for me. I chose San Francisco for region because it's the closest to me, though it really wouldn't make much of a noticeable difference where the server is located. For operating system, I chose to go with the default Ubuntu 16.04 x64. If you know what SSH keys are (you can learn [here](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-putty-on-digitalocean-droplets-windows-users)), then I recommend you add an SSH key at the last step if you know how to do that. If not, just proceed without an SSH key.
 
 *Note: all subsequent steps assume that you are also using the weakest server possible with Ubuntu 16.04 x64. If you chose different settings, the general instructions will still apply but some of the specific commands/URLs might need to change.*
 
-Even though you probably don't need it, here's a short GIF showing me creating a new droplet:
+Even though you probably don't need it, here's a short GIF showing how I create a new droplet:
 [![Create droplet]({{ site.url }}/img/blog/digital-ocean/do-create.gif)]({{ site.url }}/img/blog/digital-ocean/do-create.gif)
 
 # Step 3: Log in to your very own shiny new server {#login}
 
 Once the droplet is ready (can take a few minutes), you'll be redirected to a page that shows you information about the new droplet, including its IP. From now on, I'll use the random IP address `123.456.1.2` for the rest of this post, but remember to always substitute your actual droplet's IP with this one.
 
-One option to log into your droplet is through the "Access" tab on the page you were redirected to, but it's slow and ugly, so I prefer logging in on my own machine. If you're on a unix machine, you can just use `ssh 123.456.1.2`. I'm on Windows, so I use [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/) to SSH ("login") into other machines. Use the IP that you see on the page, with the username `root`.  If you used an SSH key then you don't need to provide a password; otherwise, a password was sent to your email.
+One option to log into your droplet is through the "Access" tab on the droplet's page, but it's incredibly slow and ugly, so I prefer logging in on my own machine. If you're on a unix machine, you can just use `ssh 123.456.1.2`. I'm on Windows, so I use [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/) to SSH ("login") into other machines. Use the IP that you see on the page, with the username `root`.  If you used an SSH key then you don't need to provide a password; otherwise, a password was sent to your email.
 
 You should be greeted with a welcome message and some stats about the server that look like this:
 
