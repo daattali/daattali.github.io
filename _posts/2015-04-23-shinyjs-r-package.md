@@ -6,7 +6,7 @@ date: 2015-04-23 17:30:00 -0700
 permalink: /2015/04/23/shinyjs-r-package/
 gh-repo: daattali/shinyjs
 gh-badge: [star, watch, follow]
-lastupdated: 2016-12-03
+lastupdated: 2016-12-23
 ---
 
 `shinyjs` is my second R package that managed to find its way past the CRAN review process.
