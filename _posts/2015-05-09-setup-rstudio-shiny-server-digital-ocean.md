@@ -5,6 +5,7 @@ tags: [professional, rstats, r, r-bloggers, shiny, tutorial, popular]
 date: 2015-05-09 21:30:00 -0700
 share-img: http://deanattali.com/img/blog/digital-ocean/rstudio.png
 permalink: /2015/05/09/setup-rstudio-shiny-server-digital-ocean/
+lastupdated: 2017-10-18
 ---
 
 {: .box-note}
