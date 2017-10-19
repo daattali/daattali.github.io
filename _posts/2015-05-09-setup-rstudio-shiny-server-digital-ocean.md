@@ -394,7 +394,7 @@ If you've found this tutorial useful, please consider supporting me for the coun
 
 **[2017-04-04]** Added a [section](#host-rmd) on hosting Rmd files on a shiny server.
 
-**[2017-10-17]** Updated instructions to use Ubuntu 16.04 instead of 14.04 and changed using vim to using nano because it's easier for beginners.
+**[2017-10-17]** Updated instructions to use Ubuntu 16.04 instead of 14.04 and changed using vim to using nano because it's easier for beginners. Also updated the "custom domain name" section because the specific details kept changing all the time.
 
 # Resources {#resources}
 
