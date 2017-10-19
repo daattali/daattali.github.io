@@ -3,7 +3,7 @@
 # url is the full website URL
 # baseurl is the website's URL without the hostname
 
-url: "http://deanattali.com"
+url: "https://deanattali.com"
 baseurl: ""
 
 # Brief name and description of the site

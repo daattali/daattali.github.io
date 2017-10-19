@@ -15,18 +15,18 @@ applications without having to know any JavaScript.
 
 # Important note
 
-**The package has improved a lot since writing this post. I highly recommend you stop reading this page and instead go the [shinyjs website](http://deanattali.com/shinyjs).**
+**The package has improved a lot since writing this post. I highly recommend you stop reading this page and instead go the [shinyjs website](https://deanattali.com/shinyjs).**
 
 <div style="text-align:center;">
-<a style="text-decoration: none;" class="btn btn-success btn-lg" href="http://deanattali.com/shinyjs">shinyjs website</a>
+<a style="text-decoration: none;" class="btn btn-success btn-lg" href="https://deanattali.com/shinyjs">shinyjs website</a>
 </div>
 
 ## Demos
 
-You can [check out a demo Shiny app](http://daattali.com/shiny/shinyjs-demo/) that lets you
+You can [check out a demo Shiny app](https://daattali.com/shiny/shinyjs-demo/) that lets you
 play around with some of the functionality that `shinyjs` makes
 available, or [have a look at a very basic Shiny
-app](http://daattali.com/shiny/shinyjs-basic/) that uses `shinyjs` to
+app](https://daattali.com/shiny/shinyjs-basic/) that uses `shinyjs` to
 enhance the user experience with very minimal and simple R code.
 
 ## Availability
@@ -86,13 +86,13 @@ the power of their Shiny apps.
 -   `logjs` - print a message to the JavaScript console (mainly used for
     debugging purposes)
 
-[Check out the demo Shiny app](http://daattali.com/shiny/shinyjs-demo/) to see some of these in action, or install `shinyjs` and run
+[Check out the demo Shiny app](https://daattali.com/shiny/shinyjs-demo/) to see some of these in action, or install `shinyjs` and run
 `shinyjs::runExample()` to see more demo apps.
 
 ## Basic use case - working example
 
 *You can view the final Shiny app developed in this simple example
-[here](http://daattali.com/shiny/shinyjs-basic/).*
+[here](https://daattali.com/shiny/shinyjs-basic/).*
 
 Suppose we want to have a simple Shiny app that collects a user's basic
 information (name, age, company) and submits it, along with the time of
@@ -328,7 +328,7 @@ shinyApp(
 ```
 
 You can view the final app
-[here](http://daattali.com/shiny/shinyjs-basic/).
+[here](https://daattali.com/shiny/shinyjs-basic/).
 
 ## Altenatives using native Shiny
 

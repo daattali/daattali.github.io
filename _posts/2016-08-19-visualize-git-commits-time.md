@@ -50,7 +50,7 @@ After taking my introductory R course, I spent the next year on my other masters
 
 - I refuse to work before 10am
 - It looks like I work until 2am-4am fairly consistently
-- I did a LOT of work on my website ([dattali.github.io](http://daattali.github.io)) around March 2015 (which is when I got the idea to make a website and when I released it)
+- I did a LOT of work on my website ([dattali.github.io](https://daattali.github.io)) around March 2015 (which is when I got the idea to make a website and when I released it)
 - There were a few days in July 2015 where I started coding at 6am! Nope, that's a lie, I was in Toronto that week so that's actually 9am...
 - It's cool to see when I work on which projects. You can very clearly see the two-week effort on [timevis](https://github.com/daattali/timevis) in July 2016 for example
 

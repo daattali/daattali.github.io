@@ -31,7 +31,7 @@ public class ImagesCache
 		{
 			Debug.println("Image "+name+ " loaded");
 			try{
-				URL url = new URL("http://deanattali.com/files/java/Scrabble/" + name);
+				URL url = new URL("https://deanattali.com/files/java/Scrabble/" + name);
 			    img = new ImageIcon(url);
 			}catch(Exception ex){}
 			sprites.put(name,img);

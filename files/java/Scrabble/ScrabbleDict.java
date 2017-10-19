@@ -29,7 +29,7 @@ public class ScrabbleDict
 
 		try
 		{
-			URL url = new URL("http://deanattali.com/files/java/Scrabble/" + "dict.dat");
+			URL url = new URL("https://deanattali.com/files/java/Scrabble/" + "dict.dat");
 			BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
 			//BufferedReader reader=new BufferedReader(new FileReader("dict.dat"));
 			temp=new ArrayList<String>();

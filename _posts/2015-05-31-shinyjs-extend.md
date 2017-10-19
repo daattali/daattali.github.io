@@ -9,14 +9,14 @@ gh-badge: [star, watch, follow]
 lastupdated: 2016-12-23
 ---
 
-About a month ago I made [an announcement](http://deanattali.com/2015/04/23/shinyjs-r-package) about the initial release of `shinyjs`. After some feedback, a few feature requests, and numerous hours of work, I'm excited to say that a new version of `shinyjs` v0.0.6.2 was made available on CRAN this week. The package's main objective is to make shiny app development better and easier by allowing you to perform many useful functions with simple R code that would normally require JavaScript coding. Some of the features include hiding/showing elements, enabling/disabling inputs, resetting an input to its original value, and many others. 
+About a month ago I made [an announcement](https://deanattali.com/2015/04/23/shinyjs-r-package) about the initial release of `shinyjs`. After some feedback, a few feature requests, and numerous hours of work, I'm excited to say that a new version of `shinyjs` v0.0.6.2 was made available on CRAN this week. The package's main objective is to make shiny app development better and easier by allowing you to perform many useful functions with simple R code that would normally require JavaScript coding. Some of the features include hiding/showing elements, enabling/disabling inputs, resetting an input to its original value, and many others. 
 
 # Important note
 
-**The package has improved a lot since writing this post. I highly recommend you stop reading this page and instead go the [shinyjs website](http://deanattali.com/shinyjs).**
+**The package has improved a lot since writing this post. I highly recommend you stop reading this page and instead go the [shinyjs website](https://deanattali.com/shinyjs).**
 
 <div style="text-align:center;">
-<a style="text-decoration: none;" class="btn btn-success btn-lg" href="http://deanattali.com/shinyjs">shinyjs website</a>
+<a style="text-decoration: none;" class="btn btn-success btn-lg" href="https://deanattali.com/shinyjs">shinyjs website</a>
 </div>
 
 ## Table of contents 
@@ -43,7 +43,7 @@ About a month ago I made [an announcement](http://deanattali.com/2015/04/23/shin
 
 ## Quick overview of new features {#overview}
 
-This post will only discuss new features in `shinyjs`. You can find out more about the package [in the initial post](http://deanattali.com/2015/04/23/shinyjs-r-package) or [in the package README on GitHub](https://github.com/daattali/shinyjs#readme). Remember that in order to use any function, you need to add a call to `useShinyjs()` in the shiny app's UI.
+This post will only discuss new features in `shinyjs`. You can find out more about the package [in the initial post](https://deanattali.com/2015/04/23/shinyjs-r-package) or [in the package README on GitHub](https://github.com/daattali/shinyjs#readme). Remember that in order to use any function, you need to add a call to `useShinyjs()` in the shiny app's UI.
 
 #### Two major new features:
 

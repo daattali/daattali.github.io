@@ -2,7 +2,7 @@
 layout: post
 title: "ggExtra: R package for adding marginal histograms to ggplot2"
 tags: [professional, rstats, r, r-bloggers, ggplot2, packages, ggExtra]
-share-img: "http://deanattali.com/img/blog/ggExtra/ggmarginal-basic-example.png"
+share-img: "https://deanattali.com/img/blog/ggExtra/ggmarginal-basic-example.png"
 permalink: /2015/03/29/ggExtra-r-package/
 gh-repo: daattali/ggExtra
 gh-badge: [star, watch, follow]
@@ -18,7 +18,7 @@ The package is available through both [CRAN](http://cran.r-project.org/web/packa
 
 ## Spoiler alert - final result
 
-You can see a demo of what `ggMarginal` can do and play around with it [in this Shiny app](http://daattali.com/shiny/ggExtra-ggMarginal-demo/).
+You can see a demo of what `ggMarginal` can do and play around with it [in this Shiny app](https://daattali.com/shiny/ggExtra-ggMarginal-demo/).
 
 Here is an example of how easy it is to add marginal histograms in ggplot2 using `ggExtra::ggMarginal()`.
 

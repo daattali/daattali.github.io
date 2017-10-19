@@ -3,17 +3,17 @@ layout: post
 title: "How to get your very own RStudio Server and Shiny Server with DigitalOcean"
 tags: [professional, rstats, r, r-bloggers, shiny, tutorial, popular]
 date: 2015-05-09 21:30:00 -0700
-share-img: http://deanattali.com/img/blog/digital-ocean/rstudio.png
+share-img: https://deanattali.com/img/blog/digital-ocean/rstudio.png
 permalink: /2015/05/09/setup-rstudio-shiny-server-digital-ocean/
 lastupdated: 2017-10-18
 ---
 
 {: .box-note}
-If you want help setting up your Shiny Server, a 1-on-1 walk-through or tutorial, or just general consultation about using Shiny Server, I'm [available for hire](http://attalitech.com).
+If you want help setting up your Shiny Server, a 1-on-1 walk-through or tutorial, or just general consultation about using Shiny Server, I'm [available for hire](https://attalitech.com).
 
-If you've always wanted to have an RStudio Server of your own so that you can access R from anywhere, or your own Shiny Server to host your awesome shiny apps or Rmarkdown documents, [DigitalOcean](https://m.do.co/c/358494f80b99) (DO) can help you get there easily. For example, take a look at [my Shiny Server](http://daattali.com/shiny/) to see how useful this can be.
+If you've always wanted to have an RStudio Server of your own so that you can access R from anywhere, or your own Shiny Server to host your awesome shiny apps or Rmarkdown documents, [DigitalOcean](https://m.do.co/c/358494f80b99) (DO) can help you get there easily. For example, take a look at [my Shiny Server](https://daattali.com/shiny/) to see how useful this can be.
 
-DigitalOcean provides virtual private servers (they call each server a *droplet*), which means that you can pay *$5/month* to have your own server "in the cloud" that you can access from anywhere and host anything on.  Check out [my DO droplet](http://daattali.com/) to see it in action! Use [my referral link](https://m.do.co/c/358494f80b99) to get $10 in credits, which is enough to give you a private server for your first 2 months.
+DigitalOcean provides virtual private servers (they call each server a *droplet*), which means that you can pay *$5/month* to have your own server "in the cloud" that you can access from anywhere and host anything on.  Check out [my DO droplet](https://daattali.com/) to see it in action! Use [my referral link](https://m.do.co/c/358494f80b99) to get $10 in credits, which is enough to give you a private server for your first 2 months.
 
 I only found out about DO a couple of months ago when I asked my supervisor, [Jenny Bryan](https://twitter.com/JennyBryan), if there was a way for me to do some R-ing when I'm away from my machine. She told me that she doesn't have a solution for me, but that I should check out DigitalOcean, so I did. And it turns out that it's very convenient for hosting my own RStudio Server and anything else I'd like to host, and very affordable **even for my student self**. :)
 
@@ -91,7 +91,7 @@ Now if you visit `http://123.456.1.2`, you should see a welcome message to nginx
 
 ### Quick nginx references
 
-The default file that is served is located at `/usr/share/nginx/html/index.html`, so if you want to change what that webpage is showing, just edit that file with `sudo nano /usr/share/nginx/html/index.html`. For example, I just put a bit of text redirecting to other places [in my index page](http://daattali.com/).  The configuration file is located at `/etc/nginx/nginx.conf`. 
+The default file that is served is located at `/usr/share/nginx/html/index.html`, so if you want to change what that webpage is showing, just edit that file with `sudo nano /usr/share/nginx/html/index.html`. For example, I just put a bit of text redirecting to other places [in my index page](https://daattali.com/).  The configuration file is located at `/etc/nginx/nginx.conf`. 
 
 When you edit an HTML file, you will be able to see the changes immediately when you refresh the page, but if you make configuration changes, you need to restart nginx. In the future, you can stop/start/restart nginx with
 
@@ -301,7 +301,7 @@ If you place an Rmarkdown file with the exact name of `index.Rmd` in any folder 
 
 # Step 9: Make pretty URLs for RStudio Server and Shiny Server {#reverse-proxy}
 
-This is optional and a little more advanced. You might have noticed that to access both RStudio and Shiny Server, you have to remember weird port numbers (`:8787` and `:3838`). Not only is it hard and ugly to remember, but some workplace environments often block access to those ports, which means that many people/places won't be able to access these pages. The solution is to use a reverse proxy, so that nginx will listen on port 80 (default HTTP port) at the URL `/shiny` and will *internally* redirect that to port 3838. Same for RStudio - we can have nginx listen at `/rstudio` and redirect it to port 8787. This is why my Shiny apps can be reached at [daattali.com/shiny/](http://daattali.com/shiny/) which is an easy URL to type.
+This is optional and a little more advanced. You might have noticed that to access both RStudio and Shiny Server, you have to remember weird port numbers (`:8787` and `:3838`). Not only is it hard and ugly to remember, but some workplace environments often block access to those ports, which means that many people/places won't be able to access these pages. The solution is to use a reverse proxy, so that nginx will listen on port 80 (default HTTP port) at the URL `/shiny` and will *internally* redirect that to port 3838. Same for RStudio - we can have nginx listen at `/rstudio` and redirect it to port 8787. This is why my Shiny apps can be reached at [daattali.com/shiny/](https://daattali.com/shiny/) which is an easy URL to type.
 
 You need to edit the nginx config file `/etc/nginx/sites-enabled/default`:
 
@@ -350,7 +350,7 @@ rewrite ^(/shiny/[^/]+)$ $1/ permanent;
 
 # Step 10: Custom domain name {#custom-domain}
 
-If you have a custom domain that you want to host your droplet on, that's not too hard to set up.  For example, my main droplet's IP is [198.199.117.12](http://198.199.117.12), but I also purchased the domain [daattali.com](http://daattali.com/) so that it would be able to host my droplet with a much simpler URL. I used [Namecheap](https://www.namecheap.com/?aff=95702) to buy my domain, but most companies are fairly similar.
+If you have a custom domain that you want to host your droplet on, that's not too hard to set up.  For example, my main droplet's IP is [198.199.117.12](http://198.199.117.12), but I also purchased the domain [daattali.com](https://daattali.com/) so that it would be able to host my droplet with a much simpler URL. I used [Namecheap](https://www.namecheap.com/?aff=95702) to buy my domain, but most companies are fairly similar.
 
 After purchasing your own domain, there are two steps involved to link the domain to your droplet: you need to point from your registrar to DO, and to configure your domain on DO.
 
@@ -370,7 +370,7 @@ If you've found this tutorial useful, please consider supporting me for the coun
 
 ## Updates {#updates}
 
-**[2015-05-11]** I've gotten several people asking me if this can be a solution for hosting rmarkdown files as well. **YES it can!** Shiny Server works great as hosting .Rmd files, and you can even embed a Shiny app inside the Rmd file.  [Here's an example on my server](http://daattali.com/shiny/rbloggers-twitter/) in case you're curious.  
+**[2015-05-11]** I've gotten several people asking me if this can be a solution for hosting rmarkdown files as well. **YES it can!** Shiny Server works great as hosting .Rmd files, and you can even embed a Shiny app inside the Rmd file.  [Here's an example on my server](https://daattali.com/shiny/rbloggers-twitter/) in case you're curious.  
 
 **[2015-05-11]** There is some inquiry about whether or not this setup should be "Dockerized" ([What is Docker?](https://www.docker.com/)). Docker is of course a great alternative to setting this up and can be even simpler by taking away all the pain of doing the setup yourself and providing you with a container that already has RStudio/Shiny Server installed. [Dirk Eddelbuettel](https://twitter.com/eddelbuettel) and [Carl Boettiger](https://twitter.com/cboettig) already did a fantastic job of making some R-related docker containers, including RStudio and Shiny Server, so [check out Rocker](https://registry.hub.docker.com/repos/rocker/) if you want to go that route. I think it's nice to do all this installation yourself because it can look scary and intimidating before you do it the first time, and it can be a nice feeling to see that it's actually very doable and really doesn't take very long (less than half an hour) if you have a guide that takes away the annoying Googling at every step.  But you can quickly surpass all these steps and use docker if you prefer :)
 

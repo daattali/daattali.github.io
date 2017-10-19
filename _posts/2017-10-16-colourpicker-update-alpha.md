@@ -3,7 +3,7 @@ layout: post
 title: "colourpicker package v1.0: You can now select semi-transparent colours in R (& more!)"
 tags: [professional, rstats, r, r-bloggers]
 date: 2017-10-16 13:00:00 -0500
-share-img: "http://deanattali.com/img/blog/colourpicker-update-alpha/colourinputnew.PNG"
+share-img: "https://deanattali.com/img/blog/colourpicker-update-alpha/colourinputnew.PNG"
 permalink: /blog/colourpicker-update-alpha/
 layout: post
 comments: true
@@ -14,7 +14,7 @@ gh-badge: [star, watch, follow]
 
 For those who aren't familiar with the [`colourpicker`](https://github.com/daattali/colourpicker/) package, it provides a colour picker for R that can be used in Shiny, as well as other related tools. Today it's leaving behind its 0.x days and moving on to version 1.0!
 
-[`colourpicker`](https://github.com/daattali/colourpicker/) has gone through a few major milestones since its inception. It began as merely a colour selector input in an unrelated package ([`shinyjs`](https://github.com/daattali/shinyjs/)), simply because I didn't think a colour picker input warrants its own package. After gaining a gadget and an RStudio addin (as well as some popularity!), it graduated to become its own package. Earlier this year, [the Plot Helper tool](http://deanattali.com/blog/plot-colour-helper/) was added. And now `colourpicker` is taking its next big step - an upgrade to version 1.0.
+[`colourpicker`](https://github.com/daattali/colourpicker/) has gone through a few major milestones since its inception. It began as merely a colour selector input in an unrelated package ([`shinyjs`](https://github.com/daattali/shinyjs/)), simply because I didn't think a colour picker input warrants its own package. After gaining a gadget and an RStudio addin (as well as some popularity!), it graduated to become its own package. Earlier this year, [the Plot Helper tool](https://deanattali.com/blog/plot-colour-helper/) was added. And now `colourpicker` is taking its next big step - an upgrade to version 1.0.
 
 # Table of contents
 
@@ -32,7 +32,7 @@ Before describing the amazing new features, I have to give credit to [David Gris
 
 The most important new feature is the new alpha selector that lets you select a transparency value for any colour. Instead of being able to only select opaque colours (such as "green"), you can now select "green" with 50% transparency for example. To use this feature, use the `allowTransparent = TRUE` argument in the `colourInput()` function. Here is a screenshot of the new colour input with an alpha bar:
 
-[![new colour input with alpha](http://deanattali.com/img/blog/colourpicker-update-alpha/colourinputnew.PNG)](http://deanattali.com/img/blog/colourpicker-update-alpha/colourinputnew.PNG)
+[![new colour input with alpha](https://deanattali.com/img/blog/colourpicker-update-alpha/colourinputnew.PNG)](https://deanattali.com/img/blog/colourpicker-update-alpha/colourinputnew.PNG)
 
 While I'm very excited about this transparency feature, it also caused me to introduce my first big **breaking change** unfortunately. The colour input previously already had a `allowTransparent` argument, which when set to `TRUE` resulted in a checkbox inside the input:
 

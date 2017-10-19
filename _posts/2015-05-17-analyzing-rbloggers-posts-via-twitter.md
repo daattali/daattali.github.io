@@ -3,11 +3,11 @@ layout: post
 title: "Analyzing R-Bloggers' posts via Twitter"
 tags: [professional, rstats, r, r-bloggers, shiny, twitter]
 date: 2015-05-17 23:30:00 -0700
-share-img: http://deanattali.com/img/blog/rbloggers-twitter/all-tweets-top-10.png
+share-img: https://deanattali.com/img/blog/rbloggers-twitter/all-tweets-top-10.png
 permalink: /2015/05/17/analyzing-rbloggers-posts-via-twitter/
 ---
 
-For those who don't know, every time a new blog post gets added to [R-Bloggers](http://www.r-bloggers.com/), it gets a corresponding tweet by [@Rbloggers](https://twitter.com/rbloggers), which gets seen by Rbloggers' ~20k followers fairly fast. And every time **my** post gets published, I can't help but check up on how many people gave that tweet some Twitter love, ie. "favorite"d or "retweet"ed it. It's even more exciting than getting a Facebook "like" on a photo from Costa Rica! 
+For those who don't know, every time a new blog post gets added to [R-Bloggers](https://www.r-bloggers.com/), it gets a corresponding tweet by [@Rbloggers](https://twitter.com/rbloggers), which gets seen by Rbloggers' ~20k followers fairly fast. And every time **my** post gets published, I can't help but check up on how many people gave that tweet some Twitter love, ie. "favorite"d or "retweet"ed it. It's even more exciting than getting a Facebook "like" on a photo from Costa Rica! 
 
 Seeing all these tweets and how some tweets get much more attention than others has gotten me thinking. Are there some power users who post almost all the content, or do many blogs contribute equally?  Which posts were the most shared?  Which blog produces the highest quality posts consistently?  Are there more posts during the weekdays then weekends? And of course the holy grail of bloggers - is there a day when it's better to post to get more shares?
 
@@ -21,7 +21,7 @@ I'm going to use some terminology very loosely and interchangeably throughout th
 
 It's clear that all those terms not necessarily the same thing (for example, virality does not necessarily mean high quality), but I'll be using them all as the same.
 
-**There is also [an accompanying interactive document](http://daattali.com/shiny/rbloggers-twitter/) to supplement this post.**  That document has a few interactive plots/tables for data that is better explored interactively rather than as an image, and it also contains all the source code that was used to make the analysis and all the figures here. The source code is also [available on GitHub](https://github.com/daattali/shiny-server/tree/master/rbloggers-twitter) as the raw text version of the interactive document.  In this post I will not be including too much lengthy code, especially not for the plots.
+**There is also [an accompanying interactive document](https://daattali.com/shiny/rbloggers-twitter/) to supplement this post.**  That document has a few interactive plots/tables for data that is better explored interactively rather than as an image, and it also contains all the source code that was used to make the analysis and all the figures here. The source code is also [available on GitHub](https://github.com/daattali/shiny-server/tree/master/rbloggers-twitter) as the raw text version of the interactive document.  In this post I will not be including too much lengthy code, especially not for the plots.
 
 Before going any further, I'd like to say that this is not intended to be a comprehensive analysis and definitely has many weaknesses. It's just for fun. I'm not even going to be making any statistical significance tests at any point or do any quantitative analysis. Maybe titling this as "Analyzing" is wrong and should instead be "Exploring"? This post looks exclusively at data directly related to @Rbloggers tweets; I am not looking at data from any other social media or how many times the post was shared via R-Bloggers website rather than through Twitter. I'm also not looking at how much discussion (replies) a tweet generates. I wanted to include data from the number of times the "Tweet" button was pressed directly on R-Bloggers, but it looks like most older posts have 0 (maybe the button is a recent addition to R-Bloggers), so it'll introduce an unfair bias towards new posts. And of course the biggest criticism here is that you simply can't judge a blog post by the number of times it's shared on Twitter, but here we go.
 
@@ -71,7 +71,7 @@ tweets <-
 rm(tweets_raw)  # being extremely memory conscious
 ```
 
-Remember the full source code can be viewed [here](http://daattali.com/shiny/rbloggers-twitter/#get-data-from-twitter).
+Remember the full source code can be viewed [here](https://daattali.com/shiny/rbloggers-twitter/#get-data-from-twitter).
 
 ## Scrape R-Bloggers to get author info {#scrape-rbloggers}
 
@@ -129,7 +129,7 @@ It's time for some clean up:
 - Truncate very long author names with an ellipsis
 - Merge duplicate tweets (tweets with the same author and title that are posted within a week)
 
-After removing duplicates and previously removing tweets about job postings, we are left with 2979 tweets (down from 3200).  You can see what the data looks like [here](http://daattali.com/shiny/rbloggers-twitter/#summary-of-all-posts) or see the code for the cleanup on that page as well.
+After removing duplicates and previously removing tweets about job postings, we are left with 2979 tweets (down from 3200).  You can see what the data looks like [here](https://daattali.com/shiny/rbloggers-twitter/#summary-of-all-posts) or see the code for the cleanup on that page as well.
 
 ## Add a score metric {#score}
 
@@ -269,4 +269,4 @@ I must admit I'm not the biggest fan of wordclouds, but it feels like no amateur
 
 I actually don't have much to comment on that, there isn't anything that strikes me as surprising here.
 
-**Remember to check out the [accompanying interactive doc + source code](http://daattali.com/shiny/rbloggers-twitter/)!**
+**Remember to check out the [accompanying interactive doc + source code](https://daattali.com/shiny/rbloggers-twitter/)!**

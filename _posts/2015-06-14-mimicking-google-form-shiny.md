@@ -4,10 +4,10 @@ title: "Mimicking a Google Form with a Shiny app"
 tags: [professional, rstats, r, r-bloggers, shiny, shinyjs, tutorial, popular]
 date: 2015-06-14 5:30:00 -0700
 permalink: /2015/06/14/mimicking-google-form-shiny/
-share-img: http://deanattali.com/img/blog/mimic-google-form-shiny/mimic-google-form-shiny-final.png
+share-img: https://deanattali.com/img/blog/mimic-google-form-shiny/mimic-google-form-shiny-final.png
 ---
 
-In this post we will walk through the steps required to build a shiny app that mimicks a Google Form. It will allow users to submit responses to some input fields, save their data, and allow admins to view the submitted responses.  Like many of my other posts, it may seem lengthy, but that's only because I like to go into fine details to ensure everything is as foolproof and reproducible as possible. In a [follow-up article](http://deanattali.com/blog/shiny-persistent-data-storage) you can learn about different methods to store data in Shiny apps.
+In this post we will walk through the steps required to build a shiny app that mimicks a Google Form. It will allow users to submit responses to some input fields, save their data, and allow admins to view the submitted responses.  Like many of my other posts, it may seem lengthy, but that's only because I like to go into fine details to ensure everything is as foolproof and reproducible as possible. In a [follow-up article](https://deanattali.com/blog/shiny-persistent-data-storage) you can learn about different methods to store data in Shiny apps.
 
 # Table of contents
 
@@ -29,15 +29,15 @@ In this post we will walk through the steps required to build a shiny app that m
 
 # Motivation {#motivation}
 
-Last year I was fortunate enough to be a teaching assistant for [STAT545](https://twitter.com/stat545) - a course at the University of British Columbia, taught by [Jenny Bryan](https://twitter.com/JennyBryan), that introduces R into the lives of student scientists. (It was especially special to me because just 12 months prior, that course taught *me* how to write my first line in R.) To facilitate communication with the students, we wanted to gather some basic information from them, such as their prefered name, email, and Twitter and Github handles. We didn't want to simply have them all send us an email with this information, as we were trying to set an example of how to be techy and automated and modern :) Our first thought was to use a Google Form, but university policies didn't quite allow for that because the data must be stored within Canadian borders, and with Google Forms it'd probably end up somewhere in the US. We also decided earlier that day that one of the course modules will be about shiny, so we figured we'd put our money where our mouths were, and attempt to collect student data via a shiny app. I was given the task of developing this shiny app, which was a great learning experience. You can view the original code for that app [on GitHub](https://github.com/daattali/UBC-STAT545/tree/master/shiny-apps/request-basic-info) or [visit the app yourself to see it in action](http://daattali.com/shiny/request-basic-info/).
+Last year I was fortunate enough to be a teaching assistant for [STAT545](https://twitter.com/stat545) - a course at the University of British Columbia, taught by [Jenny Bryan](https://twitter.com/JennyBryan), that introduces R into the lives of student scientists. (It was especially special to me because just 12 months prior, that course taught *me* how to write my first line in R.) To facilitate communication with the students, we wanted to gather some basic information from them, such as their prefered name, email, and Twitter and Github handles. We didn't want to simply have them all send us an email with this information, as we were trying to set an example of how to be techy and automated and modern :) Our first thought was to use a Google Form, but university policies didn't quite allow for that because the data must be stored within Canadian borders, and with Google Forms it'd probably end up somewhere in the US. We also decided earlier that day that one of the course modules will be about shiny, so we figured we'd put our money where our mouths were, and attempt to collect student data via a shiny app. I was given the task of developing this shiny app, which was a great learning experience. You can view the original code for that app [on GitHub](https://github.com/daattali/UBC-STAT545/tree/master/shiny-apps/request-basic-info) or [visit the app yourself to see it in action](https://daattali.com/shiny/request-basic-info/).
 
-The idea of recording user-submitted form data can be applied to many differente scenarios. Seeing how successful the previous app was for our course, we decided to also collect all peer reviews of assignments in a similar shiny app. I created an app with a template for a marking sheet, and every week students would use the app to submit reviews for other students' work. This worked great for us - you can see the original code [on GitHub](https://github.com/daattali/UBC-STAT545/tree/master/shiny-apps/marking-sheet) or [try the app out yourself](http://daattali.com/shiny/peer-review/).
+The idea of recording user-submitted form data can be applied to many differente scenarios. Seeing how successful the previous app was for our course, we decided to also collect all peer reviews of assignments in a similar shiny app. I created an app with a template for a marking sheet, and every week students would use the app to submit reviews for other students' work. This worked great for us - you can see the original code [on GitHub](https://github.com/daattali/UBC-STAT545/tree/master/shiny-apps/marking-sheet) or [try the app out yourself](https://daattali.com/shiny/peer-review/).
 
 Since developing those apps, I've become a better shiny developer also wrote the [shinyjs package](https://github.com/daattali/shinyjs) to help with many user-experience stuff like hiding/disabling/resetting inputs. I've also seen multiple people asking how to do this kind of thing with shiny, so my hope is that this post will be useful for others who are also looking to create user-submitted forms with shiny.
 
 # Overview {#overview}
 
-The app we will build will be a form collecting data on a user's R habits - their name, length of time using R, favourite R package, etc. You can see the result of this tutorial [on my shiny server](http://daattali.com/shiny/mimic-google-form/) and the corresponding code [on GitHub](https://github.com/daattali/shiny-server/blob/master/mimic-google-form/app.R).  It looks like this:
+The app we will build will be a form collecting data on a user's R habits - their name, length of time using R, favourite R package, etc. You can see the result of this tutorial [on my shiny server](https://daattali.com/shiny/mimic-google-form/) and the corresponding code [on GitHub](https://github.com/daattali/shiny-server/blob/master/mimic-google-form/app.R).  It looks like this:
 
 [![Final app]({{ site.url }}/img/blog/mimic-google-form-shiny/mimic-google-form-shiny-final.png)]({{ site.url }}/img/blog/mimic-google-form-shiny/mimic-google-form-shiny-final.png)
 
@@ -45,9 +45,9 @@ The main idea is simple: create a UI with some inputs that users need to fill ou
 
 ### Note about persistent storage {#note-storage}
 
-One major component of this app is storing the user-submitted data in a way that would allow it to be retrieved later. This is an important topic of its own, and I wrote a [separate article](http://deanattali.com/blog/shiny-persistent-data-storage) detailing the different storage options and how to use them. That article is also featured on [RStudio's official Shiny articles](http://shiny.rstudio.com/articles/persistent-data-storage.html) because it's such an important skill. In this tutorial I will use the simplest approach for saving the data: every submission will be saved to its own `.csv` file.
+One major component of this app is storing the user-submitted data in a way that would allow it to be retrieved later. This is an important topic of its own, and I wrote a [separate article](https://deanattali.com/blog/shiny-persistent-data-storage) detailing the different storage options and how to use them. That article is also featured on [RStudio's official Shiny articles](https://shiny.rstudio.com/articles/persistent-data-storage.html) because it's such an important skill. In this tutorial I will use the simplest approach for saving the data: every submission will be saved to its own `.csv` file.
 
-**NOTE:** this method should only be used if you have your own shiny server or are running the app on your own machine, and should not be used if your app is hosted on `shinyapps.io`. Using the local filesystem in shinyapps.io is a bad idea because every time your app is launched it will be on a different machine, and it will not have access to files saved by other users who were running the app on a different machine. If using shinyapps.io, you will need to use remote storage, which will be discussed in my next post. You can get a bit more information about why shinyapps.io can't be used for local storage [in the shiny docs](http://shiny.rstudio.com/articles/share-data.html).
+**NOTE:** this method should only be used if you have your own shiny server or are running the app on your own machine, and should not be used if your app is hosted on `shinyapps.io`. Using the local filesystem in shinyapps.io is a bad idea because every time your app is launched it will be on a different machine, and it will not have access to files saved by other users who were running the app on a different machine. If using shinyapps.io, you will need to use remote storage, which will be discussed in my next post. You can get a bit more information about why shinyapps.io can't be used for local storage [in the shiny docs](https://shiny.rstudio.com/articles/share-data.html).
 
 # Prerequisites {#prereqs}
 
@@ -58,7 +58,7 @@ The following packages need to be installed in order for all the code to work:
 
 # Build the basic UI (inputs) {#build-inputs}
 
-I generally prefer to split shiny apps into a `ui.R` and `server.R` file (with an additional `helpers.R` or `globals.R` if necessary), but for simplicity, I'll place all the app code together in this tutorial. (In case you didn't know: Shiny apps don't have to be broken up into separate `ui.R` and `server.R` files, they can be completely defined in one file [as this Shiny article explains](http://shiny.rstudio.com/articles/app-formats.html)) 
+I generally prefer to split shiny apps into a `ui.R` and `server.R` file (with an additional `helpers.R` or `globals.R` if necessary), but for simplicity, I'll place all the app code together in this tutorial. (In case you didn't know: Shiny apps don't have to be broken up into separate `ui.R` and `server.R` files, they can be completely defined in one file [as this Shiny article explains](https://shiny.rstudio.com/articles/app-formats.html)) 
 
 Create a new file named `app.R` and copy the following code into it to build the input elements. 
 
@@ -242,7 +242,7 @@ Now you should be able to run the app, enter input, save, and see a new file cre
 
 ### Note regarding file permissions {#note-perms}
 
-If you are running the app on a shiny server, it's very improtant to understand user permissions. By default, all apps are run as the `shiny` user, and that user will probably not have write permission on folders you create.  You should either add write permissions to `shiny`, or change the running user to yourself. See more information on how to do this [in this post](http://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean#shiny-user-perms).
+If you are running the app on a shiny server, it's very improtant to understand user permissions. By default, all apps are run as the `shiny` user, and that user will probably not have write permission on folders you create.  You should either add write permissions to `shiny`, or change the running user to yourself. See more information on how to do this [in this post](https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean#shiny-user-perms).
 
 # After submission show a "Thank you" message and let user submit again {#thanks-msg}
 
@@ -336,7 +336,7 @@ appCSS <-
 
 # Add table that shows all previous responses {#add-table}
 
-*Note: this section is not visually identical to the app shown [on my shiny server](http://daattali.com/shiny/mimic-google-form/) because in my app I placed the table to the right of the form, and the code given here will place the table above the form.*
+*Note: this section is not visually identical to the app shown [on my shiny server](https://daattali.com/shiny/mimic-google-form/) because in my app I placed the table to the right of the form, and the code given here will place the table above the form.*
 
 Now that we can submit responses smoothly, it'd be nice to also be able to view submitted responses in the app. First we need to add a dataTable placeholder to the UI (add it just before the `form` div, after the `titlePanel`):
 
@@ -440,12 +440,12 @@ isAdmin <- reactive({
 
 This will assume that when there is no authentication, everyone is an admin, but when authentication is enabled, it will look at the admin users list.
 
-That's it! You are now ready to create forms with shiny apps.  You can see what the final app code looks like [on GitHub](https://github.com/daattali/shiny-server/blob/master/mimic-google-form/app.R) (with a few minor modifications), or test it out [on my shiny server](http://daattali.com/shiny/mimic-google-form/)).
+That's it! You are now ready to create forms with shiny apps.  You can see what the final app code looks like [on GitHub](https://github.com/daattali/shiny-server/blob/master/mimic-google-form/app.R) (with a few minor modifications), or test it out [on my shiny server](https://daattali.com/shiny/mimic-google-form/)).
 
 # Updates {#updates}
 
 **[2015-06-15]** As mentioned in the comments below, if you don't have a Pro account but would still like to implement the idea of admins and "authentication", there are other ways to achieve a similar result. I won't go into any of them because I haven't done that, but it's definitely possible to have an input field that accepts a password and if you type in an admin password, the tables will be shown. That's just one example, you can get more creative with the specifics, but essentially you just need a way to return a TRUE/FALSE value from `isAdmin()`.
 
-**[2015-07-01]** Added a link to the [follow-up post](http://deanattali.com/blog/shiny-persistent-data-storage) on how to store data in Shiny apps.
+**[2015-07-01]** Added a link to the [follow-up post](https://deanattali.com/blog/shiny-persistent-data-storage) on how to store data in Shiny apps.
 
 **[2015-09-28]** Here are two articles that others have written as extensions of this tutorial: [Programming simple economic experiments in Shiny](https://pviefers.wordpress.com/2015/08/16/programming-simple-economic-experiments-in-shiny/) and [Supporting CRUD in Shiny tables](http://ipub.com/shiny-crud-app/).

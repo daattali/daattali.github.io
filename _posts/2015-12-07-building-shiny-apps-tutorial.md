@@ -3,21 +3,21 @@ layout: post
 title: "Building Shiny apps - an interactive tutorial"
 date: 2015-12-07 10:00:00 -0700
 tags: [professional, rstats, r, r-bloggers, shiny, tutorial, popular]
-share-img: http://deanattali.com/img/blog/shiny-tutorial/shiny-addplot.png
+share-img: https://deanattali.com/img/blog/shiny-tutorial/shiny-addplot.png
 lastupdated: 2017-03-08
 ---
 
 > If you use this material in a classroom, I'd appreciate if you link back to my site!
 >
-> **If you want tutoring/training in Shiny or need help with building a Shiny app, I'm [available for hire](http://deanattali.com/shiny/).**
+> **If you want tutoring/training in Shiny or need help with building a Shiny app, I'm [available for hire](https://deanattali.com/shiny/).**
 
 Shiny is a package from RStudio that can be used to build interactive web pages with R. While that may sound scary because of the words "web pages", it's geared to R users who have 0 experience with web development, and you do not need to know any HTML/CSS/JavaScript.
 
 You can do quite a lot with Shiny: think of it as an easy way to make an interactive web page, and that web page can seamlessly interact with R and display R objects (plots, tables, of anything else you do in R). To get a sense of the wide range of things you can do with Shiny, you can visit [my Shiny server](https://daattali.com/shiny/), which hosts some of my own Shiny apps.
 
-This tutorial is a hands-on activity complement to a set of [presentation slides](http://bit.ly/shiny-tutorial) for learning how to build Shiny apps. In this activity, we'll walk through all the steps of building a Shiny app using a dataset that lets you explore the products available at the BC Liquor Store. The final version of the app, including a few extra features that are left as exercises for the reader, [can be seen here](http://daattali.com/shiny/bcl/). Any activity deemed as an exercise throughout this tutorial is not mandatory for building our app, but they are good for getting more practice with Shiny. 
+This tutorial is a hands-on activity complement to a set of [presentation slides](http://bit.ly/shiny-tutorial) for learning how to build Shiny apps. In this activity, we'll walk through all the steps of building a Shiny app using a dataset that lets you explore the products available at the BC Liquor Store. The final version of the app, including a few extra features that are left as exercises for the reader, [can be seen here](https://daattali.com/shiny/bcl/). Any activity deemed as an exercise throughout this tutorial is not mandatory for building our app, but they are good for getting more practice with Shiny. 
 
-This tutorial should take approximately an hour to complete. If you want even more practice, another great tutorial is the [official Shiny tutorial](http://shiny.rstudio.com/tutorial/). RStudio also provides a [handy cheatsheet](https://www.rstudio.com/resources/cheatsheets/) to remember all the little details after you already learned the basics.
+This tutorial should take approximately an hour to complete. If you want even more practice, another great tutorial is the [official Shiny tutorial](https://shiny.rstudio.com/tutorial/). RStudio also provides a [handy cheatsheet](https://www.rstudio.com/resources/cheatsheets/) to remember all the little details after you already learned the basics.
 
 ## Table of contents
 
@@ -67,7 +67,7 @@ Every Shiny app is composed of a two parts: a web page that shows the app to the
 
 UI is just a web document that the user gets to see, it's HTML that you write using Shiny's functions. The UI is responsible for creating the layout of the app and telling Shiny exactly where things go. The server is responsible for the logic of the app; it's the set of instructions that tell the web page what to show when the user interacts with the page.
 
-If you look at [the app we will be building](http://daattali.com/shiny/bcl/), the page that you see is built with the UI code. You'll notice there are some controls that you, as the user, can manipulate. If you adjust the price or choose a country, you'll notice that the plot and the table get updated. The UI is responsible for creating these controls and telling Shiny *where* to place the controls and where to place the plot and table, while the server is responsible for creating the actual plot or the data in the table.
+If you look at [the app we will be building](https://daattali.com/shiny/bcl/), the page that you see is built with the UI code. You'll notice there are some controls that you, as the user, can manipulate. If you adjust the price or choose a country, you'll notice that the plot and the table get updated. The UI is responsible for creating these controls and telling Shiny *where* to place the controls and where to place the plot and table, while the server is responsible for creating the actual plot or the data in the table.
 
 # 3. Create an empty Shiny app
 
@@ -119,7 +119,7 @@ You can also create a new Shiny app using RStudio's menu by selecting *File > Ne
 
 The dataset we'll be using contains information about all the products sold by BC Liquor Store and is provided by [OpenDataBC](https://www.opendatabc.ca/dataset/bc-liquor-store-product-price-list-current-prices). They provide a direct link to download a *csv* version of the data, and this data has the rare quality that it is immediately clean and useful. You can view the [raw data](http://pub.data.gov.bc.ca/datasets/176284/BC_Liquor_Store_Product_Price_List.csv) they provide, but I have taken a few steps to simplify the dataset to make it more useful for our app. I removed some columns, renamed other columns, and dropped a few rare factor levels.
 
-The processed dataset we'll be using in this app is available [here](http://deanattali.com/files/bcl-data.csv). Download it now and place this file in the same folder as your Shiny app. Make sure the file is named `bcl-data.csv`.
+The processed dataset we'll be using in this app is available [here](https://deanattali.com/files/bcl-data.csv). Download it now and place this file in the same folder as your Shiny app. Make sure the file is named `bcl-data.csv`.
 
 Add a line in your app to load the data into a variable called `bcl`. It should look something like this
 
@@ -868,9 +868,9 @@ After a successful deployment to shinyapps.io, you will be redirected to your ap
 
 ## 13.2 Host on a Shiny Server
 
-The other option for hosting your app is on your own private [Shiny server](https://www.rstudio.com/products/shiny/shiny-server/). Shiny Server is also a product by RStudio that lets you host apps on your own server. This means that instead of RStudio hosting the app for you, you have it on your own private server. This means you have a lot more freedom and flexibility, but it also means you need to have a server and be comfortable administering a server. I currently host all my apps on [my own Shiny server](http://daattali.com/shiny/) just because I like having the extra control, but when I first learned about Shiny I used shinyapps.io for several months.
+The other option for hosting your app is on your own private [Shiny server](https://www.rstudio.com/products/shiny/shiny-server/). Shiny Server is also a product by RStudio that lets you host apps on your own server. This means that instead of RStudio hosting the app for you, you have it on your own private server. This means you have a lot more freedom and flexibility, but it also means you need to have a server and be comfortable administering a server. I currently host all my apps on [my own Shiny server](https://daattali.com/shiny/) just because I like having the extra control, but when I first learned about Shiny I used shinyapps.io for several months.
 
-If you're feeling adventurous and want to host your own server, you can follow [my tutorial for hosting a Shiny server](http://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean).
+If you're feeling adventurous and want to host your own server, you can follow [my tutorial for hosting a Shiny server](https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean).
 
 # 14. More Shiny features to check out
 
@@ -1017,14 +1017,14 @@ Shiny is a very popular package and has lots of resources on the web. Here's a c
 - [Shiny in Rmarkdown](http://rmarkdown.rstudio.com/authoring_shiny.html)
 - Get help from the [Shiny Google group](https://groups.google.com/forum/#!forum/shiny-discuss) or [StackOverflow](http://stackoverflow.com/questions/tagged/shiny)
 - [Publish your apps for free with shinyapps.io](http://www.shinyapps.io)
-- [Host your app on your own Shiny server](http://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean)
+- [Host your app on your own Shiny server](https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean)
 - [Learn about how reactivity works](http://shiny.rstudio.com/articles/execution-scheduling.html)
 - [Learn about useful debugging techniques](http://shiny.rstudio.com/articles/debugging.html)
-- [Shiny tips & tricks for improving your apps and solving common problems](http://deanattali.com/blog/advanced-shiny-tips)
+- [Shiny tips & tricks for improving your apps and solving common problems](https://deanattali.com/blog/advanced-shiny-tips)
 
 # 17. Ideas to improve our app
 
-The app we developed is functional, but there are plenty of improvements that can be made. You can compare the app we developed to [my version of this app](http://daattali.com/shiny/bcl/) to get an idea of what a (slightly) more functional app could include. Here are some suggestions of varying difficulties. Each idea also has a hint, I would recommend only reading the hint if you're stuck for 10 minutes. 
+The app we developed is functional, but there are plenty of improvements that can be made. You can compare the app we developed to [my version of this app](https://daattali.com/shiny/bcl/) to get an idea of what a (slightly) more functional app could include. Here are some suggestions of varying difficulties. Each idea also has a hint, I would recommend only reading the hint if you're stuck for 10 minutes. 
 
 - Split the app into two separate files: `ui.R` and `server.R`.
     - **Hint:** All the code assigned into the `ui` variable goes into `ui.R` and all the code for the `server` function goes into `server.R`. You do not need to explicitly call the `shinyApp()` function.

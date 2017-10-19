@@ -146,4 +146,4 @@ Specifying a colour to the colour input is made very flexible to allow for easie
 
 If you're worried that maybe someone viewing your Shiny app on a phone won't be able to use this input properly - don't you worry. I haven't quite checked every single device out there, but I did spend extra time making sure the colour selection JavaScript works in most devices I could think of. `colourInput` will work fine in Shiny apps that are viewed on Android cell phones, iPhones, iPads, and even Internet Explorer 8+.
 
-As usual, if you have any comments, feel free to [contact me](http://deanattali.com/contact).
+As usual, if you have any comments, feel free to [contact me](https://deanattali.com/contact).

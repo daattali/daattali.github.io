@@ -31,7 +31,7 @@ public class ReadFile
 
 		try
 		{
-			URL url = new URL("http://deanattali.com/files/java/Scrabble/" + "grid.dat");
+			URL url = new URL("https://deanattali.com/files/java/Scrabble/" + "grid.dat");
 			reader = new BufferedReader(new InputStreamReader(url.openStream()));
 			//reader=new BufferedReader(new FileReader("grid.dat"));
 			StringTokenizer st=new StringTokenizer(reader.readLine());
@@ -53,7 +53,7 @@ public class ReadFile
 
 		try
 		{
-			URL url = new URL("http://deanattali.com/files/java/Scrabble/" + "grid.dat");
+			URL url = new URL("https://deanattali.com/files/java/Scrabble/" + "grid.dat");
 			reader = new BufferedReader(new InputStreamReader(url.openStream()));
 			//reader=new BufferedReader(new FileReader("grid.dat"));
 			reader.readLine();

@@ -4,7 +4,7 @@ title: "Shiny finally has a colour picker - use colourInput to select colours in
 tags: [professional, rstats, r, r-bloggers, shiny, packages, shinyjs]
 date: 2015-06-28 13:00:00 -0700
 permalink: /2015/06/28/introducing-shinyjs-colourinput/
-share-img: http://deanattali.com/img/blog/colourInput/colourInputDemo.png
+share-img: https://deanattali.com/img/blog/colourInput/colourInputDemo.png
 gh-repo: daattali/colourpicker
 gh-badge: [star, watch, follow]
 lastupdated: 2016-08-15
@@ -36,7 +36,7 @@ Shiny has many useful input controls, but there was one that was always missing 
 
 ## Demo {#demo}
 
-[Click here for a Shiny app showing several demos of colourInput](http://daattali.com/shiny/colourInput/). If you don't want to check out the Shiny app, here is a short GIF demonstrating the most basic functionality of `colourInput`.
+[Click here for a Shiny app showing several demos of colourInput](https://daattali.com/shiny/colourInput/). If you don't want to check out the Shiny app, here is a short GIF demonstrating the most basic functionality of `colourInput`.
 
 [![colourInput demo]({{ site.url }}/img/blog/colourInput/colourInputDemo.gif)]({{ site.url }}/img/blog/colourInput/colourInputDemo.gif)
 

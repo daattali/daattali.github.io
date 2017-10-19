@@ -6,7 +6,7 @@ date: 2015-07-01 15:00:00 -0700
 lastupdated: 2017-10-06
 ---
 
-> This article is also published on [RStudio's Shiny Articles](http://shiny.rstudio.com/articles/persistent-data-storage.html)
+> This article is also published on [RStudio's Shiny Articles](https://shiny.rstudio.com/articles/persistent-data-storage.html)
 
 Shiny apps often need to save data, either to load it back into a different session or to simply log some information. However, common methods of storing data from R may not work well with Shiny. Functions like `write.csv()` and `saveRDS()` save data locally, but consider how [shinyapps.io](http://www.shinyapps.io/) works.
 
@@ -22,7 +22,7 @@ This guide will explain seven methods for storing persistent data remotely with 
 
 The article explains the theory behind each method, and augments the theory with working examples that will make it clear and easy for you to use these methods in your own apps.
 
-As a complement to this article, you can see a [**live demo of a Shiny app**](http://daattali.com/shiny/persistent-data-storage/) **that uses each of the seven storage methods to save and load data** ([source code on GitHub](https://github.com/daattali/shiny-server/tree/master/persistent-data-storage)). This article expands on Jeff Allen’s [article regarding sharing data across sessions](http://shiny.rstudio.com/articles/share-data.html).
+As a complement to this article, you can see a [**live demo of a Shiny app**](https://daattali.com/shiny/persistent-data-storage/) **that uses each of the seven storage methods to save and load data** ([source code on GitHub](https://github.com/daattali/shiny-server/tree/master/persistent-data-storage)). This article expands on Jeff Allen’s [article regarding sharing data across sessions](https://shiny.rstudio.com/articles/share-data.html).
 
 ## Table of contents
 
@@ -51,7 +51,7 @@ To demonstrate how to store data using each storage type, we'll start with a sim
 
 Initially the app will only save responses within its R session. We will learn later how to modify the app to use each different storage type.
 
-Here is the code for the basic app that we will be using as our starting point—copy it into a file named `app.R`. (In case you didn't know: Shiny apps don't *have to* be broken up into separate `ui.R` and `server.R` files, they can be completely defined in one file [as this Shiny article explains](http://shiny.rstudio.com/articles/app-formats.html))
+Here is the code for the basic app that we will be using as our starting point—copy it into a file named `app.R`. (In case you didn't know: Shiny apps don't *have to* be broken up into separate `ui.R` and `server.R` files, they can be completely defined in one file [as this Shiny article explains](https://shiny.rstudio.com/articles/app-formats.html))
 
 ```r
 library(shiny)
@@ -92,7 +92,7 @@ shinyApp(
 )
 ```
 
-The above code is taken from a [guide on how to mimic a Google form with Shiny](http://deanattali.com/2015/06/14/mimicking-google-form-shiny). 
+The above code is taken from a [guide on how to mimic a Google form with Shiny](https://deanattali.com/2015/06/14/mimicking-google-form-shiny). 
 
 The above app is very simple—there is a table that shows all responses, three input fields, and a **Submit** button that will take the data in the input fields and save it. You might notice that there are two functions that are not defined but are used in the app: `saveData(data)` and `loadData()`. These two functions are the only code that affects how the data is stored/retrieved, and we will redefine them for each data storage type. In order to make the app work for now, here's a trivial implementation of the save and load functions that simply stores responses in the current R session. 
 
@@ -123,13 +123,13 @@ Local storage means saving a file on the same machine that is running the Shiny 
 
 Remote storage means saving data on another server, usually a reliable hosted server such as Dropbox, Amazon, or a hosted database.  One big advantage of using hosted remote storage solutions is that they are much more reliable and can generally be more trusted to keep your data alive and not corrupted.
 
-When going through the different storage type options below, keep in mind that if your Shiny app is hosted on shinyapps.io, you will have to use a remote storage method for the time being. RStudio plans to implement persistent storage on shinyapps.io soon. In the meantime, using local storage is only an option if you’re hosting your own [Shiny Server](http://www.rstudio.com/products/shiny/shiny-server/). If you want to host your own server, [here is a guide](http://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean) that describes in detail how to set up your own Shiny Server. 
+When going through the different storage type options below, keep in mind that if your Shiny app is hosted on shinyapps.io, you will have to use a remote storage method for the time being. RStudio plans to implement persistent storage on shinyapps.io soon. In the meantime, using local storage is only an option if you’re hosting your own [Shiny Server](http://www.rstudio.com/products/shiny/shiny-server/). If you want to host your own server, [here is a guide](https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean) that describes in detail how to set up your own Shiny Server. 
 
 # Persistent data storage methods {#persistent}
 
 Using the above Shiny app, we can store and retrieve responses in many different ways. Here we will go through seven ways to achieve data persistence that can be easily integrated into Shiny apps. For each method, we will explain the method and provide a version of `saveData()` and `loadData()` that implements the method. To use a method as the storage type in the example app, run the app with the appropriate version of `saveData()` and `loadData()`.
 
-As a reminder, you can see all the seven different storage types being used, along with the exact code used, [in this live Shiny app](http://daattali.com/shiny/persistent-data-storage/).
+As a reminder, you can see all the seven different storage types being used, along with the exact code used, [in this live Shiny app](https://daattali.com/shiny/persistent-data-storage/).
 
 Here is a summary of the different storage types we will learn to use.
 
@@ -147,7 +147,7 @@ Here is a summary of the different storage types we will learn to use.
 
 This is the most flexible option to store data since files allow you to store any type of data, whether it is a single value, a big *data.frame*, or any arbitrary data. There are two common cases for using files to store data: 
 
-1. you have one file that gets repeatedly overwritten and used by all sessions (like the example in [Jeff Allen's article](http://shiny.rstudio.com/articles/share-data.html)), or
+1. you have one file that gets repeatedly overwritten and used by all sessions (like the example in [Jeff Allen's article](https://shiny.rstudio.com/articles/share-data.html)), or
 2. you save a new file every time there is new data 
  
 In our case we'll use the latter because we want to save each response as its own file. We can use the former option, but then we would introduce the potential for [race conditions](https://en.wikipedia.org/wiki/Race_condition#File_systems) which will overcomplicate the app. A race condition happens when two users submit a response at the exact same time, but since the file cannot deal with multiple edits simultaneously, one user will overwrite the response of the other user. 

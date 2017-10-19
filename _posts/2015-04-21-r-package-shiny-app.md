@@ -2,7 +2,7 @@
 layout: post
 title: "Supplementing your R package with a Shiny app"
 tags: [professional, rstats, r, r-bloggers, shiny, packages, tutorial]
-share-img: "http://deanattali.com/img/blog/ggExtra/ggmarginal-basic-example.png"
+share-img: "https://deanattali.com/img/blog/ggExtra/ggmarginal-basic-example.png"
 date: 2015-04-21 22:00:00 -0700
 permalink: /2015/04/21/r-package-shiny-app/
 ---
@@ -13,9 +13,9 @@ A good package needs to have two things: useful functionality, and clear usage i
 
 ### Incorporating Shiny
 
-In a nutshell, [Shiny](http://shiny.rstudio.com/) is a package that lets you run your R code as an interactive webpage. What this means for package developers is that you can have an interactive webpage that lets users experiment with your package and see what it can do before having to read through the potentially lengthy function documentations/vignette.
+In a nutshell, [Shiny](https://shiny.rstudio.com/) is a package that lets you run your R code as an interactive webpage. What this means for package developers is that you can have an interactive webpage that lets users experiment with your package and see what it can do before having to read through the potentially lengthy function documentations/vignette.
 
-As an example, I recently released a package for adding marginal plots to ggplot2. You be the judge: after that one-sentence description of some functionality, would you rather go straight to the [README](https://github.com/daattali/ggExtra), or see it in action first [in a Shiny app online](http://daattali.com/shiny/ggExtra-ggMarginal-demo/)? I might be wrong, but I think it's useful to interactively see what the package can do.
+As an example, I recently released a package for adding marginal plots to ggplot2. You be the judge: after that one-sentence description of some functionality, would you rather go straight to the [README](https://github.com/daattali/ggExtra), or see it in action first [in a Shiny app online](https://daattali.com/shiny/ggExtra-ggMarginal-demo/)? I might be wrong, but I think it's useful to interactively see what the package can do.
 
 In fact, I'm such a strong believer in this idea, that almost every package I have released has a corresponding demo shiny app. The `shinyjs` [demo app](https://daattali.com/shiny/shinyjs-demo/) and `colourpicker` [demo app](https://daattali.com/shiny/colourInput/) are good examples of that.
 
@@ -27,9 +27,9 @@ There are two ways to complement a package with a Shiny app that shows its main 
 
 #### 1. Host the Shiny app online
 
-You can host your Shiny app somewhere that is publicly available, such as [shinyapps.io](http://www.shinyapps.io/) or on your own [Shiny Server](http://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean). Then you can include a link in the package's README or vignette or function documentation that points to the Shiny app.
+You can host your Shiny app somewhere that is publicly available, such as [shinyapps.io](http://www.shinyapps.io/) or on your own [Shiny Server](https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean). Then you can include a link in the package's README or vignette or function documentation that points to the Shiny app.
 
-As an example, I host [my own Shiny Server](http://daattali.com/shiny) where I can host my Shiny apps, and whenever I release a new package, I include a link in the README to a demo app.
+As an example, I host [my own Shiny Server](https://daattali.com/shiny) where I can host my Shiny apps, and whenever I release a new package, I include a link in the README to a demo app.
 
 The advantage of doing this is that people can play around with your package before even downloading it.
 
