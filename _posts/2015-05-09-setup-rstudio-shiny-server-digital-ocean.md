@@ -291,7 +291,10 @@ As mentioned previously, Shiny Server can also be used as a great tool to host i
 
 In this tutorial we installed Shiny Server Open Source, which is a free offering of Shiny Server by RStudio. However, RStudio also provides [Shiny Server Pro](https://www.rstudio.com/products/shiny-server-pro/), which is not free but is a lot more powerful.
 
-If you're just an individual playing around with shiny and want to host some of your personal apps (like myself), then using the Open Source version is perfectly fine. But if you're looking to use a shiny server in your company, or if you require some more features such as user authentication (login), scaling (supporting multiple users at the same time), and monitoring, then I highly suggest you take a look at at Shiny Server Pro. Most of you will be fine with the free version, but you can contact me if you want to discuss the advantages of using Pro.
+If you're just an individual playing around with shiny and want to host some of your personal apps (like myself), then using the Open Source version is perfectly fine. But if you're looking to use a shiny server in your company, or if you require some more features such as user authentication (login), scaling (supporting multiple users at the same time), and monitoring, then I highly suggest you take a look at at Shiny Server Pro. Most of you will be fine with the free version, but you can [contact me]({{ site.url }}/aboutme#contact) if you want to discuss the advantages of using Pro.
+
+{: .box-note}
+If you're considering purchasing RStudio Connect, Shiny Server Pro, shinyapps.io, or any other RStudio product, feel free to [contact me]({{ site.url }}/aboutme#contact) to discuss.
 
 ## Note 8.4: Hosting R Markdown (Rmd) documents on your Shiny Server {#host-rmd}
 
