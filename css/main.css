@@ -666,9 +666,7 @@ pre code {
 
 /* --- Email subscription --- */
 
-#mailchimp-subscribe-section,
-#mailchimp-subscribe-section-2,
-#mailchimp-subscribe-section-footer {
+.mailchimp-subscribe-section {
   margin-top: 10px;
   border-top: 3px double #fff;
   padding-top: 10px;
@@ -676,55 +674,41 @@ pre code {
   text-align: center;
   margin-bottom: 10px;
 }
-#mailchimp-subscribe-section-2,
+#mailchimp-subscribe-section-share,
 #mailchimp-subscribe-section-footer {
   border-top: 0 none;
   width: 50%;
   margin: 15px auto 0;
 }
 @media only screen and (max-width: 500px) {
-  #mailchimp-subscribe-section-2 {
+  #mailchimp-subscribe-section-share {
     width: 100%;
     margin: 10px 0 0 0;
   }
 }
-#mailchimp-subscribe-section #mc_embed_signup .container,
-#mailchimp-subscribe-section-2 #mc_embed_signup-2 .container,
-#mailchimp-subscribe-section-footer #mc_embed_signup-footer .container {
+.mailchimp-subscribe-section .container {
   width: auto;
   margin: 0;
   padding: 0;
 }
-#mailchimp-subscribe-section #mc_embed_signup .container .row,
-#mailchimp-subscribe-section-2 #mc_embed_signup-2 .container .row,
-#mailchimp-subscribe-section-footer #mc_embed_signup-footer .container .row {
+.mailchimp-subscribe-section .container .row {
   padding: 0;
   margin: 0;
 }
-#mailchimp-subscribe-section #mc_embed_signup .container .row .col-xs-12,
-#mailchimp-subscribe-section #mc_embed_signup .container .row .col-sm-8,
-#mailchimp-subscribe-section #mc_embed_signup .container .row .col-sm-4,
-#mailchimp-subscribe-section-2 #mc_embed_signup-2 .container .row .col-xs-12,
-#mailchimp-subscribe-section-2 #mc_embed_signup-2 .container .row .col-sm-8,
-#mailchimp-subscribe-section-2 #mc_embed_signup-2 .container .row .col-sm-4,
-#mailchimp-subscribe-section-footer #mc_embed_signup-footer .container .row .col-xs-12,
-#mailchimp-subscribe-section-footer #mc_embed_signup-footer .container .row .col-sm-8,
-#mailchimp-subscribe-section-footer #mc_embed_signup-footer .container .row .col-sm-4 {
+.mailchimp-subscribe-section .container .row .col-xs-12,
+.mailchimp-subscribe-section .container .row .col-sm-8,
+.mailchimp-subscribe-section .container .row .col-sm-4 {
   margin: 0;
   padding: 0 2px;
 }
-#mailchimp-subscribe-section #mc_embed_signup label,
-#mailchimp-subscribe-section-2 #mc_embed_signup-2 label {
+#mailchimp-subscribe-section-scrollbox label,
+#mailchimp-subscribe-section-share label {
   font-size: 16px;
   margin-bottom: 7px;
   font-weight: normal;
   display: block;
 }
-#mailchimp-subscribe-section #mce-EMAIL,
-#mailchimp-subscribe-section #mce-FNAME,
-#mailchimp-subscribe-section-2 #mce-EMAIL-2,
-#mailchimp-subscribe-section-2 #mce-FNAME-2,
-#mailchimp-subscribe-section-footer #mce-EMAIL-footer {
+.mailchimp-subscribe-section .email {
   padding: 0 10px;
   border: 1px solid #ABB0B2;
   border-radius: 3px;
@@ -736,9 +720,7 @@ pre code {
   margin: 0 0 5px;
   width: 100%;
 }
-#mailchimp-subscribe-section #mc-embedded-subscribe,
-#mailchimp-subscribe-section-2 #mc-embedded-subscribe-2,
-#mailchimp-subscribe-section-footer #mc-embedded-subscribe-footer {
+.mailchimp-subscribe-section .button {
   border-radius: 3px;
   font-weight: bold;
   border: 1px solid #ABB0B2;
@@ -755,8 +737,8 @@ pre code {
 #mailchimp-subscribe-section-footer #mc-embedded-subscribe-footer {
   color: #333333;
 }
-#mailchimp-subscribe-section #mc-embedded-subscribe:hover,
-#mailchimp-subscribe-section-2 #mc-embedded-subscribe-2:hover {
+#mailchimp-subscribe-section-scrollbox #mc-embedded-subscribe-scrollbox:hover,
+#mailchimp-subscribe-section-share #mc-embedded-subscribe-share:hover {
   background-color: #f8f8f8;
   color: #000;
   cursor: pointer;
@@ -767,38 +749,25 @@ pre code {
   cursor: pointer;
 }
 
-#mailchimp-subscribe-section #mce-EMAIL,
-#mailchimp-subscribe-section #mce-FNAME,
-#mailchimp-subscribe-section #mc-embedded-subscribe,
-#mailchimp-subscribe-section-2 #mce-EMAIL-2,
-#mailchimp-subscribe-section-2 #mce-FNAME-2,
-#mailchimp-subscribe-section-2 #mc-embedded-subscribe-2,
-#mailchimp-subscribe-section-footer #mce-EMAIL-footer,
-#mailchimp-subscribe-section-footer #mc-embedded-subscribe-footer {
+.mailchimp-subscribe-section .email,
+.mailchimp-subscribe-section .button {
   height: 30px;
   font-size: 14px;
 }
 
 @media only screen and (min-width: 980px) {
-  #mailchimp-subscribe-section #mc_embed_signup label,
-  #mailchimp-subscribe-section-2 #mc_embed_signup-2 label {
+  #mailchimp-subscribe-section-scrollbox #mc_embed_signup-scrollbox label,
+  #mailchimp-subscribe-section-share #mc_embed_signup-share label {
     font-size: 18px;
     margin-bottom: 3px;
   }
-  #mailchimp-subscribe-section #mce-EMAIL,
-  #mailchimp-subscribe-section #mce-FNAME,
-  #mailchimp-subscribe-section #mc-embedded-subscribe,
-  #mailchimp-subscribe-section-2 #mce-EMAIL-2,
-  #mailchimp-subscribe-section-2 #mce-FNAME-2,
-  #mailchimp-subscribe-section-2 #mc-embedded-subscribe-2 {
+  .mailchimp-subscribe-section .email,
+  .mailchimp-subscribe-section .button {
     height: 35px;
   }
 }
 @media only screen and (max-width: 979px) {
-  #mailchimp-subscribe-section #mce-EMAIL,
-  #mailchimp-subscribe-section #mce-FNAME,
-  #mailchimp-subscribe-section-2 #mce-EMAIL-2,
-  #mailchimp-subscribe-section-2 #mce-FNAME-2 {
+  .mailchimp-subscribe-section .email {
     margin-bottom: 3px;
   }
 }
