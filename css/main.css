@@ -702,11 +702,14 @@ pre code {
   margin: 0;
 }
 #mailchimp-subscribe-section #mc_embed_signup .container .row .col-xs-12,
-#mailchimp-subscribe-section #mc_embed_signup .container .row .col-sm-6,
+#mailchimp-subscribe-section #mc_embed_signup .container .row .col-sm-8,
+#mailchimp-subscribe-section #mc_embed_signup .container .row .col-sm-4,
 #mailchimp-subscribe-section-2 #mc_embed_signup-2 .container .row .col-xs-12,
-#mailchimp-subscribe-section-2 #mc_embed_signup-2 .container .row .col-sm-6,
+#mailchimp-subscribe-section-2 #mc_embed_signup-2 .container .row .col-sm-8,
+#mailchimp-subscribe-section-2 #mc_embed_signup-2 .container .row .col-sm-4,
 #mailchimp-subscribe-section-footer #mc_embed_signup-footer .container .row .col-xs-12,
-#mailchimp-subscribe-section-footer #mc_embed_signup-footer .container .row .col-sm-6 {
+#mailchimp-subscribe-section-footer #mc_embed_signup-footer .container .row .col-sm-8,
+#mailchimp-subscribe-section-footer #mc_embed_signup-footer .container .row .col-sm-4 {
   margin: 0;
   padding: 0 2px;
 }
