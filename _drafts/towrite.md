@@ -2,7 +2,7 @@ gadget vs addin
 
 blog post about how to inject resources into app that need to exist only once (used in showLog and in shinyalert)
 
-rstudio::conf
+differetn ways to deploy shiny apps
 
 what do curly braces means (on.exit, observe(), suppressstartupwarnings)
 
