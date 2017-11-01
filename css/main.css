@@ -701,12 +701,12 @@ pre code {
   padding: 0;
   margin: 0;
 }
-#mailchimp-subscribe-section #mc_embed_signup .container .row .col-xs-4,
-#mailchimp-subscribe-section #mc_embed_signup .container .row .col-xs-8,
-#mailchimp-subscribe-section-2 #mc_embed_signup-2 .container .row .col-xs-4,
-#mailchimp-subscribe-section-2 #mc_embed_signup-2 .container .row .col-xs-8,
-#mailchimp-subscribe-section-footer #mc_embed_signup-footer .container .row .col-xs-4,
-#mailchimp-subscribe-section-footer #mc_embed_signup-footer .container .row .col-xs-8 {
+#mailchimp-subscribe-section #mc_embed_signup .container .row .col-xs-12,
+#mailchimp-subscribe-section #mc_embed_signup .container .row .col-sm-6,
+#mailchimp-subscribe-section-2 #mc_embed_signup-2 .container .row .col-xs-12,
+#mailchimp-subscribe-section-2 #mc_embed_signup-2 .container .row .col-sm-6,
+#mailchimp-subscribe-section-footer #mc_embed_signup-footer .container .row .col-xs-12,
+#mailchimp-subscribe-section-footer #mc_embed_signup-footer .container .row .col-sm-6 {
   margin: 0;
   padding: 0 2px;
 }
@@ -721,8 +721,7 @@ pre code {
 #mailchimp-subscribe-section #mce-FNAME,
 #mailchimp-subscribe-section-2 #mce-EMAIL-2,
 #mailchimp-subscribe-section-2 #mce-FNAME-2,
-#mailchimp-subscribe-section-footer #mce-EMAIL-footer,
-#mailchimp-subscribe-section-footer #mce-FNAME-footer {
+#mailchimp-subscribe-section-footer #mce-EMAIL-footer {
   padding: 0 10px;
   border: 1px solid #ABB0B2;
   border-radius: 3px;
@@ -743,7 +742,6 @@ pre code {
   color: #2c8a3d;
   background-color: #fff;
   box-sizing: border-box;
-  padding: 0 18px;
   display: block;
   vertical-align: top;
   transition: all 0.23s ease-in-out 0s;
@@ -773,7 +771,6 @@ pre code {
 #mailchimp-subscribe-section-2 #mce-FNAME-2,
 #mailchimp-subscribe-section-2 #mc-embedded-subscribe-2,
 #mailchimp-subscribe-section-footer #mce-EMAIL-footer,
-#mailchimp-subscribe-section-footer #mce-FNAME-footer,
 #mailchimp-subscribe-section-footer #mc-embedded-subscribe-footer {
   height: 30px;
   font-size: 14px;
