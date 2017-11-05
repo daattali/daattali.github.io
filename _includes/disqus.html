@@ -8,6 +8,7 @@
             url_parts = url_parts[0].split("#");
             disqus_url = url_parts[0];
             disqus_url = disqus_url.replace(/(\/)*$/, "/"); // make sure the URL ends with one slash
+            disqus_url = disqus_url.replace(/https:\/\//, "http:\/\/"); // make sure new https pages use same comments as old http site
             
             // Jekyll 3 caused so many bugs, I'm tired of fixing them one by one properly, so I'll just hack it...
             // https://github.com/jekyll/jekyll/issues/4483
