@@ -841,7 +841,7 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server)
 ```
 
-**If you find this tutorial useful, please consider supporting me for the countless hours I've put into developing and maintaining this tutorial :)**
+**If you find this tutorial useful, please consider supporting me for the countless hours I've put into developing and maintaining my educational material :)**
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="text-align: center;">
   <input type="hidden" name="cmd" value="_s-xclick">
