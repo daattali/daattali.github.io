@@ -7,9 +7,8 @@ share-img: https://deanattali.com/img/blog/shiny-tutorial/shiny-addplot.png
 lastupdated: 2017-03-08
 ---
 
-> If you use this material in a classroom, I'd appreciate if you link back to my site!
->
-> **If you want tutoring/training in Shiny or need help with building a Shiny app, I'm [available for hire](https://deanattali.com/shiny/).**
+{: .box-note}
+**If you want tutoring/training in Shiny or need help with building a Shiny app, I'm [available for hire](https://deanattali.com/shiny/).**
 
 Shiny is a package from RStudio that can be used to build interactive web pages with R. While that may sound scary because of the words "web pages", it's geared to R users who have 0 experience with web development, and you do not need to know any HTML/CSS/JavaScript.
 
