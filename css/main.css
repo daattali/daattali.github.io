@@ -897,3 +897,25 @@ pre code {
     margin-bottom: 7px;
   }
 }
+
+/* AddThis promo bar for tidyshiny workshop */
+.addthis_bar_bottom {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #94cb70;
+}
+.addthis_bar_logo_container {
+  display: none;
+}
+.addthis_bar_message span {
+  font-weight: bold;
+}
+.addthis_bar_button_link span {
+  color: #288a28;
+  background: #fff;
+  font-weight: bold;
+  border-color: #777;
+}
+.addthis_bar_button_link span:hover {
+  background: #288a28;
+  color: #fff;
+}
