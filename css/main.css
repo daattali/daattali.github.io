@@ -902,6 +902,13 @@ pre code {
 .addthis_bar_bottom {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   background: #94cb70 !important;
+  font-size: 16px !important;
+  color: #fff !important;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 .addthis_bar_logo_container {
   display: none !important;
@@ -914,8 +921,68 @@ pre code {
   background: #fff !important;
   font-weight: bold !important;
   border-color: #777 !important;
+  padding: 3px 12px;
+  display: inline-block;
+  margin-top: 5px;
+  border-radius: 3px;
 }
 .addthis_bar_button_link:hover {
   background: #288a28 !important;
   color: #fff !important;
+}
+.addthis_bar_x_container {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  margin: 0;
+  padding: 0;
+}
+.addthis_bar_x {
+    background: none;
+    width: 1pc;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    opacity: .5;
+    transition: all .2s ease;
+}
+.addthis_bar_x:hover {
+  opacity: 1;
+}
+.addthis_bar_x:before {
+    content: '';
+    display: block;
+    width: 17px;
+    height: 2px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    position: absolute;
+    z-index: -1;
+    transition: all .3s;
+    top: 9px;
+    left: -1px;
+    background: #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+	box-sizing: border-box;
+}
+.addthis_bar_x:after {
+    content: '';
+    display: block;
+    width: 17px;
+    height: 2px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    position: absolute;
+    z-index: -1;
+    transition: all .3s;
+    top: 9px;
+    left: -1px;
+    background: #fff;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+	box-sizing: border-box;
 }
