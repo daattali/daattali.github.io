@@ -910,6 +910,7 @@ pre code {
   right: 0;
   text-align: center;
   padding: 13px 20px;
+  z-index: 100000000000;
 }
 .addthis_bar_message2 span {
   font-weight: bold !important;
