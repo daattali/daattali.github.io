@@ -899,7 +899,7 @@ pre code {
 }
 
 /* AddThis promo bar for tidyshiny workshop */
-.addthis_bar_bottom {
+.addthis_bar_bottom2 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   background: #94cb70 !important;
   font-size: 16px !important;
@@ -909,14 +909,12 @@ pre code {
   left: 0;
   right: 0;
   text-align: center;
+  padding: 13px 20px;
 }
-.addthis_bar_logo_container {
-  display: none !important;
-}
-.addthis_bar_message span {
+.addthis_bar_message2 span {
   font-weight: bold !important;
 }
-.addthis_bar_button_link {
+.addthis_bar_button_link2 {
   color: #288a28 !important;
   background: #fff !important;
   font-weight: bold !important;
@@ -925,19 +923,20 @@ pre code {
   display: inline-block;
   margin-top: 5px;
   border-radius: 3px;
+  font-size: 14px;
 }
-.addthis_bar_button_link:hover {
+.addthis_bar_button_link2:hover {
   background: #288a28 !important;
   color: #fff !important;
 }
-.addthis_bar_x_container {
+.addthis_bar_x_container2 {
   position: absolute;
   top: 5px;
   right: 5px;
   margin: 0;
   padding: 0;
 }
-.addthis_bar_x {
+.addthis_bar_x2 {
     background: none;
     width: 1pc;
     height: 20px;
@@ -947,10 +946,10 @@ pre code {
     opacity: .5;
     transition: all .2s ease;
 }
-.addthis_bar_x:hover {
+.addthis_bar_x2:hover {
   opacity: 1;
 }
-.addthis_bar_x:before {
+.addthis_bar_x2:before {
     content: '';
     display: block;
     width: 17px;
@@ -968,7 +967,7 @@ pre code {
     transform: rotate(-45deg);
 	box-sizing: border-box;
 }
-.addthis_bar_x:after {
+.addthis_bar_x2:after {
     content: '';
     display: block;
     width: 17px;
