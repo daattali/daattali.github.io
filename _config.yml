@@ -80,8 +80,6 @@ fb_app_id: "536330676521989"
 
 # --- Don't need to touch anything below here (but you can if you want) --- #
 
-addthis-plugin: true # temporarily add AddThis to all pages, for the workshop promo
-
 # Default YAML values (more information on Jekyll's site)  
 defaults:
   -
