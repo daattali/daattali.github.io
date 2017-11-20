@@ -900,22 +900,22 @@ pre code {
 
 /* AddThis promo bar for tidyshiny workshop */
 .addthis_bar_bottom {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background: #94cb70;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  background: #94cb70 !important;
 }
 .addthis_bar_logo_container {
-  display: none;
+  display: none !important;
 }
 .addthis_bar_message span {
-  font-weight: bold;
+  font-weight: bold !important;
 }
-.addthis_bar_button_link span {
-  color: #288a28;
-  background: #fff;
-  font-weight: bold;
-  border-color: #777;
+.addthis_bar_button_link {
+  color: #288a28 !important;
+  background: #fff !important;
+  font-weight: bold !important;
+  border-color: #777 !important;
 }
-.addthis_bar_button_link span:hover {
-  background: #288a28;
-  color: #fff;
+.addthis_bar_button_link:hover {
+  background: #288a28 !important;
+  color: #fff !important;
 }
