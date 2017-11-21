@@ -1,8 +1,12 @@
 ---
 layout: post
-title: 4-Day Workshop in Toronto: Learn R, tidyverse, and Shiny with Dean Attali and Kirill Muller
+title: "4-Day Workshop in Toronto: Learn R, tidyverse, and Shiny with Dean Attali and Kirill Muller"
 tags: [professional, rstats, r, r-bloggers]
+date: 2017-11-21 15:00:00 -0500
 permalink: /blog/tidyshiny-workshop-toronto
+layout: post
+comments: true
+show-share: true
 ---
 
 **Kirill Muller and I are excited to announce a 4-day R workshop in Toronto on January 23-26, 2018!**
