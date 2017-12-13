@@ -898,6 +898,11 @@ pre code {
   }
 }
 
+/* AddThis social share buttons on the bottom in mobile should be short */
+.addthis-smartlayers-mobile .at-share-btn .at-icon-wrapper {
+  padding-top: 2px !important;
+}
+
 /* AddThis promo bar for tidyshiny workshop */
 .addthis_bar_bottom2 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
