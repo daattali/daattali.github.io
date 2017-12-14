@@ -872,7 +872,7 @@ pre code {
 
 @media only screen and (max-width: 979px) {
   #scroll-box {
-    bottom: 34px;
+    bottom: 32px;
     right: 0;
     border-width: 3px 3px 0;
     width: 100%;
@@ -896,6 +896,12 @@ pre code {
   #mailchimp-subscribe-section {
     margin-bottom: 7px;
   }
+}
+
+/* Fix the AddThis Share button spacing on mobile screen */
+.addthis-smartlayers-mobile .at4-count {
+  height: 31px;
+  padding-top: 1px;
 }
 
 /* AddThis promo bar for tidyshiny workshop */
