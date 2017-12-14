@@ -900,8 +900,8 @@ pre code {
 
 /* Fix the AddThis Share button spacing on mobile screen */
 .addthis-smartlayers-mobile .at4-count {
-  height: 31px;
-  padding-top: 1px;
+  height: 31px !important;
+  padding-top: 1px !important;
 }
 
 /* AddThis promo bar for tidyshiny workshop */
@@ -1010,7 +1010,7 @@ article[role=main] {
   padding: 9px;
   width: 150px;
   float: right;
-  margin: 0 0 5px 5px;
+  margin: 0 0 10px 10px;
 }
 
 @media only screen and (min-width: 1150px) {
@@ -1058,4 +1058,29 @@ article[role=main] {
   letter-spacing: 1px;
   font-size: 10px;
   line-height: 1;
+}
+
+@media only screen and (max-width: 1149px) {
+  #deancarbonads.sm-horizontal #carbonads{
+    width: 400px;
+    float: none;
+    margin: 0 auto 15px;
+  }
+  #deancarbonads.sm-horizontal #carbonads span {
+    position: relative;
+  }
+  #deancarbonads.sm-horizontal .carbon-img {
+    margin: 0;
+  }
+  #deancarbonads.sm-horizontal .carbon-text {
+    margin-bottom: 0;
+    float: left;
+    text-align: left;
+    max-width: calc(100% - 130px - 10px);
+  }
+  #deancarbonads.sm-horizontal .carbon-poweredby {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
 }
