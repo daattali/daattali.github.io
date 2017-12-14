@@ -1034,7 +1034,11 @@ article[role=main] {
 
 .carbon-img {
   display: block;
-  margin: 0 auto 12px;
+  margin: 0 auto;
+}
+
+.carbon-img img {
+  margin-bottom: 12px;
 }
 
 .carbon-text {
