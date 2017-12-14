@@ -1062,7 +1062,8 @@ article[role=main] {
 
 @media only screen and (max-width: 1149px) {
   #deancarbonads.sm-horizontal #carbonads{
-    width: 400px;
+    max-width: 400px;
+    width: inherit; 
     float: none;
     margin: 0 auto 15px;
   }
