@@ -988,9 +988,11 @@ pre code {
 }
 
 /* Carbon ads */
-div[role=main] {
+div[role=main],
+article[role=main] {
   position: relative;
 }
+
 #carbonads {
   display: block;
   overflow: hidden;
@@ -998,12 +1000,21 @@ div[role=main] {
   font-family: "Open Sans", Lora, Arial, "Helvetica Neue", Helvetica, sans-serif;
   line-height: 1.5;
   font-size: 13px;
-  position: absolute;
-  top: 0;
-  right: -150px;
   border: 1px solid #ccc;
   padding: 9px;
   width: 150px;
+  float: right;
+  margin: 0 0 5px 5px;
+}
+
+@media only screen and (min-width: 1150px) {
+  #carbonads {
+    position: absolute;
+    top: 0;
+    right: -150px;
+    float: none;
+    margin: 0;
+  }
 }
 
 #carbonads a {
