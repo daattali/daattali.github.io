@@ -92,6 +92,7 @@ defaults:
       show-share: true # add sharing buttons to all blog posts		
       show-subscribe: true # add subscribe email to all blog posts
       addthis-plugin: true
+      carbonads: true
   -
     scope:
       path: "" # all files
