@@ -1,3 +1,11 @@
 {% if page.carbonads %}
-  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=deanattalicom" id="_carbonads_js"></script>
+  {% if page.carbonads-sm-horizontal %}
+    <div id="deancarbonads" class="sm-horizontal">
+      <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=deanattalicom" id="_carbonads_js"></script>
+    </div>
+  {% else %}
+    <div id="deancarbonads">
+      <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=deanattalicom" id="_carbonads_js"></script>
+    </div>
+  {% endif %}
 {% endif %}
