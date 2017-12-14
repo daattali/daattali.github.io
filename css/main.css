@@ -988,6 +988,9 @@ pre code {
 }
 
 /* Carbon ads */
+div[role=main] {
+  position: relative;
+}
 #carbonads {
   display: block;
   overflow: hidden;
