@@ -1070,7 +1070,11 @@ article[role=main] {
     position: relative;
   }
   #deancarbonads.sm-horizontal .carbon-img {
-    margin: 0;
+    margin: 0 10px 0 0;
+    float: left;
+  }
+  #deancarbonads.sm-horizontal .carbon-img img {
+    margin-bottom: 0;
   }
   #deancarbonads.sm-horizontal .carbon-text {
     margin-bottom: 0;
