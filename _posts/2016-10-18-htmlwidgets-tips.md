@@ -65,7 +65,7 @@ renderValue: function(x) { ... }
 
 Now, this `x` variable is actually very useful. It contains all the values that are passed in from R to the widget itself. So you often end up referring to `x` a lot in your code.  I have [a commit](https://github.com/daattali/timevis/commit/7bd3e7390256a7617e3642078a94d301062ab628) that has the sole purpose of renaming `x` to `opts`, and I think you should do that too, for two main reasons. First, `opts` is a much more descriptive name than `x` and it tells you that it holds all the different widget options. Second, I'm always against using any variable name that is only one or two characters long, because it makes it very difficuly to search for it.
 
-See the implementation of this tip in `timevisBasic`: [https://github.com/daattali/timevisBasic/compare/tip1-rendervalue-x-name#diff](https://github.com/daattali/timevisBasic/compare/tip1-rendervalue-x-name#diff)
+[See the implementation of this tip in `timevisBasic`](https://github.com/daattali/timevisBasic/compare/tip1-rendervalue-x-name#diff).
 
 ## Tip 2: Add custom HTML elements to your widget {#custom-html}
 
@@ -96,7 +96,7 @@ timevis_html <- function(id, style, class, ...) {
 
 You can see the actual final code I used in `timevis` [here](https://github.com/daattali/timevis/blob/v0.2/R/timevis.R#L439-L459).
 
-See the implementation of this tip in `timevisBasic`: [https://github.com/daattali/timevisBasic/compare/tip1-rendervalue-x-name...tip2-custom-html#diff](https://github.com/daattali/timevisBasic/compare/tip1-rendervalue-x-name...tip2-custom-html#diff)
+[See the implementation of this tip in `timevisBasic`](https://github.com/daattali/timevisBasic/compare/tip1-rendervalue-x-name...tip2-custom-html#diff).
 
 ## Tip 3: Convert a data frame to a D3-compatible data structure in R {#dataframeToD3}
 
@@ -120,8 +120,7 @@ This function takes in a regular R data frame and converts it to a format that i
 
 Since the d3 representation of a data frame is much more verbose, this results in bigger data to transfer over the network, so I don't generally recommend doing this transformation in R unless you really need to (as in my case, where using the JavaScript method provided by HTMLWidgets was not sufficient).
 
-See the implementation of this tip in `timevisBasic`:
-[https://github.com/daattali/timevisBasic/compare/tip2-custom-html...tip3-dataframeToD3#diff](https://github.com/daattali/timevisBasic/compare/tip2-custom-html...tip3-dataframeToD3#diff)
+[See the implementation of this tip in `timevisBasic`](https://github.com/daattali/timevisBasic/compare/tip2-custom-html...tip3-dataframeToD3#diff).
 
 ## Tip 4:  The `renderValue()` function gets called every time the R binding function gets called {#rendervalue-multiple-times}
 
@@ -162,8 +161,7 @@ When I first made `timevis`, I didn't consciously think about what happens when 
 
 In some visualizations it might make more sense to keep the old data and just add new data, so you should do whatever makes the most sense for your library.
 
-See the implementation of this tip in `timevisBasic`:
-[https://github.com/daattali/timevisBasic/compare/tip3-dataframeToD3...tip4-rendervalue-multiple-times#diff](https://github.com/daattali/timevisBasic/compare/tip3-dataframeToD3...tip4-rendervalue-multiple-times#diff)
+[See the implementation of this tip in `timevisBasic`](https://github.com/daattali/timevisBasic/compare/tip3-dataframeToD3...tip4-rendervalue-multiple-times#diff).
 
 ## Tip 5: Make sure any one-time initialization code gets run only once {#init-once}
 
@@ -188,15 +186,13 @@ factory : function(el, width, height) {
 
 You can see this code pattern in action [in timevis](https://github.com/daattali/timevis/blob/v0.2/inst/htmlwidgets/timevis.js#L26-L38).
 
-See the implementation of this tip in `timevisBasic`:
-[https://github.com/daattali/timevisBasic/compare/tip4-rendervalue-multiple-times...tip5-init-once#diff](https://github.com/daattali/timevisBasic/compare/tip4-rendervalue-multiple-times...tip5-init-once#diff)
+[See the implementation of this tip in `timevisBasic`](https://github.com/daattali/timevisBasic/compare/tip4-rendervalue-multiple-times...tip5-init-once#diff).
 
 ## Tip 6: Find out if the widget is in a shiny app or not with `HTMLWidgets.shinyMode` {#shinyMode}
 
 htmlwidgets can be rendered in a few different contexts: they can be embedded in Rmarkdown documents, viewed as a standalone in RStudio or in a browser, or they can be included in Shiny apps. It may be beneficial to know whether the widget is currently inside a shiny app or not (for example, if you want the widget to interact with Shiny). You can access the variable `HTMLWidgets.shinyMode` in JavaScript code to find out if the current widget is in a Shiny context or not.
 
-See the implementation of this tip in `timevisBasic`:
-[https://github.com/daattali/timevisBasic/compare/tip5-init-once...tip6-shinyMode#diff](https://github.com/daattali/timevisBasic/compare/tip5-init-once...tip6-shinyMode#diff)
+[See the implementation of this tip in `timevisBasic`](https://github.com/daattali/timevisBasic/compare/tip5-init-once...tip6-shinyMode#diff).
 
 ## Tip 7a: Pass data from the widget to R {#widget-to-r-data}
 
@@ -218,8 +214,7 @@ Shiny.onInputChange(elementId + "_selected", timeline.getSelection());
 
 You can see this code in the `timevis` source code [here](https://github.com/daattali/timevis/blob/v0.2/inst/htmlwidgets/timevis.js#L43-L53). You'll also notice that I wrapped this code inside a check for `if (HTMLWidgets.shinyMode) {...}` since it only makes sense to pass data back to R when you're in a Shiny app.
 
-See the implementation of this tip in `timevisBasic`:
-[https://github.com/daattali/timevisBasic/compare/tip6-shinyMode...tip7a-widget-to-r-data#diff](https://github.com/daattali/timevisBasic/compare/tip6-shinyMode...tip7a-widget-to-r-data#diff)
+[See the implementation of this tip in `timevisBasic`](https://github.com/daattali/timevisBasic/compare/tip6-shinyMode...tip7a-widget-to-r-data#diff).
 
 ### Tip 7b: Use a custom function to convert the JavaScript data into an R object {#javascript-to-r-handler}
 
@@ -241,8 +236,7 @@ This is where the `shiny::registerInputHandler()` function comes in: it allows y
 
 Now if you access `input$myobj` in shiny, the value will be wrapped in a list. Of course this particular example isn't terribly useful, but this principle can be applied in real apps. For example, you can see how [I used it](https://github.com/daattali/timevis/blob/v0.2/R/utils.R#L2-L7) in `timevis` to fix an issue where the timeline data I wanted to pass to Shiny was getting flattened to a vector by default and I wanted it to be a data.frame instead. You'll also see that I put that code inside `.onLoad`, which I'm not completely sure is the correct place for that code, so let me know if you have any thoughts on that.
 
-See the implementation of this tip in `timevisBasic`:
-[https://github.com/daattali/timevisBasic/compare/tip7a-widget-to-r-data...tip7b-javascript-to-r-handler#diff](https://github.com/daattali/timevisBasic/compare/tip7a-widget-to-r-data...tip7b-javascript-to-r-handler#diff)
+[See the implementation of this tip in `timevisBasic`](https://github.com/daattali/timevisBasic/compare/tip7a-widget-to-r-data...tip7b-javascript-to-r-handler#diff).
 
 ## Tip 8: Add API functions to lets users programmatically interact with the widget {#api} 
 
@@ -304,8 +298,7 @@ if (HTMLWidgets.shinyMode) {
 
 Now you have a working basic implementation of an API function. You can call `setWindow()` in Shiny, and it will find the appropriate htmlwidget and call its `setWindow()` method.
 
-See the implementation of this tip in `timevisBasic`:
-[https://github.com/daattali/timevisBasic/compare/tip7b-javascript-to-r-handler...tip8a-api-basic#diff](https://github.com/daattali/timevisBasic/compare/tip7b-javascript-to-r-handler...tip8a-api-basic#diff)
+[See the implementation of this tip in `timevisBasic`](https://github.com/daattali/timevisBasic/compare/tip7b-javascript-to-r-handler...tip8a-api-basic#diff).
 
 ### Tip 8b: Abstracting the code to make it easier to add new API functions {#api-abstract}
 
@@ -416,8 +409,7 @@ if (HTMLWidgets.shinyMode) {
 
 Whenever we want to add a new API function, we now just add the function to the htmlwidget return value, and add its name in the `fxns` variable in the above code chunk.
 
-See the implementation of this tip in `timevisBasic`:
-[https://github.com/daattali/timevisBasic/compare/tip8a-api-basic...tip8b-api-abstract#diff](https://github.com/daattali/timevisBasic/compare/tip8a-api-basic...tip8b-api-abstract#diff)
+[See the implementation of this tip in `timevisBasic`](https://github.com/daattali/timevisBasic/compare/tip8a-api-basic...tip8b-api-abstract#diff).
 
 ### Tip 8c: Support chaining API functions with pipes (`%>%`) {#api-chain}
 
@@ -448,8 +440,7 @@ return(message$id)
 
 And that's it! No JavaScript changes. Now you can chain your API functions (assuming, of course, that you have the magrittr pipe loaded). 
 
-See the implementation of this tip in `timevisBasic`:
-[https://github.com/daattali/timevisBasic/compare/tip8b-api-abstract...tip8c-api-chain#diff](https://github.com/daattali/timevisBasic/compare/tip8b-api-abstract...tip8c-api-chain#diff)
+[See the implementation of this tip in `timevisBasic`](https://github.com/daattali/timevisBasic/compare/tip8b-api-abstract...tip8c-api-chain#diff).
 
 ### Tip 8d: Make API functions work outside of Shiny too {#api-not-just-shiny}
 
@@ -500,8 +491,7 @@ for (var i = 0; i < numApiCalls; i++) {
 
 Now you can call API functions using an ID or an htmlwidget object, and you can even chain calls easily. I think this solution is failry simple and elegant, and can easily be implemented in other htmlwidget packages. 
 
-See the implementation of this tip in `timevisBasic`:
-[https://github.com/daattali/timevisBasic/compare/tip8c-api-chain...tip8d-api-not-just-shiny#diff](https://github.com/daattali/timevisBasic/compare/tip8c-api-chain...tip8d-api-not-just-shiny#diff)
+[See the implementation of this tip in `timevisBasic`](https://github.com/daattali/timevisBasic/compare/tip8c-api-chain...tip8d-api-not-just-shiny#diff).
 
 ---
 
