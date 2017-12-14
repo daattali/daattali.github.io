@@ -9,6 +9,7 @@ permalink: /blog/visualize-git-commits-time/
 layout: post
 comments: true
 show-share: true
+carbonads-sm-horizontal: true
 ---
 
 <div style="text-align:center;">
