@@ -6,7 +6,7 @@ differetn ways to deploy shiny apps
 
 what do curly braces means (on.exit, observe(), suppressstartupwarnings)
 
-debugging shiny: options(shiny.sanitize.errors = FALSE) (`sanitize_errors off`), `preserve_logs true`, cat, installed_packages() in UI
+debugging shiny: options(shiny.sanitize.errors = FALSE) (`sanitize_errors false;`), `preserve_logs true`, cat, installed_packages() in UI
 
 similar post to DO but with AWS
 
