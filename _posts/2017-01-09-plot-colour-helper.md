@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Plot Colour Helper - Finally an easy way to pick colours for your R plots!"
-tags: [professional, rstats, r, r-bloggers, shiny, packages]
+tags: [professional, rstats, r-bloggers, shiny, packages]
 date: 2017-01-09 05:00:00 -0500
 share-img: https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/plothelper-demo.png
 permalink: /blog/plot-colour-helper/
