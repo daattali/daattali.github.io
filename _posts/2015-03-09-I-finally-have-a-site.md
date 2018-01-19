@@ -1,7 +1,7 @@
 ---
 layout: post
 title: I finally have a site!
-tags: [personal, meta, blog, family]
+tags: [personal, blog, family]
 share-img: "https://deanattali.com/img/blog/2014-family-livingroom.jpeg"
 permalink: /2015/03/09/I-finally-have-a-site/
 gh-repo: daattali/daattali.github.io
