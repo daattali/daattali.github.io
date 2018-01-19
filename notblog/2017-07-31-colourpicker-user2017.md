@@ -1,7 +1,8 @@
 ---
 layout: page
 title: "Plot colour helper talk @ useR 2017 (5 min)"
-comments: false
+comments: true
+permalink: /colourpicker-user2017/
 ---
 
 <style>
