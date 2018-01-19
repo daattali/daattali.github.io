@@ -2,7 +2,7 @@
 layout: post
 title: "Visualizing when I'm most productive during the day"
 subtitle: "Analyzing my (and others') git activity"
-tags: [professional, rstats, r, r-bloggers, shiny]
+tags: [professional, rstats, r-bloggers, shiny]
 date: 2016-08-19 11:00:00 -0700
 share-img: https://daattali.com/shiny/visualize-git-commits-time/dean-git-plot.png
 permalink: /blog/visualize-git-commits-time/
