@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Supplementing your R package with a Shiny app"
-tags: [professional, rstats, r, r-bloggers, shiny, packages, tutorial]
+tags: [professional, rstats, r-bloggers, shiny, packages, tutorial]
 share-img: "https://deanattali.com/img/blog/ggExtra/ggmarginal-basic-example.png"
 date: 2015-04-21 22:00:00 -0700
 permalink: /2015/04/21/r-package-shiny-app/
