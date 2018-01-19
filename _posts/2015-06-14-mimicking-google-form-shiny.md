@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mimicking a Google Form with a Shiny app"
-tags: [professional, rstats, r, r-bloggers, shiny, shinyjs, tutorial, popular]
+tags: [professional, rstats, r-bloggers, shiny, shinyjs, tutorial, popular]
 date: 2015-06-14 5:30:00 -0700
 permalink: /2015/06/14/mimicking-google-form-shiny/
 share-img: https://deanattali.com/img/blog/mimic-google-form-shiny/mimic-google-form-shiny-final.png
