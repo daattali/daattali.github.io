@@ -1,6 +1,6 @@
 ---
 title: "addinslist package: An RStudio addin to discover and install RStudio addins"
-tags: [professional, rstats, r, r-bloggers, packages, shiny]
+tags: [professional, rstats, r-bloggers, packages, shiny]
 date: 2016-05-09 11:20:00 -0700
 gh-repo: daattali/addinslist
 gh-badge: [star, watch, follow]
