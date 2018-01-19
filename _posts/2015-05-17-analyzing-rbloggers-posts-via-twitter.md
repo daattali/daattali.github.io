@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Analyzing R-Bloggers' posts via Twitter"
-tags: [professional, rstats, r, r-bloggers, shiny, twitter]
+tags: [professional, rstats, r-bloggers, shiny, twitter]
 date: 2015-05-17 23:30:00 -0700
 share-img: https://deanattali.com/img/blog/rbloggers-twitter/all-tweets-top-10.png
 permalink: /2015/05/17/analyzing-rbloggers-posts-via-twitter/
