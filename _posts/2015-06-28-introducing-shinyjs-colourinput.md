@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Shiny finally has a colour picker - use colourInput to select colours in Shiny apps"
-tags: [professional, rstats, r, r-bloggers, shiny, packages, shinyjs]
+tags: [professional, rstats, r-bloggers, shiny, packages, shinyjs]
 date: 2015-06-28 13:00:00 -0700
 permalink: /2015/06/28/introducing-shinyjs-colourinput/
 share-img: https://deanattali.com/img/blog/colourInput/colourInputDemo.png
