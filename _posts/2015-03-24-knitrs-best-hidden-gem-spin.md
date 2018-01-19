@@ -2,7 +2,7 @@
 layout: post
 title: "Knitr's best hidden gem: spin"
 subtitle: Stop knitting & start spinning - spin can help you write reports much faster and avoid repeating yourself
-tags: [professional, rstats, r, r-bloggers, knitr, spin]
+tags: [professional, rstats, r, r-bloggers, knitr]
 permalink: /2015/03/24/knitrs-best-hidden-gem-spin/
 ---
 
