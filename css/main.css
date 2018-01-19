@@ -82,6 +82,11 @@ img::-moz-selection {
   }
 }
 
+.linked-section {
+  padding-top: 60px;
+  margin-top: -25px;
+}
+
 /* --- Navbar --- */
 
 .navbar-custom {
@@ -1088,4 +1093,28 @@ article[role=main] {
     right: 0;
     bottom: 0;
   }
+}
+
+/* Tags page */
+
+.tag-btn {
+  margin: 5px;
+}
+
+#full-tags-list {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#full-tags-list .tag-entry {
+  margin: 0 0 15px 25px;
+}
+
+#full-tags-list .tag-entry a {
+  font-size: 20px;
+}
+
+#full-tags-list .tag-entry .entry-date {
+  color: #808080;
+  font-style: italic;
+  font-size: 16px;
 }
