@@ -2,7 +2,7 @@
 layout: post
 title: "Building Shiny apps - an interactive tutorial"
 date: 2015-12-07 10:00:00 -0700
-tags: [professional, rstats, r, r-bloggers, shiny, tutorial, popular]
+tags: [professional, rstats, r-bloggers, shiny, tutorial, popular]
 share-img: https://deanattali.com/img/blog/shiny-tutorial/shiny-addplot.png
 lastupdated: 2017-03-08
 carbonads-sm-horizontal: true
