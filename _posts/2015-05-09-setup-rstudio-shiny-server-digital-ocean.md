@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to get your very own RStudio Server and Shiny Server with DigitalOcean"
-tags: [professional, rstats, r, r-bloggers, shiny, tutorial, popular]
+tags: [professional, rstats, r-bloggers, shiny, tutorial, popular]
 date: 2015-05-09 21:30:00 -0700
 share-img: https://deanattali.com/img/blog/digital-ocean/rstudio.png
 permalink: /2015/05/09/setup-rstudio-shiny-server-digital-ocean/
