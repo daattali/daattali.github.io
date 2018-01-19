@@ -486,11 +486,25 @@ footer .theme-by {
   border-color: #808080;
 }
 
+/* --- Tags --- */
+
 .blog-tags {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #999;
   font-size: 15px;
   margin-bottom: 30px;
+}
+
+.blog-tags a {
+  color: #008AFF;
+  text-decoration: none;
+  padding: 0px 5px;
+}
+
+.blog-tags a:hover {
+  border-radius: 2px;
+  color: #0085A1;
+  background-color: #EEE;
 }
 
 /* --- Pager --- */
