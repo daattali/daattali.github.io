@@ -2,7 +2,7 @@
 layout: page
 title: "shinyjs talk @ ShinyDevCon 2016 (30 min)"
 comments: true
-permalink: /shinyjs-shinydevcon-2016
+permalink: /shinyjs-shinydevcon-2016/
 ---
 
 <style>
