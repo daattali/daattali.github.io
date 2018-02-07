@@ -55,6 +55,8 @@ layout: base
         {% include social-share.html %}
       {% endif %}
 
+      {% include mediaads.html %}
+
       <ul class="pager blog-pager">
         {% if page.previous.url %}
           <li class="previous">
@@ -67,8 +69,6 @@ layout: base
           </li>
         {% endif %}
       </ul>
-
-      {% include mediaads.html %}
       
       {% if page.comments %}
         <div class="disqus-comments">
