@@ -1025,7 +1025,6 @@ article[role=main] {
   font-family: "Open Sans", Lora, Arial, "Helvetica Neue", Helvetica, sans-serif;
   line-height: 1.5;
   font-size: 13px;
-  border: 1px solid #ccc;
   padding: 9px;
   width: 150px;
   float: right;
@@ -1073,7 +1072,6 @@ article[role=main] {
 
 .carbon-poweredby {
   display: block;
-  text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 10px;
   line-height: 1;
