@@ -29,6 +29,8 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 - **[colourpicker](https://github.com/daattali/colourpicker)** - A colour picker tool for Shiny and for selecting colours in plots. Available [on CRAN](https://cran.r-project.org/package=colourpicker) and [on GitHub](https://github.com/daattali/colourpicker).
 
+- **[shinyalert](https://github.com/daattali/shinyalert)** - Easily create pretty popup messages (modals) in Shiny. Check out a [demo online](https://daattali.com/shiny/shinyalert-demo/). Available [on CRAN](https://cran.r-project.org/package=shinyalert) and [on GitHub](https://github.com/daattali/shinyalert).
+
 - **[addinslist](https://github.com/daattali/addinslist)** - Browse through a continuously updated list of existing RStudio addins and install/uninstall their corresponding packages. Available [on CRAN](https://cran.r-project.org/package=addinslist) and [on GitHub](https://github.com/daattali/addinslist).
 
 - **[ezknitr](https://github.com/daattali/ezknitr)** - Avoid the typical working directory pain when using 'knitr'. If you're into R and reproducible research/generating reports with knitr, then do check it out. Available [on CRAN](https://cran.r-project.org/package=ezknitr) and [on GitHub](https://github.com/daattali/ezknitr).
