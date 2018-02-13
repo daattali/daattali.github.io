@@ -10,7 +10,7 @@ gh-badge: [star, watch, follow]
 
 A brand new shiny package has entered the world yesterday: [`shinyalert`](https://github.com/daattali/shinyalert/). It does only one thing, but does it well: show a message to the user in a modal (aka popup, dialog, or alert box). Actually, it can do one more thing: `shinyalert` can also be used to retrieve an input value from the user using a modal.
 
-You can either visit the [GitHub page](https://github.com/daattali/shinyalert/) to read all the details, or check out a demo online for yourself.
+You can visit the [GitHub page](https://github.com/daattali/shinyalert/) or check out a demo online for yourself:
 
 <div style="text-align:center;">
 <a class="btn btn-lg btn-success" href="https://daattali.com/shiny/shinyalert-demo/">Check out a demo</a>
@@ -31,11 +31,13 @@ I usually release packages at version *0.1*, but with `shinyalert` I decided to 
 
 The idea for this package has been on my mind for a very long time, and the basis for this package is a 10-liner that I wrote 2.5 years ago.
 
-Back in mid 2015, when I was graduate student spending 15 hours/day building Shiny apps and packages for fun, and maybe 15 minutes/day on my actual thesis (I will forever be grateful to [Jenny Bryan](https://twitter.com/JennyBryan) for allowing me to get away with that), [Kent Russell (@timelyportfolio)](https://twitter.com/timelyportfolio) built an htmlwidget called `sweetalertR`. It's a port of the [sweetalert](https://github.com/t4t5/sweetalert) JavaScript library, which is used to create simple pretty modals, to R.
+Back in mid 2015, when I was a graduate student spending 15 hours/day building Shiny apps and packages for fun, and maybe 15 minutes/day on my actual thesis (I will forever be grateful to [Jenny Bryan](https://twitter.com/JennyBryan) for allowing me to get away with that), [Kent Russell (@timelyportfolio)](https://twitter.com/timelyportfolio) built an htmlwidget called `sweetalertR`. It's a port of the [sweetalert](https://github.com/t4t5/sweetalert) JavaScript library, which is used to create simple pretty modals, to R.
 
 Shortly after, [Eric Nantz (@theRcast)](https://twitter.com/thercast) asked Kent if it's possible to incorporate these modals in Shiny apps, and tagged me in his question. I'd never heard of sweetalert before, but I was intrigued, so in [my response](https://github.com/timelyportfolio/sweetalertR/issues/1#issuecomment-123564079) I came up with a short piece of code to include sweetalert modals in Shiny apps.
 
-Over the next year I noticed that I actually found these modals to be very nice so I started working on this package so that everyone could benefit from them. But it turned out that just a few weeks prior, Shiny released a great new version, which included support for modals! And so my motivation for the package quickly died. I still wanted to release this package because I do believe it's nicer and simpler than Shiny's modals, and includes a few extra features, and last week, after a 16-month hiatus, I resumed its development. And here we are!
+Over the next year I noticed that I actually found these modals to be very nice so I started working on this package so that everyone could benefit from them. But it turned out that just a few weeks prior, Shiny released a great new version, which included support for modals! And so my motivation for the package quickly plummeted. I still wanted to release this package because I do believe it's nicer and simpler than Shiny's modals, and includes a few extra features. Last week, after a 16-month hiatus, I resumed its development.
+
+And here we are!
 
 ## Overview {#overview}
 
@@ -66,13 +68,11 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 ```
 
-And here's an example of a modal where the user is requested to provide a value:
-
-[![input modal](https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-input.gif)](https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-input.gif)
-
 ## Input modals {#input-modals}
 
 Usually the purpose of a modal is simply informative, to show some information to the user. However, the modal can also be used to retrieve an input from the user by setting the `type = "input"` parameter.
+
+[![input modal](https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-input.gif)](https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-input.gif)
 
 Only a single input can be used inside a modal. By default, the input will be a text input, but you can use other HTML input types by specifying the `inputType` parameter. For example, `inputType = "number"` will provide the user with a numeric input in the modal.
 
