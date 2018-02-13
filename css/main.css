@@ -1025,8 +1025,7 @@ article[role=main] {
   font-family: "Open Sans", Lora, Arial, "Helvetica Neue", Helvetica, sans-serif;
   line-height: 1.5;
   font-size: 13px;
-  padding: 9px;
-  width: 150px;
+  width: 130px;
   float: right;
   margin: 0 0 10px 10px;
 }
@@ -1035,7 +1034,7 @@ article[role=main] {
   #carbonads {
     position: absolute;
     top: 0;
-    right: -155px;
+    right: -135px;
     float: none;
     margin: 0;
   }
