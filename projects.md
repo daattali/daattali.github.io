@@ -8,10 +8,14 @@ carbonads: true
 
 This is a collection of some personal projects I've worked on that are easily viewable online. Anything that is not browser-friendly will not make the cut :(
 
-I'm also [**available for consulting**](/shiny), so feel free to [contact me](/contact) if it looks like we could work together. 
+I'm also [**available for consulting**](/shiny), so feel free to [contact me](/contact) if you'd like to work together. 
 
 
 ---
+
+## Courses
+
+I have an online video course ["Case Studies in Shiny"](https://www.datacamp.com/courses/building-web-applications-in-r-with-shiny-case-studies) hosted on DataCamp. It is an interactive course designed to give you practice applying R-Shiny concepts and getting practice with real-life scenarios, while also learning some advanced Shiny concepts.
 
 ## Website templates (Jekyll)
 
@@ -44,10 +48,6 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 - **[lightsout](https://github.com/daattali/lightsout)** - An implementation of the puzzle game Lights Out using R. [Play the game online](https://daattali.com/shiny/lightsout/). Available [on CRAN](https://cran.r-project.org/package=lightsout) and [on GitHub](https://github.com/daattali/lightsout).
 
 *Many of my R packages/tutorials/thoughts are graciously shared on [R-bloggers](https://www.r-bloggers.com/), which is a great resource for any useR.*
-
-## Courses
-
-I'm creating an online course on Case Studies with Shiny together with [DataCamp](https://www.datacamp.com), an interactive platform to [learn R](https://www.datacamp.com/courses/free-introduction-to-r) and data science.
 
 ## Chrome extensions
 
