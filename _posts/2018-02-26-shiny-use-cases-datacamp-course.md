@@ -16,4 +16,8 @@ This is an online course consisting of a series of short videos, mulitple choice
 
 If you've been looking to get some pratice with Shiny and learn a few new tricks, this course might be great for you. As I always say with anything I produce, any and all feedback is 100% welcomed.
 
-[![](https://deanattali.com/img/blog/datacamp-shiny-case-studies-logo.png)](https://deanattali.com/img/blog/datacamp-shiny-case-studies-logo.png)
+<div style="text-align:center;">
+  <a href="https://deanattali.com/img/blog/datacamp-shiny-case-studies-logo.png">
+    <img src="https://deanattali.com/img/blog/datacamp-shiny-case-studies-logo.png" alt="course logo" style="width: 180px;">
+  </a>
+</div>
