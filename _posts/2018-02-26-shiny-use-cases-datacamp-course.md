@@ -3,7 +3,7 @@ title: "Shiny Case Studies: My new online interactive video course"
 tags: [professional, rstats, r-bloggers, shiny, tutorial]
 share-img: "https://daattali.com/shiny/img/blog/datacamp-shiny-case-studies-logo.png"
 permalink: /blog/shiny-use-cases-datacamp-course/
-date: 2018-02-26 11:30:00 -0500
+date: 2018-02-26 11:20:00 -0500
 ---
 
 Last week, my brand new DataCamp course [Shiny Case Studies](https://www.datacamp.com/courses/building-web-applications-in-r-with-shiny-case-studies) was finally released after being in the works for a full year!
