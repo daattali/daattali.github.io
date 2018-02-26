@@ -21,3 +21,4 @@ If you've been looking to get some pratice with Shiny and learn a few new tricks
     <img src="https://deanattali.com/img/blog/datacamp-shiny-case-studies-logo.png" alt="course logo" style="width: 180px;">
   </a>
 </div>
+<br/>
