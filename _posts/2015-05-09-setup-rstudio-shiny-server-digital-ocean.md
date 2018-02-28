@@ -5,7 +5,7 @@ tags: [professional, rstats, r-bloggers, shiny, tutorial, popular]
 date: 2015-05-09 21:30:00 -0700
 share-img: https://deanattali.com/img/blog/digital-ocean/rstudio.png
 permalink: /2015/05/09/setup-rstudio-shiny-server-digital-ocean/
-lastupdated: 2017-10-18
+lastupdated: 2018-02-27
 carbonads-sm-horizontal: true
 ---
 
@@ -43,11 +43,13 @@ This post will cover how to set up a machine from scratch, set up R, RStudio Ser
 
 # Step 1: Sign up to DigitalOcean {#sign-up}
 
-Go to [DigitalOcean](https://m.do.co/c/358494f80b99) (use this referral link to get 2 months!) and sign up. Registration is quick and painless, but I think in order to verify your account (and to get your $10) you have to provide credit card details.  If you go to [your Billing page](https://cloud.digitalocean.com/settings/billing) hopefully you will see the $10 credit.
+Go to [DigitalOcean](https://m.do.co/c/358494f80b99) (use this referral link to get 2 months free!) and sign up. Registration is quick and painless, but in order to verify your account (and to get your $10) you have to provide credit card details.  After signing up, if you go to [your Billing page](https://cloud.digitalocean.com/settings/billing) you should see your $10 credit.
 
 # Step 2: Create a new droplet {#create-droplet}
 
-Now let's claim one of DO's machines as our own! It's so simple that you definitely don't need my instructions, just click on the big "Create" button -> "Droplets" -> and choose your settings. I chose the smallest/weakest machine ($5/month plan) and it's good enough for me. I chose San Francisco for region because it's the closest to me, though it really wouldn't make much of a noticeable difference where the server is located. For operating system, I chose to go with the default Ubuntu 16.04 x64. If you know what SSH keys are (you can learn [here](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-putty-on-digitalocean-droplets-windows-users)), then I recommend you add an SSH key at the last step if you know how to do that. If not, just proceed without an SSH key.
+Now let's claim one of DO's machines as our own! It's so simple that you definitely don't need my instructions, just click on the big green *"Create"* button -> *"Droplets"* -> and choose your settings. I chose the smallest/weakest machine ($5/month plan) and it's good enough for me.
+
+I chose San Francisco for region because it's the closest to me, though it really wouldn't make much of a noticeable difference where the server is located. For operating system, I chose to go with the default Ubuntu 16.04 x64. If you know what SSH keys are (you can learn [here](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-putty-on-digitalocean-droplets-windows-users)), then I recommend you add an SSH key at the last step if you know how to do that. If not, just proceed without an SSH key.
 
 *Note: all subsequent steps assume that you are also using the weakest server possible with Ubuntu 16.04 x64. If you chose different settings, the general instructions will still apply but some of the specific commands/URLs might need to change.*
 
