@@ -60,7 +60,7 @@ Even though you probably don't need it, here's a short GIF showing how I create 
 
 Once the droplet is ready (can take a few minutes), you'll be redirected to a page that shows you information about the new droplet, including its IP. From now on, I'll use the random IP address `123.456.1.2` for the rest of this post, but remember to always substitute your actual droplet's IP with this one.
 
-One option to log into your droplet is through the "Access" tab on the droplet's page, but it's incredibly slow and ugly, so I prefer logging in on my own machine. If you're on a unix machine, you can just use `ssh 123.456.1.2`. I'm on Windows, so I use [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/) to SSH ("login") into other machines. Use the IP that you see on the page, with the username `root`.  If you used an SSH key then you don't need to provide a password; otherwise, a password was sent to your email.
+One option to log into your droplet is through the "Access" tab on the droplet's page, but it's incredibly slow and ugly, so I prefer logging in on my own machine. If you're on a unix machine, you can just use `ssh 123.456.1.2`. I'm on Windows, so I use [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/) to SSH ("login") into other machines. Use the IP that you see on the page, with the username `root`.  If you used an SSH key then you don't need to provide a password; otherwise, a password was sent to your email. The first time you log in, you may be asked to change the default password.
 
 You should be greeted with a welcome message and some stats about the server that look like this:
 
@@ -81,6 +81,8 @@ From now on I will generally log into this server as "dean" instead of "root".  
 su - dean
 ~~~
 
+Now that we're no longer logged in as the administrator, you may be asked for your password sometimes when trying to run a command.
+
 # Step 5: See your droplet in a browser {#nginx}
 
 Right now if you try to visit `http://123.456.1.2` in a browser, you'll get a "webpage not available error". Let's make our private server serve a webpage there instead, as a nice visual reward for getting this far. Install nginx:
@@ -94,7 +96,7 @@ Now if you visit `http://123.456.1.2`, you should see a welcome message to nginx
 
 ### Quick nginx references
 
-The default file that is served is located at `/usr/share/nginx/html/index.html`, so if you want to change what that webpage is showing, just edit that file with `sudo nano /usr/share/nginx/html/index.html`. For example, I just put a bit of text redirecting to other places [in my index page](https://daattali.com/).  The configuration file is located at `/etc/nginx/nginx.conf`. 
+The default file that is served is located at `/var/www/html/index.nginx-debian.html`, so if you want to change what that webpage is showing, just edit that file with `sudo nano /var/www/html/index.nginx-debian.html`. For example, I just put a bit of text redirecting to other pages [in my index page](https://daattali.com/).  The configuration file is located at `/etc/nginx/nginx.conf`. 
 
 When you edit an HTML file, you will be able to see the changes immediately when you refresh the page, but if you make configuration changes, you need to restart nginx. In the future, you can stop/start/restart nginx with
 
@@ -106,7 +108,7 @@ sudo service nginx restart
 
 # Step 6: Install R {#install-r}
 
-To ensure we get the most recent version of R, we need to first add `xenial` (our Ubuntu release name) to our `sources.list`:
+To ensure we get the most recent version of R, we need to first add `xenial` (the release name for Ubuntu 16.04) to our `sources.list`:
 
 ~~~
 sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial/" >> /etc/apt/sources.list'
@@ -136,7 +138,7 @@ R
 
 Now you need to quit R (`quit()`) because there are a couple small things to adjust on the server so that R will work well.
 
-If you also chose the weakest machine type like I did, many packages won't be able to install because of not enough memory. We need to add 1G of swap space:
+If you also chose the weakest machine like I did (, many packages won't be able to install because of not enough memory. We need to add 1GB of swap space:
 
 ~~~
 sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
@@ -145,12 +147,10 @@ sudo /sbin/swapon /var/swap.1
 sudo sh -c 'echo "/var/swap.1 swap swap defaults 0 0 " >> /etc/fstab'
 ~~~
 
-Now installing most packages will work, but before installing any package, I always like having `devtools` available so that I can install GitHub packages. `devtools` will currently not be able to get installed because it has a few dependencies. Let's install those dependencies:
+Now installing most packages will work. But before installing any package, I always like having `devtools` available so that I can install R packages that are on GitHub. `devtools` will currently not be able to get installed because it has a few dependencies. Let's install those dependencies:
 
 ~~~
-sudo apt-get -y install libcurl4-gnutls-dev
-sudo apt-get -y install libxml2-dev
-sudo apt-get -y install libssl-dev
+sudo apt-get -y install libcurl4-gnutls-dev libxml2-dev libssl-dev
 ~~~
 
 Ok, now we can start installing R packages, both from CRAN and from GitHub!
