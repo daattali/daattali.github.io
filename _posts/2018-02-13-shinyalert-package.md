@@ -4,7 +4,7 @@ tags: [professional, rstats, r-bloggers, packages, shiny]
 share-img: "https://daattali.com/shiny/img/shinyalert.png"
 permalink: /blog/shinyalert-package/
 date: 2018-02-13 11:00:00 -0500
-lastupdated: 2018-02-28
+lastupdated: 2018-03-01
 gh-repo: daattali/shinyalert
 gh-badge: [star, watch, follow]
 ---
@@ -26,6 +26,7 @@ I usually release packages at version *0.1*, but with `shinyalert` I decided to 
 - [Input modals](#input-modals)
 - [Modal return value](#return-value)
 - [Callbacks](#callbacks)
+- [Chaining modals](#chaining)
 - [Comparison with Shiny modals](#shiny-comparison)
 
 ## Background {#background}
@@ -112,6 +113,17 @@ shinyalert(
   "Enter your name", type = "input",
   callbackR = function(x) { if(x != FALSE) message("Hello ", x) },
   callbackJS = "function(x) { if (x !== false) { alert('Hello ' + x); } }"
+)
+```
+
+## Chaining modals {#chaining}
+
+It's possible to chain modals (call multiple modals one after another) by making a shinyalert() call inside a shinyalert callback or using the return value of a previous modal. For example:
+
+```r
+shinyalert(
+  title = "What is your name?", type = "input",
+  callbackR = function(value) { shinyalert(paste("Welcome", value)) }
 )
 ```
 
