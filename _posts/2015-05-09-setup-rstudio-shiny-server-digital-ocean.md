@@ -175,14 +175,14 @@ Great, R is working, but RStudio has become such an integral part of our lives t
 Let's install some pre-requisites:
 
 ~~~
-sudo apt-get -y install libapparmor1 gdebi-core
+sudo apt-get -y install gdebi-core
 ~~~
 
-Download the latest RStudio Server - consult [RStudio Downloads page](http://www.rstudio.com/products/rstudio/download-server/) to get the URL for the latest version. Then install the file you downloaded. These next two lines are using the latest version as of writing this post.
+Download the latest RStudio Server — consult [RStudio Downloads page](http://www.rstudio.com/products/rstudio/download-server/) to get the URL for the latest version. Then install the file you downloaded. These next two lines are using the latest version as of writing this post.
 
 ~~~
-wget https://download2.rstudio.org/rstudio-server-1.1.383-amd64.deb
-sudo gdebi rstudio-server-1.1.383-amd64.deb
+wget https://download2.rstudio.org/rstudio-server-1.1.423-amd64.deb
+sudo gdebi rstudio-server-1.1.423-amd64.deb
 ~~~
 
 Done! By default, RStudio uses port 8787, so to access RStudio go to `http://123.456.1.2:8787` and you should be greeted with an RStudio login page. (If you forgot what your droplet's IP is, you can find out by running `hostname -I`)
@@ -191,11 +191,11 @@ Done! By default, RStudio uses port 8787, so to access RStudio go to `http://123
 
 You can log in to RStudio with any user/password that are available on the droplet. For example, I would log in with username `dean` and my password. If you want to let your friend Joe have access to your RStudio, you can create a new user for them with `adduser joe`.
 
-Go ahead and play around in R a bit, to make sure it works fine. I usually like to try out a `ggplot2` function, to ensure that graphics are working properly.
+Go ahead and play around in RStudio a bit to make sure it works fine. I usually like to try out a `ggplot2` function, to ensure that graphics are working properly.
 
 # Step 8: Install Shiny Server {#install-shiny}
 
-You can safely skip this step if you don't use `shiny` and aren't interested in being able to host Shiny apps yourself. **But** don't forget that Shiny Server can also be used to host Rmarkdown files, not just shiny apps. This means that even if you don't develop shiny apps you might still have a use for Shiny Server if you want to host interactive Rmarkdown documents.
+You can safely skip this step if you don't use Shiny and aren't interested in being able to host Shiny apps yourself. **But** don't forget that Shiny Server can also be used to host Rmarkdown files, not just shiny apps. This means that even if you don't develop shiny apps you might still have a use for Shiny Server if you want to host interactive Rmarkdown documents.
 
 To install Shiny Server, first install the `shiny` package:
 
@@ -208,8 +208,8 @@ sudo su - -c "R -e \"install.packages('shiny', repos='http://cran.rstudio.com/')
 Just like when we installed RStudio, again we need to get the URL of the latest Shiny Server [from the Shiny Server downloads page](http://www.rstudio.com/products/shiny/download-server/), download the file, and then install it.  These are the two commands using the version that is most up-to-date right now:
 
 ~~~
-wget https://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.5.5.872-amd64.deb
-sudo gdebi shiny-server-1.5.5.872-amd64.deb
+wget https://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.5.6.875-amd64.deb
+sudo gdebi shiny-server-1.5.6.875-amd64.deb
 ~~~
 
 Shiny Server is now installed and running. Assuming there were no problems, if you go to `http://123.456.1.2:3838/` you should see Shiny Server's default homepage, which includes some instructions and two Shiny apps:
@@ -227,17 +227,17 @@ If you see an error on the bottom Shiny app, it's probably because you don't hav
 - To reload the server after editing the config, use `sudo service shiny-server restart`.
 - When hosting an Rmarkdown file, name the file `index.rmd` and add `runtime: shiny` to the document's frontmatter. 
 
-**Important!** If you look in the config file, you will see that by default, apps are ran as user "shiny". It's important to understand which user is running an app because things like file permissions and personal R libraries will be different for each user and it might cause you some headaches until you realize it's because the app should not be run as "shiny". Just keep that in mind.
+**Important!** If you look in the config file, you will see that by default, apps are run as user `shiny`. It's important to understand which user is running an app because things like file permissions and personal R libraries will be different for each user and it might cause you some headaches (or many days of headaches in my experience) until you realize it's because the app should not be run as `shiny`. Just keep that in mind.
 
 The fact that apps run as the user `shiny` means that any package required in a shiny app needs to be either in the global library or in `shiny`'s library. [As I mentioned above](#user-libraries), you might need to install R packages in a special way to make sure the `shiny` user can access them.
 
 ## Step 8.1: Set up proper user permissions on Shiny Server {#shiny-user-perms}
 
-As I just mentioned, dealing with which user is running an app and user permissions can be a bit annoying. It took me a while to figure our how to set up the users in a way that works well for me, and this is the setup I came up with. I'm not saying it's necessarily the most correct way to work, but it works for me. Feel free to do the same.
+As I just mentioned, dealing with which user is running an app and user permissions can be a bit annoying. It took me a very long time to figure our how to set up the users in a way that works well for me, and this is the setup I came up with. I'm not saying it's necessarily the most correct way to work, but it works for me and has worked for hundreds of others who have followed this article. Feel free to do the same.
 
-Currently, assuming you're logged in as user `dean`, when you create a folder in the Shiny Server folder, `dean` will be considered the only owner of that folder and nobody else (except `root`) will be able to write files there. Why is this a problem? It means that if an app is trying to write a file to the filesystem, the app will crash because `shiny` user does not have those permissions. One option is to add `run_as dean;` to the shiny server config, but I don't like that because then when I want to see which user is using up the server's resources, I won't be able to differentiate between a shiny app running under my name vs me running R code myself.
+Currently, assuming you're logged in as user `dean`, when you create a folder in the Shiny Server folder (`/srv/shiny-server/`), `dean` will be considered the only owner of that folder, and nobody else (except `root`) will be able to write files there. Why is this a problem? It means that if a Shiny app is trying to write a file to the filesystem, the app will crash because `shiny` user does not have those permissions! One option is to add `run_as dean;` to the shiny server config, but I don't like that because then when I want to see which user is using up the server's resources, I won't be able to differentiate between a shiny app running under my name vs me running R code myself.
 
-So my solution is to create a user group called `shiny-apps` and add both `dean` and `shiny` users to it. Then I'll make sure that the whole `/srv/shiny-server` folder has read+write permissions to the group. (Again, disclaimer: I'm not a sysadmin so I'm learning all this as I go. Don't treat this as a work of god).
+So my solution is to create a user group called `shiny-apps` and add both `dean` and `shiny` users to it. Then I'll make sure that the whole `/srv/shiny-server` folder has read+write permissions for this group. (Again, disclaimer: I'm not a sysadmin so I'm learning all this as I go. Don't treat this as a work of god).
 
 ~~~
 sudo groupadd shiny-apps
@@ -255,14 +255,21 @@ Now both `dean` and `shiny` will have access to any new or existing files under 
 
 As mentioned above, any Shiny app you place under `/srv/shiny-server/` will be automatically served as a Shiny app. But how do you get shiny apps into there in the first place? If you're creating a new app, you can just log into your RStudio Server and develop your shiny app from there, and just save the app under `/srv/shiny-server/`.
 
-But what if you want to bring into your server an app you already have on your machine?  One option is to directly transfer files using something like [FileZilla](https://filezilla-project.org/) or the `scp` command. The moment a shiny app directory is transferred to your droplet, the corresponding app will be available to use on the web right away. Another approach is to use git. If you don't know what git is, that's outside the scope of this article, so either look it up and come back here or just use FileZilla :)
+But what if you want to bring into your server an app you already have on your own computer?  One option is to directly transfer files using something like [FileZilla](https://filezilla-project.org/) or the `scp` command. The moment a shiny app directory is transferred to your droplet, the corresponding app will be available to use on the web right away. Another approach is to use git. If you don't know what git is, that's outside the scope of this article, so either look it up and come back here or just use FileZilla :)
 
-The main idea is to have the `/srv/shiny-server/` folder be a git repository, so that you can push to this repository from your personal computer and whenever you do a `git pull` on your droplet, it will update and grab the new apps you added. That's how I set up my own shiny server, you can take a look at [my shiny server on GitHub](https://github.com/daattali/shiny-server) and fork it if you'd like a good starting point.
+The main idea is to have the `/srv/shiny-server/` folder be a git repository so that you can push to this repository from your personal computer. Whenever you do a `git pull` on your droplet, it will update and grab the new apps you added. That's how I set up my own shiny server, you can take a look at [my shiny server repository on GitHub](https://github.com/daattali/shiny-server) and fork it if you'd like a good starting point.
 
-The first step is to install git and make the `/srv/shiny-server/` directory a git repository.
+The first step is to install git and tell git who you are (use your email address and your name in the last 2 commands)
 
 ~~~
 sudo apt-get -y install git
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+~~~
+
+Now let's make the `/srv/shiny-server/` directory a git repository.
+
+~~~
 cd /srv/shiny-server
 git init
 ~~~
@@ -278,7 +285,7 @@ Now we need to grab the URL of the repository from GitHub, so on the new page yo
 Now we need to make the connection between the git repository we made on our droplet and the one we just created, and then add all the files that are currently in `/srv/shiny-server/` to this repository. **Be sure to replace the URL in the first command with the URL that you copied from your repository**.
 
 ~~~
-git remote add origin git@github.com:daattali/shiny-server.git
+git remote add origin https://github.com/daattali/shiny-server.git
 git add .
 git commit -m "Initial commit"
 git push -u origin master
@@ -294,10 +301,10 @@ As mentioned previously, Shiny Server can also be used as a great tool to host i
 
 In this tutorial we installed Shiny Server Open Source, which is a free offering of Shiny Server by RStudio. However, RStudio also provides [Shiny Server Pro](https://www.rstudio.com/products/shiny-server-pro/), which is not free but is a lot more powerful.
 
-If you're just an individual playing around with shiny and want to host some of your personal apps (like myself), then using the Open Source version is perfectly fine. But if you're looking to use a shiny server in your company, or if you require some more features such as user authentication (login), scaling (supporting multiple users at the same time), and monitoring, then I highly suggest you take a look at at Shiny Server Pro. Most of you will be fine with the free version, but you can [contact me]({{ site.url }}/aboutme#contact) if you want to discuss the advantages of using Pro.
+If you're just an individual playing around with shiny and want to host some of your personal apps, then using the Open Source version is perfectly fine. But if you're looking to use a shiny server in your company, or if you require some more features such as user authentication (login), scaling (supporting multiple users at the same time), and monitoring, then I highly suggest you take a look at at Shiny Server Pro.
 
 {: .box-note}
-If you're considering purchasing RStudio Connect, Shiny Server Pro, shinyapps.io, or any other RStudio product, feel free to [contact me]({{ site.url }}/aboutme#contact) to discuss.
+If you're considering purchasing RStudio Connect, Shiny Server Pro, shinyapps.io, or any other RStudio product, or if you want to discuss their benefits, feel free to [contact me]({{ site.url }}/contact).
 
 ## Note 8.4: Hosting R Markdown (Rmd) documents on your Shiny Server {#host-rmd}
 
