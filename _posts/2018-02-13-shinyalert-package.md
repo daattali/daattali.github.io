@@ -118,7 +118,7 @@ shinyalert(
 
 ## Chaining modals {#chaining}
 
-It's possible to chain modals (call multiple modals one after another) by making a shinyalert() call inside a shinyalert callback or using the return value of a previous modal. For example:
+It's possible to chain modals (call multiple modals one after another) by making a `shinyalert()` call inside a shinyalert callback or using the return value of a previous modal. For example:
 
 ```r
 shinyalert(
