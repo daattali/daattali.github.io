@@ -4,6 +4,7 @@ tags: [professional, rstats, r-bloggers, packages, shiny]
 share-img: "https://daattali.com/shiny/img/shinyalert.png"
 permalink: /blog/shinyalert-package/
 date: 2018-02-13 11:00:00 -0500
+lastupdated: 2018-02-28
 gh-repo: daattali/shinyalert
 gh-badge: [star, watch, follow]
 ---
@@ -16,7 +17,7 @@ You can visit the [GitHub page](https://github.com/daattali/shinyalert/) or chec
 <a class="btn btn-lg btn-success" href="https://daattali.com/shiny/shinyalert-demo/">Check out a demo</a>
 </div>
 
-I usually release packages at version *0.1*, but with `shinyalert` I decided to be optimistic (read: naive) and release version *1.0*. This package is fairly lightweight and I do not see it growing too much in terms of functionality, and because of its simplicity I don't expect too many bugs. So I decided to start if off at *1.0* and my wishful thinking is that it could remain there without much ongoing maintenance. 
+I usually release packages at version *0.1*, but with `shinyalert` I decided to be optimistic (read: naive) and release version *1.0*. This package is fairly lightweight and I do not see it growing too much in terms of functionality, and because of its simplicity I don't expect too many bugs. So I decided to start if off at *1.0* and my wishful thinking is that it could remain there without much ongoing maintenance. (Update only two weeks later: well, that 1.0 thing didn't last very long. I've already added new features that were requested).
 
 # Table of contents
 
@@ -86,7 +87,7 @@ When there is an input field in the modal (`type="input"`), the value of the mod
 
 When the user exits the modal using the Escape key or by clicking outside of the modal, the return value is `FALSE` (as if the "Cancel" button was clicked). If the `timer` parameter is used and the modal closes automatically as a result of the timer, no value is returned from the modal.
 
-The return value of the modal can be accessed via `input$shinyalert` in the Shiny server's code, as if it were a regular Shiny input. The return value can also be accessed using the *[modal callbacks](#callbacks)*.
+The return value of the modal can be accessed via `input$shinyalert` (or using a different input ID if you specify the `inputId` parameter) in the Shiny server's code, as if it were a regular Shiny input. The return value can also be accessed using the *[modal callbacks](#callbacks)*.
 
 ## Callbacks {#callbacks}
 
