@@ -82,6 +82,10 @@ img::-moz-selection {
   }
 }
 
+#disqus_thread iframe[src*="disqusads"] {
+  display: none;
+}
+
 .linked-section {
   padding-top: 60px;
   margin-top: -25px;
