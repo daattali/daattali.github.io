@@ -8,6 +8,15 @@ layout: base
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
+      {% if page.datacampcourse %}
+        <a id="datacamp-course-link" href="https://www.datacamp.com/courses/building-web-applications-in-r-with-shiny-case-studies" target="_blank">
+          <div class="alert alert-info">
+            <strong>Want to improve your Shiny skills?</strong><br/>
+            Try my new interactive online video course: <strong>Shiny Case Studies</strong>
+          </div>
+        </a>
+      {% endif %}
+      
       {% if page.gh-repo %}
         {% assign gh_split =  page.gh-repo | split:'/'  %}
         {% assign gh_user =  gh_split[0]  %}
