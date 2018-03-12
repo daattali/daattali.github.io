@@ -1016,6 +1016,38 @@ pre code {
 	box-sizing: border-box;
 }
 
+/* DataCamp shiny case studies course promo */
+
+#datacamp-course-section {
+  text-align: center;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  padding: 20px;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+#datacamp-course-section .btn {
+  text-decoration: none;
+  margin-top: 10px;
+}
+@media only screen and (max-width: 767px) {
+  #datacamp-course-section {
+    font-size: 18px;
+  }
+  #datacamp-course-section .btn {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #datacamp-course-section {
+    font-size: 16px;
+  }
+  #datacamp-course-section .btn {
+    font-size: 14px;
+  }
+}
+
 /* Carbon ads */
 div[role=main],
 article[role=main] {
