@@ -5,7 +5,7 @@ tags: [professional, rstats, r-bloggers, shiny, tutorial, popular]
 date: 2015-05-09 21:30:00 -0700
 share-img: https://deanattali.com/img/blog/digital-ocean/rstudio.png
 permalink: /2015/05/09/setup-rstudio-shiny-server-digital-ocean/
-lastupdated: 2018-02-28
+lastupdated: 2018-03-29
 carbonads-sm-horizontal: true
 ---
 
@@ -138,7 +138,7 @@ R
 
 Now you need to quit R (`quit()`) because there are a couple small things to adjust on the server so that R will work well.
 
-If you also chose the weakest machine like I did (, many packages won't be able to install because of not enough memory. We need to add 1GB of swap space:
+If you also chose the weakest machine like I did, many packages won't be able to install because of not enough memory. We need to add 1GB of swap space:
 
 ~~~
 sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
