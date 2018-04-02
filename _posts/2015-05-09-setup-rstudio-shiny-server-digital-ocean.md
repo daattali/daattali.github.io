@@ -5,7 +5,7 @@ tags: [professional, rstats, r-bloggers, shiny, tutorial, popular]
 date: 2015-05-09 21:30:00 -0700
 share-img: https://deanattali.com/img/blog/digital-ocean/rstudio.png
 permalink: /2015/05/09/setup-rstudio-shiny-server-digital-ocean/
-lastupdated: 2018-03-29
+lastupdated: 2018-04-02
 carbonads-sm-horizontal: true
 ---
 
@@ -230,6 +230,9 @@ If you see an error on the bottom Shiny app, it's probably because you don't hav
 **Important!** If you look in the config file, you will see that by default, apps are run as user `shiny`. It's important to understand which user is running an app because things like file permissions and personal R libraries will be different for each user and it might cause you some headaches (or many days of headaches in my experience) until you realize it's because the app should not be run as `shiny`. Just keep that in mind.
 
 The fact that apps run as the user `shiny` means that any package required in a shiny app needs to be either in the global library or in `shiny`'s library. [As I mentioned above](#user-libraries), you might need to install R packages in a special way to make sure the `shiny` user can access them.
+
+{: .box-note}
+**Tip:** During app development, I recommend adding the line `preserve_logs true;` to the shiny server configuration file (and then restarting the server), so that log files will always be saved, which makes debugging easier.
 
 ## Step 8.1: Set up proper user permissions on Shiny Server {#shiny-user-perms}
 
