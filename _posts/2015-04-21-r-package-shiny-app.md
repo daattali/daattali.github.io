@@ -102,9 +102,9 @@ runExample <- function(example) {
 
 Now running `runExample("myapp")` will launch the "myapp" app, and running `runExample()` will generate a message telling the user what examples are allowed.
 
-#### 3. The best of both world: include the app in the package AND host it on a shiny server
+#### 3. The best of both worlds: include the app in a package AND host it on a shiny server
 
-The solution that I end up using most often myself is a combination of both of the above. I like to supplement my pacakges with a shiny app (or sometimes create a package that is mostly a shiny app), and showcase it on my [shiny server](https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/).
+The solution that I end up using most often myself is a combination of both of the above. I like to supplement my pacakges with a shiny app (or sometimes create a package that is mostly a shiny app), and showcase it on my [shiny server](https://daattali.com/shiny/).
 
 To do that, follow the instructions above to create a package. Then follow [my instructions to create a shiny server](https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/) and make sure to install your new package. The last step is to make your new package's shiny app runnable from the shiny server; simply create a file `/srv/shiny-server/myapp/app.R` with the following code:
 
