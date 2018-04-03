@@ -5,6 +5,7 @@ tags: [professional, rstats, r-bloggers, shiny, packages, tutorial]
 share-img: "https://deanattali.com/img/blog/ggExtra/ggmarginal-basic-example.png"
 date: 2015-04-21 22:00:00 -0700
 permalink: /2015/04/21/r-package-shiny-app/
+lastupdated: 2018-04-03
 ---
 
 The R community is generally very fond of open-source-ness and the idea of releasing all code to the public. Writing packages has become such an easy experience now that Hadley's `devtools` is so powerful, and as a result there are new packages being released by useRs every single day.
@@ -100,3 +101,17 @@ runExample <- function(example) {
 ```
 
 Now running `runExample("myapp")` will launch the "myapp" app, and running `runExample()` will generate a message telling the user what examples are allowed.
+
+#### 3. The best of both world: include the app in the package AND host it on a shiny server
+
+The solution that I end up using most often myself is a combination of both of the above. I like to supplement my pacakges with a shiny app (or sometimes create a package that is mostly a shiny app), and showcase it on my [shiny server](https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/).
+
+To do that, follow the instructions above to create a package. Then follow [my instructions to create a shiny server](https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/) and make sure to install your new package. The last step is to make your new package's shiny app runnable from the shiny server; simply create a file `/srv/shiny-server/myapp/app.R` with the following code:
+
+```r
+dir <- system.file("shiny-examples", "myapp", package = "mypackage")
+setwd(dir)
+shiny::shinyAppDir(".")
+```
+
+And now your app will be available at `http://<your_shiny_server_url>/myapp`.
