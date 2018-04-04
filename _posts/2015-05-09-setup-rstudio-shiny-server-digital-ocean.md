@@ -232,7 +232,7 @@ If you see an error on the bottom Shiny app, it's probably because you don't hav
 The fact that apps run as the user `shiny` means that any package required in a shiny app needs to be either in the global library or in `shiny`'s library. [As I mentioned above](#user-libraries), you might need to install R packages in a special way to make sure the `shiny` user can access them.
 
 {: .box-note}
-**Tip:** During app development, I recommend adding the line `preserve_logs true;` to the shiny server configuration file (and then restarting the server), so that log files will always be saved, which makes debugging easier.
+**Tip:** During app development, I recommend adding the lines `preserve_logs true;` and `sanitize_errors false;` to the shiny server configuration file (and then restarting the server). This will make sure log files will always be saved and informative error messages are printed, which makes debugging easier (you may want to reverse these settings in production).
 
 ## Step 8.1: Set up proper user permissions on Shiny Server {#shiny-user-perms}
 
