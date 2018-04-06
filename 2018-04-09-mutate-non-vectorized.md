@@ -28,9 +28,7 @@ I had a dataframe with file paths as a column, and I needed to add this ID as an
 ```r
 df <- data.frame(path = c("some/path/abc/001.txt", "another/directory/xyz/002.txt"),
                  stringsAsFactors = FALSE)
-```r
 df %>% mutate(patient_name = patient_name(path))
-```
 ```
 
 This code does run, but it's not correct. Here's the output:
