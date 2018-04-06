@@ -9,7 +9,7 @@ date: 2018-04-09 11:00:00 -0400
 
 If you're reading this, you've either encountered this problem before, or you just got to this article out of curiousity (in which case you probably don't know what problem I'm talking about).
 
-A few days ago I was given code by a client for a function that, given a path to a patient's record file, generates a useful ID for the patient. I won't post the actual function, but it was something along the lines of this:
+A few days ago I was given code by a client for a function that, given a path to a patient's file, generates a useful ID for the patient. I won't post the actual function, but it was something along the lines of this:
 
 ```r
 library(stringr)
@@ -21,7 +21,7 @@ patient_name <- function(path) {
 }
 ```
 
-Given a path `some/path/abc/001.txt`, this function will return `abc_001.txt`. So far, so good.
+Given a path `some/path/abc/001.txt`, this function will return `abc_001.txt`. So far, so good. (There are better ways to implement this function, but that's not the point here).
 
 I had a dataframe with file paths as a column, and I needed to add this ID as another column. Normally, this would be easily achieved with a simple `mutate()` (from `dplyr`):
 
@@ -56,7 +56,7 @@ This actually gives us the correct result:
 2 another/directory/xyz/002.txt  xyz_002.txt
 ```
 
-This is one usecase of the `Vectorize()` function. I personally haven't had to use it before, but it can come in handy whenever you need to vectorize a non-vectorized function.
+This is only one usecase of the `Vectorize()` function. It can come in handy whenever you need to vectorize a non-vectorized function.
 
 For example, it seems that the `nrow()` function is not vectorized, because if I try to create a list with two dataframes in it and get the number of rows, I get `NULL`:
 
