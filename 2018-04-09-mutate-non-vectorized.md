@@ -5,7 +5,7 @@ permalink: /blog/mutate-non-vectorized/
 date: 2018-04-09 11:00:00 -0400
 ---
 
-**TL;DR: Use the `Vectorize()` function!** It can be used for any intance where you ever need to create a vectorized version of a function. But let's back up a little.
+**TL;DR: Use the `Vectorize()` function!**
 
 If you're reading this, you've either encountered this problem before, or you just got to this article out of curiousity (in which case you probably don't know what problem I'm talking about).
 
