@@ -17,13 +17,17 @@ I'm also [**available for consulting**](/shiny), so feel free to [contact me](/c
 
 I have an interactive, online video course ["Case Studies in Shiny"](https://www.datacamp.com/courses/building-web-applications-in-r-with-shiny-case-studies) hosted on DataCamp. It's designed to give you practice building Shiny apps for real-life scenarios, while also helping your learn some advanced Shiny concepts.
 
-## Website templates (Jekyll)
+## Website templates
 
 -  **[Beautiful Jekyll](https://deanattali.com/beautiful-jekyll/)** - a popular Jekyll theme I created when making this website.  You can [view a demo](https://deanattali.com/beautiful-jekyll/) or use it yourself to make a pretty website similar to this one by visiting the [project page](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it is designed to look great on both mobile devices and laptops.
 
+## Web services
+
+- **[CRANalerts](https://cranalerts.com/)** - Get email alerts when a CRAN package gets updated.
+
 ## R Shiny apps
 
-If you got here after reading some of my blog posts, you'll know that I'm a big fan and advocate of Shiny. I also help many people and companies with Shiny. You can see a sample of the Shiny apps I've built for my self [on my personal Shiny server](/shiny).
+If you got here after reading some of my blog posts, you'll know that I'm a big fan and advocate of Shiny. I also run a company providing Shiny consultancy. Unfortunately all my coolest big Shiny apps that were made for clients are private, but you can see a sample of the Shiny apps I've built for myself [on my Shiny server](/shiny).
 
 ## R packages
 
