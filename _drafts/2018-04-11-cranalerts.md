@@ -14,6 +14,8 @@ That's the exact problem I set out to solve with [CRANalerts](https://cranalerts
   <a class="btn btn-lg btn-success" href="https://cranalerts.com/">Check our CRANalerts</a>
 </div>
 
+<br/>
+
 <div style="text-align:center;">
   <a href="https://cranalerts.com/">
     <img src="https://deanattali.com/img/blog/cranalerts/screenshot.PNG" alt="CRANalerts">
@@ -38,7 +40,7 @@ You'll hopefully agree that this website doesn't *look* like a Shiny app. UI/UX 
 
 <div style="text-align:center;">
   <a href="https://cranalerts.com/">
-    <img src="https://deanattali.com/img/blog/cranalerts/nocss.png" alt="no css">
+    <img src="https://deanattali.com/img/blog/cranalerts/nocss.PNG" alt="no css">
   </a>
 </div>
 
