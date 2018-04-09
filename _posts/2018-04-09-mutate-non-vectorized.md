@@ -2,7 +2,7 @@
 title: How to use dplyr's mutate in R without a vectorized function
 tags: [professional, rstats, r-bloggers, tutorial]
 permalink: /blog/mutate-non-vectorized/
-date: 2018-04-09 11:00:00 -0400
+date: 2018-04-09 12:00:00 -0400
 ---
 
 **TL;DR: Use the `Vectorize()` function!**
