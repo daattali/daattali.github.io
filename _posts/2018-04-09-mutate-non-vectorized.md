@@ -72,3 +72,5 @@ I hypothesized that vectorizing it will do the trick, and it indeed seems to wor
 (Vectorize(nrow))(dflist)
 # [1]  32 150
 ```
+
+**UPDATE:** As is usually the case with useful R functions, there are other packages (particularly `purrr` as a few people have mentioned) that have functions to achieve similar things that may be more efficient and flexible for different situations. I can't comment on when you should use each method - whatever works for your case and makes sense for you will be the right approach. Also note that `Vectorize()` has two parameters `SIMPLIFY` and `USE.NAMES` that both default to `TRUE` and I suggest setting them to `FALSE`.
