@@ -34,9 +34,9 @@ But now that this problem became relevant to me, I eventually figured that manua
   </a>
 </div>
 
-For those wondering—yes, of course I had to make this a Shiny app. I actually started building it with Note initially, but I quickly thought "nahh, go Shiny or go home!". To be honest, I think this is a case where Shiny was not necessarily the absolute best tool for the job, but I did want to see if I could build a decent-ish service with Shiny. And so be it. [CRANalerts](https://cranalerts.com/) is fully a Shiny app.
+For those wondering—yes, of course I had to make this a Shiny app. I actually started building it with Node.js initially, but I quickly thought "nah, go Shiny or go home!". To be honest, I think this is a case where Shiny was not necessarily the absolute best tool for the job, but I did want to see if I could build a decent-ish service with Shiny. And so be it. [CRANalerts](https://cranalerts.com/) is fully a Shiny app.
 
-You'll hopefully agree that this website doesn't *look* like a Shiny app. UI/UX is always very important for me, I make sure that whatever I build is not only functional, but looks good and is intuitive and user-friendly. But getting it to look pretty was not a trivial task, here is what CRANalerts looked like after 1 day of work:
+You'll hopefully agree that this website doesn't *look* like a Shiny app. UI/UX is always very important to me; I make sure that whatever I build is not only functional, but looks good and is intuitive and user-friendly. But getting it to look pretty was not a trivial task, here is what CRANalerts looked like after 1 day of work:
 
 <div style="text-align:center;">
   <a href="https://cranalerts.com/">
@@ -44,11 +44,11 @@ You'll hopefully agree that this website doesn't *look* like a Shiny app. UI/UX 
   </a>
 </div>
 
-Beautiful, right? In the everything-is-beautiful-in-its-own-unique-way kind of beautiful. It actually took me another full day to just come up with a design and implement it to a point where I thought it looked good enough. Literally half the time was spent on coding, and half on making it pretty. While making tools I build look nice is very important for me, I also realize it's not my forte—it doesn't come quickly and naturally to me, and it ends up taking up a lot more of my time than I would like. **If anyone has a good eye for design and would like to help me on my next projects, I would really appreciate your help, feel free to [send me a message](https://deanattali.com/contact/)!** (You don't have to be a graphic designer by profession, I think a lot of people in the R community have much better artistic skills than myself.)
+Beautiful, right? In the everything-is-beautiful-in-its-own-unique-way kind of beautiful. A draft version of CRANalerts was ready after a day, but it actually took me another full day to just come up with a design and implement it to a point where I thought it looked good enough. Literally half the time was spent on coding, and half on making it pretty.
 
-Keep in mind that this entire service was built in a weekend and did not have the time to get extremely thoroughly tested, so it's possible you'll encounter problems. If you do have any feedback, feel free to let me know. And if you'd like to support my work on this project and future projects (including supporting server costs, AWS fees, etc), I appreciate any donations :)
+while it is important for me to make my tools look nice, I  also realize it's not my forte—it doesn't come quickly or naturally to me, and it ends up taking up a lot more of my time than I would like. **If anyone has a good eye for design and would like to help me on my next projects, I would really appreciate your help, feel free to [send me a message](https://deanattali.com/contact/)!** (You don't have to be a graphic designer by profession, I think a lot of people in the R community have much better artistic skills than myself.)
 
-**If you find this tutorial useful, please consider supporting me for the countless hours I've put into developing and maintaining my educational material :)**
+Keep in mind that this entire service was built in a weekend and did not have the resources get properly thoroughly tested, so it's possible you'll encounter problems. If you do have any feedback, feel free to let me know. And if you'd like to support my work on this project and future projects (including supporting server costs, AWS fees, maintenance of tools, etc), I appreciate any donations :)
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="text-align: center;">
   <input type="hidden" name="cmd" value="_s-xclick">
