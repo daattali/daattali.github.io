@@ -14,7 +14,7 @@ That's the exact problem I set out to solve with [CRANalerts](https://cranalerts
   <a class="btn btn-lg btn-success" href="https://cranalerts.com/">Check our CRANalerts</a>
 </div>
 
-<div></div>
+<div style="margin-bottom: 10px;"></div>
 
 <div style="text-align:center;">
   <a href="https://cranalerts.com/">
