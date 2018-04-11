@@ -14,7 +14,7 @@ That's the exact problem I set out to solve with [CRANalerts](https://cranalerts
   <a class="btn btn-lg btn-success" href="https://cranalerts.com/">Check our CRANalerts</a>
 </div>
 
-<div style="margin-bottom: 10px;"></div>
+<div style="margin-bottom: 25px;"></div>
 
 <div style="text-align:center;">
   <a href="https://cranalerts.com/">
@@ -22,7 +22,7 @@ That's the exact problem I set out to solve with [CRANalerts](https://cranalerts
   </a>
 </div>
 
-It all started in January, when [Jim Hester](https://github.com/jimhester) was getting ready to submit a new version of `readr` to CRAN. The new version would have broken my code, so Jim submitted a [PR](https://github.com/daattali/ddpcr/pull/21) to my package that would ensure my code will work after the update. I didn't want to accept the PR until `readr` was actually on CRAN, so I just started checking CRAN every few days to see when `readr` is updatd already.
+It all started in January, when [Jim Hester](https://github.com/jimhester) was getting ready to submit a new version of `readr` to CRAN. The new version would have broken my code, so Jim submitted a [PR](https://github.com/daattali/ddpcr/pull/21) to my package that would ensure my code will still work after the update. I didn't want to accept the PR until `readr` was actually on CRAN, so I just started checking CRAN every few days to see when `readr` is updatd already.
 
 Over the next two months, I received the usual emails asking me when various packages of mine are going to be updated on CRAN. This happens often, but I never paid much attention to it. Usually when I got asked "how do I know when shinyjs is updated on CRAN?" my response was "check the page every week". Yup, very helpful, I know!
 
