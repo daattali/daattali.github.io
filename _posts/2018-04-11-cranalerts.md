@@ -3,7 +3,7 @@ title: "CRANalerts: Get email alerts when a CRAN package gets updated"
 tags: [professional, rstats, r-bloggers, packages, shiny]
 share-img: "https://deanattali.com/img/blog/cranalerts/screenshot.PNG"
 permalink: /blog/cranalerts/
-date: 2018-04-11 11:00:00 -0400
+date: 2018-04-11 05:00:00 -0400
 ---
 
 Have you ever found yourself asking "how can I make sure I don't miss the next version release of package X"?
