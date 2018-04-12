@@ -5,8 +5,6 @@ permalink: /blog/mutate-non-vectorized/
 date: 2018-04-09 12:00:00 -0400
 ---
 
-**TL;DR: Use the `Vectorize()` function!**
-
 If you're reading this, you've either encountered this problem before, or you just got to this article out of curiousity (in which case you probably don't know what problem I'm talking about).
 
 A few days ago I was given code by a client for a function that, given a path to a patient's file, generates a useful ID for the patient. I won't post the actual function, but it was something along the lines of this:
@@ -21,7 +19,7 @@ patient_name <- function(path) {
 }
 ```
 
-Given a path `some/path/abc/001.txt`, this function will return `abc_001.txt`. So far, so good. (There are better ways to implement this function, but that's not the point here).
+Given a path `some/path/abc/001.txt`, this function will return `abc_001.txt`. So far, so good. **(There are better ways to implement this function, but that's not the point here).**
 
 I had a dataframe with file paths as a column, and I needed to add this ID as another column. Normally, this would be easily achieved with a simple `mutate()` (from `dplyr`):
 
@@ -73,4 +71,6 @@ I hypothesized that vectorizing it will do the trick, and it indeed seems to wor
 # [1]  32 150
 ```
 
-**UPDATE:** As is usually the case with useful R functions, there are other packages (particularly `purrr` as a few people have mentioned) that have functions to achieve similar things that may be more efficient and flexible for different situations. I can't comment on when you should use each method - whatever works for your case and makes sense for you will be the right approach. Also note that `Vectorize()` has two parameters `SIMPLIFY` and `USE.NAMES` that both default to `TRUE` and I suggest setting them to `FALSE`.
+**It should be made clear that writing your function in a vectorized form to avoid this problem altogether would be the ideal solution.**
+
+**UPDATE:** As is usually the case with useful R functions, there are other packages that have functions to achieve similar things that may be more efficient and flexible for different situations. You should read Jim Hester's [followup](http://www.jimhester.com/2018/04/12/vectorize/) on why using `purrr` functions is safer than this base R function. If you do want to use only base R functions and use `Vectorize()`, it's a good idea to read its documentation and take note of its two parameters `SIMPLIFY` and `USE.NAMES` that both default to `TRUE`.
