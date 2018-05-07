@@ -5,7 +5,7 @@ permalink: /blog/mutate-non-vectorized/
 date: 2018-04-09 12:00:00 -0400
 ---
 
-If you're reading this, you've either encountered this problem before, or you just got to this article out of curiousity (in which case you probably don't know what problem I'm talking about).
+If you're reading this, you've either encountered this problem before, or you just got to this article out of curiosity (in which case you probably don't know what problem I'm talking about).
 
 A few days ago I was given code by a client for a function that, given a path to a patient's file, generates a useful ID for the patient. I won't post the actual function, but it was something along the lines of this:
 
