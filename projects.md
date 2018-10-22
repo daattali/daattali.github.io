@@ -85,11 +85,12 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 - Book reviewer for [Learning Shiny](https://www.packtpub.com/application-development/learning-shiny).
 - [Building Shiny apps](http://stat545-ubc.github.io/shiny01_activity.html) - written for a course I TA'ed.
 
-## Talks
+## Recorded Talks
 
 - Podcast interviews for the R-Podcast: [Episode 16: Interview with Dean Attali](https://r-podcast.org/posts/the-r-podcast-episode-16-interview-with-dean-attali.html) and [Episode 19](https://r-podcast.org/episode/019-talking-shiny-at-rstudio-conf-with-barbara-borges-and-dean-attali/)
 - Invited as main speaker at the 1st Shiny Developer Conference: [Video](https://deanattali.com/shinyjs-shinydevcon-2016/) and [presentation slides](http://bit.ly/shinyjs-slides) from my talk about shinyjs.
 - Shorter talk at useR 2016 also about shinyjs: [video](https://deanattali.com/shinyjs-user-2016/) and [slides](http://bit.ly/shinyjs-slides-useR2016).
+- [AMA (Ask Me Anything) interview](https://codefor.cash/dean_attali_ama.php) with CodeForCash
 
 ## Misc
 
