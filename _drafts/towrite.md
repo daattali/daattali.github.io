@@ -25,3 +25,13 @@ danger with social media (fb post aug 9 2015)
 stop supporting 3d movies before they'll take over and we wont' have regular movies at normal prices anymore :(
 
 natural vs unnatural products - unnatural or modified doesn't necessarily mean bad
+
+
+-----
+
+how to write a good shiny reproducible example?
+dont use ## UI FILE .... ## SERVER FILE 
+provide the sample Rmd file
+provide sample data
+make into bookmarkable app
+find exactly where the probelm is and only share that code
