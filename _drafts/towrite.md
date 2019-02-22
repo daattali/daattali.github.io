@@ -26,7 +26,7 @@ stop supporting 3d movies before they'll take over and we wont' have regular mov
 
 natural vs unnatural products - unnatural or modified doesn't necessarily mean bad
 
-I often see people write code like `observeEvent(input$btn, { output$plot <- renderPlot({ ... }) })` - the correct way to do this is to just place a `input$btn` expression inside the render plot. It might look weird because what can simply accessing that value without doing anything with it do? But becuase of reactivity, just using that value makes the render plot run when the button is pressed.
+I often see people write code like `observeEvent(input$btn, { output$plot <- renderPlot({ ... }) })` - the correct way to do this is to just place a `input$btn` expression inside the render plot. It might look weird because what can simply accessing that value without doing anything with it do? But becuase of reactivity, just using that value makes the render plot run when the button is pressed. Doing it the wrong way actually has incorrect behaviour: after pressing the button the first time, the plot will update whenever any of its reactive values change, regardless of the button. The button just needs to be clicked once. This is the exact opposite of what you're trying to do!
 
 -----
 
