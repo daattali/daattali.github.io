@@ -30,9 +30,16 @@ I often see people write code like `observeEvent(input$btn, { output$plot <- ren
 
 -----
 
-how to write a good shiny reproducible example?
-dont use ## UI FILE .... ## SERVER FILE 
-provide the sample Rmd file
-provide sample data
-make into bookmarkable app
-find exactly where the probelm is and only share that code
+how to write a good shiny reproducible example?  
+dont use ## UI FILE .... ## SERVER FILE   
+provide the sample Rmd file  
+provide sample data  
+make into bookmarkable app  
+find exactly where the probelm is and only share that code  
+
+
+
+Code for Clarity, not Cleverness
+
+"Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it." - Brian Kernighan
+
