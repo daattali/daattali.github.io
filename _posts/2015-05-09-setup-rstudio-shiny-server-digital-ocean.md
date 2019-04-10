@@ -327,15 +327,40 @@ sudo nano /etc/nginx/sites-enabled/default
 
 (I'm assuming you know how to use `nano`. If not, then just Google for "how to edit a file with nano". In short: use the arrow keys to move aroud, press `Ctrl`+`O` followed by Enter to save, and press `Ctrl`+`X` to exit.)
 
+Add the following lines before the line that reads `server {`
+~~~
+map $http_upgrade $connection_upgrade {
+  default upgrade;
+  ''      close;
+}
+~~~
+
 Add the following lines right after the line that reads `server_name _;`
 
 ~~~
+rewrite ^/shiny$ $scheme://$http_host/shiny/ permanent;
+
 location /shiny/ {
-  proxy_pass http://127.0.0.1:3838/;
+  rewrite ^/shiny/(.*)$ /$1 break;
+  proxy_pass http://localhost:3838;
+  proxy_redirect / $scheme://$http_host/shiny/;
+  proxy_http_version 1.1;
+  proxy_set_header Upgrade $http_upgrade;
+  proxy_set_header Connection $connection_upgrade;
+  proxy_read_timeout 20d;
+  proxy_buffering off;
 }
 
+rewrite ^/rstudio$ $scheme://$http_host/rstudio/ permanent; 
+    
 location /rstudio/ {
-  proxy_pass http://127.0.0.1:8787/;
+  rewrite ^/rstudio/(.*)$ /$1 break;
+  proxy_pass http://localhost:8787;
+  proxy_redirect http://localhost:8787/ $scheme://$http_host/rstudio/;
+  proxy_http_version 1.1;
+  proxy_set_header Upgrade $http_upgrade;
+  proxy_set_header Connection $connection_upgrade;
+  proxy_read_timeout 20d;
 }
 ~~~
 
@@ -346,23 +371,6 @@ sudo service nginx restart
 ~~~
 
 Now you should be able to go to `http://123.456.1.2/shiny/` or `http://123.456.1.2/rstudio/`. Much better!
-
-**Bonus for advanced users:** The above setup should be just fine for most users, but I did notice a few small issues with RStudio that seem to be fixed by allowing nginx to proxy WebSockets. For example, I noticed that when using the `ggvis` package in my RStudio, tooltips were not working. The fix is to add the following three lines inside the `location /rstudio/` settings (keep the `proxy_pass` line and just add these three, and remember you have to restart nginx after changing the settings):
-
-~~~
-proxy_http_version 1.1;
-proxy_set_header Upgrade $http_upgrade;
-proxy_set_header Connection "upgrade";
-~~~
-
-If you're hosting a Shiny Server, add these 3 lines after the `proxy_pass` line inside `location /shiny/` as well.
-
-**Make your Shiny apps work with and without trailing slashes:** If you have a Shiny app called "myapp", then you would have to go to the URL `http://123.456.1.2/shiny/myapp/` to see it. But if you omit the trailing slash (`http://123.456.1.2/shiny/myapp`), it will not work.  I figured out a way to solve this, but again, keep in mind that I'm an nginx noob so it might not be a *good* solution.  I added the following line inside `location /shiny/` (just after the previous 3 lines from the previous paragraph):
-
-~~~
-rewrite ^(/shiny/[^/]+)$ $1/ permanent;
-~~~
-
 
 # Step 10: Custom domain name {#custom-domain}
 
