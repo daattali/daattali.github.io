@@ -5,7 +5,7 @@ tags: [professional, rstats, r-bloggers, shiny, tutorial, popular]
 date: 2015-05-09 21:30:00 -0700
 share-img: https://deanattali.com/img/blog/digital-ocean/rstudio.png
 permalink: /2015/05/09/setup-rstudio-shiny-server-digital-ocean/
-lastupdated: 2018-04-05
+lastupdated: 2019-04-10
 carbonads-sm-horizontal: true
 ---
 
@@ -356,6 +356,12 @@ proxy_set_header Connection "upgrade";
 ~~~
 
 If you're hosting a Shiny Server, add these 3 lines after the `proxy_pass` line inside `location /shiny/` as well.
+
+**NOTE** As of April 2019, for a short period of time, you will need to install the latest version of the `httpuv` R package in order to make your Shiny apps work. This is temporary just for a few weeks. If you are reading this, then you need to run the following command:
+
+~~~
+sudo su - -c "R -e \"devtools::install_github('rstudio/httpuv')\""
+~~~
 
 **Make your Shiny apps work with and without trailing slashes:** If you have a Shiny app called "myapp", then you would have to go to the URL `http://123.456.1.2/shiny/myapp/` to see it. But if you omit the trailing slash (`http://123.456.1.2/shiny/myapp`), it will not work.  I figured out a way to solve this, but again, keep in mind that I'm an nginx noob so it might not be a *good* solution.  I added the following line inside `location /shiny/` (just after the previous 3 lines from the previous paragraph):
 
