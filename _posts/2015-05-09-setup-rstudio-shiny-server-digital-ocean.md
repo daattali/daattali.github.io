@@ -336,7 +336,7 @@ map $http_upgrade $connection_upgrade {
 }
 ~~~
 
-Add the following lines **right after** the line that reads `server_name _;`
+And add the following lines **right after** the line that reads `server_name _;`
 
 ~~~
 location /shiny/ {
@@ -354,6 +354,8 @@ location /rstudio/ {
   proxy_set_header Connection $connection_upgrade;
 }
 ~~~
+
+(Note that some of these configuration lines I had to figure out on my own, and I'd like to reiterate that I'm an nginx noob so it might not be a *correct* solution. But it seems to have worked for over 1,000 people for a few years already, so that does give me confidence in these settings!)
 
 Since we changed the nginx config, we need to restart nginx for it to take effect.
 
