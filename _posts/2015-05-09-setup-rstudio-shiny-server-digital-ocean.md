@@ -5,7 +5,7 @@ tags: [professional, rstats, r-bloggers, shiny, tutorial, popular]
 date: 2015-05-09 21:30:00 -0700
 share-img: https://deanattali.com/img/blog/digital-ocean/rstudio.png
 permalink: /2015/05/09/setup-rstudio-shiny-server-digital-ocean/
-lastupdated: 2019-04-10
+lastupdated: 2019-04-11
 carbonads-sm-horizontal: true
 ---
 
@@ -327,7 +327,8 @@ sudo nano /etc/nginx/sites-enabled/default
 
 (I'm assuming you know how to use `nano`. If not, then just Google for "how to edit a file with nano". In short: use the arrow keys to move aroud, press `Ctrl`+`O` followed by Enter to save, and press `Ctrl`+`X` to exit.)
 
-Add the following lines before the line that reads `server {`
+Add the following lines **above** the line that reads `server {`
+
 ~~~
 map $http_upgrade $connection_upgrade {
   default upgrade;
@@ -335,7 +336,7 @@ map $http_upgrade $connection_upgrade {
 }
 ~~~
 
-Add the following lines right after the line that reads `server_name _;`
+Add the following lines **right after** the line that reads `server_name _;`
 
 ~~~
 location /shiny/ {
