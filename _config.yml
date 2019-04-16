@@ -93,7 +93,7 @@ defaults:
       show-subscribe: true # add subscribe email to all blog posts
       addthis-plugin: true
       carbonads: true
-      datacampcourse: true
+      datacampcourse: false
   -
     scope:
       path: "" # all files
