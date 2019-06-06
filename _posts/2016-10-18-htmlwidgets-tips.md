@@ -63,7 +63,7 @@ I'll start with a very simple tip. The htmlwidgets docs tell you to define the `
 renderValue: function(x) { ... }
 ```
 
-Now, this `x` variable is actually very useful. It contains all the values that are passed in from R to the widget itself. So you often end up referring to `x` a lot in your code.  I have [a commit](https://github.com/daattali/timevis/commit/7bd3e7390256a7617e3642078a94d301062ab628) that has the sole purpose of renaming `x` to `opts`, and I think you should do that too, for two main reasons. First, `opts` is a much more descriptive name than `x` and it tells you that it holds all the different widget options. Second, I'm always against using any variable name that is only one or two characters long, because it makes it very difficuly to search for it.
+Now, this `x` variable is actually very useful. It contains all the values that are passed in from R to the widget itself. So you often end up referring to `x` a lot in your code.  I have [a commit](https://github.com/daattali/timevis/commit/7bd3e7390256a7617e3642078a94d301062ab628) that has the sole purpose of renaming `x` to `opts`, and I think you should do that too, for two main reasons. First, `opts` is a much more descriptive name than `x` and it tells you that it holds all the different widget options. Second, I'm always against using any variable name that is only one or two characters long, because it makes it very difficult to search for it.
 
 [See the implementation of this tip in `timevisBasic`](https://github.com/daattali/timevisBasic/compare/tip1-rendervalue-x-name#diff).
 
@@ -477,7 +477,7 @@ The last piece of the puzzle is actually calling the API functions once the widg
 
 ```javascript
 // Now that the timeline is initialized, call any outstanding API
-// functions that the user wantd to run on the timeline before it was
+// functions that the user wanted to run on the timeline before it was
 // ready
 var numApiCalls = opts['api'].length;
 for (var i = 0; i < numApiCalls; i++) {
