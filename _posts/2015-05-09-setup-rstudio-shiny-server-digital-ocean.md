@@ -5,7 +5,7 @@ tags: [professional, rstats, r-bloggers, shiny, tutorial, popular]
 date: 2015-05-09 21:30:00 -0700
 share-img: https://deanattali.com/img/blog/digital-ocean/rstudio.png
 permalink: /2015/05/09/setup-rstudio-shiny-server-digital-ocean/
-lastupdated: 2019-04-11
+lastupdated: 2019-07-06
 carbonads-sm-horizontal: true
 ---
 
@@ -49,9 +49,9 @@ Go to [DigitalOcean](https://m.do.co/c/358494f80b99) (use this referral link to 
 
 Now let's claim one of DO's machines as our own! It's so simple that you definitely don't need my instructions, just click on the big green *"Create"* button -> *"Droplets"* -> and choose your settings. I chose the smallest/weakest machine ($5/month plan) and it's good enough for me.
 
-I chose San Francisco for region because it's the closest to me, though it really wouldn't make much of a noticeable difference where the server is located. For operating system, I chose to go with the default Ubuntu 16.04 x64. If you know what SSH keys are (you can learn [here](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-putty-on-digitalocean-droplets-windows-users)), then I recommend you add an SSH key at the last step if you know how to do that. If not, just proceed without an SSH key.
+I chose San Francisco for region because it's the closest to me, though it really wouldn't make much of a noticeable difference where the server is located. For operating system, I chose to go with the default Ubuntu 18.04 x64. If you know what SSH keys are (you can learn [here](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-putty-on-digitalocean-droplets-windows-users)), then I recommend you add an SSH key at the last step if you know how to do that. If not, just proceed without an SSH key.
 
-*Note: all subsequent steps assume that you are also using the weakest server possible with Ubuntu 16.04 x64. If you chose different settings, the general instructions will still apply but some of the specific commands/URLs might need to change.*
+*Note: all subsequent steps assume that you are also using the weakest server possible with Ubuntu 18.04 x64. If you chose different settings, the general instructions will still apply but some of the specific commands/URLs might need to change.*
 
 Even though you probably don't need it, here's a short GIF showing how I create a new droplet:
 [![Create droplet]({{ site.url }}/img/blog/digital-ocean/do-create.gif)]({{ site.url }}/img/blog/digital-ocean/do-create.gif)
@@ -108,10 +108,10 @@ sudo service nginx restart
 
 # Step 6: Install R {#install-r}
 
-To ensure we get the most recent version of R, we need to first add `xenial` (the release name for Ubuntu 16.04) to our `sources.list`:
+To ensure we get the most recent version of R, we need to first add `bionic` (the release name for Ubuntu 18.04) to our `sources.list`:
 
 ~~~
-sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial/" >> /etc/apt/sources.list'
+sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu bionic-cran35/" >> /etc/apt/sources.list'
 ~~~
 
 Now add the public keys:
