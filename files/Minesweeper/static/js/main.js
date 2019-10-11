@@ -1,12 +1,27 @@
 main = function() {
 	var SAFE_CELL = 0;
 	var MINE_CELL = 1;
-
-    var gridSize = 0;
+	
+	var gridSize = 0;
 	var numMines = 0;
 	var cell = [];
 	var gameInProgress = false;
 
+	function shuffle(array) {
+		var currentIndex = array.length, temporaryValue, randomIndex;
+		// While there remain elements to shuffle...
+		while (0 !== currentIndex) {
+			// Pick a remaining element...
+			randomIndex = Math.floor(Math.random() * currentIndex);
+			currentIndex -= 1;
+			// And swap it with the current element.
+			temporaryValue = array[currentIndex];
+			array[currentIndex] = array[randomIndex];
+			array[randomIndex] = temporaryValue;
+    		}
+		return array;
+	}
+	
 	return {
 		cellClicked : function(e) {
 			if (!gameInProgress) return;
@@ -145,12 +160,9 @@ main = function() {
 					cell.push(SAFE_CELL);
 				}
 			}
-			var randomSort = function(a,b) {
-				return( parseInt( Math.random()*10 ) %2 );
-			}
+
 			// randomize the cells so that mines are distributed better
-			// NOTE this is a very bad randomizer! 
-			cell.sort(randomSort);
+			cell = shuffle(cell);
 
 			// draw the board
 			var boardHtml = '';
