@@ -14,6 +14,8 @@ followup post to shiny server setup: how to develop apps/get your apps onto your
 
 shinymodules: what i wrote in hackfest for thibaut, plus a file input that automatically resets after upload
 
+giving talks: number your slides so people can make note of a page and tell you where exactly to go back. live coding > code on a slide, but you have to be very familiar and comfortable with the content. dont memorize word by word, dont read off a sheet or off slides. talk to the audience. workshop: last slide is ask for feedback. presentation: last slide is quick summary (not the thank you slide!). tell them right in the beginning and remind at the end wheere they can find the content and how to contact you. 
+
 ---
 
 media affects what we think/talk about (ebola)
