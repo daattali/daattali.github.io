@@ -91,8 +91,11 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 - Invited as main speaker at the 1st Shiny Developer Conference: [Video](https://deanattali.com/shinyjs-shinydevcon-2016/) and [presentation slides](http://bit.ly/shinyjs-slides) from my talk about shinyjs.
 - Shorter talk at useR 2016 also about shinyjs: [video](https://deanattali.com/shinyjs-user-2016/) and [slides](http://bit.ly/shinyjs-slides-useR2016).
 - [AMA (Ask Me Anything) interview](https://codefor.cash/dean_attali_ama.php) with CodeForCash
+- Many more talks about R and Shiny in various conferences - message me for details
 
 ## Misc
+
+- Organizer of the [Toronto R Meetup](https://www.meetup.com/en-AU/Greater-Toronto-Area-GTA-R-Users-Group/)
 
 - **[Impact Replays](https://daattali.com/shiny/cfl/)** - I participated in a national hackathon ([SportsHack15](http://sportshackweekend.org/ca/2015/)) and won 3rd place with this app. We had to build something that would increase engagement of CFL (Canadian Football League) fans. This app uses play-by-play data from games to let you focus on just the action moments of games.
 
