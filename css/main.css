@@ -82,7 +82,7 @@ img::-moz-selection {
   }
 }
 
-#disqus_thread iframe[src*="ads-iframe"]
+#disqus_thread iframe[src*="ads-iframe"] {
   display: none;
 }
 
