@@ -5,7 +5,7 @@ show-avatar: false
 nav-short: true
 ---
 
-For any questions regarding payment, please email [dean@attalitech.com](mailto:dean@attalitech.com)
+For any questions regarding payment, please email [dean@attalitech.com](mailto:dean@attalitech.com).
 
 If paying in **US Dollars**, your options are:
 
