@@ -62,7 +62,8 @@ If paying in **Canadian Dollars**, your options are:
 
   Royal Bank of Canada  
   Checking account  
-  Routing # 125000024  
+  Transit # 05076  
+  Institution # 003  
   Please [email us](mailto:dean@attalitech.com) for the account #
   {: #eft .collapse}
 
