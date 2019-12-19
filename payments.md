@@ -5,13 +5,13 @@ show-avatar: false
 nav-short: true
 ---
 
-For any questions regarding payment, please email dean@attalitech.com
+For any questions regarding payment, please email [dean@attalitech.com](mailto:dean@attalitech.com)
 
 If paying in US Dollars, your options are:
 
 - Zelle or email transfer <button data-target="#zelle" class="btn btn-link" data-toggle="collapse">Details</button>
 
-  Make payment to dean@attalitech.com
+  Make payment to [dean@attalitech.com](mailto:dean@attalitech.com)
   {: #zelle .collapse}
   
 - ACH direct deposit <button data-target="#ach" class="btn btn-link" data-toggle="collapse">Details</button>
@@ -19,7 +19,7 @@ If paying in US Dollars, your options are:
   Bank of America  
   Checking account
   Routing # 125000024  
-  Please email us for the account #
+  Please [email us](mailto:dean@attalitech.com) for the account #
   {: #ach .collapse}
   
 - Physical check <button data-target="#check" class="btn btn-link" data-toggle="collapse">Details</button>
@@ -63,7 +63,7 @@ If paying in Canadian Dollars, your options are:
   Royal Bank of Canada  
   Checking account
   Routing # 125000024  
-  Please email us for the account #
+  Please [email us](mailto:dean@attalitech.com) for the account #
   {: #eft .collapse}
 
 - Physical check <button data-target="#checkcad" class="btn btn-link" data-toggle="collapse">Details</button>
