@@ -7,7 +7,7 @@ nav-short: true
 
 For any questions regarding payment, please email [dean@attalitech.com](mailto:dean@attalitech.com)
 
-If paying in US Dollars, your options are:
+If paying in **US Dollars**, your options are:
 
 - Zelle or email transfer <button data-target="#zelle" class="btn btn-link" data-toggle="collapse">Details</button>
 
@@ -51,7 +51,7 @@ If paying in US Dollars, your options are:
   {: #wire .collapse}
 
 
-If paying in Canadian Dollars, your options are:
+If paying in **Canadian Dollars**, your options are:
 
 - e-interac transfer <button data-target="#einterac" class="btn btn-link" data-toggle="collapse">Details</button>
 
@@ -74,7 +74,7 @@ If paying in Canadian Dollars, your options are:
   Canada
   {: #checkcad .collapse}
   
-If paying in a foreign currency, your options are:
+If paying in a **foreign currency**, your options are:
 
 - Wire transfer <button data-target="#wireforeign" class="btn btn-link" data-toggle="collapse">Details</button>
 
