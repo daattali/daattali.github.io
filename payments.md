@@ -3,7 +3,6 @@ layout: base
 title: "AttaliTech Payment Options"
 subtitle: "AttaliTech Payment Options"
 show-avatar: false
-nav-short: true
 ---
 
 If paying in US Dollars, your options are:
@@ -12,12 +11,14 @@ If paying in US Dollars, your options are:
 <div id="aa" class="collapse">
 dean@attalitech.com
 </div>
-- Physical check
-{: #bb .collapse}
+
+- Physical check!
+
 102 Beverley Glen Blvd  
 Thornhill, ON  
 L4J7V2
 Canada
+{: #bb .collapse}
 
 - Credit card or PayPal
 <button data-target="#a" class="btn btn-link" data-toggle="collapse">Details</button>
