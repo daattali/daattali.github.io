@@ -42,7 +42,7 @@ If paying in **US Dollars**, your options are:
   
 - Wire transfer <button data-target="#wire" class="btn btn-link" data-toggle="collapse">Details</button>
 
-  Note: a $15 fee is added to wire transfers. Please add $15 to your payment.  
+  **Note: a $15 fee is added to wire transfers. Please add $15 to your payment.**  
   Routing/ABA # 026009593   
   SWIFT code BOFAUS3N  
   Address: Bank of America, NA  
@@ -78,7 +78,7 @@ If paying in a **foreign currency**, your options are:
 
 - Wire transfer <button data-target="#wireforeign" class="btn btn-link" data-toggle="collapse">Details</button>
 
-  Note: a $15 fee is added to wire transfers, plus 3% foreign exchange fee. Please add $15 plus 3% to your payment.  
+  **Note: a $15 fee is added to wire transfers, plus 3% foreign exchange fee. Please add $15 plus 3% to your payment.**  
   Routing/ABA # 026009593   
   SWIFT code BOFAUS6S  
   Address: Bank of America, NA  
