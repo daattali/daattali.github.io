@@ -17,7 +17,7 @@ If paying in **US Dollars**, your options are:
 - ACH direct deposit <button data-target="#ach" class="btn btn-link" data-toggle="collapse">Details</button>
 
   Bank of America  
-  Checking account
+  Checking account  
   Routing # 125000024  
   Please [email us](mailto:dean@attalitech.com) for the account #
   {: #ach .collapse}
@@ -32,12 +32,12 @@ If paying in **US Dollars**, your options are:
   
 - Credit card <button data-target="#cc" class="btn btn-link" data-toggle="collapse">Details</button>
 
-  If you would like to pay with a credit card, let us know and we will send you a link to a secure payment page. Note: a 3.50% service fee applies.
+  If you would like to pay with a credit card, [let us know](mailto:dean@attalitech.com) and we will send you a link to a secure payment page. Note: a 3.50% service fee applies.
   {: #cc .collapse}
   
 - PayPal <button data-target="#paypal" class="btn btn-link" data-toggle="collapse">Details</button>
 
-  If you would like to pay with PayPal, let us know and we will send you a link to a secure payment page. Note: a 3.50% service fee applies.
+  If you would like to pay with PayPal, [let us know](mailto:dean@attalitech.com) and we will send you a link to a secure payment page. Note: a 3.50% service fee applies.
   {: #paypal .collapse}
   
 - Wire transfer <button data-target="#wire" class="btn btn-link" data-toggle="collapse">Details</button>
