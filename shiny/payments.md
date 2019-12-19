@@ -55,13 +55,13 @@ If paying in **Canadian Dollars**, your options are:
 
 - e-interac transfer <button data-target="#einterac" class="btn btn-link" data-toggle="collapse">Details</button>
 
-  Make payment to dean@attalitech.com
+  Make payment to [dean@attalitech.com](mailto:dean@attalitech.com)
   {: #einterac .collapse}
 
 - EFT direct deposit <button data-target="#eft" class="btn btn-link" data-toggle="collapse">Details</button>
 
   Royal Bank of Canada  
-  Checking account
+  Checking account  
   Routing # 125000024  
   Please [email us](mailto:dean@attalitech.com) for the account #
   {: #eft .collapse}
