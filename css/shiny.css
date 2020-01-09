@@ -1,3 +1,4 @@
+
 html.in-iframe #learn-more-link {
   display: none;
 }
@@ -9,11 +10,11 @@ body, html {
   margin: 0;
   padding: 0;
 }
-a {
+p a {
   text-decoration: none;
   color: #1E6DE8;
 }
-a:hover {
+p a:hover {
   text-decoration: underline;
 }
 #more-apps-by-dean {
@@ -22,6 +23,10 @@ a:hover {
 #header {
   background: #fff;
   text-align: center;
+  margin-top: 51px;
+}
+#footer {
+  margin-top: 0;
 }
 #title {
   margin: 0;
@@ -356,4 +361,12 @@ a:hover {
 }
 .size-1of1 {
   width: 100%;
+}
+
+p {
+  line-height: 1;
+}
+
+h1 {
+  font-weight: 700;
 }
