@@ -16,6 +16,7 @@ p a {
 }
 p a:hover {
   text-decoration: underline;
+  color: #1E6DE8;
 }
 #more-apps-by-dean {
   display: none;
@@ -25,7 +26,7 @@ p a:hover {
   text-align: center;
   margin-top: 51px;
 }
-#footer {
+footer {
   margin-top: 0;
 }
 #title {
@@ -319,6 +320,7 @@ p a:hover {
 .actionbtn:hover,
 .actionbtn:focus {
   background: #3fb13a;
+  color: #fff;
 }
 .schedule-btn {
   background: #ea9920;
@@ -369,4 +371,5 @@ p {
 
 h1 {
   font-weight: 700;
+  line-height: 1.4;
 }
