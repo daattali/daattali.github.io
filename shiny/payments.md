@@ -75,7 +75,12 @@ If paying in **Canadian Dollars**, your options are:
   L4J7V2  
   Canada
   {: #checkcad .collapse}
-  
+
+- Credit card <button data-target="#cccad" class="btn btn-link" data-toggle="collapse">Details</button>
+
+  If you would like to pay with a credit card, [let us know](mailto:dean@attalitech.com) and we will send you a link to a secure payment page. Note: a 3.50% service fee applies.
+  {: #cc .collapse}
+
 If paying in a **foreign currency**, your options are:
 
 - Wire transfer <button data-target="#wireforeign" class="btn btn-link" data-toggle="collapse">Details</button>
