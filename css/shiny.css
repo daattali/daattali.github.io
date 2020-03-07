@@ -91,7 +91,7 @@ footer {
   padding: 10px;
   margin: 10px 5px;
   font-size: 20px;
-  width: 350px;
+  width: 275px;
   cursor: default;
   vertical-align: top;
 }
@@ -253,13 +253,13 @@ footer {
 
 @media only screen and (max-width: 1179px) {
   #services .service {
-    width: 300px;
+    width: 230px;
     padding: 10px 5px;
   }
 }
 @media only screen and (max-width: 999px) {
   #services .service {
-    width: 180px;
+    width: 140px;
     font-size: 18px;
   }
 }
