@@ -4,7 +4,7 @@ title: "Building Shiny apps - an interactive tutorial"
 date: 2015-12-07 10:00:00 -0700
 tags: [professional, rstats, r-bloggers, shiny, tutorial, popular]
 share-img: https://deanattali.com/img/blog/shiny-tutorial/shiny-addplot.png
-lastupdated: 2017-03-08
+lastupdated: 2020-04-25
 carbonads-sm-horizontal: true
 ---
 
@@ -117,7 +117,7 @@ You can also create a new Shiny app using RStudio's menu by selecting *File > Ne
 
 # 4. Load the dataset
 
-The dataset we'll be using contains information about all the products sold by BC Liquor Store and is provided by [OpenDataBC](https://www.opendatabc.ca/dataset/bc-liquor-store-product-price-list-current-prices). They provide a direct link to download a *csv* version of the data, and this data has the rare quality that it is immediately clean and useful. You can view the [raw data](http://pub.data.gov.bc.ca/datasets/176284/BC_Liquor_Store_Product_Price_List.csv) they provide, but I have taken a few steps to simplify the dataset to make it more useful for our app. I removed some columns, renamed other columns, and dropped a few rare factor levels.
+The dataset we'll be using contains information about all the products sold by BC Liquor Store and is provided by [OpenDataBC](https://catalogue.data.gov.bc.ca/dataset/bc-liquor-store-product-price-list-historical-prices). They provide a direct link to download a *csv* version of the data, and this data has the rare quality that it is immediately clean and useful. You can view the raw data they provide, but I have taken a few steps to simplify the dataset to make it more useful for our app. I removed some columns, renamed other columns, and dropped a few rare factor levels.
 
 The processed dataset we'll be using in this app is available [here](https://deanattali.com/files/bcl-data.csv). Download it now and place this file in the same folder as your Shiny app. Make sure the file is named `bcl-data.csv`.
 
