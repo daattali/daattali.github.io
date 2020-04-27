@@ -15,7 +15,7 @@ Basically, since I'm kind of OCD about making everything generalised and reusabl
 I decided to instead build a reusable template to easily make similar websites. This of course meant that I spent infinitely longer on making my site because I wanted the template to be very simple for others to understand and extend. Some would argue it was a waste of time, but it was fun :)  Since the engine behind the site is called Jekyll,
 and in my completely unbiased opinion this theme is beautiful, I chose the name that I did.  
 
-You can view a [demo of the template](https://deanattali.com/beautiful-jekyll/) and use it right away if you want. **Please do, it'll
+You can view a [demo of the template](https://beautifuljekyll.com/) and use it right away if you want. **Please do, it'll
 make me feel important :)**
 
 > UPDATE December 2016: Thank you everybody for making me feel important! I initially thought that 3 people using my theme would be considered success, but it's been used by well over 1000 people already. Apparently this wasn't a waste of time!
@@ -23,7 +23,7 @@ make me feel important :)**
 This is what your site will look like right off the bat:
 [![Beautiful Jekyll]({{ site.url }}/img/blog/beautiful-jekyll.png)]({{ site.url }}/img/blog/beautiful-jekyll.png)
 
-Beautiful Jekyll is meant to be very easy and quick to use - you can make a nice simple site that supports blogging and looks great on any device (phones/laptops) within minutes. [Look at the demo](https://deanattali.com/beautiful-jekyll/) - it might just be the best link you clicked on today. Or at least in the last 20 seconds.
+Beautiful Jekyll is meant to be very easy and quick to use - you can make a nice simple site that supports blogging and looks great on any device (phones/laptops) within minutes. [Look at the demo](https://beautifuljekyll.com/) - it might just be the best link you clicked on today. Or at least in the last 20 seconds.
 
 ---
 
