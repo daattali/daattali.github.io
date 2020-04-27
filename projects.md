@@ -19,7 +19,7 @@ I have an interactive, online video course ["Case Studies in Shiny"](https://www
 
 ## Website templates
 
--  **[Beautiful Jekyll](https://deanattali.com/beautiful-jekyll/)** - a popular Jekyll theme I created when making this website.  You can [view a demo](https://deanattali.com/beautiful-jekyll/) or use it yourself to make a pretty website similar to this one by visiting the [project page](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it is designed to look great on both mobile devices and laptops.
+-  **[Beautiful Jekyll](https://beautifuljekyll.com/)** - a very popular Jekyll theme (> 10k websites built) I created when making this website.  You can [view a demo](https://beautifuljekyll.com/) or use it yourself to make a pretty website similar to this one by visiting the [project page](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it's designed to look great on both mobile devices and laptops.
 
 ## Web services
 
