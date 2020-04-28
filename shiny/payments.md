@@ -96,7 +96,7 @@ If paying in a **foreign currency**, your options are:
   
 <br/><br/>
 
-<div id="payments-faq-initial-fee"></div>
+<div id="payments-faq-initial-fee">h</div>
   
 ## Why is there a fee for our consultation call?
 
