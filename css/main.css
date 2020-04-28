@@ -1026,6 +1026,10 @@ pre code {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 20px;
   margin-bottom: 25px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px rgba(100,100,100,0.3);
+  -webkit-box-shadow: 0 0 7px rgba(100,100,100,0.3);
+  -moz-box-shadow: 0 0 7px rgba(100,100,100,0.3);
 }
 #datacamp-course-section .btn {
   text-decoration: none;
