@@ -11,7 +11,7 @@ If paying in **US Dollars**, your options are:
 
 - Zelle or email transfer <button data-target="#zelle" class="btn btn-link" data-toggle="collapse">Details</button>
 
-  Make payment to [payments@attalitech.com](mailto:payments@attalitech.com)
+  Make payment to [dean@attalitech.com](mailto:dean@attalitech.com)
   {: #zelle .collapse}
   
 - ACH direct deposit <button data-target="#ach" class="btn btn-link" data-toggle="collapse">Details</button>
@@ -56,7 +56,7 @@ If paying in **Canadian Dollars**, your options are:
 
 - e-interac transfer <button data-target="#einterac" class="btn btn-link" data-toggle="collapse">Details</button>
 
-  Make payment to [payments@attalitech.com](mailto:payments@attalitech.com)
+  Make payment to [dean@attalitech.com](mailto:dean@attalitech.com)
   {: #einterac .collapse}
 
 - EFT direct deposit <button data-target="#eft" class="btn btn-link" data-toggle="collapse">Details</button>
