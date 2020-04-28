@@ -15,11 +15,11 @@ I'm also [**available for consulting**](/shiny), so feel free to [contact me](/c
 
 ## Courses
 
-I have an interactive, online video course ["Case Studies in Shiny"](https://www.datacamp.com/courses/building-web-applications-in-r-with-shiny-case-studies) hosted on DataCamp. It's designed to give you practice building Shiny apps for real-life scenarios, while also helping your learn some advanced Shiny concepts.
+I have an interactive, online video course ["Case Studies in Shiny"](https://www.datacamp.com/courses/building-web-applications-in-r-with-shiny-case-studies) hosted on DataCamp. It's designed to give you practice building Shiny apps for real-life scenarios, while also helping your learn some advanced Shiny concepts. At the time of writing, 2.5 years after it was released, this course is the __#2 best-rated course on DataCamp__.
 
 ## Website templates
 
--  **[Beautiful Jekyll](https://beautifuljekyll.com/)** - a very popular Jekyll theme (> 10k websites built) I created when making this website.  You can [view a demo](https://beautifuljekyll.com/) or use it yourself to make a pretty website similar to this one by visiting the [project page](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it's designed to look great on both mobile devices and laptops.
+-  **[Beautiful Jekyll](https://beautifuljekyll.com/)** - a very popular Jekyll theme (__> 10k websites built__) I created when making this website.  You can [view a demo](https://beautifuljekyll.com/) or use it yourself to make a pretty website similar to this one by visiting the [project page](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it's designed to look great on both mobile devices and laptops.
 
 ## Web services
 
