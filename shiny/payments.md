@@ -96,9 +96,7 @@ If paying in a **foreign currency**, your options are:
   
 <br/><br/>
 
-<div id="payments-faq-initial-fee">h</div>
-  
-## Why is there a fee for our consultation call?
+## Why is there a fee for our consultation call? {#payments-faq-initial-fee}
 
 When you [schedule our first meeting](https://calendly.com/attalitech/meeting) you'll notice that it requires a payment to be made upfront. 
 
