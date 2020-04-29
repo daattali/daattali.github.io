@@ -12,7 +12,7 @@ carbonads-sm-horizontal: true
 {: .box-note}
 If you want help setting up your Shiny Server, a 1-on-1 walk-through or tutorial, or just general consultation about using Shiny Server, I'm [available for hire](http://attalitech.com).
 
-If you've always wanted to have an RStudio Server of your own so that you can access R from anywhere, or your own Shiny Server to host your awesome shiny apps or Rmarkdown documents, [DigitalOcean](https://m.do.co/c/358494f80b99) (DO) can help you get there easily. For example, take a look at [my Shiny Server](https://daattali.com/shiny/) to see how useful this can be.
+If you've always wanted to have an RStudio Server of your own so that you can access R from anywhere, or your own Shiny Server to host your awesome shiny apps or Rmarkdown documents, [DigitalOcean](https://m.do.co/c/358494f80b99) (DO) can help you get there easily. For example, take a look at [my Shiny Server](https://attalitech.com/) to see how useful this can be.
 
 DigitalOcean provides virtual private servers (they call each server a *droplet*), which means that you can pay *$5/month* to have your own server "in the cloud" that you can access from anywhere and host anything on.  Check out [my DO droplet](https://daattali.com/) to see it in action! Use [my referral link](https://m.do.co/c/358494f80b99) to get $10 in credits, which is enough to give you a private server for your first 2 months.
 

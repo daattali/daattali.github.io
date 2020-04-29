@@ -12,7 +12,7 @@ description: "R-Shiny developer and consultant with a MSc in Bioinformatics and 
 
 # --- Outputting options --- #
 # More information can be found on Jekyll's site
-timezone: "America/Vancouver"
+timezone: "America/Toronto"
 markdown: kramdown
 highlighter: rouge
 permalink: /blog/:title/
@@ -28,7 +28,7 @@ avatar: "/img/deanimg.jpeg"
 # List of links in the navigation bar
 navbar-links:
   Blog: ""
-  Shiny: "shiny"
+  Shiny: "https://attalitech.com/"
   Projects: "projects"
   About Me / Contact: "aboutme"
 nav-search: "search"
