@@ -27,7 +27,7 @@ I have an interactive, online video course ["Case Studies in Shiny"](https://www
 
 ## R Shiny apps
 
-If you got here after reading some of my blog posts, you'll know that I'm a big fan and advocate of Shiny. I also run a company providing Shiny consultancy. Unfortunately all my coolest big Shiny apps that were made for clients are private, but you can see a sample of the Shiny apps I've built for myself [on my Shiny server](/shiny).
+If you got here after reading some of my blog posts, you'll know that I'm a big fan and advocate of Shiny. I also run a company providing Shiny consultancy. Unfortunately all my coolest big Shiny apps that were made for clients are private, but you can see a sample of the Shiny apps I've built for myself [on my Shiny server](https://attalitech.com/#portfolio).
 
 ## R packages
 
@@ -41,9 +41,11 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 - **[addinslist](https://github.com/daattali/addinslist)** - Browse through a continuously updated list of existing RStudio addins and install/uninstall their corresponding packages. Available [on CRAN](https://cran.r-project.org/package=addinslist) and [on GitHub](https://github.com/daattali/addinslist).
 
-- **[ezknitr](https://github.com/daattali/ezknitr)** - Avoid the typical working directory pain when using 'knitr'. If you're into R and reproducible research/generating reports with knitr, then do check it out. Available [on CRAN](https://cran.r-project.org/package=ezknitr) and [on GitHub](https://github.com/daattali/ezknitr).
+- **[shinycssloaders](https://github.com/daattali/shinycssloaders)** - Add loading animations to Shiny outputs while they're re-calculating. Available [on CRAN](https://cran.r-project.org/package=shinycssloaders) and [on GitHub](https://github.com/daattali/shinycssloaders). Originally developed by Andrew Sali, I took ownership in 2019.
 
 - **[ggExtra](https://github.com/daattali/ggExtra)** - Easily add histograms/density plots to ggplot2 scatterplots, plus a few more ggplot2 convenience functions. Check out a [demo online](https://daattali.com/shiny/ggExtra-ggMarginal-demo/). Available [on CRAN](https://cran.r-project.org/package=ggExtra) and [on GitHub](https://github.com/daattali/ggExtra).
+
+- **[ezknitr](https://github.com/daattali/ezknitr)** - Avoid the typical working directory pain when using 'knitr'. If you're into R and reproducible research/generating reports with knitr, then do check it out. Available [on CRAN](https://cran.r-project.org/package=ezknitr) and [on GitHub](https://github.com/daattali/ezknitr).
 
 - **[shinyforms](https://github.com/daattali/shinyforms)** - Easily create questionnaire-type forms with Shiny. Check out a [demo online](https://daattali.com/shiny/mimic-google-form/). Available [on GitHub](https://github.com/daattali/ggExtra) (still in development).
 
