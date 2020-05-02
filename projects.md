@@ -41,7 +41,7 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 - **[addinslist](https://github.com/daattali/addinslist)** - Browse through a continuously updated list of existing RStudio addins and install/uninstall their corresponding packages. Available [on CRAN](https://cran.r-project.org/package=addinslist) and [on GitHub](https://github.com/daattali/addinslist).
 
-- **[shinycssloaders](https://github.com/daattali/shinycssloaders)** - Add loading animations to Shiny outputs while they're re-calculating. Available [on CRAN](https://cran.r-project.org/package=shinycssloaders) and [on GitHub](https://github.com/daattali/shinycssloaders). Originally developed by Andrew Sali, I took ownership in 2019.
+- **[shinycssloaders](https://github.com/daattali/shinycssloaders)** - Add loading animations to a Shiny output while it's re-calculating. Available [on CRAN](https://cran.r-project.org/package=shinycssloaders) and [on GitHub](https://github.com/daattali/shinycssloaders). Originally developed by Andrew Sali, I took ownership in 2019.
 
 - **[ggExtra](https://github.com/daattali/ggExtra)** - Easily add histograms/density plots to ggplot2 scatterplots, plus a few more ggplot2 convenience functions. Check out a [demo online](https://daattali.com/shiny/ggExtra-ggMarginal-demo/). Available [on CRAN](https://cran.r-project.org/package=ggExtra) and [on GitHub](https://github.com/daattali/ggExtra).
 
