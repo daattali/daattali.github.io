@@ -1018,6 +1018,9 @@ pre code {
 
 /* DataCamp shiny case studies course promo */
 
+#datacamp-course-section:hover {
+  background: #fff;
+}
 #datacamp-course-section {
   text-align: center;
   background: #fafafa;
