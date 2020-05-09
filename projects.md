@@ -45,6 +45,8 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 - **[ggExtra](https://github.com/daattali/ggExtra)** - Easily add histograms/density plots to ggplot2 scatterplots, plus a few more ggplot2 convenience functions. Check out a [demo online](https://daattali.com/shiny/ggExtra-ggMarginal-demo/). Available [on CRAN](https://cran.r-project.org/package=ggExtra) and [on GitHub](https://github.com/daattali/ggExtra).
 
+- **[cometr](https://github.com/daattali/cometr)** - A convenient R wrapper to the 'Comet' API, providing easy interaction with the 'Comet' cloud platform for tracking and optimizing machine learning models. Available [on CRAN](https://cran.r-project.org/package=cometr) and [on GitHub](https://github.com/daattali/cometr).
+
 - **[ezknitr](https://github.com/daattali/ezknitr)** - Avoid the typical working directory pain when using 'knitr'. If you're into R and reproducible research/generating reports with knitr, then do check it out. Available [on CRAN](https://cran.r-project.org/package=ezknitr) and [on GitHub](https://github.com/daattali/ezknitr).
 
 - **[shinyforms](https://github.com/daattali/shinyforms)** - Easily create questionnaire-type forms with Shiny. Check out a [demo online](https://daattali.com/shiny/mimic-google-form/). Available [on GitHub](https://github.com/daattali/ggExtra) (still in development).
