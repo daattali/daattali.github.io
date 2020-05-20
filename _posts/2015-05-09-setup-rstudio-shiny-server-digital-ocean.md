@@ -371,7 +371,7 @@ If you have a custom domain that you want to host your droplet on, that's not to
 
 After purchasing your own domain, there are two steps involved to link the domain to your droplet: you need to point from your registrar to DO, and to configure your domain on DO.
 
-I used to give out specific instructions on how to do this, but unfortunately the steps required keep changing every few months (because the websites change their interface), so instead I will link to the two articles that will guide you through this process: [Step 1: How to point from your registrar to DO](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars#registrar-namecheap) and [Step 2: How to configure your domain on DO](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-host-name-with-digitalocean).
+I used to give out specific instructions on how to do this, but unfortunately the steps keep changing every few months, so instead I'll link to the two articles that will guide you through this process: [Step 1: Point your registrar to DO](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars#registrar-namecheap) and [Step 2: Configure your domain on DO](https://www.digitalocean.com/docs/networking/dns/how-to/add-domains/). You might need to do some extra Googling because the tutorials for this are not always super clear.
 
 **And that's it! Now you have a nicely configured private web server with your very own RStudio and Shiny Server, and you can do anything else you'd like on it.** 
 
