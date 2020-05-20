@@ -100,7 +100,7 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 - Organizer of the [Toronto R Meetup](https://www.meetup.com/en-AU/Greater-Toronto-Area-GTA-R-Users-Group/).
 
-- **[Impact Replays](https://daattali.com/shiny/cfl/)** - I participated in a national hackathon ([SportsHack15](http://sportshackweekend.org/ca/2015/)) and won 3rd place with this app. We had to build something that would increase engagement of CFL (Canadian Football League) fans. This app uses play-by-play data from games to let you focus on just the action moments of games.
+- **[Impact Replays](https://daattali.com/shiny/cfl/)** - I participated in a national hackathon (SportsHack15) and won 3rd place with this app. We had to build something that would increase engagement of CFL (Canadian Football League) fans. This app uses play-by-play data from games to let you focus on just the action moments of games.
 
 - **[Settlers of Catan Turn Analyzer](https://deanattali.com/settlers-catan-turn-analyzer/)** - You really think that 4 came up more than the 8? Tired of everyone "wrongly" claiming you take the longest turns? Only one way to find out!
 
