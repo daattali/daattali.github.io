@@ -447,5 +447,3 @@ That's it! You are now ready to create forms with shiny apps.  You can see what 
 **[2015-06-15]** As mentioned in the comments below, if you don't have a Pro account but would still like to implement the idea of admins and "authentication", there are other ways to achieve a similar result. I won't go into any of them because I haven't done that, but it's definitely possible to have an input field that accepts a password and if you type in an admin password, the tables will be shown. That's just one example, you can get more creative with the specifics, but essentially you just need a way to return a TRUE/FALSE value from `isAdmin()`.
 
 **[2015-07-01]** Added a link to the [follow-up post](https://deanattali.com/blog/shiny-persistent-data-storage) on how to store data in Shiny apps.
-
-**[2015-09-28]** Here are two articles that others have written as extensions of this tutorial: [Programming simple economic experiments in Shiny](https://pviefers.wordpress.com/2015/08/16/programming-simple-economic-experiments-in-shiny/) and [Supporting CRUD in Shiny tables](http://ipub.com/shiny-crud-app/).
