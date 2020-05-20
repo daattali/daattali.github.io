@@ -87,7 +87,6 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 - [How to Set Up R on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04) - written for [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99).
 - [How to Set Up Shiny Server on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-shiny-server-on-ubuntu-14-04) - written for [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99).
 - Book reviewer for [Learning Shiny](https://www.packtpub.com/application-development/learning-shiny).
-- [Building Shiny apps](http://stat545-ubc.github.io/shiny01_activity.html) - written for a course I TA'ed.
 
 ## Recorded Talks
 
