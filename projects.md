@@ -73,7 +73,7 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 - **[MakeupBee.com](https://web.archive.org/web/20121223025414/https://www.makeupbee.com/looks.php)** - website for women to discover and talk about interesting makeup applications. Clearly my area of expertise! The site was mostly developed by Brent Francia (CEO) and I, and I was responsible for all aspects of the development, seeing as we were usually a 2-3 person team.
 
-- **[Glittr.com](https://www.glittr.com)** - spin-off of MakeupBee that was designed to be more focused on mainstream looks and have a cleaner feel. I've written most of the code for this site.
+- **Glittr.com** - spin-off of MakeupBee that was designed to be more focused on mainstream looks and have a cleaner feel. I've written most of the code for this site.
 
 - **[Jauntr.com](https://web.archive.org/web/20120309093005/https://www.jauntr.com/)** - travel site with a social component, that is meant to help users discover and share places to go. It never really took off, but it was my first introduction to web development.
 
