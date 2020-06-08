@@ -19,7 +19,7 @@ I have an interactive, online video course ["Case Studies in Shiny"](https://www
 
 ## Website templates
 
--  **[Beautiful Jekyll](https://beautifuljekyll.com/)** - a very popular Jekyll theme (__> 10k websites built__) I created when making this website.  You can [view a demo](https://beautifuljekyll.com/) or use it yourself to make a pretty website similar to this one by visiting the [project page](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it's designed to look great on both mobile devices and laptops.
+ **[Beautiful Jekyll](https://beautifuljekyll.com/)** - a very popular Jekyll theme (__> 10k websites built__) I created when making this website.  You can [view a demo](https://beautifuljekyll.com/) or use it yourself to make a pretty website similar to this one by visiting the [project page](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it's designed to look great on both mobile devices and laptops.
 
 ## Web services
 
@@ -55,8 +55,6 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 - **[lightsout](https://github.com/daattali/lightsout)** - An implementation of the puzzle game Lights Out using R. [Play the game online](https://daattali.com/shiny/lightsout/). Available [on CRAN](https://cran.r-project.org/package=lightsout) and [on GitHub](https://github.com/daattali/lightsout).
 
-*Many of my R packages/tutorials/thoughts are graciously shared on [R-bloggers](https://www.r-bloggers.com/), which is a great resource for any useR.*
-
 ## Chrome extensions
 
 - **[GitHub Diff Navigator](https://github.com/daattali/github-diff-navigator-extension)** - allows you to easily navigate through the changes in a file that has been edited on GitHub.  Especially useful when editing a markdown file within the browser, as GitHub will only show you the full changed file but not show you *where* the edits were made. I find this very helpful every time I make small edits to someone else's large markdown document.  [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/github-diff-navigator/aoojogkiedabnddmokieplfnmjehlneo)
@@ -81,20 +79,21 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 - **[deanattali.com](https://deanattali.com)** - the site you're currently on.  Just a simple site to have some virtual presence.
 
+## R Talks
+
+- **Keynote/main speaker:** 2016 Shiny Developer Conference @ Stanford, USA ([Video](https://deanattali.com/shinyjs-shinydevcon-2016/)) &middot; 2019 SER International Seminar on Statistics with R @ Rio, Brazil &middot; 2020 eRUM European R Users Meeting @ Milan, Italy
+- **Workshop instructor:** 2017 RStudio Conf @ Orlando, USA &middot; 2018 RStudio Conf @ San Diego, USA &middot; 2019 SER International Seminar on Statistics with R @ Rio, Brazil &middot; 2019 Open Data Science Conference @ San Francisco, USA
+- **Conference talks:** 2016 useR @ Stanford, USA &middot; 2017 useR @ Brussels, Belgium &middot; 2018 RStudio Conf 2018 @ San Diego, USA
+- **Podcast interviews:** [R-Podcast Episode 16: Interview with Dean Attali](https://r-podcast.org/posts/the-r-podcast-episode-16-interview-with-dean-attali.html) &middot; [R-Podcast Episode 19](https://r-podcast.org/episode/019-talking-shiny-at-rstudio-conf-with-barbara-borges-and-dean-attali/)
+- **Meetups:** Simon Fraser University Meetup (Vancouver) 08/2016 &middot; Budapest Users of R Network 07/2017 &middot; R Israel Meetup (Tel Aviv) 05/2019 &middot; Seattle useR Group 09/2018 &middot; Toronto R Users Group 04/2019
+- **Interviews:** [CodeForCash](https://codefor.cash/dean_attali_ama.php)
+
 ## Paid writing gigs
 
 - [Persistent data storage in Shiny apps](https://shiny.rstudio.com/articles/persistent-data-storage.html) - written for [RStudio](https://www.rstudio.com/).
 - [How to Set Up R on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04) - written for [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99).
 - [How to Set Up Shiny Server on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-shiny-server-on-ubuntu-14-04) - written for [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99).
 - Book reviewer for [Learning Shiny](https://www.packtpub.com/application-development/learning-shiny).
-
-## Recorded Talks
-
-- Podcast interviews for the R-Podcast: [Episode 16: Interview with Dean Attali](https://r-podcast.org/posts/the-r-podcast-episode-16-interview-with-dean-attali.html) and [Episode 19](https://r-podcast.org/episode/019-talking-shiny-at-rstudio-conf-with-barbara-borges-and-dean-attali/)
-- Invited as main speaker at the 1st Shiny Developer Conference: [Video](https://deanattali.com/shinyjs-shinydevcon-2016/) and [presentation slides](http://bit.ly/shinyjs-slides) from my talk about shinyjs.
-- Shorter talk at useR 2016 also about shinyjs: [video](https://deanattali.com/shinyjs-user-2016/) and [slides](http://bit.ly/shinyjs-slides-useR2016).
-- [AMA (Ask Me Anything) interview](https://codefor.cash/dean_attali_ama.php) with CodeForCash
-- Many more talks about R and Shiny in various conferences - message me for details
 
 ## Misc
 
