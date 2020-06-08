@@ -81,12 +81,29 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 ## R Talks
 
-- **Keynote/main speaker:** 2016 Shiny Developer Conference @ Stanford, USA ([Video](https://deanattali.com/shinyjs-shinydevcon-2016/)) &middot; 2019 SER International Seminar on Statistics with R @ Rio, Brazil &middot; 2020 eRUM European R Users Meeting @ Milan, Italy
-- **Workshop instructor:** 2017 RStudio Conf @ Orlando, USA &middot; 2018 RStudio Conf @ San Diego, USA &middot; 2019 SER International Seminar on Statistics with R @ Rio, Brazil &middot; 2019 Open Data Science Conference @ San Francisco, USA
-- **Conference talks:** 2016 useR @ Stanford, USA &middot; 2017 useR @ Brussels, Belgium &middot; 2018 RStudio Conf 2018 @ San Diego, USA
-- **Podcast interviews:** [R-Podcast Episode 16: Interview with Dean Attali](https://r-podcast.org/posts/the-r-podcast-episode-16-interview-with-dean-attali.html) &middot; [R-Podcast Episode 19](https://r-podcast.org/episode/019-talking-shiny-at-rstudio-conf-with-barbara-borges-and-dean-attali/)
-- **Meetups:** Simon Fraser University Meetup (Vancouver) 08/2016 &middot; Budapest Users of R Network 07/2017 &middot; R Israel Meetup (Tel Aviv) 05/2019 &middot; Seattle useR Group 09/2018 &middot; Toronto R Users Group 04/2019
-- **Interviews:** [CodeForCash](https://codefor.cash/dean_attali_ama.php)
+- **Keynote/main speaker:**   
+  - 2016 Shiny Developer Conference (Stanford, USA) ([Video](https://deanattali.com/shinyjs-shinydevcon-2016/))  
+  - 2019 SER International Seminar on Statistics with R (Rio, Brazil)  
+  - 2020 eRUM European R Users Meeting (Milan, Italy)  
+- **Workshop instructor:**  
+  - 2017 RStudio Conf (Orlando, USA)  
+  - 2018 RStudio Conf (San Diego, USA)   
+  - 2019 SER International Seminar on Statistics with R (Rio, Brazil)  
+  - 2019 Open Data Science Conference (San Francisco, USA)  
+- **Conference talks:**  
+  - 2016 useR Conference (Stanford, USA)  
+  - 2017 useR Conference (Brussels, Belgium)  
+  - 2018 RStudio Conf (San Diego, USA)  
+- **Interviews:**   
+  - [R-Podcast Episode 16: Interview with Dean Attali](https://r-podcast.org/posts/the-r-podcast-episode-16-interview-with-dean-attali.html)   
+  - [R-Podcast Episode 19](https://r-podcast.org/episode/019-talking-shiny-at-rstudio-conf-with-barbara-borges-and-dean-attali/)  
+  - [Ask-me-anything at CodeForCash](https://codefor.cash/dean_attali_ama.php)  
+- **Meetups:**  
+  - 2016-08 Simon Fraser University Meetup (Vancouver, Canada)     
+  - 2017-07 Budapest Users of R Network (Budapest, Hungary)  
+  - 2018-05 R Israel Meetup (Tel Aviv, Israel)  
+  - 2018-09 Seattle useR Group (Seattle, USA)  
+  - 2019-04 Toronto R Users Group (Toronto, Canada)  
 
 ## Paid writing gigs
 
