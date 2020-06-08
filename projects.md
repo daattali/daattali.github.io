@@ -43,6 +43,8 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 - **[shinycssloaders](https://github.com/daattali/shinycssloaders)** - Add loading animations to a Shiny output while it's re-calculating. Available [on CRAN](https://cran.r-project.org/package=shinycssloaders) and [on GitHub](https://github.com/daattali/shinycssloaders). Originally developed by Andrew Sali, I took ownership in 2019.
 
+- **[shinydisconnect](https://github.com/daattali/shinydisconnect)** - Show a nice message when a shiny app disconnects or errors. Available [on GitHub](https://github.com/daattali/shinycssloaders).
+
 - **[ggExtra](https://github.com/daattali/ggExtra)** - Easily add histograms/density plots to ggplot2 scatterplots, plus a few more ggplot2 convenience functions. Check out a [demo online](https://daattali.com/shiny/ggExtra-ggMarginal-demo/). Available [on CRAN](https://cran.r-project.org/package=ggExtra) and [on GitHub](https://github.com/daattali/ggExtra).
 
 - **[cometr](https://github.com/daattali/cometr)** - A convenient R wrapper to the 'Comet' API, providing easy interaction with the 'Comet' cloud platform for tracking and optimizing machine learning models. Available [on CRAN](https://cran.r-project.org/package=cometr) and [on GitHub](https://github.com/daattali/cometr).
