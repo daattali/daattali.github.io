@@ -106,6 +106,9 @@ sudo service nginx start
 sudo service nginx restart
 ~~~
 
+{: .box-note}
+**Tip:** The default nginx settings only allow file uploads of 1MB. If your shiny apps use `fileInput()` and you want to be able to upload larger files, you'll need to set the `client_max_body_size` field in the nginx configuration and then restart nginx. The specifics for this are out of scope for this tutorial, but now that you know to google for `client_max_body_size` you may save yourself many hours of debugging :)
+
 # Step 6: Install R {#install-r}
 
 To ensure we get the most recent version of R, we need to first add `bionic` (the release name for Ubuntu 18.04) to our `sources.list`:
