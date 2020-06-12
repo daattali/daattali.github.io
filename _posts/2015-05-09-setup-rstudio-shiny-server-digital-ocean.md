@@ -107,7 +107,7 @@ sudo service nginx restart
 ~~~
 
 {: .box-note}
-**Tip:** The default nginx settings only allow file uploads of 1MB. If your shiny apps use `fileInput()` and you want to be able to upload larger files, you'll need to set the `client_max_body_size` nginx parameter. The details are out of scope for this tutorial, but knowing about this parameter may save you many hours of debugging!
+**Tip:** The default nginx settings only allow file uploads of 1MB. If your shiny apps use `fileInput()` and you want to be able to upload larger files, you'll need to set the `client_max_body_size` nginx parameter. The details are out of scope for this tutorial, but just knowing about this parameter might save you many hours of Googling/debugging one day!
 
 # Step 6: Install R {#install-r}
 
