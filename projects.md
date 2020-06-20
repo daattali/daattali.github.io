@@ -86,7 +86,7 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 - **Keynote/main speaker:**   
   - 2016 Shiny Developer Conference (Stanford, USA) ([Video](https://deanattali.com/shinyjs-shinydevcon-2016/))  
   - 2019 SER International Seminar on Statistics with R (Rio, Brazil)  
-  - 2020 eRUM European R Users Meeting (Milan, Italy)  
+  - 2020 e-Rum European R Users Meeting (Milan, Italy) ([Video](https://www.youtube.com/watch?v=kbiCCRxmDm8)) 
 - **Workshop instructor:**  
   - 2017 RStudio Conf (Orlando, USA)  
   - 2018 RStudio Conf (San Diego, USA)   
@@ -94,7 +94,7 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
   - 2019 Open Data Science Conference (San Francisco, USA)  
 - **Conference talks:**  
   - 2016 useR Conference (Stanford, USA)  
-  - 2017 useR Conference (Brussels, Belgium)  
+  - 2017 useR Conference (Brussels, Belgium) ([Video](https://www.youtube.com/watch?v=eq8TUOxpBpM))  
   - 2018 RStudio Conf (San Diego, USA)  
 - **Interviews:**   
   - [R-Podcast Episode 16: Interview with Dean Attali](https://r-podcast.org/posts/the-r-podcast-episode-16-interview-with-dean-attali.html)   
