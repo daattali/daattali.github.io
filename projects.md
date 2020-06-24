@@ -57,13 +57,13 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 - **[lightsout](https://github.com/daattali/lightsout)** - An implementation of the puzzle game Lights Out using R. [Play the game online](https://daattali.com/shiny/lightsout/). Available [on CRAN](https://cran.r-project.org/package=lightsout) and [on GitHub](https://github.com/daattali/lightsout).
 
-## Chrome extensions
+## Chrome / Firefox extensions
 
 - **[GitHub Diff Navigator](https://github.com/daattali/github-diff-navigator-extension)** - allows you to easily navigate through the changes in a file that has been edited on GitHub.  Especially useful when editing a markdown file within the browser, as GitHub will only show you the full changed file but not show you *where* the edits were made. I find this very helpful every time I make small edits to someone else's large markdown document.  [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/github-diff-navigator/aoojogkiedabnddmokieplfnmjehlneo)
 
 - **[Google Slides Auto Resize Speaker Notes](https://github.com/daattali/gslides-betternotes-extension)** - the slide previews in the Speaker Notes window of Google Slides are tiny and unreadable. This extension dynamically resizes the slides based on the window size to make them useful. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/google-slides-auto-resize/piciggpbidhfbpefjjbomcgomanjfbeb)
 
-- **[Old School GitHub](https://github.com/daattali/oldschool-github-extension)** - GitHub rolled out a brand new UI on June 23, 2020. There are a few aspects of the new UI that I (and many others) don't like and this extension brings back a few features from the classic GitHub look. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/old-school-github/blkkkhifjoiedclojflfcenbjigdajeb)
+- **[Old School GitHub](https://github.com/daattali/oldschool-github-extension)** - GitHub rolled out a brand new UI on June 23, 2020. There are a few aspects of the new UI that I (and many others) don't like and this extension brings back a few features from the classic GitHub look. Install the [Chrome extension](https://chrome.google.com/webstore/detail/old-school-github/blkkkhifjoiedclojflfcenbjigdajeb) or [Firefox add-on](https://addons.mozilla.org/addon/old-school-github/)
 
 - **[Project Free TV Ad Bypass](https://github.com/daattali/pftv-ad-bypass-extension)** - Project Free TV serves a 10-second ad page before allowing users to continue to the video - this extension bypasses the ad page. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/project-free-tv-ad-bypass/modfjcgeknfglkdgckkomdcgokkjaadd)
 
