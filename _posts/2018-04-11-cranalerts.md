@@ -4,6 +4,8 @@ tags: [professional, rstats, r-bloggers, packages, shiny]
 share-img: "https://deanattali.com/img/blog/cranalerts/screenshot.PNG"
 permalink: /blog/cranalerts/
 date: 2018-04-11 05:00:00 -0400
+gh-repo: daattali/cranalerts
+gh-badge: [star, follow]
 ---
 
 Have you ever found yourself asking "how can I make sure I don't miss the next version release of package X"?
