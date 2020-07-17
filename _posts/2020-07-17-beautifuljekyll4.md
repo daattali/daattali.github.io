@@ -40,7 +40,7 @@ For a full list of new features and changes, see the [CHANGELOG](https://github.
 - Since the web today is very photo-heavy, added a few options for images in posts: `thumbnail-image`, `share-img`, and `cover-img`
 - The demo website now lives in its very own domain [beautifuljekyll.com](https://beautifuljekyll.com/) and is hosted in a separate [GitHub repository](https://github.com/daattali/beautiful-jekyll-demo) that showcases how to use the new `remote_theme` feature
 
-### Moving forward
+## Moving forward
 
 As anyone who builds tools knows, no software is ever truly finished. There are always more features to add, and maintaining the current codebase is in itself a part time job. One of my goals with the next release is to transition from CSS to Sass which would require a major rewrite of a large portion of the code, but otherwise I don't plan any more major changes for a while.
 
@@ -59,7 +59,7 @@ As anyone who builds tools knows, no software is ever truly finished. There are 
 </p>
 
 
-### Updating from older versions
+## Updating from older versions
 
 Over the years, as new features consistently got added to the theme, I often received questions from users asking me how can they incorporate the latest changes from the theme into their existing site. 
 
