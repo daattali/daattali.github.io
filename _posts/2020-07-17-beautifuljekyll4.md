@@ -33,7 +33,7 @@ For a full list of new features and changes, see the [CHANGELOG](https://github.
 
 - Migrated from Bootstrap 3 to Bootstrap 4. This was not fun.
 - Made the theme available as a [Ruby gem](https://rubygems.org/gems/beautiful-jekyll-theme) for advanced users
-- Made the theme available using `remote_theme` through [GitHub Pages](https://beautifuljekyll.com/getstarted#method_remote_theme_github) (or through a [Ruby Jekyll site](https://beautifuljekyll.com/getstarted#method_remote_theme_jekyll)) for intermediate users
+- Made the theme available using `remote_theme` through [GitHub Pages](https://beautifuljekyll.com/getstarted#install-steps-hard) (or through a [Ruby Jekyll site](https://beautifuljekyll.com/getstarted#install-steps-hard)) for intermediate users
 - Added accessibility features, improved performance of the theme, updated jQuery to improve security
 - Rewrote and greatly simplified the entire documentation to make it as simple and easy to understand
 - Rewrote almost the entire codebase
