@@ -1180,3 +1180,7 @@ article[role=main] {
   font-style: italic;
   font-size: 16px;
 }
+
+.footnote-ref {
+  text-decoration: none;
+}
