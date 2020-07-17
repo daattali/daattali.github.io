@@ -23,7 +23,7 @@ Then COVID-19 happened.
 
 I found myself stuck at home and had some time to dedicate to many of my [projects](https://deanattali.com/projects/). The past several months have been a very long journey with hundreds of hours (not an exaggeration) and some very (VERY) late nights, but I'm happy to announce that Beautiful Jekyll has graduated from v1 to v4. Yes, that's right, it jumped 3 major versions! I was planning on just doing a v2, but I kept getting excited by more big changes and I couldn't stop until I was fully satisfied. 
 
-### What changed?
+## What changed?
 
 A lot.
 
@@ -31,8 +31,8 @@ From adding many small features, to completely re-working the documentation and 
 
 For a full list of new features and changes, see the [CHANGELOG](https://github.com/daattali/beautiful-jekyll/blob/master/CHANGELOG.md). Major highlights include:
 
-- Migrated from Bootstrap 3 to Bootstrap 4 (specifically from 3.3.2 to 4.4.1). This was not fun.
-- Made the theme available as a [Rubygem](https://beautifuljekyll.com/getstarted#method_gem) for advanced users
+- Migrated from Bootstrap 3 to Bootstrap 4. This was not fun.
+- Made the theme available as a [Ruby gem](https://rubygems.org/gems/beautiful-jekyll-theme) for advanced users
 - Made the theme available using `remote_theme` through [GitHub Pages](https://beautifuljekyll.com/getstarted#method_remote_theme_github) (or through a [Ruby Jekyll site](https://beautifuljekyll.com/getstarted#method_remote_theme_jekyll)) for intermediate users
 - Added accessibility features, improved performance of the theme, updated jQuery to improve security
 - Rewrote and greatly simplified the entire documentation to make it as simple and easy to understand
