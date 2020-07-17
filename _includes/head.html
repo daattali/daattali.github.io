@@ -1,7 +1,6 @@
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   {% if page.meta-title %}
   <title>{{ page.meta-title }}</title>
@@ -80,22 +79,40 @@
   <link rel="canonical" href="{{ site.url }}{{ page.url | remove: '/index.html' | remove: '.html' }}" />
   {% endif %}
   
-  {% if page.share-img %}
-  <meta property="og:image" content="{{ page.share-img }}" />
-  {% else %}
-  <meta property="og:image" content="{{ site.url }}{{ site.avatar }}" />
-  {% endif %}
+  {%- capture shareimg -%}
+    {% if page.share-img %}
+      {{ page.share-img }}
+    {% elsif page.bigimg %}
+      {% if page.bigimg.first %}
+        {{ page.bigimg[0].first.first }}
+      {% else %}
+        {{ page.bigimg }}
+      {% endif %}
+    {% elsif page.thumbnail-img %}
+      {{ page.thumbnail-img }}
+    {% elsif site.avatar %}
+      {{ site.avatar }}
+    {% endif %}
+  {% endcapture %}
+  {% assign shareimg=shareimg | strip %}
 
+  {% if shareimg != "" %}
+  <meta property="og:image" content="{{ shareimg | absolute_url }}">
+  {% endif %}
+ 
+  
   <!-- Twitter summary cards -->
-  <meta name="twitter:card" content="summary" />
+  {% if shareimg != "" and shareimg != site.avatar %}
+  <meta name="twitter:card" content="summary_large_image">
+  {% else %}
+  <meta name="twitter:card" content="summary">
+  {% endif %}
   <meta name="twitter:site" content="@{{ site.author.twitter }}" />
   <meta name="twitter:creator" content="@{{ site.author.twitter }}" />
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
   <meta name="twitter:description" content="{{ page.content | strip_html | xml_escape | truncatewords: 50 }}" />
-  {% if page.share-img %}
-  <meta name="twitter:image" content="{{ page.share-img }}" />
-  {% elsif site.avatar %}
-  <meta name="twitter:image" content="{{ site.url }}{{ site.avatar }}" />
-  {% endif %}  
+  {% if shareimg != "" %}
+  <meta name="twitter:image" content="{{ shareimg | absolute_url }}">
+  {% endif %}
   
 </head>
