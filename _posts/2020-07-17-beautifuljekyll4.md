@@ -36,7 +36,7 @@ For a full list of new features and changes, see the [CHANGELOG](https://github.
 - Made the theme available using `remote_theme` through [GitHub Pages](https://beautifuljekyll.com/getstarted#install-steps-hard) (or through a [Ruby Jekyll site](https://beautifuljekyll.com/getstarted#install-steps-hard)) for intermediate users
 - Added accessibility features, improved performance of the theme, updated jQuery to improve security
 - Rewrote and greatly simplified the entire documentation to make it as simple and easy to understand
-- Rewrote almost the entire codebase
+- Rewrote almost the entire codebase, to keep up with the current best practices (and some that I just didn't know about as a Jekyll noob 5 years ago!)  
 - Since the web today is very photo-heavy, added a few options for images in posts: `thumbnail-image`, `share-img`, and `cover-img`
 - The demo website now lives in its very own domain [beautifuljekyll.com](https://beautifuljekyll.com/) and is hosted in a separate [GitHub repository](https://github.com/daattali/beautiful-jekyll-demo) that showcases how to use the new `remote_theme` feature
 
