@@ -31,7 +31,7 @@ navbar-links:
   Shiny: "https://attalitech.com/"
   Projects: "projects"
   About Me / Contact: "aboutme"
-nav-support: "❤ Support"
+  ❤ Support: "https://github.com/sponsors/daattali"
 
 
 # --- Footer options --- #
