@@ -199,13 +199,18 @@ img::-moz-selection {
   }
 }
 
-.navbar-custom .nav li a.nav-support-link {
+.navbar-custom .nav li a.nav-support-link,
+.footer-support-link {
   color: hotpink;
   transition: background 300ms, color 300ms
 }
-.navbar-custom .nav li a.nav-support-link:hover {
+.navbar-custom .nav li a.nav-support-link:hover,
+.footer-support-link:hover {
   background: hotpink;
   color: #3344bb;
+}
+.footer-support-link {
+  padding: 3px;
 }
 
 @media only screen and (max-width: 992px) {
