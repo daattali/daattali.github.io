@@ -184,27 +184,12 @@ img::-moz-selection {
   }
 }
 
-.nav-search-link .nav-search-icon {
-  display: none;
-}
-.nav-search-link .nav-search-text {
-  display: inline;
-}
-@media only screen and (min-width: 768px) {
-  .nav-search-link .nav-search-icon {
-    display: inline;
-  }
-  .nav-search-link .nav-search-text {
-    display: none;
-  }
-}
-
-.navbar-custom .nav li a.nav-support-link,
+.navbar-custom .nav li a.nav-support-link[href*="github.com/sponsors"],
 .footer-support-link {
   color: hotpink;
   transition: background 300ms, color 300ms;
 }
-.navbar-custom .nav li a.nav-support-link:hover,
+.navbar-custom .nav li a.nav-support-link[href*="github.com/sponsors"]:hover,
 .footer-support-link:hover {
   background: hotpink;
   color: #3344bb;
