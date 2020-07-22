@@ -201,7 +201,7 @@ img::-moz-selection {
 
 .navbar-custom .nav li a.nav-support-link {
   color: hotpink;
-  background 300ms, color 300ms
+  transition: background 300ms, color 300ms
 }
 .navbar-custom .nav li a.nav-support-link:hover {
   background: hotpink;
