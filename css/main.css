@@ -724,7 +724,6 @@ pre code {
   margin: 0;
   padding: 0 2px;
 }
-#mailchimp-subscribe-section-scrollbox label,
 #mailchimp-subscribe-section-share label {
   font-size: 16px;
   margin-bottom: 7px;
@@ -760,7 +759,6 @@ pre code {
 #mailchimp-subscribe-section-footer #mc-embedded-subscribe-footer {
   color: #333333;
 }
-#mailchimp-subscribe-section-scrollbox #mc-embedded-subscribe-scrollbox:hover,
 #mailchimp-subscribe-section-share #mc-embedded-subscribe-share:hover {
   background-color: #f8f8f8;
   color: #000;
@@ -779,7 +777,6 @@ pre code {
 }
 
 @media only screen and (min-width: 980px) {
-  #mailchimp-subscribe-section-scrollbox #mc_embed_signup-scrollbox label,
   #mailchimp-subscribe-section-share #mc_embed_signup-share label {
     font-size: 18px;
     margin-bottom: 3px;
@@ -837,18 +834,21 @@ pre code {
   text-align: center;
   color: #fff;
   background: #63ba5d;
-  padding: 15px 20px;
+  padding: 20px 25px 25px;
   box-shadow: 0 0 8px #53b24d;
-}
-
-#scroll-box input {
-  outline-color: #75b57d;
 }
 
 @media only screen and (max-width: 979px) {
   body.scroll-box-on footer {
     padding-bottom: 210px;
   }
+}
+
+#scroll-box hr {
+  margin: 10px auto;
+  width: 80%;
+  border: none;
+  border-top: 3px double #fff;
 }
 
 #scroll-box-close {
@@ -865,31 +865,18 @@ pre code {
   color: #fff;
 }
 
-#scroll-box-title {
-  font-size: 24px;
-  letter-spacing: 1px;
-  display: none;
-}
-
-#scroll-box-contact {
-  font-family: arial;
-  font-size: 15px;
-  text-align: right;
-  margin-top: 10px;
-  display: none;
-}
-
 #scroll-box-hire {
   font-size: 24px;
 }
 
-#scroll-box-contact a,
-#scroll-box-hire a {
+#scroll-box-hire a,
+#scroll-box-support a {
   color: #fff;
   font-weight: 600;
 }
-#scroll-box-contact a:hover,
-#scroll-box-hire a:hover {
+
+#scroll-box-hire a:hover,
+#scroll-box-support a:hover {
   color: #f0f0f0;
 }
 
@@ -904,13 +891,16 @@ pre code {
 
 @media only screen and (max-width: 550px) {
   #scroll-box {
-    padding: 10px 10px 5px;
+    padding: 10px;
   }
-  #scroll-box-title {
-    font-size: 20px;
+  #scroll-box hr {
+    width: 50%;
   }
   #scroll-box-hire {
     font-size: 18px;
+  }
+  scroll-box-support {
+    font-size: 16px;
   }
   #scroll-box-close {
     right: 3px;
