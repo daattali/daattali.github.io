@@ -10,7 +10,7 @@ gh-badge: [follow, star]
 
 Have you ever noticed how an error in your Shiny app looks very different when it happens locally in your RStudio compared to when it happens in production (in shinyapps.io or Shiny Server or Connect)? Locally, when a Shiny app breaks, you just get a grey screen. But when a deployed app breaks, you also get a little strip that says "Disconnected from server. Reload."
 
-[![shiny default message]({{ site.url }}/img/blog/shinydisconnect/shinydisconnect-default-message.png)]({{ site.url }}/shinydisconnect/shinydisconnect-default-message.png)
+[![shiny default message]({{ site.url }}/img/blog/shinydisconnect/shinydisconnect-default-message.png)]({{ site.url }}/shinydisconnect/shinydisconnect-default-message.png){: .center }
 
 You don't have any control over that message's text or position, and you don't have a way to get that message both locally and in deployed apps.
 
