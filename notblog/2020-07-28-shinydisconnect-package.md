@@ -51,15 +51,15 @@ For interactive examples and to see all the features, [check out the demo app](h
 
 **Example 1: basic usage ([code](https://github.com/daattali/shinydisconnect/blob/master/inst/examples/basic/app.R))**
 
-[![basic screenshot]({{ site.url }}/img/blog/shinydisconnect/basic.PNG)]({{ site.url }}/shinydisconnect/basic.PNG)
+[![basic screenshot]({{ site.url }}/img/blog/shinydisconnect/basic.png)]({{ site.url }}/img/blog/shinydisconnect/basic.png)
 
 **Example 2: using parameters ([code](https://github.com/daattali/shinydisconnect/blob/master/inst/examples/advanced/app.R))**
 
-[![advanced screenshot]({{ site.url }}/img/blog/shinydisconnect/advanced.PNG)]({{ site.url }}/shinydisconnect/advanced.PNG)
+[![advanced screenshot]({{ site.url }}/img/blog/shinydisconnect/advanced.png)]({{ site.url }}/img/blog/shinydisconnect/advanced.png)
 
 **Example 3: full-width and vertically centered ([code](https://github.com/daattali/shinydisconnect/blob/master/inst/examples/special/app.R))**
 
-[![special screenshot]({{ site.url }}/img/blog/shinydisconnect/special.PNG)]({{ site.url }}/shinydisconnect/special.PNG)
+[![special screenshot]({{ site.url }}/img/blog/shinydisconnect/special.png)]({{ site.url }}/img/blog/shinydisconnect/special.png)
 You can also use `disconnectMessage2()` to get a similar message box to this one.
 
 ## How to use {#usage}
