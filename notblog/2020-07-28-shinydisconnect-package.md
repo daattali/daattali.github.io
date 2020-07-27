@@ -26,13 +26,61 @@ You can visit the [GitHub page](https://github.com/daattali/shinydisconnect/) or
 
 - [Background](#background)
 - [Overview](#overview)
+- [Examples](#examples)
+- [How to use](#usage)
 
 ## Background {#background}
 
 When I created [CRANalerts](https://cranalerts.com/) a few years ago, I wanted to make it look beautiful and not at all like a Shiny app. After investing a lot of time on making it look great, there was still one last thing I wasn't happy about: that dreadful message "Disconnected from server" message. It didn't show up when I was developing the app locally, and it wasn't really part of the shiny app - it's actually the shiny server that creates it. It was just so ugly and not user-friendly.
 
-I searched the internet for a solution, and there was none. There were other people asking for solutions, but none offered. I couldn't just let it go, and after many anxious hours of thinking I may have to settle for something I don't like, I eventually found a way to customize it. 
+I searched the internet for a solution, and there was none. There were other people asking for solutions, but none offered. I couldn't just let it go, and after many anxious hours of thinking I may have to settle for something I don't like, I eventually found a way to customize it. Behold **the customized error message**!
 
 [![shinydisconnect simple look]({{ site.url }}/img/blog/shinydisconnect/shinydisconnect-simple.PNG){: .center }]({{ site.url }}/shinydisconnect/shinydisconnect-simple.PNG)
 
-For the past year, I've been often asked what my next shiny-related package is going to be. I've had a few packages in the works, but it's certainly been a while since I released a new package to CRAN! Well actually, I've created quite a few cool packages this year for clients, but none that are public and can be shared with the world unfortunately... Last week I finally got a new package to CRAN: {shinydisconnect}. It allows you to very easily 
+Ever since then I've used this trick in every shiny app I wrote. And a couple months ago I finally took the time to make a proper package out of it so that everybody could benefit from it.
+
+## Overview {#overview}
+
+A Shiny app can disconnect for a variety of reasons: an unrecoverable error occurred in the app, the server went down, the user lost internet connection, or any other reason that might cause the shiny app to lose connection to its server.
+
+{shinydisconnect} allows you to add a nice message to the user when the app disconnects.  The message works both locally (running Shiny apps within RStudio) and on Shiny servers (such as shinyapps.io, RStudio Connect, Shiny Server Open Source, Shiny Server Pro). See the [demo Shiny app](https://daattali.com/shiny/shinydisconnect-demo/) online for examples.
+
+## Examples {#examples}
+
+For interactive examples and to see all the features, [check out the demo app](https://daattali.com/shiny/shinydisconnect-demo/).
+
+**Example 1: basic usage ([code](https://github.com/daattali/shinydisconnect/blob/master/inst/examples/basic/app.R))**
+
+[![basic screenshot]({{ site.url }}/img/blog/shinydisconnect/basic.PNG)]({{ site.url }}/shinydisconnect/basic.PNG)
+
+**Example 2: using parameters ([code](https://github.com/daattali/shinydisconnect/blob/master/inst/examples/advanced/app.R))**
+
+[![advanced screenshot]({{ site.url }}/img/blog/shinydisconnect/advanced.PNG)]({{ site.url }}/shinydisconnect/advanced.PNG)
+
+**Example 3: full-width and vertically centered ([code](https://github.com/daattali/shinydisconnect/blob/master/inst/examples/special/app.R))**
+
+[![special screenshot]({{ site.url }}/img/blog/shinydisconnect/special.PNG)]({{ site.url }}/shinydisconnect/special.PNG)
+You can also use `disconnectMessage2()` to get a similar message box to this one.
+
+## How to use {#usage}
+
+Call `disconnectMessage()` anywhere in a Shiny app's UI to add a nice message when a shiny app disconnects. `disconnectMessage()` has parameters to modify the text, position, and colours of the disconnect message.
+
+Note that it's not possible to distinguish between errors and timeouts - they will both show the same message.
+
+Without using this package, a shiny app that disconnects will either just show a greyed out screen if running locally (with no message), or will show a small message in the bottom-left corner that you cannot modify when running in a server.
+
+Basic usage:
+
+```
+ui <- fluidPage(
+  disconnectMessage(),
+  actionButton("disconnect", "Disconnect the app")
+)
+server <- function(input, output, session) {
+  observeEvent(input$disconnect, {
+    session$close()
+  })
+}
+shinyApp(ui, server)
+```
