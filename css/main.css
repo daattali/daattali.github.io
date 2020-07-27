@@ -1174,3 +1174,8 @@ article[role=main] {
 .footnote-ref {
   text-decoration: none;
 }
+
+.center {
+  display: block;
+  margin: 0 auto;
+}
