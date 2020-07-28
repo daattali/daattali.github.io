@@ -94,7 +94,7 @@ defaults:
       show-subscribe: true # add subscribe email to all blog posts
       addthis-plugin: true
       carbonads: true
-      support_promo_box: true
+      support_promo_box: false
   -
     scope:
       path: "" # all files
