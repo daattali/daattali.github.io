@@ -1006,11 +1006,9 @@ pre code {
 	box-sizing: border-box;
 }
 
-/* DataCamp shiny case studies course promo */
+/* Promo boxes */
 
-#datacamp-course-section:hover {
-  background: #fff;
-}
+#support-promo-section,
 #datacamp-course-section {
   text-align: center;
   background: #fafafa;
@@ -1024,22 +1022,41 @@ pre code {
   -webkit-box-shadow: 0 0 7px rgba(100,100,100,0.3);
   -moz-box-shadow: 0 0 7px rgba(100,100,100,0.3);
 }
+#datacamp-course-section:hover {
+  background: #fff;
+}
+#support-promo-section {
+  background: #e7edff;
+  border-color: #e4eaff;
+  box-shadow: 0 0 7px rgba(153, 178, 255, 0.4);
+  -webkit-box-shadow: 0 0 7px rgba(153, 178, 255, 0.4);
+  -moz-box-shadow: 0 0 7px rgba(153, 178, 255, 0.4);
+}
+#support-promo-section:hover {
+  background: #d1daff;
+  cursor: pointer;
+}
+#support-promo-section .btn,
 #datacamp-course-section .btn {
   text-decoration: none;
   margin-top: 10px;
 }
 @media only screen and (max-width: 767px) {
+  #support-promo-section, 
   #datacamp-course-section {
     font-size: 18px;
   }
+  #support-promo-section .btn,
   #datacamp-course-section .btn {
     font-size: 16px;
   }
 }
 @media only screen and (max-width: 500px) {
+  #support-promo-section,
   #datacamp-course-section {
     font-size: 16px;
   }
+  #support-promo-section .btn,
   #datacamp-course-section .btn {
     font-size: 14px;
   }
