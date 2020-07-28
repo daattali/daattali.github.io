@@ -10,7 +10,7 @@
       {% else %}	
         {% assign maxlength = 102 %}	
       {% endif %}	
-      {% capture urltwitter %}{{ urltwitter }}&text={{ page.title | truncate: maxlength }}{% endcapture %}    
+      {% capture urltwitter %}{{ urltwitter }}&text={{ page.title | url_encode | truncate: maxlength }}{% endcapture %}    
 
       <div class="share-buttons">
         <a href="{{ urltwitter }}" data-ga-event=1 data-ga-category="share" data-ga-action="twitter" data-ga-label="{{ page.url }}">Tweet it </a>
