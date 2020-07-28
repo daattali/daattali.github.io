@@ -1010,6 +1010,7 @@ pre code {
 
 #support-promo-section,
 #datacamp-course-section {
+  display: block;
   text-align: center;
   background: #fafafa;
   border: 1px solid #ddd;
@@ -1035,6 +1036,7 @@ pre code {
 #support-promo-section:hover {
   background: #d1daff;
   cursor: pointer;
+  color: #404040;
 }
 #support-promo-section .btn,
 #datacamp-course-section .btn {
