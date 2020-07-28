@@ -59,8 +59,13 @@ For interactive examples and to see all the features, [check out the demo app](h
 
 **Example 3: full-width and vertically centered ([code](https://github.com/daattali/shinydisconnect/blob/master/inst/examples/special/app.R))**
 
-[![special screenshot]({{ site.url }}/img/blog/shinydisconnect/special.png)]({{ site.url }}/img/blog/shinydisconnect/special.png)
 You can also use `disconnectMessage2()` to get a similar message box to this one.
+
+[![special screenshot]({{ site.url }}/img/blog/shinydisconnect/special.png)]({{ site.url }}/img/blog/shinydisconnect/special.png)
+
+**Example 4: hide the app**
+
+[![special screenshot]({{ site.url }}/img/blog/shinydisconnect/special2.PNG)]({{ site.url }}/img/blog/shinydisconnect/special2.PNG)
 
 ## How to use {#usage}
 
