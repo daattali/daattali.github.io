@@ -3,6 +3,16 @@
     <h1 class="share-title">Enjoy my content?</h1>
     
     {% if page.show-share %}
+      {% capture urltwitter %}https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&via=daattali{% endcapture %}	
+      {% if page.tags contains 'rstats' %}	
+        {% assign maxlength = 94 %}	
+        {% capture urltwitter %}{{ urltwitter }}&hashtags=rstats{% endcapture %}	
+      {% else %}	
+        {% assign maxlength = 102 %}	
+      {% endif %}	
+      {% capture urltwitter %}{{ urltwitter }}&text={{ page.title | truncate: maxlength }}{% endcapture %}    
+      <a href="{{ urltwitter }}" data-ga-event=1 data-ga-category="share" data-ga-action="twitter" data-ga-label="{{ page.url }}">Tweet it </a>
+
       <div class="share-buttons">
         <a href="https://github.com/sponsors/daattali" data-ga-event=1 data-ga-category="share" data-ga-action="sponsor" data-ga-label="{{ page.url }}">
           Support my work
