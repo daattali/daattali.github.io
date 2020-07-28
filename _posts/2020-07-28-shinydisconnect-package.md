@@ -65,6 +65,8 @@ You can also use `disconnectMessage2()` to get a similar message box to this one
 
 **Example 4: hide the app**
 
+This can be achieved by setting the opactiy to 1 (fully opaque).
+
 [![special screenshot]({{ site.url }}/img/blog/shinydisconnect/special2.PNG)]({{ site.url }}/img/blog/shinydisconnect/special2.PNG)
 
 ## How to use {#usage}
