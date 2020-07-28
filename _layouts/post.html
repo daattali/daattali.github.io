@@ -7,7 +7,6 @@ layout: base
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      {% include support_promo_box.html %}
 
       {% if page.gh-repo %}
         {% assign gh_split =  page.gh-repo | split:'/'  %}
@@ -33,6 +32,7 @@ layout: base
       {% endif %}
      
       <article role="main" class="blog-post">
+        {% include support_promo_box.html %}
         {% include carbonads.html %}
       	{{ content }}
       </article>
