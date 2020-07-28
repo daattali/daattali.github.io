@@ -1011,6 +1011,7 @@ pre code {
 #support-promo-section,
 #datacamp-course-section {
   display: block;
+  text-decoration: none;
   text-align: center;
   background: #fafafa;
   border: 1px solid #ddd;
