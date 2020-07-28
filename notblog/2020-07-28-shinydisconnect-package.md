@@ -14,7 +14,7 @@ Have you ever noticed how an error in your Shiny app looks very different when i
 
 You don't have any control over that message's text or position, and you don't have a way to get that message to appear both locally and in deployed apps.
 
-Well, at least you didn't until now. The new {shinydisconnect} package solves exactly these two issues, by allowing you to show a customized (and pretty!) message when a Shiny app disconnects or errors, regardless of where the app is running.
+Well, at least you didn't *until now*. The new [{shinydisconnect}](https://github.com/daattali/shinydisconnect) package solves exactly these two issues, by allowing you to show a customized (and pretty!) message when a Shiny app disconnects or errors, regardless of where the app is running.
 
 You can visit the [GitHub page](https://github.com/daattali/shinydisconnect/) or check out a demo online:
 
@@ -31,9 +31,9 @@ You can visit the [GitHub page](https://github.com/daattali/shinydisconnect/) or
 
 ## Background {#background}
 
-When I created [CRANalerts](https://cranalerts.com/) a few years ago, I wanted to make it look beautiful and not at all like a Shiny app. After investing a lot of time on making it look great, there was still one last thing I wasn't happy about: that dreadful message "Disconnected from server" message. It didn't show up when I was developing the app locally, and it wasn't really part of the shiny app - it's actually the shiny server that creates it. It was just so ugly and not user-friendly.
+When I created [CRANalerts](https://cranalerts.com/) a few years ago, I wanted to make it look beautiful and not at all like a Shiny app. After investing a lot of time on making it look great, there was still one last thing I wasn't happy about: that dreadful "Disconnected from server" message. It didn't show up when I was developing the app locally, and it wasn't really part of the shiny app - it's actually the shiny server that creates it. It was just *so* ugly and not user-friendly.
 
-I searched the internet for a solution, and there was none. There were other people asking for solutions, but none offered. I couldn't just let it go, and after many anxious hours of thinking I may have to settle for something I don't like, I eventually found a way to customize it. Behold **the customized error message**!
+I searched the internet for a solution, and there was none. There were other people asking for solutions, but none offered. I couldn't just let it go, and after many anxious hours of thinking I may have to settle for something I don't like, I eventually found a way to customize it. Behold **the customized Shiny error message**!
 
 [![shinydisconnect simple look]({{ site.url }}/img/blog/shinydisconnect/shinydisconnect-simple.PNG){: .center }]({{ site.url }}/shinydisconnect/shinydisconnect-simple.PNG)
 
@@ -43,7 +43,7 @@ Ever since then I've used this trick in every shiny app I wrote. And a couple mo
 
 A Shiny app can disconnect for a variety of reasons: an unrecoverable error occurred in the app, the server went down, the user lost internet connection, or any other reason that might cause the shiny app to lose connection to its server.
 
-{shinydisconnect} allows you to add a nice message to the user when the app disconnects.  The message works both locally (running Shiny apps within RStudio) and on Shiny servers (such as shinyapps.io, RStudio Connect, Shiny Server Open Source, Shiny Server Pro). See the [demo Shiny app](https://daattali.com/shiny/shinydisconnect-demo/) online for examples.
+[{shinydisconnect}](https://github.com/daattali/shinydisconnect) allows you to add a nice message to the user when the app disconnects.  The message works both locally (running Shiny apps within RStudio) and on Shiny servers (such as shinyapps.io, RStudio Connect, Shiny Server Open Source, Shiny Server Pro). See the [demo Shiny app](https://daattali.com/shiny/shinydisconnect-demo/) online for examples.
 
 ## Examples {#examples}
 
