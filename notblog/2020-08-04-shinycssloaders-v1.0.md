@@ -8,5 +8,6 @@ gh-repo: daattali/shinycssloaders
 gh-badge: [follow, star]
 ---
 
-The [{shinycssloaders}](https://github.com/daattali/shinycssloaders/) package is a handy little 
-package that lets you easily add loading animations to a Shiny output while it's recalculating.
+The [{shinycssloaders}](https://github.com/daattali/shinycssloaders/) package is a handy little package that lets you easily add loading animations to a Shiny output while it's recalculating.
+
+[![demo gif]({{ site.url }}/img/blog/shinycssloaders/shinycssloaders-demo-gif.gif)]({{ site.url }}/img/blog/shinycssloaders/shinycssloaders-demo-gif.gif)
