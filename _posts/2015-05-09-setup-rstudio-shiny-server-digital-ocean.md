@@ -370,7 +370,7 @@ Now you should be able to go to `http://123.456.1.2/shiny/` or `http://123.456.1
 
 # Step 10: Custom domain name {#custom-domain}
 
-If you have a custom domain that you want to host your droplet on, that's not too hard to set up.  For example, my main droplet's IP is [198.199.117.12](http://198.199.117.12), but I also purchased the domain [daattali.com](https://daattali.com/) so that it would be able to host my droplet with a much simpler URL. I used [Namecheap](https://www.namecheap.com/?aff=95702) to buy my domain, but most companies are fairly similar.
+If you have a custom domain that you want to host your droplet on, that's not too hard to set up.  For example, my main droplet's IP is [198.199.117.12](http://198.199.117.12), but I also purchased the domain [daattali.com](https://daattali.com/) so that it would be able to host my droplet with a much simpler URL. I used [Namecheap](https://namecheap.pxf.io/daattali) to buy my domain, but most companies are fairly similar.
 
 After purchasing your own domain, there are two steps involved to link the domain to your droplet: you need to point from your registrar to DO, and to configure your domain on DO.
 
