@@ -39,11 +39,11 @@ than being dynamically created with every page load.  For my purposes this was d
 
 ## Custom domain name (instead of `https://daattali.github.io`)
 
-In order to have a nice domain name, I bought a domain from **[Namecheap](https://www.namecheap.com/?aff=95702)**, mainly because it was the most affordable legitimate domain name registrar I could find.  Buying the domain meant that I can reach my site via `https://deanattali.com` instead of  `https://daattali.github.io` (though they both work and are identical).
+In order to have a nice domain name, I bought a domain from **[Namecheap](https://namecheap.pxf.io/daattali)**, mainly because it was the most affordable legitimate domain name registrar I could find.  Buying the domain meant that I can reach my site via `https://deanattali.com` instead of  `https://daattali.github.io` (though they both work and are identical).
 
 ### Set up custom domain name with GitHub Pages
 
-After purchasing my domain name (deanattali.com) from Namecheap, there were a few simple settings to set to get deanattali.com to
+After purchasing my domain name (deanattali.com) from [Namecheap](https://namecheap.pxf.io/daattali), there were a few simple settings to set to get deanattali.com to
 render my GitHub page.
 
 - In the git repository, I added a file named `CNAME` that contained my domain. ([Here is my CNAME](https://github.com/daattali/daattali.github.io/blob/master/CNAME))
