@@ -43,6 +43,13 @@ var main = {
         }
       }
 
+      if (main.purpleAdsCheck) {	
+        if ($(window).scrollTop() > main.purpleAdsCheck) {	
+          main.purpleAdsCheck = false;	
+          $("body").removeClass("purpleads-hide");	
+        }	
+      }
+
     });
     
     // On mobile, hide the avatar when expanding the navbar menu
