@@ -5,15 +5,13 @@ var main = {
   bigImgEl : null,
   numImgs : null,
   scrollBoxCheck : false,
-  purpleAdsCheck : false,
   
   init : function() {
 
     // Check if there is a scrollbox to initialize
     if ($("#scroll-box").length > 0 && Cookies.get('daScrollboxSubscribe3') === undefined) {
       if ($("article").length > 0) {
-        main.scrollBoxCheck = Math.min(1500, $("article").offset().top + $("article").height() * 0.4);
-	      console.log(main.scrollBoxCheck);
+        main.scrollBoxCheck = $("article").offset().top + $("article").height() * 0.4;
         $("#scroll-box-close").click(function() {
           $("#scroll-box").fadeOut(500);
           $("body").removeClass("scroll-box-on");
@@ -21,12 +19,7 @@ var main = {
         });
       }
     }
-
-    if ($(window).width() < 750) {
-      main.purpleAdsCheck = 1000;
-      $("body").addClass("purpleads-hide");
-    }
-
+    
     $(window).scroll(function() {
       // Shorten the navbar after scrolling a little bit down
       if ($(".navbar").offset().top > 50) {
@@ -37,22 +30,13 @@ var main = {
       
       // Check if the scrollbox should be made visible
       if (main.scrollBoxCheck) {
-	      console.log($(window).scrollTop());
-	      console.log(main.scrollBoxCheck);
         if ($(window).scrollTop() > main.scrollBoxCheck) {
-		console.log('yup');
           setTimeout( function(){ $("#scroll-box").fadeIn(500); }, 500);
           main.scrollBoxCheck = false;
           $("body").addClass("scroll-box-on");
         }
       }
 
-      if (main.purpleAdsCheck) {
-        if ($(window).scrollTop() > main.purpleAdsCheck) {
-          main.scrollBoxCheck = false;
-          $("body").removeClass("purpleads-hide");
-        }
-      }
     });
     
     // On mobile, hide the avatar when expanding the navbar menu
