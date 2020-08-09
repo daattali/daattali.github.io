@@ -8,8 +8,6 @@ var main = {
   
   init : function() {
 
-    main.initAddThis();
-
     // Check if there is a scrollbox to initialize
     if ($("#scroll-box").length > 0 && Cookies.get('daScrollboxSubscribe3') === undefined) {
       if ($("article").length > 0) {
@@ -160,28 +158,6 @@ var main = {
     }
 
     return params;
- },
- 
- // Add Twitter info to AddThis buttons 
- initAddThis : function() {
-	if (typeof addthis !== "undefined") {
-    var trim = function(s, n) {	
-      return (s.length > n) ? s.substr(0, n - 3) + '...' : s;		
-    };
-    addthis.addEventListener('addthis.ready', function() {
-      if ($("meta[name='twitter:title'").length > 0) {	
-        var addthis_share = window.addthis_share || {};
-        $.extend(addthis_share, {		
-        	passthrough : {		
-         	 	twitter: {		
-         	 	  via: "daattali",		
-         	 	  text: trim($("meta[name='twitter:title'").attr("content"), 93) + " #rstats"
-        		}		
-        	}		
-        });		
-      }
-    });
-	}  
  }
 };
 
