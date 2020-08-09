@@ -5,6 +5,7 @@ var main = {
   bigImgEl : null,
   numImgs : null,
   scrollBoxCheck : false,
+  purpleAdsCheck : false,
   
   init : function() {
 
@@ -19,7 +20,12 @@ var main = {
         });
       }
     }
-    
+
+    if ($(window).width() < 750) {	
+      main.purpleAdsCheck = 1000;	
+      $("body").addClass("purpleads-hide");	
+    }
+
     $(window).scroll(function() {
       // Shorten the navbar after scrolling a little bit down
       if ($(".navbar").offset().top > 50) {
