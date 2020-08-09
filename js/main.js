@@ -37,6 +37,8 @@ var main = {
       
       // Check if the scrollbox should be made visible
       if (main.scrollBoxCheck) {
+	      console.log($(window).scrollTop());
+	      console.log(main.scrollBoxCheck);
         if ($(window).scrollTop() > main.scrollBoxCheck) {
 		console.log('yup');
           setTimeout( function(){ $("#scroll-box").fadeIn(500); }, 500);
