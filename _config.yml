@@ -95,6 +95,7 @@ defaults:
       carbonads: true
       support_promo_box: true
       social-share: true
+      footer-extra: purpleads.html
   -
     scope:
       path: "" # all files
