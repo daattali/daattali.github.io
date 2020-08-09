@@ -882,7 +882,7 @@ pre code {
 
 @media only screen and (max-width: 979px) {
   #scroll-box {
-    bottom: 32px;
+    bottom: 0;
     right: 0;
     border-width: 3px 3px 0;
     width: 100%;
