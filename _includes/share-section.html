@@ -5,12 +5,12 @@
     {% if page.show-share %}
       {% capture urltwitter %}https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&via=daattali{% endcapture %}	
       {% if page.tags contains 'rstats' %}	
-        {% assign maxlength = 94 %}	
+        {% assign maxlength = 234 %}	
         {% capture urltwitter %}{{ urltwitter }}&hashtags=rstats{% endcapture %}	
       {% else %}	
-        {% assign maxlength = 102 %}	
+        {% assign maxlength = 242 %}	
       {% endif %}	
-      {% capture urltwitter %}{{ urltwitter }}&text={{ page.title | url_encode | truncate: maxlength }}{% endcapture %}    
+      {% capture urltwitter %}{{ urltwitter }}&text={{ page.title | truncate: maxlength | url_encode }}{% endcapture %}    
 
       <div class="share-buttons">
         <a href="{{ urltwitter }}" data-ga-event=1 data-ga-category="share" data-ga-action="twitter" data-ga-label="{{ page.url }}">Tweet it </a>
