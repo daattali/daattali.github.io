@@ -987,6 +987,7 @@ article[role=main] {
   width: 130px;
   float: right;
   margin: 0 0 10px 10px;
+  border: 1px solid #eaeaea;
 }
 
 @media only screen and (min-width: 1150px) {
