@@ -11,7 +11,17 @@
 
   <!--- Share on Twitter -->
   {% if site.share-links-active.twitter %}
-    <a href="https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }}&via=daattali"
+
+    {% capture urltwitter %}https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&via=daattali{% endcapture %}	
+    {% if page.tags contains 'rstats' %}	
+      {% assign maxlength = 234 %}	
+      {% capture urltwitter %}{{ urltwitter }}&hashtags=rstats{% endcapture %}	
+    {% else %}	
+      {% assign maxlength = 242 %}	
+    {% endif %}	
+    {% capture urltwitter %}{{ urltwitter }}&text={{ page.title | truncate: maxlength | url_encode }}{% endcapture %}    
+
+    <a href="{{ urltwitter }}"
       class="btn btn-social-icon btn-twitter" title="Share on Twitter"
       data-ga-event=1 data-ga-category="share" data-ga-action="social-twitter" data-ga-label="{{ page.url }}">
       <span class="fa fa-fw fa-twitter" aria-hidden="true"></span>
