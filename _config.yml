@@ -28,7 +28,7 @@ avatar: "/img/deanimg.jpeg"
 # List of links in the navigation bar
 navbar-links:
   Blog: ""
-  Shiny: "https://attalitech.com/"
+  Hire me: "https://attalitech.com/"
   Projects: "projects"
   About Me / Contact: "aboutme"
   ❤ Support: "https://github.com/sponsors/daattali"
