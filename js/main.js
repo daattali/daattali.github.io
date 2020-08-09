@@ -5,13 +5,14 @@ var main = {
   bigImgEl : null,
   numImgs : null,
   scrollBoxCheck : false,
+  purpleAdsCheck : false,
   
   init : function() {
 
     // Check if there is a scrollbox to initialize
     if ($("#scroll-box").length > 0 && Cookies.get('daScrollboxSubscribe3') === undefined) {
       if ($("article").length > 0) {
-        main.scrollBoxCheck = $("article").offset().top + $("article").height() * 0.4;
+        main.scrollBoxCheck = Math.min(1500, $("article").offset().top + $("article").height() * 0.4);
         $("#scroll-box-close").click(function() {
           $("#scroll-box").fadeOut(500);
           $("body").removeClass("scroll-box-on");
@@ -19,7 +20,12 @@ var main = {
         });
       }
     }
-    
+
+    if ($(window).width() < 750) {
+      main.purpleAdsCheck = 1000;
+      $("body").addClass("purpleads-hide");
+    }
+
     $(window).scroll(function() {
       // Shorten the navbar after scrolling a little bit down
       if ($(".navbar").offset().top > 50) {
@@ -37,6 +43,12 @@ var main = {
         }
       }
 
+      if (main.purpleAdsCheck) {
+        if ($(window).scrollTop() > main.purpleAdsCheck) {
+          main.scrollBoxCheck = false;
+          $("body").removeClass("purpleads-hide");
+        }
+      }
     });
     
     // On mobile, hide the avatar when expanding the navbar menu
