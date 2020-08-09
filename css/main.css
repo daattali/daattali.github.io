@@ -912,7 +912,7 @@ pre code {
 }
 
 /* Purple ads - hide on mobile because it's exactlyt where my scroll box goes */
-#psdn-slot {
+body #psdn-slot {
   z-index: 999998 !important;
 }
 
