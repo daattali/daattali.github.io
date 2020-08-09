@@ -834,11 +834,12 @@ pre code {
   text-align: center;
   color: #fff;
   background: #63ba5d;
-  padding: 20px 25px 25px;
+  padding: 15px 20px 20px;
   box-shadow: 0 0 8px #53b24d;
 }
 
 #scroll-box hr {
+  display: none;
   margin: 10px auto;
   width: 80%;
   border: none;
@@ -847,7 +848,7 @@ pre code {
 
 #scroll-box-close {
   position: absolute;
-  font-size: 30px;
+  font-size: 26px;
   right: 4px;
   font-family: serif;
   color: #f5f5f5;
@@ -860,6 +861,7 @@ pre code {
 }
 
 #scroll-box-hire {
+  margin-top: 10px;
   font-size: 24px;
 }
 
@@ -882,13 +884,13 @@ pre code {
     width: 100%;
   }
   body.scroll-box-on footer {
-    padding-bottom: 150px;
+    padding-bottom: 135px;
   }
 }
 
 @media only screen and (max-width: 550px) {
   #scroll-box {
-    padding: 10px;
+    padding: 16px 10px;
   }
   #scroll-box hr {
     width: 50%;
