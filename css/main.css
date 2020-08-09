@@ -838,12 +838,6 @@ pre code {
   box-shadow: 0 0 8px #53b24d;
 }
 
-@media only screen and (max-width: 979px) {
-  body.scroll-box-on footer {
-    padding-bottom: 210px;
-  }
-}
-
 #scroll-box hr {
   margin: 10px auto;
   width: 80%;
@@ -880,12 +874,15 @@ pre code {
   color: #f0f0f0;
 }
 
-@media only screen and (max-width: 979px) {
+@media only screen and (max-width: 800px) {
   #scroll-box {
     bottom: 0;
     right: 0;
     border-width: 3px 3px 0;
     width: 100%;
+  }
+  body.scroll-box-on footer {
+    padding-bottom: 150px;
   }
 }
 
@@ -909,6 +906,14 @@ pre code {
   #mailchimp-subscribe-section {
     margin-bottom: 7px;
   }
+  body.scroll-box-on footer {
+    padding-bottom: 115px;
+  }
+}
+
+/* Purple ads - hide on mobile because it's exactlyt where my scroll box goes */
+#psdn-slot {
+  z-index: 999998 !important;
 }
 
 /* Promo boxes */
