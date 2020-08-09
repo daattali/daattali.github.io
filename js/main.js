@@ -22,7 +22,7 @@ var main = {
     }
 
     if ($(window).width() < 750) {	
-      main.purpleAdsCheck = 1000;	
+      main.purpleAdsCheck = 1500;	
       $("body").addClass("purpleads-hide");	
     }
 
