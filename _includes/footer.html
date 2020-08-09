@@ -106,6 +106,12 @@
 
         </ul>
 
+        {% if page.footer-extra %}
+          <div class="footer-custom-content">
+            {% include {{ page.footer-extra }} %}
+          </div>
+        {% endif %}
+
         <p class="copyright text-muted">
           &copy; {{ site.author.name }}
           &nbsp;&bull;&nbsp;
