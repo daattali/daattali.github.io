@@ -49,4 +49,4 @@ It took a while, but eventually all the bugs that were introduced with version 0
 - A [demo shiny app](https://daattali.com/shiny/shinycssloaders-demo/) showcasing the package was created.
 - The documentation (mainly README) was verbose and unclear before, so that was revamped as well.
 
-For a complete list of bug fixes and new feautres, you can look at the [NEWS file](https://github.com/daattali/shinycssloaders/blob/master/NEWS.md). {shinycssloaders} is now at a good place and I invite you to use it in your next Shiny app!
+For a complete list of bug fixes and new feautres, you can look at the [NEWS file](https://github.com/daattali/shinycssloaders/blob/master/NEWS.md). Since so many new features and bug fixes were introduced, including changing the license from GPL to MIT, I decided to do a major version upgrade and call this version 1.0! {shinycssloaders} is now at a good place and I invite you to use it in your next Shiny app!
