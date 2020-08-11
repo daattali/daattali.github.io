@@ -8,7 +8,7 @@ gh-repo: daattali/shinycssloaders
 gh-badge: [follow, star]
 ---
 
-The [{shinycssloaders}](https://github.com/daattali/shinycssloaders/) package is a handy little tool that lets you easily add loading animations to a Shiny output (a plot, a table, etc.) while it's recalculating.
+The [{shinycssloaders}](https://github.com/daattali/shinycssloaders/) package is a handy little tool that lets you easily add loading animations to a Shiny output (a plot, a table, etc.) while it's recalculating. It's extremely easy to use--all you need to do is wrap the output in `withSpinner()`. For example, `plotOutput("plot")` becomes `plotOutput("plot") %>% withSpinner()`.
 
 [![demo gif]({{ site.url }}/img/blog/shinycssloaders/shinycssloaders-demo-gif.gif)]({{ site.url }}/img/blog/shinycssloaders/shinycssloaders-demo-gif.gif)
 
@@ -39,10 +39,10 @@ Within a few days of the new version being on CRAN, I got flooded with emails an
 
 ## ...But a bright future!
 
-It took a while, but eventually all the bugs that were introduced with version 0.3 were fixed! But I wasn't ready to submit a new version just yet, version 0.4 needed to be more interesting.
+It took a while, but eventually all the bugs that were introduced with version 0.3 were fixed! But I wasn't ready to submit a new version just yet, version 0.4 needed to be more ambitious.
 
-I looked through all the GitHub issues and PRs that have accumulated since 2017 and addressed all of them, including fixing many bugs. Since I already read the entire codebase by this point, I decided to also do some major refactoring in order to simplify any future work. The documentation (mainly README) was verbose and unclear before, so that was revamped as well.
+I looked through all the GitHub issues and PRs that have accumulated since 2017 and addressed all of them. That involves fixing many bugs and supporting some new features. Since I already read the entire codebase by this point, I decided to also do some major refactoring in order to simplify any future work. The documentation (mainly README) was verbose and unclear, so that was completely revamped as well.
 
-I've added a few parameters, such as one that allows you to use a custom image instead of the built-in animations, and another parameter that lets you keep the output greyed out but still visible while the loading animation is on top of it (by default the output is hidden while the loading animation is shown). I also created a [demo shiny app](https://daattali.com/shiny/shinycssloaders-demo/) showcasing what the package does, as I think an interactive demo is the best way to quickly see what a package is all about.
+I've added a few parameters, such as one that allows you to [use a custom image](https://github.com/daattali/shinycssloaders/issues/46) instead of the built-in animations, and another parameter that lets you [keep the output greyed](https://github.com/daattali/shinycssloaders/issues/22) out but still visible while the loading animation is on top of it (by default the output is hidden while the loading animation is shown). I also created a [demo shiny app](https://daattali.com/shiny/shinycssloaders-demo/) showcasing what the package does, as I think an interactive demo is the best way to quickly see what a package is all about.
 
 For a complete list of bug fixes and new feautres, you can look at the **[NEWS file](https://github.com/daattali/shinycssloaders/blob/master/NEWS.md)**. Since so many new features and bug fixes were introduced, including changing the license from GPL to MIT, I decided to do a major version upgrade and call this version 1.0! [{shinycssloaders}](https://github.com/daattali/shinycssloaders/) is now at a good place and I invite you to use it in your next Shiny app!
