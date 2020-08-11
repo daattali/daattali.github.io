@@ -12,7 +12,7 @@ The [{shinycssloaders}](https://github.com/daattali/shinycssloaders/) package is
 
 [![demo gif]({{ site.url }}/img/blog/shinycssloaders/shinycssloaders-demo-gif.gif)]({{ site.url }}/img/blog/shinycssloaders/shinycssloaders-demo-gif.gif)
 
-Version 1.0.0 is now available [on CRAN](https://cran.r-project.org/package=shinycssloaders). Other than a minor release ealier this year, the last CRAN release was over 3 years ago, so there's lots of [goodies to unpack](#future)! For a preview of what this package can do, check out a demo below.
+Version 1.0.0 is now available [on CRAN](https://cran.r-project.org/package=shinycssloaders). Other than a minor release ealier this year, the last CRAN release was over 3 years ago, so there's lots of [goodies to unpack](https://github.com/daattali/shinycssloaders/blob/master/NEWS.md)! For a preview of what this package can do, check out a demo below.
 
 <div style="text-align:center;">
 <a class="btn btn-lg btn-success" href="https://daattali.com/shiny/shinycssloaders-demo/">Check out a demo</a>
@@ -38,17 +38,16 @@ My initial goal with {shinycssloaders} was very uninspiring: take the current co
 
 But life would be too boring if things *just worked out* the way they should. 
 
-Within a few days of the new version being on CRAN, I got flooded with emails and GitHub issues caused by the new version. To this day I don't comprehend how these issues existed in the GitHub version for over 2 years undetected. I started to regret taking over this package, because I was now finding myself spending hours and hours trying to master the codebase and deal with all these old-new issues. {shinycssloaders} and I were not off to a great start.
+Within a few days of the new version being on CRAN, I got flooded with emails and GitHub issues caused by the new version. To this day I don't comprehend how these issues existed in the GitHub version for over 2 years undetected. I started to regret taking over this package, because I was now finding myself spending hours and hours trying to master the codebase and deal with all these old-new issues. 
+
+{shinycssloaders} and I were not off to a great start.
 
 ## ...But a bright future! {#future}
 
 It took a while, but eventually all the bugs that were introduced with version 0.3 were fixed! But I wasn't ready to submit a new version just yet, version 0.4 needed to be more interesting.
 
-- Since I already read the entire codebase by this point, I decided to also do some major refactoring in order to simplify any future work. 
-- I looked through all the GitHub issues and PRs that have accumulated since 2017 and addressed all of them, including fixing many bugs.
-- A parameter was added to allow you to use a custom image instead of the built-in animations.
-- Another parameter was added that allows you to keep the output greyed out but still visible while the loading animation is on top of it (by default the output is hidden while the loading animation is shown). 
-- A [demo shiny app](https://daattali.com/shiny/shinycssloaders-demo/) showcasing the package was created.
-- The documentation (mainly README) was verbose and unclear before, so that was revamped as well.
+I looked through all the GitHub issues and PRs that have accumulated since 2017 and addressed all of them, including fixing many bugs. Since I already read the entire codebase by this point, I decided to also do some major refactoring in order to simplify any future work. The documentation (mainly README) was verbose and unclear before, so that was revamped as well.
+
+I've added a few parameters, such as one that allows you to use a custom image instead of the built-in animations, and another parameter that lets you keep the output greyed out but still visible while the loading animation is on top of it (by default the output is hidden while the loading animation is shown). I also created a [demo shiny app](https://daattali.com/shiny/shinycssloaders-demo/) showcasing what the package does, as I think an interactive demo is the best way to quickly see what a package is all about.
 
 For a complete list of bug fixes and new feautres, you can look at the **[NEWS file](https://github.com/daattali/shinycssloaders/blob/master/NEWS.md)**. Since so many new features and bug fixes were introduced, including changing the license from GPL to MIT, I decided to do a major version upgrade and call this version 1.0! {shinycssloaders} is now at a good place and I invite you to use it in your next Shiny app!
