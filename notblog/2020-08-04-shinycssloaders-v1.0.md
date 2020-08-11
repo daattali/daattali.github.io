@@ -21,8 +21,8 @@ Other than a minor release ealier this year, the last CRAN release was over 3 ye
 # Table of contents
 
 - [The road to {shinycssloaders}](#history)
-- [A bumpy start](#start)
-- [But a bright future](#future)
+- [A bumpy start...](#start)
+- [...But a bright future!](#future)
 
 ## The road to {shinycssloaders} {#history}
 
@@ -32,13 +32,13 @@ Over the years, there haven't been too many big changes, so a new CRAN version w
 
 The package seemed to have gone into dormant mode - it had an active user base, but no active development. But I didn't even want active development, all I wanted is to submit the current version to CRAN! So last year I emailed András asking him if there are any plans to continue support for {shinycssloaders}, and we decided that I'll take over. I was scared because I've never inherited an open source project from anyone before, and here I am signing up to maintain a codebase that I don't know anything about, for free, just because I wanted to know when the current code will be on CRAN... Eek.
 
-## A bumpy start {#start}
+## A bumpy start... {#start}
 
 My initial goal with {shinycssloaders} was very uninspiring: take the current code, and submit to CRAN as version 0.3. And that's literally what I did. I informed CRAN that I'm the new maintainer and submitted the package as-is. Hooray, finally we won't have the debugging statement show up! I figured since this code has been on GitHub for over 2 years and many people (myself included) have been using it for a long time, it was safe to submit it.
 
 But life would be too boring if things just worked out the way they should. Within a few days of the new version being on CRAN, I received a flood of emails and issues caused by the new version. To this day I don't comprehend how these issues existed in the GitHub version for over 2 years undetected. I started to regret taking over this package, because I was now finding myself spending hours and hours trying to learn the codebase and deal with all these old-new issues. 
 
-## But a bright future {#future}
+## ...But a bright future {#future}
 
 It took a while, but eventually all the bugs that were introduced with version 0.3 were fixed! But I wasn't ready to submit a new version just yet, version 0.4 needed to be more interesting.
 
