@@ -3,7 +3,7 @@ title: "{shinycssloaders} v1.0: You can now use your own image, plus 3 years' wo
 tags: [professional, rstats, r-bloggers, packages, shiny]
 share-img: "https://deanattali.com/img/blog/shinycssloaders/shinycssloaders.png"
 permalink: /blog/shinycssloaders-v1.0/
-date: 2020-08-04 14:00:00 -0400
+date: 2020-08-11 14:00:00 -0400
 gh-repo: daattali/shinycssloaders
 gh-badge: [follow, star]
 ---
