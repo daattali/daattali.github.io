@@ -43,7 +43,7 @@ Within a few days of the new version being on CRAN, I got flooded with emails an
 
 It took a while, but eventually all the bugs that were introduced with version 0.3 were fixed! But I wasn't ready to submit a new version just yet, version 0.4 needed to be more ambitious.
 
-I looked through all the GitHub issues and PRs that have accumulated since 2017 and addressed all of them. That involves fixing many bugs and supporting some new features. Since I already read the entire codebase by this point, I decided to also do some major refactoring in order to simplify any future work. The documentation (mainly README) was verbose and unclear, so that was completely revamped as well.
+I looked through all the GitHub issues and PRs that have accumulated since 2017 and addressed all of them. That involved fixing many bugs and supporting some new features. Since I already read the entire codebase by this point, I decided to also do some major refactoring in order to simplify any future work. The documentation (mainly README) was verbose and unclear, so that was completely revamped as well.
 
 I've added a few parameters, such as one that allows you to [use a custom image](https://github.com/daattali/shinycssloaders/issues/46) instead of the built-in animations, and another parameter that lets you [keep the output greyed](https://github.com/daattali/shinycssloaders/issues/22) out but still visible while the loading animation is on top of it (by default the output is hidden while the loading animation is shown). I also created a [demo shiny app](https://daattali.com/shiny/shinycssloaders-demo/) showcasing what the package does, as I think an interactive demo is the best way to quickly see what a package is all about.
 
