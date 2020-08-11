@@ -8,9 +8,11 @@ gh-repo: daattali/shinycssloaders
 gh-badge: [follow, star]
 ---
 
-The [{shinycssloaders}](https://github.com/daattali/shinycssloaders/) package is a handy little tool that lets you easily add loading animations to a Shiny output (a plot, a table, etc.) while it's recalculating. It's extremely easy to use--all you need to do is wrap the output in `withSpinner()`. For example, `plotOutput("plot")` becomes `plotOutput("plot") %>% withSpinner()`.
+The [{shinycssloaders}](https://github.com/daattali/shinycssloaders/) package is a handy little tool that lets you easily add loading animations to a Shiny output (a plot, a table, etc.) while it's recalculating.
 
 [![demo gif]({{ site.url }}/img/blog/shinycssloaders/shinycssloaders-demo-gif.gif)]({{ site.url }}/img/blog/shinycssloaders/shinycssloaders-demo-gif.gif)
+
+It's extremely easy to use--all you need to do is wrap the output in `withSpinner()`. For example, `plotOutput("plot")` becomes `plotOutput("plot") %>% withSpinner()`.
 
 Version 1.0.0 is now available [on CRAN](https://cran.r-project.org/package=shinycssloaders). Other than a minor release ealier this year, the last CRAN release was over 3 years ago, so there's lots of [goodies to unpack](https://github.com/daattali/shinycssloaders/blob/master/NEWS.md)! For a preview of what this package can do, check out a demo below.
 
