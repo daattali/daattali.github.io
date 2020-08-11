@@ -8,11 +8,13 @@ gh-repo: daattali/shinycssloaders
 gh-badge: [follow, star]
 ---
 
-The [{shinycssloaders}](https://github.com/daattali/shinycssloaders/) package is a handy little package that lets you easily add loading animations to a Shiny output while it's recalculating.
+The [{shinycssloaders}](https://github.com/daattali/shinycssloaders/) package is a handy little tool that lets you easily add loading animations to a Shiny output (a plot, a table, etc.) while it's recalculating.
 
 [![demo gif]({{ site.url }}/img/blog/shinycssloaders/shinycssloaders-demo-gif.gif)]({{ site.url }}/img/blog/shinycssloaders/shinycssloaders-demo-gif.gif)
 
-Other than a minor release ealier this year, the last CRAN release was over 3 years ago, so there's lots of goodies to unpack since then! For a preview of what this tool can do, check out a demo below.
+Version 1.0.0 is now available [on CRAN](https://cran.r-project.org/package=shinycssloaders).
+
+Other than a minor release ealier this year, the last CRAN release was over 3 years ago, so there's lots of goodies to unpack since then! For a preview of what this package can do, check out a demo below.
 
 <div style="text-align:center;">
 <a class="btn btn-lg btn-success" href="https://daattali.com/shiny/shinycssloaders-demo/">Check out a demo</a>
@@ -38,7 +40,7 @@ My initial goal with {shinycssloaders} was very uninspiring: take the current co
 
 But life would be too boring if things just worked out the way they should. Within a few days of the new version being on CRAN, I received a flood of emails and issues caused by the new version. To this day I don't comprehend how these issues existed in the GitHub version for over 2 years undetected. I started to regret taking over this package, because I was now finding myself spending hours and hours trying to learn the codebase and deal with all these old-new issues. 
 
-## ...But a bright future {#future}
+## ...But a bright future! {#future}
 
 It took a while, but eventually all the bugs that were introduced with version 0.3 were fixed! But I wasn't ready to submit a new version just yet, version 0.4 needed to be more interesting.
 
