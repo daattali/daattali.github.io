@@ -10,13 +10,12 @@ var main = {
   init : function() {
 
     // Check if there is a scrollbox to initialize
-    if ($("#scroll-box").length > 0 && Cookies.get('daScrollboxSubscribe3') === undefined) {
+    if ($("#scroll-box").length > 0) {
       if ($("article").length > 0) {
         main.scrollBoxCheck = Math.min(1500, $("article").offset().top + $("article").height() * 0.4);
         $("#scroll-box-close").click(function() {
           $("#scroll-box").fadeOut(500);
           $("body").removeClass("scroll-box-on");
-          Cookies.set('daScrollboxSubscribe3', '1', { expires: 1 });
         });
       }
     }
