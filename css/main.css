@@ -94,8 +94,8 @@ img::-moz-selection {
 /* --- Navbar --- */
 
 .navbar-custom {
-  background: #F5F5F5;
-  border-bottom: 1px solid #EAEAEA;
+  background: #EAEAEA;
+  border-bottom: 1px solid #DDDDDD;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -231,7 +231,7 @@ img::-moz-selection {
   display: block;
   padding: 10px;
   padding-left: 30px;
-  background: #f5f5f5;
+  background: #EAEAEA;
   text-decoration: none !important;
   border-width: 0 1px 1px 1px;
   font-weight: normal;
@@ -257,7 +257,7 @@ img::-moz-selection {
   }
   .navbar-custom .nav .navlinks-container .navlinks-children a {
     padding-left: 10px;
-    border: 1px solid #eaeaea;
+    border: 1px solid #DDDDDD;
     border-width: 0 1px 1px;
   }
 }
@@ -266,8 +266,8 @@ img::-moz-selection {
 
 footer {
   padding: 30px 0 70px;
-  background: #F5F5F5;
-  border-top: 1px #EAEAEA solid;
+  background: #EAEAEA;
+  border-top: 1px #DDDDDD solid;
   margin-top: 35px;
   font-size: 14px;
 }
@@ -851,7 +851,7 @@ pre code {
   font-size: 26px;
   right: 4px;
   font-family: serif;
-  color: #f5f5f5;
+  color: #EAEAEA;
   line-height: 0;
   top: 11px;
   cursor: pointer;
@@ -997,7 +997,7 @@ article[role=main] {
   width: 130px;
   float: right;
   margin: 0 0 10px 10px;
-  border: 1px solid #eaeaea;
+  border: 1px solid #DDDDDD;
 }
 
 @media only screen and (min-width: 1150px) {
