@@ -14,7 +14,7 @@ A brand new shiny package has entered the world yesterday: [`shinyalert`](https:
 You can visit the [GitHub page](https://github.com/daattali/shinyalert/) or check out a demo online for yourself:
 
 <div style="text-align:center;">
-<a class="btn btn-lg btn-success" href="https://daattali.com/shiny/shinyalert-demo/">Check out a demo</a>
+<a class="btn btn-lg btn-cta" href="https://daattali.com/shiny/shinyalert-demo/">Check out a demo</a>
 </div>
 
 I usually release packages at version *0.1*, but with `shinyalert` I decided to be optimistic (read: naive) and release version *1.0*. This package is fairly lightweight and I do not see it growing too much in terms of functionality, and because of its simplicity I don't expect too many bugs. So I decided to start if off at *1.0* and my wishful thinking is that it could remain there without much ongoing maintenance. (Update only two weeks later: well, that 1.0 thing didn't last very long. I've already added new features that were requested).

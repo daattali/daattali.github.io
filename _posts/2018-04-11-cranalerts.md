@@ -15,7 +15,7 @@ Have you ever found yourself asking "how can I make sure I don't miss the next v
 That's the exact problem I set out to solve with [CRANalerts](https://cranalerts.com/). Simply provide your email address and an R package name, and every time the package gets updated on CRAN in the future, you'll get notified.
 
 <div style="text-align:center;">
-  <a class="btn btn-lg btn-success" href="https://cranalerts.com/">Check out CRANalerts</a>
+  <a class="btn btn-lg btn-cta" href="https://cranalerts.com/">Check out CRANalerts</a>
 </div>
 
 <div style="margin-bottom: 25px;"></div>

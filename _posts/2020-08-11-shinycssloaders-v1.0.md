@@ -17,7 +17,7 @@ It's extremely easy to use--all you need to do is wrap the output in `withSpinne
 Version 1.0.0 is now available [on CRAN](https://cran.r-project.org/package=shinycssloaders). Other than a minor release ealier this year, the last CRAN release was over 3 years ago, so there's lots of [goodies to unpack](https://github.com/daattali/shinycssloaders/blob/master/NEWS.md)! For a preview of what this package can do, check out a demo below.
 
 <div style="text-align:center;">
-<a class="btn btn-lg btn-success" href="https://daattali.com/shiny/shinycssloaders-demo/">Check out a demo</a>
+<a class="btn btn-lg btn-cta" href="https://daattali.com/shiny/shinycssloaders-demo/">Check out a demo</a>
 </div>
 
 

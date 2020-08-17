@@ -18,7 +18,7 @@ applications without having to know any JavaScript.
 **The package has improved a lot since writing this post. I highly recommend you stop reading this page and instead go the [shinyjs website](https://deanattali.com/shinyjs).**
 
 <div style="text-align:center;">
-<a style="text-decoration: none;" class="btn btn-success btn-lg" href="https://deanattali.com/shinyjs">shinyjs website</a>
+<a style="text-decoration: none;" class="btn btn-cta btn-lg" href="https://deanattali.com/shinyjs">shinyjs website</a>
 </div>
 
 ## Demos

@@ -1,4 +1,4 @@
-@import url("pygment_highlights.css");
+	@import url("pygment_highlights.css");
 
 /* --- General --- */
 
@@ -828,14 +828,15 @@ pre code {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   position: fixed;
   display: none;
-  right: 8px;
-  bottom: 8px;
+  right: 13px;
+  bottom: 13px;
+  border-radius: 5px;
   z-index: 999999;
   text-align: center;
   color: #fff;
-  background: #63ba5d;
+  background: #e53243;
   padding: 15px 20px 20px;
-  box-shadow: 0 0 8px #53b24d;
+  box-shadow: 0 0 8px #c02836;
 }
 
 #scroll-box hr {
@@ -868,7 +869,7 @@ pre code {
 #scroll-box-hire a,
 #scroll-box-support a {
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 #scroll-box-hire a:hover,
@@ -882,6 +883,7 @@ pre code {
     right: 0;
     border-width: 3px 3px 0;
     width: 100%;
+	border-radius: 0;
   }
   body.scroll-box-on footer {
     padding-bottom: 135px;
@@ -944,14 +946,14 @@ body #psdn-slot {
   background: #fff;
 }
 #support-promo-section {
-  background: #e7edff;
-  border-color: #e4eaff;
-  box-shadow: 0 0 7px rgba(153, 178, 255, 0.4);
-  -webkit-box-shadow: 0 0 7px rgba(153, 178, 255, 0.4);
-  -moz-box-shadow: 0 0 7px rgba(153, 178, 255, 0.4);
+  background: #ffbd43;
+  border-color: #FDCA4B;
+  box-shadow: 0 0 7px #f3ba31;
+  -webkit-box-shadow: 0 0 7px #f3ba31;
+  -moz-box-shadow: 0 0 7px #f3ba31;
 }
 #support-promo-section:hover {
-  background: #d1daff;
+  background: #f8b517;
   cursor: pointer;
   color: #404040;
 }
@@ -1115,4 +1117,16 @@ article[role=main] {
 .center {
   display: block;
   margin: 0 auto;
+}
+
+.btn-cta {
+  color: #fff;
+  background-color: #ff874d;
+  border-color: #ff874d;
+}
+
+.btn-cta:hover {
+  color: #fff;
+  background-color: #f36b29;
+  border-color: #f36b29
 }

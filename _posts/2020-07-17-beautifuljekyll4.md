@@ -14,7 +14,7 @@ gh-badge: [fork, star, follow]
 If you've never tried Beautiful Jekyll and always wanted to have a website, now's a *great* time to get started!
 
 <div style="text-align:center;">
-  <a class="btn btn-lg btn-success" href="https://beautifuljekyll.com/">Check out Beautiful Jekyll</a>
+  <a class="btn btn-lg btn-cta" href="https://beautifuljekyll.com/">Check out Beautiful Jekyll</a>
 </div>
 
 Starting from day 1, the goal with [Beautiful Jekyll](https://beautifuljekyll.com/) has been to allow anyone--and I mean literally *anyone* regardless of coding skill--to create a simple, clean, customziable website within minutes. From 2015-2019 I incrementally added new features to make the theme easier to use and more customizable, but I was always wary about making large-scale changes. 

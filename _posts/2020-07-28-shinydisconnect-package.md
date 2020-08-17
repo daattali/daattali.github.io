@@ -19,7 +19,7 @@ Well, at least you didn't *until now*. The new [{shinydisconnect}](https://githu
 You can visit the [GitHub page](https://github.com/daattali/shinydisconnect/) or check out a demo online:
 
 <div style="text-align:center;">
-<a class="btn btn-lg btn-success" href="https://daattali.com/shiny/shinydisconnect-demo/">Check out a demo</a>
+<a class="btn btn-lg btn-cta" href="https://daattali.com/shiny/shinydisconnect-demo/">Check out a demo</a>
 </div>
 
 # Table of contents
