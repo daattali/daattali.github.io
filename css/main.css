@@ -925,8 +925,7 @@ body #psdn-slot {
 
 /* Promo boxes */
 
-#support-promo-section,
-#datacamp-course-section {
+#support-promo-section {
   display: block;
   text-decoration: none;
   text-align: center;
@@ -942,43 +941,40 @@ body #psdn-slot {
   -webkit-box-shadow: 0 0 7px rgba(100,100,100,0.3);
   -moz-box-shadow: 0 0 7px rgba(100,100,100,0.3);
 }
-#datacamp-course-section:hover {
-  background: #fff;
-}
 #support-promo-section {
-  background: #ffbd43;
-  border-color: #FDCA4B;
-  box-shadow: 0 0 7px #f3ba31;
-  -webkit-box-shadow: 0 0 7px #f3ba31;
-  -moz-box-shadow: 0 0 7px #f3ba31;
+  background: #337ab7;
+  border-color: #337ab7;
+  color: white;
+  box-shadow: 0 0 7px #337ab7;
+  -webkit-box-shadow: 0 0 7px #337ab7;
+  -moz-box-shadow: 0 0 7px #337ab7;
 }
 #support-promo-section:hover {
-  background: #f8b517;
+  background: #226dae;
   cursor: pointer;
-  color: #404040;
 }
-#support-promo-section .btn,
-#datacamp-course-section .btn {
-  text-decoration: none;
+#support-promo-section .btn {
   margin-top: 10px;
+  font-weight: bold;
+  color: #337ab7;
+  background: white;
+}
+#support-promo-section .btn:hover {
+  background: #eaeaea;
 }
 @media only screen and (max-width: 767px) {
-  #support-promo-section, 
-  #datacamp-course-section {
+  #support-promo-section {
     font-size: 18px;
   }
-  #support-promo-section .btn,
-  #datacamp-course-section .btn {
+  #support-promo-section .btn {
     font-size: 16px;
   }
 }
 @media only screen and (max-width: 500px) {
-  #support-promo-section,
-  #datacamp-course-section {
+  #support-promo-section {
     font-size: 16px;
   }
-  #support-promo-section .btn,
-  #datacamp-course-section .btn {
+  #support-promo-section .btn {
     font-size: 14px;
   }
 }
@@ -1121,12 +1117,15 @@ article[role=main] {
 
 .btn-cta {
   color: #fff;
-  background-color: #ff874d;
-  border-color: #ff874d;
+  background-color: #337ab7;
+  border-color: #337ab7;
 }
 
 .btn-cta:hover {
   color: #fff;
-  background-color: #f36b29;
-  border-color: #f36b29
+  background-color: #2568a1;
+  border-color: #2568a1;
+}
+.btn-cta:focus {
+  color: #fff;
 }
