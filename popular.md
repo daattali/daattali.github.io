@@ -3,6 +3,7 @@ layout: page
 title: "Hi, I'm Dean"
 subtitle: R-Shiny Expert / Open-Source Developer / Tireless Traveller
 css: "/assets/css/index.css"
+share-img: https://deanattali.com/assets/img/deanimg.jpeg
 share-title: "Dean Attali - R-Shiny consultant | Popular posts"
 share-description: "List of all the most popular posts by Dean Attali."
 support_promo_box: true
