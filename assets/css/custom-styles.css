@@ -14,6 +14,13 @@ a {
   text-decoration: none;
 }
 
+#full-tags-list .tag-entry a {
+  text-decoration: none;
+}
+#full-tags-list .tag-entry a:hover {
+  text-decoration: underline;
+}
+
 /* Button - call-to-action */
 
 .btn-cta {
