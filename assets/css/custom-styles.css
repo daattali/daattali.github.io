@@ -132,7 +132,13 @@ a {
 #mailchimp-subscribe-section-footer {
   border-top: 0 none;
   width: 50%;
+}
+#mailchimp-subscribe-section-share {
   margin: 0.9375rem auto 0;
+}
+#mailchimp-subscribe-section-footer {
+  margin: 0 auto;
+  padding-top: 0;
 }
 @media only screen and (max-width: 500px) {
   #mailchimp-subscribe-section-share {
