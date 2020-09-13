@@ -1,10 +1,9 @@
 ---
-layout: post
 title: "Flake it till you make it"
 subtitle: "It's not always cowardly to walk away; it can be very difficult, yet enlightening, to not be afraid to step off a path, regardless of how much you've already walked it"
 tags: [personal]
 share-img: "https://deanattali.com/img/blog/flake-it/path.jpg"
-bigimg: /img/blog/flake-it/path.jpg
+cover-img: /assets/img/blog/flake-it/path.jpg
 permalink: /2015/04/02/flake-it-till-you-make-it/
 ---
 

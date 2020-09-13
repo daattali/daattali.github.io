@@ -1,8 +1,7 @@
 ---
-layout: post
 title: "ezknitr: R package to avoid the typical working directory pain when using knitr"
 date: 2015-12-09 14:30:00 -0700
-tags: [professional, rstats, r-bloggers, packages, knitr]
+tags: [rstats, packages, knitr]
 gh-repo: daattali/ezknitr
 gh-badge: [star, watch, follow]
 ---

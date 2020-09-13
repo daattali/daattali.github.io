@@ -1,12 +1,8 @@
 ---
 title: List of useful RStudio addins made by useRs
-tags: [professional, rstats, r, r-bloggers]
+tags: [rstats]
 date: 2016-03-31 13:00:00 -0700
 permalink: /blog/rstudio-addins-list/
-layout: post
-comments: true
-show-share: true
-show-subscribe: true
 gh-repo: daattali/addinslist
 gh-badge: [star, watch, follow]
 ---

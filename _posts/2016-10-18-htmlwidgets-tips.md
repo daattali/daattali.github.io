@@ -1,12 +1,8 @@
 ---
-layout: post
 title: "How to write a useful htmlwidgets in R: tips and walk-through a real example"
-tags: [professional, rstats, r-bloggers, shiny, tutorial]
+tags: [rstats, shiny, tutorial]
 date: 2016-10-18 11:05:00 -0700
 permalink: /blog/htmlwidgets-tips/
-layout: post
-comments: true
-show-share: true
 gh-repo: daattali/timevisBasic
 gh-badge: [star, watch, follow]
 ---

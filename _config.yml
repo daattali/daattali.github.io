@@ -1,45 +1,22 @@
-# --- Serving options --- #
+remote_theme: daattali/beautiful-jekyll
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
 
-# url is the full website URL
-# baseurl is the website's URL without the hostname
-
-url: "https://deanattali.com"
-baseurl: ""
-
-# Brief name and description of the site
 title: Dean Attali
-description: "R-Shiny developer and consultant with a MSc in Bioinformatics and a Bachelor of Computer Science. Previously a software engineer at Google, IBM, and Wish.com."
+author: Dean Attali
 
-# --- Outputting options --- #
-# More information can be found on Jekyll's site
-timezone: "America/Toronto"
-markdown: kramdown
-highlighter: rouge
-permalink: /blog/:title/
-paginate: 10
-paginate_path: "/page:num/"
-
-# --- Navigation bar options --- #
-
-# Image to show in the navigation bar - image must be a square (width = height)
-# Remove this parameter if you don't want an image in the navbar
-avatar: "/img/deanimg.jpeg"
-
-# List of links in the navigation bar
 navbar-links:
-  Blog: ""
+  Blog: "/"
   Hire me: "https://attalitech.com/"
   Projects: "projects"
   About Me / Contact: "aboutme"
   ❤ Support: "https://github.com/sponsors/daattali"
 
+avatar: "/assets/img/deanimg.jpeg"
 
-# --- Footer options --- #
-
-# Change all these values or delete the ones you don't want.
-# Important: you must keep the "name" parameter, everything else you can remove
-author:
-  name: Dean Attali
+social-network-links:
   email: "daattali@gmail.com"
   facebook: deanattali
   github: daattali
@@ -47,41 +24,37 @@ author:
   linkedin: "pub/dean-attali/8/946/143"
   stackoverflow: "users/3943160/daattali"
   calendly: "attalitech/meeting"
-  
-# Select which links to show in the footer  
-footer-links-active:
-  rss: false
-  facebook: true
-  email: true
-  twitter: true
-  github: true
-  linkedin: false
-  stackoverflow: true
-  calendly: true
-  telephone: false
-  
+
 share-links-active:
   twitter: true
   facebook: true
   linkedin: true
 
-# How to display the link to the website in the footer
-# Remove this if you don't want a link in the footer
-url-pretty: "deanattali.com" 
+excerpt_length: 50
+feed_show_excerpt: false
+feed_show_tags: false
 
-# --- Misc --- #
+keywords: "rstats,r,r shiny,shiny apps,r shiny apps,shiny developer,r shiny developer,shiny consultant,dashboards r,interactive dashboards"
 
-# Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
+link-col: "#404040"
+
+mobile-theme-col: "#0085A1"
+
+site-css: "/assets/css/custom-styles.css"
+site-js: "/assets/js/custom-script.js"
+
+timezone: "America/Toronto"
+permalink: /blog/:title/
+paginate: 10
+paginate_path: "/page:num/"
+
 disqus: "deanattali-site"
-
-# Fill in your Google Analytics ID to track your website using GA
-google_analytics: "UA-59820529-1"  # Your Google Analytics ID
-
+google_analytics: "UA-59820529-1"
 fb_app_id: "536330676521989"
 
-# --- Don't need to touch anything below here (but you can if you want) --- #
+url-pretty: "❤ Support"
+url-canonical: https://github.com/sponsors/daattali
 
-# Default YAML values (more information on Jekyll's site)  
 defaults:
   -
     scope:
@@ -89,27 +62,47 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      comments: true  # add comments to all blog posts 		
-      show-share: true # add sharing buttons to all blog posts		
-      show-subscribe: true # add subscribe email to all blog posts
       carbonads: true
-      support_promo_box: true
+      comments: true
       social-share: true
-      footer-extra: purpleads.html
+      show-share: true
+      show-subscribe: true
+      support_promo_box: true
+      after-content: [share-section.html, purpleads.html, scroll-box.html]
   -
     scope:
-      path: "" # all files
+      path: "notblog"
+    values:
+      layout: "post"
+      carbonads: true
+      comments: true
+      social-share: true
+      show-share: true
+      show-subscribe: true
+      support_promo_box: true
+      after-content: [share-section.html, purpleads.html, scroll-box.html]
+  -
+    scope:
+      path: "pages"
     values:
       layout: "page"
-      show-avatar: true
+      comments: true
+  -
+    scope:
+      path: ""
+    values:
+      layout: "page"
+      before-content: [support_promo_box.html, carbonads.html]
+      footer-extra: footer-subscribe.html
 
-# Use tags index page and make tags on each post clickable
-link-tags: true
-
-# Exclude these files from production site
 exclude:
+  - CHANGELOG.md
   - CNAME
+  - Gemfile
+  - Gemfile.lock
   - LICENSE
   - README.md
+  - docs/
+  - files/java/Scrabble/*
 
-# 2fc73a3a967e97599c9763d05e564189
+# 2fc73a3a967e97599c9763d05e564189d5

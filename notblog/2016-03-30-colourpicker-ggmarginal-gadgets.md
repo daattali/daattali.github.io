@@ -1,13 +1,9 @@
 ---
 title: "An awesome RStudio addin for selecting colours, and another for adding marginal density plots to ggplot2"
-tags: [professional, rstats, r, r-bloggers, shiny, shinyjs]
+tags: [rstats, shiny, shinyjs]
 date: 2016-03-30 03:00:00 -0700
 share-img: https://deanattali.com/img/blog/colourpicker-ggmarginal-gadgets/colourpickerscrnshot.png
 permalink: /blog/colourpicker-ggmarginal-gadgets/
-layout: post
-comments: true
-show-share: true
-show-subscribe: true
 ---
 
 **NOTE: The colour picker addin described in this post used to be part of the `shinyjs` package but is now in the `colourpicker` package.**

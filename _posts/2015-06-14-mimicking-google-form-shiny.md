@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "Mimicking a Google Form with a Shiny app"
-tags: [professional, rstats, r-bloggers, shiny, shinyjs, tutorial, popular]
+tags: [rstats, shiny, shinyjs, tutorial, popular]
 date: 2015-06-14 5:30:00 -0700
 permalink: /2015/06/14/mimicking-google-form-shiny/
 share-img: https://deanattali.com/img/blog/mimic-google-form-shiny/mimic-google-form-shiny-final.png
@@ -39,7 +38,7 @@ Since developing those apps, I've become a better shiny developer also wrote the
 
 The app we will build will be a form collecting data on a user's R habits - their name, length of time using R, favourite R package, etc. You can see the result of this tutorial [on my shiny server](https://daattali.com/shiny/mimic-google-form/) and the corresponding code [on GitHub](https://github.com/daattali/shiny-server/blob/master/mimic-google-form/app.R).  It looks like this:
 
-[![Final app]({{ site.url }}/img/blog/mimic-google-form-shiny/mimic-google-form-shiny-final.png)]({{ site.url }}/img/blog/mimic-google-form-shiny/mimic-google-form-shiny-final.png)
+[![Final app]({{ site.url }}/assets/img/blog/mimic-google-form-shiny/mimic-google-form-shiny-final.png)]({{ site.url }}/assets/img/blog/mimic-google-form-shiny/mimic-google-form-shiny-final.png)
 
 The main idea is simple: create a UI with some inputs that users need to fill out, add a submit button, and save the response. Sounds simple, and it is! In this tutorial each response will be saved to a *.csv* file along with the timestamp of submission. To see all submissions that were made, we simply read all *csv* files and join them together. There will also be an "admin panel" that will show admin users all previous responses and allow them to download this data. When using Shiny Server Pro or paid shinyapps.io accounts, you can add authentication/login to your apps, and decide which usernames have admin access. Since my app is hosted on a free shiny server that doesn't support authentication, it'll just assume that everyone is an admin. I also like to focus **a lot** (arguably too much) on user experience, so this post will also discuss many small tips & tricks that are optional but can be nice additions. Many of these use the [`shinyjs`](https://github.com/daattali/shinyjs) package, so instead of loading the package in the beginning, I'll explicitly show when functions from `shinyjs` are used so that you know what functions are not core shiny.
 

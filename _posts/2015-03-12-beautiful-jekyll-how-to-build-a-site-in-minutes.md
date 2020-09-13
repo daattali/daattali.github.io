@@ -1,8 +1,7 @@
 ---
-layout: post
 title: "Beautiful Jekyll - how to build a site in minutes"
 subtitle: A plug-n-play template to easily get anyone a free nice looking site (same theme as this one) quickly
-tags: [personal, professional, jekyll, github, blog, popular]
+tags: [personal, jekyll, github, blog, popular, beautifuljekyll]
 share-img: "https://deanattali.com/img/blog/beautiful-jekyll.png"
 permalink: /2015/03/12/beautiful-jekyll-how-to-build-a-site-in-minutes/
 gh-repo: daattali/beautiful-jekyll
@@ -21,7 +20,7 @@ make me feel important :)**
 > UPDATE December 2016: Thank you everybody for making me feel important! I initially thought that 3 people using my theme would be considered success, but it's been used by well over 1000 people already. Apparently this wasn't a waste of time!
 
 This is what your site will look like right off the bat:
-[![Beautiful Jekyll]({{ site.url }}/img/blog/beautiful-jekyll.png)]({{ site.url }}/img/blog/beautiful-jekyll.png)
+[![Beautiful Jekyll]({{ site.url }}/assets/img/blog/beautiful-jekyll.png)]({{ site.url }}/assets/img/blog/beautiful-jekyll.png)
 
 Beautiful Jekyll is meant to be very easy and quick to use - you can make a nice simple site that supports blogging and looks great on any device (phones/laptops) within minutes. [Look at the demo](https://beautifuljekyll.com/) - it might just be the best link you clicked on today. Or at least in the last 20 seconds.
 
@@ -55,7 +54,7 @@ render my GitHub page.
 
 That's it.  After a few minutes, `daattali.github.io` redirected to `deanattali.com`, which showed my site :)
 
-[![Namecheap settings]({{ site.url }}/img/blog/namecheap-settings.png)]({{ site.url }}/img/blog/namecheap-settings.png)
+[![Namecheap settings]({{ site.url }}/assets/img/blog/namecheap-settings.png)]({{ site.url }}/assets/img/blog/namecheap-settings.png)
 <span class="caption text-muted">Changing the DNS settings on Namecheap</span>
 
 Fun fact: I also bought `daattali.com` because I'm extremely undecisive and couldn't decide which domain name I would want to use. :)

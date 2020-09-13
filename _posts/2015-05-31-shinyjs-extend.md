@@ -1,12 +1,11 @@
 ---
-layout: post
 title: "New shinyjs version: Useful tools for any Shiny app developer + easily call JavaScript functions as R code"
-tags: [professional, rstats, r-bloggers, shiny, packages, shinyjs]
+tags: [rstats, shiny, packages, shinyjs]
 date: 2015-05-31 18:50:00 -0700
 permalink: /2015/05/31/shinyjs-extend/
 gh-repo: daattali/shinyjs
 gh-badge: [star, watch, follow]
-lastupdated: 2016-12-23
+last-updated: 2016-12-23
 ---
 
 About a month ago I made [an announcement](https://deanattali.com/2015/04/23/shinyjs-r-package) about the initial release of `shinyjs`. After some feedback, a few feature requests, and numerous hours of work, I'm excited to say that a new version of `shinyjs` v0.0.6.2 was made available on CRAN this week. The package's main objective is to make shiny app development better and easier by allowing you to perform many useful functions with simple R code that would normally require JavaScript coding. Some of the features include hiding/showing elements, enabling/disabling inputs, resetting an input to its original value, and many others. 
@@ -73,7 +72,7 @@ The `reset` function only takes one arugment, an HTML id, and resets all inputs 
 
 Here is a simple demo of reset in action
 
-[![Reset demo]({{ site.url }}/img/blog/shinyjs-improvements/reset-demo.gif)]({{ site.url }}/img/blog/shinyjs-improvements/reset-demo.gif)
+[![Reset demo]({{ site.url }}/assets/img/blog/shinyjs-improvements/reset-demo.gif)]({{ site.url }}/assets/img/blog/shinyjs-improvements/reset-demo.gif)
 
 ### `extendShinyjs` - allows you to easily call your own JavaScript functions from R {#extendshinyjs}
 
@@ -106,7 +105,7 @@ runApp(shinyApp(
 
 Running the code above produces this shiny app:
 
-[![Extendshinyjs demo]({{ site.url }}/img/blog/shinyjs-improvements/extendshinyjs-demo.gif)]({{ site.url }}/img/blog/shinyjs-improvements/extendshinyjs-demo.gif)
+[![Extendshinyjs demo]({{ site.url }}/assets/img/blog/shinyjs-improvements/extendshinyjs-demo.gif)]({{ site.url }}/assets/img/blog/shinyjs-improvements/extendshinyjs-demo.gif)
 
 See how easy that was? All I had to do was make the JavaScript function `shinyjs.pageCol`, pass the JavaScript code as an argument to `extendShinyjs`, and then I can call `js$pageCol()`.  That's the basic idea: any JavaScript function named `shinyjs.foo` will be available to call as `js$foo()`. You can either pass the JS code as a string to the `text` argument, or place the JS code in a separate JavaScript file and use the `script` argument to specify where the code can be found. Using a separate file is generally prefered over writing the code inline, but in these examples I will use the `text` argument to keep it simple.
 
@@ -172,7 +171,7 @@ runApp(shinyApp(
 
 And the resulting app:
 
-[![Extendshinyjs params demo]({{ site.url }}/img/blog/shinyjs-improvements/extendshinyjs-params.gif)]({{ site.url }}/img/blog/shinyjs-improvements/extendshinyjs-params.gif)
+[![Extendshinyjs params demo]({{ site.url }}/assets/img/blog/shinyjs-improvements/extendshinyjs-params.gif)]({{ site.url }}/assets/img/blog/shinyjs-improvements/extendshinyjs-params.gif)
 
 Note that I chose to define the JS code as a string for illustration purposes, but in reality I would prefer to place the code in a separate file and use the `script` argument instead of `text`.
 

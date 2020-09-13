@@ -1,16 +1,12 @@
 ---
-layout: post
 title: "Shiny tips & tricks for improving your apps and solving common problems"
-tags: [professional, rstats, r-bloggers, shiny, tutorial, popular]
+tags: [rstats, shiny, tutorial, popular]
 date: 2016-08-29 9:00:00 -0700
 share-img: https://raw.githubusercontent.com/daattali/advanced-shiny/master/plot-spinner/plot-spinner.gif
 permalink: /blog/advanced-shiny-tips/
-layout: post
-comments: true
-show-share: true
 gh-repo: daattali/advanced-shiny
 gh-badge: [star, watch, follow]
-lastupdated: 2017-07-05
+last-updated: 2017-07-05
 ---
 
 This document contains a collection of various Shiny tricks that I commonly use or that I know many people ask about. Each link contains a complete functional Shiny app that demonstrates how to perform a non trivial task in Shiny. **The complete up-to-date list of tips, along with all the code, is [on GitHub](https://github.com/daattali/advanced-shiny#readme).**

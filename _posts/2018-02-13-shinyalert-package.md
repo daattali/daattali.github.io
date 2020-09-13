@@ -1,10 +1,9 @@
 ---
 title: "shinyalert: Easily create pretty popup messages (modals) in Shiny"
-tags: [professional, rstats, r-bloggers, packages, shiny]
-share-img: "https://daattali.com/shiny/img/shinyalert.png"
+tags: [rstats, packages, shiny]
+share-img: "https://daattali.com/shiny/assets/img/shinyalert.png"
 permalink: /blog/shinyalert-package/
 date: 2018-02-13 11:00:00 -0500
-lastupdated: 2018-03-01
 gh-repo: daattali/shinyalert
 gh-badge: [star, watch, follow]
 ---
@@ -47,7 +46,7 @@ And here we are!
 
 Simply call `shinyalert()` with the desired arguments, such as a title and text, and a modal will show up. In order to be able to call `shinyalert()` in a Shiny app, you must first call `useShinyalert()` anywhere in the app's UI.
 
-[![basic modal](https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-basic.gif)](https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-basic.gif)
+[![basic modal](https://raw.githubusercontent.com/daattali/shinyalert/master/inst/assets/img/shinyalert-basic.gif)](https://raw.githubusercontent.com/daattali/shinyalert/master/inst/assets/img/shinyalert-basic.gif)
 
 Here is some minimal Shiny app code that creates the above modal:
 
@@ -74,7 +73,7 @@ shinyApp(ui, server)
 
 Usually the purpose of a modal is simply informative, to show some information to the user. However, the modal can also be used to retrieve an input from the user by setting the `type = "input"` parameter.
 
-[![input modal](https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-input.gif)](https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-input.gif)
+[![input modal](https://raw.githubusercontent.com/daattali/shinyalert/master/inst/assets/img/shinyalert-input.gif)](https://raw.githubusercontent.com/daattali/shinyalert/master/inst/assets/img/shinyalert-input.gif)
 
 Only a single input can be used inside a modal. By default, the input will be a text input, but you can use other HTML input types by specifying the `inputType` parameter. For example, `inputType = "number"` will provide the user with a numeric input in the modal.
 

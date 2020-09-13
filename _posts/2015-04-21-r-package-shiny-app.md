@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "Supplementing your R package with a Shiny app"
-tags: [professional, rstats, r-bloggers, shiny, packages, tutorial]
+tags: [rstats, shiny, packages, tutorial]
 share-img: "https://deanattali.com/img/blog/ggExtra/ggmarginal-basic-example.png"
 date: 2015-04-21 22:00:00 -0700
 permalink: /2015/04/21/r-package-shiny-app/
-lastupdated: 2018-04-03
+last-updated: 2018-04-03
 ---
 
 The R community is generally very fond of open-source-ness and the idea of releasing all code to the public. Writing packages has become such an easy experience now that Hadley's `devtools` is so powerful, and as a result there are new packages being released by useRs every single day.

@@ -1,14 +1,10 @@
 ---
-layout: post
 title: "Visualizing when I'm most productive during the day"
 subtitle: "Analyzing my (and others') git activity"
-tags: [professional, rstats, r-bloggers, shiny]
+tags: [rstats, shiny]
 date: 2016-08-19 11:00:00 -0700
 share-img: https://daattali.com/shiny/visualize-git-commits-time/dean-git-plot.png
 permalink: /blog/visualize-git-commits-time/
-layout: post
-comments: true
-show-share: true
 carbonads-sm-horizontal: true
 ---
 
@@ -41,7 +37,7 @@ This post shows a few plots and discusses them, but it can be more fun to [play 
 
 This plot shows the times of all my git commits since Sept 2013, colour-coded by git repo (aka project). If you go the [app hosting this data](https://daattali.com/shiny/visualize-git-commits-time/), you'll see this plot as fully interactive: you can zoom, move, or remove all observations from a specific repo by clicking on the repo name in the legend.
 
-[![Dean commits all]({{ site.url }}/img/blog/git-commits-time/dean-commits-100.png)]({{ site.url }}/img/blog/git-commits-time/dean-commits-100.png)
+[![Dean commits all]({{ site.url }}/assets/img/blog/git-commits-time/dean-commits-100.png)]({{ site.url }}/assets/img/blog/git-commits-time/dean-commits-100.png)
 
 September 2013 is when I first learned R in the beginning of my masters degree, and the project I was working on then ([statsTerrorismProject](https://github.com/daattali/statsTerrorismProject)) was my final project for STAT545.
 
@@ -57,7 +53,7 @@ After taking my introductory R course, I spent the next year on my other masters
 
 # My work hours in the past 6 months {#dean-6-months}
 
-[![Dean commits 6 months]({{ site.url }}/img/blog/git-commits-time/dean-commits-6.png)]({{ site.url }}/img/blog/git-commits-time/dean-commits-6.png)
+[![Dean commits 6 months]({{ site.url }}/assets/img/blog/git-commits-time/dean-commits-6.png)]({{ site.url }}/assets/img/blog/git-commits-time/dean-commits-6.png)
 
 ### Observations
 
@@ -71,7 +67,7 @@ It's interesting to see how my commits very closely relate to what's going on in
 
 Just for fun, I can use my [ggMarginal()](https://github.com/daattali/ggExtra) function to add marginal density plots, to make it more clear when most of my commits take place.
 
-[![Dean density plot]({{ site.url }}/img/blog/git-commits-time/dean-density.png)]({{ site.url }}/img/blog/git-commits-time/dean-density.png)
+[![Dean density plot]({{ site.url }}/assets/img/blog/git-commits-time/dean-density.png)]({{ site.url }}/assets/img/blog/git-commits-time/dean-density.png)
 
 # How's my (ex) supervisor Jenny Bryan doing? {#jenny-commits}
 
@@ -79,7 +75,7 @@ After working with Jenny for a couple years, I learned that we have very compati
 
 With this graph we can see that our schedules really are very similar, although she is shifted 2 hours from me: I work 10am-4am, she works 8am-2am. What an early bird.
 
-[![Jenny commits all]({{ site.url }}/img/blog/git-commits-time/jenny-commits-100.png)]({{ site.url }}/img/blog/git-commits-time/jenny-commits-100.png)
+[![Jenny commits all]({{ site.url }}/assets/img/blog/git-commits-time/jenny-commits-100.png)]({{ site.url }}/assets/img/blog/git-commits-time/jenny-commits-100.png)
 
 # And the grand finale: the R master Hadley {#hadley-commits}
 
@@ -87,17 +83,17 @@ No introduction needed, the name speaks for itself. (Note these are all PST time
 
 Just one thing I'd like to note: we've all heard "this is going to be the year of 'ggvis'!", yet it looks like 2013 was the year-est of 'ggvis' so far :)
 
-[![Hadley commits all]({{ site.url }}/img/blog/git-commits-time/hadley-commits-100.png)]({{ site.url }}/img/blog/git-commits-time/hadley-commits-100.png)
+[![Hadley commits all]({{ site.url }}/assets/img/blog/git-commits-time/hadley-commits-100.png)]({{ site.url }}/assets/img/blog/git-commits-time/hadley-commits-100.png)
 
 # Working on weekends {#weekends}
 
 If you look at day of the week, you'll see that weekends and weekdays are essentially the same to me.
 
-[![Dean day of week]({{ site.url }}/img/blog/git-commits-time/dean-days.png)]({{ site.url }}/img/blog/git-commits-time/dean-days.png)
+[![Dean day of week]({{ site.url }}/assets/img/blog/git-commits-time/dean-days.png)]({{ site.url }}/assets/img/blog/git-commits-time/dean-days.png)
 
 But what's amazing is that if you look at Hadley, he seems to be such a good time manager that he manages to almost never work on weekends in the past 3 years, despite producing output at a speed of a dozen adults. That discipline of not working on weekends is commendable.
 
-[![Hadley day of week]({{ site.url }}/img/blog/git-commits-time/hadley-days.png)]({{ site.url }}/img/blog/git-commits-time/hadley-days.png)
+[![Hadley day of week]({{ site.url }}/assets/img/blog/git-commits-time/hadley-days.png)]({{ site.url }}/assets/img/blog/git-commits-time/hadley-days.png)
 
 # R code used to generate this data {#code}
 

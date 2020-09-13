@@ -1,9 +1,9 @@
 ---
-layout: post
 title: "Persistent data storage in Shiny apps"
-tags: [professional, rstats, r-bloggers, shiny, tutorial, popular]
+tags: [rstats, shiny, tutorial, popular]
+share-description: "Learn the different ways to incorporate databases and other storage solutions into R-Shiny applications."
 date: 2015-07-01 15:00:00 -0700
-lastupdated: 2017-10-06
+last-updated: 2017-10-06
 ---
 
 > This article is also published on [RStudio's Shiny Articles](https://shiny.rstudio.com/articles/persistent-data-storage.html)

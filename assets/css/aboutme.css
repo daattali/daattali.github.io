@@ -1,0 +1,46 @@
+#aboutme-section {
+  font-size: 1.1875rem;
+}
+
+.about-text {
+  position: relative;
+  margin-left: 1.875rem;
+}
+
+.about-icon {
+  font-size: 1.5rem;
+  position: absolute;
+  left: -2.5rem;
+  margin-top: 0.3125rem;
+}
+
+#aboutme-section p:last-child {
+  margin-bottom: 0;
+}
+
+#contactme-section {
+  font-size: 1.1875rem;
+  margin-top: 3.75rem;
+}
+
+#contactme-section h1 {
+  font-size: 3.125rem;
+}
+
+#contact-form p {
+  margin-bottom: 0.625rem;
+}
+
+#contact-form .form-control {
+  margin-bottom: 0.9375rem;
+}
+
+#paypalbtn {
+  text-align: center;
+}
+
+#paypalbtn a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-family: arial;
+}

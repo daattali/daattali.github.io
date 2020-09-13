@@ -1,13 +1,12 @@
 ---
-layout: post
 title: "Shiny finally has a colour picker - use colourInput to select colours in Shiny apps"
-tags: [professional, rstats, r-bloggers, shiny, packages, shinyjs]
+tags: [rstats, shiny, packages, shinyjs]
 date: 2015-06-28 13:00:00 -0700
 permalink: /2015/06/28/introducing-shinyjs-colourinput/
 share-img: https://deanattali.com/img/blog/colourInput/colourInputDemo.png
 gh-repo: daattali/colourpicker
 gh-badge: [star, watch, follow]
-lastupdated: 2016-08-15
+last-updated: 2016-08-15
 ---
 
 **NOTE: the colour input described here is no longer part of `shinyjs` and is now available in the `colourpicker` package instead.**
@@ -38,11 +37,11 @@ Shiny has many useful input controls, but there was one that was always missing 
 
 [Click here for a Shiny app showing several demos of colourInput](https://daattali.com/shiny/colourInput/). If you don't want to check out the Shiny app, here is a short GIF demonstrating the most basic functionality of `colourInput`.
 
-[![colourInput demo]({{ site.url }}/img/blog/colourInput/colourInputDemo.gif)]({{ site.url }}/img/blog/colourInput/colourInputDemo.gif)
+[![colourInput demo]({{ site.url }}/assets/img/blog/colourInput/colourInputDemo.gif)]({{ site.url }}/assets/img/blog/colourInput/colourInputDemo.gif)
 
 The colours of course don't look as ugly as in the GIF, here's a screenshot of what a plain `colourInput` looks like.
 
-[![colourInput demo]({{ site.url }}/img/blog/colourInput/colourInputDemo.png)]({{ site.url }}/img/blog/colourInput/colourInputDemo.png)
+[![colourInput demo]({{ site.url }}/assets/img/blog/colourInput/colourInputDemo.png)]({{ site.url }}/assets/img/blog/colourInput/colourInputDemo.png)
 
 ## Availability {#availability}
 
@@ -64,7 +63,7 @@ By default, the text of the checkbox reads "Transparent", but you can change tha
 
 This is what a colour input with transparency enabled looks like
 
-[![allowTransparent demo]({{ site.url }}/img/blog/colourInput/allowTransparent.png)]({{ site.url }}/img/blog/colourInput/allowTransparent.png)
+[![allowTransparent demo]({{ site.url }}/assets/img/blog/colourInput/allowTransparent.png)]({{ site.url }}/assets/img/blog/colourInput/allowTransparent.png)
 
 ### How the chosen colour is shown inside the input {#showColour}
 
@@ -72,13 +71,13 @@ By default, the colour input's background will match the selected colour and the
 
 Here is what a colour input with each of the possible values for `showColour` looks like
 
-[![showColour demo]({{ site.url }}/img/blog/colourInput/showColour.png)]({{ site.url }}/img/blog/colourInput/showColour.png)
+[![showColour demo]({{ site.url }}/assets/img/blog/colourInput/showColour.png)]({{ site.url }}/assets/img/blog/colourInput/showColour.png)
 
 ### Limited colour selection {#limited}
 
 If you want to only allow the user to select a colour from a specific list of colours, rather than any possible HEX colour, you can use the `palette = "limited"` parameter.  By default, the limited palette will contain 40 common colours, but you can supply your own list of colours using the `allowedCols` parameter. Here is an image of the default limited colour palette.
 
-[![colourInput demo]({{ site.url }}/img/blog/colourInput/limited-palette.png)]({{ site.url }}/img/blog/colourInput/limited-palette.png)
+[![colourInput demo]({{ site.url }}/assets/img/blog/colourInput/limited-palette.png)]({{ site.url }}/assets/img/blog/colourInput/limited-palette.png)
 
 ### Updating a colourInput {#update}
 

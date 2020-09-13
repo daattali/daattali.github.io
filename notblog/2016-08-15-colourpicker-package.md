@@ -1,14 +1,9 @@
 ---
-layout: post
 title: "colourpicker: A colour picker widget for Shiny apps, RStudio, R-markdown, and 'htmlwidgets'"
-tags: [professional, rstats, r, r-bloggers, shiny, packages]
+tags: [rstats, shiny, packages]
 date: 2016-08-15 10:00:00 -0700
 share-img: https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/limited-palette.png
 permalink: /blog/colourpicker-package/
-layout: post
-comments: true
-show-share: true
-show-subscribe: true
 gh-repo: daattali/colourpicker
 gh-badge: [star, watch, follow]
 ---

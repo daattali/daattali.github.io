@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "Need any more reason to love R-Shiny? Here: you can even use Shiny to create simple games!"
-tags: [professional, rstats, r-bloggers, shiny, packages]
+tags: [rstats, shiny, packages]
 date: 2016-01-26 10:00:00 -0700
 share-img: https://deanattali.com/img/blog/lightsout/shinyapp.png
 gh-repo: daattali/lightsout
@@ -16,7 +15,7 @@ First, some background. I was recently contacted by [Daniel Barbosa](https://www
 
 Here is a simple visual that shows what happens when pressing a light on a 5x5 board:
 
-[![Lights Out instructions]({{ site.url }}/img/blog/lightsout/instructions.png)]({{ site.url }}/img/blog/lightsout/instructions.png)
+[![Lights Out instructions]({{ site.url }}/assets/img/blog/lightsout/instructions.png)]({{ site.url }}/assets/img/blog/lightsout/instructions.png)
 
 The cool thing about Lights Out is that, as I mentioned, it can be solved mathematically. In other words, given any Lights Out board, there are a few algorithms that can be used to find the set of lights that need to be clicked in order to turn all the lights off. So when Daniel asked me to implement a Lights Out solver in R, it really just meant to write a function that would take a Lights Out board as input (easily represented as a binary matrix with 0 = light off and 1 = light on) and implement the algorithm that would determine which lights to click on. It turns out that there are a few different methods to do this, and I chose the one that involves mostly linear algebra because it was the least confusing to me. (If you're curious about the solving algorithm, you can view my code [here](https://github.com/daattali/lightsout/blob/master/R/solve.R).)
 
@@ -26,7 +25,7 @@ At this point you can predict what happened next. "Why don't I complete that mil
 
 Since the game logic was already fully implemented, making a Shiny app that encapsulates the game logic was very easy. You can play the Shiny-based game [online](https://daattali.com/shiny/lightsout/) or by downloading the package and running `lightsout::launch()`. Here is a screenshot of the app:
 
-[![Lights Out game]({{ site.url }}/img/blog/lightsout/shinyapp.png)]({{ site.url }}/img/blog/lightsout/shinyapp.png)
+[![Lights Out game]({{ site.url }}/assets/img/blog/lightsout/shinyapp.png)]({{ site.url }}/assets/img/blog/lightsout/shinyapp.png)
 
 You can view the code for the Shiny app to convince yourself of how simple it is [by looking in the package source code](https://github.com/daattali/lightsout/tree/master/inst/shiny). It only took ~40 lines of Shiny UI code, ~100 lines of Shiny server code, a little bit of styling with CSS, and absolutely no JavaScript. Yep, the game was built entirely in R, with 0 JavaScript (although I did make heavy use of [`shinyjs`](https://github.com/daattali/shinyjs)).
 

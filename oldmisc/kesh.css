@@ -1,0 +1,91 @@
+body {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.hideme {
+  display: none;
+}
+
+.lgtxt {
+  font-size: 1.5em;
+}
+
+.leftbtn {
+  margin-right: 20px;
+}
+
+#verifyqs {
+  text-align: left;
+}
+
+#verifyqs label {
+  font-size: 1.3em;
+  font-weight: normal;
+}
+
+#lies {
+  margin-top: 20px;
+}
+
+#dearkesh {
+  font-family: cursive;
+  font-size: 2.5em;
+}
+
+#vdaytitle {
+  font-size: 5em;
+  font-family: 'Monoton', cursive;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-shadow: 0 0 80px Orange,0 0 30px Red,0 0 6px Yellow;
+  background: rgba(300,0,0,0.7);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+#carousel {
+  width: 450px;
+  margin: 30px auto;
+}
+
+.carousel-inner img {
+  margin: 0 auto;
+}
+
+#vdaymsg {
+  position: absolute;
+  left: 100%;
+  text-align: left;
+  top: 60%;
+  width: 350px;
+  font-style: italic;
+  font-family: cursive;
+  font-size: 1.3em;
+}
+
+#kissbtn {
+  font-style: normal;
+  margin: 20px 0 0 100px;
+  font-family: Lobster;
+}
+
+.kissimg {
+  position: fixed;
+  border-radius: 10px;
+}
+
+#kisssound {
+  display: none;
+}
+
+.typed-cursor{
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+}
+
+@-webkit-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}

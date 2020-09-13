@@ -1,12 +1,11 @@
 ---
-layout: post
 title: "Introducing shinyjs: perform common JavaScript operations in Shiny apps using plain R code"
-tags: [professional, rstats, r-bloggers, shiny, packages, shinyjs, popular]
+tags: [rstats, shiny, packages, shinyjs, popular]
 date: 2015-04-23 17:30:00 -0700
 permalink: /2015/04/23/shinyjs-r-package/
 gh-repo: daattali/shinyjs
 gh-badge: [star, watch, follow]
-lastupdated: 2016-12-23
+last-updated: 2016-12-23
 ---
 
 `shinyjs` is my second R package that managed to find its way past the CRAN review process.
@@ -124,7 +123,7 @@ here for brevity.*
 
 Here is what that app would look like
 
-[![Demo app]({{ site.url }}/img/blog/shinyjs/basic-v1.png)]({{ site.url }}/img/blog/shinyjs/basic-v1.png)
+[![Demo app]({{ site.url }}/assets/img/blog/shinyjs/basic-v1.png)]({{ site.url }}/assets/img/blog/shinyjs/basic-v1.png)
 
 Now suppose we want to add a few features to the app to make it a bit
 more user-friendly. First we need to set up the app to use `shinyjs`

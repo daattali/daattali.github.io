@@ -2,6 +2,8 @@
 layout: page
 title: Projects
 subtitle: What's been eating away my free time
+share-title: Dean Attali | Projects
+share-description: This is a collection of some personal projects I’ve worked on, including many open-source software that's used by tens of thousands of people.
 comments: true
 carbonads: true
 ---
