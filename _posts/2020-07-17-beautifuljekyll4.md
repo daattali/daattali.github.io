@@ -1,7 +1,7 @@
 ---
 title: "Beautiful Jekyll v4: Huge updates to one of the most popular GitHub Pages themes"
 tags: [jekyll, github, blog, beautifuljekyll]
-share-img: "https://deanattali.com/img/blog/beautiful-jekyll.png"
+share-img: "https://deanattali.com/assets/img/blog/beautiful-jekyll.png"
 permalink: /blog/beautifuljekyll4/
 date: 2020-07-17 11:00:00 -0400
 gh-repo: daattali/beautiful-jekyll

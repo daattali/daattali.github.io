@@ -1,7 +1,7 @@
 ---
 title: "{shinydisconnect}: Show a nice message when a Shiny app disconnects or errors"
 tags: [rstats, packages, shiny, shinydisconnect]
-share-img: "https://deanattali.com/img/blog/shinydisconnect/shinydisconnect.png"
+share-img: "https://deanattali.com/assets/img/blog/shinydisconnect/shinydisconnect.png"
 permalink: /blog/shinydisconnect-package/
 date: 2020-07-28 11:00:00 -0400
 gh-repo: daattali/shinydisconnect
@@ -35,7 +35,7 @@ When I created [CRANalerts](https://cranalerts.com/) a few years ago, I wanted t
 
 I searched the internet for a solution, and there was none. There were other people asking for solutions, but none offered. I couldn't just let it go, and after many anxious hours of thinking I may have to settle for something I don't like, I eventually found a way to customize it. Behold **the customized Shiny error message**!
 
-[![shinydisconnect simple look]({{ site.url }}/assets/img/blog/shinydisconnect/shinydisconnect-simple.PNG){: .center }]({{ site.url }}/shinydisconnect/shinydisconnect-simple.PNG)
+[![shinydisconnect simple look]({{ site.url }}/assets/img/blog/shinydisconnect/shinydisconnect-simple.PNG){: .center }]({{ site.url }}/assets/img/blog/shinydisconnect/shinydisconnect-simple.PNG)
 
 Ever since then I've used this trick in every shiny app I wrote. And a couple months ago I finally took the time to make a proper package out of it so that everybody could benefit from it.
 

@@ -2,7 +2,7 @@
 title: "Need any more reason to love R-Shiny? Here: you can even use Shiny to create simple games!"
 tags: [rstats, shiny, packages]
 date: 2016-01-26 10:00:00 -0700
-share-img: https://deanattali.com/img/blog/lightsout/shinyapp.png
+share-img: https://deanattali.com/assets/img/blog/lightsout/shinyapp.png
 gh-repo: daattali/lightsout
 gh-badge: [star, watch, follow]
 ---

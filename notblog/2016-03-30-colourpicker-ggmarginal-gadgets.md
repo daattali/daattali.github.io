@@ -2,7 +2,7 @@
 title: "An awesome RStudio addin for selecting colours, and another for adding marginal density plots to ggplot2"
 tags: [rstats, shiny, shinyjs]
 date: 2016-03-30 03:00:00 -0700
-share-img: https://deanattali.com/img/blog/colourpicker-ggmarginal-gadgets/colourpickerscrnshot.png
+share-img: https://deanattali.com/assets/img/blog/colourpicker-ggmarginal-gadgets/colourpickerscrnshot.png
 permalink: /blog/colourpicker-ggmarginal-gadgets/
 ---
 
@@ -24,7 +24,7 @@ A colour picker gadget and addin are available in the [`colourpicker`](https://g
 
 Screenshot:
 
-[![Colour picker screenshot]({{ site.url }}/img/blog/colourpicker-ggmarginal-gadgets/colourpickerscrnshot.png)]({{ site.url }}/img/blog/colourpicker-ggmarginal-gadgets/colourpickerscrnshot.png)
+[![Colour picker screenshot]({{ site.url }}/assets/img/blog/colourpicker-ggmarginal-gadgets/colourpickerscrnshot.png)]({{ site.url }}/assets/img/blog/colourpicker-ggmarginal-gadgets/colourpickerscrnshot.png)
 
 Some of you may already know that `colourpicker` provides a `colourInput()` function, which is a Shiny input widget that lets you select a colour ([demo](https://daattali.com/shiny/colourInput/)).  The idea of the colour picker gadget is to extend this idea of a colour input and provide R developers with an easy way to select colours. It's perfect if you want to choose a colour/a vector of colours to use for a plot or for anything else that requires a careful selection of colours.
 
@@ -45,7 +45,7 @@ You can either run the colour picker as an **addin** or as a **gadget**.  To acc
 
 Here's a GIF demo of the colour picker in action:
 
-[![Colour picker GIF]({{ site.url }}/img/blog/colourpicker-ggmarginal-gadgets/colourPickerGadget.gif)]({{ site.url }}/img/blog/colourpicker-ggmarginal-gadgets/colourPickerGadget.gif)
+[![Colour picker GIF]({{ site.url }}/assets/img/blog/colourpicker-ggmarginal-gadgets/colourPickerGadget.gif)]({{ site.url }}/assets/img/blog/colourpicker-ggmarginal-gadgets/colourPickerGadget.gif)
 
 ## Add marginal density/histogram plots to ggplot2
 
@@ -53,7 +53,7 @@ This gadget and addin are available in the [`ggExtra`](https://github.com/daatta
 
 Screenshot:
 
-[![ggMarginalGadget screenshot]({{ site.url }}/img/blog/colourpicker-ggmarginal-gadgets/ggmarginal-gadget.png)]({{ site.url }}/img/blog/colourpicker-ggmarginal-gadgets/ggmarginal-gadget.png)
+[![ggMarginalGadget screenshot]({{ site.url }}/assets/img/blog/colourpicker-ggmarginal-gadgets/ggmarginal-gadget.png)]({{ site.url }}/assets/img/blog/colourpicker-ggmarginal-gadgets/ggmarginal-gadget.png)
 
 The flagship function of the `ggExtra` package is `ggMarginal()`, which is used to add marginal density/histograms to ggplot2 plots ([demo](https://daattali.com/shiny/ggExtra-ggMarginal-demo/)). Now with the help of this addin, you can do this interactively by setting all the different parameters and seeing how the plot is affected in real-time.
 
