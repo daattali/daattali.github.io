@@ -2,6 +2,7 @@
 title: "shinyalert: Easily create pretty popup messages (modals) in Shiny"
 tags: [rstats, packages, shiny]
 share-img: "https://daattali.com/shiny/img/shinyalert.png"
+thumbnail-img: https://raw.githubusercontent.com/daattali/shinyalert/master/inst/img/shinyalert-basic.gif
 permalink: /blog/shinyalert-package/
 date: 2018-02-13 11:00:00 -0500
 gh-repo: daattali/shinyalert

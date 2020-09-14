@@ -1,7 +1,7 @@
 ---
 title: "Shiny Case Studies: My new online interactive video course"
 tags: [rstats, shiny, tutorial]
-share-img: "/assets/img/blog/datacamp-shiny-case-studies-logo.png"
+thumbnail-img: "/assets/img/blog/datacamp-shiny-case-studies-logo.png"
 permalink: /blog/shiny-use-cases-datacamp-course/
 date: 2018-02-26 11:20:00 -0500
 ---

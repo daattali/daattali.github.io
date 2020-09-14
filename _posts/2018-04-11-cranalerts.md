@@ -1,7 +1,7 @@
 ---
 title: "CRANalerts: Get email alerts when a CRAN package gets updated"
 tags: [rstats, packages, shiny]
-share-img: "/assets/img/blog/cranalerts/screenshot.PNG"
+thumbnail-img: "/assets/img/blog/cranalerts/screenshot.PNG"
 permalink: /blog/cranalerts/
 date: 2018-04-11 05:00:00 -0400
 gh-repo: daattali/cranalerts

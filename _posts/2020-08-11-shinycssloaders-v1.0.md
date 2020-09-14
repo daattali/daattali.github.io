@@ -2,6 +2,7 @@
 title: "{shinycssloaders} v1.0: You can now use your own image, plus 3 years' worth of new features!"
 tags: [rstats, packages, shiny, shinycssloaders]
 share-img: "/assets/img/blog/shinycssloaders/shinycssloaders.png"
+thumbnail-img: /assets/img/blog/shinycssloaders/shinycssloaders-thumbnail.gif
 permalink: /blog/shinycssloaders-v1.0/
 date: 2020-08-11 14:00:00 -0400
 gh-repo: daattali/shinycssloaders

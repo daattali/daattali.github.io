@@ -2,6 +2,7 @@
 title: "{shinydisconnect}: Show a nice message when a Shiny app disconnects or errors"
 tags: [rstats, packages, shiny, shinydisconnect]
 share-img: "/assets/img/blog/shinydisconnect/shinydisconnect.png"
+thumbnail-img: /assets/img/blog/shinydisconnect/shinydisconnect-thumbnail.png
 permalink: /blog/shinydisconnect-package/
 date: 2020-07-28 11:00:00 -0400
 gh-repo: daattali/shinydisconnect
