@@ -2,7 +2,7 @@
 title: "colourpicker package v1.0: You can now select semi-transparent colours in R (& more!)"
 tags: [rstats, shiny, packages]
 date: 2017-10-16 13:00:00 -0500
-share-img: "https://deanattali.com/img/blog/colourpicker-update-alpha/colourinputnew.PNG"
+share-img: "/assets/img/blog/colourpicker-update-alpha/colourinputnew.PNG"
 permalink: /blog/colourpicker-update-alpha/
 gh-repo: daattali/colourpicker
 gh-badge: [star, watch, follow]
@@ -10,7 +10,7 @@ gh-badge: [star, watch, follow]
 
 For those who aren't familiar with the [`colourpicker`](https://github.com/daattali/colourpicker/) package, it provides a colour picker for R that can be used in Shiny, as well as other related tools. Today it's leaving behind its 0.x days and moving on to version 1.0!
 
-[`colourpicker`](https://github.com/daattali/colourpicker/) has gone through a few major milestones since its inception. It began as merely a colour selector input in an unrelated package ([`shinyjs`](https://github.com/daattali/shinyjs/)), simply because I didn't think a colour picker input warrants its own package. After gaining a gadget and an RStudio addin (as well as some popularity!), it graduated to become its own package. Earlier this year, [the Plot Helper tool](https://deanattali.com/blog/plot-colour-helper/) was added. And now `colourpicker` is taking its next big step - an upgrade to version 1.0.
+[`colourpicker`](https://github.com/daattali/colourpicker/) has gone through a few major milestones since its inception. It began as merely a colour selector input in an unrelated package ([`shinyjs`](https://github.com/daattali/shinyjs/)), simply because I didn't think a colour picker input warrants its own package. After gaining a gadget and an RStudio addin (as well as some popularity!), it graduated to become its own package. Earlier this year, [the Plot Helper tool](/blog/plot-colour-helper/) was added. And now `colourpicker` is taking its next big step - an upgrade to version 1.0.
 
 # Table of contents
 
@@ -28,11 +28,11 @@ Before describing the amazing new features, I have to give credit to [David Gris
 
 The most important new feature is the new alpha selector that lets you select a transparency value for any colour. Instead of being able to only select opaque colours (such as "green"), you can now select "green" with 50% transparency for example. To use this feature, use the `allowTransparent = TRUE` argument in the `colourInput()` function. Here is a screenshot of the new colour input with an alpha bar:
 
-[![new colour input with alpha](https://deanattali.com/img/blog/colourpicker-update-alpha/colourinputnew.PNG)](https://deanattali.com/img/blog/colourpicker-update-alpha/colourinputnew.PNG)
+[![new colour input with alpha](/assets/img/blog/colourpicker-update-alpha/colourinputnew.PNG)](/assets/img/blog/colourpicker-update-alpha/colourinputnew.PNG)
 
 While I'm very excited about this transparency feature, it also caused me to introduce my first big **breaking change** unfortunately. The colour input previously already had a `allowTransparent` argument, which when set to `TRUE` resulted in a checkbox inside the input:
 
-[![previous transparent feature](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/assets/img/allowTransparent.png)](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/assets/img/allowTransparent.png)
+[![previous transparent feature](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/allowTransparent.png)](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/allowTransparent.png)
 
 There was also a parameter that could control the text inside the checkbox. This was a useful, albeit fairly awkward, feature. After much consideration and discussion with many people, I decided against supporting both the old and new features simultaneously, and instead overriding the old `allowTransparent` by changing its behaviour to the current form. Even though it is technically a breaking change, this change was welcomed by most people I asked who've used that checkbox :)
 
@@ -66,7 +66,7 @@ If you use the `returnName = TRUE` parameter, then the return value will be a co
 
 If you want to only allow the user to select a colour from a specific list of colours, rather than any possible colour, you can use the `palette = "limited"` parameter.  By default, the limited palette will contain 40 common colours, but you can supply your own list of colours using the `allowedCols` parameter. Here is an image of the default `limited` colour palette.
 
-[![limited palette](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/assets/img/limited-palette.png)](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/assets/img/limited-palette.png)
+[![limited palette](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/limited-palette.png)](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/limited-palette.png)
 
 ### How the chosen colour is shown inside the input box
 
@@ -74,7 +74,7 @@ By default, the colour input's background will match the selected colour and the
 
 Here is what a colour input with each of the possible values for `showColour` looks like
 
-[![showColour](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/assets/img/showColour.png)](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/assets/img/showColour.png)
+[![showColour](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/showColour.png)](https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/showColour.png)
 
 ### Works on any device
 

@@ -155,7 +155,7 @@ After installing the package, you can experiment with `ezknitr` using the `setup
 
 `knit()` is the most popular and well-known function from `knitr`. It lets you create a markdown document from an Rmarkdown file. I assume if you are on this page, you are familiar with `knit()` and Rmarkdown, so I won't explain it any further.
 
-`spin()` is similar, but starts one step further back: it takes an R script as input, creates an Rmarkdown document from the R script, and then proceeds to create a markdown document from it. `spin()` can be useful in situations where you develop a large R script and want to be able to produce reports from it directly instead of having to copy chunks into a separate Rmarkdown file. You can read more about why I like `spin()` in the blog post ["knitr's best hidden gem: spin"](https://deanattali.com/2015/03/24/knitrs-best-hidden-gem-spin).
+`spin()` is similar, but starts one step further back: it takes an R script as input, creates an Rmarkdown document from the R script, and then proceeds to create a markdown document from it. `spin()` can be useful in situations where you develop a large R script and want to be able to produce reports from it directly instead of having to copy chunks into a separate Rmarkdown file. You can read more about why I like `spin()` in the blog post ["knitr's best hidden gem: spin"](/2015/03/24/knitrs-best-hidden-gem-spin).
 
 ## Using rmarkdown::render() {#using-render}
 

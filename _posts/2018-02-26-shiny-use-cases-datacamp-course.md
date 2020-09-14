@@ -1,7 +1,7 @@
 ---
 title: "Shiny Case Studies: My new online interactive video course"
 tags: [rstats, shiny, tutorial]
-share-img: "https://deanattali.com/assets/img/blog/datacamp-shiny-case-studies-logo.png"
+share-img: "/assets/img/blog/datacamp-shiny-case-studies-logo.png"
 permalink: /blog/shiny-use-cases-datacamp-course/
 date: 2018-02-26 11:20:00 -0500
 ---
@@ -17,8 +17,8 @@ This is an online course consisting of a series of short videos, mulitple choice
 If you've been looking to get some pratice with Shiny and learn a few new tricks, this course might be great for you. As I always say with anything I produce, any and all feedback is 100% welcomed.
 
 <div style="text-align:center;">
-  <a href="https://deanattali.com/assets/img/blog/datacamp-shiny-case-studies-logo.png">
-    <img src="https://deanattali.com/assets/img/blog/datacamp-shiny-case-studies-logo.png" alt="course logo" style="width: 180px;">
+  <a href="/assets/img/blog/datacamp-shiny-case-studies-logo.png">
+    <img src="/assets/img/blog/datacamp-shiny-case-studies-logo.png" alt="course logo" style="width: 180px;">
   </a>
 </div>
 <br/>

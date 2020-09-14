@@ -17,7 +17,7 @@ This document contains a collection of various Shiny tricks that I commonly use 
 
 Since I first learned about [Shiny](http://shiny.rstudio.com/) 2 years ago, I was always looking for ways to push Shiny to its limits and I enjoyed finding ways to work around common problems people were having (the harder the problem, the better!). I've built [many Shiny apps](https://daattali.com/shiny/) over these 2 years, both for myself and as a contractor for other people/companies, and throughout this time I developed a handy list of Shiny design patterns and tricks, some of which I present here.
 
-**Apart from providing these tips for free, I am also a [Shiny consultant](https://deanattali.com/shiny/) - if you need help with anything Shiny or R, feel free to [contact me](https://deanattali.com/contact).**
+**Apart from providing these tips for free, I am also a [Shiny consultant](https://deanattali.com/shiny/) - if you need help with anything Shiny or R, feel free to [contact me](/contact).**
 
 ### Table of contents
 

@@ -15,6 +15,6 @@ Learn more about shinyjs: [github.com/daattali/shinyjs](https://github.com/daatt
 
 [Slides for this talk](http://bit.ly/shinyjs-slides)
 
-[Shorter version of the talk (5 min) from an earlier conference](https://deanattali.com/shinyjs-user-2016/)
+[Shorter version of the talk (5 min) from an earlier conference](/shinyjs-user-2016/)
 
 Video was recorded by RStudio.

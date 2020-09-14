@@ -2,20 +2,20 @@
 title: "Need any more reason to love R-Shiny? Here: you can even use Shiny to create simple games!"
 tags: [rstats, shiny, packages]
 date: 2016-01-26 10:00:00 -0700
-share-img: https://deanattali.com/assets/img/blog/lightsout/shinyapp.png
+share-img: /assets/img/blog/lightsout/shinyapp.png
 gh-repo: daattali/lightsout
 gh-badge: [star, watch, follow]
 ---
 
 TL;DR [Click here](https://daattali.com/shiny/lightsout/) to play a puzzle game written entirely in Shiny [(source code)](https://github.com/daattali/lightsout/tree/master/inst/shiny).
 
-Anyone who reads my blog posts knows by now that I'm very enthusiastic about Shiny (the web app framework for R - if you didn't know what Shiny is then I suggest reading my [previous post about it](https://deanattali.com/blog/building-shiny-apps-tutorial)). One of my reasons for liking Shiny so much is that you can do so much more with it than what it was built for, and it's fun to think of new useful uses for it. Well, my latest realization is that you can even make simple games quite easily, as the [lightsouts package](https://github.com/daattali/lightsout) and its [companion web app/game](https://daattali.com/shiny/lightsout/) demonstrate! I'm actually currently on my way to San Francisco for the first ever [Shiny conference](https://www.r-bloggers.com/shiny-developer-conference-stanford-university-january-2016/), so this post comes at a great time.
+Anyone who reads my blog posts knows by now that I'm very enthusiastic about Shiny (the web app framework for R - if you didn't know what Shiny is then I suggest reading my [previous post about it](/blog/building-shiny-apps-tutorial)). One of my reasons for liking Shiny so much is that you can do so much more with it than what it was built for, and it's fun to think of new useful uses for it. Well, my latest realization is that you can even make simple games quite easily, as the [lightsouts package](https://github.com/daattali/lightsout) and its [companion web app/game](https://daattali.com/shiny/lightsout/) demonstrate! I'm actually currently on my way to San Francisco for the first ever [Shiny conference](https://www.r-bloggers.com/shiny-developer-conference-stanford-university-january-2016/), so this post comes at a great time.
 
 First, some background. I was recently contacted by [Daniel Barbosa](https://www.linkedin.com/in/danielbarbosa/) who offered to hire me for a tiny project: write a solver for the Lights Out puzzle in R. After a few minutes of Googling I found out that Lights Out is just a simple puzzle game that can be solved mathematically. The game consists of a grid of lights that are either on or off, and clicking on any light will toggle it and its neighbours. The goal of the puzzle is to switch all the lights off. 
 
 Here is a simple visual that shows what happens when pressing a light on a 5x5 board:
 
-[![Lights Out instructions]({{ site.url }}/assets/img/blog/lightsout/instructions.png)]({{ site.url }}/assets/img/blog/lightsout/instructions.png)
+[![Lights Out instructions](/assets/img/blog/lightsout/instructions.png)](/assets/img/blog/lightsout/instructions.png)
 
 The cool thing about Lights Out is that, as I mentioned, it can be solved mathematically. In other words, given any Lights Out board, there are a few algorithms that can be used to find the set of lights that need to be clicked in order to turn all the lights off. So when Daniel asked me to implement a Lights Out solver in R, it really just meant to write a function that would take a Lights Out board as input (easily represented as a binary matrix with 0 = light off and 1 = light on) and implement the algorithm that would determine which lights to click on. It turns out that there are a few different methods to do this, and I chose the one that involves mostly linear algebra because it was the least confusing to me. (If you're curious about the solving algorithm, you can view my code [here](https://github.com/daattali/lightsout/blob/master/R/solve.R).)
 
@@ -25,7 +25,7 @@ At this point you can predict what happened next. "Why don't I complete that mil
 
 Since the game logic was already fully implemented, making a Shiny app that encapsulates the game logic was very easy. You can play the Shiny-based game [online](https://daattali.com/shiny/lightsout/) or by downloading the package and running `lightsout::launch()`. Here is a screenshot of the app:
 
-[![Lights Out game]({{ site.url }}/assets/img/blog/lightsout/shinyapp.png)]({{ site.url }}/assets/img/blog/lightsout/shinyapp.png)
+[![Lights Out game](/assets/img/blog/lightsout/shinyapp.png)](/assets/img/blog/lightsout/shinyapp.png)
 
 You can view the code for the Shiny app to convince yourself of how simple it is [by looking in the package source code](https://github.com/daattali/lightsout/tree/master/inst/shiny). It only took ~40 lines of Shiny UI code, ~100 lines of Shiny server code, a little bit of styling with CSS, and absolutely no JavaScript. Yep, the game was built entirely in R, with 0 JavaScript (although I did make heavy use of [`shinyjs`](https://github.com/daattali/shinyjs)).
 

@@ -13,6 +13,6 @@ Learn more about plot colour helper: [github.com/daattali/colourpicker](https://
 <iframe width="640" height="360" src="https://www.youtube.com/embed/eq8TUOxpBpM" frameborder="0" allowfullscreen></iframe>
 </div>
 
-[Slides for this talk](http://bit.ly/colourpicker-slides-useR2017)
+[Slides for this talk](https://bit.ly/colourpicker-slides-useR2017)
 
 All videos from the conference were recorded and hosted [by Microsoft](https://channel9.msdn.com/Events/useR-international-R-User-conferences/useR-International-R-User-2017-Conference)

@@ -1,7 +1,7 @@
 ---
 title: "ggExtra: R package for adding marginal histograms to ggplot2"
 tags: [rstats, ggplot2, packages, ggExtra]
-share-img: "https://deanattali.com/img/blog/ggExtra/ggmarginal-basic-example.png"
+share-img: "/assets/img/blog/ggExtra/ggmarginal-basic-example.png"
 permalink: /2015/03/29/ggExtra-r-package/
 gh-repo: daattali/ggExtra
 gh-badge: [star, watch, follow]
@@ -30,7 +30,7 @@ p <- ggplot(df, aes(x, y)) + geom_point() + theme_classic()
 # add marginal histograms
 ggExtra::ggMarginal(p, type = "histogram")
 ```
-[![ggplot2 marginal plots basic example]({{ site.url }}/assets/img/blog/ggExtra/ggmarginal-basic-example.png)]({{ site.url }}/assets/img/blog/ggExtra/ggmarginal-basic-example.png)
+[![ggplot2 marginal plots basic example](/assets/img/blog/ggExtra/ggmarginal-basic-example.png)](/assets/img/blog/ggExtra/ggmarginal-basic-example.png)
 
 ## Marginal plots in ggplot2 - The problem
 
@@ -61,7 +61,7 @@ pEmpty <- ggplot(mtcars, aes(x = wt, y = mpg)) +
 grid.arrange(pTop, pEmpty, pMain, pRight,
              ncol = 2, nrow = 2, widths = c(3, 1), heights = c(1, 3))
 ```
-[![ggplot2 marginal plots basic idea]({{ site.url }}/assets/img/blog/ggExtra/ggmarginal-idea.png)]({{ site.url }}/assets/img/blog/ggExtra/ggmarginal-idea.png)
+[![ggplot2 marginal plots basic idea](/assets/img/blog/ggExtra/ggmarginal-idea.png)](/assets/img/blog/ggExtra/ggmarginal-idea.png)
 
 This works, but it's a bit tedious to write, so at first I just wanted a simple function to abstract all this ugly code away. This was the birth of `ggMarginal`, which was later developed into the `ggExtra` package, together with a few other functions.
 
@@ -96,7 +96,7 @@ theme_gray(35) +
 ggtitle("Cars weight vs miles/gallon") +   
 xlab("car\nweight")
 ```
-[![ggplot2 marginal plots basic idea problems]({{ site.url }}/assets/img/blog/ggExtra/ggmarginal-idea-problems.png)]({{ site.url }}/assets/img/blog/ggExtra/ggmarginal-idea-problems.png)
+[![ggplot2 marginal plots basic idea problems](/assets/img/blog/ggExtra/ggmarginal-idea-problems.png)](/assets/img/blog/ggExtra/ggmarginal-idea-problems.png)
 
 Accounting for these issues is a little trickier and requires a bit of "dirty" code. To address these problems, I used `ggplot_build()`, which is a handy function that can be used to retrieve information from a plot. Using `ggplot_build`, it's possible to look at the internals of a plot object and identify the axis range, the text size, etc. *It's importante to note that since these parameters are not provided via a direct function call, it's not considered 100% safe to use them because there is no guarantee that the plot internals will always look the same way.* I won't post the code here because it's long but you can view the source code of my solution [on GitHub](https://github.com/daattali/ggExtra/blob/master/R/ggMarginal.R).
 
@@ -120,7 +120,7 @@ p <- ggplot(df, aes(x, y)) + geom_point() +
 # add marginal density along the y axis
 ggExtra::ggMarginal(p, type = "density", margins = "y", size = 4, marginCol = "red")
 ```
-[![ggplot2 marginal plots complex example]({{ site.url }}/assets/img/blog/ggExtra/ggmarginal-complex-example.png)]({{ site.url }}/assets/img/blog/ggExtra/ggmarginal-complex-example.png)
+[![ggplot2 marginal plots complex example](/assets/img/blog/ggExtra/ggmarginal-complex-example.png)](/assets/img/blog/ggExtra/ggmarginal-complex-example.png)
 
 ## Other functions in the `ggExtra` package
 

@@ -1,7 +1,7 @@
 ---
 title: "{shinycssloaders} v1.0: You can now use your own image, plus 3 years' worth of new features!"
 tags: [rstats, packages, shiny, shinycssloaders]
-share-img: "https://deanattali.com/img/blog/shinycssloaders/shinycssloaders.png"
+share-img: "/assets/img/blog/shinycssloaders/shinycssloaders.png"
 permalink: /blog/shinycssloaders-v1.0/
 date: 2020-08-11 14:00:00 -0400
 gh-repo: daattali/shinycssloaders
@@ -10,7 +10,7 @@ gh-badge: [follow, star]
 
 The [{shinycssloaders}](https://github.com/daattali/shinycssloaders/) package is a handy little tool that lets you easily add loading animations to a Shiny output (a plot, a table, etc.) while it's recalculating.
 
-[![demo gif]({{ site.url }}/assets/img/blog/shinycssloaders/shinycssloaders-demo-gif.gif)]({{ site.url }}/assets/img/blog/shinycssloaders/shinycssloaders-demo-gif.gif)
+[![demo gif](/assets/img/blog/shinycssloaders/shinycssloaders-demo-gif.gif)](/assets/img/blog/shinycssloaders/shinycssloaders-demo-gif.gif)
 
 It's extremely easy to use--all you need to do is wrap the output in `withSpinner()`. For example, `plotOutput("plot")` becomes `plotOutput("plot") %>% withSpinner()`.
 

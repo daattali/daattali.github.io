@@ -2,7 +2,7 @@
 title: "Building Shiny apps - an interactive tutorial"
 date: 2015-12-07 10:00:00 -0700
 tags: [rstats, shiny, tutorial, popular]
-share-img: https://deanattali.com/img/blog/shiny-tutorial/shiny-addplot.png
+share-img: /assets/img/blog/shiny-tutorial/shiny-addplot.png
 share-description: "Learn how to build your basic to intermediate Shiny apps using a tutorial that's been used in university classrooms worldwide!"
 last-updated: 2020-04-25
 carbonads-sm-horizontal: true
@@ -89,7 +89,7 @@ This template is by itself a working minimal Shiny app that doesn't do much. It 
 
 After saving the file, RStudio should recognize that this is a Shiny app, and you should see the usual *Run* button at the top change to *Run App*.
 
-[![Shiny Run App]({{ site.url }}/assets/img/blog/shiny-tutorial/shiny-runapp.png)]({{ site.url }}/assets/img/blog/shiny-tutorial/shiny-runapp.png)
+[![Shiny Run App](/assets/img/blog/shiny-tutorial/shiny-runapp.png)](/assets/img/blog/shiny-tutorial/shiny-runapp.png)
 
 If you don't see the *Run App* button, it means you either have a very old version of RStudio, don't have Shiny installed, or didn't follow the file naming conventions.
 
@@ -97,7 +97,7 @@ Click the *Run App* button, and now your app should run. You won't see much beca
 
 Click the stop button to stop the app, or press the *Escape* key.
 
-[![Shiny Stop App]({{ site.url }}/assets/img/blog/shiny-tutorial/shiny-stopapp.png)]({{ site.url }}/assets/img/blog/shiny-tutorial/shiny-stopapp.png)
+[![Shiny Stop App](/assets/img/blog/shiny-tutorial/shiny-stopapp.png)](/assets/img/blog/shiny-tutorial/shiny-stopapp.png)
 
 You may have noticed that when you click the *Run App* button, all it's doing is just running the function `shiny::runApp()` in the console. You can run that command instead of clicking the button if you prefer. However, **do not** place the `runApp()` function inside the shiny app code!
 
@@ -119,7 +119,7 @@ You can also create a new Shiny app using RStudio's menu by selecting *File > Ne
 
 The dataset we'll be using contains information about all the products sold by BC Liquor Store and is provided by [OpenDataBC](https://catalogue.data.gov.bc.ca/dataset/bc-liquor-store-product-price-list-historical-prices). They provide a direct link to download a *csv* version of the data, and this data has the rare quality that it is immediately clean and useful. You can view the raw data they provide, but I have taken a few steps to simplify the dataset to make it more useful for our app. I removed some columns, renamed other columns, and dropped a few rare factor levels.
 
-The processed dataset we'll be using in this app is available [here](https://deanattali.com/files/bcl-data.csv). Download it now and place this file in the same folder as your Shiny app. Make sure the file is named `bcl-data.csv`.
+The processed dataset we'll be using in this app is available [here](/files/bcl-data.csv). Download it now and place this file in the same folder as your Shiny app. Make sure the file is named `bcl-data.csv`.
 
 Add a line in your app to load the data into a variable called `bcl`. It should look something like this
 
@@ -241,7 +241,7 @@ server <- function(input, output) {}
 shinyApp(ui = ui, server = server)
 ```
 
-[![Shiny layout]({{ site.url }}/assets/img/blog/shiny-tutorial/shiny-layout.png)]({{ site.url }}/assets/img/blog/shiny-tutorial/shiny-layout.png)
+[![Shiny layout](/assets/img/blog/shiny-tutorial/shiny-layout.png)](/assets/img/blog/shiny-tutorial/shiny-layout.png)
 
 > If you want to be a lot more flexible with the design, you can have much more fine control over where things go by using a grid layout. We won't cover that here, but if you're interested, look at the documentation for `?column` and `?fluidRow`.
 
@@ -276,7 +276,7 @@ This should make you appreciate Shiny for not making you write horrendous HTML b
 
 Inputs are what gives users a way to interact with a Shiny app. Shiny provides many input functions to support many kinds of interactions that the user could have with an app. For example, `textInput()` is used to let the user enter text, `numericInput()` lets the user select a number, `dateInput()` is for selecting a date, `selectInput()` is for creating a select box (aka a dropdown menu).
 
-[![Shiny inputs]({{ site.url }}/assets/img/blog/shiny-tutorial/shiny-inputs.png)]({{ site.url }}/assets/img/blog/shiny-tutorial/shiny-inputs.png)
+[![Shiny inputs](/assets/img/blog/shiny-tutorial/shiny-inputs.png)](/assets/img/blog/shiny-tutorial/shiny-inputs.png)
 
 All input functions have the same first two arguments: `inputId` and `label`. The `inputId` will be the name that Shiny will use to refer to this input when you want to retrieve its current value. It is important to note that every input must have a unique `inputId`. If you give more than one input the same id, Shiny will unfortunately not give you an explicit error, but your app won't work correctly. The `label` argument specifies the text in the display label that goes along with the input widget. Every input can also have multiple other arguments specific to that input type. The only way to find out what arguments you can use with a specific input function is to look at its help file.
 
@@ -354,7 +354,7 @@ server <- function(input, output) {}
 shinyApp(ui = ui, server = server)
 ```
 
-[![Shiny add inputs]({{ site.url }}/assets/img/blog/shiny-tutorial/shiny-addinputs.png)]({{ site.url }}/assets/img/blog/shiny-tutorial/shiny-addinputs.png)
+[![Shiny add inputs](/assets/img/blog/shiny-tutorial/shiny-addinputs.png)](/assets/img/blog/shiny-tutorial/shiny-addinputs.png)
 
 # 7. Add placeholders for outputs
 
@@ -556,7 +556,7 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server)
 ```
 
-[![Shiny add plot]({{ site.url }}/assets/img/blog/shiny-tutorial/shiny-addplot.png)]({{ site.url }}/assets/img/blog/shiny-tutorial/shiny-addplot.png)
+[![Shiny add plot](/assets/img/blog/shiny-tutorial/shiny-addplot.png)](/assets/img/blog/shiny-tutorial/shiny-addplot.png)
 
 **Exercise:** The current plot doesn't look very nice, you could enhance the plot and make it much more pleasant to look at.
 
@@ -862,7 +862,7 @@ RStudio provides a service called [shinyapps.io](http://www.shinyapps.io/) which
 
 Hosting your app on shinyapps.io is the easy and recommended way of getting your app online.  Go to [www.shinyapps.io](http://www.shinyapps.io/) and sign up for an account. When you're ready to publish your app, click on the "Publish Application" button in RStudio and follow their instructions. You might be asked to install a couple packages if it's your first time.
 
-[![Shiny publish]({{ site.url }}/assets/img/blog/shiny-tutorial/shiny-publish.png)]({{ site.url }}/assets/img/blog/shiny-tutorial/shiny-publish.png)
+[![Shiny publish](/assets/img/blog/shiny-tutorial/shiny-publish.png)](/assets/img/blog/shiny-tutorial/shiny-publish.png)
 
 After a successful deployment to shinyapps.io, you will be redirected to your app in the browser. You can use that URL to show off to your family what a cool app you wrote.
 
@@ -870,7 +870,7 @@ After a successful deployment to shinyapps.io, you will be redirected to your ap
 
 The other option for hosting your app is on your own private [Shiny server](https://www.rstudio.com/products/shiny/shiny-server/). Shiny Server is also a product by RStudio that lets you host apps on your own server. This means that instead of RStudio hosting the app for you, you have it on your own private server. This means you have a lot more freedom and flexibility, but it also means you need to have a server and be comfortable administering a server. I currently host all my apps on [my own Shiny server](https://daattali.com/shiny/) just because I like having the extra control, but when I first learned about Shiny I used shinyapps.io for several months.
 
-If you're feeling adventurous and want to host your own server, you can follow [my tutorial for hosting a Shiny server](https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean).
+If you're feeling adventurous and want to host your own server, you can follow [my tutorial for hosting a Shiny server](/2015/05/09/setup-rstudio-shiny-server-digital-ocean).
 
 # 14. More Shiny features to check out
 
@@ -1017,10 +1017,10 @@ Shiny is a very popular package and has lots of resources on the web. Here's a c
 - [Shiny in Rmarkdown](http://rmarkdown.rstudio.com/authoring_shiny.html)
 - Get help from the [Shiny Google group](https://groups.google.com/forum/#!forum/shiny-discuss) or [StackOverflow](http://stackoverflow.com/questions/tagged/shiny)
 - [Publish your apps for free with shinyapps.io](http://www.shinyapps.io)
-- [Host your app on your own Shiny server](https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean)
+- [Host your app on your own Shiny server](/2015/05/09/setup-rstudio-shiny-server-digital-ocean)
 - [Learn about how reactivity works](http://shiny.rstudio.com/articles/execution-scheduling.html)
 - [Learn about useful debugging techniques](http://shiny.rstudio.com/articles/debugging.html)
-- [Shiny tips & tricks for improving your apps and solving common problems](https://deanattali.com/blog/advanced-shiny-tips)
+- [Shiny tips & tricks for improving your apps and solving common problems](/blog/advanced-shiny-tips)
 
 # 17. Ideas to improve our app
 

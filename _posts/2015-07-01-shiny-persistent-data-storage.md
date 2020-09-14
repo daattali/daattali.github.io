@@ -92,7 +92,7 @@ shinyApp(
 )
 ```
 
-The above code is taken from a [guide on how to mimic a Google form with Shiny](https://deanattali.com/2015/06/14/mimicking-google-form-shiny). 
+The above code is taken from a [guide on how to mimic a Google form with Shiny](/2015/06/14/mimicking-google-form-shiny). 
 
 The above app is very simple—there is a table that shows all responses, three input fields, and a **Submit** button that will take the data in the input fields and save it. You might notice that there are two functions that are not defined but are used in the app: `saveData(data)` and `loadData()`. These two functions are the only code that affects how the data is stored/retrieved, and we will redefine them for each data storage type. In order to make the app work for now, here's a trivial implementation of the save and load functions that simply stores responses in the current R session. 
 
@@ -123,7 +123,7 @@ Local storage means saving a file on the same machine that is running the Shiny 
 
 Remote storage means saving data on another server, usually a reliable hosted server such as Dropbox, Amazon, or a hosted database.  One big advantage of using hosted remote storage solutions is that they are much more reliable and can generally be more trusted to keep your data alive and not corrupted.
 
-When going through the different storage type options below, keep in mind that if your Shiny app is hosted on shinyapps.io, you will have to use a remote storage method for the time being. RStudio plans to implement persistent storage on shinyapps.io soon. In the meantime, using local storage is only an option if you’re hosting your own [Shiny Server](http://www.rstudio.com/products/shiny/shiny-server/). If you want to host your own server, [here is a guide](https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean) that describes in detail how to set up your own Shiny Server. 
+When going through the different storage type options below, keep in mind that if your Shiny app is hosted on shinyapps.io, you will have to use a remote storage method for the time being. RStudio plans to implement persistent storage on shinyapps.io soon. In the meantime, using local storage is only an option if you’re hosting your own [Shiny Server](http://www.rstudio.com/products/shiny/shiny-server/). If you want to host your own server, [here is a guide](/2015/05/09/setup-rstudio-shiny-server-digital-ocean) that describes in detail how to set up your own Shiny Server. 
 
 # Persistent data storage methods {#persistent}
 

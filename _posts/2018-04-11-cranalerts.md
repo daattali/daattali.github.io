@@ -1,7 +1,7 @@
 ---
 title: "CRANalerts: Get email alerts when a CRAN package gets updated"
 tags: [rstats, packages, shiny]
-share-img: "https://deanattali.com/img/blog/cranalerts/screenshot.PNG"
+share-img: "/assets/img/blog/cranalerts/screenshot.PNG"
 permalink: /blog/cranalerts/
 date: 2018-04-11 05:00:00 -0400
 gh-repo: daattali/cranalerts
@@ -22,7 +22,7 @@ That's the exact problem I set out to solve with [CRANalerts](https://cranalerts
 
 <div style="text-align:center;">
   <a href="https://cranalerts.com/">
-    <img src="https://deanattali.com/img/blog/cranalerts/screenshot.PNG" alt="CRANalerts">
+    <img src="/assets/img/blog/cranalerts/screenshot.PNG" alt="CRANalerts">
   </a>
 </div>
 
@@ -34,7 +34,7 @@ But now that this problem became relevant to me, I eventually figured that manua
 
 <div style="text-align:center;">
   <a href="https://xkcd.com/1319/">
-    <img src="https://deanattali.com/img/blog/cranalerts/automation.png" alt="relevant xkcd">
+    <img src="/assets/img/blog/cranalerts/automation.png" alt="relevant xkcd">
   </a>
 </div>
 
@@ -44,13 +44,13 @@ You'll hopefully agree that this website doesn't *look* like a Shiny app. UI/UX 
 
 <div style="text-align:center;">
   <a href="https://cranalerts.com/">
-    <img src="https://deanattali.com/img/blog/cranalerts/nocss.PNG" alt="no css">
+    <img src="/assets/img/blog/cranalerts/nocss.PNG" alt="no css">
   </a>
 </div>
 
 Beautiful, right? In the everything-is-beautiful-in-its-own-unique-way kind of beautiful. A draft version of CRANalerts was ready after a day, but it actually took me another full day to just come up with a design and implement it to a point where I thought it looked good enough. Literally half the time was spent on coding, and half on making it pretty.
 
-while it is important for me to make my tools look nice, I  also realize it's not my forte—it doesn't come quickly or naturally to me, and it ends up taking up a lot more of my time than I would like. **If anyone has a good eye for design and would like to help me on my next projects, I would really appreciate your help, feel free to [send me a message](https://deanattali.com/contact/)!** (You don't have to be a graphic designer by profession, I think a lot of people in the R community have much better artistic skills than myself.)
+while it is important for me to make my tools look nice, I  also realize it's not my forte—it doesn't come quickly or naturally to me, and it ends up taking up a lot more of my time than I would like. **If anyone has a good eye for design and would like to help me on my next projects, I would really appreciate your help, feel free to [send me a message](/contact/)!** (You don't have to be a graphic designer by profession, I think a lot of people in the R community have much better artistic skills than myself.)
 
 Keep in mind that this entire service was built in a weekend and did not have the resources get properly thoroughly tested, so it's possible you'll encounter problems. If you do have any feedback, feel free to let me know. And if you'd like to support my work on this project and future projects (including supporting server costs, AWS fees, maintenance of tools, etc), I appreciate any donations :)
 

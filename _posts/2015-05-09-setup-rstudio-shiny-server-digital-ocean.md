@@ -2,7 +2,7 @@
 title: "How to get your very own RStudio Server and Shiny Server with DigitalOcean"
 tags: [rstats, shiny, tutorial, popular]
 date: 2015-05-09 21:30:00 -0700
-share-img: https://deanattali.com/img/blog/digital-ocean/rstudio.png
+share-img: /assets/img/blog/digital-ocean/rstudio.png
 share-description: "Learn how to create a server that can be used to run R code or Shiny apps in just 30 minutes."
 permalink: /2015/05/09/setup-rstudio-shiny-server-digital-ocean/
 last-updated: 2019-07-06
@@ -54,7 +54,7 @@ I chose San Francisco for region because it's the closest to me, though it reall
 *Note: all subsequent steps assume that you are also using the weakest server possible with Ubuntu 18.04 x64. If you chose different settings, the general instructions will still apply but some of the specific commands/URLs might need to change.*
 
 Even though you probably don't need it, here's a short GIF showing how I create a new droplet:
-[![Create droplet]({{ site.url }}/assets/img/blog/digital-ocean/do-create.gif)]({{ site.url }}/assets/img/blog/digital-ocean/do-create.gif)
+[![Create droplet](/assets/img/blog/digital-ocean/do-create.gif)](/assets/img/blog/digital-ocean/do-create.gif)
 
 # Step 3: Log in to your very own shiny new server {#login}
 
@@ -64,7 +64,7 @@ One option to log into your droplet is through the "Access" tab on the droplet's
 
 You should be greeted with a welcome message and some stats about the server that look like this:
 
-[![Login screen]({{ site.url }}/assets/img/blog/digital-ocean/login.png)]({{ site.url }}/assets/img/blog/digital-ocean/login.png)
+[![Login screen](/assets/img/blog/digital-ocean/login.png)](/assets/img/blog/digital-ocean/login.png)
 
 # Step 4: Ensure you don't shoot yourself in the foot {#safety-first}
 
@@ -137,7 +137,7 @@ You should now be able to run R and hopefully be greeted with a message containi
 R
 ~~~
 
-[![R welcome]({{ site.url }}/assets/img/blog/digital-ocean/R-welcome.png)]({{ site.url }}/assets/img/blog/digital-ocean/R-welcome.png)
+[![R welcome](/assets/img/blog/digital-ocean/R-welcome.png)](/assets/img/blog/digital-ocean/R-welcome.png)
 
 Now you need to quit R (`quit()`) because there are a couple small things to adjust on the server so that R will work well.
 
@@ -190,7 +190,7 @@ sudo gdebi rstudio-server-1.1.442-amd64.deb
 
 Done! By default, RStudio uses port 8787, so to access RStudio go to `http://123.456.1.2:8787` and you should be greeted with an RStudio login page. (If you forgot what your droplet's IP is, you can find out by running `hostname -I`)
 
-[![RStudio]({{ site.url }}/assets/img/blog/digital-ocean/rstudio.png)]({{ site.url }}/assets/img/blog/digital-ocean/rstudio.png)
+[![RStudio](/assets/img/blog/digital-ocean/rstudio.png)](/assets/img/blog/digital-ocean/rstudio.png)
 
 You can log in to RStudio with any user/password that are available on the droplet. For example, I would log in with username `dean` and my password. If you want to let your friend Joe have access to your RStudio, you can create a new user for them with `adduser joe`.
 
@@ -217,7 +217,7 @@ sudo gdebi shiny-server-1.5.6.875-amd64.deb
 
 Shiny Server is now installed and running. Assuming there were no problems, if you go to `http://123.456.1.2:3838/` you should see Shiny Server's default homepage, which includes some instructions and two Shiny apps:
 
-[![Shiny Server]({{ site.url }}/assets/img/blog/digital-ocean/shiny.png)]({{ site.url }}/assets/img/blog/digital-ocean/shiny.png)
+[![Shiny Server](/assets/img/blog/digital-ocean/shiny.png)](/assets/img/blog/digital-ocean/shiny.png)
 
 If you see an error on the bottom Shiny app, it's probably because you don't have the `rmarkdown` R package installed (the instructions on the default Shiny Server page mention this). After installing `rmarkdown` in R, the bottom Shiny app should work as well. Don't forget to install `rmarkdown` so that it will be available to all users as described [above](#user-libraries). I suggest you read through the instructions page at `http://123.456.1.2:3838/`.
 
@@ -282,11 +282,11 @@ git init
 
 Next we will create a GitHub repository, so go to [GitHub](https://github.com/) and add a new repository named `shiny-server`.
 
-[![Create new repository]({{ site.url }}/assets/img/blog/digital-ocean/git-repo-create.png)]({{ site.url }}/assets/img/blog/digital-ocean/git-repo-create.png)
+[![Create new repository](/assets/img/blog/digital-ocean/git-repo-create.png)](/assets/img/blog/digital-ocean/git-repo-create.png)
 
 Now we need to grab the URL of the repository from GitHub, so on the new page you were redirected to, click on "HTTPS" and then copy the URL to its right, as shown in the image below:
 
-[![Get git repo URL]({{ site.url }}/assets/img/blog/digital-ocean/git-repo-url.png)]({{ site.url }}/assets/img/blog/digital-ocean/git-repo-url.png)
+[![Get git repo URL](/assets/img/blog/digital-ocean/git-repo-url.png)](/assets/img/blog/digital-ocean/git-repo-url.png)
 
 Now we need to make the connection between the git repository we made on our droplet and the one we just created, and then add all the files that are currently in `/srv/shiny-server/` to this repository. **Be sure to replace the URL in the first command with the URL that you copied from your repository**.
 
@@ -310,7 +310,7 @@ In this tutorial we installed Shiny Server Open Source, which is a free offering
 If you're just an individual playing around with shiny and want to host some of your personal apps, then using the Open Source version is perfectly fine. But if you're looking to use a shiny server in your company, or if you require some more features such as user authentication (login), scaling (supporting multiple users at the same time), and monitoring, then I highly suggest you take a look at at Shiny Server Pro.
 
 {: .box-note}
-If you're considering purchasing Shiny Server Pro, RStudio Connect, shinyapps.io, or any other RStudio product, or if you want to discuss their benefits, feel free to [contact me]({{ site.url }}/contact).
+If you're considering purchasing Shiny Server Pro, RStudio Connect, shinyapps.io, or any other RStudio product, or if you want to discuss their benefits, feel free to [contact me](/contact).
 
 ## Note 8.4: Hosting R Markdown (Rmd) documents on your Shiny Server {#host-rmd}
 
@@ -435,4 +435,4 @@ This is a list of the main blog/StackOverflow/random posts I had to consult whil
 
 ## Disclaimer
 
-I'm not a sysadmin and a lot of this stuff was learned very quickly from random Googling, so it's very possible that some steps here are not the very best way of performing some tasks. If anyone has any comments on anything in this document, I'd love to [hear about it]({{ site.url }}/aboutme#contact)!
+I'm not a sysadmin and a lot of this stuff was learned very quickly from random Googling, so it's very possible that some steps here are not the very best way of performing some tasks. If anyone has any comments on anything in this document, I'd love to [hear about it](/contact)!

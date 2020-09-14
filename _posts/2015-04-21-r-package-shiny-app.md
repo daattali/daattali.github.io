@@ -1,7 +1,7 @@
 ---
 title: "Supplementing your R package with a Shiny app"
 tags: [rstats, shiny, packages, tutorial]
-share-img: "https://deanattali.com/img/blog/ggExtra/ggmarginal-basic-example.png"
+share-img: "/assets/img/blog/ggExtra/ggmarginal-basic-example.png"
 date: 2015-04-21 22:00:00 -0700
 permalink: /2015/04/21/r-package-shiny-app/
 last-updated: 2018-04-03
@@ -27,7 +27,7 @@ There are two ways to complement a package with a Shiny app that shows its main 
 
 #### 1. Host the Shiny app online
 
-You can host your Shiny app somewhere that is publicly available, such as [shinyapps.io](http://www.shinyapps.io/) or on your own [Shiny Server](https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean). Then you can include a link in the package's README or vignette or function documentation that points to the Shiny app.
+You can host your Shiny app somewhere that is publicly available, such as [shinyapps.io](https://www.shinyapps.io/) or on your own [Shiny Server](/2015/05/09/setup-rstudio-shiny-server-digital-ocean). Then you can include a link in the package's README or vignette or function documentation that points to the Shiny app.
 
 As an example, I host [my own Shiny Server](https://daattali.com/shiny) where I can host my Shiny apps, and whenever I release a new package, I include a link in the README to a demo app.
 
@@ -105,7 +105,7 @@ Now running `runExample("myapp")` will launch the "myapp" app, and running `runE
 
 The solution that I end up using most often myself is a combination of both of the above. I like to supplement my pacakges with a shiny app (or sometimes create a package that is mostly a shiny app), and showcase it on my [shiny server](https://daattali.com/shiny/).
 
-To do that, follow the instructions above to create a package. Then follow [my instructions to create a shiny server](https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/) and make sure to install your new package. The last step is to make your new package's shiny app runnable from the shiny server; simply create a file `/srv/shiny-server/myapp/app.R` with the following code:
+To do that, follow the instructions above to create a package. Then follow [my instructions to create a shiny server](/2015/05/09/setup-rstudio-shiny-server-digital-ocean/) and make sure to install your new package. The last step is to make your new package's shiny app runnable from the shiny server; simply create a file `/srv/shiny-server/myapp/app.R` with the following code:
 
 ```r
 dir <- system.file("shiny-examples", "myapp", package = "mypackage")

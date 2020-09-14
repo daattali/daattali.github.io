@@ -1,7 +1,7 @@
 ---
 title: "Beautiful Jekyll v4: Huge updates to one of the most popular GitHub Pages themes"
 tags: [jekyll, github, blog, beautifuljekyll]
-share-img: "https://deanattali.com/assets/img/blog/beautiful-jekyll.png"
+share-img: "/assets/img/blog/beautiful-jekyll.png"
 permalink: /blog/beautifuljekyll4/
 date: 2020-07-17 11:00:00 -0400
 gh-repo: daattali/beautiful-jekyll
@@ -21,7 +21,7 @@ Starting from day 1, the goal with [Beautiful Jekyll](https://beautifuljekyll.co
 
 Then COVID-19 happened. 
 
-I found myself stuck at home and had some time to dedicate to many of my [projects](https://deanattali.com/projects/). The past several months have been a very long journey with hundreds of hours (not an exaggeration) and some very (VERY) late nights, but I'm happy to announce that Beautiful Jekyll has graduated from v1 to v4. Yes, that's right, it jumped 3 major versions! I was planning on just doing a v2, but I kept getting excited by more big changes and I couldn't stop until I was fully satisfied. 
+I found myself stuck at home and had some time to dedicate to many of my [projects](/projects/). The past several months have been a very long journey with hundreds of hours (not an exaggeration) and some very (VERY) late nights, but I'm happy to announce that Beautiful Jekyll has graduated from v1 to v4. Yes, that's right, it jumped 3 major versions! I was planning on just doing a v2, but I kept getting excited by more big changes and I couldn't stop until I was fully satisfied. 
 
 ## What changed?
 
