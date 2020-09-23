@@ -1,5 +1,5 @@
 ---
-title: "How to set up multiple GitHub Pages websites with custom domains"
+title: "How to set up MULTIPLE GitHub Pages websites with custom domains"
 tags: [blog, github]
 thumbnail-img: /assets/img/blog/multiplegithubpages/githubpages.png
 permalink: /blog/multiple-github-pages-domains/
