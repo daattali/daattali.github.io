@@ -41,6 +41,9 @@ Last month, I decided to move my consulting website, `attalitech.com`, to use Gi
 
 My problem was that I couldn't find any documentation on how to do that. There's ample documentation on how to set up either a User Site or a Project Site with a custom URL, but no information about having both together. I still wanted all my other repositories to be `deanattali.com/<projectname>`, but for this particular repository I wanted to have a different URL. I did find some other people who asked about this, but there was never any clear answer given, and some people even said it can't be done. One thing that makes it particularly annoying to troubleshoot is that whenever you're dealing with URL/DNS settings, it can take a few hours for changes to take effect. This is why I decided to write this post, to save time for the next person.
 
+{:.box-warning}
+You might notice that all my GitHub websites have a similar look ([deanattali.com](https://deanattali.com), [attalitech.com](https://attalitech.com), [beautifuljekyll.com](https://beautifuljekyll.com), [shinyjs](https://deanattali.com/shinyjs)). If you want to build a similar GitHub Pages site then you can use my theme [Beautiful Jekyll](https://beautifuljekyll.com).
+
 ## The Solution {#solution}
 
 This might sound trivial, but the solution to setting up a User Site and a Project Site with different domains is actually very simple: you repeat the exact same steps for both. I know this sounds crazy simple, but Step 4 below is mostly what confused me (and other people on the internet who asked the same question and weren't given an answer).
