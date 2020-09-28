@@ -3,7 +3,7 @@ title: "Exciting updates to my top 4 Shiny packages"
 tags: [rstats, packages, shiny, shinyjs]
 thumbnail-img: /assets/img/blog/4shinyupdates/4packages.png
 permalink: /blog/4shinyupdates/
-share-description: "In this post I'm not announcing any new packages; instead I want to let you know about how I spent much of my COVID lockdown time by releasing major updates to 4 of my most popular Shiny packages: {shinyalert}, {shinyjs}, {timevis}, and {colourpicker}."
+share-description: "In this post I'm not announcing any new packages; instead I'm releasing major updates to 4 of my most popular Shiny packages: {shinyalert}, {shinyjs}, {timevis}, and {colourpicker}."
 date: 2020-09-29 11:00:00 -0400
 ---
 
