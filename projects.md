@@ -33,31 +33,33 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 ## R packages
 
-- **[shinyjs](https://deanattali.com/shinyjs)** - Easily improve UX in your Shiny apps, adds useful features to Shiny apps, and call your own JavaScript functions using plain R code.  Also includes a colour picker.  Check out a [demo online](https://deanattali.com/shinyjs/demo). Available [on CRAN](https://cran.r-project.org/package=shinyjs) and [on GitHub](https://github.com/daattali/shinyjs).
+- **[shinyjs](https://deanattali.com/shinyjs)** - Easily improve UX in your Shiny apps, adds useful features to Shiny apps, and call your own JavaScript functions using plain R code.  Also includes a colour picker.  Check out a [demo online](https://deanattali.com/shinyjs/demo). 
 
-- **[timevis](https://github.com/daattali/timevis)** - Create interactive timeline visualizations in R (can be embedded into Shiny apps and R markdown documents, or simply viewed from the R console). Check out a [demo online](https://daattali.com/shiny/timevis-demo/). Available [on CRAN](https://cran.r-project.org/package=timevis) and [on GitHub](https://github.com/daattali/timevis).
+- **[timevis](https://github.com/daattali/timevis)** - Create interactive timeline visualizations in R (can be embedded into Shiny apps and R markdown documents, or simply viewed from the R console). Check out a [demo online](https://daattali.com/shiny/timevis-demo/).
 
-- **[colourpicker](https://github.com/daattali/colourpicker)** - A colour picker tool for Shiny and for selecting colours in plots. Available [on CRAN](https://cran.r-project.org/package=colourpicker) and [on GitHub](https://github.com/daattali/colourpicker).
+- **[colourpicker](https://github.com/daattali/colourpicker)** - A colour picker tool for Shiny and for selecting colours in plots.
 
-- **[shinyalert](https://github.com/daattali/shinyalert)** - Easily create pretty popup messages (modals) in Shiny. Check out a [demo online](https://daattali.com/shiny/shinyalert-demo/). Available [on CRAN](https://cran.r-project.org/package=shinyalert) and [on GitHub](https://github.com/daattali/shinyalert).
+- **[shinyalert](https://github.com/daattali/shinyalert)** - Easily create pretty popup messages (modals) in Shiny. Check out a [demo online](https://daattali.com/shiny/shinyalert-demo/).
 
-- **[addinslist](https://github.com/daattali/addinslist)** - Browse through a continuously updated list of existing RStudio addins and install/uninstall their corresponding packages. Available [on CRAN](https://cran.r-project.org/package=addinslist) and [on GitHub](https://github.com/daattali/addinslist).
+- **[addinslist](https://github.com/daattali/addinslist)** - Browse through a continuously updated list of existing RStudio addins and install/uninstall their corresponding packages.
 
-- **[shinycssloaders](https://github.com/daattali/shinycssloaders)** - Add loading animations to a Shiny output while it's re-calculating. Available [on CRAN](https://cran.r-project.org/package=shinycssloaders) and [on GitHub](https://github.com/daattali/shinycssloaders). Originally developed by Andrew Sali, I took ownership in 2019.
+- **[shinycssloaders](https://github.com/daattali/shinycssloaders)** - Add loading animations to a Shiny output while it's re-calculating. Originally developed by Andrew Sali, I took ownership in 2019.
 
-- **[shinydisconnect](https://github.com/daattali/shinydisconnect)** - Show a nice message when a shiny app disconnects or errors. Available [on GitHub](https://github.com/daattali/shinycssloaders).
+- **[shinydisconnect](https://github.com/daattali/shinydisconnect)** - Show a nice message when a shiny app disconnects or errors.
 
-- **[ggExtra](https://github.com/daattali/ggExtra)** - Easily add histograms/density plots to ggplot2 scatterplots, plus a few more ggplot2 convenience functions. Check out a [demo online](https://daattali.com/shiny/ggExtra-ggMarginal-demo/). Available [on CRAN](https://cran.r-project.org/package=ggExtra) and [on GitHub](https://github.com/daattali/ggExtra).
+- **[shinyscreenshot](https://github.com/daattali/shinyscreenshot)** - Capture screenshots of entire pages or parts of pages in Shiny apps.
 
-- **[cometr](https://github.com/daattali/cometr)** - A convenient R wrapper to the 'Comet' API, providing easy interaction with the 'Comet' cloud platform for tracking and optimizing machine learning models. Available [on CRAN](https://cran.r-project.org/package=cometr) and [on GitHub](https://github.com/daattali/cometr).
+- **[ggExtra](https://github.com/daattali/ggExtra)** - Easily add histograms/density plots to ggplot2 scatterplots, plus a few more ggplot2 convenience functions. Check out a [demo online](https://daattali.com/shiny/ggExtra-ggMarginal-demo/).
 
-- **[ezknitr](https://github.com/daattali/ezknitr)** - Avoid the typical working directory pain when using 'knitr'. If you're into R and reproducible research/generating reports with knitr, then do check it out. Available [on CRAN](https://cran.r-project.org/package=ezknitr) and [on GitHub](https://github.com/daattali/ezknitr).
+- **[cometr](https://github.com/daattali/cometr)** - A convenient R wrapper to the 'Comet' API, providing easy interaction with the 'Comet' cloud platform for tracking and optimizing machine learning models.
 
-- **[shinyforms](https://github.com/daattali/shinyforms)** - Easily create questionnaire-type forms with Shiny. Check out a [demo online](https://daattali.com/shiny/mimic-google-form/). Available [on GitHub](https://github.com/daattali/ggExtra) (still in development).
+- **[ezknitr](https://github.com/daattali/ezknitr)** - Avoid the typical working directory pain when using 'knitr'. If you're into R and reproducible research/generating reports with knitr, then do check it out.
 
-- **[ddpcr](https://github.com/daattali/ddpcr)** - Analyze and visualize droplet digital PCR data. Check out a [demo online](https://daattali.com/shiny/ddpcr/). Available [on CRAN](https://cran.r-project.org/package=ddpcr) and [on GitHub](https://github.com/daattali/ddpcr). Manuscript in [F1000Research](https://f1000research.com/articles/5-1411/v1).
+- **[shinyforms](https://github.com/daattali/shinyforms)** - Easily create questionnaire-type forms with Shiny. Check out a [demo online](https://daattali.com/shiny/mimic-google-form/). (In development, looking for funding).
 
-- **[lightsout](https://github.com/daattali/lightsout)** - An implementation of the puzzle game Lights Out using R. [Play the game online](https://daattali.com/shiny/lightsout/). Available [on CRAN](https://cran.r-project.org/package=lightsout) and [on GitHub](https://github.com/daattali/lightsout).
+- **[ddpcr](https://github.com/daattali/ddpcr)** - Analyze and visualize droplet digital PCR data. Check out a [demo online](https://daattali.com/shiny/ddpcr/). Manuscript in [F1000Research](https://f1000research.com/articles/5-1411/v1).
+
+- **[lightsout](https://github.com/daattali/lightsout)** - An implementation of the puzzle game Lights Out using R. [Play the game online](https://daattali.com/shiny/lightsout/).
 
 ## Chrome / Firefox extensions
 
