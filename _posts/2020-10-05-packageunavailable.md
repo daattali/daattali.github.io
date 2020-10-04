@@ -63,7 +63,7 @@ If the package doesn't have its own GitHub repository, another option is to use 
 
 #### Option 3: Install an archived CRAN version {#deleted-archive}
 
-Just last week, I tried running a very old script of mine that used the `ProbitSpatial` package. The CRAN page for the package tells me that the package was archived a few months ago. When a package is archived, any previous versions that were released to CRAN in the past are available in CRAN's archive of that package. By looking at the archive you can see what versions exist, and any version in CRAN's archive can be installed using `devtools::install_version()`. In my case, there was a version "1.0" in the archive, so I could install the package with `devtools::install_version("ProbitSpatial", "1.0")`.
+Just last week, I tried running a very old script of mine that used the `ProbitSpatial` package. The [CRAN page](https://cran.r-project.org/package=ProbitSpatial) for the package tells me that the package was archived a few months ago. When a package is archived, any previous versions that were released to CRAN in the past are available in CRAN's archive of that package. By looking at the archive you can see what versions exist, and any version in CRAN's archive can be installed using `devtools::install_version()`. In my case, there was a version "1.0" in the archive, so I could install the package with `devtools::install_version("ProbitSpatial", "1.0")`.
 
 #### Option 4: Install from source {#deleted-source}
 
