@@ -2,7 +2,7 @@
 
 > *Copyright 2020 [Dean Attali](https://deanattali.com). Licensed under the MIT license.*
 
-Dean Attali's website [https://deanattali.com](https://deanattali.com)
+Amazing Dean Attali's website [https://deanattali.com](https://deanattali.com)
 
 The theme for this website has been open-sourced as [Beautiful Jekyll](https://beautifuljekyll.com/).
 
