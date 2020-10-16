@@ -249,7 +249,7 @@ shinyApp(ui = ui, server = server)
 
 ## 5.5 All UI functions are simply HTML wrappers
 
-This was already mentioned, but it's important to remember: the enire UI is just HTML, and Shiny simply gives you easy tools to write it without having to know HTML. To convince yourself of this, look at the output when printing the contents of the `ui` variable.
+This was already mentioned, but it's important to remember: the entire UI is just HTML, and Shiny simply gives you easy tools to write it without having to know HTML. To convince yourself of this, look at the output when printing the contents of the `ui` variable.
 
 
 
