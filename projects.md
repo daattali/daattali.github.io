@@ -17,7 +17,7 @@ I'm also [**available for consulting**](/shiny), so feel free to [contact me](/c
 
 ## Courses
 
-I have an interactive, online video course ["Case Studies in Shiny"](https://www.datacamp.com/courses/building-web-applications-in-r-with-shiny-case-studies) hosted on DataCamp. It's designed to give you practice building Shiny apps for real-life scenarios, while also helping your learn some advanced Shiny concepts. At the time of writing, 2.5 years after it was released, this course is the __#2 best-rated course on DataCamp__.
+I have an interactive, online video course ["Case Studies in Shiny"](https://www.datacamp.com/courses/case-studies-building-web-applications-with-shiny-in-r) hosted on DataCamp. It's designed to give you practice building Shiny apps for real-life scenarios, while also helping your learn some advanced Shiny concepts. At the time of writing, 2.5 years after it was released, this course is the __#2 best-rated course on DataCamp__.
 
 ## Website templates
 
