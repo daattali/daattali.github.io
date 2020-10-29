@@ -8,7 +8,7 @@ date: 2020-10-29 11:00:00 -0400
 carbonads-sm-horizontal: true
 ---
 
-If you're impatient and want to watch the video immediately, you can [watch it directly on YouTube](https://youtu.be/sP_VB9OFJP0?start=45). Just remember to subscribe after so you won't miss my next videos!
+If you're impatient and want to watch the video immediately, you can [watch it directly on YouTube](https://youtu.be/sP_VB9OFJP0?start=45). *Just remember to subscribe so you won't miss my next videos!*
 
 ## Table of contents
 
@@ -75,7 +75,7 @@ After getting over my embarrassment and making sure my YouTube channel is cleane
 
 ## Into the future {#future}
 
-If I continue to get good response, I might make more videos. There are more debugging session videos I could make, and a lot of other Shiny content inside of me that I'd like to share. 
+If I continue to get good response, I might make more videos. Make sure to subscribe on YouTube so you won't miss my next videos! There are more debugging session videos I could make, and a lot of other Shiny content inside of me that I'd like to share. 
 
 I think my brother is right and I should at least invest in a microphone for any future videos. So I asked Eric Nantz (host of [The R Podcast](https://r-podcast.org/) and [Shiny Developer Series](https://shinydevseries.com/)) for suggestions, and I already placed an order for a fancy microphone.
 
