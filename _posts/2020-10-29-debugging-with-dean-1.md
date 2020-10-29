@@ -4,7 +4,7 @@ subtitle: "I wanted to solve a real bug in real-time, to show you my thought pro
 thumbnail-img: "/assets/img/blog/debugging-with-dean-1/cover.png"
 tags: [rstats, shiny, tutorial, youtube]
 permalink: /blog/debugging-with-dean-1/
-date: 2020-10-28 11:00:00 -0400
+date: 2020-10-29 11:00:00 -0400
 carbonads-sm-horizontal: true
 ---
 
