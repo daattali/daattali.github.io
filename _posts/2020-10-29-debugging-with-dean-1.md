@@ -24,7 +24,7 @@ If you're impatient and want to watch the video immediately, you can [watch it d
 
 A few days ago, [a bug report](https://github.com/daattali/timevis/issues/103) was opened in one of my R packages {timevis}. I wasn't able to reproduce the issue, so I asked the submitter to share his exact input data. 
 
-This was not unusual for me. Between all my packages, tutorials, and other online content, I'm often asked to look at a bug in a Shiny app. My clients also commonly ask me for help finding a bug in a complex app, and along with fixing the issue at hand, I've also developed a habit of sending them detailed emails with a walkthrough of my exact debugging process. I've received very positive feedback from these emails, and I've been told many times that I should share my debugging process with more people.
+This was not unusual for me. Between all my packages, tutorials, and other online content, I'm often asked to look at a bug in a Shiny app. My clients also commonly ask me for help troubleshooting and fixing bugs in their complex apps. Along with fixing the issue at hand, I've also developed a habit of sending them detailed emails with a walkthrough of my exact debugging process. I've received very positive feedback from these emails, and I've been told many times that I should share my debugging process with more people.
 
 ## A typical Saturday morning {#making}
 
@@ -50,7 +50,7 @@ I announced it on Twitter immediately.
 
 Despite the poor equipment and set up, I was very surprised by the amount of positive response. Right away I was getting views, likes, comments, even people subscribing to my "channel" which I never meant for. It was overwhelming!
 
-Even though the "bug" in the video was very simple and was "solved" in less than a minute, I've gotten feedback that viewers still got a lot out of the video, just by seeing my process. The fact that I used a real-life example, my demonstration of good practices that are always taught but were shown in practice, showing why a reprex is useful, talking about what I do with my working environment before I even begin, showing my productivity keyboard shotcuts, reviewing documentation as part of debugging, the authenticity of it all... I was very happy that people found value in it.
+Even though the "bug" in the video was very simple and was "solved" in less than a minute, viewers told me that they still got a lot out of the video, just by seeing my process: The fact that I used a real-life example, my demonstration of good practices and why they help me, showing why a reprex is useful, talking about what I do with my working environment before I begin, showing my productivity keyboard shotcuts, reviewing documentation as part of debugging, the authenticity of it all... I was very happy that people found value in it :)
 
 This was all very encouraging. But I did remove my announcement of the video after a few minutes because of one issue...
 
