@@ -8,7 +8,7 @@ date: 2020-10-29 11:00:00 -0400
 carbonads-sm-horizontal: true
 ---
 
-If you're impatient and want to watch the video immediately, you can [watch it directly on YouTube](https://youtu.be/sP_VB9OFJP0?start=45).
+If you're impatient and want to watch the video immediately, you can [watch it directly on YouTube](https://youtu.be/sP_VB9OFJP0?start=45). Just remember to subscribe after so you won't miss my next videos!
 
 ## Table of contents
 
