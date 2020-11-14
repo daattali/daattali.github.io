@@ -4,7 +4,7 @@ subtitle: "Debugging with Dean series: Instead of waiting for RStudio to fix a b
 thumbnail-img: "/assets/img/blog/debugging-with-dean-1/pr-to-shiny-live.png"
 tags: [rstats, shiny, tutorial, youtube]
 permalink: /blog/debuggingwithdean-pr-to-shiny-live/
-date: 2020-11-14 11:30:00 -0500
+date: 2020-11-14 12:00:00 -0500
 ---
 
 The "Debugging with Dean" educational video series is in full force, and in this video I do something a little risky: I submit a pull request into {shiny} in real-time. 
