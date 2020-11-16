@@ -15,6 +15,10 @@ I'm also [**available for consulting**](/shiny), so feel free to [contact me](/c
 
 ---
 
+## Educational videos
+
+My [YouTube channel](http://youtube.com/c/daattali?sub_confirmation=1) contains educational videos on various R/Shiny/programming topics for all levels. New content is always added, so make sure to [subscribe](http://youtube.com/c/daattali?sub_confirmation=1) to know about new videos.
+
 ## Courses
 
 I have an interactive, online video course ["Case Studies in Shiny"](https://www.datacamp.com/courses/case-studies-building-web-applications-with-shiny-in-r) hosted on DataCamp. It's designed to give you practice building Shiny apps for real-life scenarios, while also helping your learn some advanced Shiny concepts. At the time of writing, 2.5 years after it was released, this course is the __#2 best-rated course on DataCamp__.
