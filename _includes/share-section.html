@@ -13,14 +13,8 @@
       {% capture urltwitter %}{{ urltwitter }}&text={{ page.title | truncate: maxlength | url_encode }}{% endcapture %}    
 
       <div class="share-buttons">
-        <a href="{{ urltwitter }}" data-ga-event=1 data-ga-category="share" data-ga-action="twitter" data-ga-label="{{ page.url }}">Tweet it </a>
-
         <a href="https://github.com/sponsors/daattali" data-ga-event=1 data-ga-category="share" data-ga-action="sponsor" data-ga-label="{{ page.url }}">
-          Support my work
-        </a>
-
-        <a href="https://www.paypal.me/daattali" data-ga-event=1 data-ga-category="share" data-ga-action="donate" data-ga-label="{{ page.url }}">
-          Donate
+          Support my work ❤️
         </a>
       </div>
     {% endif %}
@@ -31,7 +25,7 @@
         <div id="mc_embed_signup-share">
           <form action="//deanattali.us14.list-manage.com/subscribe/post?u=a579a88c8f09f9b8502b9d0c3&amp;id=c180f5773c" method="post" id="mc-embedded-subscribe-form-share" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
             <div id="mc_embed_signup_scroll-share">
-      	      <label for="mce-EMAIL-share">Sign up to my Shiny newsletter</label>
+      	      <label for="mce-EMAIL-share">Sign up to receive updates when I have new content!</label>
               <div class="container">
                 <div class="row">
                   <div class="col-sm-8 col-12">
