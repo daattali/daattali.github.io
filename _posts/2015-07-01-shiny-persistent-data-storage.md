@@ -3,7 +3,7 @@ title: "Persistent data storage in Shiny apps"
 tags: [rstats, shiny, tutorial, popular]
 share-description: "Learn the different ways to incorporate databases and other storage solutions into R-Shiny applications."
 date: 2015-07-01 15:00:00 -0700
-last-updated: 2017-10-06
+last-updated: 2020-11-18
 ---
 
 > This article is also published on [RStudio's Shiny Articles](https://shiny.rstudio.com/articles/persistent-data-storage.html)
@@ -433,7 +433,7 @@ You can use the [`mongolite`](https://github.com/jeroenooms/mongolite) package t
 library(mongolite)
 
 options(mongodb = list(
-  "host" = "ds012345.mongolab.com:61631",
+  "host" = "ds012345.mlab.com:61631",
   "username" = "myuser",
   "password" = "mypassword"
 ))
