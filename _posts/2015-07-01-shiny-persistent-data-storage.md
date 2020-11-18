@@ -140,7 +140,7 @@ Here is a summary of the different storage types we will learn to use.
 | Amazon S3         | Arbitrary data       |               |       YES      | aws.s3       |
 | SQLite            | Structured data      |      YES      |                | RSQLite      |
 | MySQL             | Structured data      |      YES      |       YES      | RMySQL       |
-| Google Sheets     | Structured data      |               |       YES      | googlesheets |
+| Google Sheets     | Structured data      |               |       YES      | googlesheets4 |
 | MongoDB           | Semi-structured data |      YES      |       YES      | mongolite    |
 
 ## Store arbitrary data in a file {#file}
@@ -387,29 +387,27 @@ loadData <- function() {
 
 If you don’t want to deal with the formality and rigidity of a database, another option for storing tabular data is in a Google Sheet. One nice advantage of Google Sheets is that they are easy to access from anywhere; but unlike with databases, with Google Sheets data can be overwritten with multiple concurrent users.
 
-You can use the [`googlesheets`](https://github.com/jennybc/googlesheets) package to interact with Google Sheets from R. To connect to a specific sheet, you will need either the sheet’s title or key (preferably key, as it is unique). It is very easy to store or retrieve data from a Google Sheet, as the code below shows.
+You can use the [`googlesheets4`](https://github.com/tidyverse/googlesheets4) package to interact with Google Sheets from R.
 
-**Setup:** All you need to do is create a Google Sheet and set the top row with the names of the fields. You can do that either via a web browser or by using the `googlesheets` package. You also need to have a Google account. The `googlesheets` package uses a similar approach to authentication as `rdrop2`, and thus you also need to authenticate in a similar fashion, such as by copying a valid `.httr-oauth` file to your Shiny directory.
+**Setup:** All you need to do is create a Google Sheet and set the top row with the names of the fields. You can do that either via a web browser or by using the `googlesheets4` package. You also need to have a Google account. Now if you try to get R to write to a Google Sheet, R will ask for your permission explicitly every time. In a Shiny app, you probably want to be able to write to Google Sheets automatically without having to authorize it every time manually, so you need to set up {googlesheets4} with authentication. To learn how to add this authentication, refer to the package documentation.
 
 **Code:**
 
 ```r
-library(googlesheets)
+library(googlesheets4)
 
 table <- "responses"
 
 saveData <- function(data) {
-  # Grab the Google Sheet
-  sheet <- gs_title(table)
+  # The data must be a dataframe rather than a named vector
+  data <- data %>% as.list() %>% data.frame()
   # Add the data as a new row
-  gs_add_row(sheet, input = data)
+  sheet_append(SHEET_ID, data)
 }
 
 loadData <- function() {
-  # Grab the Google Sheet
-  sheet <- gs_title(table)
   # Read the data
-  gs_read_csv(sheet)
+  read_sheet(SHEET_ID)
 }
 ```
 
@@ -482,5 +480,5 @@ The following table can serve as a reminder of the different storage types and w
 | Amazon S3         | Arbitrary data       |               |       YES      | aws.s3       |
 | SQLite            | Structured data      |      YES      |                | RSQLite      |
 | MySQL             | Structured data      |      YES      |       YES      | RMySQL       |
-| Google Sheets     | Structured data      |               |       YES      | googlesheets |
+| Google Sheets     | Structured data      |               |       YES      | googlesheets4 |
 | MongoDB           | Semi-structured data |      YES      |       YES      | mongolite    |
