@@ -2,7 +2,7 @@
 title: "Building Shiny apps - an interactive tutorial"
 date: 2015-12-07 10:00:00 -0700
 tags: [rstats, shiny, tutorial, popular]
-share-img: /assets/img/blog/shiny-tutorial/shiny-addplot.png
+thumbnail-img: /assets/img/blog/shiny-tutorial/thumbnail.png
 share-description: "Learn how to build your basic to intermediate Shiny apps using a tutorial that's been used in university classrooms worldwide!"
 last-updated: 2020-04-25
 carbonads-sm-horizontal: true
