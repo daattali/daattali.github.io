@@ -424,11 +424,11 @@ There are many NoSQL databases available, but here we will only show how to use 
 
 ### 7. MongoDB (**local or remote**) {#mongodb}
 
-MongoDB is one of the most popular NoSQL databases, and just like MySQL it can be hosted either locally or remotely. There are many web services that offer mongoDB hosting, including [mLab](https://mlab.com/) which gives you free mongoDB databases. In mongoDB, entries (in our case, responses) are stored in a *collection* (the equivalent of an S3 bucket or a SQL table).
+MongoDB is one of the most popular NoSQL databases, and just like MySQL it can be hosted either locally or remotely. There are many web services that offer mongoDB hosting, including [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) which gives you free mongoDB databases. In mongoDB, entries (in our case, responses) are stored in a *collection* (the equivalent of an S3 bucket or a SQL table).
 
-You can use the [`mongolite`](https://github.com/jeroenooms/mongolite) package to interact with mongoDB from R. As with the relational database methods, all we need to do in order to save/load data is connect to the database and submit the equivalent of an update or select query. To connect to the database you need to provide the following: db, host, username, password. When saving the data, `mongolite` requires the data to be in a data.frame format.
+You can use the [`mongolite`](https://github.com/jeroen/mongolite) package to interact with mongoDB from R. As with the relational database methods, all we need to do in order to save/load data is connect to the database and submit the equivalent of an update or select query. To connect to the database you need to provide the following: db, host, username, password. When saving the data, `mongolite` requires the data to be in a data.frame format.
 
-**Setup:** All you need to do is create a mongoDB database—either locally or using a web service such as mLab. Since there is no schema, it is not mandatory to create a collection before populating it.
+**Setup:** All you need to do is create a mongoDB database—either locally or using a web service such as MongoDB Atlas. Since there is no schema, it is not mandatory to create a collection before populating it.
 
 **Code:**
 
@@ -436,7 +436,7 @@ You can use the [`mongolite`](https://github.com/jeroenooms/mongolite) package t
 library(mongolite)
 
 options(mongodb = list(
-  "host" = "ds012345.mlab.com:61631",
+  "host" = "cluster0.1twdg.mongodb.net",
   "username" = "myuser",
   "password" = "mypassword"
 ))
@@ -447,11 +447,13 @@ saveData <- function(data) {
   # Connect to the database
   db <- mongo(collection = collectionName,
               url = sprintf(
-                "mongodb://%s:%s@%s/%s",
+                "mongodb+srv://%s:%s@%s/%s",
                 options()$mongodb$username,
                 options()$mongodb$password,
                 options()$mongodb$host,
-                databaseName))
+                databaseName
+              ),
+              options = ssl_options(weak_cert_validation = TRUE))
   # Insert the data into the mongo collection as a data.frame
   data <- as.data.frame(t(data))
   db$insert(data)
@@ -461,11 +463,13 @@ loadData <- function() {
   # Connect to the database
   db <- mongo(collection = collectionName,
               url = sprintf(
-                "mongodb://%s:%s@%s/%s",
+                "mongodb+srv://%s:%s@%s/%s",
                 options()$mongodb$username,
                 options()$mongodb$password,
                 options()$mongodb$host,
-                databaseName))
+                databaseName
+              ),
+              options = ssl_options(weak_cert_validation = TRUE))
   # Read all the entries
   data <- db$find()
   data
