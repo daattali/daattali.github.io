@@ -234,7 +234,7 @@ loadData <- function() {
 
 ### 3. Amazon S3 (**remote**) {#s3}
 
-Another popular alternative to Dropbox for hosting files online is [Amazon S3](http://aws.amazon.com/s3/), or *S3* in short. Just like with Dropbox, you can host any type of file on S3, but instead of placing files inside directories, in S3 you place files inside of *buckets*. You can use the [`aws.s3`](https://github.com/cloudyr/aws.s3) package to interact with S3 from R. Note that the package is not yet on CRAN so you will have to look at its README for installation instructions.
+Another popular alternative to Dropbox for hosting files online is [Amazon S3](http://aws.amazon.com/s3/), or *S3* in short. Just like with Dropbox, you can host any type of file on S3, but instead of placing files inside directories, in S3 you place files inside of *buckets*. You can use the [`aws.s3`](https://github.com/cloudyr/aws.s3) package to interact with S3 from R.
 
 **Setup:** You need to have an [Amazon Web Services](http://aws.amazon.com/) account and to create an S3 bucket to store the responses. As the [package documentation explains](https://github.com/cloudyr/aws.s3), you will need to set a few environment variables in order to call the API.
 
