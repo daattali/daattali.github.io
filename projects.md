@@ -107,6 +107,7 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
   - 2017 useR Conference (Brussels, Belgium) ([Video](https://www.youtube.com/watch?v=eq8TUOxpBpM))  
   - 2018 RStudio Conf (San Diego, USA)  
 - **Interviews:**   
+  - [Shiny Dev Series Episode 17: Dean Attali](https://www.youtube.com/watch?v=yRGJDtOUP3Y)
   - [R-Podcast Episode 16: Interview with Dean Attali](https://r-podcast.org/posts/the-r-podcast-episode-16-interview-with-dean-attali.html)   
   - [R-Podcast Episode 19](https://r-podcast.org/episode/019-talking-shiny-at-rstudio-conf-with-barbara-borges-and-dean-attali/)  
   - [Ask-me-anything at CodeForCash](https://codefor.cash/dean_attali_ama.php)  
