@@ -13,7 +13,7 @@ The "Debugging with Dean" educational video series is in full force, and in this
   <a class="btn btn-lg btn-cta" href="https://youtu.be/4gfE5BXXj-c"><i class="fab fa-youtube"></i> Watch on YouTube</a>
 </div>
 
-As always, I would warmly welcome any comments, including constructive criticism so I can improve. If you have anything to share, please do let me know in the comments on YouTube. If you like my videos, make sure to [subscribe](https://www.youtube.com/channel/daattali?sub_confirmation=1) so that I'll know to keep making more!
+As always, I would warmly welcome any comments, including constructive criticism so I can improve. If you have anything to share, please do let me know in the comments on YouTube. If you like my videos, make sure to [subscribe](https://www.youtube.com/c/daattali?sub_confirmation=1) so that I'll know to keep making more!
 
 <div class="youtube-embed-container">
 <iframe src="https://www.youtube-nocookie.com/embed/4gfE5BXXj-c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
