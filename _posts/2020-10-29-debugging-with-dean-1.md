@@ -68,8 +68,7 @@ After getting over my embarrassment and making sure my YouTube channel is cleane
   <a class="btn btn-lg btn-cta" href="https://youtu.be/sP_VB9OFJP0?start=45"><i class="fab fa-youtube"></i> Watch on YouTube</a>
 </div>
 
-<style>.embed-container { position: relative; margin-top: 20px; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
-<div class="embed-container">
+<div class="youtube-embed-container">
 <iframe src="https://www.youtube-nocookie.com/embed/sP_VB9OFJP0?start=45" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
