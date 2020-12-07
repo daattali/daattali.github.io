@@ -1,5 +1,5 @@
 ---
-title: "How isolate() can bite you in the butt"
+title: "[Video] How isolate() can bite you in the butt"
 subtitle: "Debugging with Dean episode 2: Find out what mistake to avoid when using isolate()"
 thumbnail-img: "/assets/img/blog/debugging-with-dean-1/episode2.png"
 tags: [rstats, shiny, tutorial, youtube]
@@ -13,4 +13,8 @@ I'll keep it short: The first episode of Debugging with Dean was a success, so I
   <a class="btn btn-lg btn-cta" href="https://youtu.be/tMW_haGB2rY"><i class="fab fa-youtube"></i> Watch on YouTube</a>
 </div>
 
-As always, I would warmly welcome any comments, including constructive criticism so I can improve. If you like my videos, make sure to [subscribe](https://www.youtube.com/channel/UCR3No6pYhA1S7FZ0PbLKlgQ?sub_confirmation=1) so that I'll know to keep making more!
+As always, I would warmly welcome any comments, including constructive criticism so I can improve. Leave all those comments on the video on YouTube. If you like my videos, make sure to [subscribe](https://www.youtube.com/channel/daattali?sub_confirmation=1) so that I'll know to keep making more!
+
+<div class="youtube-embed-container">
+<iframe src="https://www.youtube-nocookie.com/embed/tMW_haGB2rY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
