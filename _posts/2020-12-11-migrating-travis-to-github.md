@@ -77,7 +77,7 @@ Because of this billing change, I finally have a very good reason to move away f
 
 So how do we move away from Travis and use GitHub Actions instead? Below is the process I used with [{shinyjs}](https://github.com/daattali/shinyjs). If you don't currently use Travis or any other CI/CD service, you can just skip the first step.
 
-### 1. Remove Travis from your project {#step1}
+### 1. Remove Travis from Your Project {#step1}
 
 This includes:
   
@@ -86,7 +86,7 @@ This includes:
 - Remove any references to Travis in the README, since you probably had a "build status" badge
 - Log into the [Travis CI](https://travis-ci.org/) website and remove the GitHub repository from using Travis
 
-### 2. Add a GitHub Action into your project {#step2}
+### 2. Add a GitHub Action into Your Project {#step2}
 
 You can do this manually. But luckily for us, the excellent [{usethis} package](https://github.com/r-lib/usethis) offers a super simple way to use GitHub Actions, by calling various functions. For my use case, I just want to use GitHub Actions to run CRAN checks after every commit or pull request, so I simply call `usethis::use_github_action_check_standard()`. If you look at the output in the console, it'll tell you exactly what steps were taken, and you'll be told that there is just one more step you should perform manually: add the status badge to the README.
 
