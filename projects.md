@@ -23,13 +23,14 @@ My [YouTube channel](http://youtube.com/c/daattali?sub_confirmation=1) contains 
 
 I have an interactive, online video course ["Case Studies in Shiny"](https://www.datacamp.com/courses/case-studies-building-web-applications-with-shiny-in-r) hosted on DataCamp. It's designed to give you practice building Shiny apps for real-life scenarios, while also helping your learn some advanced Shiny concepts. At the time of writing, 2.5 years after it was released, this course is the __#2 best-rated course on DataCamp__.
 
+## Web services
+
+- **[Rental Cashflow Calculator](http://cashflowcalc.com/)** - The quickest way to analyze your next investment rental property - written entirely in Shiny.
+- **[CRANalerts](https://cranalerts.com/)** - Get email alerts when a CRAN package gets updated - written entirely in Shiny.
+
 ## Website templates
 
  **[Beautiful Jekyll](https://beautifuljekyll.com/)** - a very popular Jekyll theme (__> 10k websites built__) I created when making this website.  You can [view a demo](https://beautifuljekyll.com/) or use it yourself to make a pretty website similar to this one by visiting the [project page](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it's designed to look great on both mobile devices and laptops.
-
-## Web services
-
-- **[CRANalerts](https://cranalerts.com/)** - Get email alerts when a CRAN package gets updated.
 
 ## R Shiny apps
 
