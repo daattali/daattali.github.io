@@ -343,7 +343,7 @@ Now that we can submit responses smoothly, it'd be nice to also be able to view 
 DT::dataTableOutput("responsesTable"),
 ```
 
-The main issue we need to solve in this section is how to retrieve all previous submissions. To do this, we'll look at all the files in the `responses` directory, read each one into a data.frame separately, and then use `dplyr::rbind_all` to concatenate all the responses together. Note that this will only work if all the response files have exactly the same fields, so if you change your app to add new fields, you'll probably need to either remove all previous submissions or make your own script to add a default value to the new field of all previous submissions.
+The main issue we need to solve in this section is how to retrieve all previous submissions. To do this, we'll look at all the files in the `responses` directory, read each one into a data.frame separately, and then use `do.call(rbind, data)` to concatenate all the responses together. Note that this will only work if all the response files have exactly the same fields, so if you change your app to add new fields, you'll probably need to either remove all previous submissions or make your own script to add a default value to the new field of all previous submissions.
 
 Here's our function that will retrieve all submissions and load them into a data.frame. You can define it in the global scope.
 
@@ -351,7 +351,7 @@ Here's our function that will retrieve all submissions and load them into a data
 loadData <- function() {
   files <- list.files(file.path(responsesDir), full.names = TRUE)
   data <- lapply(files, read.csv, stringsAsFactors = FALSE)
-  data <- dplyr::rbind_all(data)
+  data <- do.call(rbind, data)
   data
 }
 ```
