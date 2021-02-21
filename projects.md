@@ -38,37 +38,41 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 ## R packages
 
-- **[shinyjs](https://deanattali.com/shinyjs)** - Easily improve UX in your Shiny apps, adds useful features to Shiny apps, and call your own JavaScript functions using plain R code.  Also includes a colour picker.  Check out a [demo online](https://deanattali.com/shinyjs/demo). 
+- **[shinyjs](https://deanattali.com/shinyjs)** - 💡 Easily improve UX in your Shiny apps, adds useful features to Shiny apps, and call your own JavaScript functions using plain R code.  Also includes a colour picker. [Live demo](https://deanattali.com/shinyjs/demo)
 
-- **[timevis](https://github.com/daattali/timevis)** - Create interactive timeline visualizations in R (can be embedded into Shiny apps and R markdown documents, or simply viewed from the R console). Check out a [demo online](https://daattali.com/shiny/timevis-demo/).
+- **[timevis](https://github.com/daattali/timevis)** - 📅 Create interactive timeline visualizations in R (can be embedded into Shiny apps and R markdown documents, or simply viewed from the R console). [Live demo](https://daattali.com/shiny/timevis-demo/)
 
-- **[colourpicker](https://github.com/daattali/colourpicker)** - A colour picker tool for Shiny and for selecting colours in plots.
+- **[colourpicker](https://github.com/daattali/colourpicker)** - 🎨 A colour picker tool for Shiny and for selecting colours in plots. [Live demo](https://daattali.com/shiny/colourInput/)
 
-- **[shinyalert](https://github.com/daattali/shinyalert)** - Easily create pretty popup messages (modals) in Shiny. Check out a [demo online](https://daattali.com/shiny/shinyalert-demo/).
+- **[shinyalert](https://github.com/daattali/shinyalert)** - 🗯️ Easily create pretty popup messages (modals) in Shiny. [Live demo](https://daattali.com/shiny/shinyalert-demo/)
 
-- **[addinslist](https://github.com/daattali/addinslist)** - Browse through a continuously updated list of existing RStudio addins and install/uninstall their corresponding packages.
+- **[addinslist](https://github.com/daattali/addinslist)** - 📜 Browse through a continuously updated list of existing RStudio addins and install/uninstall their corresponding packages.
 
-- **[shinycssloaders](https://github.com/daattali/shinycssloaders)** - Add loading animations to a Shiny output while it's re-calculating. Originally developed by Andrew Sali, I took ownership in 2019.
+- **[shinycssloaders](https://github.com/daattali/shinycssloaders)** - ⌛ Add loading animations to a Shiny output while it's re-calculating. Originally developed by Andrew Sali, I took ownership in 2019. [Live demo](https://daattali.com/shiny/shinycssloaders-demo/)
 
-- **[shinydisconnect](https://github.com/daattali/shinydisconnect)** - Show a nice message when a shiny app disconnects or errors.
+- **[shinybrowser](https://github.com/daattali/shinybrowser)** - 🌐 Find out information about a user's web browser in Shiny apps. [Live demo](https://daattali.com/shiny/shinybrowser-demo/)
 
-- **[shinyscreenshot](https://github.com/daattali/shinyscreenshot)** - Capture screenshots of entire pages or parts of pages in Shiny apps.
+- **[shinydisconnect](https://github.com/daattali/shinydisconnect)** - 🔌 Show a nice message when a shiny app disconnects or errors. [Live demo](https://daattali.com/shiny/shinydisconnect-demo/)
 
-- **[ggExtra](https://github.com/daattali/ggExtra)** - Easily add histograms/density plots to ggplot2 scatterplots, plus a few more ggplot2 convenience functions. Check out a [demo online](https://daattali.com/shiny/ggExtra-ggMarginal-demo/).
+- **[shinyscreenshot](https://github.com/daattali/shinyscreenshot)** - 📷 Capture screenshots of entire pages or parts of pages in Shiny apps. [Live demo](https://daattali.com/shiny/shinyscreenshot-demo/)
 
-- **[cometr](https://github.com/daattali/cometr)** - A convenient R wrapper to the 'Comet' API, providing easy interaction with the 'Comet' cloud platform for tracking and optimizing machine learning models.
+- **[ggExtra](https://github.com/daattali/ggExtra)** - 📊 Easily add histograms/density plots to ggplot2 scatterplots, plus a few more ggplot2 convenience functions. [Live demo](https://daattali.com/shiny/ggExtra-ggMarginal-demo/)
+
+- **[cometr](https://github.com/daattali/cometr)** - ☄️ A convenient R wrapper to the 'Comet' API, providing easy interaction with the 'Comet' cloud platform for tracking and optimizing machine learning models.
 
 - **[ezknitr](https://github.com/daattali/ezknitr)** - Avoid the typical working directory pain when using 'knitr'. If you're into R and reproducible research/generating reports with knitr, then do check it out.
 
-- **[shinyforms](https://github.com/daattali/shinyforms)** - Easily create questionnaire-type forms with Shiny. Check out a [demo online](https://daattali.com/shiny/mimic-google-form/). (In development, looking for funding).
+- **[shinyforms](https://github.com/daattali/shinyforms)** - 📝 Easily create questionnaire-type forms with Shiny. Check out a [demo online](https://daattali.com/shiny/mimic-google-form/). (In development, looking for funding).
 
-- **[ddpcr](https://github.com/daattali/ddpcr)** - Analyze and visualize droplet digital PCR data. Check out a [demo online](https://daattali.com/shiny/ddpcr/). Manuscript in [F1000Research](https://f1000research.com/articles/5-1411/v1).
+- **[ddpcr](https://github.com/daattali/ddpcr)** - 🔬 Analyze and visualize droplet digital PCR data. Manuscript in [F1000Research](https://f1000research.com/articles/5-1411/v1). [Live demo](https://daattali.com/shiny/ddpcr/)
 
-- **[lightsout](https://github.com/daattali/lightsout)** - An implementation of the puzzle game Lights Out using R. [Play the game online](https://daattali.com/shiny/lightsout/).
+- **[lightsout](https://github.com/daattali/lightsout)** - 🔦 An implementation of the puzzle game Lights Out using R. [Play the game online](https://daattali.com/shiny/lightsout/)
 
 ## Chrome / Firefox extensions
 
 - **[GitHub Diff Navigator](https://github.com/daattali/github-diff-navigator-extension)** - allows you to easily navigate through the changes in a file that has been edited on GitHub.  Especially useful when editing a markdown file within the browser, as GitHub will only show you the full changed file but not show you *where* the edits were made. I find this very helpful every time I make small edits to someone else's large markdown document. Install the [Chrome extension](https://chrome.google.com/webstore/detail/github-diff-navigator/aoojogkiedabnddmokieplfnmjehlneo) or [Firefox add-on](https://addons.mozilla.org/addon/diff-navigator-for-github/)
+
+- **[Cashflow Calculator for Zillow/Trulia/Redfin](https://github.com/daattali/cashflow-calculation-extension)** - Cashflow Calculator extension for Zillow, Trulia, and Redfin (works in Chrome/Firefox/Edge). Install the [Chrome extension](https://chrome.google.com/webstore/detail/cashflow-calculator-for-z/oacadllhimmkndjnofmfoijbiimcmhni) or [Firefox add-on](https://addons.mozilla.org/en-CA/firefox/addon/rental-cashflow-calculator/).
 
 - **[Google Slides Auto Resize Speaker Notes](https://github.com/daattali/gslides-betternotes-extension)** - the slide previews in the Speaker Notes window of Google Slides are tiny and unreadable. This extension dynamically resizes the slides based on the window size to make them useful. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/google-slides-auto-resize/piciggpbidhfbpefjjbomcgomanjfbeb)
 
