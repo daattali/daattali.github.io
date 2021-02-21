@@ -38,7 +38,7 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 ## R packages
 
-- **[shinyjs](https://deanattali.com/shinyjs)** - 💡 Easily improve UX in your Shiny apps, adds useful features to Shiny apps, and call your own JavaScript functions using plain R code.  Also includes a colour picker. [Live demo](https://deanattali.com/shinyjs/demo)
+- **[shinyjs](https://deanattali.com/shinyjs)** - 💡 Easily improve UX in your Shiny apps, adds useful features to Shiny apps, and call your own JavaScript functions using plain R code. [Live demo](https://deanattali.com/shinyjs/demo)
 
 - **[timevis](https://github.com/daattali/timevis)** - 📅 Create interactive timeline visualizations in R (can be embedded into Shiny apps and R markdown documents, or simply viewed from the R console). [Live demo](https://daattali.com/shiny/timevis-demo/)
 
