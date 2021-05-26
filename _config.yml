@@ -71,7 +71,7 @@ defaults:
       show-share: true
       show-subscribe: true
       support_promo_box: true
-      after-content: [share-section.html, purpleads.html, scroll-box.html]
+      after-content: [share-section.html, scroll-box.html]
   -
     scope:
       path: "notblog"
@@ -83,12 +83,13 @@ defaults:
       show-share: true
       show-subscribe: true
       support_promo_box: true
-      after-content: [share-section.html, purpleads.html, scroll-box.html]
+      after-content: [share-section.html, scroll-box.html]
   -
     scope:
       path: "pages"
     values:
       layout: "page"
+      
       comments: true
   -
     scope:
