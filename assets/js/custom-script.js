@@ -1,7 +1,6 @@
 var custom = {
 
   scrollBoxCheck : false,
-  purpleAdsCheck : false,
 
   init : function() {
 
@@ -15,24 +14,12 @@ var custom = {
       }
     }
 
-    if ($(window).width() < 750) {
-      custom.purpleAdsCheck = 1500;
-      $("body").addClass("purpleads-hide");
-    }
-
     $(window).scroll(function() {
       // Check if the scrollbox should be made visible
       if (custom.scrollBoxCheck) {
         if ($(window).scrollTop() > custom.scrollBoxCheck) {
           custom.scrollBoxCheck = false;
           $("body").addClass("scroll-box-on");
-        }
-      }
-
-      if (custom.purpleAdsCheck) {
-        if ($(window).scrollTop() > custom.purpleAdsCheck) {
-          custom.purpleAdsCheck = false;
-          $("body").removeClass("purpleads-hide");
         }
       }
 
