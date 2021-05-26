@@ -327,14 +327,6 @@ body.scroll-box-on #scroll-box {
   }
 }
 
-/* Purple ads - hide on mobile because it's exactlyt where my scroll box goes */
-body.purpleads-hide #psdn-slot {
-  display: none;
-}
-body #psdn-slot {
-  z-index: 999998 !important;
-}
-
 /* Disqus comments - hide the ads */
 #disqus_thread iframe[src*="ads-iframe"] {
   display: none;
