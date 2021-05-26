@@ -89,7 +89,6 @@ defaults:
       path: "pages"
     values:
       layout: "page"
-      
       comments: true
   -
     scope:
