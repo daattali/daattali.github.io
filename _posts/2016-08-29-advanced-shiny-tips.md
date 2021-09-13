@@ -6,7 +6,7 @@ share-img: https://raw.githubusercontent.com/daattali/advanced-shiny/master/plot
 permalink: /blog/advanced-shiny-tips/
 gh-repo: daattali/advanced-shiny
 gh-badge: [star, watch, follow]
-last-updated: 2017-07-05
+last-updated: 2021-09-13
 ---
 
 This document contains a collection of various Shiny tricks that I commonly use or that I know many people ask about. Each link contains a complete functional Shiny app that demonstrates how to perform a non trivial task in Shiny. **The complete up-to-date list of tips, along with all the code, is [on GitHub](https://github.com/daattali/advanced-shiny#readme).**
@@ -58,7 +58,10 @@ Since I first learned about [Shiny](http://shiny.rstudio.com/) 2 years ago, I wa
   - [Facebook login through JavaScript in Shiny](#fb-login) ([code](https://github.com/daattali/advanced-shiny/tree/master/fb-login))
   - [Multiple scrollspy on same page - basic](#multiple-scrollspy-basic) ([code](https://github.com/daattali/advanced-shiny/tree/master/multiple-scrollspy-basic))
   - [Multiple scrollspy on same page - advanced](#multiple-scrollspy-advanced) ([code](https://github.com/daattali/advanced-shiny/tree/master/multiple-scrollspy-advanced))
-- [Updates](#updates)
+- Very advanced
+  - [Create a reactive trigger](#reactive-trigger) ([code](https://github.com/daattali/advanced-shiny/tree/master/reactive-trigger))
+  - [Create a reactive value that only triggers when its value changes](#reactive-dedupe) ([code](https://github.com/daattali/advanced-shiny/tree/master/reactive-dedupe))
+  - [Create a cancellable long-running task](#forked-task) ([code](https://github.com/daattali/advanced-shiny/tree/master/forked-task))
 
 <h2 id="shinyjs">Prereq: How to hide/show something in Shiny? How to disable an input? How do I reset an input?</h2>
 
@@ -68,7 +71,7 @@ A few very common questions in Shiny are "how do I hide/show something", "how do
 
 **[Link to code](https://github.com/daattali/advanced-shiny/tree/master/plot-spinner)**
 
-When a Shiny plot is recalculating, the plot gets grayed out. This app shows how you can add a spinner wheel on top of the plot while it is recalculating, to make it clear to the user that the plot is reloading. There can be many different ways to achieve a similar result using different combinations of HTML/CSS, this example is just the simplest one I came up with.
+When a Shiny plot is recalculating, the plot gets grayed out. This app shows how you can add a spinner wheel on top of the plot while it is recalculating, to make it clear to the user that the plot is reloading. There can be many different ways to achieve a similar result using different combinations of HTML/CSS, this example is just the simplest one I came up with. **Update**: There is now a package [`shinycssloaders`](https://cran.r-project.org/package=shinycssloaders) to do this easier! 
 
 [![Demo](https://raw.githubusercontent.com/daattali/advanced-shiny/master/plot-spinner/plot-spinner.gif)](https://github.com/daattali/advanced-shiny/tree/master/plot-spinner)
 
@@ -149,7 +152,7 @@ This simple app demonstrates how you can fill out certain input fields when a Sh
 
 **[Link to code](https://github.com/daattali/advanced-shiny/tree/master/split-code)**
 
-When creating Shiny apps with a lot of code and a complex UI, it can sometimes get very messy and difficult to maintain your code when it's all in one file. What you can do instead is have one "main" UI and "main" server and split your UI and server code into multiple files. This can make your code much more manageable and easier to develop when it grows large. You can split the code however you want, but I usually like to split it logically: for example, if my app has 4 tabs then the UI for each tab would be in its own file and the server code for each tab would be in its own file. The example code here shows how to separate the code of an app with two tabs into 2 UI files and 2 server files (one for each tab).
+When creating Shiny apps with a lot of code and a complex UI, it can sometimes get very messy and difficult to maintain your code when it's all in one file. What you can do instead is have one "main" UI and "main" server and split your UI and server code into multiple files. This can make your code much more manageable and easier to develop when it grows large. You can split the code however you want, but I usually like to split it logically: for example, if my app has 4 tabs then the UI for each tab would be in its own file and the server code for each tab would be in its own file. The example code here shows how to separate the code of an app with two tabs into 2 UI files and 2 server files (one for each tab). **Update:** Shiny now has the concept of modules, which is another recommended approach for handling large code bases. Modules are a bit more complex but also much more powerful.
 
 
 <h2 id="server-to-ui-variable">Use a variable from the server in a UI `conditionalPanel()`</h2>
@@ -296,13 +299,20 @@ The Bootstrap *scrollspy* plugin does not support multiple scrollspy objects per
 The Bootstrap *scrollspy* plugin does not support multiple scrollspy objects per page.
 This Shiny app demonstrates how to support scrollspy on multiple tabs by allowing each tab to have its own independent scrollspy control and using JavaScript to ensure only the scrollspy on the current tab is activated.
 
-<h1 id="updates">Updates</h1>
+<h2 id="reactive-trigger">Create a reactive trigger</h2>
 
-This list is slowly growing with time. Here are the new tricks added since the post was originally published:
+**[Link to code](https://github.com/daattali/advanced-shiny/tree/master/reactive-trigger)**
 
-- 2016-08-29: [Getting the value of an object in a running Shiny app without access to a debugger](#debug-value) 
-- 2016-09-03: [Show a function's messages and warnings to the user](#show-warnings-messages)
-- 2016-09-16: [Use a custom function to convert the JavaScript data into an R object](#javascript-to-r-handler)
-- 2016-10-11: [Run arbitrary code live in Shiny - great for testing during development](#run-arbitrary-code)
-- 2016-11-23: [Adding text (or inputs) to the navigation bar in a navbarPage](#navbar-add-text)
-- 2017: I am no longer updating this article - for the updated list, [click here](https://github.com/daattali/advanced-shiny#readme)
+A reactive trigger can be used when you want to be able to explicitly trigger a reactive expression. You can think of it as being similar to an action button, except instead of clicking on a button to trigger an expression, you can programatically cause the trigger. This concept and code was created by Joe Cheng (author of shiny).
+
+<h2 id="reactive-dedupe">Create a reactive value that only triggers when its value changes</h2>
+
+**[Link to code](https://github.com/daattali/advanced-shiny/tree/master/reactive-dedupe)**
+
+If you understand shiny and reactivity well, you will know that a reactive expression gets re-run whenever any of its reactive dependencies are invalidated. This is generally the desired behaviour, but there is one caveat that comes up occassionally: even if the underlying value of the reactive dependency hasn't changed, it can still be considered "invalidated". This can mean that a reactive expression will run again with exactly the same values because its dependencies have not changed, even though they're invalidated. Joe Cheng (author of shiny) has [a solution](https://github.com/rstudio/shiny/issues/1484#issuecomment-262812760) for this.
+
+<h2 id="forked-task">Create a cancellable long-running task</h2>
+
+**[Link to code](https://github.com/daattali/advanced-shiny/tree/master/forked-task)**
+
+In shiny (or R in general), when you start running a function, you generally cannot do anything else until that function completes. This means that if the user of a shiny app does something that results in a 2-minute calculation, the entire app becomes unusable and the user has to wait 2 minutes before they can interact with the app again. This has been a problem for some people, and the shiny team is currently looking into providing a solution for this. In the meantime, Joe Cheng (author of Shiny) [came up with a nice workaroud](https://gist.github.com/jcheng5/9504798d93e5c50109f8bbaec5abe372). His solution will likely not work on Windows and it is not a robust fool-proof solution, but itcan get the job done. 
