@@ -115,6 +115,7 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
   - [Shiny Dev Series Episode 17: Dean Attali](https://www.youtube.com/watch?v=yRGJDtOUP3Y)
   - [R-Podcast Episode 16: Interview with Dean Attali](https://r-podcast.org/posts/the-r-podcast-episode-16-interview-with-dean-attali.html)   
   - [R-Podcast Episode 19](https://r-podcast.org/episode/019-talking-shiny-at-rstudio-conf-with-barbara-borges-and-dean-attali/)  
+  - [Appsilon Shiny Conference: Consulting with Shiny Panel Discussion](https://www.youtube.com/watch?v=v0hk5xteYjQ)
   - [Ask-me-anything at CodeForCash](https://codefor.cash/dean_attali_ama.php)  
 - **Meetups:**  
   - 2016-08 Simon Fraser University Meetup (Vancouver, Canada)     
