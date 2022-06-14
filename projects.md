@@ -107,6 +107,7 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
   - 2018 RStudio Conf (San Diego, USA)   
   - 2019 SER International Seminar on Statistics with R (Rio, Brazil)  
   - 2019 Open Data Science Conference (San Francisco, USA)  
+  - 2022 New York R Conference (New York, USA)
 - **Conference talks:**  
   - 2016 useR Conference (Stanford, USA)  
   - 2017 useR Conference (Brussels, Belgium) ([Video](https://www.youtube.com/watch?v=eq8TUOxpBpM))  
