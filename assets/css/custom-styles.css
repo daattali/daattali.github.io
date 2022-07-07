@@ -9,6 +9,9 @@ a {
 .navbar a, a.btn, .pagination a, .footnote-ref {
   text-decoration: none;
 }
+.beautiful-jekyll-footer .copyright a {
+  text-decoration: none;
+}
 
 #full-tags-list .tag-entry a {
   text-decoration: none;
