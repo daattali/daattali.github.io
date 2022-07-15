@@ -112,6 +112,7 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
   - 2016 useR Conference (Stanford, USA)  
   - 2017 useR Conference (Brussels, Belgium) ([Video](https://www.youtube.com/watch?v=eq8TUOxpBpM))  
   - 2018 RStudio Conf (San Diego, USA)  
+  - 2021 SER International Seminar on Statistics with R (Rio, Brazil) ([Video](https://www.youtube.com/watch?v=Kes56uWFMDA))
 - **Interviews:**   
   - [Shiny Dev Series Episode 17: Dean Attali](https://www.youtube.com/watch?v=yRGJDtOUP3Y)
   - [R-Podcast Episode 16: Interview with Dean Attali](https://r-podcast.org/posts/the-r-podcast-episode-16-interview-with-dean-attali.html)   
@@ -124,6 +125,7 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
   - 2018-05 R Israel Meetup (Tel Aviv, Israel)  
   - 2018-09 Seattle useR Group (Seattle, USA)  
   - 2019-04 Toronto R Users Group (Toronto, Canada)  
+  - 2021-01 North East Data Scientists (Newcastle, UK)
 
 ## Paid writing gigs
 
