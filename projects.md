@@ -56,6 +56,8 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 - **[shinyscreenshot](https://github.com/daattali/shinyscreenshot)** - 📷 Capture screenshots of entire pages or parts of pages in Shiny apps. [Live demo](https://daattali.com/shiny/shinyscreenshot-demo/)
 
+- **[shinytip](https://github.com/daattali/shinytip)** - 💬 Simple flexible tooltips for Shiny apps. [Live demo](https://daattali.com/shiny/shinytip-demo/)
+
 - **[ggExtra](https://github.com/daattali/ggExtra)** - 📊 Easily add histograms/density plots to ggplot2 scatterplots, plus a few more ggplot2 convenience functions. [Live demo](https://daattali.com/shiny/ggExtra-ggMarginal-demo/)
 
 - **[cometr](https://github.com/daattali/cometr)** - ☄️ A convenient R wrapper to the 'Comet' API, providing easy interaction with the 'Comet' cloud platform for tracking and optimizing machine learning models.
@@ -70,17 +72,19 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 ## Chrome / Firefox extensions
 
+- **[Single-Page Amazon Return Labels](https://github.com/daattali/single-page-amazon-return-labels-extension)** - When printing return labels on Amazon, remove unnecessary information so that the label might fit on one page. Install the [Chrome extension](https://chrome.google.com/webstore/detail/single-page-amazon-return/obknjldfibbifkpmnpnjjojoaaniiigc) or [Firefox add-on](https://addons.mozilla.org/en-CA/firefox/addon/one-page-amazon-return-labels/)
+- 
 - **[GitHub Diff Navigator](https://github.com/daattali/github-diff-navigator-extension)** - allows you to easily navigate through the changes in a file that has been edited on GitHub.  Especially useful when editing a markdown file within the browser, as GitHub will only show you the full changed file but not show you *where* the edits were made. I find this very helpful every time I make small edits to someone else's large markdown document. Install the [Chrome extension](https://chrome.google.com/webstore/detail/github-diff-navigator/aoojogkiedabnddmokieplfnmjehlneo) or [Firefox add-on](https://addons.mozilla.org/addon/diff-navigator-for-github/)
 
 - **[Cashflow Calculator for Zillow/Trulia/Redfin](https://github.com/daattali/cashflow-calculation-extension)** - Cashflow Calculator extension for Zillow, Trulia, and Redfin (works in Chrome/Firefox/Edge). Install the [Chrome extension](https://chrome.google.com/webstore/detail/cashflow-calculator-for-z/oacadllhimmkndjnofmfoijbiimcmhni) or [Firefox add-on](https://addons.mozilla.org/en-CA/firefox/addon/rental-cashflow-calculator/).
 
-- **[Google Slides Auto Resize Speaker Notes](https://github.com/daattali/gslides-betternotes-extension)** - the slide previews in the Speaker Notes window of Google Slides are tiny and unreadable. This extension dynamically resizes the slides based on the window size to make them useful. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/google-slides-auto-resize/piciggpbidhfbpefjjbomcgomanjfbeb)
-
 - **[Old School GitHub](https://github.com/daattali/oldschool-github-extension)** - GitHub rolled out a brand new UI on June 23, 2020. There are a few aspects of the new UI that I (and many others) don't like and this extension brings back a few features from the classic GitHub look. Install the [Chrome extension](https://chrome.google.com/webstore/detail/old-school-github/blkkkhifjoiedclojflfcenbjigdajeb) or [Firefox add-on](https://addons.mozilla.org/addon/old-school-github/)
 
-- **[Project Free TV Ad Bypass](https://github.com/daattali/pftv-ad-bypass-extension)** - Project Free TV serves a 10-second ad page before allowing users to continue to the video - this extension bypasses the ad page. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/project-free-tv-ad-bypass/modfjcgeknfglkdgckkomdcgokkjaadd)
+- (deprecated) **[Google Slides Auto Resize Speaker Notes](https://github.com/daattali/gslides-betternotes-extension)** - the slide previews in the Speaker Notes window of Google Slides are tiny and unreadable. This extension dynamically resizes the slides based on the window size to make them useful. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/google-slides-auto-resize/piciggpbidhfbpefjjbomcgomanjfbeb)
 
-- **[Smileyfy My Facebook](https://github.com/daattali/smileyfy-my-facebook-extension)** -  Chrome extension that adds infinite happiness to your Facebook browsing, plus a little bonus rickrolling :)  This is not the most useful (if at all..), but it was a way for me to learn about some more advanced features of Chrome extension development. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/smileyfy-my-facebook/ideagdnlnmgjdhhbelgadnakbhphljol)
+- (deprecated) **[Project Free TV Ad Bypass](https://github.com/daattali/pftv-ad-bypass-extension)** - Project Free TV serves a 10-second ad page before allowing users to continue to the video - this extension bypasses the ad page. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/project-free-tv-ad-bypass/modfjcgeknfglkdgckkomdcgokkjaadd)
+
+- (deprecated) **[Smileyfy My Facebook](https://github.com/daattali/smileyfy-my-facebook-extension)** -  Chrome extension that adds infinite happiness to your Facebook browsing, plus a little bonus rickrolling :)  This is not the most useful (if at all..), but it was a way for me to learn about some more advanced features of Chrome extension development. [Get the extension at the Google Web Store](https://chrome.google.com/webstore/detail/smileyfy-my-facebook/ideagdnlnmgjdhhbelgadnakbhphljol)
 
 ## Websites
 
