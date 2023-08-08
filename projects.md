@@ -72,7 +72,7 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 ## Chrome / Firefox extensions
 
-- **[Single-Page Amazon Return Labels](https://github.com/daattali/single-page-amazon-return-labels-extension)** - When printing return labels on Amazon, remove unnecessary information so that the label might fit on one page. Install the [Chrome extension](https://chrome.google.com/webstore/detail/single-page-amazon-return/obknjldfibbifkpmnpnjjojoaaniiigc) or [Firefox add-on](https://addons.mozilla.org/en-CA/firefox/addon/one-page-amazon-return-labels/)
+- **[Single-Page Amazon Return Labels](https://github.com/daattali/single-page-amazon-return-labels-extension)** - When printing return labels on Amazon, remove unnecessary information so that the label might fit on one page. Install the [Chrome extension](https://chrome.google.com/webstore/detail/single-page-amazon-return/ojbaedhfdbgjnbaejemkihhhhpmnogln) or [Firefox add-on](https://addons.mozilla.org/en-CA/firefox/addon/one-page-amazon-return-labels/)
 
 - **[GitHub Diff Navigator](https://github.com/daattali/github-diff-navigator-extension)** - allows you to easily navigate through the changes in a file that has been edited on GitHub.  Especially useful when editing a markdown file within the browser, as GitHub will only show you the full changed file but not show you *where* the edits were made. I find this very helpful every time I make small edits to someone else's large markdown document. Install the [Chrome extension](https://chrome.google.com/webstore/detail/github-diff-navigator/aoojogkiedabnddmokieplfnmjehlneo) or [Firefox add-on](https://addons.mozilla.org/addon/diff-navigator-for-github/)
 
