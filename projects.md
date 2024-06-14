@@ -12,31 +12,32 @@ This is a collection of some personal projects I've worked on that are easily vi
 
 I'm also [**available for consulting**](/shiny), so feel free to [contact me](/contact) if you'd like to work together. 
 
-
 ---
 
-## Educational videos
+Skip to: [Educational videos](#educational-vids) &middot; [Courses](#courses) &middot; [Web services](#web-services) &middot; [Website templates](#website-templates) &middot; [R Shiny apps](#shiny-apps) &middot; [R packages](#r-pkgs) &middot; [Chrome / Firefox extensions](#extensions) &middot; [Websites](#websites) &middot; [R Talks](#r-talks) &middot; [Paid writing gigs](#paid-writing) &middot; [Misc](#misc)
+
+## Educational videos {#educational-vids}
 
 My [YouTube channel](http://youtube.com/c/daattali?sub_confirmation=1) contains educational videos on various R/Shiny/programming topics for all levels. New content is always added, so make sure to [subscribe](http://youtube.com/c/daattali?sub_confirmation=1) to know about new videos.
 
-## Courses
+## Courses {#courses}
 
 I have an interactive, online video course ["Case Studies in Shiny"](https://www.datacamp.com/courses/case-studies-building-web-applications-with-shiny-in-r) hosted on DataCamp. It's designed to give you practice building Shiny apps for real-life scenarios, while also helping your learn some advanced Shiny concepts. At the time of writing, 2.5 years after it was released, this course is the __#2 best-rated course on DataCamp__.
 
-## Web services
+## Web services {#web-services}
 
 - **[Rental Cashflow Calculator](http://cashflowcalc.com/)** - The quickest way to analyze your next investment rental property - written entirely in Shiny.
 - **[CRANalerts](https://cranalerts.com/)** - Get email alerts when a CRAN package gets updated - written entirely in Shiny.
 
-## Website templates
+## Website templates {#website-templates}
 
  **[Beautiful Jekyll](https://beautifuljekyll.com/)** - a very popular Jekyll theme (__> 10k websites built__) I created when making this website.  You can [view a demo](https://beautifuljekyll.com/) or use it yourself to make a pretty website similar to this one by visiting the [project page](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it's designed to look great on both mobile devices and laptops.
 
-## R Shiny apps
+## R Shiny apps {#shiny-apps}
 
 If you got here after reading some of my blog posts, you'll know that I'm a big fan and advocate of Shiny. I also run a company providing Shiny consultancy. Unfortunately all my coolest big Shiny apps that were made for clients are private, but you can see a sample of the Shiny apps I've built for myself [on my Shiny server](https://attalitech.com/#portfolio).
 
-## R packages
+## R packages {#r-pkgs}
 
 - **[shinyjs](https://deanattali.com/shinyjs)** - 💡 Easily improve UX in your Shiny apps, adds useful features to Shiny apps, and call your own JavaScript functions using plain R code. [Live demo](https://deanattali.com/shinyjs/demo)
 
@@ -70,7 +71,7 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 - **[lightsout](https://github.com/daattali/lightsout)** - 🔦 An implementation of the puzzle game Lights Out using R. [Play the game online](https://daattali.com/shiny/lightsout/)
 
-## Chrome / Firefox extensions
+## Chrome / Firefox extensions {#extensions}
 
 - **[Wayback Wiki](https://github.com/daattali/wayback-wiki-extension)** - Surf Wikipedia on a specific date in the past. Install: [![Chrome](/assets/img/icons/chrome.png "Chrome"){:width="22"}](https://chromewebstore.google.com/detail/wayback-wiki/paodbmenneplknjlgdbjlhgpojcngnnc){:target="_blank"} [![Firefox](/assets/img/icons/firefox.png "Firefox"){:width="22"}](https://addons.mozilla.org/en-CA/firefox/addon/wayback-wiki/){:target="_blank"}
 
@@ -88,7 +89,7 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 - (deprecated) **[Smileyfy My Facebook](https://github.com/daattali/smileyfy-my-facebook-extension)** -  Chrome extension that adds infinite happiness to your Facebook browsing, plus a little bonus rickrolling :)  This is not the most useful (if at all..), but it was a way for me to learn about some more advanced features of Chrome extension development. Install: [![Chrome](/assets/img/icons/chrome.png "Chrome"){:width="22"}](https://chrome.google.com/webstore/detail/smileyfy-my-facebook/ideagdnlnmgjdhhbelgadnakbhphljol){:target="_blank"}
 
-## Websites
+## Websites {#websites}
 
 - **[Wish.com](https://wish.com)** - a very popular shopping platform. I was one of the few original developers of the site (before it was even called Wish!) and contributed mostly to the frontend. I was part of Wish's inception and initial growth, but since then it has grown to be a #1 Android Shopping app, and I can't claim any credit to that. :)
 
@@ -102,7 +103,7 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 - **[deanattali.com](https://deanattali.com)** - the site you're currently on.  Just a simple site to have some virtual presence.
 
-## R Talks
+## R Talks {#r-talks}
 
 - **Keynote/main speaker:**   
   - 2016 Shiny Developer Conference (Stanford, USA) ([Video](https://deanattali.com/shinyjs-shinydevcon-2016/))  
@@ -133,14 +134,14 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
   - 2019-04 Toronto R Users Group (Toronto, Canada)  
   - 2021-01 North East Data Scientists (Newcastle, UK)
 
-## Paid writing gigs
+## Paid writing gigs {#paid-writing}
 
 - [Persistent data storage in Shiny apps](https://shiny.rstudio.com/articles/persistent-data-storage.html) - written for [RStudio](https://www.rstudio.com/).
 - [How to Set Up R on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04) - written for [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99).
 - [How to Set Up Shiny Server on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-shiny-server-on-ubuntu-14-04) - written for [DigitalOcean](https://www.digitalocean.com/?refcode=358494f80b99).
 - Book reviewer for [Learning Shiny](https://www.packtpub.com/application-development/learning-shiny).
 
-## Misc
+## Misc {#misc}
 
 - Organizer of the [Toronto R Meetup](https://www.meetup.com/en-AU/Greater-Toronto-Area-GTA-R-Users-Group/).
 
