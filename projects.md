@@ -72,7 +72,7 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 ## Chrome / Firefox extensions
 
-- **[Wayback Wiki](https://chromewebstore.google.com/detail/wayback-wiki/paodbmenneplknjlgdbjlhgpojcngnnc)** - Surf Wikipedia on a specific date in the past. Choose a specific date, and every Wikipedia article you visit will automatically redirect you to the version of the article that existed on that date. Install the [Chrome extension](https://chromewebstore.google.com/detail/wayback-wiki/paodbmenneplknjlgdbjlhgpojcngnnc) or [Firefox add-on](https://addons.mozilla.org/en-CA/firefox/addon/wayback-wiki/)
+- **[Wayback Wiki](https://chromewebstore.google.com/detail/wayback-wiki/paodbmenneplknjlgdbjlhgpojcngnnc)** - Surf Wikipedia on a specific date in the past. Install the [Chrome extension](https://chromewebstore.google.com/detail/wayback-wiki/paodbmenneplknjlgdbjlhgpojcngnnc) or [Firefox add-on](https://addons.mozilla.org/en-CA/firefox/addon/wayback-wiki/)
 
 - **[Single-Page Amazon Return Labels](https://github.com/daattali/single-page-amazon-return-labels-extension)** - When printing return labels on Amazon, remove unnecessary information so that the label might fit on one page. Install the [Chrome extension](https://chrome.google.com/webstore/detail/single-page-amazon-return/ojbaedhfdbgjnbaejemkihhhhpmnogln) or [Firefox add-on](https://addons.mozilla.org/en-CA/firefox/addon/one-page-amazon-return-labels/)
 
