@@ -28,6 +28,7 @@ I have an interactive, online video course ["Case Studies in Shiny"](https://www
 
 - **[Rental Cashflow Calculator](http://cashflowcalc.com/)** - The quickest way to analyze your next investment rental property - written entirely in Shiny.
 - **[CRANalerts](https://cranalerts.com/)** - Get email alerts when a CRAN package gets updated - written entirely in Shiny.
+- **[King-Liberty Bridge Elevators Status Tracker](http://kinglibertybridge.ca/)** - See and update the current status of the King-Liberty Bridge (Toronto) elevators. I built this because these public elevators, used by disabled neighbours, was often broken and we could never know when it's working.
 
 ## Website templates {#website-templates}
 
