@@ -46,15 +46,11 @@ As anyone who builds tools knows, no software is ever truly finished. There are 
 
 **On a related note, the countless of hours I spend on this project are done with no pay, often while sacrificing time that I would otherwise use to work for clients and therefore literally causing me to lose money.**
 
-**One of my biggest goals is to have a few people [sponsor me](https://github.com/sponsors/daattali) to help this project flourish, so that I can focus more on projects that help the community instead of client work. Alternatively, one-time [donations](https://paypal.me/daattali) are also greatly appreciated if you find this project useful.**
+**One of my biggest goals is to have a few people [sponsor me](https://github.com/sponsors/daattali) to help this project flourish, so that I can focus more on projects that help the community instead of client work. Alternatively, one-time [donations](https://paypal.me/daattali/20) are also greatly appreciated if you find this project useful.**
 
 <p align="center">
   <a style="display: inline-block;" href="https://github.com/sponsors/daattali">
     <img height="40" src="https://i.imgur.com/034B8vq.png" />
-  </a>
-  &nbsp;&nbsp;
-  <a style="display: inline-block;" href="https://paypal.me/daattali">
-    <img height="40" src="https://camo.githubusercontent.com/0e9e5cac101f7093336b4589c380ab5dcfdcbab0/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f74776f6c66736f6e2f70617970616c2d6769746875622d627574746f6e40312e302e302f646973742f627574746f6e2e737667" />
   </a>
 </p>
 
