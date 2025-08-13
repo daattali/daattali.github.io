@@ -7,6 +7,7 @@ plugins:
 title: Dean Attali
 author: Dean Attali
 
+include: [".well-known"]
 
 navbar-links:
   Blog: "/"
