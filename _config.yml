@@ -7,8 +7,6 @@ plugins:
 title: Dean Attali
 author: Dean Attali
 
-include: [".well-known"]
-
 navbar-links:
   Blog: "/"
   Hire me: "https://attalitech.com/"
