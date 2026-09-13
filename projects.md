@@ -61,6 +61,8 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 - **[shinytip](https://github.com/daattali/shinytip)** - 💬 Simple flexible tooltips for Shiny apps. [Live demo](https://daattali.com/shiny/shinytip-demo/)
 
+- **[undomanager](https://github.com/daattali/undomanager)** - 🔄 Manage the history of any object with undo/redo operations.
+
 - **[ggExtra](https://github.com/daattali/ggExtra)** - 📊 Easily add histograms/density plots to ggplot2 scatterplots, plus a few more ggplot2 convenience functions. [Live demo](https://daattali.com/shiny/ggExtra-ggMarginal-demo/)
 
 - **[cometr](https://github.com/daattali/cometr)** - ☄️ A convenient R wrapper to the 'Comet' API, providing easy interaction with the 'Comet' cloud platform for tracking and optimizing machine learning models.
